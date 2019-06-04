@@ -109,6 +109,7 @@
 	to_chat(owner, "<span class='boldannounce'><i>* Use \",b\" to speak your ancient Bloodsucker language.</span><br>")
 	to_chat(owner, "<span class='announce'>Bloodsucker Tip: Rest in a <i>Coffin</i> to claim it, and that area, as your lair.</span><br>")
 	to_chat(owner, "<span class='announce'>Bloodsucker Tip: Fear the daylight! Solar flares will bombard the station periodically, and only your coffin can guarantee your safety.</span><br>")
+	to_chat(owner, "<span class='announce'>The guide to bloodsuckers can be found at: https://fulpstation.com/showthread.php?tid=349&pid=452#pid452</span><br>")
 
 	owner.current.playsound_local(null, 'sound/Fulpsounds/BloodsuckerAlert.ogg', 100, FALSE, pressure_affected = FALSE)
 	antag_memory += "Although you were born a mortal, in un-death you earned the name <b>[fullname]</b>.<br>"
