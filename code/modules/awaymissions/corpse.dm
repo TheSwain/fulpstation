@@ -71,6 +71,7 @@
 
 /obj/effect/mob_spawn/proc/create(ckey, name)
 	var/mob/living/M = new mob_type(get_turf(src)) //living mobs only
+	M.gender = mob_gender
 	if(!random)
 		M.real_name = mob_name ? mob_name : M.name
 		if(!mob_gender)
@@ -392,6 +393,7 @@
 	outfit = /datum/outfit/beachbum
 
 /obj/effect/mob_spawn/human/beach/alive
+	mob_gender = MALE
 	death = FALSE
 	roundstart = FALSE
 	random = TRUE
@@ -404,7 +406,7 @@
 
 /obj/effect/mob_spawn/human/beach/alive/lifeguard
 	flavour_text = "<span class='big bold'>You're a spunky lifeguard!</span><b> It's up to you to make sure nobody drowns or gets eaten by sharks and stuff.</b>"
-	mob_gender = "female"
+	mob_gender = FEMALE
 	name = "lifeguard sleeper"
 	id_job = "Lifeguard"
 	uniform = /obj/item/clothing/under/shorts/red
