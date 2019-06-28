@@ -404,13 +404,22 @@
 	flavour_text = "<span class='big bold'>You're, like, totally a dudebro, bruh.</span><b> Ch'yea. You came here, like, on spring break, hopin' to pick up some bangin' hot chicks, y'knaw?</b>"
 	assignedrole = "Beach Bum"
 
-/obj/effect/mob_spawn/human/beach/alive/lifeguard
+/obj/effect/mob_spawn/human/lifeguard
+	outfit = /datum/outfit/lifeguard
+	facial_hair_style = "Shaved"
+
+/obj/effect/mob_spawn/human/lifeguard/alive
 	flavour_text = "<span class='big bold'>You're a spunky lifeguard!</span><b> It's up to you to make sure nobody drowns or gets eaten by sharks and stuff.</b>"
 	mob_gender = FEMALE
+	death = FALSE
+	roundstart = FALSE
+	random = TRUE
+	mob_name = "Lifeguard"
 	name = "lifeguard sleeper"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
 	id_job = "Lifeguard"
-	uniform = /obj/item/clothing/under/shorts/red
-	facial_hair_style = "Shaved"
+	assignedrole = "Lifeguard"
 
 /datum/outfit/beachbum
 	name = "Beach Bum"
@@ -418,6 +427,13 @@
 	r_pocket = /obj/item/storage/wallet/random
 	l_pocket = /obj/item/reagent_containers/food/snacks/pizzaslice/dank;
 	uniform = /obj/item/clothing/under/pants/youngfolksjeans
+	id = /obj/item/card/id
+
+/datum/outfit/lifeguard
+	name = "Lifeguard"
+	glasses = /obj/item/clothing/glasses/sunglasses
+	r_pocket = /obj/item/storage/wallet/random
+	uniform = /obj/item/clothing/under/baywatch
 	id = /obj/item/card/id
 
 /datum/outfit/beachbum/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
