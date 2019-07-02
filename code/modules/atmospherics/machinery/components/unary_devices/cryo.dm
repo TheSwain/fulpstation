@@ -31,6 +31,9 @@
 
 	var/running_anim = FALSE
 
+	var/eject_countdown = 0
+	var/eject_countdown_max = 60
+
 	var/escape_in_progress = FALSE
 	var/message_cooldown
 	var/breakout_time = 300
@@ -49,6 +52,7 @@
 	radio.recalculateChannels()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/Exited(atom/movable/AM, atom/newloc)
+	eject_countdown = 0
 	var/oldoccupant = occupant
 	. = ..() // Parent proc takes care of removing occupant if necessary
 	if (AM == oldoccupant)
@@ -165,6 +169,7 @@
 	open_machine()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/process()
+	eject_countdown += 1
 	..()
 
 	if(!on)
@@ -174,6 +179,12 @@
 		update_icon()
 		return
 	if(!occupant)
+		return
+	
+	if(eject_countdown >= eject_countdown_max)
+		var/msg = "Failsafe timer expired. Auto ejecting patient now."
+		open_machine()
+		radio.talk_into(src, msg, radio_channel)
 		return
 
 	var/mob/living/mob_occupant = occupant
