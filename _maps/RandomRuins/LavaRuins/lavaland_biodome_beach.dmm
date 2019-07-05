@@ -338,7 +338,8 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/mob_spawn/human/beach/alive/lifeguard,
+/obj/effect/mob_spawn/human/lifeguard,
+/obj/effect/mob_spawn/human/lifeguard/alive,
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
 "bJ" = (
