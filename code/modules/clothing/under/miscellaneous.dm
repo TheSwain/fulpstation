@@ -802,3 +802,10 @@
 	can_adjust = FALSE
 	armor = list("melee" = 10, "laser" = 10, "fire" = 40, "acid" = 10, "bomb" = 5)
 
+/obj/item/clothing/under/baywatch
+	name = "lifeguard's swimsuit"
+	desc = "This one-piece has a lifeguard patch sewn on"
+	icon_state = "baywatch"
+	item_state = "baywatch"
+	item_color = "baywatch"
+	can_adjust = FALSE	
