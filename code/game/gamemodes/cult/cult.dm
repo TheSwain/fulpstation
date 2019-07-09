@@ -16,7 +16,7 @@
 	if(!istype(M))
 		return FALSE
 	if(M.mind)
-		if(ishuman(M) && (M.mind.assigned_role in list("Captain", "Chaplain")))
+		if(ishuman(M) && (M.mind.isholy))
 			return FALSE
 		if(specific_cult && specific_cult.is_sacrifice_target(M.mind))
 			return FALSE
@@ -83,6 +83,8 @@
 		log_game("[key_name(cultist)] has been selected as a cultist")
 
 	if(cultists_to_cult.len>=required_enemies)
+		// FULPSTATION: Assign Hunters (as many as monsters, plus one)
+		assign_monster_hunters(cultists_to_cult.len / 1.5)	// FULP
 		return TRUE
 	else
 		setup_error = "Not enough cultist candidates"
