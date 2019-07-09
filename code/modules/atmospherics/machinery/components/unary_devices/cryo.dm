@@ -169,7 +169,6 @@
 	open_machine()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/process()
-	eject_countdown += 1
 	..()
 
 	if(!on)
@@ -181,6 +180,8 @@
 	if(!occupant)
 		return
 	
+	eject_countdown += 1
+
 	if(eject_countdown >= eject_countdown_max)
 		var/msg = "Failsafe timer expired. Auto ejecting patient now."
 		open_machine()
