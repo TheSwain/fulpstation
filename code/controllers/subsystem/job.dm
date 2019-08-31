@@ -493,7 +493,7 @@ SUBSYSTEM_DEF(job)
 	var/ssc = CONFIG_GET(number/security_scaling_coeff)
 	if(ssc > 0)
 		if(J.spawn_positions > 0)
-			var/officer_positions = min(12, max(J.spawn_positions, round(unassigned.len / ssc))) //Scale between configured minimum and 12 officers
+			var/officer_positions = min(15, max(J.spawn_positions, round(unassigned.len / ssc))) //Scale between configured minimum and 12 officers // [FULP] [PNX] 15 Sec Officers now. 
 			JobDebug("Setting open security officer positions to [officer_positions]")
 			J.total_positions = officer_positions
 			J.spawn_positions = officer_positions
@@ -501,7 +501,7 @@ SUBSYSTEM_DEF(job)
 	//Spawn some extra eqipment lockers if we have more than 5 officers
 	var/equip_needed = J.total_positions
 	if(equip_needed < 0) // -1: infinite available slots
-		equip_needed = 12
+		equip_needed = 15
 	for(var/i=equip_needed-5, i>0, i--)
 		if(GLOB.secequipment.len)
 			var/spawnloc = GLOB.secequipment[1]
