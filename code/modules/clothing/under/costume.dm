@@ -283,3 +283,10 @@
 	alt_covers_chest = TRUE
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
+
+/obj/item/clothing/under/costume/diojumpsuit
+	name = "Menacing Jumpsuit"
+	desc = "Just looking at this makes you want to 'wry...'"
+	icon_state = "dio_jumpsuit"
+	item_state = "dio_jumpsuit"
+	can_adjust = false

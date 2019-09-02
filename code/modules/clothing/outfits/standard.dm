@@ -438,3 +438,14 @@
 		/obj/item/gun/magic/wand/resurrection/debug=1,\
 		/obj/item/melee/transforming/energy/axe=1,\
 		/obj/item/storage/part_replacer/bluespace/tier4=1)
+
+/datum/outfit/diobrando
+	name = "Dio"
+	uniform = /obj/item/clothing/under/costume/diojumpsuit
+	suit = /obj/item/clothing/suit/wizrobe/diojacket
+	shoes = /obj/item/clothing/shoes/dioshoes
+	head = /obj/item/clothing/head/wizard/dioband
+	gloves = /obj/item/clothing/gloves/diowristbands
+	back = /obj/item/storage/backpack/satchel/leather
+	backpack_contents = list(/obj/item/book/granter/language_book/blahsucker=1,\
+	/obj/item/guardiancreator/choose/dextrous=1)

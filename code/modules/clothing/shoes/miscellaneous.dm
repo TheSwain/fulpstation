@@ -418,3 +418,9 @@
 	loot = list(
 		/obj/item/clothing/shoes/cowboy/lizard = 7,
 		/obj/item/clothing/shoes/cowboy/lizard/masterwork = 1)
+
+/obj/item/clothing/shoes/dioshoes
+	name = "Fabulous shoes"
+	desc = "Odd-looking shoes that are surprisingly comfortable despite their strange shape."
+	icon_state = "dio_shoes"
+	item_state = "dio_shoes"
