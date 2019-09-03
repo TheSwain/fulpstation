@@ -93,3 +93,17 @@
 	icon_state = "digi_mime"
 	alternate_worn_icon = 'icons/mob/feet_fulp.dmi'
 	item_state = "digi_mime"
+
+/obj/item/clothing/shoes/dioshoes
+	name = "Fabulous shoes"
+	desc = "Odd-looking shoes that are surprisingly comfortable despite their strange shape."
+	fulp_item = TRUE
+	icon = 'icons/obj/clothing/shoes_fulp.dmi'
+	icon_state = "dio_shoes"
+	alternate_worn_icon = 'icons/mob/feet_fulp.dmi'
+	item_state = "dio_shoes"
+
+
+
+
+

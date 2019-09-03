@@ -180,22 +180,8 @@
 	to_chat(usr, "<span class='notice'>\The robe hums, its internal magic supply restored.</span>")
 
 
-/obj/item/clothing/suit/diojacket
-	name = "Menacing Jacket"
-	desc = "Strange-looking jacket that most certainly belongs to a powerful stand user."
-	icon_state = "dio_jacket"
-	item_state = "dio_jacket"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 100)
 
 
-/obj/item/clothing/head/dioband
-	name = "Green-heart Headband"
-	desc = "Mysterious headband that most certainly belongs to a powerful stand user."
-	icon_state = "dio_headband"
-	item_state = "dio_headband"
-	clothing_flags = SNUG_FIT
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 100)
 
 //Shielded Armour
 

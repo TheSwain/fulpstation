@@ -67,8 +67,3 @@
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/punchcooldown)
 
-/obj/item/clothing/gloves/diowristbands
-	name = "Orange Wristbands"
-	desc = "You feel like if you were to put these on you'd have a big urge to rant on about futility and uselessness."
-	icon_state = "diobands"
-	item_state = "dbands"

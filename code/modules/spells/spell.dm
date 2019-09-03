@@ -196,7 +196,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 		/obj/item/clothing/suit/space/hardsuit/shielded/wizard,
 		/obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard,
 		/obj/item/clothing/suit/diojacket,
-		/obj/item/clothing/head/dioband))
+		/obj/item/clothing/head/dioband)) // DIO IS FULPCODE, DOUBT /TG/ WILL EVER CHANGE IT ANYWAY.
 
 		if(clothes_req) //clothes check
 			if(!is_type_in_typecache(H.wear_suit, casting_clothes))
