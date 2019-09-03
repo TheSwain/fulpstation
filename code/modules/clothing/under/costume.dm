@@ -286,7 +286,8 @@
 
 /obj/item/clothing/under/costume/diojumpsuit
 	name = "Menacing Jumpsuit"
-	desc = "Just looking at this makes you want to 'wry...'"
+	desc = "Just looking at this makes you want to wry..."
 	icon_state = "dio_jumpsuit"
 	item_state = "dio_jumpsuit"
-	can_adjust = false
+
+
