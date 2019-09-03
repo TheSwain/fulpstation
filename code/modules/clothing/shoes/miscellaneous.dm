@@ -424,3 +424,5 @@
 	desc = "Odd-looking shoes that are surprisingly comfortable despite their strange shape."
 	icon_state = "dio_shoes"
 	item_state = "dio_shoes"
+
+	
