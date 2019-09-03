@@ -126,9 +126,9 @@
 					  /obj/item/clothing/glasses/blindfold = 1,
 					  /obj/item/clothing/mask/muzzle = 2,
 					  /obj/item/clothing/under/costume/diojumpsuit=1,
-					  /obj/item/clothing/suit/wizrobe/diojacket=1,
+					  /obj/item/clothing/suit/diojacket=1,
 					  /obj/item/clothing/shoes/dioshoes=1,
-					  /obj/item/clothing/head/wizard/dioband=1,
+					  /obj/item/clothing/head/dioband=1,
 					  /obj/item/clothing/gloves/diowristbands=1)
 	premium = list(/obj/item/clothing/suit/pirate/captain = 2,
 				   /obj/item/clothing/head/pirate/captain = 2,
