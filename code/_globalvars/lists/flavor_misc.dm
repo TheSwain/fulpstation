@@ -66,6 +66,7 @@ GLOBAL_LIST_INIT(ai_core_display_screens, list(
 	"Inverted",
 	"Matrix",
 	"Monochrome",
+	"Moth", // [FULP] [PAPRITO] [PNX]
 	"Murica",
 	"Nanotrasen",
 	"Not Malf",
