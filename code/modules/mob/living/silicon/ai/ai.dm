@@ -15,7 +15,7 @@
 /mob/living/silicon/ai
 	name = "AI"
 	real_name = "AI"
-	icon = 'icons/mob/ai.dmi'
+	icon = 'icons/Fulpicons/fulp_ai.dmi' // [FULP] [PAPRITO] [PNX]
 	icon_state = "ai"
 	move_resist = MOVE_FORCE_VERY_STRONG
 	density = TRUE
@@ -135,7 +135,7 @@
 
 	set_core_display_icon()
 
-	holo_icon = getHologramIcon(icon('icons/mob/ai.dmi',"default"))
+	holo_icon = getHologramIcon(icon('icons/mob/fulp_ai.dmi',"default"))
 
 	spark_system = new /datum/effect_system/spark_spread()
 	spark_system.set_up(5, 0, src)
@@ -711,10 +711,10 @@
 						holo_icon = getHologramIcon(icon(icon_list[input], input))
 		else
 			var/list/icon_list = list(
-				"default" = 'icons/mob/ai.dmi',
-				"floating face" = 'icons/mob/ai.dmi',
+				"default" = 'icons/mob/fulp_ai.dmi',
+				"floating face" = 'icons/mob/fulp_ai.dmi',
 				"xeno queen" = 'icons/mob/alien.dmi',
-				"horror" = 'icons/mob/ai.dmi'
+				"horror" = 'icons/mob/fulp_ai.dmi'
 				)
 
 			input = input("Please select a hologram:") as null|anything in icon_list
