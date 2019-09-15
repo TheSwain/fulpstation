@@ -13,7 +13,6 @@
 	STR.max_w_class = WEIGHT_CLASS_SMALL //Better fit in my pockets and belt slot!
 	STR.set_holdable(list(
     /obj/item/flashlight/flare,
-    /obj/item/flashlight/flare/classic,
     /obj/item/flashlight/glowstick,
     /obj/item/flashlight/glowstick/military, // Military designates that Sec uses it. Lasts longer than a civilian glowstick.
     /obj/item/flashlight/glowstick/red,
@@ -90,19 +89,3 @@
 /obj/item/flashlight/glowstick/ultra/orange
       	name = "orange ultra-bright glowstick"
       	color = LIGHT_COLOR_ORANGE
-
-
-/*
-    THE HOLY RED FLARE!!!!
-*/
-/obj/item/flashlight/flare/classic
-	name = "flare"
-	desc = "An old red Nanotrasen issued flare. There are instructions on the side, it reads 'pull cord, make light'. These were discontinued in favor of the new white flare." // [PNX] Muh lore!
-	w_class = WEIGHT_CLASS_SMALL
-	brightness_on = 7 // Pretty bright.
-	icon_state = "flare"
-	item_state = "flare"
-	actions_types = list()
-	heat = 1000
-	light_color = LIGHT_COLOR_FLARE // Oh yeah baby give me that classic red~!
-	grind_results = list(/datum/reagent/sulfur = 15)

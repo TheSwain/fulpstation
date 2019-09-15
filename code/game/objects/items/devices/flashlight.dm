@@ -249,7 +249,7 @@
 
 /obj/item/flashlight/flare
 	name = "flare"
-	desc = "A white Nanotrasen issued flare. There are instructions on the side, it reads 'pull cord, make light'." // [FULP] [PNX] Changed to white
+	desc = "A red Nanotrasen issued flare. There are instructions on the side, it reads 'pull cord, make light'."
 	w_class = WEIGHT_CLASS_SMALL
 	brightness_on = 7 // Pretty bright.
 	icon_state = "flare"
@@ -259,7 +259,7 @@
 	var/on_damage = 7
 	var/produce_heat = 1500
 	heat = 1000
-	light_color = LIGHT_COLOR_WHITE // [FULP] [PNX] Changed to white
+	light_color = LIGHT_COLOR_FLARE
 	grind_results = list(/datum/reagent/sulfur = 15)
 
 /obj/item/flashlight/flare/Initialize()
