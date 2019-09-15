@@ -70,8 +70,8 @@
         	color = LIGHT_COLOR_ORANGE
 
 /obj/item/flashlight/glowstick/high/white
-          name = "white high-power glowstick"
-        	color = LIGHT_COLOR_WHITE
+					name = "white high-power glowstick"
+					color = LIGHT_COLOR_WHITE
 
 
 /obj/item/flashlight/glowstick/ultra
@@ -82,9 +82,9 @@
         flashlight_power = 2
 
 /obj/item/flashlight/glowstick/high/Initialize()
-        fuel = rand(500, 800)
-      	light_color = color
-        . = ..()
+					fuel = rand(500, 800)
+					light_color = color
+					. = ..()
 
 /obj/item/flashlight/glowstick/high/orange
       	name = "orange ultra-bright glowstick"
