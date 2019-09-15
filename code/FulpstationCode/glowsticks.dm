@@ -2,7 +2,8 @@
 	name = "emergency light pouch"
 	desc = "A pouch specially designed to contain flares and glowsticks."
 	icon_state = "securitybelt"
-	item_state = "security" //Could likely use a better one.
+	item_state = "security"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
 	content_overlays = FALSE
 
 /obj/item/storage/belt/security/emerlightpouch/ComponentInitialize()
@@ -31,7 +32,7 @@
 
 
 /obj/item/flashlight/glowstick/military
-    	name = "glowstick"
+    	name = "military glowstick"
     	desc = "A military-grade glowstick. Has a longer life spawn than its' civilian counterpart."
     	custom_price = 20
     	brightness_on = 4
@@ -61,7 +62,7 @@
         brightness_on = 4
 
 /obj/item/flashlight/glowstick/high/Initialize()
-        fuel = rand(800, 1100) // [FULP] [PNX] decreased from (1600, 2000) to (1100, 1500)
+        fuel = rand(700, 900)
         light_color = color
         . = ..()
 
@@ -82,7 +83,7 @@
         flashlight_power = 2
 
 /obj/item/flashlight/glowstick/ultra/Initialize()
-					fuel = rand(500, 800)
+					fuel = rand(450, 550)
 					light_color = color
 					. = ..()
 

@@ -12,6 +12,11 @@
 					/obj/item/storage/belt/utility = 4,
 					/obj/item/clothing/glasses/meson/engine = 4,
 					/obj/item/clothing/gloves/color/yellow = 4,
+					/obj/item/storage/belt/security/emerlightpouch = 4, // [FULP] [PNX]
+					/obj/item/flashlight/glowstick/ultra/orange = 8, // [FULP] [PNX]
+					/obj/item/flashlight/glowstick/high/white = 8, // [FULP] [PNX]
+					/obj/item/flashlight/glowstick/high/orange = 8, // [FULP] [PNX]
+					/obj/item/flashlight/glowstick/orange = 8, // [FULP] [PNX]
 					/obj/item/screwdriver = 12,
 					/obj/item/crowbar = 12,
 					/obj/item/wirecutters = 12,
