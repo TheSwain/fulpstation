@@ -249,7 +249,7 @@
 
 /obj/item/flashlight/flare
 	name = "flare"
-	desc = "A red Nanotrasen issued flare. There are instructions on the side, it reads 'pull cord, make light'."
+	desc = "A white Nanotrasen issued flare. There are instructions on the side, it reads 'pull cord, make light'." // [FULP] [PNX] Changed to white
 	w_class = WEIGHT_CLASS_SMALL
 	brightness_on = 7 // Pretty bright.
 	icon_state = "flare"
@@ -259,7 +259,7 @@
 	var/on_damage = 7
 	var/produce_heat = 1500
 	heat = 1000
-	light_color = LIGHT_COLOR_FLARE
+	light_color = LIGHT_COLOR_WHITE // [FULP] [PNX] Changed to white
 	grind_results = list(/datum/reagent/sulfur = 15)
 
 /obj/item/flashlight/flare/Initialize()
@@ -422,10 +422,10 @@
 // but not similar enough to make it worth a refactor
 /obj/item/flashlight/glowstick
 	name = "glowstick"
-	desc = "A military-grade glowstick."
+	desc = "A civilian-grade glowstick." // Changed from military-grade to civilian-grade
 	custom_price = 10
 	w_class = WEIGHT_CLASS_SMALL
-	brightness_on = 4
+	brightness_on = 3 // [FULP] [PNX] changed from range 4 to range 3
 	color = LIGHT_COLOR_GREEN
 	icon_state = "glowstick"
 	item_state = "glowstick"
@@ -433,7 +433,7 @@
 	var/fuel = 0
 
 /obj/item/flashlight/glowstick/Initialize()
-	fuel = rand(1600, 2000)
+	fuel = rand(1100, 1500) // [FULP] [PNX] decreased from (1600, 2000) to (1100, 1500)
 	light_color = color
 	. = ..()
 

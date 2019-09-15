@@ -11,8 +11,8 @@
 		            /obj/item/analyzer = 5,
 		            /obj/item/t_scanner = 5,
 		            /obj/item/screwdriver = 5,
-		            /obj/item/flashlight/glowstick = 3,
-		            /obj/item/flashlight/glowstick/red = 3,
+		            /obj/item/flashlight/glowstick = 8, // [FULP] [PNX] Increased from 3 to 8 to allow more people to use them.
+		            /obj/item/flashlight/glowstick/red = 6, // [FULP] [PNX] Increased from 3 to 6 to allow more people to use them.
 		            /obj/item/flashlight = 5,
 		            /obj/item/clothing/ears/earmuffs = 1)
 	contraband = list(/obj/item/clothing/gloves/color/fyellow = 2)
