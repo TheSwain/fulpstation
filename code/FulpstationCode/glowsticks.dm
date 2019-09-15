@@ -5,7 +5,7 @@
 	item_state = "security" //Could likely use a better one.
 	content_overlays = FALSE
 
-/obj/item/storage/belt/security/emerlightpouch/glowstickpouch/ComponentInitialize()
+/obj/item/storage/belt/security/emerlightpouch/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 4 // Not gonna' let y'all hoard them for yourself. Four lights is enough.
@@ -14,18 +14,18 @@
     /obj/item/flashlight/flare,
     /obj/item/flashlight/flare/classic,
     /obj/item/flashlight/glowstick,
-    /obj/item/flashlight/glowstick/military // Military designates that Sec uses it. Lasts longer than a civilian glowstick.
+    /obj/item/flashlight/glowstick/military, // Military designates that Sec uses it. Lasts longer than a civilian glowstick.
     /obj/item/flashlight/glowstick/red,
-    /obj/item/flashlight/glowstick/military/red
+    /obj/item/flashlight/glowstick/military/red,
     /obj/item/flashlight/glowstick/blue,
     /obj/item/flashlight/glowstick/cyan,
-    /obj/item/flashlight/glowstick/military/cyan
+    /obj/item/flashlight/glowstick/military/cyan,
     /obj/item/flashlight/glowstick/orange,
-    /obj/item/flashlight/glowstick/high/orange // High designates that it's high power. Brighter than a civilian glowstick but lasts a bit shorter.
-    /obj/item/flashlight/glowstick/ultra/orange // Ultra designates that it's ULTRA BRIGHT and lasts a very short time. Used to light and mark dangerous areas under repair.
+    /obj/item/flashlight/glowstick/high/orange, // High designates that it's high power. Brighter than a civilian glowstick but lasts a bit shorter.
+    /obj/item/flashlight/glowstick/ultra/orange, // Ultra designates that it's ULTRA BRIGHT and lasts a very short time. Used to light and mark dangerous areas under repair.
     /obj/item/flashlight/glowstick/yellow,
-    /obj/item/flashlight/glowstick/military/yellow
-    /obj/item/flashlight/glowstick/high/white
+    /obj/item/flashlight/glowstick/military/yellow,
+    /obj/item/flashlight/glowstick/high/white,
     /obj/item/flashlight/glowstick/pink
 		))
 
