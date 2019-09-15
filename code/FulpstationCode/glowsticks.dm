@@ -32,7 +32,7 @@
 
 /obj/item/flashlight/glowstick/military
     	name = "glowstick"
-    	desc = "A military-grade glowstick. Has a longer life spawn than its' civilian counterpart." // Changed from military-grade to civilian-grade
+    	desc = "A military-grade glowstick. Has a longer life spawn than its' civilian counterpart."
     	custom_price = 20
     	brightness_on = 4
 
@@ -81,12 +81,12 @@
         brightness_on = 5
         flashlight_power = 2
 
-/obj/item/flashlight/glowstick/high/Initialize()
+/obj/item/flashlight/glowstick/ultra/Initialize()
 					fuel = rand(500, 800)
 					light_color = color
 					. = ..()
 
-/obj/item/flashlight/glowstick/high/orange
+/obj/item/flashlight/glowstick/ultra/orange
       	name = "orange ultra-bright glowstick"
       	color = LIGHT_COLOR_ORANGE
 
@@ -102,9 +102,6 @@
 	icon_state = "flare"
 	item_state = "flare"
 	actions_types = list()
-	var/fuel = 0
-	var/on_damage = 7
-	var/produce_heat = 1500
 	heat = 1000
 	light_color = LIGHT_COLOR_FLARE // Oh yeah baby give me that classic red~!
 	grind_results = list(/datum/reagent/sulfur = 15)
