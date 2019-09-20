@@ -92,12 +92,33 @@
     /obj/item/stack/medical/ointment
 		)) // Basic first-aid supplies only. Like the desc says.
 
+/obj/item/storage/belt/pouch/firstaid/ifak
+	name = "infantry first-aid kit"
+	desc = "This is a first-aid kit issued to Security personal to tend to someone's wounds."
+	icon_state = "first_aid_pouch"
+	item_state = "first_aid_pouch"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
+	custom_price = 30
+
+/obj/item/storage/belt/pouch/firstaid/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 3
+	STR.max_w_class = WEIGHT_CLASS_TINY
+  STR.max_combined_w_class = 6 // Let's hope this only let's them have 6 items total. 2 gauze, 2 ointment, 2 packs.
+	STR.set_holdable(list(
+    /obj/item/stack/medical/gauze,
+    /obj/item/stack/medical/gauze/improvised,
+    /obj/item/stack/medical/bruise_pack,
+    /obj/item/stack/medical/ointment
+		)) // Basic first-aid supplies only. Like the desc says.
+
 
 /obj/item/storage/belt/pouch/medical
 	name = "first-aid pouch"
 	desc = "A small pouch for carrying first-aid supplies."
-	icon_state = "first_aid_pouch"
-	item_state = "first_aid_pouch"
+	icon_state = "medical_pouch"
+	item_state = "medical_pouch"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
 	custom_price = 30
 
@@ -127,8 +148,8 @@
 /obj/item/storage/belt/pouch/medical/cmo
 	name = "/improper Chief Medical Officer's medical pouch"
 	desc = "A small pouch for carrying first-aid supplies."
-	icon_state = "first_aid_pouch"
-	item_state = "first_aid_pouch"
+	icon_state = "cmo_pouch"
+	item_state = "cmo_pouch"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
 	custom_price = 30
 
