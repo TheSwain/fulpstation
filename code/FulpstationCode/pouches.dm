@@ -91,14 +91,14 @@
 		/obj/item/stack/medical/ointment/compact
 		)) // Basic first-aid supplies only. Like the desc says.
 
-/obj/item/storage/belt/pouch/firstaid/full/PopulateContents()
+/obj/item/storage/belt/pouch/firstaid/PopulateContents()
 	new /obj/item/stack/medical/bruise_pack/compact(src)
 	new /obj/item/stack/medical/ointment/compact(src)
 
 
 /obj/item/storage/belt/pouch/firstaid/ifak
 	name = "infantry first-aid kit"
-	desc = "This is an IFAK, an Infantry First-Aid Kit designed to carry compact medical supplies for use in saving someone's life. Typically used to tend to another downed officer."
+	desc = "This is an IFAK, an Infantry First-Aid Kit designed to carry compact medical supplies."
 	icon_state = "ifak"
 	item_state = "ifak"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
@@ -119,7 +119,7 @@
 		/obj/item/reagent_containers/medigel/thin
 		)) // Couple more items
 
-/obj/item/storage/belt/pouch/firstaid/full/PopulateContents()
+/obj/item/storage/belt/pouch/firstaid/ifak/PopulateContents()
 		new /obj/item/stack/medical/bruise_pack/compact(src)
 		new /obj/item/stack/medical/gauze/compact(src)
 		new /obj/item/stack/medical/ointment/compact(src)
@@ -157,7 +157,7 @@
   	))
 
 /obj/item/storage/belt/pouch/medical/cmo
-	name = "/improper Chief Medical Officer's medical pouch"
+	name = "\improper Chief Medical Officer's medical pouch"
 	desc = "A large pouch designed to carry medical supplies."
 	icon_state = "cmo_pouch"
 	item_state = "cmo_pouch"

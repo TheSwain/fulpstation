@@ -12,11 +12,12 @@
 					/obj/item/reagent_containers/food/snacks/donut = 12,
 					/obj/item/storage/box/evidence = 6,
 					/obj/item/flashlight/seclite = 4,
-					/obj/item/flashlight/glowstick/military = 10, // [FULP] [PNX]
-					/obj/item/flashlight/glowstick/military/red = 10, // [FULP] [PNX]
-					/obj/item/flashlight/glowstick/military/cyan = 10, // [FULP] [PNX]
-					/obj/item/flashlight/glowstick/military/yellow = 10, // [FULP] [PNX]
-					/obj/item/storage/belt/pouch/lights/security = 4, // [FULP] [PNX]
+					/obj/item/flashlight/glowstick/military = 10, // [FULP] [PNX] Start
+					/obj/item/flashlight/glowstick/military/red = 10,
+					/obj/item/flashlight/glowstick/military/cyan = 10,
+					/obj/item/flashlight/glowstick/military/yellow = 10,
+					/obj/item/storage/belt/pouch/lights/security = 4,
+					/obj/item/storage/belt/pouch/firstaid/ifak = 4, // [FULP] [PNX] End
 					/obj/item/restraints/legcuffs/bola/energy = 7)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
 					  /obj/item/storage/fancy/donut_box = 2)

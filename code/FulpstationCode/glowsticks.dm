@@ -45,7 +45,7 @@
 /obj/item/flashlight/glowstick/ultra
         name = "ultra-bright glowstick"
         desc = "An ultra-bright civilian-grade glowstick used by Engineers to mark hazardous areas under repair. Emits a very bright light at the cost of a shorter life span."
-        custom_price = 20
+        custom_price = 25
         brightness_on = 5
         flashlight_power = 2
 
