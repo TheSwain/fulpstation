@@ -15,12 +15,12 @@
 					/obj/item/electronics/apc = 10,
 					/obj/item/electronics/airalarm = 10,
 					/obj/item/electronics/firealarm = 10,
-					/obj/item/electronics/firelock = 10)
+					/obj/item/electronics/firelock = 10,
 					/obj/item/storage/belt/pouch/lights = 4, // [FULP] [PNX]
 					/obj/item/flashlight/glowstick/ultra/orange = 8, // [FULP] [PNX]
 					/obj/item/flashlight/glowstick/high/white = 8, // [FULP] [PNX]
 					/obj/item/flashlight/glowstick/high/orange = 8, // [FULP] [PNX]
-					/obj/item/flashlight/glowstick/orange = 8, // [FULP] [PNX]
+					/obj/item/flashlight/glowstick/orange = 8) // [FULP] [PNX]
 	contraband = list(/obj/item/stock_parts/cell/potato = 3)
 	premium = list(/obj/item/storage/belt/utility = 3,
 				   /obj/item/storage/box/smart_metal_foam = 1)
