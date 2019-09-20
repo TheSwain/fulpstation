@@ -75,8 +75,9 @@
 	new /obj/item/wallframe/defib_mount(src)
 	new /obj/item/circuitboard/machine/techfab/department/medical(src)
 	new /obj/item/storage/photo_album/CMO(src)
-	new /obj/item/card/id/departmental_budget/med(src)
 	new /obj/item/clothing/shoes/sneakers/brown/digitigrade(src) //fulp
+	new /obj/item/storage/belt/pouch/medical/cmo(src) //[FULP] [PNX]
+	new /obj/item/card/id/departmental_budget/med(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control"

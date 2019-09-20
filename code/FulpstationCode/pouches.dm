@@ -73,7 +73,7 @@
 
 /obj/item/storage/belt/pouch/firstaid
 	name = "first-aid pouch"
-	desc = "A small pouch for carrying basic first-aid supplies."
+	desc = "A small pouch for carrying compact first-aid supplies."
 	icon_state = "first_aid_pouch"
 	item_state = "first_aid_pouch"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
@@ -82,41 +82,52 @@
 /obj/item/storage/belt/pouch/firstaid/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 3
+	STR.max_items = 2
 	STR.max_w_class = WEIGHT_CLASS_TINY
-  STR.max_combined_w_class = 6 // Let's hope this only let's them have 6 items total. 2 gauze, 2 ointment, 2 packs.
+  STR.max_combined_w_class = 2
 	STR.set_holdable(list(
-    /obj/item/stack/medical/gauze,
-    /obj/item/stack/medical/gauze/improvised,
-    /obj/item/stack/medical/bruise_pack,
-    /obj/item/stack/medical/ointment
+		/obj/item/stack/medical/bruise_pack/compact
+		/obj/item/stack/medical/gauze/compact
+		/obj/item/stack/medical/ointment/compact
 		)) // Basic first-aid supplies only. Like the desc says.
+
+/obj/item/storage/belt/pouch/firstaid/full/PopulateContents()
+	new /obj/item/stack/medical/bruise_pack/compact(src)
+	new /obj/item/stack/medical/ointment/compact(src)
+
 
 /obj/item/storage/belt/pouch/firstaid/ifak
 	name = "infantry first-aid kit"
-	desc = "This is a first-aid kit issued to Security personal to tend to someone's wounds."
-	icon_state = "first_aid_pouch"
-	item_state = "first_aid_pouch"
+	desc = "This is an IFAK, an Infantry First-Aid Kit designed to carry compact medical supplies for use in saving someone's life. Typically used to tend to another downed officer."
+	icon_state = "ifak"
+	item_state = "ifak"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
 	custom_price = 30
 
-/obj/item/storage/belt/pouch/firstaid/ComponentInitialize()
+/obj/item/storage/belt/pouch/firstaid/ifak/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 3
 	STR.max_w_class = WEIGHT_CLASS_TINY
-  STR.max_combined_w_class = 6 // Let's hope this only let's them have 6 items total. 2 gauze, 2 ointment, 2 packs.
+  STR.max_combined_w_class = 3
 	STR.set_holdable(list(
-    /obj/item/stack/medical/gauze,
-    /obj/item/stack/medical/gauze/improvised,
-    /obj/item/stack/medical/bruise_pack,
-    /obj/item/stack/medical/ointment
-		)) // Basic first-aid supplies only. Like the desc says.
+		/obj/item/stack/medical/bruise_pack/compact
+		/obj/item/stack/medical/gauze/compact
+		/obj/item/stack/medical/ointment/compact
+		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/reagent_containers/medigel/thin
+		)) // Couple more items
+
+/obj/item/storage/belt/pouch/firstaid/full/PopulateContents()
+		new /obj/item/stack/medical/bruise_pack/compact(src)
+		new /obj/item/stack/medical/gauze/compact(src)
+		new /obj/item/stack/medical/ointment/compact(src)
 
 
 /obj/item/storage/belt/pouch/medical
-	name = "first-aid pouch"
-	desc = "A small pouch for carrying first-aid supplies."
+	name = "medical pouch"
+	desc = "A small pouch designed for carrying medical supplies."
 	icon_state = "medical_pouch"
 	item_state = "medical_pouch"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
@@ -125,9 +136,9 @@
 /obj/item/storage/belt/pouch/medical/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 4
+	STR.max_items = 3
 	STR.max_w_class = WEIGHT_CLASS_SMALL
-	STR.max_combined_w_class = 8 // Random number :P
+	STR.max_combined_w_class = 3
 	STR.set_holdable(list(
   	/obj/item/healthanalyzer,
   	/obj/item/reagent_containers/pill,
@@ -142,12 +153,12 @@
   	/obj/item/geiger_counter, // Sure, why not.
   	/obj/item/clothing/glasses,
   	/obj/item/clothing/mask/muzzle,
-  	/obj/item/gun/syringe/syndicate,
+  	/obj/item/reagent_containers/hypospray
   	))
 
 /obj/item/storage/belt/pouch/medical/cmo
 	name = "/improper Chief Medical Officer's medical pouch"
-	desc = "A small pouch for carrying first-aid supplies."
+	desc = "A large pouch designed to carry medical supplies."
 	icon_state = "cmo_pouch"
 	item_state = "cmo_pouch"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
@@ -178,8 +189,6 @@
 		/obj/item/clothing/mask/breath/medical,
 		/obj/item/surgical_drapes,
 		/obj/item/scalpel,
-		/obj/item/circular_saw, // These should be too big for the pouch.
-		/obj/item/surgicaldrill,
 		/obj/item/retractor,
 		/obj/item/cautery,
 		/obj/item/hemostat,
