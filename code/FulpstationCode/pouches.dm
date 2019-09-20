@@ -1,7 +1,7 @@
 /obj/item/storage/belt/pouch // This is the base pouch which is not used in-game.
 	name = "a pouch"
 	desc = "A pouch, it holds stuff/ You shouldn't be able to get this one though."
-	icon = 'icons/fulpicons/phoenix_nest/pouches'
+	icon = 'icons/fulpicons/phoenix_nest/pouches.dmi'
 	icon_state = "flare_pouch"
 	item_state = "flare_pouch"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
@@ -74,7 +74,6 @@
 /obj/item/storage/belt/pouch/firstaid
 	name = "first-aid pouch"
 	desc = "A small pouch for carrying basic first-aid supplies."
-	icon = 'icons/fulpicons/phoenix_nest/pouches'
 	icon_state = "first_aid_pouch"
 	item_state = "first_aid_pouch"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
