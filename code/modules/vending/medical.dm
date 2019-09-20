@@ -24,6 +24,7 @@
 					/obj/item/reagent_containers/medigel/aiuri = 2,
 					/obj/item/reagent_containers/medigel/sterilizine = 1,
 					/obj/item/flashlight/glowstick/cyan = 3, // [FULP] [PNX]
+					/obj/item/storage/belt/pouch/medical = 1, // [FULP] [PNX] This totally won't be abused...
 					/obj/item/sensor_device = 2,
 					/obj/item/pinpointer/crew = 2)
 	contraband = list(/obj/item/reagent_containers/pill/tox = 3,

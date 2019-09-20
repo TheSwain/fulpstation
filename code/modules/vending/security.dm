@@ -16,7 +16,7 @@
 					/obj/item/flashlight/glowstick/military/red = 10, // [FULP] [PNX]
 					/obj/item/flashlight/glowstick/military/cyan = 10, // [FULP] [PNX]
 					/obj/item/flashlight/glowstick/military/yellow = 10, // [FULP] [PNX]
-					/obj/item/storage/belt/security/emerlightpouch = 4, // [FULP] [PNX]
+					/obj/item/storage/belt/pouch/lights/security = 4, // [FULP] [PNX]
 					/obj/item/restraints/legcuffs/bola/energy = 7)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
 					  /obj/item/storage/fancy/donut_box = 2)
