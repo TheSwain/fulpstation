@@ -84,10 +84,10 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 2
 	STR.max_w_class = WEIGHT_CLASS_TINY
-  STR.max_combined_w_class = 2
+	STR.max_combined_w_class = 2
 	STR.set_holdable(list(
-		/obj/item/stack/medical/bruise_pack/compact
-		/obj/item/stack/medical/gauze/compact
+		/obj/item/stack/medical/bruise_pack/compact,
+		/obj/item/stack/medical/gauze/compact,
 		/obj/item/stack/medical/ointment/compact
 		)) // Basic first-aid supplies only. Like the desc says.
 
@@ -111,9 +111,9 @@
 	STR.max_w_class = WEIGHT_CLASS_TINY
   STR.max_combined_w_class = 3
 	STR.set_holdable(list(
-		/obj/item/stack/medical/bruise_pack/compact
-		/obj/item/stack/medical/gauze/compact
-		/obj/item/stack/medical/ointment/compact
+		/obj/item/stack/medical/bruise_pack/compact,
+		/obj/item/stack/medical/gauze/compact,
+		/obj/item/stack/medical/ointment/compact,
 		/obj/item/reagent_containers/pill,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/reagent_containers/medigel/thin

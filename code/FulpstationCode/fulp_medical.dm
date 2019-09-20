@@ -62,11 +62,10 @@
 	icon = 'icons/obj/stack_objects.dmi'
 	singular_name = "compact medical gauze"
 	icon_state = "gauze"
-	var/stop_bleeding = 1800
 	amount = 3
 	max_amount = 3
 
-	/obj/item/reagent_containers/medigel/thin/stypticpowder
+/obj/item/reagent_containers/medigel/thin/stypticpowder
 	name = "thin medical gel bottle (styptic)"
 	desc = "Heals bruises"
 	icon = 'icons/fulpicons/phoenix_nest/medigel.dmi'
