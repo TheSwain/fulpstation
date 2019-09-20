@@ -79,7 +79,7 @@
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
 	custom_price = 30
 
-/obj/item/storage/belt/pouch/medical/ComponentInitialize()
+/obj/item/storage/belt/pouch/firstaid/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 3
@@ -106,8 +106,8 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 4
 	STR.max_w_class = WEIGHT_CLASS_SMALL
-  STR.max_combined_w_class = 8 // Random number :P
-  STR.set_holdable(list(
+	STR.max_combined_w_class = 8 // Random number :P
+	STR.set_holdable(list(
   	/obj/item/healthanalyzer,
   	/obj/item/reagent_containers/pill,
   	/obj/item/reagent_containers/syringe,
@@ -115,7 +115,7 @@
   	/obj/item/stack/medical,
   	/obj/item/flashlight/pen,
   	/obj/item/reagent_containers/hypospray,
-	  /obj/item/clothing/gloves/,
+  	/obj/item/clothing/gloves/,
   	/obj/item/clothing/mask/surgical,
   	/obj/item/clothing/mask/breath/medical,
   	/obj/item/geiger_counter, // Sure, why not.
@@ -137,8 +137,8 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 5
 	STR.max_w_class = WEIGHT_CLASS_SMALL
-  STR.max_combined_w_class = 10
-  STR.set_holdable(list(
+	STR.max_combined_w_class = 10
+	STR.set_holdable(list(
 		/obj/item/healthanalyzer,
 		/obj/item/dnainjector,
 		/obj/item/reagent_containers/dropper,
