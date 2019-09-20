@@ -71,14 +71,14 @@
     /obj/item/flashlight/glowstick/pink
 		))
 
-    /obj/item/storage/belt/pouch/medical
-    	name = "first-aid pouch"
-    	desc = "A small pouch for carrying basic first-aid supplies."
-    	icon = 'icons/Fulpicons/phoenix_nest/pouches'
-    	icon_state = "first_aid_pouch"
-    	item_state = "first_aid_pouch"
-    	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
-    	custom_price = 30
+/obj/item/storage/belt/pouch/medical
+	name = "first-aid pouch"
+	desc = "A small pouch for carrying basic first-aid supplies."
+	icon = 'icons/Fulpicons/phoenix_nest/pouches'
+	icon_state = "first_aid_pouch"
+	item_state = "first_aid_pouch"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
+	custom_price = 30
 
 /obj/item/storage/belt/pouch/medical/ComponentInitialize()
 	. = ..()
