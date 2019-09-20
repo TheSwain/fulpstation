@@ -81,6 +81,14 @@
 	list_reagents = list(/datum/reagent/medicine/CF/silver_sulfadiazine = 30)
 	icon_state = "burngelthin"
 
+/obj/item/gps/medical
+	icon = 'icons/fulpicons/phoenix_nest/gps.dmi'
+	icon_state = "gps-med"
+	desc = "Helping EMTs locate unfortunate spaced individuals since 2019."
+	gpstag = "EMT0"
+	desc = "A positioning system helpful for finding spaced individuals who were smart enough to take a GPS with them. Carrying this with you might just save your corpse too."
+
+
 // =================================================
 // Medical Kits
 
