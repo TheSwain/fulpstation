@@ -1,13 +1,13 @@
 /obj/item/storage/belt/pouch // This is the base pouch which is not used in-game.
 	name = "a pouch"
 	desc = "A pouch, it holds stuff/ You shouldn't be able to get this one though."
-	icon = 'icons/Fulpicons/phoenix_nest/pouches'
+	icon = 'icons/fulpicons/phoenix_nest/pouches'
 	icon_state = "flare_pouch"
 	item_state = "flare_pouch"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
 	custom_price = 5
 
-  /obj/item/storage/belt/pouch/ComponentInitialize()
+/obj/item/storage/belt/pouch/ComponentInitialize()
   	. = ..()
   	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
   	STR.max_items = 2
@@ -48,11 +48,11 @@
 		icon_state = "flare_pouch_mili"
 		item_state = "flare_pouch_mili"
 		custom_price = 40
-/obj/item/storage/belt/emerlightpouch/security/ComponentInitialize()
+/obj/item/storage/belt/pouch/lights/security/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 4
-	STR.max_w_class = WEIGHT_CLASS_MEDIUM
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
     /obj/item/flashlight/flare,
     /obj/item/flashlight/glowstick,
@@ -71,10 +71,10 @@
     /obj/item/flashlight/glowstick/pink
 		))
 
-/obj/item/storage/belt/pouch/medical
+/obj/item/storage/belt/pouch/firstaid
 	name = "first-aid pouch"
 	desc = "A small pouch for carrying basic first-aid supplies."
-	icon = 'icons/Fulpicons/phoenix_nest/pouches'
+	icon = 'icons/fulpicons/phoenix_nest/pouches'
 	icon_state = "first_aid_pouch"
 	item_state = "first_aid_pouch"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
@@ -97,7 +97,6 @@
 /obj/item/storage/belt/pouch/medical
 	name = "first-aid pouch"
 	desc = "A small pouch for carrying first-aid supplies."
-	icon = 'icons/Fulpicons/phoenix_nest/pouches'
 	icon_state = "first_aid_pouch"
 	item_state = "first_aid_pouch"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
@@ -117,7 +116,7 @@
   	/obj/item/stack/medical,
   	/obj/item/flashlight/pen,
   	/obj/item/reagent_containers/hypospray,
-  	/obj/item/clothing/gloves/,
+	  /obj/item/clothing/gloves/,
   	/obj/item/clothing/mask/surgical,
   	/obj/item/clothing/mask/breath/medical,
   	/obj/item/geiger_counter, // Sure, why not.
@@ -126,21 +125,20 @@
   	/obj/item/gun/syringe/syndicate,
   	))
 
-/obj/item/storage/belt/pouch/medical
+/obj/item/storage/belt/pouch/medical/cmo
 	name = "/improper Chief Medical Officer's medical pouch"
 	desc = "A small pouch for carrying first-aid supplies."
-	icon = 'icons/Fulpicons/phoenix_nest/pouches'
 	icon_state = "first_aid_pouch"
 	item_state = "first_aid_pouch"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
 	custom_price = 30
 
-/obj/item/storage/belt/pouch/medical/ComponentInitialize()
+/obj/item/storage/belt/pouch/medical/cmo/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 5
 	STR.max_w_class = WEIGHT_CLASS_SMALL
-  STR.max_combined_w_class = 10 // Random number :P
+  STR.max_combined_w_class = 10
   STR.set_holdable(list(
 		/obj/item/healthanalyzer,
 		/obj/item/dnainjector,
@@ -160,8 +158,8 @@
 		/obj/item/clothing/mask/breath/medical,
 		/obj/item/surgical_drapes,
 		/obj/item/scalpel,
-		// /obj/item/circular_saw, These are too big for the pouch.
-		// /obj/item/surgicaldrill,
+		/obj/item/circular_saw, // These should be too big for the pouch.
+		/obj/item/surgicaldrill,
 		/obj/item/retractor,
 		/obj/item/cautery,
 		/obj/item/hemostat,
