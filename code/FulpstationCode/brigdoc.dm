@@ -1,4 +1,4 @@
-/datum/job/brigdoc //[FULP] [XEON] [PNX] Brig Doctor job, a modified version Xeon's EMT job.
+/datum/job/fulp/brigdoc //[FULP] [XEON] [PNX] Brig Doctor job, a modified version Xeon's EMT job.
 	title = "Brig Doctor" // Files modified for this job are: code/modules/jobs/jobs.dm, code/modules/jobs/access.dm, code/__DEFINES/jobs.dm
 	flag = BRIG_DOC
 	department_head = list("Warden")
@@ -13,6 +13,7 @@
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = list(EXP_TYPE_MEDICAL, EXP_TYPE_SECURITY) // Shot in the dark tbh. This probably does nothing.
 	outfit = /datum/outfit/job/brigdoc
+	fulp_spawn = /area/security/main //spawn location
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, // Skeleton Medical access
 									ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_MECH_SECURITY, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS, // Skeleton Security access
@@ -26,7 +27,7 @@
 
 /datum/outfit/job/brigdoc //Brig Doc outfit
 	name = "Brig Doctor"
-	jobtype = /datum/job/brigdoc
+	jobtype = /datum/job/fulp/brigdoc
 
 	//head = /obj/item/clothing/head/helmet/sec // Uncomment if you want the Brig Doc to have a helmet.
 	belt = /obj/item/storage/belt/medsec // Gives the Brig Doc the newly created MedSec belt
@@ -53,6 +54,8 @@
 	implants = list(/obj/item/implant/mindshield) //Comment this line out if you'd like Brig Docs to not have a mindshield implant at round start.
 
 	chameleon_extras = /obj/item/gun/syringe
+
+
 
 // Brig Doc Equipment and Medical Supplies.
 // Moved to fulp_medical.dm
