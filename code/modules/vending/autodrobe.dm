@@ -24,7 +24,6 @@
 					/obj/item/clothing/under/costume/schoolgirl/red = 1,
 					/obj/item/clothing/under/costume/schoolgirl/green = 1,
 					/obj/item/clothing/under/costume/schoolgirl/orange = 1,
-					/obj/item/clothing/head/kitty = 1,
 					/obj/item/clothing/under/dress/skirt = 1,
 					/obj/item/clothing/head/beret = 1,
 					/obj/item/clothing/accessory/waistcoat = 1,
