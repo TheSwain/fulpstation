@@ -38,11 +38,13 @@
 
 /obj/item/stack/medical/ointment/compact
 	name = "compact ointment"
-	desc = "Used to treat those nasty burn wounds."
+	desc = "A small compact tube of ointment used to treat burn wounds."
 	gender = PLURAL
 	icon = 'icons/obj/stack_objects.dmi'
 	amount = 2
 	max_amount = 2
+	heal_burn = 25 // Heals 25 damage instead of 40
+	self_delay = 15 // Is a little quicker to apply though
 	singular_name = "compact ointment"
 	icon_state = "ointment"
 
@@ -50,18 +52,21 @@
 	name = "compact bruise pack"
 	singular_name = "bruise pack"
 	icon = 'icons/obj/stack_objects.dmi'
-	desc = "A therapeutic gel pack and bandages designed to treat blunt-force trauma."
+	desc = "A small compact therapeutic gel pack and with bandages designed to treat blunt-force trauma."
 	icon_state = "brutepack"
+	heal_brute = 25
+	self_delay = 15
 	amount = 2
 	max_amount = 2
 
 /obj/item/stack/medical/gauze/compact
 	name = "compact medical gauze"
-	desc = "A roll of elastic cloth that is extremely effective at stopping bleeding, but does not heal wounds."
+	desc = "A compact roll of elastic cloth that is extremely effective at stopping bleeding, but does not heal wounds."
 	gender = PLURAL
 	icon = 'icons/obj/stack_objects.dmi'
 	singular_name = "compact medical gauze"
 	icon_state = "gauze"
+	self_delay = 15
 	amount = 3
 	max_amount = 3
 
