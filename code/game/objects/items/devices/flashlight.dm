@@ -422,10 +422,10 @@
 // but not similar enough to make it worth a refactor
 /obj/item/flashlight/glowstick
 	name = "glowstick"
-	desc = "A military-grade glowstick."
+	desc = "A civilian-grade glowstick." // Changed from military-grade to civilian-grade
 	custom_price = 10
 	w_class = WEIGHT_CLASS_SMALL
-	brightness_on = 4
+	brightness_on = 3 // [FULP] [PNX] changed from range 4 to range 3
 	color = LIGHT_COLOR_GREEN
 	icon_state = "glowstick"
 	item_state = "glowstick"
@@ -433,7 +433,7 @@
 	var/fuel = 0
 
 /obj/item/flashlight/glowstick/Initialize()
-	fuel = rand(1600, 2000)
+	fuel = rand(1100, 1500) // [FULP] [PNX] decreased from (1600, 2000) to (1100, 1500)
 	light_color = color
 	. = ..()
 

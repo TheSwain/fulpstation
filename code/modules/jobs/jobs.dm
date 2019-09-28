@@ -18,6 +18,7 @@ GLOBAL_LIST_INIT(medical_positions, list(
 	"Medical Doctor",
 	"Geneticist",
 	"Virologist",
+	"EMT", // [FULP]
 	"Chemist"))
 
 
@@ -52,6 +53,7 @@ GLOBAL_LIST_INIT(security_positions, list(
 	"Warden",
 	"Detective",
 	"Deputy", //FULP
+	"Brig Doctor", // [FULP] [PNX]
 	"Security Officer"))
 
 

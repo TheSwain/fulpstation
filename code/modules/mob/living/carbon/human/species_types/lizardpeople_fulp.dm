@@ -8,7 +8,7 @@
 	if(!(DIGITIGRADE in H.dna.species.species_traits))
 		return //not sure this is neccessary since its 'equip or delete', but removes redundancy
 	switch(current_job)
-		if("Chaplain", "Janitor", "Cook", "Botanist", "Medical Doctor", "Chemist", "Geneticist", "Roboticist", "Virologist", "Scientist", "Chief Medical Officer")
+		if("Chaplain", "Janitor", "Cook", "Botanist", "Medical Doctor", "Chemist", "Geneticist", "Roboticist", "Virologist", "Scientist", "Chief Medical Officer", "Brig Doctor", "EMT")
 			O = new /datum/outfit/digitigrade
 
 		if("Curator", "Bartender", "Lawyer", "Detective", "Head of Personnel", "Research Director")
