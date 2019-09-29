@@ -2,7 +2,7 @@
 	title = "Brig Doctor" // Files modified for this job are: code/modules/jobs/jobs.dm, code/modules/jobs/access.dm, code/__DEFINES/jobs.dm
 	flag = BRIG_DOC
 	department_head = list("Warden")
-	department_flag = ENGSEC // Gives Sec experience. I think. This line might actually do nothing.
+	department_flag = MEDSCI // Gives Med experience. I think. This line might actually do nothing.
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1 // You get one. Treat them nicely please.
