@@ -76,6 +76,7 @@
 	new /obj/item/circuitboard/machine/techfab/department/medical(src)
 	new /obj/item/storage/photo_album/CMO(src)
 	new /obj/item/clothing/shoes/sneakers/brown/digitigrade(src) //fulp
+	new /obj/item/clothing/suit/hooded/wintercoat/medical/head(src) // [FULP] [PNX] [PAPRITO]
 	new /obj/item/storage/belt/pouch/medical/cmo(src) //[FULP] [PNX]
 	new /obj/item/card/id/departmental_budget/med(src)
 
