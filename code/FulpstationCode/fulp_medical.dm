@@ -23,7 +23,7 @@
 /obj/item/storage/pill_bottle/penacid
 	name = "bottle of pentetic acid pills"
 	desc = "Contains seven pills used to counter toxins and radiation."
-/obj/item/storage/pill_bottle/multiver/PopulateContents()
+/obj/item/storage/pill_bottle/penacid/PopulateContents()
 	for(var/i in 1 to 7)
 	new /obj/item/reagent_containers/pill/penacid(src)
 
@@ -37,13 +37,13 @@
 /obj/item/storage/pill_bottle/charcoal
 	name = "bottle of charcoal pills"
 	desc = "Contains seven charcoal pills to counter toxins."
-/obj/item/storage/pill_bottle/salbutamol/PopulateContents()
+/obj/item/storage/pill_bottle/charcoal/PopulateContents()
 	for(var/i in 1 to 7)
 	new /obj/item/reagent_containers/pill/charcoal(src)
 
 /obj/item/storage/pill_bottle/charcoal/less
 	desc = "Contains three charcoal pills to counter toxins."
-/obj/item/storage/pill_bottle/salbutamol/PopulateContents()
+/obj/item/storage/pill_bottle/charcoal/less/PopulateContents()
 	for(var/i in 1 to 3)
 	new /obj/item/reagent_containers/pill/charcoal(src)
 
