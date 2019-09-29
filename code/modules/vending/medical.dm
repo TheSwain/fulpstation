@@ -9,8 +9,8 @@
 					/obj/item/reagent_containers/syringe = 12,
 					/obj/item/reagent_containers/dropper = 3,
 					/obj/item/healthanalyzer = 4,
-					/obj/item/reagent_containers/pill/patch/libital = 5,
-					/obj/item/reagent_containers/pill/patch/aiuri = 5,
+					/obj/item/reagent_containers/pill/patch/stypticpowder = 5,	//FULP
+					/obj/item/reagent_containers/pill/patch/silversulfadiazine = 5,	//FULP
 					/obj/item/reagent_containers/syringe/convermol = 2,
 					/obj/item/reagent_containers/pill/insulin = 5,
 					/obj/item/reagent_containers/glass/bottle/multiver = 4,
@@ -20,16 +20,14 @@
 					/obj/item/reagent_containers/glass/bottle/salglu_solution = 3,
 					/obj/item/reagent_containers/glass/bottle/toxin = 3,
 					/obj/item/reagent_containers/syringe/antiviral = 6,
-					/obj/item/reagent_containers/medigel/libital = 2,
-					/obj/item/reagent_containers/medigel/aiuri = 2,
+				    /obj/item/reagent_containers/medigel/stypticpowder = 2,	//FULP
+				    /obj/item/reagent_containers/medigel/silversulfadiazine = 2,	//FULP
 					/obj/item/reagent_containers/medigel/sterilizine = 1,
 					/obj/item/reagent_containers/medigel/thin/silversulfadiazine = 2, // [FULP] [PNX]
 					/obj/item/reagent_containers/medigel/thin/stypticpowder = 2, // [FULP] [PNX]
 					/obj/item/flashlight/glowstick/cyan = 3, // [FULP] [PNX]
 					/obj/item/storage/belt/pouch/medical = 1, // [FULP] [PNX] This totally won't be abused...
 					/obj/item/sensor_device = 2,
-					/obj/item/reagent_containers/pill/patch/stypticpowder = 5,	//FULP
-					/obj/item/reagent_containers/pill/patch/silversulfadiazine = 5,	//FULP
 					/obj/item/pinpointer/crew = 2)
 	contraband = list(/obj/item/reagent_containers/pill/tox = 3,
 		              /obj/item/reagent_containers/pill/morphine = 4,
@@ -39,8 +37,7 @@
 		           /obj/item/storage/pill_bottle/psicodine = 2,
 		           /obj/item/reagent_containers/hypospray/medipen = 3,
 		           /obj/item/storage/belt/medical = 3,
-				   /obj/item/reagent_containers/medigel/stypticpowder = 5,	//FULP
-				   /obj/item/reagent_containers/medigel/silversulfadiazine = 5,	//FULP
+
 		           /obj/item/wrench/medical = 1,
 
 		           /obj/item/storage/firstaid/advanced = 2)
