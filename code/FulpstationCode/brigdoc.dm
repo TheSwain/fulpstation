@@ -11,10 +11,10 @@
 	minimal_player_age = 7 // Requires the player to have been playing on Fulp for 7 days
 	exp_requirements = 480 // Requires 8 or so hours of playtime on medical and security. I think.
 	exp_type = EXP_TYPE_CREW
-	exp_type_department = EXP_TYPE_MEDICAL | EXP_TYPE_SECURITY // Shot in the dark tbh. This probably does nothing.
+	exp_type_department = list(EXP_TYPE_MEDICAL, EXP_TYPE_SECURITY) // Shot in the dark tbh. This probably does nothing.
 	outfit = /datum/outfit/job/brigdoc
 	fulp_spawn = /area/security/main
-	id_icon = 'icons/fulpicons/cards.dmi'	
+	id_icon = 'icons/fulpicons/cards.dmi'
 	hud_icon = 'icons/fulpicons/fulphud.dmi'
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, // Skeleton Medical access
