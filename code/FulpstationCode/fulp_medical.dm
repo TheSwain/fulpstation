@@ -62,7 +62,7 @@
 
 /obj/item/stack/medical/bruise_pack/compact
 	name = "compact bruise pack"
-	singular_name = "bruise pack"
+	singular_name = "compact bruise pack"
 	icon = 'icons/obj/stack_objects.dmi'
 	desc = "A small compact therapeutic gel pack and with bandages designed to treat blunt-force trauma."
 	icon_state = "brutepack"
@@ -84,7 +84,7 @@
 
 /obj/item/reagent_containers/medigel/thin/stypticpowder
 	name = "thin medical gel bottle (styptic)"
-	desc = "Heals bruises"
+	desc = "A small compact medigel bottle containing Styptic Powder. This is small enough to fit into a pouch."
 	icon = 'icons/fulpicons/phoenix_nest/medigel.dmi'
 	volume = 30
 	list_reagents = list(/datum/reagent/medicine/CF/styptic = 30)
@@ -92,7 +92,7 @@
 
 /obj/item/reagent_containers/medigel/thin/silversulfadiazine
 	name = "thin medical gel bottle (silver sulf)"
-	desc = "Heals burns"
+	desc = "A small compact medigel bottle containing Silver Sulfadiazine. This is small enough to fit into a pouch."
 	icon = 'icons/fulpicons/phoenix_nest/medigel.dmi'
 	volume = 30
 	list_reagents = list(/datum/reagent/medicine/CF/silver_sulfadiazine = 30)
@@ -135,7 +135,7 @@
 	name = "emergency medical technician kit"
 	desc = "A specialized medical kit given to Emergency Medical Technicians to allow them to easily stabalize patients."
 	icon_state = "purplefirstaid" // This makes it appear as the unused purple Medkit.
-	item_state = "firstaid-purple" // Custom sprite since their isn't a in-hand purple one.
+	item_state = "firstaid-purple" // Custom sprite since there isn't an in-hand purple one.
 	lefthand_file = 'icons/fulpicons/phoenix_nest/firstaidkits_lefthand.dmi'
 	righthand_file = 'icons/fulpicons/phoenix_nest/firstaidkits_righthand.dmi'
 /obj/item/storage/firstaid/emt/suicide_act(mob/living/carbon/user) 
@@ -148,6 +148,7 @@
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 3,
 		/obj/item/storage/pill_bottle/iron = 1,
+		/obj/item/storage/pill_bottle/charcoal/less = 1,
 		/obj/item/healthanalyzer = 1) 
 	generate_items_inside(items_inside,src)
 
@@ -235,3 +236,72 @@
 		/obj/item/melee/classic_baton,
 		/obj/item/melee/classic_baton/telescopic,
 	))
+	
+// =================================================
+// Medical Clothing
+
+
+/obj/item/clothing/under/rank/medical/emt //EMT suit and skirt
+	name = "Emergency Medical Technician's jumpsuit"
+	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is a high-visibility blue to allow EMTs to easily be recognized."
+	mob_overlay_icon = 'icons/fulpicons/phoenix_nest/clothes_overlay.dmi' // worn clothing sprites.
+	icon = 'icons/fulpicons/phoenix_nest/clothes_icons.dmi' // inventory and floor sprites.
+	//item = 'icons/fulpicons/phoenix_nest/clothes_items' // in-hand sprites.
+	icon_state = "jumpsuit_emt" // Big sprite and overlay
+	item_state = "jumpsuit_emt" // In-hand sprites
+	permeability_coefficient = 0.5
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 10, "acid" = 0)
+	can_adjust = FALSE
+	mutantrace_variation = MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/rank/medical/emt/skirt
+	name = "Emergency Medical Technician's jumpskirt"
+	icon_state = "jumpskirt_emt"
+	item_state = "jumpskirt_emt"
+	fitted = FEMALE_UNIFORM_TOP
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/head/soft/emt/emt // Yes. This is a child of the already existing EMT hat.
+	name = "emergency medical technician's hat"
+	desc = "It's a baseball hat with a turquoise color and a reflective cross on the top."
+	mob_overlay_icon = 'icons/fulpicons/phoenix_nest/clothes_overlay.dmi' 
+	icon = 'icons/fulpicons/phoenix_nest/clothes_icons.dmi'
+	icon_state = "hat_emt"
+	soft_type = "hat_emt" // This is for flipping it around
+	dog_fashion = null // Sadly
+	
+/obj/item/clothing/suit/apron/emt // Child of the Botanist apron :P
+	name = "emergency medical technician's vest"
+	desc = "A highly reflective vest worn by Emergency Medical Technicians."
+	mob_overlay_icon = 'icons/fulpicons/phoenix_nest/clothes_overlay.dmi' 
+	icon = 'icons/fulpicons/phoenix_nest/clothes_icons.dmi'
+	icon_state = "vest_emt"
+	item_state = "vest_emt"
+	allowed = list(/obj/item/analyzer, /obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/sensor_device, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
+	
+
+/obj/item/clothing/under/rank/medical/brigdoc // The Brig Doc's very own custom jumpsuit! Special thanks to Mithrandalf for the sprite and Xeon for the code.
+	name = "brig doctor's jumpsuit"
+	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a brig doctor stripe on it."
+	mob_overlay_icon = 'icons/fulpicons/phoenix_nest/clothes_overlay.dmi' 
+	icon = 'icons/fulpicons/phoenix_nest/clothes_icons.dmi' 
+	//item = 'icons/fulpicons/phoenix_nest/clothes_items' 
+	icon_state = "jumpsuit_brigdoc" 
+	item_state = "jumpsuit_brigdoc" 
+	permeability_coefficient = 0.5
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
+	can_adjust = FALSE
+	mutantrace_variation = MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/rank/medical/brigdoc/skirt
+	name = "brig doctor's jumpskirt"
+	icon_state = "jumpskirt_brigdoc"
+	item_state = "jumpskirt_brigdoc"
+	fitted = FEMALE_UNIFORM_TOP
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+
+
+
+
