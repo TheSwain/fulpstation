@@ -8,16 +8,14 @@
 // =================================================
 // Medical Items
 
-/obj/item/reagent_containers/medigel/salicyclic_acid //[FULP] [PNX] Made as a replacement for the old Styptic Powder gel bottles.
+/obj/item/reagent_containers/medigel/salicyclic_acid //[FULP] [PNX] It's better than a Styptic Powder gel bottle. Originally made to repalce CobbChem bottles, they're now a core part of the kit. 
 	name = "medical gel (salicyclic acid)"
-	//desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one used to contain Styptic Powder but since NT has suddenly outlawed and replaced it with the inferior Libital to cut costs this dispensor now contains Salicyclic Acid."
 	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one contains Salicyclic Acid."
 	icon_state = "brutegel"
 	list_reagents = list(/datum/reagent/medicine/sal_acid = 60)
 
-/obj/item/reagent_containers/medigel/oxandrolone //[FULP] [PNX] Made as a replacement for the old Silver Sulfadiazine gel bottles.
+/obj/item/reagent_containers/medigel/oxandrolone //[FULP] [PNX] It's better than a Silver Sulfadiazine gel bottle. Originally made to repalce CobbChem bottles, they're now a core part of the kit. 
 	name = "medical gel (oxandrolone)"
-	//desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one used to contain Silver Sulfadiazine but since NT has suddenly outlawed and replaced it with the inferior Aiuri to cut costs this dispensor now contains Oxandrolone."
 	desc = "A medical gel applicator bottle, designed for precision application, with an unscrewable cap. This one contains Oxandrolone."
 	icon_state = "burngel"
 	list_reagents = list(/datum/reagent/medicine/oxandrolone = 60)
@@ -36,6 +34,20 @@
 	for(var/i in 1 to 7)
 	new /obj/item/reagent_containers/pill/salbutamol(src)
 
+/obj/item/storage/pill_bottle/charcoal
+	name = "bottle of charcoal pills"
+	desc = "Contains seven charcoal pills to counter toxins."
+/obj/item/storage/pill_bottle/salbutamol/PopulateContents()
+	for(var/i in 1 to 7)
+	new /obj/item/reagent_containers/pill/charcoal(src)
+
+/obj/item/storage/pill_bottle/charcoal/less
+	desc = "Contains three charcoal pills to counter toxins."
+/obj/item/storage/pill_bottle/salbutamol/PopulateContents()
+	for(var/i in 1 to 3)
+	new /obj/item/reagent_containers/pill/charcoal(src)
+
+
 /obj/item/stack/medical/ointment/compact
 	name = "compact ointment"
 	desc = "A small compact tube of ointment used to treat burn wounds."
@@ -44,7 +56,7 @@
 	amount = 2
 	max_amount = 2
 	heal_burn = 25 // Heals 25 damage instead of 40
-	self_delay = 15 // Is a little quicker to apply though
+	self_delay = 15 // It's a little quicker to apply though
 	singular_name = "compact ointment"
 	icon_state = "ointment"
 
@@ -118,6 +130,26 @@
 		// /obj/item/stack/medical/gauze = 0, // We ain't gonna' need no gauze where you're goin' pardner
 	generate_items_inside(items_inside,src)
 
+
+/obj/item/storage/firstaid/emt
+	name = "emergency medical technician kit"
+	desc = "A specialized medical kit given to Emergency Medical Technicians to allow them to easily stabalize patients."
+	icon_state = "purplefirstaid" // This makes it appear as the unused purple Medkit.
+	item_state = "firstaid-purple" // Custom sprite since their isn't a in-hand purple one.
+	lefthand_file = 'icons/fulpicons/phoenix_nest/firstaidkits_lefthand.dmi'
+	righthand_file = 'icons/fulpicons/phoenix_nest/firstaidkits_righthand.dmi'
+/obj/item/storage/firstaid/emt/suicide_act(mob/living/carbon/user) 
+	user.visible_message("<span class='suicide'>[user] begins bashing [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	return BRUTELOSS
+/obj/item/storage/firstaid/emt/PopulateContents()
+	if(empty)
+		return
+	var/static/items_inside = list(
+		/obj/item/stack/medical/gauze = 1,
+		/obj/item/reagent_containers/hypospray/medipen = 3,
+		/obj/item/storage/pill_bottle/iron = 1,
+		/obj/item/healthanalyzer = 1) 
+	generate_items_inside(items_inside,src)
 
 // =================================================
 // Medical Equipment

@@ -5,11 +5,13 @@
 	department_flag = MEDSCI
 	faction = "Station"
 	total_positions = 3
-	spawn_positions = 3
+	spawn_positions = 2
 	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
 	outfit = /datum/outfit/job/emt
 	fulp_spawn = /area/medical/sleeper // Spawns EMTs inside the Exam Room.
+	id_icon = 'icons/fulpicons/cards.dmi'	
+	hud_icon = 'icons/fulpicons/fulphud.dmi'
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM,ACCESS_MAINT_TUNNELS,ACCESS_MINING_STATION,ACCESS_EVA)
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CLONING, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM,ACCESS_MAINT_TUNNELS,ACCESS_MINING_STATION,ACCESS_EVA)
@@ -27,17 +29,19 @@
 	uniform = /obj/item/clothing/under/rank/medical/emt
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat/emt
-	l_hand = /obj/item/storage/firstaid/brute
+	l_hand = /obj/item/storage/firstaid/emt
 	suit_store = /obj/item/flashlight/pen
-	l_pocket = /obj/item/pda/medical
 	r_pocket = /obj/item/gps/medical
-
+	backpack_contents = list(
+		/obj/item/storage/firstaid/medical = 1,
+		)
+	
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 
 	chameleon_extras = /obj/item/gun/syringe
-
+	pda_slot = SLOT_L_STORE
 
 //////EMT ITEMs/ETC//////
 	//EMT "hard"suit helm [FULP] [XEON]
