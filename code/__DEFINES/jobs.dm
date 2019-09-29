@@ -12,7 +12,6 @@
 #define ROBOTICIST		(1<<8)
 #define AI_JF			(1<<9)
 #define CYBORG			(1<<10)
-#define BRIG_DOC    (1<<11)
 #define DEPUTY			(1<<69) //FULP - nice
 
 #define MEDSCI			(1<<1)
@@ -25,6 +24,7 @@
 #define GENETICIST		(1<<5)
 #define VIROLOGIST		(1<<6)
 #define EMT    (1<<7)
+#define BRIG_DOC    (1<<8)
 
 
 #define CIVILIAN		(1<<2)

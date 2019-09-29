@@ -5,10 +5,10 @@
 	department_flag = MEDSCI
 	faction = "Station"
 	total_positions = 3
-	spawn_positions = 0
+	spawn_positions = 3
 	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
-	outfit = /datum/outfit/job/fulp/emt
+	outfit = /datum/outfit/job/emt
 	fulp_spawn = /area/medical/sleeper // Spawns EMTs inside the Exam Room.
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM,ACCESS_MAINT_TUNNELS,ACCESS_MINING_STATION,ACCESS_EVA)
@@ -30,6 +30,7 @@
 	l_hand = /obj/item/storage/firstaid/brute
 	suit_store = /obj/item/flashlight/pen
 	l_pocket = /obj/item/pda/medical
+	r_pocket = /obj/item/gps/medical
 
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
@@ -45,7 +46,7 @@
 	desc = "A special suit designed for work in a hazardous, low pressure enviroment. It appears to offer some protection from bio-hazards and good protection against heat, but is very weak to any kind of attack."
 	icon_state = "hardsuit0-medical"
 	item_state = "medical_helm"
-	item_color = "medical"
+	//item_color = "medical"
 	flash_protect = 0
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 80, "rad" = 0, "fire" = 95, "acid" = 0)
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SCAN_REAGENTS
@@ -66,7 +67,7 @@
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a stripe denoting that the wearer is an emergency medical technician."
 	icon_state = "medical"
 	item_state = "w_suit"
-	item_color = "medical"
+	//item_color = "medical"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 30, "rad" = 0, "fire" = 25, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -77,7 +78,7 @@
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a stripe denoting that the wearer is an emergency medical technician."
 	icon_state = "medical_skirt"
 	item_state = "w_suit"
-	item_color = "medical_skirt"
+	//item_color = "medical_skirt"
 	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/storage/belt/medical_emt //[FULP] [XEON] EMT belt
