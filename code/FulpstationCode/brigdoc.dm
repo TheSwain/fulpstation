@@ -13,7 +13,7 @@
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = list(EXP_TYPE_MEDICAL, EXP_TYPE_SECURITY) // Shot in the dark tbh. This probably does nothing.
 	outfit = /datum/outfit/job/brigdoc
-	fulp_spawn = /area/security/main
+	fulp_spawn = /area/security/brig
 	id_icon = 'icons/fulpicons/cards.dmi'
 	hud_icon = 'icons/fulpicons/fulphud.dmi'
 

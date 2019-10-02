@@ -20,10 +20,10 @@
 	icon_state = "burngel"
 	list_reagents = list(/datum/reagent/medicine/oxandrolone = 60)
 
-/obj/item/storage/pill_bottle/penacid
+/obj/item/storage/pill_bottle/penacid/full
 	name = "bottle of pentetic acid pills"
 	desc = "Contains seven pills used to counter toxins and radiation."
-/obj/item/storage/pill_bottle/penacid/PopulateContents() // Tried the fancy pill way and it didn't work. So we're doing this the old fashioned way.
+/obj/item/storage/pill_bottle/penacid/full/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/penacid(src)
 
@@ -122,7 +122,7 @@
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/medigel/salicyclic_acid = 1, // For Brute damage
 		/obj/item/reagent_containers/medigel/oxandrolone = 1, // For Burn damage
-		/obj/item/storage/pill_bottle/penacid = 1, // For Toxin damage
+		/obj/item/storage/pill_bottle/penacid/full = 1, // For Toxin damage
 		/obj/item/storage/pill_bottle/salbutamol = 1, // For O2 damage
 		/obj/item/reagent_containers/hypospray/medipen/atropine = 2, // For "Shit's hit the fan" damage
 		/obj/item/healthanalyzer = 1) // For seeing "Where're you hurt?" damage
