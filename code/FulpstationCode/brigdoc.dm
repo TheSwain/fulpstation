@@ -4,9 +4,10 @@
 	department_head = list("Warden")
 	department_flag = MEDSCI // Gives Med experience. I think. This line might actually do nothing.
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1 // You get one. Treat them nicely please.
-	supervisors = "the warden; and the chief medical officer if needed"
+	total_positions = 1 // You get one. Treat them nicely please.
+	spawn_positions = 1 
+	supervisors = "the warden; and the chief medical officer if needed. As the Brig Doctor you have been entrusted with the health of the Security staff stationed in the Brig and any prisoners. If tending to a prisoner ensure you have a Officer or the Warden with you. Should you need to conduct surgery in the Brig there is a set of surgucal tools down the perma hallway."
+	//supervisors = "the warden; and the chief medical officer if needed." // Short one for once people get used to the Brig Doctor job.
 	selection_color = "#ffeef0"
 	minimal_player_age = 7 // Requires the player to have been playing on Fulp for 7 days
 	exp_requirements = 480 // Requires 8 or so hours of playtime on medical and security. I think.
@@ -22,7 +23,7 @@
 									ACCESS_TECH_STORAGE) // Skeleton Engineering access
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CLONING, ACCESS_MECH_MEDICAL, // Normal Medical access
 									ACCESS_MINERAL_STOREROOM, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_TECH_STORAGE) // Normal Security and "Engineering" access
-	paycheck = PAYCHECK_MEDIUM // I'd say high/hard but that feels a bit too nice. MD with extra responsibility without extra pay; The NT way.
+	paycheck = PAYCHECK_MEDIUM // I'd say high/hard but that feels a bit too nice. MD with extra responsibility without extra pay; The NT way!
 	paycheck_department = ACCOUNT_MED
 
 	display_order = JOB_DISPLAY_ORDER_WARDEN // Mith did it so I'll do it too :P
@@ -47,7 +48,7 @@
 		/obj/item/storage/firstaid/toxin = 1, // Gives the Brig Doc a kit to deal with toxins. Otherwise they have to raid Medbay for a kit.
 		/obj/item/storage/firstaid/o2 = 1, // Given for the same reason as the toxin kit.
 		/obj/item/storage/firstaid/medical = 1, // Given so the Brig Doc spawns with some surgery tools.
-		) // Not given any Sec equipment as they should ask the Warden for that.
+		) // Not given any Sec equipment as they should ask the Warden for that. Encourages the Brig Doc and Warden to acknowledge each other's existance.
 
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
