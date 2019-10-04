@@ -51,7 +51,8 @@
 	name = "compact ointment"
 	desc = "A small compact tube of ointment used to treat burn wounds."
 	gender = PLURAL
-	icon = 'icons/obj/stack_objects.dmi'
+	icon = 'icons/fulpicons/phoenix_nest/medical.dmi'
+	
 	amount = 2
 	max_amount = 2
 	heal_burn = 25 // Heals 25 damage instead of 40
@@ -62,7 +63,7 @@
 /obj/item/stack/medical/bruise_pack/compact
 	name = "compact bruise pack"
 	singular_name = "compact bruise pack"
-	icon = 'icons/obj/stack_objects.dmi'
+	icon = 'icons/fulpicons/phoenix_nest/medical.dmi'
 	desc = "A small compact therapeutic gel pack and with bandages designed to treat blunt-force trauma."
 	icon_state = "brutepack"
 	heal_brute = 25
@@ -74,7 +75,7 @@
 	name = "compact medical gauze"
 	desc = "A compact roll of elastic cloth that is extremely effective at stopping bleeding, but does not heal wounds."
 	gender = PLURAL
-	icon = 'icons/obj/stack_objects.dmi'
+	icon = 'icons/fulpicons/phoenix_nest/medical.dmi'
 	singular_name = "compact medical gauze"
 	icon_state = "gauze"
 	self_delay = 15
@@ -84,7 +85,7 @@
 /obj/item/reagent_containers/medigel/thin/stypticpowder
 	name = "thin medical gel bottle (styptic)"
 	desc = "A small compact medigel bottle containing Styptic Powder. This is small enough to fit into a pouch."
-	icon = 'icons/fulpicons/phoenix_nest/medigel.dmi'
+	icon = 'icons/fulpicons/phoenix_nest/medical.dmi'
 	volume = 30
 	list_reagents = list(/datum/reagent/medicine/CF/styptic = 30)
 	icon_state = "brutegelthin"
@@ -92,7 +93,7 @@
 /obj/item/reagent_containers/medigel/thin/silversulfadiazine
 	name = "thin medical gel bottle (silver sulf)"
 	desc = "A small compact medigel bottle containing Silver Sulfadiazine. This is small enough to fit into a pouch."
-	icon = 'icons/fulpicons/phoenix_nest/medigel.dmi'
+	icon = 'icons/fulpicons/phoenix_nest/medical.dmi'
 	volume = 30
 	list_reagents = list(/datum/reagent/medicine/CF/silver_sulfadiazine = 30)
 	icon_state = "burngelthin"
