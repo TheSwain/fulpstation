@@ -173,8 +173,8 @@
 
 
 /obj/item/storage/firstaid/alcohol
-	name = "emergency medical technician kit"
-	desc = "A specialized medical kit given to Emergency Medical Technicians to allow them to easily stabalize patients."
+	name = "alochol purging kit"
+	desc = "A specialized medical kit used by the Bartender when a patron drinks so much they've started killing themselves."
 	icon = 'icons/fulpicons/phoenix_nest/firstaidkits.dmi'
 	icon_state = "alcoholfirstaid"
 	item_state = "firstaid-alcohol"
