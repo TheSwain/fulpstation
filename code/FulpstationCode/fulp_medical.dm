@@ -25,7 +25,7 @@
 	name = "corazone pill"
 	desc = "A medication used to treat pain, fever, and inflammation, along with heart attacks. Or, in this case, liver failure."
 	icon_state = "pill19"
-	list_reagents = list(/datum/reagent/medicine/corazone = 10) 
+	list_reagents = list(/datum/reagent/medicine/corazone = 10)
 
 
 /obj/item/storage/pill_bottle/penacid/full
@@ -54,7 +54,7 @@
 /obj/item/storage/pill_bottle/charcoal/less/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/pill/charcoal(src)
-	
+
 /obj/item/storage/pill_bottle/barman
 	desc = "Contains a couple pills used to deal with alcohol poisoning."
 /obj/item/storage/pill_bottle/barman/PopulateContents()
@@ -68,7 +68,7 @@
 	desc = "A small compact tube of ointment used to treat burn wounds."
 	gender = PLURAL
 	icon = 'icons/fulpicons/phoenix_nest/medical.dmi'
-	
+
 	amount = 2
 	max_amount = 2
 	heal_burn = 25 // Heals 25 damage instead of 40
@@ -122,7 +122,7 @@
 	desc = "A positioning system helpful for finding spaced individuals who were smart enough to take a GPS with them. Carrying this with you might just save your corpse too."
 
 /obj/item/reagent_containers/hypospray/medipen/penacid/antihol
-	name = "antihol acid medipen"
+	name = "antihol medipen"
 	desc = "An autoinjector containing antihol, used to purge alcohol out of someone's system."
 	list_reagents = list(/datum/reagent/medicine/antihol = 10)
 
@@ -175,7 +175,7 @@
 /obj/item/storage/firstaid/alcohol
 	name = "alochol purging kit"
 	desc = "A specialized medical kit used by the Bartender when a patron drinks so much they've started killing themselves."
-	icon = 'icons/fulpicons/phoenix_nest/firstaidkits.dmi'
+	icon = 'icons/fulpicons/phoenix_nest/medical.dmi'
 	icon_state = "alcoholfirstaid"
 	item_state = "firstaid-alcohol"
 	lefthand_file = 'icons/fulpicons/phoenix_nest/firstaidkits_lefthand.dmi'
