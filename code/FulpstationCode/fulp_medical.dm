@@ -20,6 +20,14 @@
 	icon_state = "burngel"
 	list_reagents = list(/datum/reagent/medicine/oxandrolone = 60)
 
+
+/obj/item/reagent_containers/pill/corazone_bar
+	name = "corazone pill"
+	desc = "A medication used to treat pain, fever, and inflammation, along with heart attacks. Or, in this case, liver failure."
+	icon_state = "pill19"
+	list_reagents = list(/datum/reagent/medicine/corazone = 10) 
+
+
 /obj/item/storage/pill_bottle/penacid/full
 	name = "bottle of pentetic acid pills"
 	desc = "Contains seven pills used to counter toxins and radiation."
@@ -46,6 +54,14 @@
 /obj/item/storage/pill_bottle/charcoal/less/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/pill/charcoal(src)
+	
+/obj/item/storage/pill_bottle/barman
+	desc = "Contains a couple pills used to deal with alcohol poisoning."
+/obj/item/storage/pill_bottle/barman/PopulateContents()
+	for(var/i in 1 to 2)
+		new /obj/item/reagent_containers/pill/charcoal(src)
+	for(var/i in 3 to 4)
+		new /obj/item/reagent_containers/pill/corazone_bar(src)
 
 /obj/item/stack/medical/ointment/compact
 	name = "compact ointment"
@@ -155,7 +171,7 @@
 		/obj/item/healthanalyzer = 1)
 	generate_items_inside(items_inside,src)
 
-/*
+
 /obj/item/storage/firstaid/alcohol
 	name = "emergency medical technician kit"
 	desc = "A specialized medical kit given to Emergency Medical Technicians to allow them to easily stabalize patients."
@@ -170,13 +186,11 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/hypospray/medipen/penacid/antihol = 2,
-		/obj/item/storage/pill_bottle/charcoal/less = 1,
+		/obj/item/storage/pill_bottle/barman = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/bruise_pack = 1,
 		/obj/item/healthanalyzer = 1)
 	generate_items_inside(items_inside,src)
-
-*/
 
 // =================================================
 // Medical Equipment
