@@ -30,7 +30,7 @@
 	update_synd_icons_removed(M)
 	REMOVE_TRAIT(owner, TRAIT_DISK_VERIFIER, NUKEOP_TRAIT)
 
-/*/datum/antagonist/nukeop/proc/equip_op()
+/*/datum/antagonist/nukeop/proc/equip_op() // [FULP] [PNX] Just commented this out
 	if(!ishuman(owner.current))
 		return
 	var/mob/living/carbon/human/H = owner.current
@@ -38,7 +38,7 @@
 	H.set_species(/datum/species/human) //Plasamen burn up otherwise, and lizards are vulnerable to asimov AIs
 
 	H.equipOutfit(nukeop_outfit)
-	return TRUE*/
+	return TRUE*/ // [FULP] [PNX] Just commented this out
 
 /datum/antagonist/nukeop/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/ops.ogg',100,0)

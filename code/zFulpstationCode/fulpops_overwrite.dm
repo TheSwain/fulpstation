@@ -18,6 +18,9 @@
 		H.equipOutfit(nukeop_outfit)
 	return TRUE
 
+/* This code doesn't work as intended. While it does add in the fulp proc, the original also runs. In practice this
+causes everyone to spawn with two sets of equipment in their backpack without preventing humanfication.
+
 /datum/antagonist/nukeop/proc/equip_op_fulp()
 	if(!ishuman(owner.current)) // If you're not a carbon, go away.
 		return
@@ -29,7 +32,7 @@
 		H.equipOutfit(nukeop_outfit)
 	return TRUE
 
-/datum/antagonist/nukeop/on_gain() // This doesn't seem to actual be used sadly.
+/datum/antagonist/nukeop/on_gain()
 	give_alias()
 	forge_objectives()
 	. = ..()
@@ -42,4 +45,4 @@
 		var/datum/component/uplink/U = owner.find_syndicate_uplink()
 		if (U)
 			U.telecrystals += extra_tc
-		
+*/
