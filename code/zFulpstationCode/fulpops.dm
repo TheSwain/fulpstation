@@ -7,6 +7,16 @@
 	var/nukeop_outfit_plasmaman = /datum/outfit/plasmaman/syndicate
 	can_hijack = HIJACK_HIJACKER
 
+/datum/antagonist/nukeop/proc/equip_op()
+	if(!ishuman(owner.current)) // If you're not a carbon, go away.
+		return
+	var/mob/living/carbon/human/H = owner.current // What's your species? It's now a variable, that's what it is.
+	//H.set_species(/datum/species/human) // We ain't setting species to Human any more
+	if(isplasmaman(owner.current)) // Are you a plasma man? If so, do this.
+		H.equipOutfit(nukeop_outfit_plasmaman)
+	else // Not a plasma man? Okay I guess. Do this instead.
+		H.equipOutfit(nukeop_outfit)
+	return TRUE
 
 /datum/antagonist/nukeop/proc/equip_op_fulp()
 	if(!ishuman(owner.current)) // If you're not a carbon, go away.
@@ -19,7 +29,7 @@
 		H.equipOutfit(nukeop_outfit)
 	return TRUE
 
-/datum/antagonist/nukeop/on_gain()
+/datum/antagonist/nukeop/on_gain() // This doesn't seem to actual be used sadly.
 	give_alias()
 	forge_objectives()
 	. = ..()
@@ -54,12 +64,13 @@
 
 /obj/item/clothing/head/helmet/space/plasmaman/robotics/syndicate
 	name = "syndicate plasma envirosuit helmet"
-	desc = "A plasmaman envirohelmet designed for syndicate operatives."
+	desc = "A plasmaman envirosuit helmet designed for syndicate operatives."
 
 /obj/item/clothing/under/plasmaman/security/syndicate
 	name = "syndicate plasma envirosuit"
 	desc = "A non-descript and slightly suspicious looking plasmaman enviormental suit."
 	icon = 'icons/fulpicons/phoenix_nest/syndicate_suits.dmi'
+	item = 'icons/fulpicons/phoenix_nest/syndicate_suits.dmi'
 	icon_state = "syndicate_envirosuit"
 	item_state = "syndicate_envirosuit"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 0, "fire" = 95, "acid" = 95)
