@@ -173,8 +173,8 @@
 
 
 /obj/item/storage/firstaid/alcohol
-	name = "alochol purging kit"
-	desc = "A specialized medical kit used by the Bartender when a patron drinks so much they've started killing themselves."
+	name = "bar medical kit"
+	desc = "A specialized medical kit used by the Bartender when a patron drinks so much they've started killing themselves or when someone gets hit by a chair."
 	icon = 'icons/fulpicons/phoenix_nest/medical.dmi'
 	icon_state = "alcoholfirstaid"
 	item_state = "firstaid-alcohol"
@@ -321,7 +321,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
 
 
-/obj/item/clothing/under/rank/medical/brigdoc // The Brig Doc's very own custom jumpsuit! Special thanks to Mithrandalf for the sprite and Xeon for the code template.
+/obj/item/clothing/under/rank/medical/brigdoc // The Brig Doc's very own custom jumpsuit! Special thanks to Mithrandalf for the sprites and Xeon for the code template.
 	name = "brig doctor's jumpsuit"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a brig doctor stripe on it."
 	mob_overlay_icon = 'icons/fulpicons/phoenix_nest/clothes_overlay.dmi'
