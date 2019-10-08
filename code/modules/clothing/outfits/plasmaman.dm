@@ -1,3 +1,21 @@
+/datum/outfit/plasmaman/ce
+	name = "CE plasmaman"
+
+	head = /obj/item/clothing/head/helmet/space/plasmaman/ce
+	uniform = /obj/item/clothing/under/plasmaman/ce
+
+/datum/outfit/plasmaman/cmo
+	name = "CMO plasmaman"
+
+	head = /obj/item/clothing/head/helmet/space/plasmaman/cmo
+	uniform = /obj/item/clothing/under/plasmaman/cmo
+
+/datum/outfit/plasmaman/rd
+	name = "RD plasmaman"
+
+	head = /obj/item/clothing/head/helmet/space/plasmaman/rd
+	uniform = /obj/item/clothing/under/plasmaman/rd
+
 /datum/outfit/plasmaman/bar
 	name = "Bartender Plasmaman"
 

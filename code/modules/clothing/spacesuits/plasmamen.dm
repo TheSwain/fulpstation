@@ -146,6 +146,24 @@
 		var/datum/action/A=X
 		A.UpdateButtonIcon()
 
+/obj/item/clothing/head/helmet/space/plasmaman/cmo
+	name = "CMO plasma envirosuit helmet"
+	desc = "A plasmaman containment helmet designed for the chief medical officer."
+	icon_state = "cmo_envirohelm"
+	item_state = "cmo_envirohelm"
+
+/obj/item/clothing/head/helmet/space/plasmaman/rd
+	name = "RD plasma envirosuit helmet"
+	desc = "A plasmaman containment helmet designed for the Research Director."
+	icon_state = "rd_envirohelm"
+	item_state = "rd_envirohelm"
+
+/obj/item/clothing/head/helmet/space/plasmaman/ce
+	name = "CE plasma envirosuit helmet"
+	desc = "A plasmaman containment helmet designed for the chief engineer."
+	icon_state = "ce_envirohelm"
+	item_state = "ce_envirohelm"
+
 /obj/item/clothing/head/helmet/space/plasmaman/security
 	name = "security plasma envirosuit helmet"
 	desc = "A plasmaman containment helmet designed for security officers, protecting them from being flashed and burning alive, along-side other undesirables."

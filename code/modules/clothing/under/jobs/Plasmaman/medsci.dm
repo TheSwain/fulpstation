@@ -33,3 +33,15 @@
 	desc = "A plasmaman envirosuit designed for chemists."
 	icon_state = "chemist_envirosuit"
 	item_state = "chemist_envirosuit"
+
+/obj/item/clothing/under/plasmaman/rd
+	name = "RD plasma envirosuit"
+	desc = "A suit worn by the Researh Director. preferably when they can only breathe plasma."
+	icon_state = "rd_envirosuit"
+	item_state = "rd_envirosuit"
+
+/obj/item/clothing/under/plasmaman/cmo
+	name = "cmo plasma envirosuit"
+	desc = "A plasma suit worn by the most stressed member of the station, also known as the Chief Medical Officer."
+	icon_state = "cmo_envirosuit"
+	item_state = "cmo_envirosuit"

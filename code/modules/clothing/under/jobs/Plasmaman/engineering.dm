@@ -11,3 +11,8 @@
 	icon_state = "atmos_envirosuit"
 	item_state = "atmos_envirosuit"
 
+/obj/item/clothing/under/plasmaman/ce
+	name = "CE plasma envirosuit"
+	desc = "An air-tight suit designed to be used by plasmamen exployed as the chief engineer, the usual purple stripes being replaced by ce's infinitly better yellow."
+	icon_state = "ce_envirosuit"
+	item_state = "ce_envirosuit"
