@@ -4,48 +4,6 @@
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy.dmi'
 
-	///sound when inserting cell
-	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg'
-	///sound when inserting an empty magazine
-	var/load_empty_sound = "buzz-sigh.ogg"
-	///volume of loading sound
-	var/load_sound_volume = 40
-	///whether loading sound should vary
-	var/load_sound_vary = TRUE
-
-	///Sound of ejecting a magazine
-	var/eject_sound = 'sound/weapons/gun/general/magazine_remove_full.ogg'
-	///sound of ejecting an empty magazine
-	var/eject_empty_sound = 'sound/weapons/gun/general/magazine_remove_empty.ogg'
-	///volume of ejecting a magazine
-	var/eject_sound_volume = 40
-	///whether eject sound should vary
-	var/eject_sound_vary = TRUE
-
-	///empty alarm sound (if enabled)
-	var/empty_alarm_sound = 'sound/weapons/gun/general/empty_alarm.ogg'
-	///empty alarm volume sound
-	var/empty_alarm_volume = 70
-	///whether empty alarm sound varies
-	var/empty_alarm_vary = TRUE
-
-	///Whether the gun alarms when empty or not.
-	var/empty_alarm = FALSE
-	///Whether the gun is currently alarmed to prevent it from spamming sounds
-	var/alarmed = FALSE
-
-	///Maximum cell charge an unloadable gun will accept; 1000 by default.
-	var/max_accept = 1000
-	///Where the cell can accept self-charging cells.
-	var/self_charge_allowed = FALSE
-
-	///Whether the gun's cell can be unloaded
-	var/can_unload = FALSE
-	///Time it takes to load in deciseconds
-	var/load_time = 40
-	///Time it takes to unload in deciseconds
-	var/unload_time = 0
-
 	var/obj/item/stock_parts/cell/cell //What type of power cell this uses
 	var/cell_type = /obj/item/stock_parts/cell
 	var/modifystate = 0
@@ -62,10 +20,6 @@
 	var/charge_delay = 4
 	var/use_cyborg_cell = FALSE //whether the gun's cell drains the cyborg user's cell to recharge
 	var/dead_cell = FALSE //set to true so the gun is given an empty cell
-
-	var/obj/item/cell_cartridge/cartridge //What type of power cell this uses
-	var/cartridge_type = /obj/item/cell_cartridge
-	var/uses_cartridge = FALSE //If this gun uses cell cartridges
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
