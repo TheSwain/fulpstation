@@ -132,7 +132,7 @@
 	camera_toggle()
 
 /obj/machinery/computer/security
-	req_one_access = list(ACCESS_SECURITY)
+	req_one_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
 
 
 /obj/machinery/computer/security/proc/check_bodycamera_unlock(user)
