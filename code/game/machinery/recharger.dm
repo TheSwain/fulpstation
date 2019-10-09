@@ -15,8 +15,8 @@
 		/obj/item/gun/energy,
 		/obj/item/melee/baton,
 		/obj/item/ammo_box/magazine/recharge,
-		/obj/item/modular_computer,
-		/obj/item/cell_cartridge
+		/obj/item/cell_cartridge, ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
+		/obj/item/modular_computer
 		))
 
 /obj/machinery/recharger/RefreshParts()
@@ -37,15 +37,7 @@
 		. += "<span class='notice'>The status display reads:</span>"
 		. += "<span class='notice'>- Recharging <b>[recharge_coeff*10]%</b> cell charge per cycle.</span>"
 		if(charging)
-			var/obj/item/stock_parts/cell/C = charging.get_cell()
-			if(istype(charging, /obj/item/gun/energy))
-				var/obj/item/gun/energy/E = charging
-				if(E.cartridge)
-					C = E.cartridge.get_cell() //If the gun uses a power cell cartridge, get the cartridge
-			if(C)
-				. += "<span class='notice'>- \The [charging]'s cell is at <b>[C.percent()]%</b>.</span>"
-			else
-				. += "<span class='notice'>- \The [charging] has no cell loaded.</b>.</span>"
+			. += fulp_recharger_charge_check() ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
 
 
 /obj/machinery/recharger/proc/setCharging(new_charging)
