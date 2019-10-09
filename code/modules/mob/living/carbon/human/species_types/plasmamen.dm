@@ -118,6 +118,15 @@
 		if("Mime")
 			O = new /datum/outfit/plasmaman/mime
 		
+		if("Research Director")
+			O = new /datum/outfit/plasmaman/rd
+		
+		if("Chief Engineer")
+			O = new /datum/outfit/plasmaman/ce
+		
+		if("Chief Medical Officer")
+			O = new /datum/outfit/plasmaman/cmo
+
 		if("Deputy")									//FULP
 			O = new /datum/outfit/plasmaman/security	//FULP - put your other jobs between Mime and Clown
 
