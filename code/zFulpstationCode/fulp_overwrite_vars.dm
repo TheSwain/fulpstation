@@ -34,9 +34,13 @@
 
 /obj/item/clothing/accessory
 	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'
+  
+/obj/item/clothing/suit/space/hardsuit
+	var/toggle_helmet_sound = 'sound/mecha/mechmove03.ogg' 
 
-
-///Cell Cartridge PR by Surrealistik Oct 2019
+*******************************************************
+///Cell Cartridge PR by Surrealistik Oct 2019 BEGINS
+*******************************************************
 
 ///DATUMS
 /datum/design/cell_cartridge
@@ -114,3 +118,7 @@
 	empty_alarm = TRUE
 	can_unload = TRUE
 	uses_cartridge = TRUE //If this gun uses cell cartridges
+
+*******************************************************
+///Cell Cartridge PR by Surrealistik Oct 2019 ENDS
+******************************************************
