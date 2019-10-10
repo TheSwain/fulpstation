@@ -41,10 +41,13 @@
 
 //SEC BODY CAMS by Surrealistik Oct 2019
 
+#define SEC_BODY_CAM_SOUND list('sound/machines/beep.ogg')
+
 /obj/item/clothing/under/rank/security
 	var/obj/machinery/camera/builtInCamera = null
 	var/camera_on = TRUE
-	req_one_access = list(ACCESS_SECURITY)
+	var/sound_time_stamp
+	req_one_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
 
 /obj/item/clothing/under/rank/security/Initialize()
 	. = ..()
@@ -70,6 +73,7 @@
 	if(check_access(I))
 		var/id_name = I.registered_name
 		builtInCamera.c_tag = "*Body Camera: [I.assignment] [id_name]"
+		camera_sound()
 		to_chat(user, "<span class='notice'>Security uniform body camera automatically registered to [id_name]</span>")
 
 /obj/item/clothing/under/rank/security/attackby(obj/item/W, mob/user, params)
@@ -92,6 +96,7 @@
 	if(check_access(I))
 		var/id_name = I.registered_name
 		builtInCamera.c_tag = "*Body Camera: [I.assignment] [id_name]"
+		camera_sound()
 		to_chat(user, "<span class='notice'>Security uniform body camera manually registered with ID to [id_name]</span>")
 	else
 		to_chat(user, "<span class='warning'>ID is not authorized for registration with this uniform's body camera.</span>")
@@ -125,15 +130,21 @@
 	if(ismob(loc))
 		var/mob/user = loc
 		if(user)
+			camera_sound()
 			to_chat(user, "[message]")
+
+/obj/item/clothing/under/rank/security/proc/camera_sound()
+	if(world.time - sound_time_stamp > 20)
+		playsound(loc, SEC_BODY_CAM_SOUND, get_clamped_volume(), TRUE, -1)
+		sound_time_stamp = world.time
 
 /obj/item/clothing/under/rank/security/emp_act()
 	. = ..()
 	camera_toggle()
 
+
 /obj/machinery/computer/security
 	req_one_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
-
 
 /obj/machinery/computer/security/proc/check_bodycamera_unlock(user)
 	if(allowed(user))
