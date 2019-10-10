@@ -1,4 +1,25 @@
 
+/obj/item/gun/energy/examine(mob/user)
+	. = ..()
+	var/obj/item/stock_parts/cell/C
+	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
+	var/shots_remaining = 0
+	if(cell)
+		C = cell
+		. += "It has a cell loaded."
+
+	else if(cartridge)
+		. += "It has a cartridge loaded."
+		if(cartridge.cell)
+			C = cartridge.cell
+
+	else
+		. += "It has no cell or cartridge loaded."
+
+	if(C)
+		shots_remaining = round(C.charge / max(1, shot.e_cost))
+
+	. += "The meter reads <b>[shots_remaining] shots remaining</b>."
 
 /obj/item/gun/energy/afterattack()
 	. = ..() //The gun actually firing
@@ -114,6 +135,58 @@
 	return FALSE
 
 
+/obj/item/gun/energy/proc/fulp_update_icon(force_update, mob/user)
+	var/charge = 0
+	var/maxcharge = 1
+	if(cell)
+		charge = cell.charge
+		maxcharge = cell.maxcharge
+	var/ratio = CEILING(CLAMP(charge / maxcharge, 0, 1) * charge_sections, 1)
+	if(ratio == old_ratio && !force_update)
+		return
+	old_ratio = ratio
+	cut_overlays()
+	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
+	var/iconState = "[icon_state]_charge"
+	var/itemState = null
+	if(!initial(item_state))
+		itemState = icon_state
+	if (modifystate)
+		add_overlay("[icon_state]_[shot.select_name]")
+		iconState += "_[shot.select_name]"
+		if(itemState)
+			itemState += "[shot.select_name]"
+	if(charge < shot.e_cost)
+		add_overlay("[icon_state]_empty")
+	else
+		if(!shaded_charge)
+			var/mutable_appearance/charge_overlay = mutable_appearance(icon, iconState)
+			for(var/i = ratio, i >= 1, i--)
+				charge_overlay.pixel_x = ammo_x_offset * (i - 1)
+				charge_overlay.pixel_y = ammo_y_offset * (i - 1)
+				add_overlay(charge_overlay)
+		else
+			add_overlay("[icon_state]_charge[ratio]")
+	if(itemState)
+		itemState += "[ratio]"
+		item_state = itemState
+	if(user)
+		user.update_inv_hands()
+
+/obj/item/gun/energy/proc/fulp_egun_alarm()
+	if (!alarmed && empty_alarm)
+		playsound(src, empty_alarm_sound, empty_alarm_volume, empty_alarm_vary)
+		alarmed = TRUE
+		update_icon()
+
+/obj/item/gun/energy/proc/fulp_egun_suicide_ecost(obj/item/ammo_casing/energy/shot)
+	if(cartridge)
+		cartridge.cell.use(shot.e_cost)
+	else
+		cell.use(shot.e_cost)
+
+
+
 /obj/machinery/recharger/proc/fulp_recharger_charge_check()
 	var/message = ""
 	var/obj/item/stock_parts/cell/C = charging.get_cell()
@@ -128,4 +201,72 @@
 	else
 		return message = "<span class='notice'>- \The [charging] has no cell loaded.</b>.</span>"
 
-	return
+
+/obj/machinery/recharger/proc/fulp_recharger_gun_cartridge_check(mob/user, obj/item/gun/energy/E)
+	if(E.cartridge)
+		var/obj/item/cell_cartridge/EC = E.cartridge
+		if(!EC.can_charge)
+			to_chat(user, "<span class='notice'>Your [E]'s [EC] has no external power connector.</span>")
+			return FALSE
+		if(!EC.cell)
+			to_chat(user, "<span class='notice'>Your [E]'s [EC] has no power cell loaded.</span>")
+			return FALSE
+	if(!E.can_charge)
+		to_chat(user, "<span class='notice'>Your [E] has no external power connector.</span>")
+		return FALSE
+
+	return TRUE
+
+/obj/machinery/recharger/proc/fulp_recharger_cell_cartridge_check(mob/user, obj/item/G)
+	if (istype(G, /obj/item/cell_cartridge))
+		var/obj/item/cell_cartridge/CC = G
+		if(!CC.can_charge)
+			to_chat(user, "<span class='notice'>Your [G] has no external power connector.</span>")
+			return FALSE
+		if(!CC.cell)
+			to_chat(user, "<span class='notice'>Your [G] has no power cell loaded.</span>")
+			return FALSE
+
+	return TRUE
+
+/obj/machinery/recharger/proc/fulp_recharger_emp_act(severity)
+	if(istype(charging,  /obj/item/gun/energy))
+		var/obj/item/gun/energy/E = charging
+		if(E.cell)
+			E.cell.emp_act(severity)
+
+	else if(istype(charging, /obj/item/melee/baton))
+		var/obj/item/melee/baton/B = charging
+		if(B.cell)
+			B.cell.charge = 0
+
+	else if(istype(charging, /obj/item/cell_cartridge))
+		var/obj/item/cell_cartridge/C = charging
+		if(C.cell)
+			C.cell.charge = 0
+
+
+/obj/machinery/recharger/proc/fulp_process(using_power)
+	var/obj/item/stock_parts/cell/C
+	C = charging.get_cell()
+	if(istype(charging, /obj/item/gun/energy))
+		var/obj/item/gun/energy/E = charging
+		if(E.cartridge)
+			C = E.cartridge.get_cell() //If the gun uses a power cell cartridge, get the cartridge
+
+	if(C)
+		if(C.charge < C.maxcharge)
+			C.give(C.chargerate * recharge_coeff)
+			use_power(250 * recharge_coeff)
+			using_power = 1
+		update_icon(using_power)
+
+	if(istype(charging, /obj/item/ammo_box/magazine/recharge))
+		var/obj/item/ammo_box/magazine/recharge/R = charging
+		if(R.stored_ammo.len < R.max_ammo)
+			R.stored_ammo += new R.ammo_type(R)
+			use_power(200 * recharge_coeff)
+			using_power = 1
+		update_icon(using_power)
+		return
+

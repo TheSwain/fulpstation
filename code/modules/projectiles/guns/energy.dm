@@ -24,7 +24,10 @@
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
 	if(!(. & EMP_PROTECT_CONTENTS))
-		cell.use(round(cell.charge / severity))
+		if(cartridge) ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
+			cartridge.cell.use(round(cell.charge / severity))
+		else
+			cell.use(round(cell.charge / severity))
 		chambered = null //we empty the chamber
 		recharge_newshot() //and try to charge a new shot
 		update_icon()
@@ -34,7 +37,7 @@
 
 /obj/item/gun/energy/Initialize()
 	. = ..()
-	if(cell_cartridge_gun_initialize())
+	if(cell_cartridge_gun_initialize()) ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
 
 	else if(cell_type)
 		cell = new cell_type(src)
@@ -132,48 +135,13 @@
 	update_icon(TRUE)
 	return
 
-/obj/item/gun/energy/update_icon(force_update, mob/user)
+/obj/item/gun/energy/update_icon(force_update, mob/user) ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
 	if(QDELETED(src))
 		return
 	..()
 	if(!automatic_charge_overlays)
 		return
-	var/charge = 0
-	var/maxcharge = 1
-	if(cell)
-		charge = cell.charge
-		maxcharge = cell.maxcharge
-	var/ratio = CEILING(CLAMP(charge / maxcharge, 0, 1) * charge_sections, 1)
-	if(ratio == old_ratio && !force_update)
-		return
-	old_ratio = ratio
-	cut_overlays()
-	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
-	var/iconState = "[icon_state]_charge"
-	var/itemState = null
-	if(!initial(item_state))
-		itemState = icon_state
-	if (modifystate)
-		add_overlay("[icon_state]_[shot.select_name]")
-		iconState += "_[shot.select_name]"
-		if(itemState)
-			itemState += "[shot.select_name]"
-	if(charge < shot.e_cost)
-		add_overlay("[icon_state]_empty")
-	else
-		if(!shaded_charge)
-			var/mutable_appearance/charge_overlay = mutable_appearance(icon, iconState)
-			for(var/i = ratio, i >= 1, i--)
-				charge_overlay.pixel_x = ammo_x_offset * (i - 1)
-				charge_overlay.pixel_y = ammo_y_offset * (i - 1)
-				add_overlay(charge_overlay)
-		else
-			add_overlay("[icon_state]_charge[ratio]")
-	if(itemState)
-		itemState += "[ratio]"
-		item_state = itemState
-	if(user)
-		user.update_inv_hands()
+	fulp_update_icon(force_update, user) ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
 
 /obj/item/gun/energy/suicide_act(mob/living/user)
 	if (istype(user) && can_shoot() && can_trigger_gun(user) && user.get_bodypart(BODY_ZONE_HEAD))
@@ -183,7 +151,7 @@
 			user.visible_message("<span class='suicide'>[user] melts [user.p_their()] face off with [src]!</span>")
 			playsound(loc, fire_sound, 50, TRUE, -1)
 			var/obj/item/ammo_casing/energy/shot = ammo_type[select]
-			cell.use(shot.e_cost)
+			fulp_egun_suicide_ecost(shot)
 			update_icon()
 			return(FIRELOSS)
 		else
@@ -207,10 +175,8 @@
 
 /obj/item/gun/energy/ignition_effect(atom/A, mob/living/user)
 	if(!can_shoot() || !ammo_type[select])
-		if (!alarmed && empty_alarm)
-			playsound(src, empty_alarm_sound, empty_alarm_volume, empty_alarm_vary)
-			alarmed = TRUE
-			update_icon()
+
+		fulp_egun_alarm()  ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
 		shoot_with_empty_chamber()
 		. = ""
 	else

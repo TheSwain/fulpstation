@@ -104,7 +104,7 @@
 	var/obj/item/stock_parts/cell/C = A.get_cell()
 	var/obj/O
 	var/coefficient = 1
-	if(istype(A, /obj/item/gun/energy) || istype(A, /obj/item/cell_cartridge))
+	if(istype(A, /obj/item/gun/energy) || istype(A, /obj/item/cell_cartridge)) ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
 		to_chat(user,"Error unable to interface with device")
 		return FALSE
 	if(istype(A, /obj))

@@ -202,8 +202,8 @@
 		/obj/item/radio,
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola,
-		/obj/item/holosign_creator/security,
-		/obj/item/cell_cartridge
+		/obj/item/cell_cartridge, ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
+		/obj/item/holosign_creator/security
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()
