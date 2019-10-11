@@ -4,6 +4,7 @@
 	if(on_cooldown) //Sanity check.
 		return FALSE
 	on_cooldown = TRUE
+	last_cryosting = world.time
 	button_icon_state = "sting_cryo_0"
 	addtimer(CALLBACK(src, /datum/action/changeling/sting/cryo.proc/cryosting_cooldown_ends, user), recharge_cooldown)
 	return TRUE

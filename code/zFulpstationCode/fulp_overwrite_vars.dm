@@ -81,7 +81,7 @@
 	button_icon_state = "sting_cryo_1"
 	var/recharge_cooldown = 100 // 10 second cooldown
 	var/on_cooldown = FALSE
-	var/last_cryosting = world.time
+	var/last_cryosting
 
 //**************************************************
 //**** Surrealistik Cryosting Nerf - Oct 2019 ENDS
