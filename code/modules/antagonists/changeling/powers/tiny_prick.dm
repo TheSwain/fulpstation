@@ -56,13 +56,9 @@
 	return 1
 
 /datum/action/changeling/sting/sting_feedback(mob/user, mob/target)
-	if(!target)
+	if(!fulp_sting_feedback(user, target)) //Fulpstation: Fulp_nerf_cryosting_stealth PR by Surrealistik Oct 2019
 		return
-	to_chat(user, "<span class='notice'>We stealthily sting [target.name].</span>")
-	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/changeling))
-		to_chat(target, "<span class='warning'>You feel a tiny prick.</span>")
 	return 1
-
 
 /datum/action/changeling/sting/transformation
 	name = "Transformation Sting"
