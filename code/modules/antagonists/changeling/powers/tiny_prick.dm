@@ -233,13 +233,13 @@
 	name = "Cryogenic Sting"
 	desc = "We silently sting our victim with a cocktail of chemicals that freezes them from the inside. Costs 15 chemicals."
 	helptext = "Does not provide a warning to the victim, though they will likely realize they are suddenly freezing."
-	button_icon_state = "sting_cryo"
+	button_icon_state = "sting_cryo_1"
 	chemical_cost = 15
 	dna_cost = 2
 
 /datum/action/changeling/sting/cryo/sting_action(mob/user, mob/target)
 	if(!cryosting_cooldown_begins(user)) ///Fulp Cryosting Cooldown Surrealistik Oct 2019
-		return
+		return FALSE
 	log_combat(user, target, "stung", "cryo sting")
 	if(target.reagents)
 		target.reagents.add_reagent(/datum/reagent/consumable/frostoil, 30)
