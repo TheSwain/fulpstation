@@ -238,6 +238,8 @@
 	dna_cost = 2
 
 /datum/action/changeling/sting/cryo/sting_action(mob/user, mob/target)
+	if(!cryosting_cooldown_begins(user)) ///Fulp Cryosting Cooldown Surrealistik Oct 2019
+		return
 	log_combat(user, target, "stung", "cryo sting")
 	if(target.reagents)
 		target.reagents.add_reagent(/datum/reagent/consumable/frostoil, 30)

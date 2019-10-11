@@ -72,3 +72,17 @@
 //******************************************************
 //SEC BODY CAMS by Surrealistik Oct 2019 ENDS
 //******************************************************
+//**************************************************
+//**** Surrealistik Cryosting Nerf - Oct 2019 BEGINS
+//**************************************************
+
+/datum/action/changeling/sting/cryo
+	icon_icon = 'icons/mob/actions/fulp_actions_changeling.dmi'
+	button_icon_state = "sting_cryo_1"
+	var/recharge_cooldown = 100 // 10 second cooldown
+	var/on_cooldown = FALSE
+	var/last_cryosting = world.time
+
+//**************************************************
+//**** Surrealistik Cryosting Nerf - Oct 2019 ENDS
+//**************************************************
