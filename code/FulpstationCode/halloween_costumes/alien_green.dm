@@ -1,6 +1,4 @@
-Martian 
-
-/obj/item/clothing/head/hooded/greena_head
+/obj/item/clothing/mask/greena_head
 	name = "Green Alien Head"
 	desc = "Now you too can look like a Martian."
 	icon = 'icons/fulpicons/halloween_costumes/jo_alienicon.dmi'
