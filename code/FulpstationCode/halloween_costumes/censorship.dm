@@ -7,7 +7,7 @@ Censorship
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes2.dmi'
 	icon_state = "bald"
 
-/object/item/clothing/suit/censorship
+/obj/item/clothing/suit/censorship
 	name = "Censorship"
 	desc = "No one wants to see that."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon2.dmi'
