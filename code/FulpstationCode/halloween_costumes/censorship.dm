@@ -1,6 +1,4 @@
-Censorship
-
-/obj/item/clothing/suit/hooded/bald
+/obj/item/clothing/maskbald
 	name = "Bald Cap"
 	desc = "It's a bald cap to make you look, well, bald."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon2.dmi'
