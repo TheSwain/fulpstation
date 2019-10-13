@@ -5,7 +5,7 @@
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes.dmi'
 	icon_state = "hotdog_hat"
 
-/object/item/clothing/suit/hotdog
+/obj/item/clothing/suit/hotdog
 	name = "Hotdog"
 	desc = "Hot Dawg."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
