@@ -30,13 +30,6 @@
 	restricted_jobs = list("Cyborg", "Deputy")
 
 
-/obj/item/clothing/accessory
-	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'
-
-/obj/item/clothing/suit/space/hardsuit
-	var/toggle_helmet_sound = 'sound/mecha/mechmove03.ogg'
-	
-
 /datum/job/doctor
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_MEDICAL
@@ -59,3 +52,4 @@
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_MEDICAL
 	exp_requirements = 360
+
