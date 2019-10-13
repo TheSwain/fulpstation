@@ -139,8 +139,37 @@
 	if(QDELETED(src))
 		return
 	..()
-	if(!automatic_charge_overlays)
+	/*var/ratio = CEILING(CLAMP(cell.charge / cell.maxcharge, 0, 1) * charge_sections, 1)
+	if(ratio == old_ratio && !force_update)
 		return
+	old_ratio = ratio
+	cut_overlays()
+	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
+	var/iconState = "[icon_state]_charge"
+	var/itemState = null
+	if(!initial(item_state))
+		itemState = icon_state
+	if (modifystate)
+		add_overlay("[icon_state]_[shot.select_name]")
+		iconState += "_[shot.select_name]"
+		if(itemState)
+			itemState += "[shot.select_name]"
+	if(cell.charge < shot.e_cost)
+		add_overlay("[icon_state]_empty")
+	else
+		if(!shaded_charge)
+			var/mutable_appearance/charge_overlay = mutable_appearance(icon, iconState)
+			for(var/i = ratio, i >= 1, i--)
+				charge_overlay.pixel_x = ammo_x_offset * (i - 1)
+				charge_overlay.pixel_y = ammo_y_offset * (i - 1)
+				add_overlay(charge_overlay)
+		else
+			add_overlay("[icon_state]_charge[ratio]")
+	if(itemState)
+		itemState += "[ratio]"
+		item_state = itemState
+	if(!automatic_charge_overlays)
+		return*/
 	fulp_update_icon(force_update, user) ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
 
 /obj/item/gun/energy/suicide_act(mob/living/user)

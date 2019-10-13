@@ -16,8 +16,7 @@
 		/obj/item/melee/baton,
 		/obj/item/ammo_box/magazine/recharge,
 		/obj/item/cell_cartridge, ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
-		/obj/item/modular_computer
-		))
+		/obj/item/modular_computer))
 
 /obj/machinery/recharger/RefreshParts()
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
