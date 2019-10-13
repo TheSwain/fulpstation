@@ -4,7 +4,8 @@
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes.dmi'
 	icon_state = "mustard_cap"
-
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical/head
+	
 /obj/item/clothing/suit/mustard
 	name = "Mustard"
 	desc = "A soft plush mustard bottle."
