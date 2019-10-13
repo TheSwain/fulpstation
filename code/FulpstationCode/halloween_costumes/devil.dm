@@ -5,7 +5,7 @@
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes.dmi'
 	icon_state = "devil_horns"
 
-/object/item/clothing/suit/devil
+/obj/item/clothing/suit/devil
 	name = "Devil"
 	desc = "The one the only Devil."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
