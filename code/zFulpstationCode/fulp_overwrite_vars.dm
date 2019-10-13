@@ -28,12 +28,32 @@
 
 /datum/game_mode/traitor
 	restricted_jobs = list("Cyborg", "Deputy")
-
-
-
-
+	
 /obj/item/clothing/accessory
 	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'
 
 /obj/item/clothing/suit/space/hardsuit
 	var/toggle_helmet_sound = 'sound/mecha/mechmove03.ogg'
+
+/datum/job/doctor
+	exp_type = EXP_TYPE_CREW
+	exp_type_department = EXP_TYPE_MEDICAL
+	exp_requirements = 300 // 5 Hours as Nurse to unlock.
+
+/datum/job/chemist
+	minimal_player_age = 3 // Player have started playing on Fulp two or more days ago.
+	exp_type = EXP_TYPE_CREW
+	exp_type_department = EXP_TYPE_MEDICAL
+	exp_requirements = 480 // 8 Hours as Medical to unlock.
+	
+/datum/job/virologist
+	minimal_player_age = 3
+	exp_type = EXP_TYPE_CREW
+	exp_type_department = EXP_TYPE_MEDICAL
+	exp_requirements = 480
+	
+/datum/job/geneticist
+	minimal_player_age = 3
+	exp_type = EXP_TYPE_CREW
+	exp_type_department = EXP_TYPE_MEDICAL
+	exp_requirements = 480
