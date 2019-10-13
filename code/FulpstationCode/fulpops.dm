@@ -1,21 +1,23 @@
-/datum/outfit/plasmaman/syndicate
-	name = "Syndicate Plasmaman"
+/datum/outfit/syndicate/plasmaman
+	name = "Syndicate Operative Plasmaman - Basic"
 
 	head = /obj/item/clothing/head/helmet/space/plasmaman/robotics/syndicate
 	uniform = /obj/item/clothing/under/plasmaman/security/syndicate
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
-	back = /obj/item/storage/backpack/fireproof
-	ears = /obj/item/radio/headset/syndicate/alt
-	l_pocket = /obj/item/pinpointer/nuke/syndicate
-	id = /obj/item/card/id/syndicate
-	belt = /obj/item/gun/ballistic/automatic/pistol
-	backpack_contents = list(/obj/item/storage/box/syndie = 1,
-		/obj/item/kitchen/knife/combat/survival = 1)
-	var/tc = 25
-	var/command_radio = FALSE
-	var/uplink_type = /obj/item/uplink/nuclear
-
+	r_hand= /obj/item/tank/internals/plasmaman/belt/full
+	mask = /obj/item/clothing/mask/gas/syndicate
+	
+/datum/outfit/syndicate/leader
+	name = "Syndicate Leader Plasmaman - Basic"
+	head = /obj/item/clothing/head/helmet/space/plasmaman/robotics/syndicate
+	uniform = /obj/item/clothing/under/plasmaman/security/syndicate
+	r_hand= /obj/item/tank/internals/plasmaman/belt/full
+	mask = /obj/item/clothing/mask/gas/syndicate
+	id = /obj/item/card/id/syndicate/nuke_leader
+	gloves = /obj/item/clothing/gloves/krav_maga/combatglovesplus
+	command_radio = TRUE
+	backpack_contents = list(/obj/item/nuclear_challenge=1, /obj/item/storage/box/syndie=1,\
+		/obj/item/kitchen/knife/combat/survival)
+		
 /obj/item/clothing/head/helmet/space/plasmaman/robotics/syndicate
 	name = "syndicate plasma envirosuit helmet"
 	desc = "A plasmaman envirosuit helmet designed for syndicate operatives."

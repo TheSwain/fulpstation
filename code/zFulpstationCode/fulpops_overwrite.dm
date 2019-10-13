@@ -4,8 +4,15 @@
 	antagpanel_category = "NukeOp"
 	job_rank = ROLE_OPERATIVE
 	antag_moodlet = /datum/mood_event/focused
-	var/nukeop_outfit_plasmaman = /datum/outfit/plasmaman/syndicate
+	var/nukeop_outfit_plasmaman = /datum/outfit/syndicate/plasmaman
 	can_hijack = HIJACK_HIJACKER
+
+/datum/antagonist/nukeop/leader
+	name = "Nuclear Operative Leader"
+	nukeop_outfit = /datum/outfit/syndicate/leader
+	nukeop_outfit_plasmaman = /datum/outfit/syndicate/leader/plasmaman/
+	always_new_team = TRUE
+
 
 /datum/antagonist/nukeop/proc/equip_op()
 	if(!ishuman(owner.current)) // If you're not a carbon, go away.
