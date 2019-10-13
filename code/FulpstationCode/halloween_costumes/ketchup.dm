@@ -5,7 +5,7 @@
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes.dmi'
 	icon_state = "ketchup_cap"
 
-/object/item/clothing/suit/ketchup
+/obj/item/clothing/suit/ketchup
 	name = "Ketchup"
 	desc = "A soft plush ketchup bottle."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
