@@ -11,7 +11,7 @@
 	outfit = /datum/outfit/job/emt
 	fulp_spawn = /area/medical/sleeper
 	minimal_player_age = 7
-	exp_requirements = 480
+	exp_requirements = 600 // 10 Hours of Med to unlock
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_MEDICAL
 	
@@ -35,6 +35,7 @@
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/apron/emt
 	l_hand = /obj/item/storage/firstaid/emt
+	r_hand = /obj/item/book/manual/wiki/emt
 	suit_store = /obj/item/flashlight/pen
 	r_pocket = /obj/item/gps/medical
 	l_pocket = /obj/item/pda/medical

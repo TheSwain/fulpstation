@@ -5,14 +5,14 @@
 	department_flag = MEDSCI // Gives Med experience. I think. This line might actually do nothing.
 	faction = "Station"
 	total_positions = 1 // You get one. Treat them nicely please.
-	spawn_positions = 1 
-	supervisors = "the warden; and the chief medical officer if needed. As the Brig Doctor you have been entrusted with the health of the Security staff stationed in the Brig and any prisoners. If tending to a prisoner ensure you have a Officer or the Warden with you. Should you need to conduct surgery in the Brig there is a set of surgucal tools down the perma hallway."
-	//supervisors = "the warden; and the chief medical officer if needed." // Short one for once people get used to the Brig Doctor job.
+	spawn_positions = 1
+	supervisors = "the warden; and the chief medical officer if needed."
 	selection_color = "#ffeef0"
 	minimal_player_age = 7 // Requires the player to have been playing on Fulp for 7 days
-	exp_requirements = 480 // Requires 8 or so hours of playtime on medical and security. I think.
+	exp_requirements = 600 // Requires 10 or so hours of playtime on medical and security. I think.
 	exp_type = EXP_TYPE_CREW
-	exp_type_department = list(EXP_TYPE_MEDICAL, EXP_TYPE_SECURITY) // Shot in the dark tbh. This probably does nothing.
+	exp_type_department = EXP_TYPE_MEDICAL
+	//exp_type_department = list(EXP_TYPE_MEDICAL, EXP_TYPE_SECURITY) // Shot in the dark tbh. This probably does nothing.
 	outfit = /datum/outfit/job/brigdoc
 	fulp_spawn = /area/security/brig
 	id_icon = 'icons/fulpicons/cards.dmi'
@@ -42,6 +42,7 @@
 	gloves = /obj/item/clothing/gloves/color/latex // Give the Brig Doc latex gloves as this doesn't always spawn
 	shoes = /obj/item/clothing/shoes/sneakers/white // Default medical shoes
 	suit =  /obj/item/clothing/suit/armor/vest // Gives the Brig Doc a 'slim Type I armor vest' found in Sec lockers
+	r_hand = /obj/item/book/manual/wiki/brig_doctor // Give the Brig Doc their manual
 	l_hand = /obj/item/storage/firstaid/combatmedic // Gives the Brig Doc a combat first aid kit in their hand
 	l_pocket = /obj/item/pda/medical // Belt slot is already occupied so the PDA has to go into a pocket.
 	backpack_contents = list(

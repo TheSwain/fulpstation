@@ -34,6 +34,8 @@ Medical Doctor=10,3
 Chemist=4,2
 Geneticist=4,2
 Virologist=2,1
+Nurse=3,4
+EMT=2,2
 
 Scientist=10,3
 Roboticist=5,2
@@ -42,6 +44,7 @@ Warden=2,1
 Detective=3,1
 Security Officer=15,5
 Deputy=4,4 //FULP
+Brig Doctor=1,1
 
 AI=0,1
 Cyborg=0,2

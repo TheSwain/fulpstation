@@ -126,6 +126,9 @@
 
 		if("EMT")
 			O = new /datum/outfit/plasmaman/medical
+			
+		if("Nurse")
+			O = new /datum/outfit/plasmaman/medical
 
 		if("Clown")
 			O = new /datum/outfit/plasmaman/clown

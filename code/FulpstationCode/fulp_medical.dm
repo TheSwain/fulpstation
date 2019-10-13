@@ -163,7 +163,7 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/stack/medical/gauze = 2, // 12 chunks of gauze bandaging people up.
+		/obj/item/stack/medical/gauze = 2, // 12 chunks of gauze for bandaging people up.
 		/obj/item/reagent_containers/hypospray/medipen/synthpen = 1, // The EMT's unique Synthpen. Coded by Mithrandalf.
 		/obj/item/reagent_containers/hypospray/medipen = 2, // For when you can't wait for the Synthpen to come back online.
 		/obj/item/storage/pill_bottle/iron = 1, // For handling bloodloss.
@@ -174,7 +174,7 @@
 
 /obj/item/storage/firstaid/alcohol
 	name = "bar medical kit"
-	desc = "A specialized medical kit used by the Bartender when a patron drinks so much they've started killing themselves or when someone gets hit by a chair."
+	desc = "A specialized medical kit used by the Bartender when a patron drinks so much they've started killing themselves."
 	icon = 'icons/fulpicons/phoenix_nest/medical.dmi'
 	icon_state = "alcoholfirstaid"
 	item_state = "firstaid-alcohol"
@@ -188,8 +188,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/penacid/antihol = 2,
 		/obj/item/storage/pill_bottle/barman = 1,
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/stack/medical/bruise_pack = 1,
-		/obj/item/healthanalyzer = 1)
+		/obj/item/stack/medical/bruise_pack = 1)
 	generate_items_inside(items_inside,src)
 
 // =================================================
