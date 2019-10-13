@@ -1,6 +1,5 @@
 /datum/outfit/syndicate/plasmaman
 	name = "Syndicate Operative Plasmaman - Basic"
-
 	head = /obj/item/clothing/head/helmet/space/plasmaman/robotics/syndicate
 	uniform = /obj/item/clothing/under/plasmaman/security/syndicate
 	r_hand= /obj/item/tank/internals/plasmaman/belt/full
