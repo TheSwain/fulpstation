@@ -5,7 +5,7 @@ Tuxedo Mask
 	desc = "A dapper top hat."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes.dmi'
-	icon_state = "tophat"
+	icon_state = "top_hat"
 
 /obj/item/clothing/masks/masquerade
 	name = "Mask"
@@ -14,7 +14,7 @@ Tuxedo Mask
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes.dmi'
 	icon = "mask"
 
-/obj/item/clothing/suit/tudedo_mask
+/obj/item/clothing/suit/tuxedo_mask
 	name = "Tuxedo"
 	desc = "A dapper tux."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
