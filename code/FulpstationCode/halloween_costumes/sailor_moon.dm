@@ -1,5 +1,3 @@
-Sailor moon
-
 /obj/item/clothing/head/meat_buns
 	name = "Meat ball"
 	desc = "Hair that looks like a pair of meatballs and spaghetti."
