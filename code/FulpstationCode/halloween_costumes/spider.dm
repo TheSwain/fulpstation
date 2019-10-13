@@ -1,5 +1,3 @@
-Spider 
-
 /obj/item/clothing/suit/spider
 	name = "Spider"
 	desc = "An unwieldy set of 8 limbs"
