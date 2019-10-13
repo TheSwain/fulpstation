@@ -18,17 +18,17 @@
  	//antag disallowing//
 
 /datum/game_mode/revolution
-	restricted_jobs = list("Security Officer", "Warden", "Detective", "AI", "Cyborg","Captain", "Head of Personnel", "Head of Security", "Chief Engineer", "Research Director", "Chief Medical Officer", "Deputy")
+	restricted_jobs = list("Security Officer", "Warden", "Detective", "AI", "Cyborg","Captain", "Head of Personnel", "Head of Security", "Chief Engineer", "Research Director", "Chief Medical Officer", "Deputy", "Brig Doctor")
 
 /datum/game_mode/clockwork_cult
 	restricted_jobs = list("Chaplain", "Captain", "Deputy")
 
 /datum/game_mode/cult
-	restricted_jobs = list("Chaplain","AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Deputy")
+	restricted_jobs = list("Chaplain","AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Deputy", "Brig Doctor")
 
 /datum/game_mode/traitor
 	restricted_jobs = list("Cyborg", "Deputy")
-	
+
 /obj/item/clothing/accessory
 	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'
 

@@ -43,9 +43,9 @@
 	return possible_turfs
 
 
-// Return a xeno_spawn location in an area - use for additional jobspawns
+// Reworked to find any empty tile
 //
-proc/get_fulp_spawn(area/dept)
-	for(var/obj/effect/landmark/S in GLOB.xeno_spawn)
-		if(get_area(S) == dept)
-			return S
+proc/get_fulp_spawn(var/area/room)
+	for(var/turf/T in shuffle(get_area_turfs(room)))
+		if(!is_blocked_turf(T))
+			return T
