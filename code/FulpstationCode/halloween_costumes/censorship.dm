@@ -1,4 +1,4 @@
-/obj/item/clothing/maskbald
+/obj/item/clothing/mask/bald
 	name = "Bald Cap"
 	desc = "It's a bald cap to make you look, well, bald."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon2.dmi'
