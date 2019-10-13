@@ -8,7 +8,7 @@ Bob Ross
 	icon_state = "afro"
 
 /object/item/clothing/suit/ross
-	name = "Bob Ross"
+	name = "Bob ross"
 	desc = "It's a happy little accident."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon2.dmi'
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes2.dmi'
