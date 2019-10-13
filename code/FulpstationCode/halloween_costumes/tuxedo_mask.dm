@@ -10,8 +10,8 @@ Tuxedo Mask
 /obj/item/clothing/masks/masquerade
 	name = "mask"
 	desc = "A mask to protect your identity"
-	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi"
-	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes.dmi"
+	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
+	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes.dmi'
 	icon = "masquerade"
 
 /obj/item/clothing/suit/tudedo_mask
