@@ -6,7 +6,7 @@
 	r_hand= /obj/item/tank/internals/plasmaman/belt/full
 	mask = /obj/item/clothing/mask/gas/syndicate
 	
-/datum/outfit/syndicate/leader
+/datum/outfit/syndicate/leader/plasmaman
 	name = "Syndicate Leader Plasmaman - Basic"
 	head = /obj/item/clothing/head/helmet/space/plasmaman/robotics/syndicate
 	uniform = /obj/item/clothing/under/plasmaman/security/syndicate

@@ -10,7 +10,7 @@
 /datum/antagonist/nukeop/leader
 	name = "Nuclear Operative Leader"
 	nukeop_outfit = /datum/outfit/syndicate/leader
-	nukeop_outfit_plasmaman = /datum/outfit/syndicate/leader/plasmaman/
+	nukeop_outfit_plasmaman = /datum/outfit/syndicate/leader/plasmaman
 	always_new_team = TRUE
 
 
