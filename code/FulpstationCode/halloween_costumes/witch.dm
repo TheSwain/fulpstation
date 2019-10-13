@@ -1,4 +1,4 @@
-/obj/item/clothing/suit/hooded/green_face
+/obj/item/clothing/mask/green_face
 	name = "Witch Head"
 	desc = "A green face and a pointy hat."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
