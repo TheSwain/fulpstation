@@ -3,11 +3,11 @@
 	desc = "Now you too can look like a Grey."
 	icon = 'icons/fulpicons/halloween_costumes/jo_alienicon.dmi'
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_aliens.dmi'
-	icon_state = "greya_head"
+	icon_state = "grey_head"
 
 /obj/item/clothing/suit/space/hardsuit/toy/grey_alien
 	name = "Grey Alien"
 	desc = "Space Suit for Aliens."
 	icon = 'icons/fulpicons/halloween_costumes/jo_alienicon.dmi'
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_aliens.dmi'
-	icon_state = "grey_alien"
+	icon_state = "grey_top"
