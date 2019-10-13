@@ -38,22 +38,22 @@
 /datum/job/doctor
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_MEDICAL
-	exp_requirements = 240 // 4 Hours as Nurse to unlock.
+	exp_requirements = 300 // 5 Hours as Nurse to unlock.
 
 /datum/job/chemist
-	minimal_player_age = 2 // Player have started playing on Fulp two or more days ago.
+	minimal_player_age = 3 // Player have started playing on Fulp two or more days ago.
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_MEDICAL
-	exp_requirements = 360 // 6 Hours as Medical to unlock.
+	exp_requirements = 480 // 8 Hours as Medical to unlock.
 	
 /datum/job/virologist
-	minimal_player_age = 2
+	minimal_player_age = 3
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_MEDICAL
-	exp_requirements = 360
+	exp_requirements = 480
 	
 /datum/job/geneticist
-	minimal_player_age = 2
+	minimal_player_age = 3
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_MEDICAL
-	exp_requirements = 360
+	exp_requirements = 480
