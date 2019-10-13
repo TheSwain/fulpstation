@@ -7,7 +7,7 @@ Hades
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes2.dmi'
 	icon_state = "hades"
 
-/object/item/clothing/suit/toga
+/obj/item/clothing/suit/toga
 	name = "Hell Toga"
 	desc = "It's what the Lord of the Underworld wears."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon2.dmi'
