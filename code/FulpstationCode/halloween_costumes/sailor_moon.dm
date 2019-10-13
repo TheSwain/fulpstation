@@ -5,7 +5,7 @@ Sailor moon
 	desc = "Hair that looks like a pair of meatballs and spaghetti."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes.dmi'
-	icon_state = "meatbuns"
+	icon_state = "meat_wig"
 
 /obj/item/clothing/suit/sailor_moon
 	name = "Sailor moon leotard"
