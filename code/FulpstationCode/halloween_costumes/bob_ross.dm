@@ -1,5 +1,3 @@
-Bob Ross
-
 /obj/item/clothing/suit/hooded/afro
 	name = "Afro"
 	desc = "This wig is large and fluffy."
