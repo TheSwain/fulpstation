@@ -10,7 +10,7 @@
 	desc = "A mask to protect your identity"
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes.dmi'
-	icon = "mask"
+	icon_state = "mask"
 
 /obj/item/clothing/suit/tuxedo_mask
 	name = "Tuxedo"
