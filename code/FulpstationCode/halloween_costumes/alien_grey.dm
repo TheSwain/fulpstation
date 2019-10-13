@@ -1,6 +1,4 @@
-Greys
-
-/obj/item/clothing/head/hooded/greya_head
+/obj/item/clothing/mask/greya_head
 	name = "Grey Alien Head"
 	desc = "Now you too can look like a Grey."
 	icon = 'icons/fulpicons/halloween_costumes/jo_alienicon.dmi'
