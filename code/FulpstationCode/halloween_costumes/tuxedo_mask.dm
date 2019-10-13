@@ -1,5 +1,3 @@
-Tuxedo Mask 
-
 /obj/item/clothing/head/tophat
 	name = "Top hat"
 	desc = "A dapper top hat."
