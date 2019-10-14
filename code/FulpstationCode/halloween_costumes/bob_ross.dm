@@ -4,7 +4,7 @@
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon2.dmi'
 	mob_overlay_icon = 'icons/fulpicons/halloween_costumes/jo_costumes2.dmi'
 	icon_state = "afro"
-	hoodtype = /obj/item/clothing/head/hooded/afro
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical/head
 
 /obj/item/clothing/suit/ross
 	name = "Bob ross"
