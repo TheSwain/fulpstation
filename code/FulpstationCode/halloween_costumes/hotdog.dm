@@ -1,4 +1,4 @@
-/obj/item/clothing/head/hooded/hotdog_hat
+/obj/item/clothing/suit/hooded/hotdog_hat
 	name = "Hotdog Hat"
 	desc = "It's the tip of a wiener."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
