@@ -1,4 +1,4 @@
-/obj/item/clothing/head/hooded/ketchup_top
+/obj/item/clothing/suit/hooded/ketchup_top
 	name = "Ketchup Nozzel"
 	desc = "Ketchup Nozzel."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
