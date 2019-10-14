@@ -1,4 +1,4 @@
-/obj/item/clothing/head/hooded/afro
+/obj/item/clothing/suit/hooded/afro
 	name = "Afro"
 	desc = "This wig is large and fluffy."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon2.dmi'
