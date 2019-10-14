@@ -1,4 +1,4 @@
-/obj/item/clothing/head/hooded/head_horns
+/obj/item/clothing/suit/hooded/head_horns
 	name = "Devil horns"
 	desc = "It's the tip of a wiener."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
