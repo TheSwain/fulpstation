@@ -148,7 +148,7 @@
 
 /obj/item/clothing/head/helmet/space/plasmaman/cmo
 	name = "CMO plasma envirosuit helmet"
-	desc = "A plasmaman containment helmet designed for the chief medical officer."
+	desc = "A plasmaman containment helmet designed for the Chief Medical Officer."
 	icon_state = "cmo_envirohelm"
 	item_state = "cmo_envirohelm"
 
@@ -160,7 +160,7 @@
 
 /obj/item/clothing/head/helmet/space/plasmaman/ce
 	name = "CE plasma envirosuit helmet"
-	desc = "A plasmaman containment helmet designed for the chief engineer."
+	desc = "A plasmaman containment helmet designed for the Chief Engineer."
 	icon_state = "ce_envirohelm"
 	item_state = "ce_envirohelm"
 

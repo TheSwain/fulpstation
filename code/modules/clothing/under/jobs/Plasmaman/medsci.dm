@@ -36,7 +36,7 @@
 
 /obj/item/clothing/under/plasmaman/rd
 	name = "RD plasma envirosuit"
-	desc = "A suit worn by the Researh Director. preferably when they can only breathe plasma."
+	desc = "A suit worn by the Research Director. preferably when they can only breathe plasma."
 	icon_state = "rd_envirosuit"
 	item_state = "rd_envirosuit"
 
