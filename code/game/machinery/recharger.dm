@@ -123,8 +123,24 @@
 
 	var/using_power = 0
 	if(charging)
-		fulp_process(using_power) ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
+		/*
+		var/obj/item/stock_parts/cell/C = charging.get_cell()
+		if(C)
+			if(C.charge < C.maxcharge)
+				C.give(C.chargerate * recharge_coeff)
+				use_power(250 * recharge_coeff)
+				using_power = 1
+			update_icon(using_power)
 
+		if(istype(charging, /obj/item/ammo_box/magazine/recharge))
+			var/obj/item/ammo_box/magazine/recharge/R = charging
+			if(R.stored_ammo.len < R.max_ammo)
+				R.stored_ammo += new R.ammo_type(R)
+				use_power(200 * recharge_coeff)
+				using_power = 1
+			update_icon(using_power)
+			return*/
+		fulp_process(using_power) ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
 	else
 		return PROCESS_KILL
 
@@ -133,6 +149,15 @@
 	if (. & EMP_PROTECT_CONTENTS)
 		return
 	if(!(stat & (NOPOWER|BROKEN)) && anchored)
+		/*if(istype(charging,  /obj/item/gun/energy))
+			var/obj/item/gun/energy/E = charging
+			if(E.cell)
+				E.cell.emp_act(severity)
+
+		else if(istype(charging, /obj/item/melee/baton))
+			var/obj/item/melee/baton/B = charging
+			if(B.cell)
+				B.cell.charge = 0*/
 		fulp_recharger_emp_act(severity) ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
 
 
