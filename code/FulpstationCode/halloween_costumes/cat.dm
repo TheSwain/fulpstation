@@ -1,4 +1,4 @@
-/obj/item/clothing/head/hooded/catears
+/obj/item/clothing/suit/hooded/catears
 	name = "Cat Ears and Whiskers"
 	desc = "It's puurfect."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
