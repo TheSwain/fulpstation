@@ -1,4 +1,4 @@
-/obj/item/clothing/suit/hooded/halo
+/obj/item/clothing/head/hooded/halo
 	name = "Halo"
 	desc = "Your innocence is showing."
 	icon = 'icons/fulpicons/halloween_costumes/jo_icon.dmi'
