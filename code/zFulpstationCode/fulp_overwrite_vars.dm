@@ -37,3 +37,23 @@
 
 /obj/item/clothing/suit/space/hardsuit
 	var/toggle_helmet_sound = 'sound/mecha/mechmove03.ogg'
+
+
+//***********************************************************
+//**** Security Expanded Kits BEGINS - Surrealistik, Oct 2019
+//***********************************************************
+
+/datum/outfit/job/detective
+	backpack_contents = list(/obj/item/storage/box/evidence=1,\
+		/obj/item/detective_scanner=1,\
+		/obj/item/melee/classic_baton=1,\
+		/obj/item/taperecorder=1,\
+		/obj/item/camera=1,\
+		/obj/item/disk/holodisk=1,\
+		/obj/item/sensor_device=1,\
+		/obj/item/pinpointer/crew=1,\
+		)
+
+//***********************************************************
+//**** Security Expanded Kits ENDS - Surrealistik, Oct 2019
+//***********************************************************
