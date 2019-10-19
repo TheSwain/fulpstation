@@ -336,9 +336,10 @@
 
 
 
-/obj/item/detective_scanner/verb/toggle_mode(mob/user)
+/obj/item/detective_scanner/verb/toggle_mode()
 	set name = "Change Forensic Scanner Mode"
 	set category = "Object"
+	set src in view(1)
 
 	if(!isliving(usr))
 		to_chat(usr, "<span class='warning'>You can't do that!</span>")
