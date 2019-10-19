@@ -30,12 +30,14 @@
 		scanner.displayDetectiveScanResults(usr)
 
 /obj/item/detective_scanner/attack_self(mob/user)
+	/*
 	if(log.len && !scanning)
 		scanning = 1
 		to_chat(user, "<span class='notice'>Printing report, please wait...</span>")
 		addtimer(CALLBACK(src, .proc/PrintReport), 100)
 	else
-		to_chat(user, "<span class='notice'>The scanner has no logs or is in use.</span>")
+		to_chat(user, "<span class='notice'>The scanner has no logs or is in use.</span>")*/
+	self_mode(user) //FULPSTATION EXPANDED DETECTIVE TOOLS PR Surrealitisk Oct 2019
 
 /obj/item/detective_scanner/attack(mob/living/M, mob/user)
 	return
@@ -66,7 +68,8 @@
 
 /obj/item/detective_scanner/afterattack(atom/A, mob/user, params)
 	. = ..()
-	scan(A, user)
+	//scan(A, user)
+	attack_mode(A, user) //FULPSTATION EXPANDED DETECTIVE TOOLS PR Surrealitisk Oct 2019
 	return FALSE
 
 /obj/item/detective_scanner/proc/scan(atom/A, mob/user)
