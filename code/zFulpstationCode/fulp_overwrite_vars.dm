@@ -44,7 +44,7 @@
 //***********************************************************
 
 /datum/outfit/job/detective
-	glasses = /obj/item/clothing/glasses/sunglasses/detective
+	glasses = /obj/item/clothing/glasses/detective
 	backpack_contents = list(/obj/item/storage/box/evidence=1,\
 		/obj/item/detective_scanner=1,\
 		/obj/item/melee/classic_baton=1,\
