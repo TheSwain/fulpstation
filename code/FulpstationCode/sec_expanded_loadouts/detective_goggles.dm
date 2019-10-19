@@ -5,17 +5,17 @@
 
 /datum/design/detective_glasses
 	name = "Detective Glasses"
-	desc = "Stylish sunglasses with integrated medical, diagnostic and security HUDs and reagent scanning used by detectives. Has an integrated Meson Scanner mode."
+	desc = "Stylish glasses with integrated medical, diagnostic and security HUDs and reagent scanning used by detectives. Has an integrated Meson Scanner mode. Flash proofing compromised to accomodate HUD integration."
 	id = "detective_glasses"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 500, /datum/material/plastic = 2000, /datum/material/glass = 2000, /datum/material/silver = 1000, /datum/material/gold = 1000, /datum/material/uranium = 1000)
-	build_path = /obj/item/clothing/glasses/sunglasses/detective
+	build_path = /obj/item/clothing/glasses/detective
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/obj/item/clothing/glasses/sunglasses/detective
+/obj/item/clothing/glasses/detective
 	name = "detective glasses"
-	desc = "Stylish sunglasses with integrated medical, diagnostic and security HUDs and reagent scanning used by detectives. The Meson Scanner mode lets you see basic structural and terrain layouts through walls."
+	desc = "Stylish glasses with integrated medical, diagnostic and security HUDs and reagent scanning used by detectives. The Meson Scanner mode lets you see basic structural and terrain layouts through walls. Flash proofing compromised to accomodate HUD integration."
 	icon = 'icons/Fulpicons/surrealistik_stuff/detective_obs.dmi'
 	icon_state = "sundetect-"
 	item_state = "sunglasses"
@@ -30,24 +30,24 @@
 	var/range = 1
 	var/emped = FALSE //whether or not it's subject to the effects of an EMP.
 
-	clothing_flags = SCAN_REAGENTS //You can see reagents while wearing detective goggles
+	clothing_flags = SCAN_REAGENTS //You can see reagents while wearing detective glasses
 	resistance_flags = ACID_PROOF
 	glass_colour_type = /datum/client_colour/glass_colour/red
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 5, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 25, "fire" = 50, "acid" = 100)
 
-/obj/item/clothing/glasses/sunglasses/detective/Initialize()
+/obj/item/clothing/glasses/detective/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/item/clothing/glasses/sunglasses/detective/dropped(mob/user)
+/obj/item/clothing/glasses/detective/dropped(mob/user)
 	..()
 	remove_sensors(user)
 
-/obj/item/clothing/glasses/sunglasses/detective/equipped(mob/user, slot)
+/obj/item/clothing/glasses/detective/equipped(mob/user, slot)
 	..()
 	add_sensors(user, slot)
 
-/obj/item/clothing/glasses/sunglasses/detective/proc/remove_sensors(mob/user)
+/obj/item/clothing/glasses/detective/proc/remove_sensors(mob/user)
 	if(!user)
 		if(ismob(loc))
 			user = loc
@@ -60,7 +60,7 @@
 	medsensor.remove_hud_from(user)
 	diagsensor.remove_hud_from(user)
 
-/obj/item/clothing/glasses/sunglasses/detective/proc/add_sensors(mob/user, slot)
+/obj/item/clothing/glasses/detective/proc/add_sensors(mob/user, slot)
 	if(emped) //doesn't function while affected by EMPs.
 		return
 	if(slot != SLOT_GLASSES)
@@ -78,13 +78,13 @@
 	diagsensor.add_hud_to(user)
 
 
-/obj/item/clothing/glasses/sunglasses/detective/emp_act(severity)
+/obj/item/clothing/glasses/detective/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
 	emp_overload(severity)
 
-/obj/item/clothing/glasses/sunglasses/detective/proc/emp_overload(severity)
+/obj/item/clothing/glasses/detective/proc/emp_overload(severity)
 	if(ismob(src.loc))
 		var/mob/M = src.loc
 		to_chat(M, "<span class='danger'>[src]' hud abruptly flickers out as it overloads!</span>")
@@ -95,10 +95,10 @@
 		lighting_alpha = null
 		mode = MODE_NONE
 	emped = TRUE
-	addtimer(CALLBACK(src, /obj/item/clothing/glasses/sunglasses/detective/.proc/emp_recover), rand(100, 150*severity))
+	addtimer(CALLBACK(src, /obj/item/clothing/glasses/detective/.proc/emp_recover), rand(100*severity, 200*severity))
 
 
-/obj/item/clothing/glasses/sunglasses/detective/proc/emp_recover(slot)
+/obj/item/clothing/glasses/detective/proc/emp_recover(slot)
 	emped = FALSE
 	if(!ishuman(src.loc))
 		return
@@ -109,11 +109,11 @@
 
 
 
-/obj/item/clothing/glasses/sunglasses/detective/Destroy()
+/obj/item/clothing/glasses/detective/Destroy()
 	remove_sensors()
 	return ..()
 
-/obj/item/clothing/glasses/sunglasses/detective/proc/toggle_mode(mob/user, voluntary)
+/obj/item/clothing/glasses/detective/proc/toggle_mode(mob/user, voluntary)
 	if(!user)
 		if(!ismob(src.loc))
 			return
@@ -148,14 +148,14 @@
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 
-/obj/item/clothing/glasses/sunglasses/detective/attack_self(mob/user)
+/obj/item/clothing/glasses/detective/attack_self(mob/user)
 	toggle_mode(user, TRUE)
 
-/obj/item/clothing/glasses/sunglasses/detective/update_icon()
+/obj/item/clothing/glasses/detective/update_icon()
 	icon_state = "sundetect-[mode]"
 	update_mob()
 
-/obj/item/clothing/glasses/sunglasses/detective/proc/update_mob()
+/obj/item/clothing/glasses/detective/proc/update_mob()
 	item_state = icon_state
 	if(isliving(loc))
 		var/mob/living/user = loc
