@@ -37,7 +37,7 @@
 		addtimer(CALLBACK(src, .proc/PrintReport), 100)
 	else
 		to_chat(user, "<span class='notice'>The scanner has no logs or is in use.</span>")*/
-	self_mode(user) //FULPSTATION EXPANDED DETECTIVE TOOLS PR Surrealitisk Oct 2019
+	self_mode(user) //FULPSTATION EXPANDED DETECTIVE TOOLS PR Surrealistik Oct 2019
 
 /obj/item/detective_scanner/attack(mob/living/M, mob/user)
 	return
@@ -69,7 +69,7 @@
 /obj/item/detective_scanner/afterattack(atom/A, mob/user, params)
 	. = ..()
 	//scan(A, user)
-	attack_mode(A, user) //FULPSTATION EXPANDED DETECTIVE TOOLS PR Surrealitisk Oct 2019
+	attack_mode(A, user) //FULPSTATION EXPANDED DETECTIVE TOOLS PR Surrealistik Oct 2019
 	return FALSE
 
 /obj/item/detective_scanner/proc/scan(atom/A, mob/user)
