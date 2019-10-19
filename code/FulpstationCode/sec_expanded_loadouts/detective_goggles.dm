@@ -2,44 +2,128 @@
 
 #define MODE_NONE ""
 #define MODE_MESON "meson"
-#define MODE_TRAY "t-ray"
-#define MODE_RAD "radiation"
-#define MODE_SHUTTLE "shuttle"
 
-/obj/item/clothing/glasses/detective
-	name = "engineering scanner goggles"
-	desc = "Goggles used by detctives. The Meson Scanner mode lets you see basic structural and terrain layouts through walls, the T-ray Scanner mode lets you see underfloor objects such as cables and pipes, and the Radiation Scanner mode lets you see objects contaminated by radiation."
-	icon_state = "trayson-meson"
-	item_state = "trayson-meson"
+/datum/design/detective_glasses
+	name = "Detective Glasses"
+	desc = "Stylish sunglasses with integrated medical, diagnostic and security HUDs and reagent scanning used by detectives. Has an integrated Meson Scanner mode."
+	id = "detective_glasses"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 500, /datum/material/plastic = 2000, /datum/material/glass = 2000, /datum/material/silver = 1000, /datum/material/gold = 1000, /datum/material/uranium = 1000)
+	build_path = /obj/item/clothing/glasses/sunglasses/detective
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/obj/item/clothing/glasses/sunglasses/detective
+	name = "detective glasses"
+	desc = "Stylish sunglasses with integrated medical, diagnostic and security HUDs and reagent scanning used by detectives. The Meson Scanner mode lets you see basic structural and terrain layouts through walls."
+	icon = 'icons/Fulpicons/surrealistik_stuff/detective_obs.dmi'
+	icon_state = "sundetect-"
+	item_state = "sunglasses"
 	actions_types = list(/datum/action/item_action/toggle_mode)
 
 	vision_flags = NONE
 	darkness_view = 2
 	invis_view = SEE_INVISIBLE_LIVING
 
-	var/list/modes = list(MODE_NONE = MODE_MESON, MODE_MESON = MODE_TRAY, MODE_TRAY = MODE_RAD, MODE_RAD = MODE_NONE)
+	var/list/modes = list(MODE_NONE = MODE_MESON, MODE_MESON = MODE_NONE)
 	var/mode = MODE_NONE
 	var/range = 1
-
-	hud_type = DATA_HUD_SECURITY_ADVANCED
-	hud_trait = TRAIT_SECURITY_HUD
+	var/emped = FALSE //whether or not it's subject to the effects of an EMP.
 
 	clothing_flags = SCAN_REAGENTS //You can see reagents while wearing detective goggles
 	resistance_flags = ACID_PROOF
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 100)
+	glass_colour_type = /datum/client_colour/glass_colour/red
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 5, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 25, "fire" = 50, "acid" = 100)
 
-/obj/item/clothing/glasses/detective/Initialize()
+/obj/item/clothing/glasses/sunglasses/detective/Initialize()
 	. = ..()
-	START_PROCESSING(SSobj, src)
 	update_icon()
 
-/obj/item/clothing/glasses/detective/Destroy()
-	STOP_PROCESSING(SSobj, src)
+/obj/item/clothing/glasses/sunglasses/detective/dropped(mob/user)
+	..()
+	remove_sensors(user)
+
+/obj/item/clothing/glasses/sunglasses/detective/equipped(mob/user, slot)
+	..()
+	add_sensors(user, slot)
+
+/obj/item/clothing/glasses/sunglasses/detective/proc/remove_sensors(mob/user)
+	if(!user)
+		if(ismob(loc))
+			user = loc
+		else
+			return
+	var/datum/atom_hud/secsensor = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
+	var/datum/atom_hud/medsensor = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
+	var/datum/atom_hud/diagsensor = GLOB.huds[DATA_HUD_DIAGNOSTIC_ADVANCED]
+	secsensor.remove_hud_from(user)
+	medsensor.remove_hud_from(user)
+	diagsensor.remove_hud_from(user)
+
+/obj/item/clothing/glasses/sunglasses/detective/proc/add_sensors(mob/user, slot)
+	if(emped) //doesn't function while affected by EMPs.
+		return
+	if(slot != SLOT_GLASSES)
+		return
+	if(!user)
+		if(ismob(loc))
+			user = loc
+		else
+			return
+	var/datum/atom_hud/secsensor = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
+	var/datum/atom_hud/medsensor = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
+	var/datum/atom_hud/diagsensor = GLOB.huds[DATA_HUD_DIAGNOSTIC_ADVANCED]
+	secsensor.add_hud_to(user)
+	medsensor.add_hud_to(user)
+	diagsensor.add_hud_to(user)
+
+
+/obj/item/clothing/glasses/sunglasses/detective/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	emp_overload(severity)
+
+/obj/item/clothing/glasses/sunglasses/detective/proc/emp_overload(severity)
+	if(ismob(src.loc))
+		var/mob/M = src.loc
+		to_chat(M, "<span class='danger'>[src]' hud abruptly flickers out as it overloads!</span>")
+		remove_sensors(M)
+	if(MODE_MESON) //disable mesons if active
+		vision_flags = NONE
+		darkness_view = 2
+		lighting_alpha = null
+		mode = MODE_NONE
+	emped = TRUE
+	addtimer(CALLBACK(src, /obj/item/clothing/glasses/sunglasses/detective/.proc/emp_recover), rand(100, 150*severity))
+
+
+/obj/item/clothing/glasses/sunglasses/detective/proc/emp_recover(slot)
+	emped = FALSE
+	if(!ishuman(src.loc))
+		return
+	var/mob/living/carbon/human/H = src.loc
+	if(H.glasses == src)
+		to_chat(H, "<span class='notice'>[src]' hud elements flicker and shutter back into view as its interface reboots.</span>")
+		add_sensors(H, SLOT_GLASSES)
+
+
+
+/obj/item/clothing/glasses/sunglasses/detective/Destroy()
+	remove_sensors()
 	return ..()
 
-/obj/item/clothing/glasses/detective/proc/toggle_mode(mob/user, voluntary)
+/obj/item/clothing/glasses/sunglasses/detective/proc/toggle_mode(mob/user, voluntary)
+	if(!user)
+		if(!ismob(src.loc))
+			return
+		user = src.loc
+
+	if(emped)
+		to_chat(user, "<span class='warning'>[src]' hud elements flash and flicker, but fail to materialize.</span>")
+		return
+
 	mode = modes[mode]
-	to_chat(user, "<span class='[voluntary ? "notice":"warning"]'>[voluntary ? "You turn the goggles":"The goggles turn"] [mode ? "to [mode] mode":"off"][voluntary ? ".":"!"]</span>")
 
 	switch(mode)
 		if(MODE_MESON)
@@ -47,86 +131,31 @@
 			darkness_view = 1
 			lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 
-		if(MODE_TRAY) //undoes the last mode, meson
+		if(MODE_NONE) //undoes the last mode, meson
 			vision_flags = NONE
 			darkness_view = 2
 			lighting_alpha = null
 
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(H.glasses == src)
-			H.update_sight()
+	if(user)
+		to_chat(user, "<span class='[voluntary ? "notice":"warning"]'>[voluntary ? "You turn the goggles":"The goggles turn"] [mode ? "to [mode] mode":"off"][voluntary ? ".":"!"]</span>")
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			if(H.glasses == src)
+				H.update_sight()
 
 	update_icon()
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 
-/obj/item/clothing/glasses/detective/attack_self(mob/user)
+/obj/item/clothing/glasses/sunglasses/detective/attack_self(mob/user)
 	toggle_mode(user, TRUE)
 
-/obj/item/clothing/glasses/detective/process()
-	if(!ishuman(loc))
-		return
-	var/mob/living/carbon/human/user = loc
-	if(user.glasses != src || !user.client)
-		return
-	switch(mode)
-		if(MODE_TRAY)
-			t_ray_scan(user, 8, range)
-		if(MODE_RAD)
-			show_rads()
-		if(MODE_SHUTTLE)
-			show_shuttle()
-
-/obj/item/clothing/glasses/detective/proc/show_rads()
-	var/mob/living/carbon/human/user = loc
-	var/list/rad_places = list()
-	for(var/datum/component/radioactive/thing in SSradiation.processing)
-		var/atom/owner = thing.parent
-		var/turf/place = get_turf(owner)
-		if(rad_places[place])
-			rad_places[place] += thing.strength
-		else
-			rad_places[place] = thing.strength
-
-	for(var/i in rad_places)
-		var/turf/place = i
-		if(get_dist(user, place) >= range*2)	//Rads are easier to see than wires under the floor
-			continue
-		var/strength = round(rad_places[i] / 1000, 0.1)
-		var/image/pic = new(loc = place)
-		var/mutable_appearance/MA = new()
-		MA.alpha = 180
-		MA.maptext = "[strength]k"
-		MA.color = "#64C864"
-		MA.layer = FLY_LAYER
-		pic.appearance = MA
-		flick_overlay(pic, list(user.client), 8)
-
-/obj/item/clothing/glasses/detective/proc/show_shuttle()
-	var/mob/living/carbon/human/user = loc
-	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(user)
-	if(!port)
-		return
-	var/list/shuttle_areas = port.shuttle_areas
-	for(var/r in shuttle_areas)
-		var/area/region = r
-		for(var/turf/place in region.contents)
-			if(get_dist(user, place) > 7)
-				continue
-			var/image/pic
-			if(isshuttleturf(place))
-				pic = new('icons/turf/overlays.dmi', place, "greenOverlay", AREA_LAYER)
-			else
-				pic = new('icons/turf/overlays.dmi', place, "redOverlay", AREA_LAYER)
-			flick_overlay(pic, list(user.client), 8)
-
-/obj/item/clothing/glasses/detective/update_icon()
-	icon_state = "trayson-[mode]"
+/obj/item/clothing/glasses/sunglasses/detective/update_icon()
+	icon_state = "sundetect-[mode]"
 	update_mob()
 
-/obj/item/clothing/glasses/detective/proc/update_mob()
+/obj/item/clothing/glasses/sunglasses/detective/proc/update_mob()
 	item_state = icon_state
 	if(isliving(loc))
 		var/mob/living/user = loc
@@ -137,6 +166,3 @@
 
 #undef MODE_NONE
 #undef MODE_MESON
-#undef MODE_TRAY
-#undef MODE_RAD
-#undef MODE_SHUTTLE
