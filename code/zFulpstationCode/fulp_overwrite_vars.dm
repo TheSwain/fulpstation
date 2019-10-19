@@ -162,3 +162,24 @@
 //** Adds no-collision holobeds to the medborg. Support for handheld versions
 //***************************************************************************
 
+
+
+//**************************************************
+//** NO ANTAG HOP PR - Surrealistik Oct 2019 BEGINS
+//**************************************************
+
+/datum/outfit/job/hop
+	implants = list(/obj/item/implant/mindshield)
+
+/datum/game_mode/traitor
+	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel")
+
+/datum/game_mode/clockwork_cult
+	protected_jobs = list("AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel")
+
+/datum/game_mode/changeling
+	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel")
+
+//**************************************************
+//** NO ANTAG HOP PR - Surrealistik Oct 2019 ENDS
+//**************************************************
