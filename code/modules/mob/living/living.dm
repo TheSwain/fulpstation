@@ -913,7 +913,7 @@
 	return TRUE
 
 //used in datum/reagents/reaction() proc
-/mob/living/proc/get_permeability_protection(list/target_zones)
+/mob/living/proc/get_permeability_protection(list/target_zones = list())  // FULP: Added " = list()"  because we were getting an error for this proc in carbon.dm line 620. Maybe this fixes it?
 	return 0
 
 /mob/living/proc/harvest(mob/living/user) //used for extra objects etc. in butchering
@@ -1110,6 +1110,7 @@
 	var/knockdown = IsKnockdown()
 	var/ignore_legs = get_leg_ignore()
 	var/canmove = !IsImmobilized() && !stun && conscious && !paralyzed && !buckled && (!stat_softcrit || !pulledby) && !chokehold && !IsFrozen() && !IS_IN_STASIS(src) && (has_arms || ignore_legs || has_legs)
+	canmove = canmove && !IsFrenzied() // FULPSTATION: Bloodsuckers etc. cannot be controlled in Frenzy.
 	if(canmove)
 		mobility_flags |= MOBILITY_MOVE
 	else

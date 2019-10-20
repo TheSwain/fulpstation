@@ -29,6 +29,8 @@
 	//How many players have this job
 	var/current_positions = 0
 
+	var/list/human_command = list("Captain", "Head of Personnel", "Head of Security")
+
 	//Supervisors, who this person answers to directly
 	var/supervisors = ""
 
@@ -92,7 +94,7 @@
 		var/datum/bank_account/bank_account = new(H.real_name, src)
 		bank_account.payday(STARTING_PAYCHECKS, TRUE)
 		H.account_id = bank_account.account_id
-	if(CONFIG_GET(flag/enforce_human_authority) && (title in GLOB.command_positions))
+	if(CONFIG_GET(flag/enforce_human_authority) && (title in human_command))
 		if(H.dna.species.id != "human")
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", preference_source)
@@ -215,6 +217,7 @@
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
 		C.assignment = J.title
+		C.linkedJobType = J.type // FULP: We remember our job type. We don't need a reference to the exact instance inside SSjob. Just the type will do. *** ALSO LOCATED IN card.dm
 		C.update_label()
 		for(var/A in SSeconomy.bank_accounts)
 			var/datum/bank_account/B = A

@@ -257,6 +257,9 @@ GLOBAL_VAR(restart_counter)
 
 /world/proc/update_status()
 
+	status = update_status_fulp()  // FULPSTATION Use our code and bail!
+	return
+
 	var/list/features = list()
 
 	if(GLOB.master_mode)

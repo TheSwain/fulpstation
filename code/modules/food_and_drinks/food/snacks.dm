@@ -84,7 +84,7 @@ All foods are distributed among various categories. Use common sense.
 
 
 /obj/item/reagent_containers/food/snacks/attack(mob/living/M, mob/living/user, def_zone)
-	if(user.a_intent == INTENT_HARM)
+	if(user.a_intent != INTENT_HELP) // FULP Change: Must be in HELP to eat.
 		return ..()
 	if(!eatverb)
 		eatverb = pick("bite","chew","nibble","gnaw","gobble","chomp")
@@ -148,6 +148,7 @@ All foods are distributed among various categories. Use common sense.
 				bitecount++
 				On_Consume(M)
 				checkLiked(fraction, M)
+				M.CheckBloodsuckerEatFood(10) // FULPSTATION: Vampires can't eat real food. It gives them booboo tummies.
 				return TRUE
 
 	return 0

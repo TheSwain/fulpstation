@@ -149,6 +149,7 @@ SUBSYSTEM_DEF(ticker)
 			to_chat(world, "<span class='boldnotice'>Welcome to [station_name()]!</span>")
 			send2chat("New round starting on [SSmapping.config.map_name]!", CONFIG_GET(string/chat_announce_new_game))
 			current_state = GAME_STATE_PREGAME
+			ResetExtendedMode()// FULPSTATION: Reset to "secret" if left on "secret extended" or "extended"
 			//Everyone who wants to be an observer is now spawned
 			create_observers()
 			fire()
@@ -428,7 +429,7 @@ SUBSYSTEM_DEF(ticker)
 		queued_players.len = 0
 		queue_delay = 0
 		return
-
+		// FULP: Fuck Git. I NEVER CHANGED THIS LINE but it thinks I did. It tells me I removed a 2xTab and made this blank. Fucking ridiculous. Now I leave this here so I know why future conflicts happen.
 	queue_delay++
 	var/mob/dead/new_player/next_in_line = queued_players[1]
 
@@ -644,11 +645,7 @@ SUBSYSTEM_DEF(ticker)
 		'sound/roundend/newroundsexy.ogg',
 		'sound/roundend/apcdestroyed.ogg',
 		'sound/roundend/bangindonk.ogg',
-		'sound/roundend/leavingtg.ogg',
-		'sound/roundend/its_only_game.ogg',
-		'sound/roundend/yeehaw.ogg',
-		'sound/roundend/disappointed.ogg',
-		'sound/roundend/scrunglartiy.ogg',
+		'sound/roundend/imaghoul.ogg',
 		'sound/roundend/petersondisappointed.ogg'\
 		)
 

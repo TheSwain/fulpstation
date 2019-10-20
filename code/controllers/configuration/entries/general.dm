@@ -23,6 +23,8 @@
 
 /datum/config_entry/string/servername	// server name (the name of the game window)
 
+/datum/config_entry/string/servercaption	// caption name (goes next to server name in BYOND hub) // FULPSTATION
+
 /datum/config_entry/string/serversqlname	// short form server name used for the DB
 
 /datum/config_entry/string/stationname	// station name (the name of the station in-game)
@@ -209,6 +211,9 @@
 
 /datum/config_entry/string/githuburl
 	config_entry_value = "https://www.github.com/tgstation/-tg-station"
+
+/datum/config_entry/string/discordurl // FULP Addition
+	config_entry_value = "https://discord.gg/SVu782A"
 
 /datum/config_entry/string/roundstatsurl
 

@@ -35,6 +35,7 @@
 	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/storage/photo_album/Captain(src)
 	new /obj/item/card/id/departmental_budget/civ(src)
+	new /obj/item/clothing/shoes/digicombat(src) //fulp
 
 /obj/structure/closet/secure_closet/hop
 	name = "\proper head of personnel's locker"
@@ -64,6 +65,8 @@
 	new /obj/item/door_remote/civillian(src)
 	new /obj/item/circuitboard/machine/techfab/department/service(src)
 	new /obj/item/storage/photo_album/HoP(src)
+	new /obj/item/clothing/shoes/laceup/digitigrade(src) //fulp
+	new /obj/item/clothing/suit/hooded/wintercoat/captain/hop(src) // [FULP] [PNX] [PAPRITO]
 	new /obj/item/card/id/departmental_budget/srv(src)
 
 /obj/structure/closet/secure_closet/hos
@@ -100,6 +103,7 @@
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/head(src) // [FULP] [PNX] [PAPRITO]
 	new /obj/item/card/id/departmental_budget/sec(src)
 
 /obj/structure/closet/secure_closet/warden
@@ -127,6 +131,7 @@
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
 	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
+	new /obj/item/clothing/shoes/jackboots/digitigrade(src) //fulp
 
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"
@@ -209,6 +214,7 @@
 	new /obj/item/storage/belt/holster/full(src)
 	new /obj/item/pinpointer/crew(src)
 	new /obj/item/twohanded/binoculars(src)
+	new /obj/item/clothing/shoes/laceup/digitigrade(src) //fulp
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections"

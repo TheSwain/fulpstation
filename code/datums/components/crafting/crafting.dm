@@ -19,6 +19,7 @@
 				CAT_WEAPONRY,
 				CAT_ROBOT,
 				CAT_MISC,
+				CAT_STRUCTURE,	// FULPSTATION addition.
 				CAT_PRIMAL,
 				CAT_FOOD,
 				CAT_CLOTHING)
@@ -28,12 +29,14 @@
 							CAT_AMMO),
 						CAT_NONE, //Robot subcategories
 						CAT_NONE, //Misc subcategories
+						CAT_NONE, //Structure subcategories	// FULPSTATION addition
 						CAT_NONE, //Tribal subcategories
 						list(	//Food subcategories
 							CAT_BREAD,
 							CAT_BURGER,
 							CAT_CAKE,
 							CAT_EGG,
+							CAT_ICE,
 							CAT_MEAT,
 							CAT_MISCFOOD,
 							CAT_PASTRY,
