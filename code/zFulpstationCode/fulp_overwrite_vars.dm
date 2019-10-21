@@ -37,3 +37,15 @@
 
 /obj/item/clothing/suit/space/hardsuit
 	var/toggle_helmet_sound = 'sound/mecha/mechmove03.ogg'
+
+
+//*************************************************************
+//** Mech Weapon Firing Pins PR by Surrealistik Oct 2019 BEGINS
+//*************************************************************
+
+/obj/item/mecha_parts/mecha_equipment/weapon
+	var/obj/item/firing_pin/pin //standard firing pin for most guns
+
+//*************************************************************
+//** Mech Weapon Firing Pins PR by Surrealistik Oct 2019 ENDS
+//*************************************************************
