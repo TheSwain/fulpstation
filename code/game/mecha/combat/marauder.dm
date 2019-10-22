@@ -69,6 +69,7 @@
 	ME = new /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster(src)
 	ME.attach(src)
 	max_ammo()
+	unlock_mech_weapons() //Mech Weapon Firing Pins PR by Surrealistik Oct 2019
 
 /obj/mecha/combat/marauder/mauler
 	desc = "Heavy-duty, combat exosuit, developed off of the existing Marauder model."
@@ -93,5 +94,6 @@
 	ME = new /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster(src)
 	ME.attach(src)
 	max_ammo()
+	unlock_mech_weapons() //Mech Weapon Firing Pins PR by Surrealistik Oct 2019
 
 
