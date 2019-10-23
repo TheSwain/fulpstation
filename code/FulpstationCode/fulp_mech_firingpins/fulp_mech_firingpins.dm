@@ -86,7 +86,18 @@
 			var/obj/item/mecha_parts/mecha_equipment/weapon/gun = I
 			gun.unlock_weapon()
 
+
 /obj/item/mecha_parts/mecha_equipment/weapon/proc/unlock_weapon() //For admin convenience/spawning unlocked weapons
 	if(pin)
 		qdel(pin)
 	pin = new /obj/item/firing_pin
+
+
+/obj/item/mecha_parts/mecha_equipment/weapon/Initialize()
+	. = ..()
+	if(!initial_firing_pin)
+		return
+	if(!ispath(initial_firing_pin, /obj/item/firing_pin))
+		log_mapping("[src] at [AREACOORD(src)] had an invalid firing pin type: [initial_firing_pin].")
+	else
+		pin = new initial_firing_pin(src)
