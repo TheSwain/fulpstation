@@ -205,11 +205,9 @@
 //***************************************************************************
 
 
-//***************************************************************************
-//** FULPSTATION SECBORG MODULE UPDATE by Surrealistik Jan 2020 BEGINS
-//---------------------------------------------------------------------------
-//** Expands the Secborg's module items and upgrades.
-//***************************************************************************
+//************************************************************
+//** Improved Sec Starter Gear by Surrealistik Oct 2019 BEGINS
+//************************************************************
 
 //************************************************************************
 //** Airlock Electroadaptive Psuedo Circuit BEGINS - Surrealistik Oct 2019
@@ -257,3 +255,19 @@
 //---------------------------------------------------------------------------
 //** Expands the Secborg's module items and upgrades.
 //***************************************************************************
+/datum/outfit/job/security
+	backpack_contents = null //Start with stun baton in belt.
+	l_pocket = /obj/item/pda/security
+	belt = /obj/item/storage/belt/security/fulp_starter_full
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	box = /obj/item/storage/box/security/improved
+
+/datum/outfit/job/warden
+	backpack_contents = null //Start with stun baton in belt.
+	l_pocket = /obj/item/pda/security
+	belt = /obj/item/storage/belt/security/fulp_starter_full
+	box = /obj/item/storage/box/security/improved
+
+//************************************************************
+//** Improved Sec Starter Gear by Surrealistik Oct 2019 ENDS
+//************************************************************
