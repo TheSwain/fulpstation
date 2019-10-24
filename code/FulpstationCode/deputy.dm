@@ -86,15 +86,15 @@
 	jobtype = /datum/job/deputy
 
 	head = /obj/item/clothing/head/beret/sec
-	belt = /obj/item/pda/security
+	belt = /obj/item/storage/belt/security/fulp_starter_full
 	ears = /obj/item/radio/headset/headset_sec
 	uniform = /obj/item/clothing/under/rank/security/mallcop
 	accessory = /obj/item/clothing/accessory/armband/deputy
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/restraints/handcuffs/cable/zipties
-	r_pocket = /obj/item/assembly/flash/handheld
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+	r_pocket = /obj/item/pda/security
+
+	glasses = /obj/item/clothing/glasses/hud/security
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -158,7 +158,7 @@ GLOBAL_LIST_INIT(available_deputy_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MED
 			dep_access = list(ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE)
 			destination = /area/security/checkpoint/science
 			spawn_point = get_fulp_spawn(destination)
-	
+
 	if(ears)
 		if(H.ears)
 			qdel(H.ears)

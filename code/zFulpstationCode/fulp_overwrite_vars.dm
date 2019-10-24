@@ -37,3 +37,24 @@
 
 /obj/item/clothing/suit/space/hardsuit
 	var/toggle_helmet_sound = 'sound/mecha/mechmove03.ogg'
+
+//************************************************************
+//** Improved Sec Starter Gear by Surrealistik Oct 2019 BEGINS
+//************************************************************
+
+/datum/outfit/job/security
+	backpack_contents = null //Start with stun baton in belt.
+	l_pocket = /obj/item/pda/security
+	belt = /obj/item/storage/belt/security/fulp_starter_full
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	box = /obj/item/storage/box/security/improved
+
+/datum/outfit/job/warden
+	backpack_contents = null //Start with stun baton in belt.
+	l_pocket = /obj/item/pda/security
+	belt = /obj/item/storage/belt/security/fulp_starter_full
+	box = /obj/item/storage/box/security/improved
+
+//************************************************************
+//** Improved Sec Starter Gear by Surrealistik Oct 2019 ENDS
+//************************************************************
