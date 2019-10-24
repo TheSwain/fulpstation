@@ -15,3 +15,13 @@
 	cost = 60
 	cant_discount = TRUE
 	illegal_tech = FALSE
+
+/datum/uplink_item/role_restricted/mech_firing_pin
+	name = "Concealed Weapon Bay (Mech Firing Pin Included)"
+	desc = "A handy firing pin that can only be installed into mech weapons. \
+			It also hides the equipped weapon from plain sight. \
+			Only one can fit on a mecha. \
+			This one comes complete with a handy firing pin that can only be installed into mech weapons"
+	item = /obj/item/storage/box/syndicate/bundle_mech
+	cost = 7 //So you cannot use it to get 3 unlocked mech weapons.
+	restricted_roles = list("Roboticist", "Research Director")
