@@ -17,7 +17,7 @@
 	name = "emergency light pouch"
 	desc = "A pouch designed to contain flares and glowsticks."
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
-	custom_price = 30
+	custom_price = 20
 
 /obj/item/storage/belt/pouch/lights/ComponentInitialize()
 	. = ..()
@@ -47,7 +47,7 @@
 		desc = "A military pouch issued to Security Officers that is designed to contain flares and glowsticks."
 		icon_state = "flare_pouch_mili"
 		item_state = "flare_pouch_mili"
-		custom_price = 40
+		custom_price = 30
 /obj/item/storage/belt/pouch/lights/security/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)

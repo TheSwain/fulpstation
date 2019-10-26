@@ -23,10 +23,6 @@
 					/obj/item/reagent_containers/medigel/libital = 2,
 					/obj/item/reagent_containers/medigel/aiuri = 2,
 					/obj/item/reagent_containers/medigel/sterilizine = 1,
-					/obj/item/reagent_containers/medigel/thin/silversulfadiazine = 2, // [FULP] [PNX]
-					/obj/item/reagent_containers/medigel/thin/stypticpowder = 2, // [FULP] [PNX]
-					/obj/item/flashlight/glowstick/cyan = 3, // [FULP] [PNX]
-					/obj/item/storage/belt/pouch/medical = 1, // [FULP] [PNX] This totally won't be abused...
 					/obj/item/sensor_device = 2,
 					/obj/item/reagent_containers/pill/patch/stypticpowder = 5,	//FULP
 					/obj/item/reagent_containers/pill/patch/silversulfadiazine = 5,	//FULP

@@ -14,8 +14,8 @@
 	exp_requirements = 600 // 10 Hours of Med to unlock
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_MEDICAL
-	
-	id_icon = 'icons/fulpicons/cards.dmi'	
+
+	id_icon = 'icons/fulpicons/cards.dmi'
 	hud_icon = 'icons/fulpicons/fulphud.dmi'
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM,ACCESS_MAINT_TUNNELS,ACCESS_MINING_STATION,ACCESS_EVA) // Skeleton Access
@@ -43,10 +43,9 @@
 	backpack_contents = list(
 		/obj/item/storage/firstaid/medical = 1,
 		)
-	
+
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 
 	chameleon_extras = /obj/item/gun/syringe
-	
