@@ -27,21 +27,21 @@
 
 /obj/item/mecha_parts/mecha_equipment/weapon/proc/handle_pins()
 
-	var/mob/living/carbon/user = chassis.occupant
-	if(!user)
+	var/mob/user = chassis.occupant
+	if(!user) //Sanity check
+		return FALSE
+
+	if(!pin)
+		to_chat(user, "<span class='warning'>[src]'s trigger is locked. This weapon doesn't have a firing pin installed!</span>")
+		return FALSE
+
+	if(chassis.silicon_pilot) //We just need any kind of firing pin for AI/MMIs/Positronic Brains; they are always authorized.
 		return TRUE
 
-	if(pin)
+	if(pin.pin_auth(user) || (pin.obj_flags & EMAGGED))
+		return TRUE
 
-
-		if(pin.pin_auth(user) || (pin.obj_flags & EMAGGED))
-			return TRUE
-		else
-			pin.auth_fail(user)
-			return FALSE
-	else
-		to_chat(user, "<span class='warning'>[src]'s trigger is locked. This weapon doesn't have a firing pin installed!</span>")
-
+	pin.auth_fail(user)
 	return FALSE
 
 
