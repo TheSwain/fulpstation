@@ -350,6 +350,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 		if(sac_objective && !sac_objective.check_completion())
 			if(icon_state == "runed_sense0")
 				return
+			check_cult_target_zlevel(sac_objective.target, sac_objective) //Fulp Cult Fixes PR by Surrealistik Oct 2019
 			animate(src, transform = null, time = 1, loop = 0)
 			angle = 0
 			cut_overlays()
