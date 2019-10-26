@@ -37,3 +37,15 @@
 
 /obj/item/clothing/suit/space/hardsuit
 	var/toggle_helmet_sound = 'sound/mecha/mechmove03.ogg'
+
+
+//*******************************************************
+//** Fulp Cult Fixes PR by Surrealistik Oct 2019 BEGINS
+//*******************************************************
+
+/obj/screen/alert/bloodsense
+	var/cult_sacrifice_zlevel_check_cooldown = FALSE
+
+//*******************************************************
+//** Fulp Cult Fixes PR by Surrealistik Oct 2019 ENDS
+//*******************************************************

@@ -1,4 +1,8 @@
+#define CULT_ZLEVEL_SACRIFICE_CHECK_COOLDOWN 30 SECONDS
+
 /obj/screen/alert/bloodsense/proc/check_cult_target_zlevel(mob/living/carbon/human/target, datum/objective/sacrifice/sac_objective)
+	if(cult_sacrifice_zlevel_check_cooldown) //Don't check if we're on cooldown.
+		return
 	if(!target) //Sanity check
 		return
 	var/turf/T = get_turf(target)
@@ -37,4 +41,10 @@
 		sac_objective.sac_image = reshape
 
 	else
-		message_admins("Cult Sacrifice: Could not find new unconvertible or convertible target for cult sacrifice. Old cult target retained.")
+		message_admins("Cult Sacrifice: Could not find new unconvertible or convertible target for cult sacrifice. Old cult target retained. Check again in [CULT_ZLEVEL_SACRIFICE_CHECK_COOLDOWN * 0.1] seconds.")
+		cult_sacrifice_zlevel_check_cooldown = TRUE
+		addtimer(CALLBACK(src, /obj/screen/alert/bloodsense.proc/cult_sacrifice_cooldown_end), CULT_ZLEVEL_SACRIFICE_CHECK_COOLDOWN)
+
+/obj/screen/alert/bloodsense/proc/cult_sacrifice_cooldown_end()
+	if(cult_sacrifice_zlevel_check_cooldown)
+		cult_sacrifice_zlevel_check_cooldown = FALSE
