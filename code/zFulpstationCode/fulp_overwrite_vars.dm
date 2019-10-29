@@ -23,9 +23,6 @@
 /datum/game_mode/clockwork_cult
 	restricted_jobs = list("Chaplain", "Captain", "Deputy")
 
-/datum/game_mode/cult
-	restricted_jobs = list("Chaplain","AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Deputy")
-
 /datum/game_mode/traitor
 	restricted_jobs = list("Cyborg", "Deputy")
 
@@ -165,20 +162,45 @@
 
 
 //**************************************************
-//** NO ANTAG HOP PR - Surrealistik Oct 2019 BEGINS
+//** NO HEAD OR DEPUTY ANTAG PR - Surrealistik Oct 2019 BEGINS
 //**************************************************
 
 /datum/outfit/job/hop
 	implants = list(/obj/item/implant/mindshield)
 
+/datum/outfit/job/cmo
+	implants = list(/obj/item/implant/mindshield)
+
+/datum/outfit/job/ce
+	implants = list(/obj/item/implant/mindshield)
+
+/datum/outfit/job/rd
+	implants = list(/obj/item/implant/mindshield)
+
 /datum/game_mode/traitor
-	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel")
+	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Medical Officer", "Chief Engineer", "Deputy")
 
 /datum/game_mode/clockwork_cult
-	protected_jobs = list("AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel")
+	protected_jobs = list("AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Medical Officer", "Chief Engineer", "Deputy")
 
 /datum/game_mode/changeling
-	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel")
+	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Medical Officer", "Chief Engineer", "Deputy")
+
+/datum/game_mode/bloodsucker
+	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Medical Officer", "Chief Engineer", "Deputy")
+
+/datum/game_mode/cult
+	restricted_jobs = list("Chaplain","AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Medical Officer", "Chief Engineer", "Deputy")
+
+/datum/dynamic_ruleset/midround/autotraitor
+	protected_roles = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Medical Officer", "Chief Engineer", "Deputy")
+
+/datum/dynamic_ruleset/latejoin/infiltrator
+	protected_roles = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Medical Officer", "Chief Engineer", "Deputy")
+
+/datum/dynamic_ruleset/roundstart/traitorbro
+	protected_roles = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Medical Officer", "Chief Engineer", "Deputy")
+
 
 //**************************************************
 //** NO ANTAG HOP PR - Surrealistik Oct 2019 ENDS
