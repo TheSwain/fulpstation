@@ -257,3 +257,9 @@
 //---------------------------------------------------------------------------
 //** Expands the Secborg's module items and upgrades.
 //***************************************************************************
+
+/obj/item/melee/cultblade
+	var/empowered = FALSE //If we're empowered and ready to summon a ghos.
+	var/possessed //If we're possessed, and the identity of our possession power.
+	var/possessor //The name of the thing possessing it
+	var/cooldown //Cooldown for possessed ability
