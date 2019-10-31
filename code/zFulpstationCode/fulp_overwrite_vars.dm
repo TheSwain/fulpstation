@@ -37,3 +37,10 @@
 
 /obj/item/clothing/suit/space/hardsuit
 	var/toggle_helmet_sound = 'sound/mecha/mechmove03.ogg'
+
+
+/obj/item/melee/cultblade
+	var/empowered = FALSE //If we're empowered and ready to summon a ghos.
+	var/possessed //If we're possessed, and the identity of our possession power.
+	var/possessor //The name of the thing possessing it
+	var/cooldown //Cooldown for possessed ability
