@@ -1,15 +1,15 @@
 #define CULT_BLOOD_SWORD "Blood" //Always causes bleeding. Drains 50u Blood on each hit.
 #define CULT_LIFEEATER_SWORD "Life Eating" //Reduces attacker's brute damage by 40% of brute damage dealt.
 #define CULT_CORRUPTION_SWORD "Corruption" //Deals 20 brute and inflicts 3U Unholy Water. Traps the victim in a soulstone if it delivers the killing blow.
-#define CULT_PESTILENCE_SWORD "Pestilence" //Deals 20 brute amd 10 toxin damage. Inflicts Unholy Wasting on a 3 minute cooldown.
-#define CULT_FAMINE_SWORD "Famine" //Deals 20 brute amd 10 toxin damage. Massively drains nutrition on hit and injects 20U Lipolicide.
+#define CULT_PESTILENCE_SWORD "Pestilence" //Deals 20 brute and 10 toxin damage. Inflicts Unholy Wasting on a 3 minute cooldown.
+#define CULT_FAMINE_SWORD "Famine" //Deals 20 brute and 10 toxin damage. Massively drains nutrition on hit and injects 20U Lipolicide.
 #define CULT_HELLFIRE_SWORD "Hellfire" //Deals burn damage instead of brute; inflicts burn stacks and lights on fire.
 #define CULT_HELLFROST_SWORD "Hellfrost" // Deals burn damage instead of brute; massively reduces target temperature and injects 10U Frost Oil
 #define CULT_CHAOS_SWORD "Chaos" // Deals 2-80 damage of a random type (brute, burn, toxin); bell curve distribution.
 #define CULT_MADNESS_SWORD "Madness" // Deals 20 Brute Damage, 20 Brain damage and inflicts Confusion and Hallucination stacks.
 #define CULT_AGONY_SWORD "Agony" //Deals 20 Brute, 35 Stamina damage on hit.
 #define CULT_VORPAL_SWORD "Piercing" //+3 damage. Ignores armor.
-#define CULT_WARDING_SWORD "Warding" //Has a 40% melee and ranged deflection chance
+#define CULT_WARDING_SWORD "Warding" //Has a 50% melee and ranged deflection chance
 #define CULT_DEVOURING_SWORD "Devouring" //Deals 45 Brute, 5 Brute to the user.
 #define CULT_HEARTSEEKER_SWORD "Returning" //Faster throw speed. 30 Brute damage on throw. Boomerangs back to the owner after being thrown.
 #define CULT_BRUTAL_SWORD "Brutality" //Deals extra damage and knocks back on a 30 second cooldown.
@@ -22,6 +22,7 @@
 #define CULT_FAMINE_SWORD_NUTRITION_LOSS -200
 #define CULT_FAMINE_SWORD_LIPOCIDE 20
 #define CULT_FAMINE_SWORD_TOXIN_DAMAGE 10
+#define CULT_HELLFIRE_SWORD_PHLOGISTON 3
 #define CULT_HELLFROST_SWORD_FROST_OIL 10
 #define CULT_MADNESS_SWORD_HALLUCINATION 100
 #define CULT_DEVOURING_SWORD_SELF_DAMAGE 5
@@ -168,7 +169,6 @@
 			if(H)
 				H.bleed_rate = CLAMP(H.bleed_rate + 5, 5, 20)
 			C.bleed(CULT_BLOOD_SWORD_BLOOD_LOSS)
-			//C.blood_volume = CLAMP(C.blood_volume - CULT_BLOOD_SWORD_BLOOD_LOSS, 0, BLOOD_VOLUME_MAXIMUM)
 			to_chat(C, pick("<b><span class='danger'>Blood hemorrhages from your wound!</span>","<span class='danger'>Blood gushes uncontrollably from your body!</span>","<span class='danger'>Your injuries erupt in blood!</span></b>"))
 			add_mob_blood(C)
 			var/turf/location = get_turf(C)
@@ -230,6 +230,7 @@
 			else
 				if(M.reagents)
 					M.reagents.add_reagent(/datum/reagent/toxin/plasma, 5)
+
 			cult_sword_cooldown_start(user, CULT_PESTILENCE_SWORD_COOLDOWN)
 
 		if(CULT_FAMINE_SWORD) //Drains 200 nutrition and injects 20U lipocide on hit.
@@ -242,10 +243,12 @@
 			if(M.reagents)
 				M.reagents.add_reagent(/datum/reagent/toxin/lipolicide, CULT_FAMINE_SWORD_LIPOCIDE)
 
-		if(CULT_HELLFIRE_SWORD) //Adds 3 fire stacks on hit and ignites.
+		if(CULT_HELLFIRE_SWORD) //Adds 3 fire stacks on hit and ignites; applies 5U phlogiston
 			if(M.anti_magic_check(FALSE, TRUE))
 				return FALSE
 			new /obj/effect/temp_visual/cult/sparks(M.loc)
+			if(M.reagents)
+				M.reagents.add_reagent(/datum/reagent/phlogiston, CULT_HELLFIRE_SWORD_PHLOGISTON)
 			if(L)
 				L.fire_stacks = max(3, L.fire_stacks + 3)
 				L.IgniteMob()
@@ -335,6 +338,7 @@
 			if(!iscultist(L))
 				return
 			forceMove(get_turf(L))
+			new /obj/effect/temp_visual/cult/sparks(loc)
 			if(L.put_in_active_hand(src))
 				L.visible_message("<span class='warning'>[src] suddenly materializes in [L]'s hand!</span>")
 			else
@@ -405,7 +409,7 @@
 			"Devouring (Deals extra damage to user and its target.)" = CULT_DEVOURING_SWORD, \
 			"Returning (Deals extra damage and returns on throw.)" = CULT_HEARTSEEKER_SWORD, \
 			"Brutality (Deals extra damage and knocks back.)" = CULT_BRUTAL_SWORD)
-			var/infusion = input(user, "Choose your enchantment.", "Enchantments", null) as null|anything in powerlist
+			var/infusion = input(S, "Choose your enchantment.", "Enchantments", null) as null|anything in powerlist
 			if(!infusion)
 				return
 
@@ -414,29 +418,39 @@
 			switch(possessed)
 				if(CULT_BLOOD_SWORD)
 					desc += " This one has an incarnadine, bloody glow."
+					add_atom_colour("#6b2c2c", ADMIN_COLOUR_PRIORITY)
 				if(CULT_CORRUPTION_SWORD)
 					desc += " Writhing tendrils of crimson and black darkness twist about its imposing form."
+					add_atom_colour("#380a10", ADMIN_COLOUR_PRIORITY)
 				if(CULT_LIFEEATER_SWORD)
-					desc += " This one flickers with a thirsting blackness."
+					desc += " This one flickers with a vaccuous, thirsting blackness."
+					add_atom_colour("#080001", ADMIN_COLOUR_PRIORITY)
 				if(CULT_PESTILENCE_SWORD)
 					desc += " This one seems to buzz with flies, dripping with sickly green virulence."
+					add_atom_colour("#52ad0c", ADMIN_COLOUR_PRIORITY)
 					force = 20
 				if(CULT_FAMINE_SWORD)
 					desc += " This one clatters with the phantom gnashing and chittering of hungry teeth."
+					add_atom_colour("#dae0dc", ADMIN_COLOUR_PRIORITY)
 					force = 20
 				if(CULT_HELLFIRE_SWORD)
 					desc += " This one seethes hotly with scalding orange flames."
-					damtype = "burn"
+					add_atom_colour("#f25a0f", ADMIN_COLOUR_PRIORITY)
+					damtype = "fire"
 				if(CULT_HELLFROST_SWORD)
-					desc += " This one shudders like a living thing, its length immersed in cobalt ice."
-					damtype = "burn"
+					desc += " This one shudders like a living thing, its length rimed with cobalt ice."
+					add_atom_colour("#19558c", ADMIN_COLOUR_PRIORITY)
+					damtype = "fire"
 				if(CULT_CHAOS_SWORD)
 					desc += " This one flickers and pulses with prismatic, shifting light, its length appearing to waver uncontrollably."
+					add_atom_colour("#bf91be", ADMIN_COLOUR_PRIORITY)
 				if(CULT_MADNESS_SWORD)
 					desc += " This one appears to be in several places at once, traced by after-images and auras of roiling violet."
+					add_atom_colour("#5b249e", ADMIN_COLOUR_PRIORITY)
 					force = 20
 				if(CULT_AGONY_SWORD)
 					desc += " This one reverberates wildly, screaming faces forming and dissipating along its length."
+					add_atom_colour("#b53570", ADMIN_COLOUR_PRIORITY)
 					force = 20
 				if(CULT_VORPAL_SWORD)
 					desc += " This one is eerily translucent, and appears to almost vanish when turned to its side."
@@ -445,22 +459,26 @@
 					alpha = 128
 				if(CULT_WARDING_SWORD)
 					desc += " Reality seems to twist and contort about it unnaturally."
+					add_atom_colour("#384d57", ADMIN_COLOUR_PRIORITY)
 					block_chance = 50
 				if(CULT_DEVOURING_SWORD)
 					desc += " The faint sound of gnashing teeth and vicious snarls emanate from this weapon."
+					add_atom_colour("#ff0000", ADMIN_COLOUR_PRIORITY)
 					force = 45
 				if(CULT_HEARTSEEKER_SWORD)
 					desc += " This one is streamlined and thin, scintillating with baleful light."
+					add_atom_colour("#a2dcf2", ADMIN_COLOUR_PRIORITY)
 					throwforce = 30
 					throw_range = 7
 					throw_speed = 3
 				if(CULT_BRUTAL_SWORD)
 					desc += " This one is clad in eldritch runes that pulse with scarcely contained power."
+					add_atom_colour("#ffbf00", ADMIN_COLOUR_PRIORITY)
 
 			new /obj/effect/temp_visual/cult/sparks(loc)
 			playsound(get_turf(loc), 'sound/magic/demon_dies.ogg', 100, TRUE)
-			to_chat(user, "<span class='cultlarge'>Rejoice minion, for you have been found worthy of my daemon's aid. Feed it well...")
+			update_atom_colour()
+			to_chat(user, "<span class='cultlarge'>Rejoice supplicant, for you have been found worthy of my daemon's aid. Feed it well...")
 	else
 		to_chat(user, "<span class='cultlarge'>No daemon finds your blade a worthy vessel for slaughter. You may petition them later...")
 		possessed = FALSE
-		possessor = FALSE
