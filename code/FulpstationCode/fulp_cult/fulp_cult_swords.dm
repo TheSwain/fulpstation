@@ -11,7 +11,7 @@
 #define CULT_VORPAL_SWORD "Piercing" //+3 damage. Ignores armor.
 #define CULT_WARDING_SWORD "Warding" //Has a 50% melee and ranged deflection chance
 #define CULT_DEVOURING_SWORD "Devouring" //Deals 45 Brute, 5 Brute to the user.
-#define CULT_HEARTSEEKER_SWORD "Returning" //Faster throw speed. 30 Brute damage on throw. Boomerangs back to the owner after being thrown.
+#define CULT_HEARTSEEKER_SWORD "Returning" //Faster throw speed. More damage on throw. Boomerangs back to the owner after being thrown.
 #define CULT_BRUTAL_SWORD "Brutality" //Deals extra damage and knocks back on a 30 second cooldown.
 
 #define CULT_AGONY_SWORD_STAMINA_DAMAGE 35
@@ -30,6 +30,7 @@
 #define CULT_BRUTAL_SWORD_COOLDOWN 30 SECONDS
 
 #define CULT_SWORD_SUMMON_DELAY 5 SECONDS
+
 
 /obj/effect/rune/convert/proc/empower_sword()
 	var/turf/T = get_turf(src)
@@ -110,11 +111,19 @@
 			return FALSE
 
 		if(CULT_CORRUPTION_SWORD) //Spawn an SS and capture the target's soul if we killed it
-			if(M.stat == DEAD && H)
-				var/obj/item/soulstone/SS = new /obj/item/soulstone(get_turf(H))
-				SS.attack(H, user)
-				if(!LAZYLEN(SS.contents))
-					qdel(SS)
+			if(!M)
+				return
+
+			if(M.stat != DEAD)
+				return
+
+			if(!M.mind)
+				return
+
+			var/obj/item/soulstone/SS = new /obj/item/soulstone(get_turf(H))
+			SS.attack(H, user)
+			if(!LAZYLEN(SS.contents))
+				qdel(SS)
 
 		if(CULT_PESTILENCE_SWORD)
 			return FALSE
@@ -244,7 +253,7 @@
 				M.reagents.add_reagent(/datum/reagent/toxin/lipolicide, CULT_FAMINE_SWORD_LIPOCIDE)
 
 		if(CULT_HELLFIRE_SWORD) //Adds 3 fire stacks on hit and ignites; applies 5U phlogiston
-			if(M.anti_magic_check(FALSE, TRUE))
+			if(antimagic)
 				return FALSE
 			new /obj/effect/temp_visual/cult/sparks(M.loc)
 			if(M.reagents)
@@ -254,7 +263,7 @@
 				L.IgniteMob()
 
 		if(CULT_HELLFROST_SWORD)  //Dramatically reduces temperature and injects 10U frost oil on hit.
-			if(M.anti_magic_check(FALSE, TRUE))
+			if(antimagic)
 				return FALSE
 			new /obj/effect/temp_visual/cult/sparks(M.loc)
 			var/cooling = -100 * TEMPERATURE_DAMAGE_COEFFICIENT
@@ -292,15 +301,21 @@
 			return
 
 		if(CULT_DEVOURING_SWORD)
+			if(M.stat == DEAD) //We aren't penalized for attacking the dead.
+				return
 			if(L_user)
+				new /obj/effect/temp_visual/cult/sparks(L_user)
 				L_user.adjustBruteLoss(CULT_DEVOURING_SWORD_SELF_DAMAGE) //With great power comes great self-damage
 
 		if(CULT_HEARTSEEKER_SWORD) //No special effects on hit.
 			return
 
 		if(CULT_BRUTAL_SWORD) //Blows a target away after a moderate cooldown, imposing the effects of an explosion
+			if(antimagic) //Anti-magic is effective
+				return FALSE
 			if(cooldown)
-				return
+				return FALSE
+
 			var/atom/throw_target = get_edge_target_turf(M, user.dir)
 			visible_message("<span class='danger'>[M] is smitten by a blast of eldritch power!</span>")
 			if(L)
@@ -420,7 +435,7 @@
 					desc += " This one has an incarnadine, bloody glow."
 					add_atom_colour("#6b2c2c", ADMIN_COLOUR_PRIORITY)
 				if(CULT_CORRUPTION_SWORD)
-					desc += " Writhing tendrils of crimson and black darkness twist about its imposing form."
+					desc += " Writhing tendrils of crimson and black twist about its imposing form."
 					add_atom_colour("#380a10", ADMIN_COLOUR_PRIORITY)
 				if(CULT_LIFEEATER_SWORD)
 					desc += " This one flickers with a vaccuous, thirsting blackness."
@@ -437,6 +452,8 @@
 					desc += " This one seethes hotly with scalding orange flames."
 					add_atom_colour("#f25a0f", ADMIN_COLOUR_PRIORITY)
 					damtype = "fire"
+					max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+					resistance_flags = FIRE_PROOF
 				if(CULT_HELLFROST_SWORD)
 					desc += " This one shudders like a living thing, its length rimed with cobalt ice."
 					add_atom_colour("#19558c", ADMIN_COLOUR_PRIORITY)
@@ -458,17 +475,17 @@
 					armour_penetration = 100
 					alpha = 128
 				if(CULT_WARDING_SWORD)
-					desc += " Reality seems to twist and contort about it unnaturally."
+					desc += " Reality seems to strangely twist and contort about its blade."
 					add_atom_colour("#384d57", ADMIN_COLOUR_PRIORITY)
 					block_chance = 50
 				if(CULT_DEVOURING_SWORD)
-					desc += " The faint sound of gnashing teeth and vicious snarls emanate from this weapon."
+					desc += " The faint sound of crunching fangs and vicious snarls emanate from this weapon."
 					add_atom_colour("#ff0000", ADMIN_COLOUR_PRIORITY)
 					force = 45
 				if(CULT_HEARTSEEKER_SWORD)
 					desc += " This one is streamlined and thin, scintillating with baleful light."
 					add_atom_colour("#a2dcf2", ADMIN_COLOUR_PRIORITY)
-					throwforce = 30
+					throwforce = 19 //So we can't break airlocks at range. Still hurts though, and gives you a strong ranged option.
 					throw_range = 7
 					throw_speed = 3
 				if(CULT_BRUTAL_SWORD)
