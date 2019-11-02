@@ -14,6 +14,7 @@
 #define CULT_HEARTSEEKER_SWORD "Returning" //Faster throw speed. More damage on throw. Boomerangs back to the owner after being thrown.
 #define CULT_BRUTAL_SWORD "Brutality" //Deals extra damage and knocks back on a 30 second cooldown.
 
+#define CULT_OFFERING_SWORD_EMPOWER_TIME 1 SECONDS
 #define CULT_AGONY_SWORD_STAMINA_DAMAGE 35
 #define CULT_LIFEEATER_SWORD_EFFECT_TIME 0.5 SECONDS
 #define CULT_CORRUPTION_SWORD_UNHOLY_WATER 3
@@ -38,9 +39,36 @@
 	for(C in T)
 		if(!C.empowered) //We need to be empowered by any sacrifice.
 			C.empowered = TRUE
-			new /obj/effect/temp_visual/cult/sparks(C.loc)
-			visible_message("<span class='warning'>The [C] flares alight with malevolent power!</span>")
+			new /obj/effect/temp_visual/cult/sparks(C)
+			new /obj/effect/temp_visual/cult/sparks(loc)
+			Beam(C,icon_state="blood",time=CULT_OFFERING_SWORD_EMPOWER_TIME) //cool sfx
+			playsound(get_turf(loc), 'sound/magic/exit_blood.ogg', 50, TRUE)
+			visible_message("<span class='cult'><b>[C] flares alight with malevolent power!</b></span>")
 			break //Empower only one.
+
+
+/obj/item/melee/cultblade/equipped(mob/user, slot, initial = FALSE)
+	. = ..()
+	if(!iscultist(user))
+		return
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	switch(possessed) //Making this a switch in the event of future on-equip properties
+		if(CULT_HELLFIRE_SWORD)
+			ADD_TRAIT(H, TRAIT_NOFIRE, "hell_blade") //We gain immunity to combustion while we have the sword.
+
+
+/obj/item/melee/cultblade/dropped(mob/user)
+	. = ..()
+	if(!iscultist(user))
+		return
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/H = user
+	switch(possessed) //Making this a switch in the event of future on-equip properties
+		if(CULT_HELLFIRE_SWORD)
+			REMOVE_TRAIT(H, TRAIT_NOFIRE, "hell_blade") //We lose immunity to combustion while we don't have the sword.
 
 
 /obj/item/melee/cultblade/examine(mob/user)
@@ -201,7 +229,7 @@
 		if(CULT_LIFEEATER_SWORD) //Restores 40% of force.
 			if(M.stat == DEAD) //Can't vampirize the dead.
 				return
-			if(L_user)
+			if(!L_user)
 				return
 			if(L_user.bruteloss)
 				Beam(M,icon_state="blood",time=CULT_LIFEEATER_SWORD_EFFECT_TIME)
@@ -387,7 +415,7 @@
 		var/mob/living/carbon/H = user
 		H.bleed(10)
 
-	to_chat(user, "<span class='cult'><b>The blood tithe is paid; all that remains is to wait for a daemon to heed the call...<b></span>")
+	to_chat(user, "<span class='cult'><b>The blood tithe is paid; all that remains is to wait for a daemon to heed your call...<b></span>")
 
 	possessed = TRUE
 
@@ -400,8 +428,12 @@
 		S.fully_replace_character_name(null, "The bound daemon of [name]")
 		S.status_flags |= GODMODE
 		S.language_holder = user.language_holder.copy(S)
-		SSticker.mode.add_cultist(S.mind, 1)
+		SSticker.mode.add_cultist(S.mind, FALSE)
 		S.mind.special_role = ROLE_CULTIST
+		S.playsound_local(get_turf(S.loc), 'sound/ambience/antag/bloodcult.ogg', 100, FALSE, pressure_affected = FALSE)
+		to_chat(user, "<span class='cultlarge'>Go forth my daemon, and aid this pitiful supplicant...")
+		to_chat(S, "<span class='cult italic'><b>You are a daemonic spirit summoned from the hellish realm of your master Nar'sie, the Geometer of Blood. A supplicant of the great Geometer has bound you into an eldritch blade you now empower and inhabit. You will aid the cult in heralding the return of your master.\
+		</b></span>")
 		var/sword_name = sanitize_name(stripped_input(S,"What are you named?", ,"", MAX_NAME_LEN))
 
 		if(src && sword_name)
@@ -453,7 +485,9 @@
 					desc += " This one seethes hotly with scalding orange flames."
 					icon_state = "cult_hellfire_sword"
 					damtype = "fire"
-					resistance_flags = FIRE_PROOF //So victims of the fire sword don't set the user on fire by bumping into him.
+					resistance_flags = FIRE_PROOF //Obviously
+					if(loc == user)
+						equipped(user) //Add combust immunity if we are holding the blade.
 				if(CULT_HELLFROST_SWORD)
 					desc += " This one shudders like a living thing, its length rimed with cobalt ice."
 					icon_state = "cult_hellfrost_sword"
