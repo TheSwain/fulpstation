@@ -39,8 +39,20 @@
 	var/toggle_helmet_sound = 'sound/mecha/mechmove03.ogg'
 
 
+//*****************************************************************************************
+//** Fulpstation Possessed Cult Sword PR by Surrealistik. Sprites by Jo from Discord BEGINS
+//**---------------------------------------------------------------------------------------
+//** Allows blood cult to empower eldritch swords with a sacrifice, and then use them at an
+//** Empowering rune to have the sword possessed by a ghost. The ghost will then choose a
+//** name and enhancement for the sword, and can communicate via cult chat.
+//*****************************************************************************************
+
 /obj/item/melee/cultblade
 	var/empowered = FALSE //If we're empowered and ready to summon a ghos.
 	var/possessed //If we're possessed, and the identity of our possession power.
 	var/possessor //The name of the thing possessing it
-	var/cooldown //Cooldown for possessed ability
+	var/cooldown //Whether cooldown is active for the sword's ability if applicable
+
+//*****************************************************************************************
+//** Fulpstation Possessed Cult Sword PR by Surrealistik. Sprites by Jo from Discord ENDS
+//*****************************************************************************************

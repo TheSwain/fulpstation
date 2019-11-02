@@ -430,67 +430,68 @@
 
 			possessed = powerlist[infusion]
 			desc = "A sword humming with unholy energy."
+			icon = 'icons/Fulpicons/cult_swords/cult_swords.dmi' //Shiny new icons
 			switch(possessed)
 				if(CULT_BLOOD_SWORD)
 					desc += " This one has an incarnadine, bloody glow."
-					add_atom_colour("#6b2c2c", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_blood_sword"
 				if(CULT_CORRUPTION_SWORD)
 					desc += " Writhing tendrils of crimson and black twist about its imposing form."
-					add_atom_colour("#380a10", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_corruption_sword"
 				if(CULT_LIFEEATER_SWORD)
-					desc += " This one flickers with a vaccuous, thirsting blackness."
-					add_atom_colour("#080001", ADMIN_COLOUR_PRIORITY)
+					desc += " This one flickers with a bleak, thirsting blackness."
+					icon_state = "cult_lifeeater_sword"
 				if(CULT_PESTILENCE_SWORD)
 					desc += " This one seems to buzz with flies, dripping with sickly green virulence."
-					add_atom_colour("#52ad0c", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_pestilence_sword"
 					force = 20
 				if(CULT_FAMINE_SWORD)
 					desc += " This one clatters with the phantom gnashing and chittering of hungry teeth."
-					add_atom_colour("#dae0dc", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_famine_sword"
 					force = 20
 				if(CULT_HELLFIRE_SWORD)
 					desc += " This one seethes hotly with scalding orange flames."
-					add_atom_colour("#f25a0f", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_hellfire_sword"
 					damtype = "fire"
-					max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-					resistance_flags = FIRE_PROOF
+					resistance_flags = FIRE_PROOF //So victims of the fire sword don't set the user on fire by bumping into him.
 				if(CULT_HELLFROST_SWORD)
 					desc += " This one shudders like a living thing, its length rimed with cobalt ice."
-					add_atom_colour("#19558c", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_hellfrost_sword"
 					damtype = "fire"
 				if(CULT_CHAOS_SWORD)
 					desc += " This one flickers and pulses with prismatic, shifting light, its length appearing to waver uncontrollably."
-					add_atom_colour("#bf91be", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_chaos_sword"
 				if(CULT_MADNESS_SWORD)
 					desc += " This one appears to be in several places at once, traced by after-images and auras of roiling violet."
-					add_atom_colour("#5b249e", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_madness_sword"
 					force = 20
 				if(CULT_AGONY_SWORD)
 					desc += " This one reverberates wildly, screaming faces forming and dissipating along its length."
-					add_atom_colour("#b53570", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_agony_sword"
 					force = 20
 				if(CULT_VORPAL_SWORD)
 					desc += " This one is eerily translucent, and appears to almost vanish when turned to its side."
+					icon_state = "cult_vorpal_sword"
 					force = 33
 					armour_penetration = 100
 					alpha = 128
 				if(CULT_WARDING_SWORD)
 					desc += " Reality seems to strangely twist and contort about its blade."
-					add_atom_colour("#384d57", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_warding_sword"
 					block_chance = 50
 				if(CULT_DEVOURING_SWORD)
 					desc += " The faint sound of crunching fangs and vicious snarls emanate from this weapon."
-					add_atom_colour("#ff0000", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_devouring_sword"
 					force = 45
 				if(CULT_HEARTSEEKER_SWORD)
 					desc += " This one is streamlined and thin, scintillating with baleful light."
-					add_atom_colour("#a2dcf2", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_heartseeker_sword"
 					throwforce = 19 //So we can't break airlocks at range. Still hurts though, and gives you a strong ranged option.
 					throw_range = 7
 					throw_speed = 3
 				if(CULT_BRUTAL_SWORD)
 					desc += " This one is clad in eldritch runes that pulse with scarcely contained power."
-					add_atom_colour("#ffbf00", ADMIN_COLOUR_PRIORITY)
+					icon_state = "cult_brutal_sword"
 
 			new /obj/effect/temp_visual/cult/sparks(loc)
 			playsound(get_turf(loc), 'sound/magic/demon_dies.ogg', 100, TRUE)
