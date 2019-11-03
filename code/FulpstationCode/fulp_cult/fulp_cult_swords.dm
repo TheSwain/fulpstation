@@ -29,11 +29,80 @@
 #define CULT_DEVOURING_SWORD_SELF_DAMAGE 5
 #define CULT_BLOOD_SWORD_BLOOD_LOSS 50
 #define CULT_BRUTAL_SWORD_COOLDOWN 30 SECONDS
-
 #define CULT_SWORD_SUMMON_DELAY 5 SECONDS
+#define CULT_SWORD_EXORCISE_DELAY 10 SECONDS
+
+GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
+		/obj/projectile/magic/change, /obj/projectile/magic/animate, /obj/projectile/magic/resurrection,
+		/obj/projectile/magic/death, /obj/projectile/magic/teleport, /obj/projectile/magic/door, /obj/projectile/magic/aoe/fireball,
+		/obj/projectile/magic/spellblade, /obj/projectile/magic/arcane_barrage, /obj/projectile/magic/locker, /obj/projectile/magic/flying,
+		/obj/projectile/magic/bounty, /obj/projectile/magic/antimagic, /obj/projectile/magic/fetch, /obj/projectile/magic/sapping,
+		/obj/projectile/magic/necropotence, /obj/projectile/magic, /obj/projectile/temp/chill, /obj/projectile/magic/wipe
+		))
+
+/obj/effect/temp_visual/bless
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "blessed"
+	randomdir = 0
+	duration = INFINITY
+
+/obj/item/storage/book/bible/proc/purge_daemon_blade(atom/A, mob/user, proximity)
+
+	if(!istype(A, /obj/item/melee/cultblade))
+		return
+
+	var/obj/item/melee/cultblade/CB = A
+
+	if(!CB.empowered && !CB.possessor) //if it's a basic eldritch blade we don't care.
+		return
+
+	var/turf/T = get_turf(A)
+
+	if(!locate(/obj/effect/blessing, T))
+		to_chat(user, "<span class='warning'>The taint of this cursed weapon is too grave to exorcise it off of consecrated grounds.</span>")
+		return
+
+	if(CB.empowered && !CB.possessor)
+
+		if(!cultsword_purge_doafter(CB, user))
+			return
+
+		CB.empowered = FALSE
+		user.visible_message("<span class='notice'>[user] has dissipated [CB]'s unholy energies!</span>")
+		return
+
+	if(CB.possessor)
+
+		if(!cultsword_purge_doafter(CB, user))
+			return
+
+		for(var/mob/M in CB.contents)
+			if(M.mind)
+				M.forceMove(T)
+				new /obj/effect/temp_visual/cult/sparks(M)
+			else(qdel(M))
+
+		qdel(CB)
+		new /obj/effect/decal/cleanable/ash/large(T)
+		playsound(get_turf(loc), 'sound/magic/demon_dies.ogg', 100, TRUE)
+		user.visible_message("<span class='notice'>A dark spirit is exorcised from [CB] as it crumbles to dust!</span>")
 
 
-/obj/effect/rune/convert/proc/empower_sword()
+/obj/item/storage/book/bible/proc/cultsword_purge_doafter(obj/item/melee/cultblade/CB, mob/user)
+
+	var/obj/effect/temp_visual/bless/B
+	to_chat(user, "<span class='notice'>You begin to exorcise [CB].</span>")
+	B = new /obj/effect/temp_visual/bless(CB.loc)
+	playsound(src,pick('sound/hallucinations/veryfar_noise.ogg','sound/hallucinations/growl1.ogg','sound/hallucinations/growl2.ogg','sound/hallucinations/growl3.ogg'),40,TRUE)
+
+	if(!do_after(user, CULT_SWORD_EXORCISE_DELAY, target = CB))
+		qdel(B)
+		return FALSE
+
+	qdel(B)
+	return TRUE
+
+/obj/effect/rune/convert/proc/empower_sword(mob/sacrificial)
 	var/turf/T = get_turf(src)
 	var/obj/item/melee/cultblade/C
 	for(C in T)
@@ -43,7 +112,7 @@
 			new /obj/effect/temp_visual/cult/sparks(loc)
 			Beam(C,icon_state="blood",time=CULT_OFFERING_SWORD_EMPOWER_TIME) //cool sfx
 			playsound(get_turf(loc), 'sound/magic/exit_blood.ogg', 50, TRUE)
-			visible_message("<span class='cult'><b>[C] flares alight with malevolent power!</b></span>")
+			sacrificial.visible_message("<span class='cult'><b>[C] flares alight with malevolent power!</b></span>")
 			break //Empower only one.
 
 
@@ -57,6 +126,7 @@
 	switch(possessed) //Making this a switch in the event of future on-equip properties
 		if(CULT_HELLFIRE_SWORD)
 			ADD_TRAIT(H, TRAIT_NOFIRE, "hell_blade") //We gain immunity to combustion while we have the sword.
+			H.fire_stacks = 0 //Zero out any existing fire stacks.
 
 
 /obj/item/melee/cultblade/dropped(mob/user)
@@ -69,6 +139,7 @@
 	switch(possessed) //Making this a switch in the event of future on-equip properties
 		if(CULT_HELLFIRE_SWORD)
 			REMOVE_TRAIT(H, TRAIT_NOFIRE, "hell_blade") //We lose immunity to combustion while we don't have the sword.
+			H.fire_stacks = 0 //Zero out any existing fire stacks.
 
 
 /obj/item/melee/cultblade/examine(mob/user)
@@ -87,6 +158,7 @@
 	possessed_cult_blade_attack_setup(M, user)
 	..()
 
+
 /obj/item/melee/cultblade/afterattack(atom/target, mob/user, proximity, click_parameters)
 	possessed_cult_blade_attack_setup(target, user, proximity, TRUE)
 	..()
@@ -94,6 +166,9 @@
 
 /obj/item/melee/cultblade/proc/possessed_cult_blade_attack_setup(atom/target, mob/user, proximity = TRUE, afterattack = FALSE)
 	if(!possessed) //Sanity check
+		return FALSE
+
+	if(!iscultist(user)) //Only the chosen may wield this power
 		return FALSE
 
 	if(!proximity)
@@ -127,8 +202,13 @@
 
 	possessed_cult_blade_afterattack(M, L, C, H, user, L_user, antimagic)
 
+
 /obj/item/melee/cultblade/proc/possessed_cult_blade_afterattack(mob/M, mob/living/L, mob/living/carbon/C, mob/living/carbon/human/H, mob/user, mob/living/L_user, antimagic = FALSE)
+
 	if(!possessed) //Sanity check
+		return FALSE
+
+	if(!iscultist(user)) //Only the chosen may wield this power
 		return FALSE
 
 	switch(possessed)
@@ -194,6 +274,9 @@
 	if(!possessed) //Sanity check
 		return FALSE
 
+	if(!iscultist(user)) //Only the chosen may wield this power
+		return FALSE
+
 	switch(possessed)
 		if(CULT_BLOOD_SWORD) //Drains 50U blood and causes rapid bleeding on hit.
 			if(antimagic)
@@ -207,6 +290,7 @@
 				H.bleed_rate = CLAMP(H.bleed_rate + 5, 5, 20)
 			C.bleed(CULT_BLOOD_SWORD_BLOOD_LOSS)
 			to_chat(C, pick("<b><span class='danger'>Blood hemorrhages from your wound!</span>","<span class='danger'>Blood gushes uncontrollably from your body!</span>","<span class='danger'>Your injuries erupt in blood!</span></b>"))
+			playsound(get_turf(C), 'sound/magic/exit_blood.ogg', 50, TRUE)
 			add_mob_blood(C)
 			var/turf/location = get_turf(C)
 			C.add_splatter_floor(location)
@@ -231,15 +315,15 @@
 				return
 			if(!L_user)
 				return
-			if(L_user.bruteloss)
-				Beam(M,icon_state="blood",time=CULT_LIFEEATER_SWORD_EFFECT_TIME)
-				new /obj/effect/temp_visual/cult/sparks(L_user)
-				new /obj/effect/temp_visual/cult/sparks(M)
-				visible_message("<span class='warning'>[L_user]'s [pick("wounds inexplicably knit and close", "torn flesh seems to repair itself", "body eerily mends together")].</span>")
+			if(L_user.getBruteLoss())
+				L_user.Beam(M, icon_state="blood",time=CULT_LIFEEATER_SWORD_EFFECT_TIME)
+				new /obj/effect/temp_visual/cult/sparks(L_user.loc)
+				new /obj/effect/temp_visual/cult/sparks(M.loc)
+				L_user.visible_message("<span class='warning'>[L_user]'s [pick("wounds inexplicably knit and close", "torn flesh seems to repair itself", "body eerily mends together")].</span>")
 				L_user.adjustBruteLoss(-force * 0.4)
 
 		if(CULT_CORRUPTION_SWORD)
-			if(M.anti_magic_check(FALSE, TRUE))
+			if(antimagic)
 				return FALSE
 			new /obj/effect/temp_visual/cult/sparks(M.loc)
 			if(M.reagents)
@@ -248,9 +332,7 @@
 		if(CULT_PESTILENCE_SWORD) //Inflict Unholy Blight on a 30 second cooldown.
 			if(L)
 				L.apply_damage(CULT_PESTILENCE_SWORD_TOXIN_DAMAGE, TOX)
-			if(M.anti_magic_check(FALSE, TRUE))
-				return FALSE
-			if(!iscultist(L))
+			if(antimagic)
 				return FALSE
 			new /obj/effect/temp_visual/revenant(M.loc)
 			if(H)
@@ -263,7 +345,8 @@
 						blight.stage++
 				if(!blightfound)
 					H.ForceContractDisease(new /datum/disease/revblight(), FALSE, TRUE)
-					to_chat(H, "<span class='cult'>You feel [pick("suddenly sick", "a surge of nausea", "like your skin is <i>wrong</i>")].</span>")
+					H.playsound_local(get_turf(H.loc), 'sound/effects/ghost.ogg', 50, FALSE, pressure_affected = FALSE)
+					to_chat(H, "<span class='cult'><b>You feel [pick("suddenly sick", "a surge of nausea", "like your skin is <i>wrong</i>")].</span></b>")
 			else
 				if(M.reagents)
 					M.reagents.add_reagent(/datum/reagent/toxin/plasma, 5)
@@ -300,11 +383,34 @@
 				M.reagents.add_reagent(/datum/reagent/consumable/frostoil, CULT_HELLFROST_SWORD_FROST_OIL)
 
 		if(CULT_CHAOS_SWORD) //Inflicts 2 to 80 damage of a random type from fire, tox and brute.
-			force = rand(1,40) + rand(1,40) //2-80 damage
+
 			damtype = pick("fire","tox", "brute") //random damage type
+			var/rand1 = rand(0,40)
+			var/rand2 = rand(0,40)
+			force = rand1 + rand2 //0-80 damage
+
+			if(rand1 != rand2) //If both rolls match, fire a chaos bolt at the victim
+				return
+
+			if(!M)
+				return
+
+			if(M == user)
+				return
+
+
+			visible_message("<span class='danger'><b>Strange magics suddenly surge from [src]!</b></span>")
+			playsound(get_turf(M), 'sound/magic/staff_chaos.ogg', 65, TRUE)
+			new /obj/effect/temp_visual/cult/sparks(loc)
+			var/obj/projectile/magic/chaos_bolt = pick(GLOB.cult_chaos_sword_projectiles)
+			var/obj/projectile/magic/P = new chaos_bolt(user.loc)
+			P.firer = user
+			P.preparePixelProjectile(M, user)
+			P.fire()
+
 
 		if(CULT_MADNESS_SWORD) //Causes brain damage, confusion and hallucinations on hit.
-			if(antimagic) //Anti-magic is effective against the madness effect.
+			if(antimagic) //Anti-magic is effective
 				return FALSE
 			new /obj/effect/temp_visual/cult/sparks(M.loc)
 			if(L)
@@ -315,6 +421,8 @@
 				to_chat(C, pick("<span class='danger'>Your mind reels.</span>","<span class='danger'>Your vision seethes and contorts.</span>","<span class='danger'>Reality seems to come apart!</span>"))
 
 		if(CULT_AGONY_SWORD) //Causes signficant stamina damage and some disorientation on hit.
+			if(antimagic) //Anti-magic is effective
+				return FALSE
 			new /obj/effect/temp_visual/cult/sparks(M.loc)
 			if(L)
 				L.Jitter(20)
@@ -328,12 +436,15 @@
 		if(CULT_WARDING_SWORD) //No special effects on hit.
 			return
 
-		if(CULT_DEVOURING_SWORD)
+		if(CULT_DEVOURING_SWORD) //Deals 50% more damage in exchange for 10% self damage.
 			if(M.stat == DEAD) //We aren't penalized for attacking the dead.
 				return
 			if(L_user)
 				new /obj/effect/temp_visual/cult/sparks(L_user)
-				L_user.adjustBruteLoss(CULT_DEVOURING_SWORD_SELF_DAMAGE) //With great power comes great self-damage
+				L.adjustBruteLoss(force * 0.5) //With great power comes great self-damage
+				L_user.adjustBruteLoss(force * 0.1) //With great power comes great self-damage
+				if(prob(50))
+					to_chat(C, pick("<span class='cult'><b>You feel your lifeforce drawn into [src]!</b></span>","<span class='cult'><b>You feel [src] feed on your vitality.</b></span>","<span class='cult'><b>You feel drained as [src] channels your life blood!</b></span>"))
 
 		if(CULT_HEARTSEEKER_SWORD) //No special effects on hit.
 			return
@@ -398,30 +509,37 @@
 	if(possessed)
 		return
 
-	var/rune = FALSE //We need an empowering rune
+	var/obj/effect/rune/empower/rune = FALSE //We need an empowering rune
 	for(var/obj/effect/rune/empower/R in range(1, user))
-		rune = TRUE
+		rune = R
 		break
 
 	if(!rune)
 		to_chat(user, "<span class='cult'><b>Without an empowering rune, you lack the strength to bind a daemon to [src]...<b></span>")
 		return
 
+	var/datum/beam/B = user.Beam(rune,icon_state="blood",time=INFINITY) //cool sfx
 	to_chat(user, "<span class='cult'><b>You begin carve your flesh in blood tithe, and attempt to bind a daemon to [src]...<b></span>")
+	playsound(get_turf(user), 'sound/weapons/slice.ogg', 30, TRUE)
+
 	if(!do_after(user, CULT_SWORD_SUMMON_DELAY, target = user))
+		qdel(B) //Get rid of the beam SFX
 		return
 
 	if(iscarbon(user))
 		var/mob/living/carbon/H = user
 		H.bleed(10)
 
+	qdel(B) //Get rid of the beam SFX
 	to_chat(user, "<span class='cult'><b>The blood tithe is paid; all that remains is to wait for a daemon to heed your call...<b></span>")
+	playsound(get_turf(loc), 'sound/spookoween/ghost_whisper.ogg', 100, TRUE)
 
-	possessed = TRUE
+	possessed = TRUE //Set to true for now so we don't spam multiple attempts simultaneously.
+
 
 	var/list/mob/dead/observer/candidates = pollGhostCandidates("Do you want to play as the bound daemon of [user.real_name]'s [src]?", ROLE_PAI, null, FALSE, 100, POLL_IGNORE_POSSESSED_BLADE)
 
-	if(LAZYLEN(candidates))
+	if(!LAZYLEN(candidates))
 		var/mob/dead/observer/C = pick(candidates)
 		var/mob/living/simple_animal/shade/S = new(src)
 		S.ckey = C.ckey
@@ -436,26 +554,30 @@
 		</b></span>")
 		var/sword_name = sanitize_name(stripped_input(S,"What are you named?", ,"", MAX_NAME_LEN))
 
-		if(src && sword_name)
-			S = sword_name
+		if(src)
+			if(!sword_name) //If we didn't pick a name, we get a generic one instead
+				name = "possessed [name]"
+			else
+				name = sword_name
+
 			S.fully_replace_character_name(null, "The bound daemon of [sword_name]")
-			possessor = S
+			possessor = user
 
 			var/list/powerlist = list("Blood (Purges its victim's blood.)" = CULT_BLOOD_SWORD, \
-			"Vampiric (Drains health.)" = CULT_LIFEEATER_SWORD, \
+			"Life Eater (Drains health, healing brute damage.)" = CULT_LIFEEATER_SWORD, \
 			"Corruption (Blights the enemy.)" = CULT_CORRUPTION_SWORD, \
 			"Pestilence (Inflicts disease on a cooldown.)" = CULT_PESTILENCE_SWORD, \
 			"Famine (Drains massive amounts of nutrition.)" = CULT_FAMINE_SWORD, \
 			"Hellfire (Imposes burn stacks and ignites on hit.)" = CULT_HELLFIRE_SWORD, \
 			"Hellfrost (Lower's target's temperature greatly.)" = CULT_HELLFROST_SWORD, \
-			"Chaos (Deals 2-80 damage of a random type.)" = CULT_CHAOS_SWORD, \
+			"Chaos (Deals 0-80 damage of a random type.)" = CULT_CHAOS_SWORD, \
 			"Madness (Inflicts brain damage and hallucinations.)" = CULT_MADNESS_SWORD, \
 			"Agony (Inflicts stamina damage and staggering.)" = CULT_AGONY_SWORD, \
 			"Piercing (Deals extra damage. Ignores armor.)" = CULT_VORPAL_SWORD, \
 			"Warding (Grants 50% deflection.)" = CULT_WARDING_SWORD, \
 			"Devouring (Deals extra damage to user and its target.)" = CULT_DEVOURING_SWORD, \
 			"Returning (Deals extra damage and returns on throw.)" = CULT_HEARTSEEKER_SWORD, \
-			"Brutality (Deals extra damage and knocks back.)" = CULT_BRUTAL_SWORD)
+			"Brutality (Smites and knocks back on a cooldown.)" = CULT_BRUTAL_SWORD)
 			var/infusion = input(S, "Choose your enchantment.", "Enchantments", null) as null|anything in powerlist
 			if(!infusion)
 				return
@@ -486,6 +608,7 @@
 					icon_state = "cult_hellfire_sword"
 					damtype = "fire"
 					resistance_flags = FIRE_PROOF //Obviously
+					create_reagents(CULT_HELLFIRE_SWORD_PHLOGISTON)
 					if(loc == user)
 						equipped(user) //Add combust immunity if we are holding the blade.
 				if(CULT_HELLFROST_SWORD)
@@ -498,6 +621,7 @@
 				if(CULT_MADNESS_SWORD)
 					desc += " This one appears to be in several places at once, traced by after-images and auras of roiling violet."
 					icon_state = "cult_madness_sword"
+					hitsound = 'sound/effects/curseattack.ogg'
 					force = 20
 				if(CULT_AGONY_SWORD)
 					desc += " This one reverberates wildly, screaming faces forming and dissipating along its length."
@@ -516,7 +640,6 @@
 				if(CULT_DEVOURING_SWORD)
 					desc += " The faint sound of crunching fangs and vicious snarls emanate from this weapon."
 					icon_state = "cult_devouring_sword"
-					force = 45
 				if(CULT_HEARTSEEKER_SWORD)
 					desc += " This one is streamlined and thin, scintillating with baleful light."
 					icon_state = "cult_heartseeker_sword"
@@ -531,6 +654,7 @@
 			playsound(get_turf(loc), 'sound/magic/demon_dies.ogg', 100, TRUE)
 			update_atom_colour()
 			to_chat(user, "<span class='cultlarge'>Rejoice supplicant, for you have been found worthy of my daemon's aid. Feed it well...")
+
 	else
 		to_chat(user, "<span class='cultlarge'>No daemon finds your blade a worthy vessel for slaughter. You may petition them later...")
 		possessed = FALSE

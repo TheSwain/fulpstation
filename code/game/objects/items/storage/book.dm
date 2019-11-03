@@ -187,6 +187,10 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 			B.name = name
 			B.icon_state = icon_state
 			B.item_state = item_state
+
+		purge_daemon_blade(A, user, proximity) //Fulpstation Possessed Cult Sword PR by Surrealistik. Sprites by Jo; attempts to purge the daemonic sword
+
+
 	if(istype(A, /obj/item/twohanded/required/cult_bastard) && !iscultist(user))
 		var/obj/item/twohanded/required/cult_bastard/sword = A
 		to_chat(user, "<span class='notice'>You begin to exorcise [sword].</span>")
