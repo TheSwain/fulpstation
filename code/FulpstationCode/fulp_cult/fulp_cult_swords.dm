@@ -13,12 +13,13 @@
 #define CULT_DEVOURING_SWORD "Devouring" //Deals 45 Brute, 5 Brute to the user.
 #define CULT_HEARTSEEKER_SWORD "Returning" //Faster throw speed. More damage on throw. Boomerangs back to the owner after being thrown.
 #define CULT_BRUTAL_SWORD "Brutality" //Deals extra damage and knocks back on a 30 second cooldown.
+#define CULT_DESTRUCTION_SWORD "Destruction" //Deals triple damage to objects, double to silicons, can break walls on a cooldown.
 
 #define CULT_OFFERING_SWORD_EMPOWER_TIME 1 SECONDS
 #define CULT_AGONY_SWORD_STAMINA_DAMAGE 35
 #define CULT_LIFEEATER_SWORD_EFFECT_TIME 0.5 SECONDS
 #define CULT_CORRUPTION_SWORD_UNHOLY_WATER 3
-#define CULT_PESTILENCE_SWORD_TOXIN_DAMAGE 10
+#define CULT_PESTILENCE_SWORD_TOXIN_DAMAGE 15
 #define CULT_PESTILENCE_SWORD_COOLDOWN 30 SECONDS
 #define CULT_FAMINE_SWORD_NUTRITION_LOSS -200
 #define CULT_FAMINE_SWORD_LIPOCIDE 20
@@ -31,6 +32,12 @@
 #define CULT_BRUTAL_SWORD_COOLDOWN 30 SECONDS
 #define CULT_SWORD_SUMMON_DELAY 5 SECONDS
 #define CULT_SWORD_EXORCISE_DELAY 10 SECONDS
+#define CULT_DESTRUCTION_HIGH_COOLDOWN 30 SECONDS
+#define CULT_DESTRUCTION_LOW_COOLDOWN 5 SECONDS
+
+#define CULT_SWORD_MOB_ATTACK 1
+#define CULT_SWORD_AFTERATTACK 2
+#define CULT_SWORD_OBJ_ATTACK 3
 
 GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 		/obj/projectile/magic/change, /obj/projectile/magic/animate, /obj/projectile/magic/resurrection,
@@ -160,11 +167,14 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 
 
 /obj/item/melee/cultblade/afterattack(atom/target, mob/user, proximity, click_parameters)
-	possessed_cult_blade_attack_setup(target, user, proximity, TRUE)
+	possessed_cult_blade_attack_setup(target, user, proximity, CULT_SWORD_AFTERATTACK)
 	..()
 
+/obj/item/melee/cultblade/attack_obj(obj/O, mob/living/user)
+	possessed_cult_blade_objattack(O, user)
+	..()
 
-/obj/item/melee/cultblade/proc/possessed_cult_blade_attack_setup(atom/target, mob/user, proximity = TRUE, afterattack = FALSE)
+/obj/item/melee/cultblade/proc/possessed_cult_blade_attack_setup(atom/target, mob/user, proximity = TRUE, attack_mode = CULT_SWORD_MOB_ATTACK)
 	if(!possessed) //Sanity check
 		return FALSE
 
@@ -174,7 +184,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 	if(!proximity)
 		return FALSE
 
-	if(!ismob(target))
+	if(ismob(target))
 		return FALSE
 
 	var/mob/M = target
@@ -197,10 +207,59 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 	if(M.anti_magic_check())
 		antimagic = TRUE
 
-	if(!afterattack)
-		possessed_cult_blade_attack(M, L, C, H, user, L_user, antimagic)
 
-	possessed_cult_blade_afterattack(M, L, C, H, user, L_user, antimagic)
+	switch(attack_mode)
+		if(CULT_SWORD_MOB_ATTACK)
+			possessed_cult_blade_attack(M, L, C, H, user, L_user, antimagic)
+
+		if(CULT_SWORD_AFTERATTACK)
+			possessed_cult_blade_afterattack(M, L, C, H, user, L_user, antimagic)
+
+
+/obj/item/melee/cultblade/proc/possessed_cult_blade_objattack(obj/O, mob/user)
+
+	if(!possessed) //Sanity check
+		return FALSE
+
+	if(!iscultist(user)) //Only the chosen may wield this power
+		return FALSE
+
+	switch(possessed)
+		if(CULT_DESTRUCTION_SWORD)
+			if(force * 2 < damage_deflection)
+				return FALSE
+			O.take_damage(force * 2, BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir = null, armour_penetration = 100)
+			return TRUE
+
+	return FALSE
+
+/turf/closed/wall/proc/possessed_cult_blade_wallattack(obj/item/W, mob/user)
+	if(!istype(W, /obj/item/melee/cultblade))
+		return
+
+	if(!iscultist(user)) //Only the chosen may wield this power
+		return FALSE
+
+	var/obj/item/melee/cultblade/C = W
+
+	if(C.possessed != CULT_DESTRUCTION_SWORD) //Sanity check
+		return FALSE
+
+	if(C.cooldown)
+		to_chat(user, "<span class='cult'><b>[W]'s power is currently depleted, and cannot yet smash through [src].</b></span>")
+		return FALSE
+
+	if(locate(/obj/effect/blessing, src)) //We can't smash consecrated walls
+		to_chat(user, "<span class='cult'><b>[src] is warded against the power of the Geometer; [W] cannot break it!</b></span>")
+		return FALSE
+
+	new /obj/effect/temp_visual/cult/sparks(loc)
+	playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+	dismantle_wall(1)
+	user.visible_message("<span class='cult'><b>[src] is smashed apart by the raw might of [W]!</b></span>")
+
+	var/cooldown_seconds = (hardness >= 40 ? CULT_DESTRUCTION_LOW_COOLDOWN : CULT_DESTRUCTION_HIGH_COOLDOWN) //30 seconds of cooldown per reinforced wall, 5 for a regular wall
+	addtimer(CALLBACK(C, /obj/item/melee/cultblade.proc/cult_sword_cooldown_end), cooldown_seconds)
 
 
 /obj/item/melee/cultblade/proc/possessed_cult_blade_afterattack(mob/M, mob/living/L, mob/living/carbon/C, mob/living/carbon/human/H, mob/user, mob/living/L_user, antimagic = FALSE)
@@ -269,6 +328,10 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 		if(CULT_BRUTAL_SWORD) //No special effects on hit.
 			return FALSE
 
+		if(CULT_DESTRUCTION_SWORD) //No special effects on hit.
+			return FALSE
+
+
 /obj/item/melee/cultblade/proc/possessed_cult_blade_attack(mob/M, mob/living/L, mob/living/carbon/C, mob/living/carbon/human/H, mob/user, mob/living/L_user, antimagic = FALSE)
 
 	if(!possessed) //Sanity check
@@ -334,6 +397,10 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 				L.apply_damage(CULT_PESTILENCE_SWORD_TOXIN_DAMAGE, TOX)
 			if(antimagic)
 				return FALSE
+
+			if(cooldown)
+				return FALSE
+
 			new /obj/effect/temp_visual/revenant(M.loc)
 			if(H)
 				if(H.dna && H.dna.species)
@@ -452,24 +519,37 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 		if(CULT_BRUTAL_SWORD) //Blows a target away after a moderate cooldown, imposing the effects of an explosion
 			if(antimagic) //Anti-magic is effective
 				return FALSE
+
 			if(cooldown)
 				return FALSE
 
-			var/atom/throw_target = get_edge_target_turf(M, user.dir)
-			visible_message("<span class='danger'>[M] is smitten by a blast of eldritch power!</span>")
 			if(L)
 				L.apply_damage(force, BRUTE)
+
+			var/atom/throw_target = get_edge_target_turf(M, user.dir)
 			M.throw_at(throw_target, rand(8,10), 14, user)
+			visible_message("<span class='danger'>[M] is smitten by a blast of eldritch power!</span>")
 			new /obj/effect/temp_visual/cult/sparks(M.loc)
 			playsound(get_turf(M), 'sound/magic/repulse.ogg', 65, TRUE)
 			cult_sword_cooldown_start(user, CULT_BRUTAL_SWORD_COOLDOWN)
+
+		if(CULT_DESTRUCTION_SWORD) //No special effects on hit.
+			if(antimagic) //Anti-magic is effective
+				return FALSE
+
+			if(!issilicon(L)) //Double damage to silicons only
+				return
+
+			L.apply_damage(force, BRUTE)
+
+
 
 
 /obj/item/melee/cultblade/proc/cult_sword_cooldown_start(mob/user, cooldown_seconds)
 	if(cooldown)
 		return FALSE
 	addtimer(CALLBACK(src, /obj/item/melee/cultblade.proc/cult_sword_cooldown_end), cooldown_seconds)
-	to_chat(user, "<span class='cult'>[src]'s power is depleted and will take [cooldown_seconds * 0.1] seconds to recharge!</span>")
+	to_chat(user, "<span class='cult'><b>[src]'s power is depleted and will take [cooldown_seconds * 0.1] seconds to recharge!</b></span>")
 	cooldown = TRUE
 
 /obj/item/melee/cultblade/proc/cult_sword_cooldown_end()
@@ -577,6 +657,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 			"Warding (Grants 50% deflection.)" = CULT_WARDING_SWORD, \
 			"Devouring (Deals extra damage to user and its target.)" = CULT_DEVOURING_SWORD, \
 			"Returning (Deals extra damage and returns on throw.)" = CULT_HEARTSEEKER_SWORD, \
+			"Destruction (Destroys walls. Does massive damage to silicons/objects.)" = CULT_DESTRUCTION_SWORD, \
 			"Brutality (Smites and knocks back on a cooldown.)" = CULT_BRUTAL_SWORD)
 			var/infusion = input(S, "Choose your enchantment.", "Enchantments", null) as null|anything in powerlist
 			if(!infusion)
@@ -585,6 +666,8 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 			possessed = powerlist[infusion]
 			desc = "A sword humming with unholy energy."
 			icon = 'icons/Fulpicons/cult_swords/cult_swords.dmi' //Shiny new icons
+			armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100) //Daemonic swords are practically indestructible
+			resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF //Daemonic swords are practically indestructible
 			switch(possessed)
 				if(CULT_BLOOD_SWORD)
 					desc += " This one has an incarnadine, bloody glow."
@@ -598,17 +681,15 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 				if(CULT_PESTILENCE_SWORD)
 					desc += " This one seems to buzz with flies, dripping with sickly green virulence."
 					icon_state = "cult_pestilence_sword"
-					force = 20
+					force = 21 //Just enough to destroy standard airlocks.
 				if(CULT_FAMINE_SWORD)
 					desc += " This one clatters with the phantom gnashing and chittering of hungry teeth."
 					icon_state = "cult_famine_sword"
-					force = 20
+					force = 21 //Just enough to destroy standard airlocks.
 				if(CULT_HELLFIRE_SWORD)
 					desc += " This one seethes hotly with scalding orange flames."
 					icon_state = "cult_hellfire_sword"
 					damtype = "fire"
-					resistance_flags = FIRE_PROOF //Obviously
-					create_reagents(CULT_HELLFIRE_SWORD_PHLOGISTON)
 					if(loc == user)
 						equipped(user) //Add combust immunity if we are holding the blade.
 				if(CULT_HELLFROST_SWORD)
@@ -622,17 +703,18 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 					desc += " This one appears to be in several places at once, traced by after-images and auras of roiling violet."
 					icon_state = "cult_madness_sword"
 					hitsound = 'sound/effects/curseattack.ogg'
-					force = 20
+					force = 21 //Just enough to destroy standard airlocks.
 				if(CULT_AGONY_SWORD)
 					desc += " This one reverberates wildly, screaming faces forming and dissipating along its length."
 					icon_state = "cult_agony_sword"
-					force = 20
+					force = 21 //Just enough to destroy standard airlocks.
 				if(CULT_VORPAL_SWORD)
-					desc += " This one is eerily translucent, and appears to almost vanish when turned to its side."
+					desc += " This one is eerily translucent and preternaturally sharp, appearing almost to vanish when turned to its side."
 					icon_state = "cult_vorpal_sword"
 					force = 33
 					armour_penetration = 100
 					alpha = 128
+					sharpness = IS_SHARP_ACCURATE
 				if(CULT_WARDING_SWORD)
 					desc += " Reality seems to strangely twist and contort about its blade."
 					icon_state = "cult_warding_sword"
@@ -643,9 +725,13 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 				if(CULT_HEARTSEEKER_SWORD)
 					desc += " This one is streamlined and thin, scintillating with baleful light."
 					icon_state = "cult_heartseeker_sword"
-					throwforce = 19 //So we can't break airlocks at range. Still hurts though, and gives you a strong ranged option.
+					throwforce = 20 //So we can't break most airlocks at range. Still hurts though, and gives you a strong ranged option.
 					throw_range = 7
 					throw_speed = 3
+				if(CULT_DESTRUCTION_SWORD)
+					desc += " This one's graven red length whispers of ruin and destruction."
+					force = 33
+					icon_state = "cult_destruction_sword"
 				if(CULT_BRUTAL_SWORD)
 					desc += " This one is clad in eldritch runes that pulse with scarcely contained power."
 					icon_state = "cult_brutal_sword"
