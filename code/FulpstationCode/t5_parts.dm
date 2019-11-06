@@ -95,7 +95,7 @@
 	icon_state = "quantumcap"
 	icon = 'icons/Fulpicons/quantumcell_fulp.dmi'
 	rating = 5
-	materials = list(/datum/material/iron =225, /datum/material/glass =180, /datum/material/gold =135, /datum/material/diamond = 90)
+	custom_materials = list(/datum/material/iron =225, /datum/material/glass =180, /datum/material/gold =135, /datum/material/diamond = 90)
 
 /obj/item/stock_parts/scanning_module/quantumscan
 	name = "quantum field scanning module"
@@ -103,7 +103,7 @@
 	icon_state = "quantumscan"
 	icon = 'icons/Fulpicons/quantumcell_fulp.dmi'
 	rating = 5
-	materials = list(/datum/material/iron= 225, /datum/material/glass = 180, /datum/material/diamond = 54, /datum/material/bluespace = 54)
+	custom_materials = list(/datum/material/iron= 225, /datum/material/glass = 180, /datum/material/diamond = 54, /datum/material/bluespace = 54)
 
 /obj/item/stock_parts/manipulator/quantummanip
 	name = "quantum field manipulator"
@@ -111,7 +111,7 @@
 	icon_state = "quantummanip"
 	icon = 'icons/Fulpicons/quantumcell_fulp.dmi'
 	rating = 5
-	materials = list(/datum/material/iron= 180, /datum/material/diamond = 27, /datum/material/titanium = 27, /datum/material/uranium = 27)
+	custom_materials = list(/datum/material/iron= 180, /datum/material/diamond = 27, /datum/material/titanium = 27, /datum/material/uranium = 27)
 
 /obj/item/stock_parts/micro_laser/quantumlaser
 	name = "quantum micro-laser"
@@ -119,7 +119,7 @@
 	icon_state = "quantumlaser"
 	icon = 'icons/Fulpicons/quantumcell_fulp.dmi'
 	rating = 5
-	materials = list(/datum/material/iron= 180, /datum/material/glass = 180, /datum/material/uranium = 90, /datum/material/diamond = 90)
+	custom_materials = list(/datum/material/iron= 180, /datum/material/glass = 180, /datum/material/uranium = 90, /datum/material/diamond = 90)
 
 /obj/item/stock_parts/matter_bin/quantumbin
 	name = "quantum entangled matter bin"
@@ -127,14 +127,14 @@
 	icon_state = "quantumbin"
 	icon = 'icons/Fulpicons/quantumcell_fulp.dmi'
 	rating = 5
-	materials = list(/datum/material/iron= 225, /datum/material/diamond = 90, /datum/material/bluespace = 135)
+	custom_materials = list(/datum/material/iron= 225, /datum/material/diamond = 90, /datum/material/bluespace = 135)
 
 /obj/item/reagent_containers/glass/beaker/quantum
 	name = "quantum entangled beaker"
 	desc = "A quantum entangled beaker, capable of holding a massive 400 units of any reagent."
 	icon_state = "quantumbeaker"
 	icon = 'icons/Fulpicons/quantumcell_fulp.dmi'
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 5000, /datum/material/plasma = 3000, /datum/material/diamond = 1500, /datum/material/bluespace = 1500)
+	custom_materials = list(/datum/material/iron = 500, /datum/material/glass = 5000, /datum/material/plasma = 3000, /datum/material/diamond = 1500, /datum/material/bluespace = 1500)
 	volume = 400
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,300)
@@ -145,7 +145,7 @@
 	icon_state = "quantumcell"
 	icon = 'icons/Fulpicons/quantumcell_fulp.dmi'
 	maxcharge = 50000
-	materials = list(/datum/material/iron = 1000, /datum/material/glass = 5500, /datum/material/plasma = 3500, /datum/material/diamond = 1000, /datum/material/bluespace = 1000)
+	custom_materials = list(/datum/material/iron = 1000, /datum/material/glass = 5500, /datum/material/plasma = 3500, /datum/material/diamond = 1000, /datum/material/bluespace = 1000)
 	chargerate = 5000
 
 /obj/item/stock_parts/cell/quantum/empty/Initialize()
@@ -188,7 +188,7 @@
 
 ///10/3/19 Update BELOW///
 
-///T5 Motorized wheelchair code/// 
+///T5 Motorized wheelchair code///
 
 /obj/vehicle/ridden/wheelchair/motorized/proc/RunOver(var/mob/living/carbon/human/H)
 	var/bloodiness = 0

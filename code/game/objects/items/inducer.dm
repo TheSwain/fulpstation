@@ -83,7 +83,7 @@
 				update_icon()
 				return
 			else
-				to_chat(user, "<span class='notice'>[src] already has \a [cell] installed!</span>")
+				to_chat(user, "<span class='warning'>[src] already has \a [cell] installed!</span>")
 				return
 
 	if(cantbeused(user))
@@ -104,8 +104,10 @@
 	var/obj/item/stock_parts/cell/C = A.get_cell()
 	var/obj/O
 	var/coefficient = 1
+
 	if(istype(A, /obj/item/gun/energy) || istype(A, /obj/item/cell_cartridge)) ///FULP, Cell Cartridge PR - Surrealistik Oct 2019
 		to_chat(user,"Error unable to interface with device")
+
 		return FALSE
 	if(istype(A, /obj))
 		O = A
