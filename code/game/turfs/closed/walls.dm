@@ -175,6 +175,8 @@
 	if(try_clean(W, user, T) || try_wallmount(W, user, T) || try_decon(W, user, T))
 		return
 
+	possessed_cult_blade_wallattack(W, user) //Fulpstation Possessed Cult Sword PR by Surrealistik. Sprites by Jo from Discord Oct 2019
+
 	return ..()
 
 /turf/closed/wall/proc/try_clean(obj/item/W, mob/user, turf/T)
