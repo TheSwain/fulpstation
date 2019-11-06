@@ -161,7 +161,7 @@
 			name = "near finished airlock assembly"
 			electronics = W
 
-	else if(istype(W, /obj/item/electroadaptive_pseudocircuit) && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS ) //ELECTROADAPTIVE PROCS FOR AIRLOCKS PR, Surrealistik Oct 2019
+	else if(istype(W, /obj/item/electroadaptive_pseudocircuit) && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS ) //FULP ELECTROADAPTIVE PROCS FOR AIRLOCKS PR, Surrealistik Oct 2019
 		airlock_install_electroadaptive(W, user)
 
 
