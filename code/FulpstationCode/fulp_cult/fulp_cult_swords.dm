@@ -119,7 +119,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 			new /obj/effect/temp_visual/cult/sparks(loc)
 			Beam(C,icon_state="blood",time=CULT_OFFERING_SWORD_EMPOWER_TIME) //cool sfx
 			playsound(get_turf(loc), 'sound/magic/exit_blood.ogg', 50, TRUE)
-			sacrificial.visible_message("<span class='cult'><b>[C] flares alight with malevolent power!</b></span>")
+			sacrificial.visible_message("<span class='cultbold'>[C] flares alight with malevolent power!</span>")
 			break //Empower only one.
 
 
@@ -154,11 +154,11 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 	if(!iscultist(user) && !isobserver(user)) //Non-cultists won't be able to perceive this information
 		return
 	if(empowered && !possessed)
-		. += "<span class='cult'><b>It is sacrificially empowered and ready to bind a daemon.</b></span>"
+		. += "<span class='cultbold'>It is sacrificially empowered and ready to bind a daemon.</span>"
 	if(possessor)
-		. += "<span class='cult'>It is possessed by the daemon <b>[possessor]</b>.</span>"
+		. += "<span class='cultbold'>It is possessed by the daemon <b>[possessor].</span>"
 	if(possessed)
-		. += "<span class='cult'>It is imbued with the power of <b>[possessed]</b>.</span>"
+		. += "<span class='cultbold'>It is imbued with the power of <b>[possessed]</span>"
 
 
 /obj/item/melee/cultblade/attack(mob/M, mob/living/carbon/user)
@@ -246,17 +246,17 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 		return FALSE
 
 	if(C.cooldown)
-		to_chat(user, "<span class='cult'><b>[W]'s power is currently depleted, and cannot yet smash through [src].</b></span>")
+		to_chat(user, "<span class='cultbold'>[W]'s power is currently depleted, and cannot yet smash through [src].</span>")
 		return FALSE
 
 	if(locate(/obj/effect/blessing, src)) //We can't smash consecrated walls
-		to_chat(user, "<span class='cult'><b>[src] is warded against the power of the Geometer; [W] cannot break it!</b></span>")
+		to_chat(user, "<span class='cultbold'>[src] is warded against the power of the Geometer; [W] cannot break it!</span>")
 		return FALSE
 
 	new /obj/effect/temp_visual/cult/sparks(loc)
 	playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	dismantle_wall(1)
-	user.visible_message("<span class='cult'><b>[src] is smashed apart by the raw might of [W]!</b></span>")
+	user.visible_message("<span class='cultbold'>[src] is smashed apart by the raw might of [W]!</span>")
 
 	var/cooldown_seconds = (hardness >= 40 ? CULT_DESTRUCTION_LOW_COOLDOWN : CULT_DESTRUCTION_HIGH_COOLDOWN) //30 seconds of cooldown per reinforced wall, 5 for a regular wall
 	addtimer(CALLBACK(C, /obj/item/melee/cultblade.proc/cult_sword_cooldown_end), cooldown_seconds)
@@ -413,7 +413,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 				if(!blightfound)
 					H.ForceContractDisease(new /datum/disease/revblight(), FALSE, TRUE)
 					H.playsound_local(get_turf(H.loc), 'sound/effects/ghost.ogg', 50, FALSE, pressure_affected = FALSE)
-					to_chat(H, "<span class='cult'><b>You feel [pick("suddenly sick", "a surge of nausea", "like your skin is <i>wrong</i>")].</span></b>")
+					to_chat(H, "<span class='cultbold'>You feel [pick("suddenly sick", "a surge of nausea", "like your skin is <i>wrong</i>")].</span>")
 			else
 				if(M.reagents)
 					M.reagents.add_reagent(/datum/reagent/toxin/plasma, 5)
@@ -511,7 +511,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 				L.adjustBruteLoss(force * 0.5) //With great power comes great self-damage
 				L_user.adjustBruteLoss(force * 0.1) //With great power comes great self-damage
 				if(prob(50))
-					to_chat(C, pick("<span class='cult'><b>You feel your lifeforce drawn into [src]!</b></span>","<span class='cult'><b>You feel [src] feed on your vitality.</b></span>","<span class='cult'><b>You feel drained as [src] channels your life blood!</b></span>"))
+					to_chat(C, "<span class='cultbold'>[pick("You feel your lifeforce drawn into [src]!","You feel [src] feed on your vitality.","You feel drained as [src] channels your life blood!")]</span>")
 
 		if(CULT_HEARTSEEKER_SWORD) //No special effects on hit.
 			return
@@ -549,7 +549,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 	if(cooldown)
 		return FALSE
 	addtimer(CALLBACK(src, /obj/item/melee/cultblade.proc/cult_sword_cooldown_end), cooldown_seconds)
-	to_chat(user, "<span class='cult'><b>[src]'s power is depleted and will take [cooldown_seconds * 0.1] seconds to recharge!</b></span>")
+	to_chat(user, "<span class='cultbold'>[src]'s power is depleted and will take [cooldown_seconds * 0.1] seconds to recharge!</span>")
 	cooldown = TRUE
 
 /obj/item/melee/cultblade/proc/cult_sword_cooldown_end()
@@ -583,10 +583,16 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 	. = ..()
 
 	if(!empowered) //We need to be empowered by any sacrifice.
-		to_chat(user, "<span class='cult'><b>This weapon must first be empowered by a proper sacrifice in order to bind a daemon!<b></span>")
+		to_chat(user, "<span class='cultbold'>This weapon must first be empowered by a proper sacrifice in order to bind a daemon!</span>")
 		return
 
 	if(possessed)
+		return
+
+	var/turf/T = get_turf(src)
+	var/area/A = get_area(src)
+	if(!is_station_level(T) || A.map_name == "Space")
+		to_chat(user, "<span class='cultbold'>The veil is not weak enough here to bind a daemon; you must be on the station!</span>")
 		return
 
 	var/obj/effect/rune/empower/rune = FALSE //We need an empowering rune
@@ -595,12 +601,12 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 		break
 
 	if(!rune)
-		to_chat(user, "<span class='cult'><b>Without an empowering rune, you lack the strength to bind a daemon to [src]...<b></span>")
+		to_chat(user, "<span class='cultbold'>Without an empowering rune, you lack the strength to bind a daemon to [src]...</span>")
 		return
 
 	var/datum/beam/B = user.Beam(rune,icon_state="blood",time=INFINITY) //cool sfx
-	to_chat(user, "<span class='cult'><b>You begin carve your flesh in blood tithe, and attempt to bind a daemon to [src]...<b></span>")
-	playsound(get_turf(user), 'sound/weapons/slice.ogg', 30, TRUE)
+	to_chat(user, "<span class='cultbold'>You begin carve your flesh in blood tithe, and attempt to bind a daemon to [src]...</span>")
+	playsound(T, 'sound/weapons/slice.ogg', 30, TRUE)
 
 	if(!do_after(user, CULT_SWORD_SUMMON_DELAY, target = user))
 		qdel(B) //Get rid of the beam SFX
@@ -611,8 +617,8 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 		H.bleed(10)
 
 	qdel(B) //Get rid of the beam SFX
-	to_chat(user, "<span class='cult'><b>The blood tithe is paid; all that remains is to wait for a daemon to heed your call...<b></span>")
-	playsound(get_turf(loc), 'sound/spookoween/ghost_whisper.ogg', 100, TRUE)
+	to_chat(user, "<span class='cultbold'>The blood tithe is paid; all that remains is to wait for a daemon to heed your call...</span>")
+	playsound(T, 'sound/spookoween/ghost_whisper.ogg', 100, TRUE)
 
 	possessed = TRUE //Set to true for now so we don't spam multiple attempts simultaneously.
 
@@ -737,7 +743,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 					icon_state = "cult_brutal_sword"
 
 			new /obj/effect/temp_visual/cult/sparks(loc)
-			playsound(get_turf(loc), 'sound/magic/demon_dies.ogg', 100, TRUE)
+			playsound(T, 'sound/magic/demon_dies.ogg', 100, TRUE)
 			update_atom_colour()
 			to_chat(user, "<span class='cultlarge'>Rejoice supplicant, for you have been found worthy of my daemon's aid. Feed it well...")
 
