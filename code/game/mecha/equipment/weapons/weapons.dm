@@ -34,7 +34,7 @@
 	if (targloc == curloc)
 		return 0
 
-	if (!handle_pins()) //Mech Weapon Firing Pins PR by Surrealistik Oct 2019
+	if (!handle_pins()) //FULP Mech Weapon Firing Pins PR by Surrealistik Oct 2019
 		return FALSE
 
 	set_ready_state(0)
