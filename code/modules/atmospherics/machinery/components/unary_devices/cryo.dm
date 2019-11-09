@@ -306,6 +306,9 @@
 			close_machine(target)
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/attackby(obj/item/I, mob/user, params)
+	if(check_id(I, user, params)) //FULPSTATION Lockdown Mode for Cryocell PR by Surrealistik Nov 2019
+		return
+
 	if(istype(I, /obj/item/reagent_containers/glass))
 		. = 1 //no afterattack
 		if(beaker)
@@ -335,11 +338,12 @@
 																	datum/tgui/master_ui = null, datum/ui_state/state = GLOB.notcontained_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "cryo", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, ui_key, "FulpCryo", name, ui_x, ui_y, master_ui, state) //FULPSTATION Lockdown Mode for Cryocell PR by Surrealistik Nov 2019
 		ui.open()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/ui_data()
-	var/list/data = list()
+	var/list/data = fulp_ui_data()
+	/*var/list/data = list()
 	data["isOperating"] = on
 	data["hasOccupant"] = occupant ? TRUE : FALSE
 	data["isOpen"] = state_open
@@ -385,13 +389,15 @@
 	if(beaker && beaker.reagents && beaker.reagents.reagent_list.len)
 		for(var/datum/reagent/R in beaker.reagents.reagent_list)
 			beakerContents += list(list("name" = R.name, "volume" = R.volume))
-	data["beakerContents"] = beakerContents
+	data["beakerContents"] = beakerContents*/
 	return data
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/ui_act(action, params)
 	if(..())
 		return
-	switch(action)
+
+	. = fulp_ui_act(action, params)
+	/*switch(action)
 		if("power")
 			if(on)
 				on = FALSE
@@ -414,7 +420,7 @@
 				if(Adjacent(usr) && !issilicon(usr))
 					usr.put_in_hands(beaker)
 				beaker = null
-				. = TRUE
+				. = TRUE*/
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/CtrlClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK) && !state_open)
