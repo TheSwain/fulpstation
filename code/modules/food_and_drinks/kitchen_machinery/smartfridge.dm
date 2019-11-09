@@ -402,8 +402,8 @@
 	var/repair_rate = 0
 
 /obj/machinery/smartfridge/organ/accept_check(obj/item/O)
-	//if(istype(O, /obj/item/organ) || istype (O, /obj/item/bodypart))
-	//	return TRUE
+	if(istype(O, /obj/item/organ) || istype (O, /obj/item/bodypart))
+		return TRUE
 	return FALSE
 
 /obj/machinery/smartfridge/organ/load(obj/item/O)
