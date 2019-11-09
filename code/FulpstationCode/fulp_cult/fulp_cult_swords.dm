@@ -672,51 +672,64 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 			possessed = powerlist[infusion]
 			desc = "A sword humming with unholy energy."
 			icon = 'icons/Fulpicons/cult_swords/cult_swords.dmi' //Shiny new icons
+			lefthand_file = 'icons/Fulpicons/cult_swords/cultblades_inhands.dmi'
+			righthand_file = 'icons/Fulpicons/cult_swords/cultblades_inhands.dmi'
 			armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100) //Daemonic swords are practically indestructible
-			resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF //Daemonic swords are practically indestructible
+			resistance_flags = INDESTRUCTIBLE | FREEZE_PROOF | FIRE_PROOF | ACID_PROOF | LAVA_PROOF //Daemonic swords are practically indestructible
 			switch(possessed)
 				if(CULT_BLOOD_SWORD)
 					desc += " This one has an incarnadine, bloody glow."
 					icon_state = "cult_blood_sword"
+					item_state = "cult_blood_sword"
 				if(CULT_CORRUPTION_SWORD)
 					desc += " Writhing tendrils of crimson and black twist about its imposing form."
 					icon_state = "cult_corruption_sword"
+					item_state = "cult_corruption_sword"
 				if(CULT_LIFEEATER_SWORD)
 					desc += " This one flickers with a bleak, thirsting blackness."
 					icon_state = "cult_lifeeater_sword"
+					item_state = "cult_lifeeater_sword"
 				if(CULT_PESTILENCE_SWORD)
 					desc += " This one seems to buzz with flies, dripping with sickly green virulence."
 					icon_state = "cult_pestilence_sword"
+					item_state = "cult_pestilence_sword"
 					force = 21 //Just enough to destroy standard airlocks.
 				if(CULT_FAMINE_SWORD)
 					desc += " This one clatters with the phantom gnashing and chittering of hungry teeth."
 					icon_state = "cult_famine_sword"
+					item_state = "cult_famine_sword"
 					force = 21 //Just enough to destroy standard airlocks.
 				if(CULT_HELLFIRE_SWORD)
 					desc += " This one seethes hotly with scalding orange flames."
 					icon_state = "cult_hellfire_sword"
+					item_state = "cult_hellfire_sword"
 					damtype = "fire"
 					if(loc == user)
 						equipped(user) //Add combust immunity if we are holding the blade.
 				if(CULT_HELLFROST_SWORD)
 					desc += " This one shudders like a living thing, its length rimed with cobalt ice."
 					icon_state = "cult_hellfrost_sword"
+					item_state = "cult_hellfrost_sword"
 					damtype = "fire"
 				if(CULT_CHAOS_SWORD)
 					desc += " This one flickers and pulses with prismatic, shifting light, its length appearing to waver uncontrollably."
 					icon_state = "cult_chaos_sword"
+					item_state = "cult_chaos_sword"
 				if(CULT_MADNESS_SWORD)
 					desc += " This one appears to be in several places at once, traced by after-images and auras of roiling violet."
 					icon_state = "cult_madness_sword"
+					item_state = "cult_madness_sword"
 					hitsound = 'sound/effects/curseattack.ogg'
 					force = 21 //Just enough to destroy standard airlocks.
 				if(CULT_AGONY_SWORD)
 					desc += " This one reverberates wildly, screaming faces forming and dissipating along its length."
 					icon_state = "cult_agony_sword"
+					item_state = "cult_agony_sword"
 					force = 21 //Just enough to destroy standard airlocks.
 				if(CULT_VORPAL_SWORD)
 					desc += " This one is eerily translucent and preternaturally sharp, appearing almost to vanish when turned to its side."
 					icon_state = "cult_vorpal_sword"
+					item_state = "cult_vorpal_sword"
 					force = 33
 					armour_penetration = 100
 					alpha = 128
@@ -724,13 +737,16 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 				if(CULT_WARDING_SWORD)
 					desc += " Reality seems to strangely twist and contort about its blade."
 					icon_state = "cult_warding_sword"
+					item_state = "cult_warding_sword"
 					block_chance = 50
 				if(CULT_DEVOURING_SWORD)
 					desc += " The faint sound of crunching fangs and vicious snarls emanate from this weapon."
 					icon_state = "cult_devouring_sword"
+					item_state = "cult_devouring_sword"
 				if(CULT_HEARTSEEKER_SWORD)
 					desc += " This one is streamlined and thin, scintillating with baleful light."
 					icon_state = "cult_heartseeker_sword"
+					item_state = "cult_heartseeker_sword"
 					throwforce = 20 //So we can't break most airlocks at range. Still hurts though, and gives you a strong ranged option.
 					throw_range = 7
 					throw_speed = 3
@@ -738,9 +754,11 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 					desc += " This one's graven red length whispers of ruin and destruction."
 					force = 33
 					icon_state = "cult_destruction_sword"
+					item_state = "cult_destruction_sword"
 				if(CULT_BRUTAL_SWORD)
 					desc += " This one is clad in eldritch runes that pulse with scarcely contained power."
 					icon_state = "cult_brutal_sword"
+					item_state = "cult_brutal_sword"
 
 			new /obj/effect/temp_visual/cult/sparks(loc)
 			playsound(T, 'sound/magic/demon_dies.ogg', 100, TRUE)
