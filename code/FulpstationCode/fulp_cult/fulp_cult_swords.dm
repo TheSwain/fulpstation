@@ -115,7 +115,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 	for(C in T)
 		if(!C.empowered) //We need to be empowered by any sacrifice.
 			C.empowered = TRUE
-			new /obj/effect/temp_visual/cult/sparks(C)
+			new /obj/effect/temp_visual/cult/sparks(C.loc)
 			new /obj/effect/temp_visual/cult/sparks(loc)
 			Beam(C,icon_state="blood",time=CULT_OFFERING_SWORD_EMPOWER_TIME) //cool sfx
 			playsound(get_turf(loc), 'sound/magic/exit_blood.ogg', 50, TRUE)
@@ -171,8 +171,8 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 	..()
 
 /obj/item/melee/cultblade/attack_obj(obj/O, mob/living/user)
-	possessed_cult_blade_objattack(O, user)
 	..()
+	possessed_cult_blade_objattack(O, user)
 
 /obj/item/melee/cultblade/proc/possessed_cult_blade_attack_setup(atom/target, mob/user, proximity = TRUE, attack_mode = CULT_SWORD_MOB_ATTACK)
 	if(!possessed) //Sanity check
@@ -184,7 +184,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 	if(!proximity)
 		return FALSE
 
-	if(ismob(target))
+	if(!ismob(target))
 		return FALSE
 
 	var/mob/M = target
@@ -217,6 +217,8 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 
 
 /obj/item/melee/cultblade/proc/possessed_cult_blade_objattack(obj/O, mob/user)
+	if(!O) //Can't destroy what's not there
+		return FALSE
 
 	if(!possessed) //Sanity check
 		return FALSE
@@ -228,7 +230,8 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 		if(CULT_DESTRUCTION_SWORD)
 			if(force * 2 < damage_deflection)
 				return FALSE
-			O.take_damage(force * 2, BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir = null, armour_penetration = 100)
+			new /obj/effect/temp_visual/cult/sparks(O.loc)
+			O.take_damage(force * 2, BRUTE, "melee", 1, null, 100)
 			return TRUE
 
 	return FALSE
@@ -246,7 +249,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 		return FALSE
 
 	if(C.cooldown)
-		to_chat(user, "<span class='cultbold'>[W]'s power is currently depleted, and cannot yet smash through [src].</span>")
+		to_chat(user, "<span class='cultbold'>[W]'s power is currently depleted, and will require [(C.cooldown - world.time) * 0.1] seconds to recharge!</span>")
 		return FALSE
 
 	if(locate(/obj/effect/blessing, src)) //We can't smash consecrated walls
@@ -255,11 +258,14 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 
 	new /obj/effect/temp_visual/cult/sparks(loc)
 	playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-	dismantle_wall(1)
+	for(var/mob/M in urange(7, src))
+		if(!M.stat && !isAI(M))
+			shake_camera(M, 3, 1)
 	user.visible_message("<span class='cultbold'>[src] is smashed apart by the raw might of [W]!</span>")
 
 	var/cooldown_seconds = (hardness >= 40 ? CULT_DESTRUCTION_LOW_COOLDOWN : CULT_DESTRUCTION_HIGH_COOLDOWN) //30 seconds of cooldown per reinforced wall, 5 for a regular wall
-	addtimer(CALLBACK(C, /obj/item/melee/cultblade.proc/cult_sword_cooldown_end), cooldown_seconds)
+	dismantle_wall(1)
+	C.cult_sword_cooldown_start(user, cooldown_seconds)
 
 
 /obj/item/melee/cultblade/proc/possessed_cult_blade_afterattack(mob/M, mob/living/L, mob/living/carbon/C, mob/living/carbon/human/H, mob/user, mob/living/L_user, antimagic = FALSE)
@@ -550,7 +556,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 		return FALSE
 	addtimer(CALLBACK(src, /obj/item/melee/cultblade.proc/cult_sword_cooldown_end), cooldown_seconds)
 	to_chat(user, "<span class='cultbold'>[src]'s power is depleted and will take [cooldown_seconds * 0.1] seconds to recharge!</span>")
-	cooldown = TRUE
+	cooldown = world.time + cooldown_seconds
 
 /obj/item/melee/cultblade/proc/cult_sword_cooldown_end()
 	if(!cooldown)
@@ -560,7 +566,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 	if(ismob(loc))
 		M = loc
 	if(M && iscultist(M))
-		playsound(get_turf(M), 'sound/magic/clockwork/narsie_attack.ogg',  get_clamped_volume(), TRUE, -1)
+		playsound(get_turf(M), 'sound/magic/clockwork/narsie_attack.ogg',  30, TRUE, -1)
 		to_chat(M, "<span class='cultlarge'>[src] has recharged!</span>")
 	new /obj/effect/temp_visual/cult/sparks(loc)
 
@@ -591,8 +597,8 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 
 	var/turf/T = get_turf(src)
 	var/area/A = get_area(src)
-	if(!is_station_level(T) || A.map_name == "Space")
-		to_chat(user, "<span class='cultbold'>The veil is not weak enough here to bind a daemon; you must be on the station!</span>")
+	if(!is_station_level(T.z) || A.map_name == "Space") //We can only bind daemons on the station Z level, and not in space.
+		to_chat(user, "<span class='cultbold'>The veil is not weak enough here to bind a daemon; you must be on the cursed station!</span>")
 		return
 
 	var/obj/effect/rune/empower/rune = FALSE //We need an empowering rune
@@ -625,7 +631,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 
 	var/list/mob/dead/observer/candidates = pollGhostCandidates("Do you want to play as the bound daemon of [user.real_name]'s [src]?", ROLE_PAI, null, FALSE, 100, POLL_IGNORE_POSSESSED_BLADE)
 
-	if(!LAZYLEN(candidates))
+	if(LAZYLEN(candidates))
 		var/mob/dead/observer/C = pick(candidates)
 		var/mob/living/simple_animal/shade/S = new(src)
 		S.ckey = C.ckey
@@ -635,7 +641,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 		SSticker.mode.add_cultist(S.mind, FALSE)
 		S.mind.special_role = ROLE_CULTIST
 		S.playsound_local(get_turf(S.loc), 'sound/ambience/antag/bloodcult.ogg', 100, FALSE, pressure_affected = FALSE)
-		to_chat(user, "<span class='cultlarge'>Go forth my daemon, and aid this pitiful supplicant...")
+		to_chat(S, "<span class='cultlarge'>Go forth my daemon, and aid this pitiful supplicant...")
 		to_chat(S, "<span class='cult italic'><b>You are a daemonic spirit summoned from the hellish realm of your master Nar'sie, the Geometer of Blood. A supplicant of the great Geometer has bound you into an eldritch blade you now empower and inhabit. You will aid the cult in heralding the return of your master.\
 		</b></span>")
 		var/sword_name = sanitize_name(stripped_input(S,"What are you named?", ,"", MAX_NAME_LEN))
@@ -647,7 +653,7 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 				name = sword_name
 
 			S.fully_replace_character_name(null, "The bound daemon of [sword_name]")
-			possessor = user
+			possessor = S
 
 			var/list/powerlist = list("Blood (Purges its victim's blood.)" = CULT_BLOOD_SWORD, \
 			"Life Eater (Drains health, healing brute damage.)" = CULT_LIFEEATER_SWORD, \
@@ -672,64 +678,64 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 			possessed = powerlist[infusion]
 			desc = "A sword humming with unholy energy."
 			icon = 'icons/Fulpicons/cult_swords/cult_swords.dmi' //Shiny new icons
-			lefthand_file = 'icons/Fulpicons/cult_swords/cultblades_inhands.dmi'
-			righthand_file = 'icons/Fulpicons/cult_swords/cultblades_inhands.dmi'
+			//lefthand_file = 'icons/Fulpicons/cult_swords/cultblades_inhands_left.dmi'
+			//righthand_file = 'icons/Fulpicons/cult_swords/cultblades_inhands_right.dmi'
 			armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100) //Daemonic swords are practically indestructible
-			resistance_flags = INDESTRUCTIBLE | FREEZE_PROOF | FIRE_PROOF | ACID_PROOF | LAVA_PROOF //Daemonic swords are practically indestructible
+			resistance_flags = INDESTRUCTIBLE | FREEZE_PROOF | FIRE_PROOF | ACID_PROOF | LAVA_PROOF //Daemonic swords are practically indestructible; must be destroyed by priest
 			switch(possessed)
 				if(CULT_BLOOD_SWORD)
 					desc += " This one has an incarnadine, bloody glow."
 					icon_state = "cult_blood_sword"
-					item_state = "cult_blood_sword"
+					//item_state = "cult_blood_sword"
 				if(CULT_CORRUPTION_SWORD)
 					desc += " Writhing tendrils of crimson and black twist about its imposing form."
 					icon_state = "cult_corruption_sword"
-					item_state = "cult_corruption_sword"
+					//item_state = "cult_corruption_sword"
 				if(CULT_LIFEEATER_SWORD)
 					desc += " This one flickers with a bleak, thirsting blackness."
 					icon_state = "cult_lifeeater_sword"
-					item_state = "cult_lifeeater_sword"
+					//item_state = "cult_lifeeater_sword"
 				if(CULT_PESTILENCE_SWORD)
 					desc += " This one seems to buzz with flies, dripping with sickly green virulence."
 					icon_state = "cult_pestilence_sword"
-					item_state = "cult_pestilence_sword"
+					//item_state = "cult_pestilence_sword"
 					force = 21 //Just enough to destroy standard airlocks.
 				if(CULT_FAMINE_SWORD)
 					desc += " This one clatters with the phantom gnashing and chittering of hungry teeth."
 					icon_state = "cult_famine_sword"
-					item_state = "cult_famine_sword"
+					//item_state = "cult_famine_sword"
 					force = 21 //Just enough to destroy standard airlocks.
 				if(CULT_HELLFIRE_SWORD)
 					desc += " This one seethes hotly with scalding orange flames."
 					icon_state = "cult_hellfire_sword"
-					item_state = "cult_hellfire_sword"
+					//item_state = "cult_hellfire_sword"
 					damtype = "fire"
 					if(loc == user)
 						equipped(user) //Add combust immunity if we are holding the blade.
 				if(CULT_HELLFROST_SWORD)
 					desc += " This one shudders like a living thing, its length rimed with cobalt ice."
 					icon_state = "cult_hellfrost_sword"
-					item_state = "cult_hellfrost_sword"
+					//item_state = "cult_hellfrost_sword"
 					damtype = "fire"
 				if(CULT_CHAOS_SWORD)
 					desc += " This one flickers and pulses with prismatic, shifting light, its length appearing to waver uncontrollably."
 					icon_state = "cult_chaos_sword"
-					item_state = "cult_chaos_sword"
+					//item_state = "cult_chaos_sword"
 				if(CULT_MADNESS_SWORD)
 					desc += " This one appears to be in several places at once, traced by after-images and auras of roiling violet."
 					icon_state = "cult_madness_sword"
-					item_state = "cult_madness_sword"
+					//item_state = "cult_madness_sword"
 					hitsound = 'sound/effects/curseattack.ogg'
 					force = 21 //Just enough to destroy standard airlocks.
 				if(CULT_AGONY_SWORD)
 					desc += " This one reverberates wildly, screaming faces forming and dissipating along its length."
 					icon_state = "cult_agony_sword"
-					item_state = "cult_agony_sword"
+					//item_state = "cult_agony_sword"
 					force = 21 //Just enough to destroy standard airlocks.
 				if(CULT_VORPAL_SWORD)
 					desc += " This one is eerily translucent and preternaturally sharp, appearing almost to vanish when turned to its side."
 					icon_state = "cult_vorpal_sword"
-					item_state = "cult_vorpal_sword"
+					//item_state = "cult_vorpal_sword"
 					force = 33
 					armour_penetration = 100
 					alpha = 128
@@ -737,28 +743,28 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 				if(CULT_WARDING_SWORD)
 					desc += " Reality seems to strangely twist and contort about its blade."
 					icon_state = "cult_warding_sword"
-					item_state = "cult_warding_sword"
+					//item_state = "cult_warding_sword"
 					block_chance = 50
 				if(CULT_DEVOURING_SWORD)
 					desc += " The faint sound of crunching fangs and vicious snarls emanate from this weapon."
 					icon_state = "cult_devouring_sword"
-					item_state = "cult_devouring_sword"
+					//item_state = "cult_devouring_sword"
 				if(CULT_HEARTSEEKER_SWORD)
 					desc += " This one is streamlined and thin, scintillating with baleful light."
 					icon_state = "cult_heartseeker_sword"
-					item_state = "cult_heartseeker_sword"
+					//item_state = "cult_heartseeker_sword"
 					throwforce = 20 //So we can't break most airlocks at range. Still hurts though, and gives you a strong ranged option.
 					throw_range = 7
-					throw_speed = 3
+					throw_speed = 2
 				if(CULT_DESTRUCTION_SWORD)
 					desc += " This one's graven red length whispers of ruin and destruction."
 					force = 33
 					icon_state = "cult_destruction_sword"
-					item_state = "cult_destruction_sword"
+					//item_state = "cult_destruction_sword"
 				if(CULT_BRUTAL_SWORD)
 					desc += " This one is clad in eldritch runes that pulse with scarcely contained power."
 					icon_state = "cult_brutal_sword"
-					item_state = "cult_brutal_sword"
+					//item_state = "cult_brutal_sword"
 
 			new /obj/effect/temp_visual/cult/sparks(loc)
 			playsound(T, 'sound/magic/demon_dies.ogg', 100, TRUE)
