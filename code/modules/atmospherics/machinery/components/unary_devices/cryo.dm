@@ -342,7 +342,8 @@
 		ui.open()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/ui_data()
-	var/list/data = fulp_ui_data()
+	var/list/data = list() //FULPSTATION Lockdown Mode for Cryocell PR by Surrealistik Nov 2019
+	data = fulp_ui_data()
 	/*var/list/data = list()
 	data["isOperating"] = on
 	data["hasOccupant"] = occupant ? TRUE : FALSE
@@ -396,7 +397,7 @@
 	if(..())
 		return
 
-	. = fulp_ui_act(action, params)
+	. = fulp_ui_act(action, params) //FULPSTATION Lockdown Mode for Cryocell PR by Surrealistik Nov 2019
 	/*switch(action)
 		if("power")
 			if(on)
