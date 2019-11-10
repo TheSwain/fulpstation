@@ -117,6 +117,7 @@
 	return FALSE
 
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/emag_act(mob/user)
-	lockdown = FALSE
-	to_chat(user, "<span class='danger'>You disable [src]'s lockdown mode.</span>")
+/obj/machinery/atmospherics/components/unary/cryo_cell/emag_act(mob/user) //Emag turns off the lockdown mode
+	if(lockdown)
+		lockdown = FALSE
+		to_chat(user, "<span class='danger'>You disable [src]'s lockdown mode.</span>")

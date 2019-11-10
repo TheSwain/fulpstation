@@ -38,13 +38,20 @@
 /obj/item/clothing/suit/space/hardsuit
 	var/toggle_helmet_sound = 'sound/mecha/mechmove03.ogg'
 
-//*************************************************************************
+//******************************************************************************
+//** FULPSTATION Lockdown Mode for Cryocell PR by Surrealistik Nov 2019 - BEGINS
+//**----------------------------------------------------------------------------
 //**
-//**
-//**
-//*************************************************************************
+//******************************************************************************
 
 
 /obj/machinery/atmospherics/components/unary/cryo_cell
 	var/lockdown = FALSE //Does operating the cryo cell require medical access?
 	req_one_access = list(ACCESS_MEDICAL)
+
+
+//******************************************************************************
+//** FULPSTATION Lockdown Mode for Cryocell PR by Surrealistik Nov 2019 - ENDS
+//**----------------------------------------------------------------------------
+//**
+//******************************************************************************
