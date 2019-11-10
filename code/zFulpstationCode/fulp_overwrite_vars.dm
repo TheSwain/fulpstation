@@ -47,8 +47,7 @@
 
 /obj/machinery/atmospherics/components/unary/cryo_cell
 	var/lockdown = FALSE //Does operating the cryo cell require medical access?
-	req_one_access = list(ACCESS_MEDICAL)
-
+	req_one_access = null
 
 //******************************************************************************
 //** FULPSTATION Lockdown Mode for Cryocell PR by Surrealistik Nov 2019 - ENDS

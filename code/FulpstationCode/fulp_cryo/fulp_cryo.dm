@@ -1,3 +1,5 @@
+#define FULP_CRYO_INTERFACE_VOLUME 30
+
 /obj/machinery/atmospherics/components/unary/cryo_cell/proc/fulp_ui_data()
 	var/list/data = list()
 	data["isOperating"] = on
@@ -55,10 +57,10 @@
 	var/obj/item/card/id/I = M.get_idcard(TRUE)
 	if(lockdown && (!I || !check_access(I)) ) //If we're in lockdown mode we check for medical access
 		to_chat(M, "<span class='danger'>[src] in lockdown mode; medical authorization required. Access denied.</span>")
-		playsound(src, 'sound/machines/buzz-two.ogg', volume)
+		playsound(src, 'sound/machines/buzz-two.ogg', FULP_CRYO_INTERFACE_VOLUME)
 		return FALSE
 
-	playsound(src, 'sound/machines/beep.ogg', volume)
+	playsound(src, 'sound/machines/beep.ogg', FULP_CRYO_INTERFACE_VOLUME)
 	switch(action)
 		if("power")
 			if(on)
@@ -86,7 +88,7 @@
 		if("lockdown")
 			if(!I || !check_access(I))
 				to_chat(M, "<span class='danger'>Medical authorization required to toggle lockdown mode. Access denied.</span>")
-				playsound(src, 'sound/machines/buzz-two.ogg', volume)
+				playsound(src, 'sound/machines/buzz-two.ogg', FULP_CRYO_INTERFACE_VOLUME)
 				return FALSE
 			lockdown = !lockdown
 			return TRUE
@@ -102,22 +104,27 @@
 		C = P.id
 
 	if(!C)
-		return FALSE
+		return
+
+	req_one_access = list(ACCESS_MEDICAL)
 
 	if(check_access(C))
 		lockdown = !lockdown
-		playsound(src, 'sound/machines/beep.ogg', volume)
+		playsound(src, 'sound/machines/beep.ogg', 30)
 		to_chat(user, "<span class='notice'>You toggle [src]'s lockdown mode [lockdown ? "on" : "off"]</span>")
-		return TRUE
 
 	else
-		playsound(src, 'sound/machines/buzz-two.ogg', volume)
-		to_chat(user, "<span class='notice'>You lack sufficient access to toggle [src]'s lockdown mode.</span>")
+		playsound(src, 'sound/machines/buzz-two.ogg', 30)
+		to_chat(user, "<span class='warning'>You lack sufficient access to toggle [src]'s lockdown mode.</span>")
 
-	return FALSE
+	if(!lockdown)
+		req_one_access = null
+
+	return
 
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/emag_act(mob/user) //Emag turns off the lockdown mode
 	if(lockdown)
 		lockdown = FALSE
+		req_one_access = null
 		to_chat(user, "<span class='danger'>You disable [src]'s lockdown mode.</span>")
