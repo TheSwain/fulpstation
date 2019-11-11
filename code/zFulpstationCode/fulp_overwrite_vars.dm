@@ -53,7 +53,17 @@
 	keyslot = new /obj/item/encryptionkey/headset_med
 
 
+/mob/living/silicon/robot/modules/engineering
+	radio = /obj/item/radio/borg/medical
+
+/obj/item/radio/borg/engineering
+	keyslot = new /obj/item/encryptionkey/headset_eng
+
+
 /mob/living/silicon/robot/modules/security
+	radio = /obj/item/radio/borg/security
+
+/mob/living/silicon/robot/modules/peacekeeper
 	radio = /obj/item/radio/borg/security
 
 /obj/item/radio/borg/security
@@ -74,9 +84,6 @@
 	radio = /obj/item/radio/borg/service
 
 /mob/living/silicon/robot/modules/janitor
-	radio = /obj/item/radio/borg/service
-
-/mob/living/silicon/robot/modules/peacekeeper
 	radio = /obj/item/radio/borg/service
 
 /mob/living/silicon/robot/modules/butler
