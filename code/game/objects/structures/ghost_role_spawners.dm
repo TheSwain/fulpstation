@@ -575,3 +575,37 @@
 
 /obj/effect/mob_spawn/human/pirate/gunner
 	rank = "Gunner"
+
+
+/obj/effect/mob_spawn/human/syndicate_engineer
+	name = "Syndicate Engineer Corps"
+	roundstart = FALSE
+	death = FALSE
+	random = TRUE
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	flavour_text = "<span class='big bold'>Welcome, syndicate engineer,</span><b> You have been charged by your superiors to repair a derelict station and ensure it can support human life. You're pretty sure nobody will disturb you here, yet you can't shake the feeling this job will be like no other <b>Your superiors are watching you closely, <font size=4>DO NOT</font> leave the station lest you disappoint your employer.!</b>"
+	outfit = /datum/outfit/syndicate_engineer
+	assignedrole = "Syndicate Engineer"
+
+/datum/outfit/syndicate_engineer
+	name = "Syndicate Engineer"
+	head = /obj/item/clothing/head/helmet/space/syndicate/black/engie
+	mask = /obj/item/clothing/mask/breath
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/space/syndicate/black/engie
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/syndicate/alt
+	back = /obj/item/storage/backpack
+	belt = /obj/item/storage/belt/utility/chief/full
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	internals_slot = SLOT_R_STORE
+	id = /obj/item/card/id/syndicate/anyone
+	implants = list(/obj/item/implant/weapons_auth)
+	backpack_contents = list(/obj/item/storage/box/syndie=1,\
+		/obj/item/tank/jetpack/oxygen/harness=1,\
+		/obj/item/gun/ballistic/automatic/pistol)
+
+/datum/outfit/syndicate_engineer/post_equip(mob/living/carbon/human/H)
+	H.faction |= ROLE_SYNDICATE

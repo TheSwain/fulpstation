@@ -408,3 +408,35 @@
 /area/ruin/space/has_grav/powered/ancient_shuttle
 	name = "Ancient Shuttle"
 	icon_state = "yellow"
+
+//Prototype Station ruin
+/area/ruin/has_grav/prototype
+	requires_power = TRUE
+	outdoors = FALSE
+	power_light = FALSE
+	power_equip = FALSE
+	power_environ = FALSE
+
+/area/ruin/has_grav/prototype/Captain
+	name = "Prototype Captain's quarter"
+	icon_state = "blue"
+
+/area/ruin/has_grav/prototype/nhallway
+	name = "Prototype North Hall"
+	icon_state = "hallP"
+
+/area/ruin/has_grav/prototype/shallway
+	name = "Prototype South Hall"
+	icon_state = "hallS"
+
+/area/ruin/has_grav/prototype/chemistry
+	name = "Prototype Chemistry"
+	icon_state = "green"
+
+/area/ruin/has_grav/prototype/garden
+	name = "Prototype Garden"
+	icon_state = "garden"
+
+/area/ruin/has_grav/prototype/engineering
+	name = "Prototype Engineering"
+	icon_state = "engi_storage"

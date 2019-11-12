@@ -293,3 +293,32 @@
 	suffix = "clericden.dmm"
 	name = "Cleric's Den"
 	description = "Once part of a larger monastery, this holy order of long dead clerics practiced far less non-violence than they preached. Appears to have been untouched by looters, however. Odd."
+
+//Map edits for fulpstation, by ** Kokojo **
+/datum/map_template/ruin/space/asteroid6
+	id = "asteroid6"
+	suffix = "asteroid6.dmm"
+	name = "Asteroid 6"
+	description = "Giant rock with candy inside!"
+
+/datum/map_template/ruin/space/brokensolar
+	id = "brokensolar"
+	suffix = "Brokensolar.dmm"
+	name = "Broken solars"
+	description = "A broken solar array"
+
+/datum/map_template/ruin/space/spaceshower
+	id = "spaceshower"
+	suffix = "SpaceShower.dmm"
+	name = "Space shower"
+	description = "A creepy space shower"
+
+/datum/map_template/ruin/space/prototype
+	id = "prototype"
+	suffix = "prototype.dmm"
+	name = "Prototype SS13"
+	placement_weight = 3 //Fun spawners in space are rare. Might be toned down in the future.
+	description = "Apparently, the first station built by NanoStrasen, but the Syndicates may want to reclaim it."
+
+
+
