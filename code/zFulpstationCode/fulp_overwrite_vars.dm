@@ -72,6 +72,8 @@
 //******************************************************
 //SEC BODY CAMS by Surrealistik Oct 2019 ENDS
 //******************************************************
+
+
 //************************************************************
 //** Improved Sec Starter Gear by Surrealistik Oct 2019 BEGINS
 //************************************************************
@@ -82,21 +84,21 @@
 	belt = /obj/item/storage/belt/security/fulp_starter_full
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	box = /obj/item/storage/box/security/improved
-	pda_slot = SLOT_R_STORE
+	pda_slot = ITEM_SLOT_RPOCKET
 
 /datum/outfit/job/warden
 	backpack_contents = list() //Start with stun baton in belt.
 	r_pocket = /obj/item/pda/security
 	belt = /obj/item/storage/belt/security/fulp_starter_full
 	box = /obj/item/storage/box/security/improved
-	pda_slot = SLOT_R_STORE
+	pda_slot = ITEM_SLOT_RPOCKET
 
 /datum/outfit/job/hos
 	backpack_contents = list() //Start with stun baton in belt.
 	r_pocket = /obj/item/pda/security
 	belt = /obj/item/storage/belt/security/fulp_starter_full
 	box = /obj/item/storage/box/security/improved
-	pda_slot = SLOT_R_STORE
+	pda_slot = ITEM_SLOT_RPOCKET
 
 
 /datum/techweb_node/sec_basic
