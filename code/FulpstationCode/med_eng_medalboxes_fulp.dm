@@ -1,12 +1,12 @@
 /obj/item/clothing/accessory/medal/ribbon/eng
-	name = "\"engineer of the shift award\" award"
+	name = "\"engineer of the shift\" award"
 	desc = "An award given to engineers and atmospheric technicians who have exceeded their expectations and gone above and beyond."
-	icon_state = "engineering_ribbon"
+	icon_state = "engineering"
 
 /obj/item/clothing/accessory/medal/ribbon/med
-	name = "\"doctor of the shift award\" award"
+	name = "\"doctor of the shift\" award"
 	desc = "An award bestowed only upon medical staff who have performed their duties to the fullest."
-	icon_state = "medical_ribbon"
+	icon_state = "medical"
 
 /obj/item/storage/lockbox/medal/med
 	name = "medical medal box"
