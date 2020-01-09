@@ -25,3 +25,10 @@
 /obj/item/storage/lockbox/medal/med/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/accessory/medal/ribbon/med(src)
+
+/obj/structure/closet/secure_closet/engineering_chief/PopulateContents()
+	new /obj/item/storage/lockbox/medal/eng(src)
+
+/obj/structure/closet/secure_closet/CMO/PopulateContents()
+	new /obj/item/storage/lockbox/medal/med(src)
+
