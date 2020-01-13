@@ -173,10 +173,10 @@ There is no point for a testament, but maybe a confession is appropriate. I've n
     icon = 'icons/obj/machines/sleeper.dmi'
     icon_state = "sleeper_s"
     flavour_text = "A simple sleeper on an elegant DnD station, DM edition"
-    outfit = /datum/outfit/spacebartender+
+    outfit = /datum/outfit/spacebartenderDm
 
-  /datum/outfit/spacebartender+
-	name = "DnDMaster"
+/datum/outfit/spacebartenderDm
+	name = "DnD Master"
 	head = /obj/item/clothing/head/chameleon
 	mask = /obj/item/clothing/mask/chameleon
 	neck = /obj/item/clothing/neck/cloak/cap
