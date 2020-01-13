@@ -141,6 +141,53 @@ There is no point for a testament, but maybe a confession is appropriate. I've n
 
 /datum/outfit/syndicate_engineer/post_equip(mob/living/carbon/human/H)
 	H.faction |= ROLE_SYNDICATE
+	
+/obj/effect/mob_spawn/human/Dndplayer
+    name = "DnD player"
+    roundstart = FALSE
+    death = FALSE
+    random = TRUE
+    icon = 'icons/obj/machines/sleeper.dmi'
+    icon_state = "sleeper_s"
+    flavour_text = "A simple sleeper on an elegant DnD station"
+    outfit = /datum/outfit/spacebartender
+
+/datum/outfit/spacebartender
+	name = "DnD player"
+	head = /obj/item/clothing/head/chameleon
+	mask = /obj/item/clothing/mask/chameleon
+	uniform = /obj/item/clothing/under/chameleon
+	suit = /obj/item/clothing/suit/chameleon
+	shoes = /obj/item/clothing/shoes/chameleon
+	gloves = /obj/item/clothing/gloves/chameleon
+	ears = /obj/item/radio/headset/chameleon
+	back = /obj/item/storage/backpack/chameleon
+	belt = /obj/item/storage/belt/chameleon
+	id = /obj/item/card/id/syndicate/anyone
+
+/obj/effect/mob_spawn/human/DnDMaster
+    name = "DnDMaster"
+    roundstart = FALSE
+    death = FALSE
+    random = TRUE
+    icon = 'icons/obj/machines/sleeper.dmi'
+    icon_state = "sleeper_s"
+    flavour_text = "A simple sleeper on an elegant DnD station, DM edition"
+    outfit = /datum/outfit/spacebartender+
+
+  /datum/outfit/spacebartender+
+	name = "DnDMaster"
+	head = /obj/item/clothing/head/chameleon
+	mask = /obj/item/clothing/mask/chameleon
+	neck = /obj/item/clothing/neck/cloak/cap
+	uniform = /obj/item/clothing/under/chameleon
+	suit = /obj/item/clothing/suit/chameleon
+	shoes = /obj/item/clothing/shoes/chameleon
+	gloves = /obj/item/clothing/gloves/chameleon
+	ears = /obj/item/radio/headset/chameleon
+	back = /obj/item/storage/backpack/chameleon
+	belt = /obj/item/storage/belt/chameleon
+	id = /obj/item/card/id/syndicate/anyone
 
 //DATU
 
@@ -168,3 +215,10 @@ There is no point for a testament, but maybe a confession is appropriate. I've n
 	name = "Prototype SS13"
 	placement_weight = 3 //Fun spawners in space are rare. Might be toned down in the future.
 	description = "Apparently, the first station built by NanoStrasen, but the Syndicates may want to reclaim it."
+	
+/datum/map_template/ruin/space/mansion
+	id = "mansion"
+	suffix = "mansion.dmm"
+	name = "mansion"
+	placement_weight = 3 //Fun spawners in space are rare. Might be toned down in the future.
+	description = "a rich guy hired a bunch of nerds so he can watch you play dnd.That nerd is you. have fun."
