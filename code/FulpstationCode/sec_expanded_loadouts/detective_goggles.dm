@@ -63,7 +63,7 @@
 /obj/item/clothing/glasses/detective/proc/add_sensors(mob/user, slot)
 	if(emped) //doesn't function while affected by EMPs.
 		return
-	if(slot != SLOT_GLASSES)
+	if(slot != ITEM_SLOT_EYES)
 		return
 	if(!user)
 		if(ismob(loc))
@@ -105,7 +105,7 @@
 	var/mob/living/carbon/human/H = src.loc
 	if(H.glasses == src)
 		to_chat(H, "<span class='notice'>[src]' hud elements flicker and shutter back into view as its interface reboots.</span>")
-		add_sensors(H, SLOT_GLASSES)
+		add_sensors(H, ITEM_SLOT_EYES)
 
 
 
@@ -159,7 +159,7 @@
 	item_state = icon_state
 	if(isliving(loc))
 		var/mob/living/user = loc
-		if(user.get_item_by_slot(SLOT_GLASSES) == src)
+		if(user.get_item_by_slot(ITEM_SLOT_EYES) == src)
 			user.update_inv_glasses()
 		else
 			user.update_inv_hands()
