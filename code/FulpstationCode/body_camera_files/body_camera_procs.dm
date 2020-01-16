@@ -22,6 +22,10 @@
 			user = loc
 		else
 			return
+
+	if(!user.mind) //Vibe check for mindless mobs.
+		return
+
 	var/obj/item/card/id/I = user.get_idcard(TRUE)
 	if(!istype(I))
 		return
@@ -75,7 +79,6 @@
 	camera_sound()
 	if(user)
 		to_chat(user, "<span class='notice'>Security uniform body camera successfully registered to [id_name]</span>")
-
 
 /obj/item/clothing/under/rank/security/proc/unregister_body_camera(obj/item/card/id/I, mob/user, message=TRUE)
 	builtInCamera.network = list()
@@ -147,3 +150,24 @@
 	else
 		network -= "sec_bodycameras"
 
+
+
+/mob/living/simple_animal/bot/secbot/proc/register_body_camera()
+	if(!src) //Sanity
+		return
+
+	builtInCamera = new (src)
+	builtInCamera.internal_light = FALSE
+
+	var/id_name = name
+
+	builtInCamera.network = list("sec_bodycameras")
+	var/cam_name = "-Robot Camera: [id_name] ([model])"
+	var/count
+	for(var/obj/machinery/camera/matching_camera in GLOB.cameranet.cameras)
+		if(cam_name == matching_camera.c_tag)
+			count++
+			cam_name = "-Robot Camera: [id_name]([count]) ([model])"
+			break
+
+	builtInCamera.c_tag = "[cam_name]"

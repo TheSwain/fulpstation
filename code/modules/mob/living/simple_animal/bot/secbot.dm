@@ -85,6 +85,9 @@
 	var/datum/atom_hud/secsensor = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
 	secsensor.add_hud_to(src)
 
+	//FULPSTATION BODY CAM NETWORK
+	register_body_camera()
+
 /mob/living/simple_animal/bot/secbot/Destroy()
 	QDEL_NULL(weapon)
 	return ..()
