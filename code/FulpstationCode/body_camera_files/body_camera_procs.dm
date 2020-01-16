@@ -159,15 +159,12 @@
 	builtInCamera = new (src)
 	builtInCamera.internal_light = FALSE
 
-	var/id_name = name
-
 	builtInCamera.network = list("sec_bodycameras")
-	var/cam_name = "-Robot Camera: [id_name] ([model])"
+	var/cam_name = "-Robot Camera: [name] ([model])"
 	var/count
 	for(var/obj/machinery/camera/matching_camera in GLOB.cameranet.cameras)
 		if(cam_name == matching_camera.c_tag)
 			count++
-			cam_name = "-Robot Camera: [id_name]([count]) ([model])"
-			break
+			cam_name = "-Robot Camera: [name] ([count]) ([model])" //Add and increment a number to the camera name; eventually there will be no matches.
 
 	builtInCamera.c_tag = "[cam_name]"
