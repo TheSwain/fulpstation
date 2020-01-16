@@ -152,7 +152,7 @@
 
 
 
-/mob/living/simple_animal/bot/secbot/proc/register_body_camera()
+/mob/living/simple_animal/bot/secbot/proc/secbot_register_body_camera()
 	if(!src) //Sanity
 		return
 
