@@ -114,11 +114,11 @@
 			camera_on = TRUE
 			builtInCamera.status = 1
 			message = "<span class='notice'>You toggle the body camera on.</span>"
+		camera_sound()
 
 	if(ismob(loc))
 		var/mob/user = loc
 		if(user)
-			camera_sound()
 			to_chat(user, "[message]")
 
 /obj/item/clothing/under/rank/security/proc/camera_sound(accepted = TRUE)
