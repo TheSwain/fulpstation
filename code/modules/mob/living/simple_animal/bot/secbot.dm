@@ -292,9 +292,7 @@ Auto Patrol: []"},
 
 	log_combat(src,C,"stunned")
 	if(declare_arrests)
-		var/area/location = get_area(src)
-		speak("[arrest_type ? "Detaining" : "Arresting"] level [threat] scumbag <b>[C]</b> in [location].", radio_channel)
-
+		speak("[arrest_type ? "Detaining" : "Arresting"] level [threat] scumbag <b>[C]</b> in <b>[get_area(src)]</b>.", radio_channel)
 		arrest_security_record(C, arrest_type, threat, location) //FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Oct 2019; this makes a record of the arrest, including timestamp and location.
 
 	C.visible_message("<span class='danger'>[src] has stunned [C]!</span>",\
@@ -429,7 +427,7 @@ Auto Patrol: []"},
 			oldtarget_name = C.name
 			speak("Level [threatlevel] infraction alert!")
 			if(declare_arrests) //FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Jan 2020
-				speak("Level [threatlevel] scumbag <b>[C]</b> detected at [get_area(src)]. Attempting to [arrest_type ? "detain" : "arrest"]", radio_channel)//FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Jan 2020
+				speak("Level [threatlevel] scumbag <b>[C]</b> detected at <b>[get_area(src)]</b>. Attempting to [arrest_type ? "detain" : "arrest"].", radio_channel)//FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Jan 2020
 			if(ranged)
 				playsound(src, pick('sound/voice/ed209_20sec.ogg', 'sound/voice/edplaceholder.ogg'), 50, FALSE)
 			else
