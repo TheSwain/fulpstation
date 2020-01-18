@@ -292,8 +292,9 @@ Auto Patrol: []"},
 
 	log_combat(src,C,"stunned")
 	if(declare_arrests)
-		speak("[arrest_type ? "Detaining" : "Arresting"] level [threat] scumbag <b>[C]</b> in <b>[get_area(src)]</b>.", radio_channel)
-		arrest_security_record(C, arrest_type, threat, get_area(src)) //FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Oct 2019; this makes a record of the arrest, including timestamp and location.
+		var/location = get_area(src)
+		speak("[arrest_type ? "Detaining" : "Arresting"] level [threat] scumbag <b>[C]</b> in <b>[location]</b>.", radio_channel)
+		arrest_security_record(C, arrest_type, threat, location) //FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Oct 2019; this makes a record of the arrest, including timestamp and location.
 
 	C.visible_message("<span class='danger'>[src] has stunned [C]!</span>",\
 							"<span class='userdanger'>[src] has stunned you!</span>")
