@@ -150,8 +150,6 @@
 	else
 		network -= "sec_bodycameras"
 
-
-
 /mob/living/simple_animal/bot/secbot/proc/secbot_register_body_camera()
 	if(!src) //Sanity
 		return
@@ -168,3 +166,42 @@
 			cam_name = "-Robot Camera: [name] ([count]) ([model])" //Add and increment a number to the camera name; eventually there will be no matches.
 
 	builtInCamera.c_tag = "[cam_name]"
+
+/mob/living/simple_animal/bot/secbot/proc/secbot_declare_arrest_completion(mob/living/carbon/C, threat)
+	if(!C) //sanity
+		return
+
+	var/location = get_area(src)
+	var/assignment = "NO ASSIGNMENT"
+	var/mob/living/carbon/human/H = C
+
+	if(ishuman(H))
+		assignment = H.get_assignment()
+
+	speak("[arrest_type ? "Detaining" : "Arresting"] level [threat] scumbag <b>[C], [assignment]</b> in <b>[location]</b>.", radio_channel)
+	arrest_security_record(C, arrest_type, threat, location, assignment) //FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Oct 2019; this makes a record of the arrest, including timestamp and location.
+
+/mob/living/simple_animal/bot/secbot/proc/secbot_declare_arrest_attempt(mob/living/carbon/C, threatlevel)
+	if(!C) //sanity
+		return
+
+	var/location = get_area(src)
+	var/assignment = "NO ASSIGNMENT"
+	var/mob/living/carbon/human/H = C
+
+	if(ishuman(H))
+		assignment = H.get_assignment()
+
+	speak("Level [threatlevel] scumbag <b>[C], [assignment]</b> detected at <b>[location]</b>. Attempting to [arrest_type ? "detain" : "arrest"].", radio_channel)
+
+/mob/living/simple_animal/bot/proc/bot_responding(mob/user)
+	if(!user) //Sanity
+		return
+
+	var/assignment = "NO ASSIGNMENT"
+	var/mob/living/carbon/human/H = user
+
+	if(ishuman(H))
+		assignment = H.get_assignment()
+
+	speak("Responding to <b>[user.name], [assignment]</b> summon at <b>[get_area(user)]</b>. Currently at <b>[get_area(src)]</b>. En route.", radio_channel)
