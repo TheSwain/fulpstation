@@ -1,14 +1,14 @@
 //Hulk turns your skin green, and allows you to punch through walls.
 /datum/mutation/human/hulk
 	name = "Hulk"
-	desc = "A poorly understood genome that causes the holder's muscles to expand, inhibit speech and gives the person a bad skin condition. Causes dangerous genetic instability."
+	desc = "A poorly understood genome that causes the holder's muscles to expand, inhibit speech and gives the person a bad skin condition."
 	quality = POSITIVE
 	locked = TRUE
 	difficulty = 16
 	text_gain_indication = "<span class='notice'>Your muscles hurt!</span>"
 	species_allowed = list("human") //no skeleton/lizard hulk
 	health_req = 25
-	instability = 100
+	instability = 40
 	var/scream_delay = 50
 	var/last_scream = 0
 
