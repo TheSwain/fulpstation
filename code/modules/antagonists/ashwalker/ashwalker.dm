@@ -26,7 +26,8 @@
 
 /datum/antagonist/ashwalker/on_gain()
 	RegisterSignal(owner.current, COMSIG_MOB_EXAMINATE, .proc/on_examinate)
-
+	owner.current.remove_language(/datum/language/common) //Ash walkers do not know Intergalactic Common
+	
 /datum/antagonist/ashwalker/on_removal()
 	UnregisterSignal(owner.current, COMSIG_MOB_EXAMINATE)
 
