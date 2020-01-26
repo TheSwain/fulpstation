@@ -23,7 +23,7 @@
 	var/mob/living/carbon/human/H = owner.current
 	if(!istype(H))
 		return
-	H.dna.add_mutation(HULK)
+	H.dna.add_mutation(HULK, MUT_OTHER, null, 1) //FULPSTATION Hulk Nerf, Surrealistik Jan 2020
 	H.dna.add_mutation(XRAY)
 	H.dna.add_mutation(SPACEMUT)
 	H.dna.add_mutation(TK)
