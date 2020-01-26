@@ -45,7 +45,7 @@
 	var/power_coeff = -1 //boosts mutation strength
 	var/energy_coeff = -1 //lowers mutation cooldown
 
-/datum/mutation/human/New(class_ = MUT_OTHER, timer, datum/mutation/human/copymut)
+/datum/mutation/human/New(class_ = MUT_OTHER, timer, variant_value, datum/mutation/human/copymut) //FULPSTATION Hulk Nerf by Surrealistik Jan 2020; variant variable can be plugged into on_acquired
 	. = ..()
 	class = class_
 	if(timer)
@@ -53,6 +53,8 @@
 		timed = TRUE
 	if(copymut && istype(copymut, /datum/mutation/human))
 		copy_mutation(copymut)
+	if(variant_value)
+		variant = variant_value
 
 /datum/mutation/human/proc/on_acquiring(mob/living/carbon/human/H)
 	if(!H || !istype(H) || H.stat == DEAD || (src in H.dna.mutations))

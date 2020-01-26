@@ -24,7 +24,7 @@
 		if(!target.dna)
 			continue
 		for(var/A in mutations)
-			target.dna.add_mutation(A)
+			target.dna.add_mutation(A, MUT_OTHER, null, 1) //FULPSTATION Hulk Nerf by Surrealistik Jan 2020; variant variable can be plugged into on_acquired
 		for(var/A in traits)
 			ADD_TRAIT(target, A, GENETICS_SPELL)
 		active_on += target
