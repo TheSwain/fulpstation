@@ -367,6 +367,8 @@
 //** Lets medical and engineering syndiborgs choose a disguise from a list.
 //** Also tweaks the medical syndiborg, removing emag and granting more med items
 //***************************************************************************
+/datum/mutation/human
+	var/variant = 0 //Can be defined to have special interactions.
 
 
 
@@ -430,3 +432,9 @@
 //***********************************************************
 //**** Detective Expanded Kit ENDS - Surrealistik, Oct 2019
 //***********************************************************
+
+//***************************************************************************
+//** FULPSTATION HULK NERFS by Surrealistik Jan 2020 ENDS
+//---------------------------------------------------------------------------
+//** Nerfs Hulk so it has lethal genetic instability.
+//***************************************************************************

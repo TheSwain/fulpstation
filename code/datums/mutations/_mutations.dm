@@ -46,7 +46,7 @@
 	var/energy_coeff = -1 //lowers mutation cooldown
 	var/list/valid_chrom_list = list() //List of strings of valid chromosomes this mutation can accept.
 
-/datum/mutation/human/New(class_ = MUT_OTHER, timer, datum/mutation/human/copymut)
+/datum/mutation/human/New(class_ = MUT_OTHER, timer, variant_value, datum/mutation/human/copymut) //FULPSTATION Hulk Nerf by Surrealistik Jan 2020; variant variable can be plugged into on_acquired
 	. = ..()
 	class = class_
 	if(timer)
@@ -55,6 +55,8 @@
 	if(copymut && istype(copymut, /datum/mutation/human))
 		copy_mutation(copymut)
 	update_valid_chromosome_list()
+	if(variant_value)
+		variant = variant_value
 
 /datum/mutation/human/proc/on_acquiring(mob/living/carbon/human/H)
 	if(!H || !istype(H) || H.stat == DEAD || (src in H.dna.mutations))

@@ -61,14 +61,14 @@
 	new_dna.mutations = mutations.Copy()
 
 //See mutation.dm for what 'class' does. 'time' is time till it removes itself in decimals. 0 for no timer
-/datum/dna/proc/add_mutation(mutation, class = MUT_OTHER, time)
+/datum/dna/proc/add_mutation(mutation, class = MUT_OTHER, time, variant_value) //FULPSTATION Hulk Nerf by Surrealistik Jan 2020; variant variable can be plugged into on_acquired
 	var/mutation_type = mutation
 	if(istype(mutation, /datum/mutation/human))
 		var/datum/mutation/human/HM = mutation
 		mutation_type = HM.type
 	if(get_mutation(mutation_type))
 		return
-	return force_give(new mutation_type (class, time, copymut = mutation))
+	return force_give(new mutation_type (class, time, variant_value, copymut = mutation)) //FULPSTATION Hulk Nerf by Surrealistik Jan 2020; variant variable can be plugged into on_acquired
 
 /datum/dna/proc/remove_mutation(mutation_type)
 	return force_lose(get_mutation(mutation_type))

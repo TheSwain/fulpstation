@@ -16,12 +16,13 @@
 /datum/mutation/human/hulk/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
 		return
-	ADD_TRAIT(owner, TRAIT_STUNIMMUNE, GENETIC_MUTATION)
-	ADD_TRAIT(owner, TRAIT_PUSHIMMUNE, GENETIC_MUTATION)
-	ADD_TRAIT(owner, TRAIT_CHUNKYFINGERS, GENETIC_MUTATION)
-	ADD_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, GENETIC_MUTATION)
+	//ADD_TRAIT(owner, TRAIT_STUNIMMUNE, TRAIT_HULK) //FULPSTATION Hulk Nerf, Surrealistik Jan 2020
+	ADD_TRAIT(owner, TRAIT_PUSHIMMUNE, TRAIT_HULK)
+	ADD_TRAIT(owner, TRAIT_CHUNKYFINGERS, TRAIT_HULK)
+	//ADD_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_HULK) //FULPSTATION Hulk Nerf, Surrealistik Jan 2020
 	ADD_TRAIT(owner, TRAIT_HULK, GENETIC_MUTATION)
 	owner.update_body_parts()
+	empowered_add_hulk(owner) //FULPSTATION Hulk Nerf, Surrealistik Jan 2020
 	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "hulk", /datum/mood_event/hulk)
 	RegisterSignal(owner, COMSIG_HUMAN_EARLY_UNARMED_ATTACK, .proc/on_attack_hand)
 	RegisterSignal(owner, COMSIG_MOB_SAY, .proc/handle_speech)
@@ -45,14 +46,15 @@
 		on_losing(owner)
 		to_chat(owner, "<span class='danger'>You suddenly feel very weak.</span>")
 
-/datum/mutation/human/hulk/on_losing(mob/living/carbon/human/owner)
+/datum/mutation/human/hulk/on_losing(mob/living/carbon/human/owner, super)
 	if(..())
 		return
-	REMOVE_TRAIT(owner, TRAIT_STUNIMMUNE, GENETIC_MUTATION)
-	REMOVE_TRAIT(owner, TRAIT_PUSHIMMUNE, GENETIC_MUTATION)
-	REMOVE_TRAIT(owner, TRAIT_CHUNKYFINGERS, GENETIC_MUTATION)
-	REMOVE_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, GENETIC_MUTATION)
+	//REMOVE_TRAIT(owner, TRAIT_STUNIMMUNE, TRAIT_HULK) //FULPSTATION Hulk Nerf, Surrealistik Jan 2020
+	REMOVE_TRAIT(owner, TRAIT_PUSHIMMUNE, TRAIT_HULK)
+	REMOVE_TRAIT(owner, TRAIT_CHUNKYFINGERS, TRAIT_HULK)
+	//REMOVE_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_HULK) //FULPSTATION Hulk Nerf, Surrealistik Jan 2020
 	REMOVE_TRAIT(owner, TRAIT_HULK, GENETIC_MUTATION)
+	empowered_remove_hulk(owner) //FULPSTATION Hulk Nerf, Surrealistik Jan 2020
 	owner.update_body_parts()
 	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "hulk")
 	UnregisterSignal(owner, COMSIG_HUMAN_EARLY_UNARMED_ATTACK)
