@@ -269,7 +269,7 @@ Key procs
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/draconic = list(LANGUAGE_ATOM))
 
-/datum/language_holder/lizard/ash
+/datum/language_holder/lizard/ash //FULPSTATION: Ashwalkers don't know intergalactic common anymore (PR #244)
 	understood_languages = list(/datum/language/draconic = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/draconic = list(LANGUAGE_ATOM))
 	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
