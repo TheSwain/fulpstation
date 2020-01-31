@@ -26,7 +26,7 @@
 
 /datum/antagonist/ashwalker/on_gain()
 	RegisterSignal(owner.current, COMSIG_MOB_EXAMINATE, .proc/on_examinate)
-	
+
 /datum/antagonist/ashwalker/on_removal()
 	UnregisterSignal(owner.current, COMSIG_MOB_EXAMINATE)
 
