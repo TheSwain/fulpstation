@@ -31,6 +31,7 @@
 	 /datum/reagent/consumable/frostoil = list("icon_state" = "coldsauce", "item_state" = "", "icon_empty" = "", "name" = "coldsauce bottle", "desc" = "Leaves the tongue numb from its passage."),
 	 /datum/reagent/consumable/cornoil = list("icon_state" = "oliveoil", "item_state" = "", "icon_empty" = "", "name" = "corn oil bottle", "desc" = "A delicious oil used in cooking. Made from corn."),
 	 /datum/reagent/consumable/bbqsauce = list("icon_state" = "bbqsauce", "item_state" = "", "icon_empty" = "", "name" = "bbq sauce bottle", "desc" = "Hand wipes not included."),
+	 /datum/reagent/consumable/ranch = list("icon_state" = "ranch", "item_state" = "", "icon_empty" = "ranch_empty", "name" = "ranch bottle", "desc" = "Ranch from the valley of the 18 cowboys"), //fulpcode	 
 	 )
 	var/originalname = "condiment" //Can't use initial(name) for this. This stores the name set by condimasters.
 	var/icon_empty = ""
@@ -227,6 +228,12 @@
 	icon_state = "mayonnaise"
 	list_reagents = list(/datum/reagent/consumable/mayonnaise = 50)
 
+/obj/item/reagent_containers/food/condiment/ranch //fulpcode
+    name = "ranch"
+    desc = "Ranch from the valley of the 18 cowboys"
+    icon_state = "ranch"
+    icon_empty = "ranch_empty"
+    list_reagents = list(/datum/reagent/consumable/ranch = 20)
 
 
 //Food packs. To easily apply deadly toxi... delicious sauces to your food!
