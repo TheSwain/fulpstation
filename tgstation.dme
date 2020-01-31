@@ -639,8 +639,6 @@
 #include "code\FulpstationCode\wintercoats.dm"
 #include "code\FulpstationCode\body_camera_files\body_camera_procs.dm"
 #include "code\FulpstationCode\borg_radio_files\borg_radio.dm"
-#include "code\FulpstationCode\fulp_food_drink\fulp_food_open_container.dm"
-#include "code\FulpstationCode\fulp_food_drink\fulp_foods_reagents.dm"
 #include "code\FulpstationCode\fulp_mech_firingpins\fulp_mech_firingpins.dm"
 #include "code\FulpstationCode\halloween_costumes\_event.dm"
 #include "code\FulpstationCode\halloween_costumes\alien_green.dm"
