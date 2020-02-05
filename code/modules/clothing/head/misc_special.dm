@@ -139,6 +139,24 @@
 		earflaps = 1
 		to_chat(user, "<span class='notice'>You lower the ear flaps on the ushanka.</span>")
 
+/obj/item/clothing/head/ushanka/equipped(mob/user, slot) //fulpcode
+	. = ..()
+	if(!ishuman(user))
+		return
+	if(slot == ITEM_SLOT_HEAD)
+		user.grant_language(/datum/language/russian/, TRUE, TRUE, LANGUAGE_HAT)
+		to_chat(user, "<span class='boldnotice'>You suddenly know how to speak Russian!</span>")
+
+/obj/item/clothing/head/ushanka/dropped(mob/user)
+	. = ..()
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	if(H.get_item_by_slot(ITEM_SLOT_HEAD) == src)
+		user.remove_language(/datum/language/russian/, TRUE, TRUE, LANGUAGE_HAT)
+		to_chat(user, "<span class='boldnotice'>You can no longer speak Russian.</span>")
+
+
 /*
  * Pumpkin head
  */
