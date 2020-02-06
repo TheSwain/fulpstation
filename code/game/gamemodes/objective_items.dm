@@ -226,7 +226,7 @@
 	return 0
 
 /datum/objective_item/steal/iandog //[FULP]
-	name = "Ian, the Head of Personal's pet corgi. Alive."
+	name = "Ian, the Head of Personal's pet corgi, alive."
 	targetitem = /obj/item/pet_carrier
 	difficulty = 20
 	excludefromjob = list("Head of Personal")
