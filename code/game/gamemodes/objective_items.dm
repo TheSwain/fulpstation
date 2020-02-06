@@ -175,7 +175,7 @@
 	name = "Runtime, the Cheif Medical Officer's pet, alive."
 	targetitem = /obj/item/pet_carrier
 	difficulty = 20
-	excludefromjob = list("Chief Medical Officer","Medical Doctor","Virologist","Chemist","Paramedic")
+	excludefromjob = list("Chief Medical Officer")
 
 /datum/objective_item/steal/runtimecat/check_special_completion(obj/item/pet_carrier/RT)
 	for(var/mob/living/simple_animal/pet/cat/Runtime/CT in RT)
