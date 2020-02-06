@@ -119,7 +119,7 @@
 	name = "the cargo department's budget card!"
 	targetitem = /obj/item/card/id/departmental_budget/car
 	difficulty = 5
-	excludefromjob = list("Quarter Master","Cargo Technician")
+	excludefromjob = list("Quartermaster","Cargo Technician")
 
 //Items with special checks!
 /datum/objective_item/steal/plasma
