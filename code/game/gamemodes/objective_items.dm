@@ -131,7 +131,7 @@
 	name = "the medical department's buget card!"
 	targetitem = /obj/item/card/id/departmental_budget/med
 	difficulty = 5
-	excludefromjob = list("Chief Medical Officer","Medical Doctor")
+	excludefromjob = list("Chief Medical Officer","Medical Doctor","Virologist","Chemist","Paramedic")
 
 /datum/objective_item/steal/sci_budget //science's budget card
 	name = "the science department's budget card!"
@@ -183,19 +183,19 @@
 	excludefromjob = list("Research Director","Scientist")
 
 /datum/objective_item/steal/cmo_stamp
-	name = "the Cheif Medical Officer's offical stamp."
+	name = "the Chief Medical Officer's offical stamp."
 	targetitem = /obj/item/stamp/cmo
 	difficulty = 5
-	excludefromjob = list("Cheif Medical Officer","Medical Doctor")
+	excludefromjob = list("Chief Medical Officer","Medical Doctor","Virologist","Chemist","Paramedic")
 
 /datum/objective_item/steal/eng_stamp
-	name = "the Cheif engineer's offical stamp."
+	name = "the Chief engineer's offical stamp."
 	targetitem = /obj/item/stamp/ce
 	difficulty = 5
-	excludefromjob = list("Cheif Engineer","Station Engineer","Scientist","Atmospheric Technician")
+	excludefromjob = list("Chief Engineer","Station Engineer","Scientist","Atmospheric Technician")
 
 /datum/objective_item/steal/qm_stamp
-	name = "the quarter master's offical stamp."
+	name = "the Quarter Master's offical stamp."
 	targetitem = /obj/item/stamp/qm
 	difficulty = 3
 	excludefromjob = list("Quarter Master", "Cargo Technician")
@@ -225,6 +225,7 @@
 			return 1
 	return 0
 
+//pets
 /datum/objective_item/steal/iandog //[FULP]
 	name = "Ian, the Head of Personal's pet corgi, alive."
 	targetitem = /obj/item/pet_carrier
@@ -233,7 +234,55 @@
 
 /datum/objective_item/steal/iandog/check_special_completion(obj/item/pet_carrier/F)
 	for(var/mob/living/simple_animal/pet/dog/corgi/Ian/D in F)
-		if(D.stat != DEAD)//checks if ian is alive.
+		if(D.stat != DEAD)//checks if pet is alive.
+			return 1
+	return 0
+
+/datum/objective_item/steal/poly
+	name = "Poly, the Chief Engineer's pet parrot, alive"
+	targetitem = /obj/item/pet_carrier
+	difficulty = 30
+	excludefromjob = list("Chief Engineer")
+
+/datum/objective_item/steal/poly/check_special_completion(obj/item/pet_carrier/CE)
+	for(var/mob/living/simple_animal/parrot/Poly/P in CE)
+		if(P.stat != DEAD)
+			return 1
+	return 0
+
+/datum/objective_item/steal/runtimecat
+	name = "Runtime, the Cheif Medical Officer's pet, alive."
+	targetitem = /obj/item/pet_carrier
+	difficulty = 20
+	excludefromjob = list("Chief Medical Officer","Medical Doctor","Virologist","Chemist","Paramedic")
+
+/datum/objective_item/steal/runtimecat/check_special_completion(obj/item/pet_carrier/RT)
+	for(var/mob/living/simple_animal/pet/cat/Runtime/CT in RT)
+		if(CT.stat != DEAD)
+			return 1
+	return 0
+
+/datum/objective_item/steal/renaultfox
+	name = "Renault, the Captain's prized fox, alive!"
+	targetitem = /obj/item/pet_carrier
+	difficulty = 20
+	excludefromjob = list("Captain")
+
+/datum/objective_item/steal/renaultfox/check_special_completion(obj/item/pet_carrier/CO)
+	for(var/mob/living/simple_animal/pet/fox/Renault/FX in CO)
+		if(FX.stat !=DEAD)
+			return 1
+	return 0
+
+/datum/objective_item/steal/secspider
+	name = "Sergeant Araneus, the Head of Security's pet spider, alive!"
+	targetitem = /obj/item/pet_carrier
+	difficulty = 30
+	excludefromjob = list("Head of Security","Warden")
+
+/datum/objective_item/steal/secspider/check_special_completion(obj/item/pet_carrier/SC)
+	for(var/mob/living/simple_animal/hostile/retaliate/bat/SP in SC)
+		if(SP.stat != DEAD)
 			return 1
 	return 0
 
