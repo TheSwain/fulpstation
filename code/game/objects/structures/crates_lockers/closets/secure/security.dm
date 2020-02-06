@@ -34,7 +34,6 @@
 	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/clothing/shoes/digicombat(src) //fulp
 	new /obj/item/storage/photo_album/Captain(src)
-	new /obj/item/card/id/departmental_budget/civ(src)
 
 /obj/structure/closet/secure_closet/hop
 	name = "\proper head of personnel's locker"
@@ -65,7 +64,6 @@
 	new /obj/item/clothing/shoes/laceup/digitigrade(src) //fulp
 	new /obj/item/clothing/suit/hooded/wintercoat/captain/hop(src) // [FULP] [PNX] [PAPRITO]
 	new /obj/item/storage/photo_album/HoP(src)
-	new /obj/item/card/id/departmental_budget/srv(src)
 
 /obj/structure/closet/secure_closet/hos
 	name = "\proper head of security's locker"
@@ -101,8 +99,7 @@
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/security/head(src) // [FULP] [PNX] [PAPRITO]
 	new /obj/item/storage/photo_album/HoS(src)
-	new /obj/item/card/id/departmental_budget/sec(src)
-	
+
 /obj/structure/closet/secure_closet/warden
 	name = "\proper warden's locker"
 	req_access = list(ACCESS_ARMORY)
