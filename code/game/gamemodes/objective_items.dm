@@ -198,7 +198,7 @@
 	name = "the quarter master's offical stamp."
 	targetitem = /obj/item/stamp/qm
 	difficulty = 3
-	excluidefromjob = list("Quarter Master","Cargo Technician")
+	excludefromjob = list("Quarter Master", "Cargo Technician")
 
 //Items with special checks!
 /datum/objective_item/steal/plasma
