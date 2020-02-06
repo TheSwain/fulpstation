@@ -143,7 +143,7 @@
 	name = "the cargo department's budget card!"
 	targetitem = /obj/item/card/id/departmental_budget/car
 	difficulty = 5
-	excludefromjob = list("Captain")
+	excludefromjob = list("Quarter Master","Cargo Technician")
 
 /datum/objective_item/steal/sec_buget //shitcurity's card
 	name = "the security department's budget card!"
