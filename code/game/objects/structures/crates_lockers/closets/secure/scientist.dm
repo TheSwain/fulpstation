@@ -28,3 +28,4 @@
 	new /obj/item/clothing/shoes/laceup/digitigrade(src) //fulp
 	new /obj/item/clothing/suit/hooded/wintercoat/science/head(src) // [FULP] [PNX] [PAPRITO]
 	new /obj/item/storage/photo_album/RD(src)
+	new /obj/item/card/id/departmental_budget/sci(src)
