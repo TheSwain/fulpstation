@@ -225,6 +225,18 @@
 			return 1
 	return 0
 
+/datum/objective_item/steal/iandog //[FULP]
+	name = "Ian, the Head of Personal's pet corgi. Alive."
+	targetitem = /obj/item/pet_carrier
+	difficulty = 20
+	excludefromjob = list("Head of Personal")
+
+/datum/objective_item/steal/iandog/check_special_completion(obj/item/pet_carrier/F)
+	for(var/mob/living/simple_animal/pet/dog/corgi/Ian/D in F)
+		if(D.stat != DEAD)//checks if ian is alive.
+			return 1
+	return 0
+
 /datum/objective_item/steal/blueprints
 	name = "the station blueprints."
 	targetitem = /obj/item/areaeditor/blueprints
