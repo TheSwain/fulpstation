@@ -115,90 +115,11 @@
 	return GLOB.main_supermatter_engine != null
 
 //extra objectives for antagonists. [FULP]
-/datum/objective_item/steal/civ_budget //captain's budget card
-	name = "the civil department's budget card!"
-	targetitem = /obj/item/card/id/departmental_budget/civ
-	difficulty = 5
-	excludefromjob = list("Captain")
-
-/datum/objective_item/steal/eng_budget //engineering but you know that already
-	name = "the engineering department's budget card!"
-	targetitem = /obj/item/card/id/departmental_budget/eng
-	difficulty = 5
-	excludefromjob = list("Chief Engineer")
-
-/datum/objective_item/steal/med_budget //medical's budget card
-	name = "the medical department's buget card!"
-	targetitem = /obj/item/card/id/departmental_budget/med
-	difficulty = 5
-	excludefromjob = list("Chief Medical Officer","Medical Doctor","Virologist","Chemist","Paramedic")
-
-/datum/objective_item/steal/sci_budget //science's budget card
-	name = "the science department's budget card!"
-	targetitem = /obj/item/card/id/departmental_budget/sci
-	difficulty = 5
-	excludefromjob = list("Research Director", "Scientist")
-
 /datum/objective_item/steal/car_budget //cargonia's card good luck
 	name = "the cargo department's budget card!"
 	targetitem = /obj/item/card/id/departmental_budget/car
 	difficulty = 5
 	excludefromjob = list("Quarter Master","Cargo Technician")
-
-/datum/objective_item/steal/sec_buget //shitcurity's card
-	name = "the security department's budget card!"
-	targetitem = /obj/item/card/id/departmental_budget/sec
-	difficulty = 10
-	excludefromjob = list("Head of Security","Warden")
-
-/datum/objective_item/steal/srv_budget //located in HoP's locker
-	name = "the service department's budget card!"
-	targetitem = /obj/item/card/id/departmental_budget/srv
-	difficulty = 5 
-	excludefromjob = list("Head of personal")
-
-//stamps [FULP]
-/datum/objective_item/steal/captain_stamp
-	name = "the Captain's offcial stamp!"
-	targetitem = /obj/item/stamp/captain
-	difficulty = 5
-	excludefromjob = list("Captain")
-
-/datum/objective_item/steal/hop_stamp
-	name = "the Head of personal's offical stamp."
-	targetitem = /obj/item/stamp/hop
-	difficulty = 5
-	excludefromjob = list("Head of personal")
-
-/datum/objective_item/steal/hos_stamp
-	name = "the Head of Security's offical stamp."
-	targetitem = /obj/item/stamp/hos
-	difficulty = 10
-	excludefromjob = list("Head of Security","Warden")
-
-/datum/objective_item/steal/rd_stamp
-	name = "the Research Director's offical stamp."
-	targetitem = /obj/item/stamp/rd
-	difficulty = 5
-	excludefromjob = list("Research Director","Scientist")
-
-/datum/objective_item/steal/cmo_stamp
-	name = "the Chief Medical Officer's offical stamp."
-	targetitem = /obj/item/stamp/cmo
-	difficulty = 5
-	excludefromjob = list("Chief Medical Officer","Medical Doctor","Virologist","Chemist","Paramedic")
-
-/datum/objective_item/steal/eng_stamp
-	name = "the Chief engineer's offical stamp."
-	targetitem = /obj/item/stamp/ce
-	difficulty = 5
-	excludefromjob = list("Chief Engineer","Station Engineer","Scientist","Atmospheric Technician")
-
-/datum/objective_item/steal/qm_stamp
-	name = "the Quarter Master's offical stamp."
-	targetitem = /obj/item/stamp/qm
-	difficulty = 3
-	excludefromjob = list("Quarter Master", "Cargo Technician")
 
 //Items with special checks!
 /datum/objective_item/steal/plasma
@@ -227,10 +148,10 @@
 
 //pets
 /datum/objective_item/steal/iandog //[FULP]
-	name = "Ian, the Head of Personal's pet corgi, alive."
+	name = "Ian, the Head of Personnal's pet corgi, alive."
 	targetitem = /obj/item/pet_carrier
 	difficulty = 20
-	excludefromjob = list("Head of Personal")
+	excludefromjob = list("Head of Personnal")
 
 /datum/objective_item/steal/iandog/check_special_completion(obj/item/pet_carrier/F)
 	for(var/mob/living/simple_animal/pet/dog/corgi/Ian/D in F)
@@ -271,18 +192,6 @@
 /datum/objective_item/steal/renaultfox/check_special_completion(obj/item/pet_carrier/CO)
 	for(var/mob/living/simple_animal/pet/fox/Renault/FX in CO)
 		if(FX.stat !=DEAD)
-			return 1
-	return 0
-
-/datum/objective_item/steal/secspider
-	name = "Sergeant Araneus, the Head of Security's pet spider, alive!"
-	targetitem = /obj/item/pet_carrier
-	difficulty = 30
-	excludefromjob = list("Head of Security","Warden")
-
-/datum/objective_item/steal/secspider/check_special_completion(obj/item/pet_carrier/SC)
-	for(var/mob/living/simple_animal/hostile/retaliate/bat/SP in SC)
-		if(SP.stat != DEAD)
 			return 1
 	return 0
 
