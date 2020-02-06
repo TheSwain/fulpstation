@@ -151,7 +151,7 @@
 	name = "Ian, the Head of Personnal's pet corgi, alive."
 	targetitem = /obj/item/pet_carrier
 	difficulty = 20
-	excludefromjob = list("Head of Personnal")
+	excludefromjob = list("Head of Personnel")
 
 /datum/objective_item/steal/iandog/check_special_completion(obj/item/pet_carrier/F)
 	for(var/mob/living/simple_animal/pet/dog/corgi/Ian/D in F)
