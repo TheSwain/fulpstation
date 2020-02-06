@@ -114,6 +114,92 @@
 /datum/objective_item/steal/supermatter/TargetExists()
 	return GLOB.main_supermatter_engine != null
 
+//extra objectives for antagonists. [FULP]
+/datum/objective_item/steal/civ_budget //captain's budget card
+	name = "the civil department's budget card!"
+	targetitem = /obj/item/card/id/departmental_budget/civ
+	difficulty = 5
+	excludefromjob = list("Captain")
+
+/datum/objective_item/steal/eng_budget //engineering but you know that already
+	name = "the engineering department's budget card!"
+	targetitem = /obj/item/card/id/departmental_budget/eng
+	difficulty = 5
+	excludefromjob = list("Chief Engineer")
+
+/datum/objective_item/steal/med_budget //medical's budget card
+	name = "the medical department's buget card!"
+	targetitem = /obj/item/card/id/departmental_budget/med
+	difficulty = 5
+	excludefromjob = list("Chief Medical Officer","Medical Doctor")
+
+/datum/objective_item/steal/sci_budget //science's budget card
+	name = "the science department's budget card!"
+	targetitem = /obj/item/card/id/departmental_budget/sci
+	difficulty = 5
+	excludefromjob = list("Research Director", "Scientist")
+
+/datum/objective_item/steal/car_budget //cargonia's card good luck
+	name = "the cargo department's budget card!"
+	targetitem = /obj/item/card/id/departmental_budget/car
+	difficulty = 5
+	excludefromjob = list("Captain")
+
+/datum/objective_item/steal/sec_buget //shitcurity's card
+	name = "the security department's budget card!"
+	targetitem = /obj/item/card/id/departmental_budget/sec
+	difficulty = 10
+	excludefromjob = list("Head of Security","Warden")
+
+/datum/objective_item/steal/srv_budget //located in HoP's locker
+	name = "the service department's budget card!"
+	targetitem = /obj/item/card/id/departmental_budget/srv
+	difficulty = 5 
+	excludefromjob = list("Head of personal")
+
+//stamps [FULP]
+/datum/objective_item/steal/captain_stamp
+	name = "the Captain's offcial stamp!"
+	targetitem = /obj/item/stamp/captain
+	difficulty = 5
+	excludefromjob = list("Captain")
+
+/datum/objective_item/steal/hop_stamp
+	name = "the Head of personal's offical stamp."
+	targetitem = /obj/item/stamp/hop
+	difficulty = 5
+	excludefromjob = list("Head of personal")
+
+/datum/objective_item/steal/hos_stamp
+	name = "the Head of Security's offical stamp."
+	targetitem = /obj/item/stamp/hos
+	difficulty = 10
+	excludefromjob = list("Head of Security","Warden")
+
+/datum/objective_item/steal/rd_stamp
+	name = "the Research Director's offical stamp."
+	targetitem = /obj/item/stamp/rd
+	difficulty = 5
+	excludefromjob = list("Research Director","Scientist")
+
+/datum/objective_item/steal/cmo_stamp
+	name = "the Cheif Medical Officer's offical stamp."
+	targetitem = /obj/item/stamp/cmo
+	difficulty = 5
+	excludefromjob = list("Cheif Medical Officer","Medical Doctor")
+
+/datum/objective_item/steal/eng_stamp
+	name = "the Cheif engineer's offical stamp."
+	targetitem = /obj/item/stamp/ce
+	difficulty = 5
+	excludefromjob = list("Cheif Engineer","Station Engineer","Scientist","Atmospheric Technician")
+
+/datum/objective_item/steal/qm_stamp
+	name = "the quarter master's offical stamp."
+	targetitem = /obj/item/stamp/qm
+	difficulty = 3
+	excluidefromjob = list("Quarter Master","Cargo Technician")
+
 //Items with special checks!
 /datum/objective_item/steal/plasma
 	name = "28 moles of plasma (full tank)."
