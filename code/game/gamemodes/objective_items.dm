@@ -114,13 +114,6 @@
 /datum/objective_item/steal/supermatter/TargetExists()
 	return GLOB.main_supermatter_engine != null
 
-//extra objectives for antagonists. [FULP]
-/datum/objective_item/steal/car_budget //cargonia's card good luck
-	name = "the cargo department's budget card!"
-	targetitem = /obj/item/card/id/departmental_budget/car
-	difficulty = 5
-	excludefromjob = list("Quartermaster","Cargo Technician")
-
 //Items with special checks!
 /datum/objective_item/steal/plasma
 	name = "28 moles of plasma (full tank)."
