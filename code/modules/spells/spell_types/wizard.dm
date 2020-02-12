@@ -169,7 +169,7 @@
 	desc = "This spell stops time for everyone except for you, allowing you to move freely while your enemies and even projectiles are frozen."
 	charge_max = 500
 	clothes_req = TRUE
-	invocation = "TOKI YO TOMARE"
+	invocation = "TOKI WO TOMARE"
 	invocation_type = "shout"
 	range = 0
 	cooldown_min = 100
