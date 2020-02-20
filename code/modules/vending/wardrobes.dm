@@ -397,7 +397,7 @@
 					/obj/item/storage/backpack/chemistry = 2,
 					/obj/item/storage/backpack/satchel/chem = 2,
 					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 1,
-					/obj/item/storage/bag/chemistry = 2,
+					/obj/item/storage/bag/chemistry = 2)
 	contraband = list(/obj/item/reagent_containers/spray/syndicate = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/chem_wardrobe
 	payment_department = ACCOUNT_MED
@@ -417,7 +417,7 @@
 					/obj/item/clothing/suit/toggle/labcoat/genetics = 2,
 					/obj/item/storage/backpack/genetics = 2,
 					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 1,
-					/obj/item/storage/backpack/satchel/gen = 2,
+					/obj/item/storage/backpack/satchel/gen = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/gene_wardrobe
 	payment_department = ACCOUNT_MED
 /obj/item/vending_refill/wardrobe/gene_wardrobe
