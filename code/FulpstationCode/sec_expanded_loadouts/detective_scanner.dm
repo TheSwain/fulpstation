@@ -241,8 +241,7 @@
 	if(M.tod && (M.stat == DEAD || ((HAS_TRAIT(M, TRAIT_FAKEDEATH)) && !advanced)))
 		add_log(user, "<span class='info'>Time of Death: [M.tod]</span>")
 		var/tdelta = round(world.time - M.timeofdeath)
-		if(tdelta < (DEFIB_TIME_LIMIT * 10))
-			damage_report += "<span class='alert'><b>Subject died [DisplayTimeText(tdelta)] ago, defibrillation may be possible!</b></span><br>"
+		damage_report += "<span class='alert'><b>Subject died [DisplayTimeText(tdelta)] ago.</b></span><br>"
 
 	for(var/thing in M.diseases)
 		var/datum/disease/D = thing
