@@ -204,13 +204,6 @@
 //** Adds no-collision holobeds to the medborg. Support for handheld versions
 //***************************************************************************
 
-
-//***************************************************************************
-//** FULPSTATION SECBORG MODULE UPDATE by Surrealistik Jan 2020 BEGINS
-//---------------------------------------------------------------------------
-//** Expands the Secborg's module items and upgrades.
-//***************************************************************************
-
 //************************************************************************
 //** Airlock Electroadaptive Psuedo Circuit BEGINS - Surrealistik Oct 2019
 //************************************************************************
@@ -271,8 +264,6 @@
 	var/possessed //If we're possessed, and the identity of our possession power.
 	var/possessor //The name of the thing possessing it
 	var/cooldown //Whether cooldown is active for the sword's ability if applicable
-
-
 
 //**************************************************************************************************
 //** Fulpstation Possessed Cult Sword PR by Surrealistik. Sprites by Jo from Discord Oct 2019 ENDS
