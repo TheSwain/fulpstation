@@ -205,16 +205,7 @@
 //***************************************************************************
 
 
-//***************************************************************************
-//** FULPSTATION SECBORG MODULE UPDATE by Surrealistik Jan 2020 BEGINS
-//---------------------------------------------------------------------------
-//** Expands the Secborg's module items and upgrades.
-//***************************************************************************
-//***************************************************************************
-//** FULPSTATION HULK NERFS by Surrealistik Jan 2020 BEGINS
-//---------------------------------------------------------------------------
-//** Nerfs Hulk so it has lethal genetic instability.
-//***************************************************************************
+
 
 //************************************************************************
 //** Airlock Electroadaptive Psuedo Circuit BEGINS - Surrealistik Oct 2019
@@ -262,12 +253,19 @@
 //---------------------------------------------------------------------------
 //** Expands the Secborg's module items and upgrades.
 //***************************************************************************
+
+//***************************************************************************
+//** FULPSTATION HULK NERFS by Surrealistik Jan 2020 BEGINS
+//---------------------------------------------------------------------------
+//** Nerfs Hulk so it has lethal genetic instability.
+//***************************************************************************
+
 /datum/mutation/human/hulk
 	desc = "A poorly understood genome that causes the holder's muscles to expand, inhibit speech and gives the person a bad skin condition. Causes dangerous genetic instability."
 	instability = 100
+
 /datum/mutation/human
 	var/variant = 0 //Can be defined to have special interactions.
-
 
 //***************************************************************************
 //** FULPSTATION HULK NERFS by Surrealistik Jan 2020 ENDS
