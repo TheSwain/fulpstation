@@ -204,16 +204,7 @@
 //***************************************************************************
 
 
-//***************************************************************************
-//** FULPSTATION SECBORG MODULE UPDATE by Surrealistik Jan 2020 BEGINS
-//---------------------------------------------------------------------------
-//** Expands the Secborg's module items and upgrades.
-//***************************************************************************
-//***************************************************************************
-//** FULPSTATION HULK NERFS by Surrealistik Jan 2020 BEGINS
-//---------------------------------------------------------------------------
-//** Nerfs Hulk so it has lethal genetic instability.
-//***************************************************************************
+
 
 //************************************************************************
 //** Airlock Electroadaptive Psuedo Circuit BEGINS - Surrealistik Oct 2019
@@ -367,6 +358,13 @@
 //** Lets medical and engineering syndiborgs choose a disguise from a list.
 //** Also tweaks the medical syndiborg, removing emag and granting more med items
 //***************************************************************************
+
+//***************************************************************************
+//** FULPSTATION HULK NERFS by Surrealistik Jan 2020 BEGINS
+//---------------------------------------------------------------------------
+//** Nerfs Hulk so it has lethal genetic instability.
+//***************************************************************************
+
 /datum/mutation/human
 	var/variant = 0 //Can be defined to have special interactions.
 
