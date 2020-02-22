@@ -637,9 +637,11 @@ GLOBAL_LIST_INIT(cult_chaos_sword_projectiles, list(
 		S.ckey = C.ckey
 		S.fully_replace_character_name(null, "The bound daemon of [name]")
 		S.status_flags |= GODMODE
-		S.language_holder = user.language_holder.copy(S)
 		SSticker.mode.add_cultist(S.mind, FALSE)
 		S.mind.special_role = ROLE_CULTIST
+		S.copy_languages(user, LANGUAGE_MASTER)	//Make sure the sword can understand and communicate with the user.
+		S.update_atom_languages()
+		grant_all_languages(FALSE, FALSE, TRUE)	//Grants omnitongue
 		S.playsound_local(get_turf(S.loc), 'sound/ambience/antag/bloodcult.ogg', 100, FALSE, pressure_affected = FALSE)
 		to_chat(S, "<span class='cultlarge'>Go forth my daemon, and aid this pitiful supplicant...")
 		to_chat(S, "<span class='cult italic'><b>You are a daemonic spirit summoned from the hellish realm of your master Nar'sie, the Geometer of Blood. A supplicant of the great Geometer has bound you into an eldritch blade you now empower and inhabit. You will aid the cult in heralding the return of your master.\
