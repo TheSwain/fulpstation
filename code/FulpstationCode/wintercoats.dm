@@ -129,7 +129,7 @@
 
 /obj/item/clothing/suit/hooded/wintercoat/service/bartender
 	name = "\improper Bartender's winter coat"
-	desc = "This is a winter coat made to look like a butlar's suit."
+	desc = "This is a winter coat made to look like a butler's suit."
 	icon = 'icons/fulpicons/Penguins_cove/Winter_Coat_Pile/wintercoats_icons.dmi'
 	mob_overlay_icon = 'icons/fulpicons/Penguins_cove/Winter_Coat_Pile/wintercoats.dmi'
 	icon_state = "wintercoat_bar"
@@ -147,7 +147,7 @@
 
 /obj/item/clothing/suit/hooded/wintercoat/medical/chem
 	name = "\improper Chemist's winter coat"
-	desc = "This is a winter coat made protect from minor chemical spills and to have a styalish orange theme."
+	desc = "This is a winter coat made protect from minor chemical spills and to have a stylish orange theme."
 	icon = 'icons/fulpicons/Penguins_cove/Winter_Coat_Pile/wintercoats_icons.dmi'
 	mob_overlay_icon = 'icons/fulpicons/Penguins_cove/Winter_Coat_Pile/wintercoats.dmi'
 	icon_state = "wintercoat_chem"
@@ -165,7 +165,7 @@
 
 /obj/item/clothing/suit/hooded/wintercoat/medical/gen
 	name = "\improper Geneticist's winter coat"
-	desc = "This winter coat is made out of a comfortable material and dyed to the geneticest's color scheme."
+	desc = "This winter coat is made out of a comfortable material and dyed to the geneticist's color scheme."
 	icon = 'icons/fulpicons/Penguins_cove/Winter_Coat_Pile/wintercoats_icons.dmi'
 	mob_overlay_icon = 'icons/fulpicons/Penguins_cove/Winter_Coat_Pile/wintercoats.dmi'
 	icon_state = "wintercoat_gen"
