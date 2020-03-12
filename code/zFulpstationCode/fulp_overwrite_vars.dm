@@ -354,10 +354,6 @@
 //** Nerfs Hulk so it has lethal genetic instability.
 //***************************************************************************
 
-/datum/mutation/human/hulk
-	desc = "A poorly understood genome that causes the holder's muscles to expand, inhibit speech and gives the person a bad skin condition. Causes dangerous genetic instability."
-	instability = 100
-
 /datum/mutation/human
 	var/variant = 0 //Can be defined to have special interactions.
 
