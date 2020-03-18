@@ -401,14 +401,6 @@
 
 /datum/outfit/job/detective
 	glasses = /obj/item/clothing/glasses/detective
-	backpack_contents = list(/obj/item/storage/box/evidence=1,\
-		/obj/item/detective_scanner=1,\
-		/obj/item/melee/classic_baton=1,\
-		/obj/item/taperecorder=1,\
-		/obj/item/camera/detective=1,\
-		/obj/item/sensor_device=1,\
-		/obj/item/pinpointer/crew=1,\
-		)
 
 /obj/item/cartridge/detective
 	access = CART_SECURITY | CART_MEDICAL | CART_MANIFEST | CART_REAGENT_SCANNER | CART_ATMOS
