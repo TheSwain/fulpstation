@@ -396,7 +396,7 @@
 //** Improved Sec Starter Gear by Surrealistik Oct 2019 ENDS
 //************************************************************
 //***********************************************************
-//**** Security Expanded Kits BEGINS - Surrealistik, Oct 2019
+//**** Detective Expanded Kit BEGINS - Surrealistik, Oct 2019
 //***********************************************************
 
 /datum/outfit/job/detective
@@ -422,5 +422,5 @@
 
 
 //***********************************************************
-//**** Security Expanded Kits ENDS - Surrealistik, Oct 2019
+//**** Detective Expanded Kit ENDS - Surrealistik, Oct 2019
 //***********************************************************
