@@ -344,6 +344,11 @@
 //***************************************************************************
 /obj/item/borg_chameleon //List of available disguises
 	var/disguise_text //for feedback
+	var/default_name //Where we store our initial name.
+	var/buffer_name //for RA2 spy style scan of other borgs.
+	var/buffer_disguise //for RA2 spy style scan of other borgs.
+	var/buffer_disguise_text //for RA2 spy style scan of other borgs.
+	actions_types = list(/datum/action/item_action/borg_chameleon)
 
 
 /obj/item/reagent_containers/borghypo/syndicate
