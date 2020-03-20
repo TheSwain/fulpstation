@@ -351,7 +351,7 @@
 //***************************************************************************
 //** FULPSTATION HULK NERFS by Surrealistik Jan 2020 BEGINS
 //---------------------------------------------------------------------------
-//** Nerfs Hulk so it has lethal genetic instability.
+//** Nerfs Hulk so it loses stun and damage slowdown immunity.
 //***************************************************************************
 
 /datum/mutation/human
@@ -360,5 +360,5 @@
 //***************************************************************************
 //** FULPSTATION HULK NERFS by Surrealistik Jan 2020 ENDS
 //---------------------------------------------------------------------------
-//** Nerfs Hulk so it has lethal genetic instability.
+//** Nerfs Hulk so it loses stun and damage slowdown immunity.
 //***************************************************************************
