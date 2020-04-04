@@ -302,6 +302,7 @@
 	loot = list(
 				/obj/item/aiModule/core/full/asimov,
 				/obj/item/aiModule/core/full/asimovpp,
+				/obj/item/aiModule/core/full/crewimov, //FULPSTATION CREWIMOV AI MODULE by Surrealistik April 2020
 				/obj/item/aiModule/core/full/hippocratic,
 				/obj/item/aiModule/core/full/paladin_devotion,
 				/obj/item/aiModule/core/full/paladin
