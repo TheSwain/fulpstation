@@ -109,6 +109,9 @@
 	item_state = "greenbandana"
 	var/possessed
 
+/obj/item/clothing/neck/tie/detective/disco_necktie/relaymove(mob/user)
+	return
+
 /obj/item/clothing/neck/tie/detective/disco_necktie/attack_self(mob/living/user)
 	if(possessed)
 		return
@@ -137,6 +140,40 @@
 		to_chat(user, "<span class='warning'>The whispers coming from [src] fade and are silent again... Was it all your imagination? Maybe you can try again later.</span>")
 		possessed = FALSE
 
+/obj/item/clothing/neck/tie/detective/disco_necktie/Destroy()
+	deconceptualize()
+	return ..()
+
+/obj/item/clothing/neck/tie/detective/disco_necktie/proc/deconceptualize()
+	for(var/mob/living/simple_animal/shade/S in contents)
+		to_chat(S, "<span class='userdanger'>You were deconceptualized!</span>")
+		qdel(S)
+
+/obj/item/clothing/neck/tie/detective/disco_necktie/verb/deconceptualize_tie()
+	set name = "Deconceptualize Tie"
+	set category = "Object"
+	set src in usr
+	var/mob/M = usr
+	if (istype(M, /mob/dead/))
+		return
+	if (!can_use(M))
+		return
+	if (!possessed)
+		to_chat(M, "<span class='warning'>There is no tie persona to deconceptualize!</span>")
+		return
+
+	var/list/deconceptualize_options = list(
+	"No.", \
+	"Yes.")
+
+	var/choice = input(M,"Deconceptualizing the tie will remove its personality. Are you sure?","Deconceptualize Tie") as null|anything in deconceptualize_options
+
+	switch(choice)
+		if("Yes.")
+			to_chat(M, "<span class='warning'>Asserting your volition in a triumphant act of will, you dispel the phantom persona imposed upon your preternaturally ugly tie.</span>")
+			deconceptualize() //This kills the tie ghost.
+		if("No.")
+			to_chat(M, "<span class='warning'>Thinking better of it, you choose not to banish your phantom friend to the conceptual oblivion from which it was dredged.</span>")
 
 /obj/item/clothing/glasses/sunglasses/disco
 	name = "binoclard lenses"
