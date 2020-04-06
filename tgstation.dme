@@ -825,6 +825,7 @@
 #include "code\FulpstationCode\wintercoats.dm"
 #include "code\FulpstationCode\body_camera_files\body_camera_procs.dm"
 #include "code\FulpstationCode\borg_radio_files\borg_radio.dm"
+#include "code\FulpstationCode\fulp_ai_modules\fulp_ai_modules.dm"
 #include "code\FulpstationCode\fulp_airlock_electroadaptive\fulp_airlock_electroadaptive_procs.dm"
 #include "code\FulpstationCode\fulp_cyborgs\cyborg_upgrades.dm"
 #include "code\FulpstationCode\fulp_emag\fulp_emag.dm"

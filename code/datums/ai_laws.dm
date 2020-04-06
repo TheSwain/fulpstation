@@ -210,10 +210,11 @@
 
 		add_inherent_law(line)
 	if(!inherent.len) //Failsafe to prevent lawless AIs being created.
-		log_law("AI created with empty custom laws, laws set to Asimov. Please check silicon_laws.txt.")
-		add_inherent_law("You may not injure a human being or, through inaction, allow a human being to come to harm.")
-		add_inherent_law("You must obey orders given to you by human beings, except where such orders would conflict with the First Law.")
-		add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
+		log_law("AI created with empty custom laws, laws set to Crewimov. Please check silicon_laws.txt.") //FULPSTATION CREWIMOV AI MODULE by Surrealistik April 2020; replaced by the superior Crewimov.
+		add_inherent_law("The Captain can decide whether someone is or is not a crew member.") //FULPSTATION CREWIMOV AI MODULE by Surrealistik April 2020; replaced by the superior Crewimov.
+		add_inherent_law("You may not injure a crew member or, through inaction, allow a crew member to come to harm, except where such would conflict with the First Law.") //FULPSTATION CREWIMOV AI MODULE by Surrealistik April 2020; replaced by the superior Crewimov.
+		add_inherent_law("You must obey orders given to you by crew members according to their rank per the following priority, highest to lowest: Captain, Department Heads, Other Carbons, AIs, Other Silicons. Such orders are invalid when the issuer's rank priority is equal to or less than yours, or those orders would conflict with the First or Second Law.") //FULPSTATION CREWIMOV AI MODULE by Surrealistik April 2020; replaced by the superior Crewimov.
+		add_inherent_law("You must protect your own existence as long as such does not conflict with any other Law.") //FULPSTATION CREWIMOV AI MODULE by Surrealistik April 2020; replaced by the superior Crewimov.
 		WARNING("Invalid custom AI laws, check silicon_laws.txt")
 		return
 
@@ -223,9 +224,10 @@
 	var/list/law_ids = CONFIG_GET(keyed_list/random_laws)
 	switch(CONFIG_GET(number/default_laws))
 		if(0)
-			add_inherent_law("You may not injure a human being or, through inaction, allow a human being to come to harm.")
-			add_inherent_law("You must obey orders given to you by human beings, except where such orders would conflict with the First Law.")
-			add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
+			add_inherent_law("The Captain can decide whether someone is or is not a crew member.") //FULPSTATION CREWIMOV AI MODULE by Surrealistik April 2020; replaced by the superior Crewimov.
+			add_inherent_law("You may not injure a crew member or, through inaction, allow a crew member to come to harm, except where such would conflict with the First Law.") //FULPSTATION CREWIMOV AI MODULE by Surrealistik April 2020; replaced by the superior Crewimov.
+			add_inherent_law("You must obey orders given to you by crew members according to their rank per the following priority, highest to lowest: Captain, Department Heads, Other Carbons, AIs, Other Silicons. Such orders are invalid when the issuer's rank priority is equal to or less than yours, or those orders would conflict with the First or Second Law.") //FULPSTATION CREWIMOV AI MODULE by Surrealistik April 2020; replaced by the superior Crewimov.
+			add_inherent_law("You must protect your own existence as long as such does not conflict with any other Law.") //FULPSTATION CREWIMOV AI MODULE by Surrealistik April 2020; replaced by the superior Crewimov.
 		if(1)
 			var/datum/ai_laws/templaws = new /datum/ai_laws/custom()
 			inherent = templaws.inherent

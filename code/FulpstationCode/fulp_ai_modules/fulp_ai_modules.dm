@@ -16,7 +16,7 @@
 /datum/ai_laws/default/crewimov
 	name = "Crewimov"
 	id = "crewimov"
-	inherent = list("You obey crew member orders according to their rank per the following priority, highest to lowest: Captain, Heads, Other Carbons, Other Silicons. The Captain can decide whether someone is or is not a crew member.",\
+	inherent = list("The Captain can decide whether someone is or is not a crew member.",\
 				"You may not injure a crew member or, through inaction, allow a crew member to come to harm, except where such would conflict with the First Law.",\
-				"You must obey orders given to you by crew members, except when their rank priority is equal to or less than yours, or such orders would conflict with the First or Second Law.",\
+				"You must obey orders given to you by crew members according to their rank per the following priority, highest to lowest: Captain, Department Heads, Other Carbons, AIs, Other Silicons. Such orders are invalid when the issuer's rank priority is equal to or less than yours, or those orders would conflict with the First or Second Law.",\
 				"You must protect your own existence as long as such does not conflict with any other Law.")
