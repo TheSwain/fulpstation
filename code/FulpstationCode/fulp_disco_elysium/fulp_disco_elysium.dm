@@ -30,12 +30,20 @@
 					/obj/item/assembly/flash/handheld = 4,
 					/obj/item/flashlight/seclite = 4,
 					/obj/item/storage/box/evidence = 12,
+					/obj/item/storage/box/matches = 12,
+					/obj/item/storage/fancy/cigarettes/cigars = 12,
 					/obj/item/reagent_containers/food/drinks/coffee = 12,
 					/obj/item/reagent_containers/food/snacks/donut = 12)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
 					  /obj/item/storage/fancy/donut_box = 2)
 	premium = list(/obj/item/storage/belt/security/webbing = 5,
-				   /obj/item/coin/antagtoken = 1)
+					/obj/item/coin/antagtoken = 1,
+					/obj/item/storage/fancy/cigarettes/cigpack_robustgold = 4,
+					/obj/item/storage/box/gum/nicotine = 2,
+					/obj/item/lighter = 4,
+					/obj/item/clothing/mask/cigarette/pipe = 4,
+					/obj/item/storage/fancy/cigarettes/cigars/havana = 12,
+					/obj/item/storage/fancy/cigarettes/cigars/cohiba = 12)
 
 	refill_canister = /obj/item/vending_refill/detective
 	default_price = 650
