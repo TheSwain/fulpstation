@@ -76,13 +76,13 @@
 
 /obj/item/clothing/suit/det_suit/disco/aerostatic
 	name = "aerostatic bomber jacket"
-	desc = "Unquestionably gaudy and peculiar yet also curiously flattering; emanates a strange air of authority."
+	desc = "An unquestionably gaudy and peculiar yet also curiously flattering bomber jacket. It emanates a strange air of authority."
 	icon_state = "aerostatic_bomber_jacket"
 	item_state = "aerostatic_bomber_jacket_held"
 
 /obj/item/clothing/under/rank/security/detective/disco
 	name = "jamrock suit"
-	desc = "An... interesting looking ensemble consisting of golden-brown flare cut trousers and a hard worn white satin shirt."
+	desc = "An 'interesting' looking ensemble consisting of golden-brown flare cut trousers and an obviously hard worn white satin shirt."
 	mob_overlay_icon = 'icons/Fulpicons/Surreal_stuff/disco_elysium_worn.dmi'
 	icon = 'icons/Fulpicons/Surreal_stuff/disco_elysium.dmi'
 	icon_state = "jamrock_suit"
@@ -119,7 +119,7 @@
 	righthand_file = 'icons/Fulpicons/Surreal_stuff/disco_elysium_inhand_right.dmi'
 
 /obj/item/clothing/gloves/color/black/aerostatic_gloves
-	desc = "Vivid red gloves that exude mysterious style."
+	desc = "Vivid red gloves that exude a mysterious style."
 	name = "aerostatic_gloves"
 	mob_overlay_icon = 'icons/Fulpicons/Surreal_stuff/disco_elysium_worn.dmi'
 	icon = 'icons/Fulpicons/Surreal_stuff/disco_elysium.dmi'
