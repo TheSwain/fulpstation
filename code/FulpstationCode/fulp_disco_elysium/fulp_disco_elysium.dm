@@ -15,17 +15,28 @@
 					/obj/item/clothing/shoes/sneakers/disco = 4,
 					/obj/item/clothing/shoes/jackboots/aerostatic = 4,
 					/obj/item/clothing/glasses/sunglasses/disco = 4,
-					/obj/item/assembly/flash/handheld = 5,
-					/obj/item/reagent_containers/food/snacks/donut = 12,
-					/obj/item/storage/box/evidence = 6,
-					/obj/item/flashlight/seclite = 4)
+					/obj/item/clothing/under/rank/security/detective = 4,
+					/obj/item/clothing/under/rank/security/detective/skirt = 4,
+					/obj/item/clothing/suit/det_suit = 4,
+					/obj/item/clothing/head/fedora/det_hat = 4,
+					/obj/item/clothing/gloves/color/black = 4,
+					/obj/item/clothing/under/rank/security/detective/grey = 4,
+					/obj/item/clothing/under/rank/security/detective/grey/skirt = 4,
+					/obj/item/clothing/accessory/waistcoat = 4,
+					/obj/item/clothing/suit/det_suit/grey = 4,
+					/obj/item/clothing/suit/det_suit/noir = 4,
+					/obj/item/clothing/head/fedora = 4,
+					/obj/item/clothing/shoes/laceup = 4,
+					/obj/item/assembly/flash/handheld = 4,
+					/obj/item/flashlight/seclite = 4,
+					/obj/item/storage/box/evidence = 12,
+					/obj/item/reagent_containers/food/drinks/coffee = 12,
+					/obj/item/reagent_containers/food/snacks/donut = 12)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
 					  /obj/item/storage/fancy/donut_box = 2)
 	premium = list(/obj/item/storage/belt/security/webbing = 5,
-				   /obj/item/coin/antagtoken = 1,
-				   /obj/item/clothing/head/helmet/blueshirt = 1,
-				   /obj/item/clothing/suit/armor/vest/blueshirt = 1,
-				   /obj/item/clothing/gloves/tackler = 5)
+				   /obj/item/coin/antagtoken = 1)
+
 	refill_canister = /obj/item/vending_refill/detective
 	default_price = 650
 	extra_price = 700
@@ -71,8 +82,8 @@
 /obj/item/clothing/under/rank/security/detective/disco/aerostatic
 	name = "aerostatic suit"
 	desc = "A crisp and well-pressed suit; professional, comfortable and curiously authoritative."
-	item_state = "aerostatic_suit"
-	icon_state = "lb_suit"
+	icon_state = "aerostatic_suit"
+	item_state = "lb_suit"
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/shoes/sneakers/disco
