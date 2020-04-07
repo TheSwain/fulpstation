@@ -417,7 +417,7 @@
 /obj/item/detective_scanner
 	var/mode
 	var/advanced = TRUE
-	icon = 'icons/Fulpicons/surrealistik_stuff/detective_obs.dmi'
+	icon = 'icons/Fulpicons/Surreal_stuff/detective_obs.dmi'
 	icon_state = "forensicnew-0"
 
 
