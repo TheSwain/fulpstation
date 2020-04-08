@@ -1,3 +1,4 @@
+#define ALERT_COOLDOWN 5 SECONDS
 
 /obj/machinery/computer/upload/proc/upload_authenticate(mob/user)
 	if(!user)
@@ -31,7 +32,10 @@
 	to_chat(user, "<span class='userdanger'>Breaching the console's security with your emag will take approximately <b>[seconds]</b> seconds. <b>Security will be notified!</b></span>")
 
 	var/location = get_area(src)
-	security_broadcast("<span class='userdanger'><b>WARNING!!</b> Attempted security breach of <b>[src]</b> in progress at <b>[location]</b>. Estimated <b>[seconds] seconds to breach!</b> Dispatch security immediately!</span>")
+	if((world.time - alert_timestamp) > ALERT_COOLDOWN) //So we don't spam this incessantly.
+		security_broadcast("<span class='userdanger'><b>WARNING!!</b> Attempted security breach of <b>[src]</b> in progress at <b>[location]</b>. Estimated <b>[seconds] seconds to breach!</b> Dispatch security immediately!</span>")
+		alert_timestamp = world.time
+
 	if(!do_after(user, sec_breach_time, target = src))
 		return
 

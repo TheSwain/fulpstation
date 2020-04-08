@@ -439,6 +439,7 @@
 	var/sec_breach_time = 600
 	var/obj/item/radio/Radio //The upload's radio, for alerting Sec.
 	var/radio_key = /obj/item/encryptionkey/secbot
+	var/alert_timestamp //To prevent super obnoxious spam.
 
 //***************************************************************************
 //** FULPSTATION AI UPLOAD SECURITY PR by Surrealistik April 2020 ENDS
