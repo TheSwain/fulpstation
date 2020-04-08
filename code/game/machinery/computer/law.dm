@@ -14,6 +14,8 @@
 		var/obj/item/aiModule/M = O
 		if(machine_stat & (NOPOWER|BROKEN|MAINT))
 			return
+		if(!upload_authenticate(user)) //FULPSTATION AI UPLOAD SECURITY PR by Surrealistik April 2020
+			return //FULPSTATION AI UPLOAD SECURITY PR by Surrealistik April 2020
 		if(!current)
 			to_chat(user, "<span class='alert'>You haven't selected anything to transmit laws to!</span>")
 			return
@@ -39,8 +41,12 @@
 	name = "\improper AI upload console"
 	desc = "Used to upload laws to the AI."
 	circuit = /obj/item/circuitboard/computer/aiupload
+	req_one_access = list(ACCESS_AI_UPLOAD)
 
 /obj/machinery/computer/upload/ai/interact(mob/user)
+	if(!upload_authenticate(user)) //FULPSTATION AI UPLOAD SECURITY PR by Surrealistik April 2020
+		return //FULPSTATION AI UPLOAD SECURITY PR by Surrealistik April 2020
+
 	current = select_active_ai(user, z)
 
 	if (!current)
@@ -60,8 +66,12 @@
 	name = "cyborg upload console"
 	desc = "Used to upload laws to Cyborgs."
 	circuit = /obj/item/circuitboard/computer/borgupload
+	req_one_access = list(ACCESS_AI_UPLOAD)
 
 /obj/machinery/computer/upload/borg/interact(mob/user)
+	if(!upload_authenticate(user)) //FULPSTATION AI UPLOAD SECURITY PR by Surrealistik April 2020
+		return //FULPSTATION AI UPLOAD SECURITY PR by Surrealistik April 2020
+
 	current = select_active_free_borg(user)
 
 	if(!current)

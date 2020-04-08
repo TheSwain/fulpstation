@@ -426,3 +426,23 @@
 //***********************************************************
 //**** Detective Expanded Kit ENDS - Surrealistik, Oct 2019
 //***********************************************************
+
+//***************************************************************************
+//** FULPSTATION AI UPLOAD SECURITY PR by Surrealistik April 2020 BEGINS
+//---------------------------------------------------------------------------
+//** Upload consoles now need AI Upload access to use.
+//**
+//***************************************************************************
+
+/obj/machinery/computer/upload //Here we set access reqs
+	req_one_access = list(ACCESS_AI_UPLOAD)
+	var/sec_breach_time = 600
+	var/obj/item/radio/Radio //The upload's radio, for alerting Sec.
+	var/radio_key = /obj/item/encryptionkey/secbot
+
+//***************************************************************************
+//** FULPSTATION AI UPLOAD SECURITY PR by Surrealistik April 2020 ENDS
+//---------------------------------------------------------------------------
+//** Upload consoles now need AI Upload access to use.
+//**
+//***************************************************************************
