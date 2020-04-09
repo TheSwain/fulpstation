@@ -431,7 +431,7 @@
 //** FULPSTATION AI UPLOAD SECURITY PR by Surrealistik April 2020 BEGINS
 //---------------------------------------------------------------------------
 //** Upload consoles now need AI Upload access to use.
-//**
+//** Emags can hack these consoles after a long delay but Sec is alerted.
 //***************************************************************************
 
 /obj/machinery/computer/upload //Here we set access reqs
@@ -445,5 +445,5 @@
 //** FULPSTATION AI UPLOAD SECURITY PR by Surrealistik April 2020 ENDS
 //---------------------------------------------------------------------------
 //** Upload consoles now need AI Upload access to use.
-//**
+//** Emags can hack these consoles after a long delay but Sec is alerted.
 //***************************************************************************
