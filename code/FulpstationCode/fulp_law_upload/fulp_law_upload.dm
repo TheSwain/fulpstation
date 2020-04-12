@@ -20,7 +20,7 @@
 		return FALSE
 
 	if(!is_operational())
-		to_chat(user, "<span class='notice'>This console's is too damaged to interface your emag with.</span>")
+		to_chat(user, "<span class='notice'>This console's is not operational and cannot be interfaced with.</span>")
 		return FALSE
 
 	if(obj_flags & EMAGGED)
@@ -29,7 +29,7 @@
 
 	var/seconds = sec_breach_time * 0.1 //Adjust for the fact that they're deciseconds when reporting.
 	playsound(src, 'sound/machines/engine_alert1.ogg', 100, FALSE) //SOUND ALARM!!
-	to_chat(user, "<span class='userdanger'>Breaching the console's security with your emag will take approximately <b>[seconds]</b> seconds. <b>Security will be notified!</b></span>")
+	to_chat(user, "<span class='userdanger'>Breaching the console's security will take approximately <b>[seconds]</b> seconds. <b>Security will be notified!</b></span>")
 
 	var/location = get_area(src)
 	if((world.time - alert_timestamp) > ALERT_COOLDOWN) //So we don't spam this incessantly.
@@ -66,6 +66,18 @@
 	Radio.recalculateChannels()
 	Radio.talk_into(src, message, RADIO_CHANNEL_SECURITY)
 	qdel(Radio)
+
+
+/obj/item/aiModule/syndicate/afterattack(atom/target, mob/user, proximity)
+	. = ..()
+	var/atom/A = target
+	if(!proximity)
+		return
+	if(!istype(A, /obj/machinery/computer/upload))
+		return
+	log_combat(user, A, "attempted to emag")
+	A.emag_act(user)
+
 
 /* //Uncomment these procs if we want the console to give us a list of viable targets, and plug these into law.dm
 /obj/machinery/computer/upload/ai/proc/select_active_ai_same_z(mob/user)
