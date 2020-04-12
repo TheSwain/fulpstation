@@ -66,7 +66,7 @@
 								)
 		if( Ml.rating >= 2)
 			part_sets += list(
-								"Exosuit Equipment", "Firefighter", "Ripley"
+								"Exosuit Equipment", "Clarke", "Ripley"
 								)
 		if (Ml.rating >= 3)
 			part_sets += list(
