@@ -427,23 +427,23 @@
 //***************************************************************************
 
 /obj/machinery/rnd/production/protolathe/department/engineering
-	req_access = list(ACCESS_ENGINE)
+	req_one_access = list(ACCESS_ENGINE)
 
 /obj/machinery/rnd/production/protolathe/department/medical
-	req_access = list(ACCESS_MEDICAL)
+	req_one_access = list(ACCESS_MEDICAL)
 
 /obj/machinery/rnd/production/protolathe/department/security
-	req_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
+	req_one_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
 
 
 /obj/machinery/rnd/production/techfab/department/engineering
-	req_access = list(ACCESS_ENGINE)
+	req_one_access = list(ACCESS_ENGINE)
 
 /obj/machinery/rnd/production/techfab/department/medical
-	req_access = list(ACCESS_MEDICAL)
+	req_one_access = list(ACCESS_MEDICAL)
 
 /obj/machinery/rnd/production/techfab/department/security
-	req_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
+	req_one_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
 
 
 //***************************************************************************
