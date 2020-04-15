@@ -419,3 +419,35 @@
 //***********************************************************
 //**** Detective Expanded Kit ENDS - Surrealistik, Oct 2019
 //***********************************************************
+
+//***************************************************************************
+//** FULPSTATION PROTOLATHE ACCESS by Surrealistik April 2020 BEGINS
+//---------------------------------------------------------------------------
+//** Many key protolathes now require appropriate ID access.
+//***************************************************************************
+
+/obj/machinery/rnd/production/protolathe/department/engineering
+	req_access = list(ACCESS_ENGINE)
+
+/obj/machinery/rnd/production/protolathe/department/medical
+	req_access = list(ACCESS_MEDICAL)
+
+/obj/machinery/rnd/production/protolathe/department/security
+	req_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
+
+
+/obj/machinery/rnd/production/techfab/department/engineering
+	req_access = list(ACCESS_ENGINE)
+
+/obj/machinery/rnd/production/techfab/department/medical
+	req_access = list(ACCESS_MEDICAL)
+
+/obj/machinery/rnd/production/techfab/department/security
+	req_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
+
+
+//***************************************************************************
+//** FULPSTATION PROTOLATHE ACCESS by Surrealistik April 2020 ENDS
+//---------------------------------------------------------------------------
+//** Most protolathes now require appropriate ID access.
+//***************************************************************************
