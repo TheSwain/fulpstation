@@ -92,9 +92,9 @@
 	// Be Spooked but Educated
 	//C.gain_trauma(pick(startTraumas))
 	if (SStraumas.phobia_words && SStraumas.phobia_words.len) // NOTE: ONLY if phobias have been defined! For some reason, sometimes this gets FUCKED??
-		C.gain_trauma(/datum/brain_trauma/mild/phobia/strangers)
-		C.gain_trauma(/datum/brain_trauma/mild/hallucinations)
-		C.gain_trauma(/datum/brain_trauma/special/bluespace_prophet/phobetor)
+		C.gain_trauma(/datum/brain_trauma/mild/phobia/strangers, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.gain_trauma(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.gain_trauma(/datum/brain_trauma/special/bluespace_prophet/phobetor, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/species/proc/set_beef_color(mob/living/carbon/human/H)
 	return // Do Nothing
@@ -138,9 +138,9 @@
 	C.ReassignForeignBodyparts()
 
 	// Resolve Trauma
-	C.cure_trauma_type(/datum/brain_trauma/special/bluespace_prophet/phobetor)
-	C.cure_trauma_type(/datum/brain_trauma/mild/phobia/strangers)
-	C.cure_trauma_type(/datum/brain_trauma/mild/hallucinations)
+	C.cure_trauma_type(/datum/brain_trauma/special/bluespace_prophet/phobetor, TRAUMA_RESILIENCE_ABSOLUTE)
+	C.cure_trauma_type(/datum/brain_trauma/mild/phobia/strangers, TRAUMA_RESILIENCE_ABSOLUTE)
+	C.cure_trauma_type(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
 
 
 
@@ -152,22 +152,22 @@
 
 /datum/species/beefman/spec_life(mob/living/carbon/human/H)	// This is your life ticker.
 	..()
-	// 		** BLEED YOUR JUICES **         // BODYTEMP_NORMAL = 310.15    // AC set to 293
+	// 		** BLEED YOUR JUICES **
 
 	// Step 1) Being burned keeps the juices in.
-	var/searJuices = H.getFireLoss_nonProsthetic() / 10
+	var/amounttobleed = max((2 - (H.getFireLoss_nonProsthetic() / 10)), 0) //handle_blood() (ehich comes before spec_life() in Life()) subtracts 0.5 from your bleed_rate just before it checks to see if you're bleeding/makes you bleed, so 20 points of burn damage will keep you from looking like you're bleeding when you're examined, 15 points of burn damage will keep you from tracking blood everywhere/"actually" bleeding, and 0 points of burn damage will make you "lose" 1.5 units of blood per tick (which you'll regain later in spec_life())
 
-	// Step 2) Bleed out those juices by warmth, minus burn damage.
-	H.bleed_rate = clamp((H.bodytemperature - 285) / 20 - searJuices, 0, 5) // Every 20 points above 285 increases bleed rate. Don't worry, you're cold blooded.
-
-	// Step 3) If we're salted, we'll bleed more (it gets reset next tick)
+	// Step 2) If we're salted, we'll bleed more (and we won't regen blood super quickly while dehydrated, so this can actually be dangerous)
 	if (dehydrate > 0)
-		H.bleed_rate += 2
+		amounttobleed += 3
 		dehydrate -= 0.5
 
-	// Replenish Blood Faster! (But only if you actually make blood)
-	if (dehydrate <= 0 && H.bleed_rate <= 0 && H.blood_volume < BLOOD_VOLUME_NORMAL && !HAS_TRAIT(H, TRAIT_NOMARROW))
-		H.blood_volume += 2
+	// Step 3) BLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEED
+	H.bleed_rate = max(H.bleed_rate, amounttobleed) //Yeah, a beefman with grievous brute wounds will bleed just as much as a human will, but making beefmen bleed a set amount more than humans do would be much harder to implement than it's worth.
+
+	// Step 4) Replenish blood faster! (but only if your body can actually make blood and you aren't dehydrated)
+	if (dehydrate <= 0 && H.blood_volume < BLOOD_VOLUME_NORMAL && !HAS_TRAIT(H, TRAIT_NOMARROW))
+		H.blood_volume += 1.5 //this should give you back all of the blood you lost from your natural bleeding, even if you have no fire damage (provided that you haven't been salted, of course)
 
 // TO-DO // Drop lots of meat on gib?
 /datum/species/beefman/spec_death(gibbed, mob/living/carbon/human/H)
@@ -215,18 +215,6 @@
 	// Equip New
 	H.equip_to_slot_or_del(newSash, ITEM_SLOT_ICLOTHING, TRUE) // TRUE is whether or not this is "INITIAL", as in startup
 	return ..()
-
-/datum/species/beefman/after_equip_job(datum/job/J, mob/living/carbon/human/H)
-	..() //  H.update_mutant_bodyparts()   <--- SWAIN NOTE base does that only
-
-	// DO NOT DO THESE DURING GAIN/LOSS (we only want to assign them once on round start)
-
-	// 		JOB GEAR
-
-	// Remove coat! We don't wear that as a Beefboi
-	if (H.wear_suit)
-		qdel(H.wear_suit)
-
 
 /datum/species/beefman/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	. = ..() // Let species run its thing by default, TRUST ME
@@ -284,7 +272,7 @@
 	// Targeting Self? With "DISARM"
 	if (user == target)
 		var/target_zone = user.zone_selected
-		var/list/allowedList = list ( BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG )
+		var/list/allowedList = list ( BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG ) //Perhaps someday, we'll add a way for beefmen to rip their own heads off. Unfortunately, that day is not today.
 		var/obj/item/bodypart/affecting = user.get_bodypart(check_zone(user.zone_selected)) //stabbing yourself always hits the right target
 
 		if ((target_zone in allowedList) && affecting)
@@ -535,11 +523,7 @@
 	icon_greyscale_robotic = 'icons/Fulpicons/fulp_bodyparts_robotic.dmi'
 	heavy_brute_msg = "mincemeat"
 	heavy_burn_msg = "burned to a crisp"
-/obj/item/bodypart/head/beef/drop_limb(special) // from dismemberment.dm
-	amCondemned = TRUE
-	var/mob/owner_cache = owner
-	..() // Create Meat, Remove Limb
-	return drop_meat(owner_cache)
+	//beefman heads do NOT turn into meat when dismembered, because that would basically permakill them (outside of things like podcloning)
 
 /obj/item/bodypart/chest/beef
 	icon = 'icons/Fulpicons/fulp_bodyparts.dmi'
