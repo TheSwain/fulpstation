@@ -59,7 +59,7 @@
 	new /obj/item/gun/energy/e_gun(src)
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/pet_carrier(src)
-	new /obj/item/door_remote/civillian(src)
+	new /obj/item/door_remote/civilian(src)
 	new /obj/item/circuitboard/machine/techfab/department/service(src)
 	new /obj/item/clothing/shoes/laceup/digitigrade(src) //fulp
 	new /obj/item/clothing/suit/hooded/wintercoat/captain/hop(src) // [FULP] [PNX] [PAPRITO]
@@ -134,18 +134,18 @@
 
 /obj/structure/closet/secure_closet/security/PopulateContents()
 	..()
-	new /obj/item/clothing/suit/armor/vest(src)
+	/*new /obj/item/clothing/suit/armor/vest(src) //FULPSTATION Improved Sec Starter Gear by Surrealistik Oct 2019
 	new /obj/item/clothing/head/helmet/sec(src)
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/radio/headset/headset_sec/alt(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
-	new /obj/item/flashlight/seclite(src)
+	new /obj/item/flashlight/seclite(src)*/ //FULPSTATION Improved Sec Starter Gear by Surrealistik Oct 2019
 
 /obj/structure/closet/secure_closet/security/sec
 
 /obj/structure/closet/secure_closet/security/sec/PopulateContents()
 	..()
-	new /obj/item/storage/belt/security/full(src)
+	// new /obj/item/storage/belt/security/full(src) //FULPSTATION Improved Sec Starter Gear by Surrealistik Oct 2019
 
 /obj/structure/closet/secure_closet/security/cargo
 
