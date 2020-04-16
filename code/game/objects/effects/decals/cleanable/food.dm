@@ -34,12 +34,12 @@
 
 /obj/effect/decal/cleanable/food/salt/CanAllowThrough(atom/movable/AM, turf/target)
 	. = ..()
-	if(is_species(AM, /datum/species/snail))
+	if(is_species(AM, /datum/species/snail) || is_species(AM, /datum/species/beefman)) //FULP: like snails, beefmen really don't like salt
 		return FALSE
 
 /obj/effect/decal/cleanable/food/salt/Bumped(atom/movable/AM)
 	. = ..()
-	if(is_species(AM, /datum/species/snail))
+	if(is_species(AM, /datum/species/snail) || is_species(AM, /datum/species/beefman)) //FULP: like snails, beefmen really don't like salt
 		to_chat(AM, "<span class='danger'>Your path is obstructed by <span class='phobia'>salt</span>.</span>")
 
 /obj/effect/decal/cleanable/food/salt/Crossed(atom/movable/AM)

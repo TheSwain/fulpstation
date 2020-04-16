@@ -1696,6 +1696,13 @@
 	color = "#60A584" // rgb: 96, 165, 132
 	taste_description = "cool salt"
 
+/datum/reagent/consumable/sodiumchloride/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
+	if(ishuman(M)) //fulpcode for beefmen having a bad time when interacting with saltpetre
+		var/mob/living/carbon/human/B = M
+		if(istype(B.dna.species, /datum/species/beefman))
+			var/datum/species/beefman/S = B.dna.species
+			S.dehydrate = min(S.dehydrate+reac_volume, 100) //let's not let some poor beefman get saddled with a dehydrate value of 1,000 or something crazy like that
+
 /datum/reagent/lye
 	name = "Lye"
 	description = "Also known as sodium hydroxide. As a profession making this is somewhat underwhelming."

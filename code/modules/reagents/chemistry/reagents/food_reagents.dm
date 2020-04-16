@@ -325,6 +325,11 @@
 		return
 	if(M.has_bane(BANE_SALT))
 		M.mind.disrupt_spells(-200)
+	if(ishuman(M)) //fulpcode for beefmen having a bad time when interacting with salt
+		var/mob/living/carbon/human/B = M
+		if(istype(B.dna.species, /datum/species/beefman))
+			var/datum/species/beefman/S = B.dna.species
+			S.dehydrate = min(S.dehydrate+reac_volume, 100) //let's not let some poor beefman get saddled with a dehydrate value of 1,000 or something crazy like that
 
 /datum/reagent/consumable/sodiumchloride/reaction_turf(turf/T, reac_volume) //Creates an umbra-blocking salt pile
 	if(!istype(T))

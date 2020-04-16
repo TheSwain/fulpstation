@@ -157,7 +157,7 @@
 	// Step 1) Being burned keeps the juices in.
 	var/amounttobleed = max((2 - (H.getFireLoss_nonProsthetic() / 10)), 0) //handle_blood() (ehich comes before spec_life() in Life()) subtracts 0.5 from your bleed_rate just before it checks to see if you're bleeding/makes you bleed, so 20 points of burn damage will keep you from looking like you're bleeding when you're examined, 15 points of burn damage will keep you from tracking blood everywhere/"actually" bleeding, and 0 points of burn damage will make you "lose" 1.5 units of blood per tick (which you'll regain later in spec_life())
 
-	// Step 2) If we're salted, we'll bleed more (and we won't regen blood super quickly while dehydrated, so this can actually be dangerous)
+	// Step 2) If we're salted, we'll bleed more (and we won't regen blood super quickly while dehydrated, so being splashed with large amounts of salt can actually be quite dangerous for a beefman)
 	if (dehydrate > 0)
 		amounttobleed += 3
 		dehydrate -= 0.5
@@ -230,22 +230,14 @@
 
 /datum/species/beefman/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	. = ..() // Let species run its thing by default, TRUST ME
-	// Salt HURTS
-	if(chem.type == /datum/reagent/saltpetre || chem.type == /datum/reagent/consumable/sodiumchloride)
-		H.adjustToxLoss(0.5, 0) // adjustFireLoss
-		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
-		if (prob(5) || dehydrate == 0)
-			to_chat(H, "<span class='alert'>Your beefy mouth tastes dry.<span>")
-		dehydrate ++
-		return TRUE
 	// Regain BLOOD
-	else if(istype(chem, /datum/reagent/consumable/nutriment) || istype(chem, /datum/reagent/iron))
+	if(istype(chem, /datum/reagent/consumable/nutriment) || istype(chem, /datum/reagent/iron))
 		if (H.blood_volume < BLOOD_VOLUME_NORMAL)
 			H.blood_volume += 2
 			H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 			return TRUE
 
-// TO-DO // Weak to salt etc!
+// TO-DO // Weak to salt etc! //the code for beefmen being weak to salt and saltpetre is in food_reagents.dm and other_reagents.dm, respectively
 /datum/species/beefman/check_species_weakness(obj/item, mob/living/attacker)
 	return ..() // 0  //This is not a boolean, it's the multiplier for the damage that the user takes from the item.It is added onto the check_weakness value of the mob, and then the force of the item is multiplied by this value
 
