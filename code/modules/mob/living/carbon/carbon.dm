@@ -1075,7 +1075,7 @@
 		MB.RunOver(src)
 	else if(istype(AM, /obj/vehicle/ridden/wheelchair/motorized)) //are we being run over by a motorized wheelchair?
 		var/obj/vehicle/ridden/wheelchair/motorized/MW = AM
-		if(MW.t5 >= 15) //is that wheelchair fully upgraded with T5 parts?
+		if(MW.t5 >= 15 && !(MW.pulledby)) //is that wheelchair fully upgraded with T5 parts? also, is it NOT being pulled by someone?
 			MW.RunOver(src)
 	. = ..()
 
