@@ -34,12 +34,12 @@
 
 /obj/effect/decal/cleanable/food/salt/CanAllowThrough(atom/movable/AM, turf/target)
 	. = ..()
-	if(is_species(AM, /datum/species/snail) || is_species(AM, /datum/species/beefman)) //FULP: like snails, beefmen really don't like salt
+	if(is_species(AM, /datum/species/snail))
 		return FALSE
 
 /obj/effect/decal/cleanable/food/salt/Bumped(atom/movable/AM)
 	. = ..()
-	if(is_species(AM, /datum/species/snail) || is_species(AM, /datum/species/beefman)) //FULP: like snails, beefmen really don't like salt
+	if(is_species(AM, /datum/species/snail))
 		to_chat(AM, "<span class='danger'>Your path is obstructed by <span class='phobia'>salt</span>.</span>")
 
 /obj/effect/decal/cleanable/food/salt/Crossed(atom/movable/AM)
@@ -50,6 +50,14 @@
 		var/mob/living/carbon/C = AM
 		if(C.m_intent == MOVE_INTENT_WALK)
 			return
+		if(ishuman(AM))
+			var/mob/living/carbon/human/H = AM
+			if(is_species(AM, /datum/species/beefman) && !(H.shoes))
+				to_chat(H, "<span class='warning'>AAAAAAUGH, IT BURNS, IT BUUUUUUUUUUURNS!</span>")
+				H.emote("scream") //you have no skin or shoes and you just stepped in a pile of salt, you're definitely in MASSIVE amounts of pain
+				H.blur_eyes(5) //it's hard to see through your tears of pain
+				var/datum/species/beefman/S = B.dna.species
+				S.dehydrate = min(S.dehydrate+10, 100) //yeah, you can make a pile of salt with just one unit of salt, but c'mon, just incrementing dehydrate by 1 is going to be barely noticeable
 	safepasses--
 	if(safepasses <= 0 && !QDELETED(src))
 		qdel(src)

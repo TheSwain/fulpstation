@@ -1700,6 +1700,9 @@
 	if(ishuman(M)) //fulpcode for beefmen having a bad time when interacting with saltpetre
 		var/mob/living/carbon/human/B = M
 		if(istype(B.dna.species, /datum/species/beefman))
+			to_chat(B, "<span class='warning'>AAAAAAUGH, IT BURNS, IT BUUUUUUUUUUURNS!</span>")
+			B.emote("scream") //you have no skin and you just got splashed by saltpetre, you're definitely in MASSIVE amounts of pain
+			B.blur_eyes(5) //it's hard to see through your tears of pain
 			var/datum/species/beefman/S = B.dna.species
 			S.dehydrate = min(S.dehydrate+reac_volume, 100) //let's not let some poor beefman get saddled with a dehydrate value of 1,000 or something crazy like that
 
