@@ -216,6 +216,18 @@
 	H.equip_to_slot_or_del(newSash, ITEM_SLOT_ICLOTHING, TRUE) // TRUE is whether or not this is "INITIAL", as in startup
 	return ..()
 
+/datum/species/beefman/after_equip_job(datum/job/J, mob/living/carbon/human/H)
+	..() //  H.update_mutant_bodyparts()   <--- SWAIN NOTE base does that only
+
+	// DO NOT DO THESE DURING GAIN/LOSS (we only want to assign them once on round start)
+
+	// 		JOB GEAR
+
+	// Remove coat! We don't wear that as a Beefboi
+	if (H.wear_suit)
+		qdel(H.wear_suit)
+
+
 /datum/species/beefman/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	. = ..() // Let species run its thing by default, TRUST ME
 	// Salt HURTS
