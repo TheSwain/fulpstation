@@ -29,7 +29,18 @@
 /datum/game_mode/traitor
 	restricted_jobs = list("Cyborg", "Deputy")
 
+	//The time for Cobby is Over//	-Love, Sal
 
+/*/datum/reagent/medicine/C2/multiver = /datum/reagent/medicine/CF/charcoal
+
+/datum/chemical_reaction/multiver
+	results = list(/datum/reagent/medicine/CF/charcoal = 2)
+
+/datum/chemical_reaction/ichiyuri
+	results = list(/datum/reagent/medicine/CF/silver_sulfadiazine = 5)
+
+/datum/chemical_reaction/libital
+	results = list(/datum/reagent/medicine/CF/styptic = 3)*/
 
 
 /obj/item/clothing/accessory
@@ -345,3 +356,66 @@
 //** Lets medical and engineering syndiborgs choose a disguise from a list.
 //** Also tweaks the medical syndiborg, removing emag and granting more med items
 //***************************************************************************
+
+
+
+//************************************************************
+//** Improved Sec Starter Gear by Surrealistik Oct 2019 BEGINS
+//************************************************************
+/datum/outfit/job/security
+	backpack_contents = list() //Start with stun baton in belt.
+	r_pocket = /obj/item/pda/security
+	belt = /obj/item/storage/belt/security/fulp_starter_full
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	box = /obj/item/storage/box/survival/security/improved
+	pda_slot = ITEM_SLOT_RPOCKET
+
+/datum/outfit/job/warden
+	backpack_contents = list() //Start with stun baton in belt.
+	r_pocket = /obj/item/pda/security
+	belt = /obj/item/storage/belt/security/fulp_starter_full
+	box = /obj/item/storage/box/survival/security/improved
+	pda_slot = ITEM_SLOT_RPOCKET
+
+/datum/outfit/job/hos
+	backpack_contents = list() //Start with stun baton in belt.
+	r_pocket = /obj/item/pda/security
+	belt = /obj/item/storage/belt/security/fulp_starter_full
+	box = /obj/item/storage/box/survival/security/improved
+	pda_slot = ITEM_SLOT_RPOCKET
+
+/obj/machinery/vending/wardrobe/sec_wardrobe
+	req_access = list(ACCESS_SECURITY) //We can now vend armor and helmets, so we need to protect the contents.
+
+//************************************************************
+//** Improved Sec Starter Gear by Surrealistik Oct 2019 ENDS
+//************************************************************
+//***********************************************************
+//**** Detective Expanded Kit BEGINS - Surrealistik, Oct 2019
+//***********************************************************
+
+/datum/outfit/job/detective
+	glasses = /obj/item/clothing/glasses/detective
+
+/obj/item/cartridge/detective
+	access = CART_SECURITY | CART_MEDICAL | CART_MANIFEST | CART_REAGENT_SCANNER | CART_ATMOS
+
+/datum/techweb_node/integrated_HUDs
+	design_ids = list("health_hud", "security_hud", "diagnostic_hud", "scigoggles", "detective_glasses")
+
+/datum/design/detective_scanner
+	desc = "Used to remotely scan objects and biomass for DNA and fingerprints, and has an integrated health and reagent analyzer. Can print a report of its findings."
+
+/obj/item/detective_scanner
+	desc = "Used to remotely scan objects and biomass for DNA and fingerprints, and has an integrated health and reagent analyzer. Can print a report of its findings."
+
+/obj/item/detective_scanner
+	var/mode
+	var/advanced = TRUE
+	icon = 'icons/Fulpicons/Surreal_stuff/detective_obs.dmi'
+	icon_state = "forensicnew-0"
+
+
+//***********************************************************
+//**** Detective Expanded Kit ENDS - Surrealistik, Oct 2019
+//***********************************************************
