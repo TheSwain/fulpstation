@@ -1696,7 +1696,7 @@
 	color = "#60A584" // rgb: 96, 165, 132
 	taste_description = "cool salt"
 
-/datum/reagent/consumable/sodiumchloride/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
+/datum/reagent/saltpetre/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(ishuman(M)) //fulpcode for beefmen having a bad time when interacting with saltpetre
 		var/mob/living/carbon/human/B = M
 		if(istype(B.dna.species, /datum/species/beefman))
