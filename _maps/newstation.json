@@ -1,0 +1,11 @@
+{
+    "map_name": "NewStation",
+    "map_path": "map_files/Newstation",
+    "map_file": "newstation.dmm",
+    "shuttles": {
+	    "cargo": "cargo_box",
+	    "ferry": "ferry_fancy",
+	    "whiteship": "whiteship_box",
+	    "emergency": "emergency_box"
+    }
+}
