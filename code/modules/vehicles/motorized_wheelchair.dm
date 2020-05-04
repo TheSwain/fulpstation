@@ -146,6 +146,7 @@
 		explosion(src, -1, 1, 3, 2, 0)
 		visible_message("<span class='boldwarning'>[src] explodes!!</span>")
 		return
+	var/atom/throw_target
 	if(t5 >= 15 && A.density && isliving(A)) //FULP: If T5 is greater than or equal to 15, run that fucker over and just keep on driving!
 		var/mob/living/D = A
 		throw_target = get_edge_target_turf(D, pick(GLOB.cardinals))
@@ -158,7 +159,7 @@
 	// If the speed is higher than delay_multiplier throw the person on the wheelchair away
 	if(A.density && speed > delay_multiplier && has_buckled_mobs())
 		var/mob/living/H = buckled_mobs[1]
-		var/atom/throw_target = get_edge_target_turf(H, pick(GLOB.cardinals))
+		throw_target = get_edge_target_turf(H, pick(GLOB.cardinals))
 		unbuckle_mob(H)
 		H.throw_at(throw_target, 2, 3)
 		H.Knockdown(100)
