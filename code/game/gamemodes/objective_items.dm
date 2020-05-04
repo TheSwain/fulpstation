@@ -139,6 +139,55 @@
 			return 1
 	return 0
 
+//pets
+/datum/objective_item/steal/iandog //[FULP]
+	name = "Ian, the Head of Personnel's pet corgi, alive."
+	targetitem = /obj/item/pet_carrier
+	difficulty = 20
+	excludefromjob = list("Head of Personnel")
+
+/datum/objective_item/steal/iandog/check_special_completion(obj/item/pet_carrier/F)
+	for(var/mob/living/simple_animal/pet/dog/corgi/Ian/D in F)
+		if(D.stat != DEAD)//checks if pet is alive.
+			return 1
+	return 0
+
+/datum/objective_item/steal/poly
+	name = "Poly, the Chief Engineer's pet parrot, alive"
+	targetitem = /obj/item/pet_carrier
+	difficulty = 30
+	excludefromjob = list("Chief Engineer")
+
+/datum/objective_item/steal/poly/check_special_completion(obj/item/pet_carrier/CE)
+	for(var/mob/living/simple_animal/parrot/Poly/P in CE)
+		if(P.stat != DEAD)
+			return 1
+	return 0
+
+/datum/objective_item/steal/runtimecat
+	name = "Runtime, the Cheif Medical Officer's pet, alive."
+	targetitem = /obj/item/pet_carrier
+	difficulty = 20
+	excludefromjob = list("Chief Medical Officer")
+
+/datum/objective_item/steal/runtimecat/check_special_completion(obj/item/pet_carrier/RT)
+	for(var/mob/living/simple_animal/pet/cat/Runtime/CT in RT)
+		if(CT.stat != DEAD)
+			return 1
+	return 0
+
+/datum/objective_item/steal/renaultfox
+	name = "Renault, the Captain's prized fox, alive!"
+	targetitem = /obj/item/pet_carrier
+	difficulty = 20
+	excludefromjob = list("Captain")
+
+/datum/objective_item/steal/renaultfox/check_special_completion(obj/item/pet_carrier/CO)
+	for(var/mob/living/simple_animal/pet/fox/Renault/FX in CO)
+		if(FX.stat !=DEAD)
+			return 1
+	return 0
+
 /datum/objective_item/steal/blueprints
 	name = "the station blueprints."
 	targetitem = /obj/item/areaeditor/blueprints
