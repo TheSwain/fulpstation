@@ -242,8 +242,6 @@
 /obj/item/borg/upgrade/pinpointer //Sec borg can now install the crew monitor/pinpointer module.
 	module_type = list(/obj/item/robot_module/medical, /obj/item/robot_module/syndicate_medical, /obj/item/robot_module/security)
 
-/datum/techweb_node/cyborg_upg_combat
-	design_ids = list("borg_upgrade_e_gun_cooler", "borg_upgrade_e_gun_kill")
 
 //***************************************************************************
 //** FULPSTATION SECBORG MODULE UPDATE by Surrealistik Jan 2020 BEGINS
