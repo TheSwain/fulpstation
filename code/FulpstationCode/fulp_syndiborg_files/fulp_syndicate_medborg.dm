@@ -103,7 +103,7 @@
 
 /obj/item/borg_chameleon/verb/reset_name()
 	set name = "Reset Disguise Name"
-	set category = "Object"
+	set category = "Robot Commands"
 	set src in view(1)
 
 	if(!issilicon(usr))
