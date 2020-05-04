@@ -101,10 +101,10 @@
 	tastes = list("meat" = 1, "salmon" = 1)
 	foodtype = MEAT | ALCOHOL
 
-/obj/item/reagent_containers/food/snacks/faggot
-	name = "faggot"
+/obj/item/reagent_containers/food/snacks/meatball
+	name = "meatball"
 	desc = "A great meal all round. Not a cord of wood."
-	icon_state = "faggot"
+	icon_state = "meatball"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1)
 	filling_color = "#800000"
 	tastes = list("meat" = 1)
@@ -309,6 +309,19 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("meat" = 3, "smokey sauce" = 1)
 	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/meatclown
+	name = "meat clown"
+	desc = "A delicious, round piece of meat clown. How horrifying."
+	icon_state = "meatclown"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/banana = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	tastes = list("meat" = 5, "clowns" = 3, "sixteen teslas" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/meatclown/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/slippery, 30)
 
 //////////////////////////////////////////// KEBABS AND OTHER SKEWERS ////////////////////////////////////////////
 
