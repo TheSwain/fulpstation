@@ -41,7 +41,7 @@
 
 /obj/item/borg_chameleon/equipped(mob/user)
 	. = ..()
-	disrupt(user)
+	//disrupt(user) //FULPSTATION BORG CHAMELEON PATCH by Surrealistik May 2020
 
 /obj/item/borg_chameleon/attack_self(mob/living/silicon/robot/user)
 	if (user && user.cell && user.cell.charge >  activationCost)
