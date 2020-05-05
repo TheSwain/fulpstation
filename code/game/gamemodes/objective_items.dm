@@ -168,12 +168,12 @@
 	altitems = list(/obj/item/clothing/head/mob_holder)
 
 /datum/objective_item/steal/iandog/check_special_completion(obj/item/B)
-	if(istype(I, /obj/item/pet_carrier))
+	if(istype(B, /obj/item/pet_carrier))
 		var/obj/item/pet_carrier/A = B
 		for(var/mob/living/simple_animal/parrot/Poly/D in A)
 			if(D.stat != DEAD)//checks if pet is alive.
 				return 1
-	if(istype(I, /obj/item/clothing/head/mob_holder))
+	if(istype(B, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/A = B
 		for(var/mob/living/simple_animal/parrot/Poly/D in A)
 			if(D.stat != DEAD)//checks if pet is alive.
@@ -188,12 +188,12 @@
 	altitems = list(/obj/item/clothing/head/mob_holder)
 
 /datum/objective_item/steal/iandog/check_special_completion(obj/item/H)
-	if(istype(I, /obj/item/pet_carrier))
+	if(istype(H, /obj/item/pet_carrier))
 		var/obj/item/pet_carrier/T = H
 		for(var/mob/living/simple_animal/pet/cat/Runtime/D in T)
 			if(D.stat != DEAD)//checks if pet is alive.
 				return 1
-	if(istype(I, /obj/item/clothing/head/mob_holder))
+	if(istype(H, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/T = H
 		for(var/mob/living/simple_animal/pet/cat/Runtime/D in T)
 			if(D.stat != DEAD)//checks if pet is alive.
@@ -208,12 +208,12 @@
 	altitems = list(/obj/item/clothing/head/mob_holder)
 
 /datum/objective_item/steal/iandog/check_special_completion(obj/item/K)
-	if(istype(I, /obj/item/pet_carrier))
+	if(istype(K, /obj/item/pet_carrier))
 		var/obj/item/pet_carrier/G = K
 		for(var/mob/living/simple_animal/pet/fox/Renault/D in G)
 			if(D.stat != DEAD)//checks if pet is alive.
 				return 1
-	if(istype(I, /obj/item/clothing/head/mob_holder))
+	if(istype(H, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/G = K
 		for(var/mob/living/simple_animal/pet/fox/Renault/D in G)
 			if(D.stat != DEAD)//checks if pet is alive.
