@@ -178,11 +178,11 @@
 
 /datum/objective_item/steal/renaultfox
 	name = "Renault, the Captain's prized fox, alive!"
-	targetitem = /obj/item/pet_carrier
+	targetitem = /obj/var/mob/living/simple_animal/pet/fox/Renault
 	difficulty = 20
 	excludefromjob = list("Captain")
 
-/datum/objective_item/steal/renaultfox/check_special_completion((var/mob/living/simple_animal/pet/fox/Renault/CO)
+/datum/objective_item/steal/renaultfox/check_special_completion(var/mob/living/simple_animal/pet/fox/Renault/CO)
 	for(var/mob/living/simple_animal/pet/fox/Renault/FX)
 		if(FX.stat !=DEAD)
 			return 1
