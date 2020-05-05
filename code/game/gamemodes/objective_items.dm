@@ -182,8 +182,8 @@
 	difficulty = 20
 	excludefromjob = list("Captain")
 
-/datum/objective_item/steal/renaultfox/check_special_completion(obj/item/pet_carrier/CO)
-	for(var/mob/living/simple_animal/pet/fox/Renault/FX in CO)
+/datum/objective_item/steal/renaultfox/check_special_completion((var/mob/living/simple_animal/pet/fox/Renault/CO)
+	for(var/mob/living/simple_animal/pet/fox/Renault/FX)
 		if(FX.stat !=DEAD)
 			return 1
 	return 0
