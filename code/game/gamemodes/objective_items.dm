@@ -213,7 +213,7 @@
 		for(var/mob/living/simple_animal/pet/fox/Renault/D in G)
 			if(D.stat != DEAD)//checks if pet is alive.
 				return 1
-	if(istype(H, /obj/item/clothing/head/mob_holder))
+	if(istype(K, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/G = K
 		for(var/mob/living/simple_animal/pet/fox/Renault/D in G)
 			if(D.stat != DEAD)//checks if pet is alive.
