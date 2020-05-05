@@ -152,13 +152,13 @@
 		var/obj/item/pet_carrier/C = I
 		for(var/mob/living/simple_animal/pet/dog/corgi/Ian/D in C)
 			if(D.stat != DEAD)//checks if pet is alive.
-				return 1
+				return TRUE
 	if(istype(I, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/C = I
 		for(var/mob/living/simple_animal/pet/dog/corgi/Ian/D in C)
 			if(D.stat != DEAD)//checks if pet is alive.
-				return 1
-	return 0 
+				return TRUE
+	return FALSE 
 
 /datum/objective_item/steal/poly
 	name = "Poly, the Chief Engineer's pet parrot, alive"
@@ -172,13 +172,13 @@
 		var/obj/item/pet_carrier/A = B
 		for(var/mob/living/simple_animal/parrot/Poly/D in A)
 			if(D.stat != DEAD)//checks if pet is alive.
-				return 1
+				return TRUE
 	if(istype(B, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/A = B
 		for(var/mob/living/simple_animal/parrot/Poly/D in A)
 			if(D.stat != DEAD)//checks if pet is alive.
-				return 1
-	return 0 
+				return TRUE
+	return FALSE
 
 /datum/objective_item/steal/runtimecat
 	name = "Runtime, the Cheif Medical Officer's pet, alive."
@@ -192,13 +192,13 @@
 		var/obj/item/pet_carrier/T = H
 		for(var/mob/living/simple_animal/pet/cat/Runtime/D in T)
 			if(D.stat != DEAD)//checks if pet is alive.
-				return 1
+				return TRUE
 	if(istype(H, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/T = H
 		for(var/mob/living/simple_animal/pet/cat/Runtime/D in T)
 			if(D.stat != DEAD)//checks if pet is alive.
-				return 1
-	return 0
+				return TRUE
+	return FALSE
 
 /datum/objective_item/steal/renaultfox
 	name = "Renault, the Captain's prized fox, alive!"
@@ -212,13 +212,13 @@
 		var/obj/item/pet_carrier/G = K
 		for(var/mob/living/simple_animal/pet/fox/Renault/D in G)
 			if(D.stat != DEAD)//checks if pet is alive.
-				return 1
+				return TRUE 
 	if(istype(K, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/G = K
 		for(var/mob/living/simple_animal/pet/fox/Renault/D in G)
 			if(D.stat != DEAD)//checks if pet is alive.
-				return 1
-	return 0 
+				return TRUE
+	return FALSE 
 //End of fulp edit for pets
 
 /datum/objective_item/steal/blueprints
