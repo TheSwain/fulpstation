@@ -142,15 +142,23 @@
 //pets
 /datum/objective_item/steal/iandog //[FULP]
 	name = "Ian, the Head of Personnel's pet corgi, alive."
-	targetitem = /mob/living/simple_animal/pet/dog/corgi/Ian
+	targetitem = /obj/item/pet_carrier
 	difficulty = 20
 	excludefromjob = list("Head of Personnel")
+	altitems = list(/obj/item/clothing/head/mob_holder)
 
-/datum/objective_item/steal/iandog/check_special_completion(obj/item/pet_carrier/F)
-	for(var/mob/living/simple_animal/pet/dog/corgi/Ian/D in F)
-		if(D.stat != DEAD)//checks if pet is alive.
-			return 1
-	return 0
+/datum/objective_item/steal/iandog/check_special_completion(obj/item/I)
+	if(istype(I, /obj/item/pet_carrier))
+		var/obj/item/pet_carrier/C = I
+		for(var/mob/living/simple_animal/pet/dog/corgi/Ian/D in C)
+			if(D.stat != DEAD)//checks if pet is alive.
+				return 1
+	if(istype(I, /obj/item/clothing/head/mob_holder))
+		var/obj/item/clothing/head/mob_holder/C = I
+		for(var/mob/living/simple_animal/pet/dog/corgi/Ian/D in C)
+			if(D.stat != DEAD)//checks if pet is alive.
+				return 1
+	return 0 
 
 /datum/objective_item/steal/poly
 	name = "Poly, the Chief Engineer's pet parrot, alive"
@@ -186,7 +194,7 @@
 	for(var/mob/living/simple_animal/pet/fox/Renault/FX)
 		if(FX.stat !=DEAD)
 			return 1
-	return 0
+	return 0 //end FULP
 
 /datum/objective_item/steal/blueprints
 	name = "the station blueprints."
