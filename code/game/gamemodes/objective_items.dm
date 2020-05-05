@@ -165,36 +165,61 @@
 	targetitem = /obj/item/pet_carrier
 	difficulty = 30
 	excludefromjob = list("Chief Engineer")
+	altitems = list(/obj/item/clothing/head/mob_holder)
 
-/datum/objective_item/steal/poly/check_special_completion(obj/item/pet_carrier/CE)
-	for(var/mob/living/simple_animal/parrot/Poly/P in CE)
-		if(P.stat != DEAD)
-			return 1
-	return 0
+/datum/objective_item/steal/iandog/check_special_completion(obj/item/I)
+	if(istype(I, /obj/item/pet_carrier))
+		var/obj/item/pet_carrier/C = I
+		for(var/mob/living/simple_animal/parrot/Poly/D in C)
+			if(D.stat != DEAD)//checks if pet is alive.
+				return 1
+	if(istype(I, /obj/item/clothing/head/mob_holder))
+		var/obj/item/clothing/head/mob_holder/C = I
+		for(var/mob/living/simple_animal/parrot/Poly/D in C)
+			if(D.stat != DEAD)//checks if pet is alive.
+				return 1
+	return 0 
 
 /datum/objective_item/steal/runtimecat
 	name = "Runtime, the Cheif Medical Officer's pet, alive."
 	targetitem = /obj/item/pet_carrier
 	difficulty = 20
 	excludefromjob = list("Chief Medical Officer")
+	altitems = list(/obj/item/clothing/head/mob_holder)
 
-/datum/objective_item/steal/runtimecat/check_special_completion(obj/item/pet_carrier/RT)
-	for(var/mob/living/simple_animal/pet/cat/Runtime/CT in RT)
-		if(CT.stat != DEAD)
-			return 1
-	return 0
+/datum/objective_item/steal/iandog/check_special_completion(obj/item/I)
+	if(istype(I, /obj/item/pet_carrier))
+		var/obj/item/pet_carrier/C = I
+		for(var/mob/living/simple_animal/pet/cat/Runtime/D in C)
+			if(D.stat != DEAD)//checks if pet is alive.
+				return 1
+	if(istype(I, /obj/item/clothing/head/mob_holder))
+		var/obj/item/clothing/head/mob_holder/C = I
+		for(var/mob/living/simple_animal/pet/cat/Runtime/D in C)
+			if(D.stat != DEAD)//checks if pet is alive.
+				return 1
+	return 0 
 
 /datum/objective_item/steal/renaultfox
 	name = "Renault, the Captain's prized fox, alive!"
 	targetitem = /obj/item/pet_carrier
 	difficulty = 20
 	excludefromjob = list("Captain")
+	altitems = list(/obj/item/clothing/head/mob_holder)
 
-/datum/objective_item/steal/renaultfox/check_special_completion(var/mob/living/simple_animal/pet/fox/Renault/CO)
-	for(var/mob/living/simple_animal/pet/fox/Renault/FX)
-		if(FX.stat !=DEAD)
-			return 1
-	return 0 //end FULP
+/datum/objective_item/steal/iandog/check_special_completion(obj/item/I)
+	if(istype(I, /obj/item/pet_carrier))
+		var/obj/item/pet_carrier/C = I
+		for(var/mob/living/simple_animal/pet/fox/Renault/D in C)
+			if(D.stat != DEAD)//checks if pet is alive.
+				return 1
+	if(istype(I, /obj/item/clothing/head/mob_holder))
+		var/obj/item/clothing/head/mob_holder/C = I
+		for(var/mob/living/simple_animal/pet/fox/Renault/D in C)
+			if(D.stat != DEAD)//checks if pet is alive.
+				return 1
+	return 0 
+//End of fulp edit for pets
 
 /datum/objective_item/steal/blueprints
 	name = "the station blueprints."
