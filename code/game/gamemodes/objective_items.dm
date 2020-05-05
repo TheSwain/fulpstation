@@ -178,7 +178,7 @@
 
 /datum/objective_item/steal/renaultfox
 	name = "Renault, the Captain's prized fox, alive!"
-	targetitem = /obj/var/mob/living/simple_animal/pet/fox/Renault/CO
+	targetitem = /obj/item/pet_carrier
 	difficulty = 20
 	excludefromjob = list("Captain")
 
