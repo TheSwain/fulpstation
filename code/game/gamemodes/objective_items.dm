@@ -167,7 +167,7 @@
 	excludefromjob = list("Chief Engineer")
 	altitems = list(/obj/item/clothing/head/mob_holder)
 
-/datum/objective_item/steal/iandog/check_special_completion(obj/item/B)
+/datum/objective_item/steal/poly/check_special_completion(obj/item/B)
 	if(istype(B, /obj/item/pet_carrier))
 		var/obj/item/pet_carrier/A = B
 		for(var/mob/living/simple_animal/parrot/Poly/D in A)
@@ -187,7 +187,7 @@
 	excludefromjob = list("Chief Medical Officer")
 	altitems = list(/obj/item/clothing/head/mob_holder)
 
-/datum/objective_item/steal/iandog/check_special_completion(obj/item/H)
+/datum/objective_item/steal/runtimecat/check_special_completion(obj/item/H)
 	if(istype(H, /obj/item/pet_carrier))
 		var/obj/item/pet_carrier/T = H
 		for(var/mob/living/simple_animal/pet/cat/Runtime/D in T)
@@ -207,7 +207,7 @@
 	excludefromjob = list("Captain")
 	altitems = list(/obj/item/clothing/head/mob_holder)
 
-/datum/objective_item/steal/iandog/check_special_completion(obj/item/K)
+/datum/objective_item/steal/renaultfox/check_special_completion(obj/item/K)
 	if(istype(K, /obj/item/pet_carrier))
 		var/obj/item/pet_carrier/G = K
 		for(var/mob/living/simple_animal/pet/fox/Renault/D in G)
