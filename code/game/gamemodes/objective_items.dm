@@ -219,6 +219,13 @@
 			if(D.stat != DEAD)//checks if pet is alive.
 				return TRUE
 	return FALSE 
+
+/datum/objective_item/steal/lamarr
+	name = "Lamarr The subject of study by the research director."
+	targetitem = /obj/item/clothing/mask/facehugger/lamarr
+	difficulty = 40
+	excludefromjob = list("Research Director")
+
 //End of fulp edit for pets
 
 /datum/objective_item/steal/blueprints
