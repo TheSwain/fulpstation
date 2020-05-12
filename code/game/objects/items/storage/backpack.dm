@@ -37,6 +37,18 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 12
 
+/obj/item/bag_of_holding_inert
+	name = "inert bag of holding"
+	desc = "What is currently a just an unwieldly block of metal with a slot ready to accept a bluespace anomaly core."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "brokenpack"
+	item_state = "brokenpack"
+	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	w_class = WEIGHT_CLASS_BULKY
+	resistance_flags = FIRE_PROOF
+	item_flags = NO_MAT_REDEMPTION
+
 /obj/item/storage/backpack/holding
 	name = "bag of holding"
 	desc = "A backpack that opens into a localized pocket of bluespace."
@@ -62,10 +74,6 @@
 	playsound(src, "rustle", 50, TRUE, -5)
 	qdel(user)
 
-/obj/item/storage/backpack/holding/singularity_act(current_size)
-	var/dist = max((current_size - 2),1)
-	explosion(src.loc,(dist),(dist*2),(dist*4))
-
 /obj/item/storage/backpack/santabag
 	name = "Santa's Gift Bag"
 	desc = "Space Santa uses this to deliver presents to all the nice children in space in Christmas! Wow, it's pretty big!"
@@ -88,12 +96,12 @@
 	return (OXYLOSS)
 
 /obj/item/storage/backpack/santabag/proc/regenerate_presents()
-	addtimer(CALLBACK(src, .proc/regenerate_presents), rand(30 SECONDS, 60 SECONDS))
+	addtimer(CALLBACK(src, .proc/regenerate_presents), 30 SECONDS)
 
 	var/mob/M = get(loc, /mob)
 	if(!istype(M))
 		return
-	if(HAS_TRAIT(M, TRAIT_CANNOT_OPEN_PRESENTS))
+	if(M.mind && HAS_TRAIT(M.mind, TRAIT_CANNOT_OPEN_PRESENTS))
 		var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 		var/turf/floor = get_turf(src)
 		var/obj/item/I = new /obj/item/a_gift/anything(floor)
@@ -204,6 +212,15 @@
 	desc = "A spacious backpack with lots of pockets, worn by Engineers of an Emergency Response Team."
 	icon_state = "ert_engineering"
 
+/obj/item/storage/backpack/ert/janitor
+	name = "emergency response team janitor backpack"
+	desc = "A spacious backpack with lots of pockets, worn by Janitors of an Emergency Response Team."
+	icon_state = "ert_janitor"
+
+/obj/item/storage/backpack/ert/clown
+	name = "emergency response team clown backpack"
+	desc = "A spacious backpack with lots of pockets, worn by Clowns of an Emergency Response Team."
+	icon_state = "ert_clown"
 /*
  * Satchel Types
  */
@@ -293,25 +310,16 @@
 	icon_state = "satchel-flat"
 	item_state = "satchel-flat"
 	w_class = WEIGHT_CLASS_NORMAL //Can fit in backpacks itself.
-	level = 1
+
+/obj/item/storage/backpack/satchel/flat/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/undertile, TRAIT_T_RAY_VISIBLE, INVISIBILITY_OBSERVER, use_anchor = TRUE)
 
 /obj/item/storage/backpack/satchel/flat/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 15
 	STR.set_holdable(null, list(/obj/item/storage/backpack/satchel/flat)) //muh recursive backpacks)
-
-/obj/item/storage/backpack/satchel/flat/hide(intact)
-	if(intact)
-		invisibility = INVISIBILITY_OBSERVER
-		anchored = TRUE //otherwise you can start pulling, cover it, and drag around an invisible backpack.
-		icon_state = "[initial(icon_state)]2"
-		ADD_TRAIT(src, TRAIT_T_RAY_VISIBLE, TRAIT_GENERIC)
-	else
-		invisibility = initial(invisibility)
-		anchored = FALSE
-		icon_state = initial(icon_state)
-		REMOVE_TRAIT(src, TRAIT_T_RAY_VISIBLE, TRAIT_GENERIC)
 
 /obj/item/storage/backpack/satchel/flat/PopulateContents()
 	var/datum/supply_pack/costumes_toys/randomised/contraband/C = new
@@ -499,16 +507,15 @@
 	for(var/i in 1 to 9)
 		new /obj/item/ammo_box/magazine/smgm45(src)
 
-/obj/item/storage/backpack/duffelbag/syndie/ammo/dark_gygax
+/obj/item/storage/backpack/duffelbag/syndie/ammo/mech
 	desc = "A large duffel bag, packed to the brim with various exosuit ammo."
 
-/obj/item/storage/backpack/duffelbag/syndie/ammo/dark_gygax/PopulateContents()
-	new /obj/item/mecha_ammo/incendiary(src)
-	new /obj/item/mecha_ammo/incendiary(src)
-	new /obj/item/mecha_ammo/incendiary(src)
-	new /obj/item/mecha_ammo/flashbang(src)
-	new /obj/item/mecha_ammo/flashbang(src)
-	new /obj/item/mecha_ammo/flashbang(src)
+/obj/item/storage/backpack/duffelbag/syndie/ammo/mech/PopulateContents()
+	new /obj/item/mecha_ammo/scattershot(src)
+	new /obj/item/mecha_ammo/scattershot(src)
+	new /obj/item/mecha_ammo/scattershot(src)
+	new /obj/item/mecha_ammo/scattershot(src)
+	new /obj/item/storage/belt/utility/syndicate(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/ammo/mauler
 	desc = "A large duffel bag, packed to the brim with various exosuit ammo."
@@ -541,15 +548,6 @@
 	new /obj/item/ammo_box/magazine/m12g(src)
 	new /obj/item/ammo_box/magazine/m12g(src)
 	new /obj/item/clothing/glasses/thermal/syndi(src)
-
-/obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle
-	desc = "A large duffel bag containing a tactical medkit, a Donksoft machine gun, a big jumbo box of riot darts, and a knock-off pair of magboots."
-
-/obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle/PopulateContents()
-	new /obj/item/clothing/shoes/magboots/syndie(src)
-	new /obj/item/storage/firstaid/tactical(src)
-	new /obj/item/gun/ballistic/automatic/l6_saw/toy(src)
-	new /obj/item/ammo_box/foambox/riot(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle
 	desc = "A large duffel bag containing a medical equipment, a Donksoft LMG, a big jumbo box of riot darts, and a knock-off pair of magboots."
@@ -589,9 +587,9 @@
 	new /obj/item/clothing/under/syndicate/soviet(src)
 	new /obj/item/watertank/op(src)
 	new /obj/item/clothing/suit/space/hardsuit/syndi/elite(src)
-	new /obj/item/gun/ballistic/automatic/pistol/APS(src)
-	new /obj/item/ammo_box/magazine/pistolm9mm(src)
-	new /obj/item/ammo_box/magazine/pistolm9mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/aps(src)
+	new /obj/item/ammo_box/magazine/m9mm_aps/fire(src)
+	new /obj/item/ammo_box/magazine/m9mm_aps/fire(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka(src)
 	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
 	new /obj/item/grenade/syndieminibomb(src)
@@ -610,3 +608,14 @@
 	new /obj/item/clothing/mask/gas/clown_hat(src)
 	new /obj/item/bikehorn(src)
 	new /obj/item/implanter/sad_trombone(src)
+
+/obj/item/storage/backpack/henchmen
+	name = "wings"
+	desc = "Granted to the henchmen who deserve it. This probably doesn't include you."
+	icon_state = "henchmen"
+	item_state = "henchmen"
+
+/obj/item/storage/backpack/duffelbag/cops
+	name = "police bag"
+	desc = "A large duffel bag for holding extra police gear."
+	slowdown = 0

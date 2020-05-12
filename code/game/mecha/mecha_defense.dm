@@ -74,7 +74,7 @@
 /obj/mecha/attack_animal(mob/living/simple_animal/user)
 	log_message("Attack by simple animal. Attacker - [user].", LOG_MECHA, color="red")
 	if(!user.melee_damage_upper && !user.obj_damage)
-		user.emote("custom", message = "[user.friendly] [src].")
+		user.emote("custom", message = "[user.friendly_verb_continuous] [src].")
 		return 0
 	else
 		var/play_soundeffect = 1
@@ -110,7 +110,7 @@
 	log_message("Hit by [AM].", LOG_MECHA, color="red")
 	. = ..()
 
-/obj/mecha/bullet_act(obj/item/projectile/Proj) //wrapper
+/obj/mecha/bullet_act(obj/projectile/Proj) //wrapper
 	if (!enclosed && occupant && !silicon_pilot && !Proj.force_hit && (Proj.def_zone == BODY_ZONE_HEAD || Proj.def_zone == BODY_ZONE_CHEST)) //allows bullets to hit the pilot of open-canopy mechs
 		occupant.bullet_act(Proj) //If the sides are open, the occupant can be hit
 		return BULLET_ACT_HIT
@@ -128,10 +128,22 @@
 	severity++
 	for(var/X in equipment)
 		var/obj/item/mecha_parts/mecha_equipment/ME = X
-		ME.ex_act(severity,target)
+		switch(severity)
+			if(EXPLODE_DEVASTATE)
+				SSexplosions.highobj += ME
+			if(EXPLODE_HEAVY)
+				SSexplosions.medobj += ME
+			if(EXPLODE_LIGHT)
+				SSexplosions.lowobj += ME
 	for(var/Y in trackers)
 		var/obj/item/mecha_parts/mecha_tracking/MT = Y
-		MT.ex_act(severity, target)
+		switch(severity)
+			if(EXPLODE_DEVASTATE)
+				SSexplosions.highobj += MT
+			if(EXPLODE_HEAVY)
+				SSexplosions.medobj += MT
+			if(EXPLODE_LIGHT)
+				SSexplosions.lowobj += MT
 	if(occupant)
 		occupant.ex_act(severity,target)
 
@@ -151,7 +163,7 @@
 	log_message("EMP detected", LOG_MECHA, color="red")
 
 	if(istype(src, /obj/mecha/combat))
-		mouse_pointer = 'icons/mecha/mecha_mouse-disable.dmi'
+		mouse_pointer = 'icons/effects/mouse_pointers/mecha_mouse-disable.dmi'
 		occupant?.update_mouse_pointer()
 	if(!equipment_disabled && occupant) //prevent spamming this message with back-to-back EMPs
 		to_chat(occupant, "<span=danger>Error -- Connection to equipment control unit has been lost.</span>")
@@ -167,9 +179,9 @@
 
 	if(istype(W, /obj/item/mmi))
 		if(mmi_move_inside(W,user))
-			to_chat(user, "[src]-[W] interface initialized successfully.")
+			to_chat(user, "<span class='notice'>[src]-[W] interface initialized successfully.</span>")
 		else
-			to_chat(user, "[src]-[W] interface initialization failed.")
+			to_chat(user, "<span class='warning'>[src]-[W] interface initialization failed.</span>")
 		return
 
 	if(istype(W, /obj/item/mecha_ammo))
@@ -193,16 +205,45 @@
 		return
 
 	if(istype(W, /obj/item/stock_parts/cell))
-		if(construction_state == MECHA_UNSECURE_CELL)
+		if(construction_state == MECHA_OPEN_HATCH)
 			if(!cell)
-				if(!user.transferItemToLoc(W, src))
+				if(!user.transferItemToLoc(W, src, silent = FALSE))
 					return
 				var/obj/item/stock_parts/cell/C = W
-				to_chat(user, "<span class='notice'>You install the powercell.</span>")
+				to_chat(user, "<span class='notice'>You install the power cell.</span>")
+				playsound(src, 'sound/items/screwdriver2.ogg', 50, FALSE)
 				cell = C
 				log_message("Powercell installed", LOG_MECHA)
 			else
-				to_chat(user, "<span class='notice'>There's already a powercell installed.</span>")
+				to_chat(user, "<span class='warning'>There's already a power cell installed!</span>")
+		return
+
+	if(istype(W, /obj/item/stock_parts/scanning_module))
+		if(construction_state == MECHA_OPEN_HATCH)
+			if(!scanmod)
+				if(!user.transferItemToLoc(W, src))
+					return
+				to_chat(user, "<span class='notice'>You install the scanning module.</span>")
+				playsound(src, 'sound/items/screwdriver2.ogg', 50, FALSE)
+				scanmod = W
+				log_message("[W] installed", LOG_MECHA)
+				update_part_values()
+			else
+				to_chat(user, "<span class='warning'>There's already a scanning module installed!</span>")
+		return
+
+	if(istype(W, /obj/item/stock_parts/capacitor))
+		if(construction_state == MECHA_OPEN_HATCH)
+			if(!capacitor)
+				if(!user.transferItemToLoc(W, src))
+					return
+				to_chat(user, "<span class='notice'>You install the capacitor.</span>")
+				playsound(src, 'sound/items/screwdriver2.ogg', 50, FALSE)
+				capacitor = W
+				log_message("[W] installed", LOG_MECHA)
+				update_part_values()
+			else
+				to_chat(user, "<span class='warning'>There's already a capacitor installed!</span>")
 		return
 
 	if(istype(W, /obj/item/stack/cable_coil))
@@ -251,19 +292,6 @@
 		clearInternalDamage(MECHA_INT_TEMP_CONTROL)
 		to_chat(user, "<span class='notice'>You repair the damaged temperature controller.</span>")
 		return
-	if(!cell)
-		to_chat(user, "<span class='notice'>There is no cell in [src].</span>")
-		return
-	if(construction_state == MECHA_OPEN_HATCH)
-		cell.forceMove(loc)
-		cell = null
-		construction_state = MECHA_UNSECURE_CELL
-		to_chat(user, "<span class='notice'>You unscrew and pry out the powercell.</span>")
-		log_message("Powercell removed", LOG_MECHA)
-		return
-	if(construction_state == MECHA_UNSECURE_CELL)
-		construction_state = MECHA_OPEN_HATCH
-		to_chat(user, "<span class='notice'>You screw the cell in place.</span>")
 
 /obj/mecha/welder_act(mob/living/user, obj/item/W)
 	. = ..()
@@ -320,16 +348,6 @@
 
 /obj/mecha/narsie_act()
 	emp_act(EMP_HEAVY)
-
-/obj/mecha/ratvar_act()
-	if((GLOB.ratvar_awakens || GLOB.clockwork_gateway_activated) && occupant)
-		if(is_servant_of_ratvar(occupant)) //reward the minion that got a mech by repairing it
-			full_repair(TRUE)
-		else
-			var/mob/living/L = occupant
-			go_out(TRUE)
-			if(L)
-				L.ratvar_act()
 
 /obj/mecha/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
 	if(!no_effect)

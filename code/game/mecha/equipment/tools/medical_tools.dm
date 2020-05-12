@@ -104,7 +104,6 @@
 		if(patient)
 			temp = "<br />\[Occupant: [patient] ([patient.stat > 1 ? "*DECEASED*" : "Health: [patient.health]%"])\]<br /><a href='?src=[REF(src)];view_stats=1'>View stats</a>|<a href='?src=[REF(src)];eject=1'>Eject</a>"
 		return "[output] [temp]"
-	return
 
 /obj/item/mecha_parts/mecha_equipment/medical/sleeper/Topic(href,href_list)
 	..()
@@ -119,13 +118,13 @@
 		var/datum/reagent/R = locate(href_list["inject"]) in SG.reagents.reagent_list
 		if (istype(R))
 			inject_reagent(R, SG)
-	return
 
 /obj/item/mecha_parts/mecha_equipment/medical/sleeper/proc/get_patient_stats()
 	if(!patient)
 		return
 	return {"<html>
 				<head>
+				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 				<title>[patient] statistics</title>
 				<script language='javascript' type='text/javascript'>
 				[js_byjax]
@@ -284,7 +283,6 @@
 	var/output = ..()
 	if(output)
 		return "[output] \[<a href=\"?src=[REF(src)];toggle_mode=1\">[mode? "Analyze" : "Launch"]</a>\]<br />\[Syringes: [syringes.len]/[max_syringes] | Reagents: [reagents.total_volume]/[reagents.maximum_volume]\]<br /><a href='?src=[REF(src)];show_reagents=1'>Reagents list</a>"
-	return
 
 /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/action(atom/movable/target)
 	if(!action_checks(target))
@@ -322,10 +320,10 @@
 				var/list/mobs = new
 				for(var/mob/living/carbon/M in mechsyringe.loc)
 					mobs += M
-				var/mob/living/carbon/M = safepick(mobs)
-				if(M)
+				if(length(mobs))
+					var/mob/living/carbon/M = pick(mobs)
 					var/R
-					mechsyringe.visible_message("<span class=\"attack\"> [M] was hit by the syringe!</span>")
+					mechsyringe.visible_message("<span class=\"attack\"> [M] is hit by the syringe!</span>")
 					if(M.can_inject(null, 1))
 						if(mechsyringe.reagents)
 							for(var/datum/reagent/A in mechsyringe.reagents.reagent_list)
@@ -385,12 +383,11 @@
 		return
 	if (href_list["purge_all"])
 		reagents.clear_reagents()
-		return
-	return
 
 /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/proc/get_reagents_page()
 	var/output = {"<html>
 						<head>
+						<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 						<title>Reagent Synthesizer</title>
 						<script language='javascript' type='text/javascript'>
 						[js_byjax]
@@ -496,19 +493,17 @@
 		send_byjax(chassis.occupant,"msyringegun.browser","reagents",get_current_reagents())
 		send_byjax(chassis.occupant,"msyringegun.browser","reagents_form",get_reagents_form())
 		return 1
-	return
 
 /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/on_reagent_change(changetype)
 	..()
 	update_equip_info()
-	return
 
 
 /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/process()
 	if(..())
 		return
 	if(!processed_reagents.len || reagents.total_volume >= reagents.maximum_volume || !chassis.has_charge(energy_drain))
-		occupant_message("<span class=\"alert\">Reagent processing stopped.</a>")
+		occupant_message("<span class='alert'>Reagent processing stopped.</span>")
 		log_message("Reagent processing stopped.", LOG_MECHA)
 		STOP_PROCESSING(SSobj, src)
 		return
@@ -527,7 +522,8 @@
 	range = MECHA_MELEE|MECHA_RANGED
 	equip_cooldown = 0
 	var/obj/item/gun/medbeam/mech/medigun
-	materials = list(/datum/material/iron = 15000, /datum/material/glass = 8000, /datum/material/plasma = 3000, /datum/material/gold = 8000, /datum/material/diamond = 2000)
+	custom_materials = list(/datum/material/iron = 15000, /datum/material/glass = 8000, /datum/material/plasma = 3000, /datum/material/gold = 8000, /datum/material/diamond = 2000)
+	material_flags = MATERIAL_NO_EFFECTS
 
 /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/Initialize()
 	. = ..()

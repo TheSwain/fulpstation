@@ -16,6 +16,8 @@
 	icon_dead = "towercap-dead"
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	mutatelist = list(/obj/item/seeds/tower/steel)
+	reagents_add = list(/datum/reagent/cellulose = 0.05)
+	graft_gene = /datum/plant_gene/trait/plant_type/fungal_metabolism
 
 /obj/item/seeds/tower/steel
 	name = "pack of steel-cap mycelium"
@@ -25,6 +27,7 @@
 	plantname = "Steel Caps"
 	product = /obj/item/grown/log/steel
 	mutatelist = list()
+	reagents_add = list(/datum/reagent/cellulose = 0.05, /datum/reagent/iron = 0.05)
 	rarity = 20
 
 
@@ -50,7 +53,7 @@
 	/obj/item/reagent_containers/food/snacks/grown/wheat))
 
 /obj/item/grown/log/attackby(obj/item/W, mob/user, params)
-	if(W.is_sharp())
+	if(W.get_sharpness())
 		user.show_message("<span class='notice'>You make [plank_name] out of \the [src]!</span>", MSG_VISUAL)
 		var/seed_modifier = 0
 		if(seed)
@@ -164,12 +167,12 @@
 	. = ..()
 	StartBurning()
 
-/obj/structure/bonfire/CanPass(atom/movable/mover, turf/target)
+/obj/structure/bonfire/CanAllowThrough(atom/movable/mover, turf/target)
+	. = ..()
 	if(istype(mover) && (mover.pass_flags & PASSTABLE))
 		return TRUE
 	if(mover.throwing)
 		return TRUE
-	return ..()
 
 /obj/structure/bonfire/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/rods) && !can_buckle && !grill)
@@ -191,7 +194,7 @@
 				add_overlay("bonfire_grill")
 			else
 				return ..()
-	if(W.is_hot())
+	if(W.get_temperature())
 		StartBurning()
 	if(grill)
 		if(user.a_intent != INTENT_HARM && !(W.item_flags & ABSTRACT))
@@ -202,8 +205,8 @@
 				if(!click_params || !click_params["icon-x"] || !click_params["icon-y"])
 					return
 				//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
-				W.pixel_x = CLAMP(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
-				W.pixel_y = CLAMP(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
+				W.pixel_x = clamp(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
+				W.pixel_y = clamp(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
 		else
 			return ..()
 
@@ -216,8 +219,8 @@
 		to_chat(user, "<span class='warning'>You need to extinguish [src] before removing the logs!</span>")
 		return
 	if(!has_buckled_mobs() && do_after(user, 50, target = src))
-		for(var/I in 1 to 5)
-			var/obj/item/grown/log/L = new /obj/item/grown/log(src.loc)
+		for(var/obj/item/grown/log/L in contents)
+			L.forceMove(drop_location())
 			L.pixel_x += rand(1,4)
 			L.pixel_y += rand(1,4)
 		if(can_buckle || grill)
@@ -230,7 +233,7 @@
 		var/turf/open/O = loc
 		if(O.air)
 			var/loc_gases = O.air.gases
-			if(loc_gases[/datum/gas/oxygen][MOLES] >= 5)
+			if(loc_gases[/datum/gas/oxygen] && loc_gases[/datum/gas/oxygen][MOLES] >= 5)
 				return TRUE
 	return FALSE
 
@@ -246,6 +249,7 @@
 	StartBurning()
 
 /obj/structure/bonfire/Crossed(atom/movable/AM)
+	. = ..()
 	if(burning & !grill)
 		Burn()
 

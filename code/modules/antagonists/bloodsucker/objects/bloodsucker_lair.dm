@@ -76,9 +76,10 @@
 
 
 		// Find Animals in Area
+		/* 											REMOVED 3/19/20 Too easy to valid hunt!
 		if (rand(0,2) == 0)
 			var/mobCount = 0
-			var/mobMax = CLAMP(area_turfs.len / 25, 1, 4)
+			var/mobMax = clamp(area_turfs.len / 25, 1, 4)
 			for (var/turf/T in area_turfs)
 				if (!T) continue
 				var/mob/living/simple_animal/SA = locate() in T
@@ -96,6 +97,7 @@
 						new SA (T)
 						break
 					area_turfs -= T
+		*/
 
 		// NOTE: area_turfs is now cleared out!
 	if (coffin)

@@ -52,13 +52,13 @@
 	master.cut_overlay(overlay)
 	return ..()
 
-/datum/component/thermite/InheritComponent(datum/component/thermite/newC, i_am_original, list/arguments)
+/datum/component/thermite/InheritComponent(datum/component/thermite/newC, i_am_original, _amount)
 	if(!i_am_original)
 		return
 	if(newC)
 		amount += newC.amount
 	else
-		amount += arguments[1]
+		amount += _amount
 
 /datum/component/thermite/proc/thermite_melt(mob/user)
 	var/turf/master = parent
@@ -88,5 +88,5 @@
 		thermite_melt()
 
 /datum/component/thermite/proc/attackby_react(datum/source, obj/item/thing, mob/user, params)
-	if(thing.is_hot())
+	if(thing.get_temperature())
 		thermite_melt(user)

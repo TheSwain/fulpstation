@@ -25,8 +25,8 @@
 	M.Paralyze(100)
 	M.apply_effect(EFFECT_STUTTER, 5)
 
-	M.visible_message("<span class='danger'>[user] has prodded [M] with [src]!</span>", \
-					"<span class='userdanger'>[user] has prodded you with [src]!</span>")
+	M.visible_message("<span class='danger'>[user] prods [M] with [src]!</span>", \
+					"<span class='userdanger'>[user] prods you with [src]!</span>")
 
 	playsound(loc, 'sound/weapons/egloves.ogg', 50, TRUE, -1)
 
@@ -111,7 +111,7 @@
 			if(scooldown < world.time)
 				if(M.health >= 0)
 					if(ishuman(M)||ismonkey(M))
-						M.electrocute_act(5, "[user]", safety = 1)
+						M.electrocute_act(5, "[user]", flags = SHOCK_NOGLOVES)
 						user.visible_message("<span class='userdanger'>[user] electrocutes [M] with [user.p_their()] touch!</span>", \
 							"<span class='danger'>You electrocute [M] with your touch!</span>")
 						M.update_mobility()
@@ -154,11 +154,7 @@
 	var/static/list/charge_machines = typecacheof(list(/obj/machinery/cell_charger, /obj/machinery/recharger, /obj/machinery/recharge_station, /obj/machinery/mech_bay_recharge_port))
 	var/static/list/charge_items = typecacheof(list(/obj/item/stock_parts/cell, /obj/item/gun/energy))
 
-/obj/item/borg/charger/Initialize()
-	. = ..()
-
-/obj/item/borg/charger/update_icon()
-	..()
+/obj/item/borg/charger/update_icon_state()
 	icon_state = "charger_[mode]"
 
 /obj/item/borg/charger/attack_self(mob/user)
@@ -176,7 +172,7 @@
 	if(mode == "draw")
 		if(is_type_in_list(target, charge_machines))
 			var/obj/machinery/M = target
-			if((M.stat & (NOPOWER|BROKEN)) || !M.anchored)
+			if((M.machine_stat & (NOPOWER|BROKEN)) || !M.anchored)
 				to_chat(user, "<span class='warning'>[M] is unpowered!</span>")
 				return
 
@@ -185,7 +181,7 @@
 				if(!user || !user.cell || mode != "draw")
 					return
 
-				if((M.stat & (NOPOWER|BROKEN)) || !M.anchored)
+				if((M.machine_stat & (NOPOWER|BROKEN)) || !M.anchored)
 					break
 
 				if(!user.cell.give(150))
@@ -311,7 +307,7 @@
 		audible_message("<font color='red' size='7'>HUMAN HARM</font>")
 		playsound(get_turf(src), 'sound/ai/harmalarm.ogg', 70, 3)
 		cooldown = world.time + 200
-		log_game("[key_name(user)] used a Cyborg Harm Alarm in [AREACOORD(user)]")
+		user.log_message("used a Cyborg Harm Alarm in [AREACOORD(user)]", LOG_ATTACK)
 		if(iscyborg(user))
 			var/mob/living/silicon/robot/R = user
 			to_chat(R.connected_ai, "<br><span class='notice'>NOTICE - Peacekeeping 'HARM ALARM' used by: [user]</span><br>")
@@ -334,7 +330,7 @@
 					C.Jitter(25)
 		playsound(get_turf(src), 'sound/machines/warning-buzzer.ogg', 130, 3)
 		cooldown = world.time + 600
-		log_game("[key_name(user)] used an emagged Cyborg Harm Alarm in [AREACOORD(user)]")
+		user.log_message("used an emagged Cyborg Harm Alarm in [AREACOORD(user)]", LOG_ATTACK)
 
 #define DISPENSE_LOLLIPOP_MODE 1
 #define THROW_LOLLIPOP_MODE 2
@@ -360,9 +356,11 @@
 	emaggedhitdamage = 0
 
 /obj/item/borg/lollipop/equipped()
+	. = ..()
 	check_amount()
 
 /obj/item/borg/lollipop/dropped()
+	. = ..()
 	check_amount()
 
 /obj/item/borg/lollipop/proc/check_amount()	//Doesn't even use processing ticks.
@@ -392,7 +390,7 @@
 	var/obj/item/reagent_containers/food/snacks/L
 	switch(mode)
 		if(DISPENSE_LOLLIPOP_MODE)
-			L = new /obj/item/reagent_containers/food/snacks/lollipop(T)
+			L = new /obj/item/reagent_containers/food/snacks/chewable/lollipop(T)
 		if(DISPENSE_ICECREAM_MODE)
 			L = new /obj/item/reagent_containers/food/snacks/icecream(T)
 			var/obj/item/reagent_containers/food/snacks/icecream/I = L
@@ -491,18 +489,18 @@
 /obj/item/ammo_casing/caseless/gumball
 	name = "Gumball"
 	desc = "Why are you seeing this?!"
-	projectile_type = /obj/item/projectile/bullet/reusable/gumball
+	projectile_type = /obj/projectile/bullet/reusable/gumball
 	click_cooldown_override = 2
 
 
-/obj/item/projectile/bullet/reusable/gumball
+/obj/projectile/bullet/reusable/gumball
 	name = "gumball"
 	desc = "Oh noes! A fast-moving gumball!"
 	icon_state = "gumball"
 	ammo_type = /obj/item/reagent_containers/food/snacks/gumball/cyborg
 	nodamage = TRUE
 
-/obj/item/projectile/bullet/reusable/gumball/handle_drop()
+/obj/projectile/bullet/reusable/gumball/handle_drop()
 	if(!dropped)
 		var/turf/T = get_turf(src)
 		var/obj/item/reagent_containers/food/snacks/gumball/S = new ammo_type(T)
@@ -512,29 +510,29 @@
 /obj/item/ammo_casing/caseless/lollipop	//NEEDS RANDOMIZED COLOR LOGIC.
 	name = "Lollipop"
 	desc = "Why are you seeing this?!"
-	projectile_type = /obj/item/projectile/bullet/reusable/lollipop
+	projectile_type = /obj/projectile/bullet/reusable/lollipop
 	click_cooldown_override = 2
 
-/obj/item/projectile/bullet/reusable/lollipop
+/obj/projectile/bullet/reusable/lollipop
 	name = "lollipop"
 	desc = "Oh noes! A fast-moving lollipop!"
 	icon_state = "lollipop_1"
-	ammo_type = /obj/item/reagent_containers/food/snacks/lollipop/cyborg
+	ammo_type = /obj/item/reagent_containers/food/snacks/chewable/lollipop/cyborg
 	var/color2 = rgb(0, 0, 0)
 	nodamage = TRUE
 
-/obj/item/projectile/bullet/reusable/lollipop/Initialize()
+/obj/projectile/bullet/reusable/lollipop/Initialize()
 	. = ..()
-	var/obj/item/reagent_containers/food/snacks/lollipop/S = new ammo_type(src)
+	var/obj/item/reagent_containers/food/snacks/chewable/lollipop/S = new ammo_type(src)
 	color2 = S.headcolor
 	var/mutable_appearance/head = mutable_appearance('icons/obj/projectiles.dmi', "lollipop_2")
 	head.color = color2
 	add_overlay(head)
 
-/obj/item/projectile/bullet/reusable/lollipop/handle_drop()
+/obj/projectile/bullet/reusable/lollipop/handle_drop()
 	if(!dropped)
 		var/turf/T = get_turf(src)
-		var/obj/item/reagent_containers/food/snacks/lollipop/S = new ammo_type(T)
+		var/obj/item/reagent_containers/food/snacks/chewable/lollipop/S = new ammo_type(T)
 		S.change_head_color(color2)
 		dropped = TRUE
 
@@ -557,7 +555,7 @@
 	var/projectile_damage_tick_ecost_coefficient = 2	//Lasers get half their damage chopped off, drains 50 power/tick. Note that fields are processed 5 times per second.
 	var/projectile_speed_coefficient = 1.5		//Higher the coefficient slower the projectile.
 	var/projectile_tick_speed_ecost = 15
-	var/list/obj/item/projectile/tracked
+	var/list/obj/projectile/tracked
 	var/image/projectile_effect
 	var/field_radius = 3
 	var/active = FALSE
@@ -595,7 +593,7 @@
 	update_icon()
 	to_chat(user, "<span class='boldnotice'>You [active? "activate":"deactivate"] [src].</span>")
 
-/obj/item/borg/projectile_dampen/update_icon()
+/obj/item/borg/projectile_dampen/update_icon_state()
 	icon_state = "[initial(icon_state)][active]"
 
 /obj/item/borg/projectile_dampen/proc/activate_field()
@@ -634,6 +632,10 @@
 	. = ..()
 	host = loc
 
+/obj/item/borg/projectile_dampen/cyborg_unequip(mob/user)
+	deactivate_field()
+	. = ..()
+
 /obj/item/borg/projectile_dampen/on_mob_death()
 	deactivate_field()
 	. = ..()
@@ -650,12 +652,12 @@
 /obj/item/borg/projectile_dampen/proc/process_usage()
 	var/usage = 0
 	for(var/I in tracked)
-		var/obj/item/projectile/P = I
+		var/obj/projectile/P = I
 		if(!P.stun && P.nodamage)	//No damage
 			continue
 		usage += projectile_tick_speed_ecost
 		usage += (tracked[I] * projectile_damage_tick_ecost_coefficient)
-	energy = CLAMP(energy - usage, 0, maxenergy)
+	energy = clamp(energy - usage, 0, maxenergy)
 	if(energy <= 0)
 		deactivate_field()
 		visible_message("<span class='warning'>[src] blinks \"ENERGY DEPLETED\".</span>")
@@ -665,13 +667,13 @@
 		if(iscyborg(host.loc))
 			host = host.loc
 		else
-			energy = CLAMP(energy + energy_recharge, 0, maxenergy)
+			energy = clamp(energy + energy_recharge, 0, maxenergy)
 			return
 	if(host.cell && (host.cell.charge >= (host.cell.maxcharge * cyborg_cell_critical_percentage)) && (energy < maxenergy))
 		host.cell.use(energy_recharge*energy_recharge_cyborg_drain_coefficient)
 		energy += energy_recharge
 
-/obj/item/borg/projectile_dampen/proc/dampen_projectile(obj/item/projectile/P, track_projectile = TRUE)
+/obj/item/borg/projectile_dampen/proc/dampen_projectile(obj/projectile/P, track_projectile = TRUE)
 	if(tracked[P])
 		return
 	if(track_projectile)
@@ -680,7 +682,7 @@
 	P.speed *= projectile_speed_coefficient
 	P.add_overlay(projectile_effect)
 
-/obj/item/borg/projectile_dampen/proc/restore_projectile(obj/item/projectile/P)
+/obj/item/borg/projectile_dampen/proc/restore_projectile(obj/projectile/P)
 	tracked -= P
 	P.damage *= (1/projectile_damage_coefficient)
 	P.speed *= (1/projectile_speed_coefficient)
@@ -698,11 +700,6 @@
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "securearea"
 	sight_mode = BORGXRAY
-
-/obj/item/borg/sight/xray/truesight_lens
-	name = "truesight lens"
-	icon = 'icons/obj/clockwork_objects.dmi'
-	icon_state = "truesight_lens"
 
 /obj/item/borg/sight/thermal
 	name = "\proper thermal vision"
@@ -773,7 +770,7 @@
 
 /obj/item/borg/apparatus/Exited(atom/A)
 	if(A == stored) //sanity check
-		UnregisterSignal(stored, COMSIG_OBJ_UPDATE_ICON)
+		UnregisterSignal(stored, COMSIG_ATOM_UPDATE_ICON)
 		stored = null
 	update_icon()
 	. = ..()
@@ -807,7 +804,7 @@
 			var/obj/item/O = A
 			O.forceMove(src)
 			stored = O
-			RegisterSignal(stored, COMSIG_OBJ_UPDATE_ICON, .proc/update_icon)
+			RegisterSignal(stored, COMSIG_ATOM_UPDATE_ICON, /atom/.proc/update_icon)
 			update_icon()
 			return
 	else
@@ -835,7 +832,7 @@
 /obj/item/borg/apparatus/beaker/Initialize()
 	. = ..()
 	stored = new /obj/item/reagent_containers/glass/beaker/large(src)
-	RegisterSignal(stored, COMSIG_OBJ_UPDATE_ICON, .proc/update_icon)
+	RegisterSignal(stored, COMSIG_ATOM_UPDATE_ICON, /atom/.proc/update_icon)
 	update_icon()
 
 /obj/item/borg/apparatus/beaker/Destroy()
@@ -856,23 +853,22 @@
 		else
 			. += "Nothing."
 
-/obj/item/borg/apparatus/beaker/update_icon()
-	cut_overlays()
+/obj/item/borg/apparatus/beaker/update_overlays()
+	. = ..()
+	var/mutable_appearance/arm = mutable_appearance(icon = icon, icon_state = "borg_beaker_apparatus_arm")
 	if(stored)
 		COMPILE_OVERLAYS(stored)
 		stored.pixel_x = 0
 		stored.pixel_y = 0
-		var/image/img = image("icon"=stored, "layer"=FLOAT_LAYER)
-		var/image/arm = image("icon"="borg_beaker_apparatus_arm", "layer"=FLOAT_LAYER)
+		var/mutable_appearance/stored_copy = new /mutable_appearance(stored)
 		if(istype(stored, /obj/item/reagent_containers/glass/beaker))
 			arm.pixel_y = arm.pixel_y - 3
-		img.plane = FLOAT_PLANE
-		add_overlay(img)
-		add_overlay(arm)
+		stored_copy.layer = FLOAT_LAYER
+		stored_copy.plane = FLOAT_PLANE
+		. += stored_copy
 	else
-		var/image/arm = image("icon"="borg_beaker_apparatus_arm", "layer"=FLOAT_LAYER)
 		arm.pixel_y = arm.pixel_y - 5
-		add_overlay(arm)
+	. += arm
 
 /obj/item/borg/apparatus/beaker/attack_self(mob/living/silicon/robot/user)
 	if(stored && !user.client?.keys_held["Alt"] && user.a_intent != "help")
@@ -885,6 +881,19 @@
 /obj/item/borg/apparatus/beaker/extra
 	name = "secondary beaker storage apparatus"
 	desc = "A supplementary beaker storage apparatus."
+
+/obj/item/borg/apparatus/beaker/service
+	name = "beverage storage apparatus"
+	desc = "A special apparatus for carrying drinks without spilling the contents. Alt-Z or right-click to drop the beaker."
+	icon_state = "borg_beaker_apparatus"
+	storable = list(/obj/item/reagent_containers/food/drinks/,
+				/obj/item/reagent_containers/food/condiment)
+
+/obj/item/borg/apparatus/beaker/service/Initialize()
+	. = ..()
+	stored = new /obj/item/reagent_containers/food/drinks/drinkingglass(src)
+	RegisterSignal(stored, COMSIG_ATOM_UPDATE_ICON, /atom/.proc/update_icon)
+	update_icon()
 
 ////////////////////
 //engi part holder//
@@ -901,24 +910,20 @@
 	. = ..()
 	update_icon()
 
-/obj/item/borg/apparatus/circuit/update_icon()
-	cut_overlays()
+/obj/item/borg/apparatus/circuit/update_overlays()
+	. = ..()
+	var/mutable_appearance/arm = mutable_appearance(icon, "borg_hardware_apparatus_arm1")
 	if(stored)
 		COMPILE_OVERLAYS(stored)
 		stored.pixel_x = -3
 		stored.pixel_y = 0
-		var/image/arm
-		if(istype(stored, /obj/item/circuitboard))
-			arm = image("icon"="borg_hardware_apparatus_arm1", "layer"=FLOAT_LAYER)
-		else
-			arm = image("icon"="borg_hardware_apparatus_arm2", "layer"=FLOAT_LAYER)
-		var/image/img = image("icon"=stored, "layer"=FLOAT_LAYER)
-		img.plane = FLOAT_PLANE
-		add_overlay(arm)
-		add_overlay(img)
-	else
-		var/image/arm = image("icon"="borg_hardware_apparatus_arm1", "layer"=FLOAT_LAYER)
-		add_overlay(arm)
+		if(!istype(stored, /obj/item/circuitboard))
+			arm.icon_state = "borg_hardware_apparatus_arm2"
+		var/mutable_appearance/stored_copy = new /mutable_appearance(stored)
+		stored_copy.layer = FLOAT_LAYER
+		stored_copy.plane = FLOAT_PLANE
+		. += stored_copy
+	. += arm
 
 /obj/item/borg/apparatus/circuit/examine()
 	. = ..()

@@ -6,9 +6,12 @@
 	desc = "A large, menacing creature covered in armored black scales."
 	speak_emote = list("gurgles")
 	emote_hear = list("wails","screeches")
-	response_help  = "thinks better of touching"
-	response_disarm = "flails at"
-	response_harm   = "punches"
+	response_help_continuous = "thinks better of touching"
+	response_help_simple = "think better of touching"
+	response_disarm_continuous = "flails at"
+	response_disarm_simple = "flail at"
+	response_harm_continuous = "punches"
+	response_harm_simple = "punch"
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "daemon"
 	icon_living = "daemon"
@@ -24,7 +27,8 @@
 	minbodytemp = 0
 	maxbodytemp = INFINITY
 	faction = list("slaughter")
-	attacktext = "wildly tears into"
+	attack_verb_continuous = "wildly tears into"
+	attack_verb_simple = "wildly tear into"
 	maxHealth = 200
 	health = 200
 	healable = 0
@@ -34,8 +38,7 @@
 	melee_damage_upper = 30
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
-	bloodcrawl = BLOODCRAWL_EAT
-	var/playstyle_string = "<span class='big bold'>You are a slaughter demon,</span><B> a terrible creature from another realm. You have a single desire: To kill.  \
+	var/playstyle_string = "<span class='big bold'>You are a slaughter demon,</span><B> a terrible creature from another realm. You have a single desire: To kill. \
 							You may use the \"Blood Crawl\" ability near blood pools to travel through them, appearing and disappearing from the station at will. \
 							Pulling a dead or unconscious mob while you enter a pool will pull them in with you, allowing you to feast and regain your health. \
 							You move quickly upon leaving a pool of blood, but the material world will soon sap your strength and leave you sluggish. </B>"
@@ -48,6 +51,7 @@
 
 /mob/living/simple_animal/slaughter/Initialize()
 	..()
+	ADD_TRAIT(src, TRAIT_BLOODCRAWL_EAT, "innate")
 	var/obj/effect/proc_holder/spell/bloodcrawl/bloodspell = new
 	AddSpell(bloodspell)
 	if(istype(loc, /obj/effect/dummy/phased_mob/slaughter))
@@ -63,9 +67,8 @@
 
 /mob/living/simple_animal/slaughter/phasein()
 	. = ..()
-	add_movespeed_modifier(MOVESPEED_ID_SLAUGHTER, update=TRUE, priority=100, multiplicative_slowdown=-1)
-	addtimer(CALLBACK(src, .proc/remove_movespeed_modifier, MOVESPEED_ID_SLAUGHTER, TRUE), 6 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
-
+	add_movespeed_modifier(/datum/movespeed_modifier/slaughter)
+	addtimer(CALLBACK(src, .proc/remove_movespeed_modifier, /datum/movespeed_modifier/slaughter), 6 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 //The loot from killing a slaughter demon - can be consumed to allow the user to blood crawl
 /obj/item/organ/heart/demon
@@ -75,8 +78,9 @@
 	icon_state = "demon_heart-on"
 	decay_factor = 0
 
-/obj/item/organ/heart/demon/update_icon()
-	return //always beating visually
+/obj/item/organ/heart/demon/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_blocker)
 
 /obj/item/organ/heart/demon/attack(mob/M, mob/living/carbon/user, obj/target)
 	if(M != user)
@@ -115,8 +119,9 @@
 	desc = "A large, adorable creature covered in armor with pink bows."
 	speak_emote = list("giggles","titters","chuckles")
 	emote_hear = list("guffaws","laughs")
-	response_help  = "hugs"
-	attacktext = "wildly tickles"
+	response_help_continuous = "hugs"
+	attack_verb_continuous = "wildly tickles"
+	attack_verb_simple = "wildly tickle"
 
 	attack_sound = 'sound/items/bikehorn.ogg'
 	feast_sound = 'sound/spookoween/scary_horn2.ogg'
@@ -144,6 +149,11 @@
 	them; but don't worry! When you die, everyone you hugged will be \
 	released and fully healed, because in the end it's just a jape, \
 	sibling!</B>"
+
+/mob/living/simple_animal/slaughter/laughter/Initialize()
+	. = ..()
+	if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
+		icon_state = "honkmon"
 
 /mob/living/simple_animal/slaughter/laughter/Destroy()
 	release_friends()

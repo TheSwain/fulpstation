@@ -1,16 +1,16 @@
 /mob/living/carbon/get_item_by_slot(slot_id)
 	switch(slot_id)
-		if(SLOT_BACK)
+		if(ITEM_SLOT_BACK)
 			return back
-		if(SLOT_WEAR_MASK)
+		if(ITEM_SLOT_MASK)
 			return wear_mask
-		if(SLOT_NECK)
+		if(ITEM_SLOT_NECK)
 			return wear_neck
-		if(SLOT_HEAD)
+		if(ITEM_SLOT_HEAD)
 			return head
-		if(SLOT_HANDCUFFED)
+		if(ITEM_SLOT_HANDCUFFED)
 			return handcuffed
-		if(SLOT_LEGCUFFED)
+		if(ITEM_SLOT_LEGCUFFED)
 			return legcuffed
 	return null
 
@@ -23,7 +23,7 @@
 	return null
 
 //This is an UNSAFE proc. Use mob_can_equip() before calling this one! Or rather use equip_to_slot_if_possible() or advanced_equip_to_slot_if_possible()
-/mob/living/carbon/equip_to_slot(obj/item/I, slot)
+/mob/living/carbon/equip_to_slot(obj/item/I, slot, initial = FALSE, redraw_mob = FALSE, swap = FALSE)
 	if(!slot)
 		return
 	if(!istype(I))
@@ -49,33 +49,46 @@
 	I.plane = ABOVE_HUD_PLANE
 	I.appearance_flags |= NO_CLIENT_COLOR
 	var/not_handled = FALSE
+	var/current_equip
 	switch(slot)
-		if(SLOT_BACK)
+		if(ITEM_SLOT_BACK)
+			if (back && swap)
+				current_equip = back
 			back = I
 			update_inv_back()
-		if(SLOT_WEAR_MASK)
+		if(ITEM_SLOT_MASK)
+			if (wear_mask && swap)
+				current_equip = wear_mask
 			wear_mask = I
 			wear_mask_update(I, toggle_off = 0)
-		if(SLOT_HEAD)
+		if(ITEM_SLOT_HEAD)
+			if (head && swap)
+				current_equip = head
 			head = I
+			SEND_SIGNAL(src, COMSIG_CARBON_EQUIP_HAT, I)
 			head_update(I)
-		if(SLOT_NECK)
+		if(ITEM_SLOT_NECK)
+			if (wear_neck && swap)
+				current_equip = wear_neck
 			wear_neck = I
 			update_inv_neck(I)
-		if(SLOT_HANDCUFFED)
+		if(ITEM_SLOT_HANDCUFFED)
 			handcuffed = I
 			update_handcuffed()
-		if(SLOT_LEGCUFFED)
+		if(ITEM_SLOT_LEGCUFFED)
 			legcuffed = I
 			update_inv_legcuffed()
-		if(SLOT_HANDS)
+		if(ITEM_SLOT_HANDS)
 			put_in_hands(I)
 			update_inv_hands()
-		if(SLOT_IN_BACKPACK)
+		if(ITEM_SLOT_BACKPACK)
 			if(!back || !SEND_SIGNAL(back, COMSIG_TRY_STORAGE_INSERT, I, src, TRUE))
 				not_handled = TRUE
 		else
 			not_handled = TRUE
+
+	if (current_equip)
+		put_in_active_hand(current_equip)
 
 	//Item has been handled at this point and equipped callback can be safely called
 	//We cannot call it for items that have not been handled as they are not yet correctly
@@ -85,13 +98,14 @@
 
 	return not_handled
 
-/mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE)
+/mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent = FALSE)
 	. = ..() //Sets the default return value to what the parent returns.
 	if(!. || !I) //We don't want to set anything to null if the parent returned 0.
 		return
 
 	if(I == head)
 		head = null
+		SEND_SIGNAL(src, COMSIG_CARBON_UNEQUIP_HAT, I, force, newloc, no_move, invdrop, silent)
 		if(!QDELETED(src))
 			head_update(I)
 	else if(I == back)

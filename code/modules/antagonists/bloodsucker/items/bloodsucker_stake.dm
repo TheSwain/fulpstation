@@ -32,13 +32,13 @@
 	righthand_file = 'icons/Fulpicons/fulpitems_hold_right.dmi'
 	//origin_tech = "biotech=1;combat=1"
 	attack_verb = list("staked")
-	slot_flags = SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	force = 6
 	throwforce = 10
-	embedding = list("embed_chance" = 25, "embedded_fall_chance" = 0.5) // UPDATE 2/10/18 embedding_behavior.dm is how this is handled
+	embedding = list("embed_chance" = 25, "fall_chance" = 1) // UPDATE 2/28/20 check mutations/actions.dm for updates //  UPDATE 2/10/18 embedding_behavior.dm is how this is handled
 	//embed_chance = 25  // Look up "is_pointed" to see where we set stakes able to do this.
 	//embedded_fall_chance = 0.5 // Chance it will fall out.
 	obj_integrity = 30
@@ -111,7 +111,7 @@
 	B.embedded_objects |= src
 	add_mob_blood(target)//Place blood on the stake
 	loc = C // Put INSIDE the character
-	B.receive_damage(w_class * embedding.embedded_impact_pain_multiplier)
+	B.receive_damage(w_class * EMBEDDED_IMPACT_PAIN_MULTIPLIER) // embedding.embedded_impact_pain_multiplier)
 
 	if (C.mind)
 		var/datum/antagonist/bloodsucker/bloodsucker = C.mind.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
@@ -138,7 +138,7 @@
 
 /obj/item/stack/sheet/mineral/wood/attackby(obj/item/W, mob/user, params) // NOTE: sheet_types.dm is where the WOOD stack lives. Maybe move this over there.
 	// Taken from /obj/item/stack/rods/attackby in [rods.dm]
-	if (W.is_sharp())
+	if (W.get_sharpness())
 		user.visible_message("[user] begins whittling [src] into a pointy object.", \
 				 "<span class='notice'>You begin whittling [src] into a sharp point at one end.</span>", \
 				 "<span class='italics'>You hear wood carving.</span>")
@@ -167,7 +167,7 @@
 	force = 8
 	throwforce = 12
 	armour_penetration = 10
-	embedding = list("embed_chance" = 50, "embedded_fall_chance" = 0) // UPDATE 2/10/18 embedding_behavior.dm is how this is handled
+	embedding = list("embed_chance" = 50, "fall_chance" = 0) //UPDATE 2/28/20 check mutations/actions.dm for updates //  UPDATE 2/10/18 embedding_behavior.dm is how this is handled
 	obj_integrity = 120
 	max_integrity = 120
 

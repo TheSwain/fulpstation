@@ -10,6 +10,7 @@
 #define UNIQUE_RENAME			(1<<6) // can you customize the description/name of the thing?
 #define USES_TGUI				(1<<7)	//put on things that use tgui on ui_interact instead of custom/old UI.
 #define FROZEN					(1<<8)
+#define BLOCK_Z_FALL			(1<<9) // Should this object block z falling?
 
 // If you add new ones, be sure to add them to /obj/Initialize as well for complete mapping support
 
@@ -27,6 +28,7 @@
 #define IMMUTABLE_SLOW			(1<<10) // When players should not be able to change the slowdown of the item (Speed potions, etc)
 #define IN_STORAGE				(1<<11) //is this item in the storage item, such as backpack? used for tooltips
 #define SURGICAL_TOOL			(1<<12)	//Tool commonly used for surgery: won't attack targets in an active surgical operation on help intent (in case of mistakes)
+#define EYE_STAB				(1<<13) /// Item can be used to eyestab
 
 // Flags for the clothing_flags var on /obj/item/clothing
 
@@ -50,3 +52,5 @@
 #define ORGAN_FAILING			(1<<2)	//Failing organs perform damaging effects until replaced or fixed
 #define ORGAN_EXTERNAL			(1<<3)	//Was this organ implanted/inserted/etc, if true will not be removed during species change.
 #define ORGAN_VITAL				(1<<4)	//Currently only the brain
+#define ORGAN_EDIBLE			(1<<5)	//is a snack? :D
+#define ORGAN_SYNTHETIC_EMP		(1<<6)	//Synthetic organ affected by an EMP. Deteriorates over time.

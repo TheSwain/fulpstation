@@ -44,15 +44,17 @@
 	var/payment_department = ACCOUNT_SEC
 
 /mob/living/simple_animal/bot/secbot/beepsky
-	name = "Officer Beep O'sky"
-	desc = "It's Officer Beep O'sky! Powered by a potato and a shot of whiskey."
+	name = "Commander Beep O'sky"
+	desc = "It's Commander Beep O'sky! Officially the superior officer of all bots on station, Beepsky remains as humble and dedicated to the law as the day he was first fabricated."
 	idcheck = FALSE
 	weaponscheck = FALSE
 	auto_patrol = TRUE
+	commissioned = TRUE
 
 /mob/living/simple_animal/bot/secbot/beepsky/jr
 	name = "Officer Pipsqueak"
-	desc = "It's Officer Beep O'sky's smaller, just-as aggressive cousin, Pipsqueak."
+	desc = "It's Commander Beep O'sky's smaller, just-as aggressive cousin, Pipsqueak."
+	commissioned = FALSE
 
 /mob/living/simple_animal/bot/secbot/beepsky/jr/Initialize()
 	. = ..()
@@ -85,6 +87,9 @@
 	var/datum/atom_hud/secsensor = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
 	secsensor.add_hud_to(src)
 
+	//FULPSTATION BODY CAM NETWORK
+	secbot_register_body_camera()
+
 /mob/living/simple_animal/bot/secbot/Destroy()
 	QDEL_NULL(weapon)
 	return ..()
@@ -107,7 +112,7 @@
 	walk_to(src,0)
 	last_found = world.time
 
-/mob/living/simple_animal/bot/secbot/electrocute_act(shock_damage, source, siemens_coeff = 1, safety = FALSE, override = FALSE, tesla_shock = FALSE, illusion = FALSE, stun = TRUE)//shocks only make him angry
+/mob/living/simple_animal/bot/secbot/electrocute_act(shock_damage, source, siemens_coeff = 1, flags = NONE)//shocks only make him angry
 	if(base_speed < initial(base_speed) + 3)
 		base_speed += 3
 		addtimer(VARSET_CALLBACK(src, base_speed, base_speed - 3), 60)
@@ -172,7 +177,7 @@ Auto Patrol: []"},
 
 /mob/living/simple_animal/bot/secbot/proc/retaliate(mob/living/carbon/human/H)
 	var/judgement_criteria = judgement_criteria()
-	threatlevel = H.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
+	threatlevel = H.assess_threat_fulp(judgement_criteria, src, TRUE, null, weaponcheck=CALLBACK(src, .proc/check_for_weapons)) //FULPSTATION SECBOT FEEDBACK PR -Surrealistik Feb 2020
 	threatlevel += 6
 	if(threatlevel >= 4)
 		target = H
@@ -222,8 +227,8 @@ Auto Patrol: []"},
 		declare_arrests = FALSE
 		update_icon()
 
-/mob/living/simple_animal/bot/secbot/bullet_act(obj/item/projectile/Proj)
-	if(istype(Proj , /obj/item/projectile/beam)||istype(Proj, /obj/item/projectile/bullet))
+/mob/living/simple_animal/bot/secbot/bullet_act(obj/projectile/Proj)
+	if(istype(Proj , /obj/projectile/beam)||istype(Proj, /obj/projectile/bullet))
 		if((Proj.damage_type == BURN) || (Proj.damage_type == BRUTE))
 			if(!Proj.nodamage && Proj.damage < src.health && ishuman(Proj.firer))
 				retaliate(Proj.firer)
@@ -268,11 +273,11 @@ Auto Patrol: []"},
 		playsound(src, "law", 50, FALSE)
 		back_to_idle()
 
-/mob/living/simple_animal/bot/secbot/proc/stun_attack(mob/living/carbon/C, var/harm = FALSE)
+/mob/living/simple_animal/bot/secbot/proc/stun_attack(mob/living/carbon/C, harm = FALSE)
 	var/judgement_criteria = judgement_criteria()
 	playsound(src, 'sound/weapons/egloves.ogg', 50, TRUE, -1)
 	icon_state = "[initial(icon_state)]-c"
-	addtimer(CALLBACK(src, .proc/update_icon), 2)
+	addtimer(CALLBACK(src, /atom/.proc/update_icon), 2)
 	var/threat = 5
 
 	if(harm)
@@ -281,7 +286,7 @@ Auto Patrol: []"},
 		C.stuttering = 5
 		C.Paralyze(100)
 		var/mob/living/carbon/human/H = C
-		threat = H.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
+		threat = H.assess_threat_fulp(judgement_criteria, src, FALSE, null, weaponcheck=CALLBACK(src, .proc/check_for_weapons)) //FULPSTATION SECBOT FEEDBACK PR -Surrealistik Feb 2020
 	else
 		C.Paralyze(100)
 		C.stuttering = 5
@@ -289,10 +294,11 @@ Auto Patrol: []"},
 
 	log_combat(src,C,"stunned")
 	if(declare_arrests)
-		var/area/location = get_area(src)
-		speak("[arrest_type ? "Detaining" : "Arresting"] level [threat] scumbag <b>[C]</b> in [location].", radio_channel)
-	C.visible_message("<span class='danger'>[src] has stunned [C]!</span>",\
-							"<span class='userdanger'>[src] has stunned you!</span>")
+		secbot_declare_arrest_completion(C, threat) //FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Oct 2019; this makes a record of the arrest, including timestamp and location.
+		//var/area/location = get_area(src) // FULP REMOVE
+		//speak("[arrest_type ? "Detaining" : "Arresting"] level [threat] scumbag <b>[C]</b> in [location].", radio_channel)  // FULP REMOVE
+	C.visible_message("<span class='danger'>[src] stuns [C]!</span>",\
+							"<span class='userdanger'>[src] stuns you!</span>")
 
 /mob/living/simple_animal/bot/secbot/handle_automated_action()
 	if(!..())
@@ -413,7 +419,7 @@ Auto Patrol: []"},
 		if((C.name == oldtarget_name) && (world.time < last_found + 100))
 			continue
 
-		threatlevel = C.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
+		fulp_threat_assess_carbon_filter(C, judgement_criteria) //FULPSTATION SECBOT FEEDBACK PR -Surrealistik Feb 2020
 
 		if(!threatlevel)
 			continue
@@ -422,6 +428,9 @@ Auto Patrol: []"},
 			target = C
 			oldtarget_name = C.name
 			speak("Level [threatlevel] infraction alert!")
+			if(declare_arrests) //FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Jan 2020
+				secbot_declare_arrest_attempt(C, threatlevel) //FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Jan 2020
+
 			if(ranged)
 				playsound(src, pick('sound/voice/ed209_20sec.ogg', 'sound/voice/edplaceholder.ogg'), 50, FALSE)
 			else
@@ -435,7 +444,7 @@ Auto Patrol: []"},
 
 /mob/living/simple_animal/bot/secbot/proc/check_for_weapons(var/obj/item/slot_item)
 	if(slot_item && (slot_item.item_flags & NEEDS_PERMIT))
-		return TRUE
+		return slot_item //FULPSTATION SECBOT FEEDBACK PR -Surrealistik Feb 2020
 	return FALSE
 
 /mob/living/simple_animal/bot/secbot/explode()

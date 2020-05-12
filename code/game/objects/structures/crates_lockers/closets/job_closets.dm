@@ -64,7 +64,7 @@
 	new /obj/item/flashlight(src)
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/suit/caution(src)
-	new /obj/item/holosign_creator/janibarrier(src)
+	new /obj/item/holosign_creator(src)
 	new /obj/item/lightreplacer(src)
 	new /obj/item/soap(src)
 	new /obj/item/storage/bag/trash(src)
@@ -111,7 +111,7 @@
 	new /obj/item/clothing/shoes/sneakers/black(src)
 	new /obj/item/clothing/suit/chaplainsuit/nun(src)
 	new /obj/item/clothing/head/nun_hood(src)
-	new /obj/item/clothing/suit/hooded/chaplainsuit/monkfrock(src)
+	new /obj/item/clothing/suit/hooded/chaplainsuit/monkhabit(src)
 	new /obj/item/clothing/suit/chaplainsuit/holidaypriest(src)
 	new /obj/item/storage/backpack/cultpack(src)
 	new /obj/item/storage/fancy/candle_box(src)
@@ -173,8 +173,6 @@
 		/obj/item/clothing/under/rank/engineering/atmospheric_technician = 3,
 		/obj/item/clothing/shoes/sneakers/black = 3)
 	generate_items_inside(items_inside,src)
-	if(prob(20))
-		new /obj/item/book/granter/language_book/ratvarian(src) //FULP
 	return
 
 /obj/structure/closet/wardrobe/engineering_yellow
@@ -193,8 +191,6 @@
 		/obj/item/clothing/shoes/workboots = 3,
 		/obj/item/clothing/head/hardhat = 3)
 	generate_items_inside(items_inside,src)
-	if(prob(10))
-		new /obj/item/book/granter/language_book/ratvarian(src) //FULP
 	return
 
 /obj/structure/closet/wardrobe/white/medical
@@ -214,9 +210,9 @@
 		/obj/item/clothing/under/rank/medical/doctor/purple = 1,
 		/obj/item/clothing/under/rank/medical/doctor = 3,
 		/obj/item/clothing/suit/toggle/labcoat = 3,
-		/obj/item/clothing/suit/toggle/labcoat/emt = 3,
+		/obj/item/clothing/suit/toggle/labcoat/paramedic = 3,
 		/obj/item/clothing/shoes/sneakers/white = 3,
-		/obj/item/clothing/head/soft/emt = 3)
+		/obj/item/clothing/head/soft/paramedic = 3)
 	generate_items_inside(items_inside,src)
 	if(prob(20))
 		new /obj/item/book/granter/language_book/aphasia(src) //FULP
@@ -268,7 +264,7 @@
 
 /obj/structure/closet/wardrobe/genetics_white/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/clothing/under/rank/medical/geneticist = 2,
+		/obj/item/clothing/under/rank/rnd/geneticist = 2,
 		/obj/item/clothing/shoes/sneakers/white = 2,
 		/obj/item/clothing/suit/toggle/labcoat/genetics = 2,
 		/obj/item/storage/backpack/genetics = 2,

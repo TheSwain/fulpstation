@@ -1,7 +1,8 @@
+
 // Plant analyzer
 /obj/item/plant_analyzer
 	name = "plant analyzer"
-	desc = "A scanner used to evaluate a plant's various areas of growth."
+	desc = "A scanner used to evaluate a plant's various areas of growth, and genetic traits."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "hydro"
 	item_state = "analyzer"
@@ -9,7 +10,13 @@
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	slot_flags = ITEM_SLOT_BELT
-	materials = list(/datum/material/iron=30, /datum/material/glass=20)
+	custom_materials = list(/datum/material/iron=30, /datum/material/glass=20)
+	var/scan_mode = PLANT_SCANMODE_STATS
+
+/obj/item/plant_analyzer/attack_self(mob/user)
+	. = ..()
+	scan_mode = !scan_mode
+	to_chat(user, "<span class='notice'>You switch [src] to [scan_mode == PLANT_SCANMODE_CHEMICALS ? "scan for chemical reagents and traits" : "scan for plant growth statistics"].</span>")
 
 // *************************************
 // Hydroponics Tools
@@ -57,7 +64,7 @@
 	force = 5
 	throwforce = 7
 	w_class = WEIGHT_CLASS_SMALL
-	materials = list(/datum/material/iron=50)
+	custom_materials = list(/datum/material/iron=50)
 	attack_verb = list("slashed", "sliced", "cut", "clawed")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
@@ -71,9 +78,21 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "bashed", "clawed")
 	hitsound = null
-	materials = null
+	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 1.5)
 	flags_1 = NONE
 	resistance_flags = FLAMMABLE
+
+/obj/item/cultivator/rake/Crossed(atom/movable/AM)
+	. = ..()
+	if(!ishuman(AM))
+		return
+	var/mob/living/carbon/human/H = AM
+	if(has_gravity(loc) && HAS_TRAIT(H, TRAIT_CLUMSY) && !H.resting)
+		H.confused = max(H.confused, 10)
+		H.Stun(20)
+		playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
+		H.visible_message("<span class='warning'>[H] steps on [src] causing the handle to hit [H.p_them()] right in the face!</span>", \
+						  "<span class='userdanger'>You step on [src] causing the handle to hit you right in the face!</span>")
 
 /obj/item/hatchet
 	name = "hatchet"
@@ -89,7 +108,7 @@
 	throwforce = 15
 	throw_speed = 3
 	throw_range = 4
-	materials = list(/datum/material/iron = 15000)
+	custom_materials = list(/datum/material/iron = 15000)
 	attack_verb = list("chopped", "torn", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = IS_SHARP
@@ -106,7 +125,7 @@
 /obj/item/hatchet/wooden
 	desc = "A crude axe blade upon a short wooden handle."
 	icon_state = "woodhatchet"
-	materials = null
+	custom_materials = null
 	flags_1 = NONE
 
 /obj/item/scythe
@@ -156,6 +175,42 @@
 	swiping = FALSE
 	return TRUE
 
+/obj/item/secateurs
+	name = "secateurs"
+	desc = "It's a tool for cutting grafts off plants."
+	icon = 'icons/obj/hydroponics/equipment.dmi'
+	icon_state = "secateurs"
+	item_state = "secateurs"
+	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/hydroponics_righthand.dmi'
+	flags_1 = CONDUCT_1
+	force = 5
+	throwforce = 6
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_BELT
+	custom_materials = list(/datum/material/iron=4000)
+	attack_verb = list("slashed", "sliced", "cut", "clawed")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+
+/obj/item/geneshears
+	name = "Botanogenetic Plant Shears"
+	desc = "A high tech, high fidelity pair of plant shears, capable of cutting genetic traits out of a plant."
+	icon = 'icons/obj/hydroponics/equipment.dmi'
+	icon_state = "genesheers"
+	item_state = "secateurs"
+	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/hydroponics_righthand.dmi'
+	flags_1 = CONDUCT_1
+	force = 10
+	throwforce = 8
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_BELT
+	material_flags = MATERIAL_NO_EFFECTS
+	custom_materials = list(/datum/material/iron=4000, /datum/material/uranium=1500, /datum/material/gold=500)
+	attack_verb = list("slashed", "sliced", "cut")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+
+
 // *************************************
 // Nutrient defines for hydroponics
 // *************************************
@@ -175,17 +230,17 @@
 
 /obj/item/reagent_containers/glass/bottle/nutrient/ez
 	name = "bottle of E-Z-Nutrient"
-	desc = "Contains a fertilizer that causes mild mutations with each harvest."
+	desc = "Contains a fertilizer that causes mild mutations and gradual plant growth with each harvest."
 	list_reagents = list(/datum/reagent/plantnutriment/eznutriment = 50)
 
 /obj/item/reagent_containers/glass/bottle/nutrient/l4z
 	name = "bottle of Left 4 Zed"
-	desc = "Contains a fertilizer that limits plant yields to no more than one and causes significant mutations in plants."
+	desc = "Contains a fertilizer that lightly heals the plant but causes significant mutations in plants over generations."
 	list_reagents = list(/datum/reagent/plantnutriment/left4zednutriment = 50)
 
 /obj/item/reagent_containers/glass/bottle/nutrient/rh
 	name = "bottle of Robust Harvest"
-	desc = "Contains a fertilizer that increases the yield of a plant by 30% while causing no mutations."
+	desc = "Contains a fertilizer that increases the yield of a plant while gradually preventing mutations."
 	list_reagents = list(/datum/reagent/plantnutriment/robustharvestnutriment = 50)
 
 /obj/item/reagent_containers/glass/bottle/nutrient/empty

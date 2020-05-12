@@ -79,12 +79,12 @@
 
 /obj/machinery/computer/holodeck/power_change()
 	. = ..()
-	toggle_power(!stat)
+	toggle_power(!machine_stat)
 
 /obj/machinery/computer/holodeck/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "holodeck", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, ui_key, "Holodeck", name, ui_x, ui_y, master_ui, state)
 		ui.open()
 
 /obj/machinery/computer/holodeck/ui_data(mob/user)
@@ -109,7 +109,7 @@
 			if(!ispath(program_to_load))
 				return FALSE
 			var/valid = FALSE
-			var/list/checked = program_cache
+			var/list/checked = program_cache.Copy()
 			if(obj_flags & EMAGGED)
 				checked |= emag_programs
 			for(var/prog in checked)
@@ -124,10 +124,11 @@
 			if(A)
 				load_program(A)
 		if("safety")
-			obj_flags ^= EMAGGED
-			if((obj_flags & EMAGGED) && program && emag_programs[program.name])
+			if((obj_flags & EMAGGED) && program)
 				emergency_shutdown()
 			nerf(obj_flags & EMAGGED)
+			obj_flags ^= EMAGGED
+			say("Safeties restored. Restarting...")
 
 /obj/machinery/computer/holodeck/process()
 	if(damaged && prob(10))
@@ -148,7 +149,7 @@
 		for(var/turf/T in linked)
 			if(prob(30))
 				do_sparks(2, 1, T)
-			T.ex_act(EXPLODE_LIGHT)
+			SSexplosions.lowturf += T
 			T.hotspot_expose(1000,500,1)
 
 	if(!(obj_flags & EMAGGED))
@@ -285,7 +286,7 @@
 
 /obj/machinery/computer/holodeck/proc/derez(obj/O, silent = TRUE, forced = FALSE)
 	// Emagging a machine creates an anomaly in the derez systems.
-	if(O && (obj_flags & EMAGGED) && !stat && !forced)
+	if(O && (obj_flags & EMAGGED) && !machine_stat && !forced)
 		if((ismob(O) || ismob(O.loc)) && prob(50))
 			addtimer(CALLBACK(src, .proc/derez, O, silent), 50) // may last a disturbingly long time
 			return

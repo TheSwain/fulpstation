@@ -27,7 +27,7 @@
 						   OFFSET_S_STORE = list(0,2), OFFSET_FACEMASK = list(0,3), OFFSET_HEAD = list(0,3), OFFSET_FACE = list(0,3), OFFSET_BELT = list(0,3), OFFSET_BACK = list(0,2), \
 						   OFFSET_SUIT = list(0,2), OFFSET_NECK = list(0,3))
 
-	skinned_type = /obj/item/reagent_containers/food/snacks/faggot // NO SKIN //  /obj/item/stack/sheet/animalhide/human
+	skinned_type = /obj/item/reagent_containers/food/snacks/meatball // NO SKIN //  /obj/item/stack/sheet/animalhide/human
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab //What the species drops on gibbing
 	toxic_food = DAIRY | PINEAPPLE //NONE
 	disliked_food = VEGETABLES | FRUIT // | FRIED// GROSS | RAW
@@ -88,11 +88,10 @@
 
 	// Speak Russian
 	C.grant_language(/datum/language/russian) // Don't remove on loss. You simply know it.
-	C.selected_default_language = /datum/language/russian
 
 	// Be Spooked but Educated
 	//C.gain_trauma(pick(startTraumas))
-	if (SStraumas.phobia_words && SStraumas.phobia_words.len) // NOTE: ONLY if phobias have been defined! For some reason, sometimes this gets FUCKED??
+	if (SStraumas.phobia_types && SStraumas.phobia_types.len) // NOTE: ONLY if phobias have been defined! For some reason, sometimes this gets FUCKED??
 		C.gain_trauma(/datum/brain_trauma/mild/phobia/strangers)
 		C.gain_trauma(/datum/brain_trauma/mild/hallucinations)
 		C.gain_trauma(/datum/brain_trauma/special/bluespace_prophet/phobetor)
@@ -159,7 +158,7 @@
 	var/searJuices = H.getFireLoss_nonProsthetic() / 10
 
 	// Step 2) Bleed out those juices by warmth, minus burn damage.
-	H.bleed_rate = CLAMP((H.bodytemperature - 285) / 20 - searJuices, 0, 5) // Every 20 points above 285 increases bleed rate. Don't worry, you're cold blooded.
+	H.bleed_rate = clamp((H.bodytemperature - 285) / 20 - searJuices, 0, 5) // Every 20 points above 285 increases bleed rate. Don't worry, you're cold blooded.
 
 	// Step 3) If we're salted, we'll bleed more (it gets reset next tick)
 	if (dehydrate > 0)
@@ -187,7 +186,7 @@
 		if("Security Officer", "Warden", "Detective", "Head of Security", "Deputy")
 			newSash = new /obj/item/clothing/under/bodysash/security()
 		// Medical
-		if("Medical Doctor", "Chemist", "Geneticist", "Virologist", "Chief Medical Officer")
+		if("Medical Doctor", "Chemist", "Geneticist", "Virologist", "Chief Medical Officer", "Paramedic")
 			newSash = new /obj/item/clothing/under/bodysash/medical()
 		// Science
 		if("Scientist", "Roboticist", "Research Director")
@@ -210,9 +209,11 @@
 		// Civilian
 		else
 			newSash = new /obj/item/clothing/under/bodysash/civilian()
-
-	H.equip_to_slot_or_del(newSash, SLOT_W_UNIFORM) // equip_to_slot_or_del
-
+	// Destroy Original Uniform (there probably isn't one though)
+	if (H.w_uniform)
+		qdel(H.w_uniform)
+	// Equip New
+	H.equip_to_slot_or_del(newSash, ITEM_SLOT_ICLOTHING, TRUE) // TRUE is whether or not this is "INITIAL", as in startup
 	return ..()
 
 /datum/species/beefman/after_equip_job(datum/job/J, mob/living/carbon/human/H)
@@ -225,7 +226,6 @@
 	// Remove coat! We don't wear that as a Beefboi
 	if (H.wear_suit)
 		qdel(H.wear_suit)
-
 
 
 /datum/species/beefman/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
@@ -498,10 +498,10 @@
 /obj/item/bodypart/proc/drop_meat(mob/inOwner)
 
 	//Checks tile for cloning pod, if found then limb stays limb. Stops cloner from breaking beefmen making them useless after being cloned.
-	var/turf/T = get_turf(src)
-	for(var/obj/machinery/M in T)
-		if(istype(M,/obj/machinery/clonepod))
-			return FALSE
+	//var/turf/T = get_turf(src)
+	//for(var/obj/machinery/M in T)
+	//	if(istype(M,/obj/machinery/clonepod))
+	//		return FALSE
 
 	// Not Organic? ABORT! Robotic stays robotic, desnt delete and turn to meat.
 	if (status != BODYPART_ORGANIC)
@@ -740,12 +740,15 @@
 
 /datum/brain_trauma/special/bluespace_prophet/phobetor/on_life()
 
+	var/turf/first_turf
+	var/turf/second_turf
+
 	// Make Next Portal
 	if(world.time > next_portal)
-		next_portal = world.time + 100
 
+/*
 		// Round One: Pick a Nearby Turf
-		var/list/turf/possible_turfs = return_valid_floor_in_range(owner, 6, 0, TRUE) // Source, Range, Has Floor
+		var/list/turf/possible_turfs = return_valid_floors_in_range(owner, 6, 0, TRUE) // Source, Range, Has Floor
 		if(!LAZYLEN(possible_turfs))
 			return
 		// First Pick:
@@ -754,7 +757,7 @@
 			return
 
 		// Round Two: Pick an even Further Turf
-		possible_turfs = return_valid_floor_in_range(first_turf, 20, 6, TRUE) // Source, Range, Has Floor
+		possible_turfs = return_valid_floors_in_range(first_turf, 20, 6, TRUE) // Source, Range, Has Floor
 		possible_turfs -= first_turf
 		if(!LAZYLEN(possible_turfs))
 			return
@@ -762,6 +765,22 @@
 		var/turf/second_turf = pick(possible_turfs)
 		if(!second_turf)
 			return
+*/
+
+		// Round One: Pick a Nearby Turf
+		first_turf = return_valid_floor_in_range(owner, 6, 0, TRUE)
+		if (!first_turf)
+			next_portal = world.time + 10
+			return
+
+		// Round Two: Pick an even Further Turf
+		second_turf = return_valid_floor_in_range(first_turf, 20, 6, TRUE)
+		if (!second_turf)
+			next_portal = world.time + 10
+			return
+
+		next_portal = world.time + 100
+
 
 		var/obj/effect/hallucination/simple/phobetor/first = new (first_turf, owner)
 		var/obj/effect/hallucination/simple/phobetor/second = new (second_turf, owner)

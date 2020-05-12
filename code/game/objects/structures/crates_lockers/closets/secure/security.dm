@@ -28,14 +28,12 @@
 	new /obj/item/radio/headset/heads/captain(src)
 	new /obj/item/clothing/glasses/sunglasses/gar/supergar(src)
 	new /obj/item/clothing/gloves/color/captain(src)
-	new /obj/item/restraints/handcuffs/cable/zipties(src)
 	new /obj/item/storage/belt/sabre(src)
 	new /obj/item/gun/energy/e_gun(src)
 	new /obj/item/door_remote/captain(src)
 	new /obj/item/card/id/captains_spare(src)
-	new /obj/item/storage/photo_album/Captain(src)
-	new /obj/item/card/id/departmental_budget/civ(src)
 	new /obj/item/clothing/shoes/digicombat(src) //fulp
+	new /obj/item/storage/photo_album/Captain(src)
 
 /obj/structure/closet/secure_closet/hop
 	name = "\proper head of personnel's locker"
@@ -58,15 +56,14 @@
 	new /obj/item/clothing/suit/armor/vest/alt(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
-	new /obj/item/restraints/handcuffs/cable/zipties(src)
 	new /obj/item/gun/energy/e_gun(src)
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/pet_carrier(src)
-	new /obj/item/door_remote/civillian(src)
+	new /obj/item/door_remote/civilian(src)
 	new /obj/item/circuitboard/machine/techfab/department/service(src)
-	new /obj/item/storage/photo_album/HoP(src)
-	new /obj/item/card/id/departmental_budget/srv(src)
 	new /obj/item/clothing/shoes/laceup/digitigrade(src) //fulp
+	new /obj/item/clothing/suit/hooded/wintercoat/captain/hop(src) // [FULP] [PNX] [PAPRITO]
+	new /obj/item/storage/photo_album/HoP(src)
 
 /obj/structure/closet/secure_closet/hos
 	name = "\proper head of security's locker"
@@ -98,11 +95,10 @@
 	new /obj/item/shield/riot/tele(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/gun/energy/e_gun/hos(src)
-	new /obj/item/flashlight/seclite(src)
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/head(src) // [FULP] [PNX] [PAPRITO]
 	new /obj/item/storage/photo_album/HoS(src)
-	new /obj/item/card/id/departmental_budget/sec(src)
 
 /obj/structure/closet/secure_closet/warden
 	name = "\proper warden's locker"
@@ -128,7 +124,7 @@
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
-	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
+	/*new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src) FULP NOTE: this broke due to undefined type*/
 	new /obj/item/clothing/shoes/jackboots/digitigrade(src) //fulp
 
 /obj/structure/closet/secure_closet/security
@@ -138,18 +134,18 @@
 
 /obj/structure/closet/secure_closet/security/PopulateContents()
 	..()
-	new /obj/item/clothing/suit/armor/vest(src)
+	/*new /obj/item/clothing/suit/armor/vest(src) //FULPSTATION Improved Sec Starter Gear by Surrealistik Oct 2019
 	new /obj/item/clothing/head/helmet/sec(src)
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/radio/headset/headset_sec/alt(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
-	new /obj/item/flashlight/seclite(src)
+	new /obj/item/flashlight/seclite(src)*/ //FULPSTATION Improved Sec Starter Gear by Surrealistik Oct 2019
 
 /obj/structure/closet/secure_closet/security/sec
 
 /obj/structure/closet/secure_closet/security/sec/PopulateContents()
 	..()
-	new /obj/item/storage/belt/security/full(src)
+	// new /obj/item/storage/belt/security/full(src) //FULPSTATION Improved Sec Starter Gear by Surrealistik Oct 2019
 
 /obj/structure/closet/secure_closet/security/cargo
 
@@ -190,7 +186,7 @@
 
 /obj/structure/closet/secure_closet/detective/PopulateContents()
 	..()
-	new /obj/item/clothing/under/rank/security/detective(src)
+	/*new /obj/item/clothing/under/rank/security/detective(src) //FULPSTATION DETECTIVE CLOSET REPLACEMENT by Surrealistik and D4n0w4r APR 2020
 	new /obj/item/clothing/under/rank/security/detective/skirt(src)
 	new /obj/item/clothing/suit/det_suit(src)
 	new /obj/item/clothing/head/fedora/det_hat(src)
@@ -202,6 +198,15 @@
 	new /obj/item/clothing/suit/det_suit/noir(src)
 	new /obj/item/clothing/head/fedora(src)
 	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/clothing/suit/det_suit/disco(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
+	new /obj/item/clothing/suit/det_suit/disco/aerostatic(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
+	new /obj/item/clothing/under/rank/security/detective/disco(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
+	new /obj/item/clothing/under/rank/security/detective/disco/aerostatic(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
+	new /obj/item/clothing/neck/tie/detective/disco_necktie(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
+	new /obj/item/clothing/gloves/color/black/aerostatic_gloves(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
+	new /obj/item/clothing/shoes/sneakers/disco(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
+	new /obj/item/clothing/shoes/jackboots/aerostatic(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
+	new /obj/item/clothing/glasses/sunglasses/disco(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
 	new /obj/item/storage/box/evidence(src)
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/detective_scanner(src)
@@ -209,10 +214,11 @@
 	new /obj/item/holosign_creator/security(src)
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/clothing/suit/armor/vest/det_suit(src)
-	new /obj/item/storage/belt/holster/full(src)
+	new /obj/item/storage/belt/holster/detective/full(src)
 	new /obj/item/pinpointer/crew(src)
-	new /obj/item/twohanded/binoculars(src)
 	new /obj/item/clothing/shoes/laceup/digitigrade(src) //fulp
+	new /obj/item/binoculars(src)
+	new /obj/item/storage/box/rxglasses/spyglasskit(src)*/
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections"
@@ -272,7 +278,7 @@
 
 /obj/structure/closet/secure_closet/armory1/PopulateContents()
 	..()
-	new /obj/item/clothing/suit/armor/laserproof(src)
+	new /obj/item/clothing/suit/hooded/ablative(src)
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/suit/armor/riot(src)
 	for(var/i in 1 to 3)

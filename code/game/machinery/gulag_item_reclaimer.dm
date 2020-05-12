@@ -8,8 +8,8 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 100
 	active_power_usage = 2500
-	ui_x = 455
-	ui_y = 440
+	ui_x = 325
+	ui_y = 400
 	var/list/stored_items = list()
 	var/obj/machinery/gulag_teleporter/linked_teleporter = null
 
@@ -31,7 +31,7 @@
 									datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "gulag_item_reclaimer", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, ui_key, "GulagItemReclaimer", name, ui_x, ui_y, master_ui, state)
 		ui.open()
 
 /obj/machinery/gulag_item_reclaimer/ui_data(mob/user)
@@ -60,20 +60,22 @@
 		mobs += list(mob_info)
 
 	data["mobs"] = mobs
-
-
 	data["can_reclaim"] = can_reclaim
 
 	return data
 
-/obj/machinery/gulag_item_reclaimer/ui_act(action, list/params)
-	if(action != "release_items") //Since we only have one button, this is fine.
+/obj/machinery/gulag_item_reclaimer/ui_act(action, params)
+	if(..())
 		return
-	var/mob/living/carbon/human/H = locate(params["mobref"]) in stored_items
-	if(H != usr && !allowed(usr))
-		to_chat(usr, "<span class='warning'>Access denied.</span>")
-		return
-	drop_items(H)
+
+	switch(action)
+		if("release_items")
+			var/mob/living/carbon/human/H = locate(params["mobref"]) in stored_items
+			if(H != usr && !allowed(usr))
+				to_chat(usr, "<span class='warning'>Access denied.</span>")
+				return
+			drop_items(H)
+			. = TRUE
 
 /obj/machinery/gulag_item_reclaimer/proc/drop_items(mob/user)
 	if(!stored_items[user])

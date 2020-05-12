@@ -10,6 +10,7 @@ GLOBAL_LIST_EMPTY(navbeacons)					    //list of all bot nagivation beacons, used
 GLOBAL_LIST_EMPTY(teleportbeacons)			        //list of all tracking beacons used by teleporters
 GLOBAL_LIST_EMPTY(deliverybeacons)			        //list of all MULEbot delivery beacons.
 GLOBAL_LIST_EMPTY(deliverybeacontags)			    //list of all tags associated with delivery beacons.
+GLOBAL_LIST_EMPTY(wayfindingbeacons)			    //list of all navigation beacons used by wayfinding pinpointers
 GLOBAL_LIST_EMPTY(nuke_list)
 GLOBAL_LIST_EMPTY(alarmdisplay)				        //list of all machines or programs that can display station alerts
 GLOBAL_LIST_EMPTY(singularities)				    //list of all singularities on the station (actually technically all engines)
@@ -31,6 +32,8 @@ GLOBAL_LIST_EMPTY(meteor_list)				// List of all meteors.
 GLOBAL_LIST_EMPTY(active_jammers)             // List of active radio jammers
 GLOBAL_LIST_EMPTY(ladders)
 GLOBAL_LIST_EMPTY(trophy_cases)
+///This is a global list of all signs you can change an existing sign or new sign backing to, when using a pen on them.
+GLOBAL_LIST_EMPTY(editable_sign_types)
 
 GLOBAL_LIST_EMPTY(wire_color_directory)
 GLOBAL_LIST_EMPTY(wire_name_directory)

@@ -25,7 +25,7 @@
 	if(!target.stat)
 		to_chat(src, "<span class='revennotice'>[target.p_their(TRUE)] soul is too strong to harvest.</span>")
 		if(prob(10))
-			to_chat(target, "You feel as if you are being watched.")
+			to_chat(target, "<span class='revennotice'>You feel as if you are being watched.</span>")
 		return
 	face_atom(target)
 	draining = TRUE
@@ -216,7 +216,7 @@
 			continue
 		L.Beam(M,icon_state="purple_lightning",time=5)
 		if(!M.anti_magic_check(FALSE, TRUE))
-			M.electrocute_act(shock_damage, L, safety=TRUE)
+			M.electrocute_act(shock_damage, L, flags = SHOCK_NOGLOVES)
 		do_sparks(4, FALSE, M)
 		playsound(M, 'sound/machines/defib_zap.ogg', 50, TRUE, -1)
 
@@ -310,9 +310,6 @@
 			if(prob(50))
 				new /obj/effect/temp_visual/revenant(thing.loc)
 			thing.emag_act(null)
-		else
-			if(!istype(thing, /obj/machinery/clonepod)) //I hate everything but mostly the fact there's no better way to do this without just not affecting it at all
-				thing.emp_act(EMP_HEAVY)
 	for(var/mob/living/silicon/robot/S in T) //Only works on cyborgs, not AI
 		playsound(S, 'sound/machines/warning-buzzer.ogg', 50, TRUE)
 		new /obj/effect/temp_visual/revenant(S.loc)

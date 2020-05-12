@@ -26,7 +26,7 @@
 #define ACCESS_AI_UPLOAD 16
 #define ACCESS_TELEPORTER 17
 #define ACCESS_EVA 18
-/// Bridge, EVA storage windoors, gateway shutters, AI integrity restorer, clone record deletion, comms console
+/// Bridge, EVA storage windoors, gateway shutters, AI integrity restorer, comms console
 #define ACCESS_HEADS 19
 #define ACCESS_CAPTAIN 20
 #define ACCESS_ALL_PERSONAL_LOCKERS 21
@@ -41,6 +41,7 @@
 #define ACCESS_RD 30
 #define ACCESS_CARGO 31
 #define ACCESS_CONSTRUCTION 32
+///Allows access to chemistry factory areas on compatible maps
 #define ACCESS_CHEMISTRY 33
 #define ACCESS_HYDROPONICS 35
 #define ACCESS_LIBRARY 37
@@ -76,8 +77,9 @@
 #define ACCESS_WEAPONS 66
 /// NTnet diagnostics/monitoring software
 #define ACCESS_NETWORK 67
-/// Cloning room and clone pod ejection
-#define ACCESS_CLONING 68
+/// Pharmacy access (Chemistry room in Medbay)
+#define ACCESS_PHARMACY 69 ///Nice.
+#define ACCESS_PSYCHOLOGY 70
 
 	//BEGIN CENTCOM ACCESS
 	/*Should leave plenty of room if we need to add more access levels.
@@ -128,8 +130,6 @@
 
 	//Special, for anything that's basically internal
 #define ACCESS_BLOODCULT 250
-#define ACCESS_CLOCKCULT 251
-
 
 	// Mech Access, allows maintanenace of internal components and altering keycard requirements.
 #define ACCESS_MECH_MINING 300

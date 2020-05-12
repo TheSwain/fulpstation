@@ -7,7 +7,7 @@
 
 	// LISTS //
 	var/list/vassal_allowed_antags = list(/datum/antagonist/brother, /datum/antagonist/traitor, /datum/antagonist/traitor/internal_affairs, /datum/antagonist/survivalist, \
-										  /datum/antagonist/rev, /datum/antagonist/nukeop, /datum/antagonist/pirate, /datum/antagonist/cult, /datum/antagonist/clockcult, /datum/antagonist/abductee)
+										  /datum/antagonist/rev, /datum/antagonist/nukeop, /datum/antagonist/pirate, /datum/antagonist/cult, /datum/antagonist/abductee)
 	// The antags you're allowed to be if turning Vassal.
 
 /datum/game_mode/bloodsucker
@@ -43,7 +43,7 @@
 		restricted_jobs += "Assistant"
 
 	// Set number of Vamps
-	recommended_enemies = CLAMP(round(num_players()/10), 1, 6);
+	recommended_enemies = clamp(round(num_players()/10), 1, 6);
 
 	// Select Antags
 	for(var/i = 0, i < recommended_enemies, i++)

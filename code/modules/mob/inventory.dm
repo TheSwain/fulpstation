@@ -1,7 +1,7 @@
 //These procs handle putting s tuff in your hands
 //as they handle all relevant stuff like adding it to the player's screen and updating their overlays.
 
-//Returns the thing we're currently holding
+///Returns the thing we're currently holding
 /mob/proc/get_active_held_item()
 	return get_item_for_held_index(active_hand_index)
 
@@ -136,7 +136,7 @@
 
 //Returns if a certain item can be equipped to a certain slot.
 // Currently invalid for two-handed items - call obj/item/mob_can_equip() instead.
-/mob/proc/can_equip(obj/item/I, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
+/mob/proc/can_equip(obj/item/I, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE, swap = FALSE)
 	return FALSE
 
 /mob/proc/can_put_in_hand(I, hand_index)
@@ -160,7 +160,7 @@
 		held_items[hand_index] = I
 		I.layer = ABOVE_HUD_LAYER
 		I.plane = ABOVE_HUD_PLANE
-		I.equipped(src, SLOT_HANDS)
+		I.equipped(src, ITEM_SLOT_HANDS)
 		if(I.pulledby)
 			I.pulledby.stop_pulling()
 		update_inv_hands()
@@ -273,27 +273,28 @@
   * * Will pass FALSE if the item can not be dropped due to TRAIT_NODROP via doUnEquip()
   * If the item can be dropped, it will be forceMove()'d to the ground and the turf's Entered() will be called.
 */
-/mob/proc/dropItemToGround(obj/item/I, force = FALSE)
-	. = doUnEquip(I, force, drop_location(), FALSE)
+/mob/proc/dropItemToGround(obj/item/I, force = FALSE, silent = FALSE)
+	. = doUnEquip(I, force, drop_location(), FALSE, silent = silent)
 	if(. && I) //ensure the item exists and that it was dropped properly.
 		I.pixel_x = rand(-6,6)
 		I.pixel_y = rand(-6,6)
 
 //for when the item will be immediately placed in a loc other than the ground
-/mob/proc/transferItemToLoc(obj/item/I, newloc = null, force = FALSE)
-	return doUnEquip(I, force, newloc, FALSE)
+/mob/proc/transferItemToLoc(obj/item/I, newloc = null, force = FALSE, silent = TRUE)
+	return doUnEquip(I, force, newloc, FALSE, silent = silent)
 
 //visibly unequips I but it is NOT MOVED AND REMAINS IN SRC
 //item MUST BE FORCEMOVE'D OR QDEL'D
 /mob/proc/temporarilyRemoveItemFromInventory(obj/item/I, force = FALSE, idrop = TRUE)
-	return doUnEquip(I, force, null, TRUE, idrop)
+	return doUnEquip(I, force, null, TRUE, idrop, silent = TRUE)
 
 //DO NOT CALL THIS PROC
 //use one of the above 3 helper procs
 //you may override it, but do not modify the args
-/mob/proc/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE) //Force overrides TRAIT_NODROP for things like wizarditis and admin undress.
+/mob/proc/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent = FALSE) //Force overrides TRAIT_NODROP for things like wizarditis and admin undress.
 													//Use no_move if the item is just gonna be immediately moved afterward
 													//Invdrop is used to prevent stuff in pockets dropping. only set to false if it's going to immediately be replaced
+	PROTECTED_PROC(TRUE)
 	if(!I) //If there's nothing to drop, the drop is automatically succesfull. If(unEquip) should generally be used to check for TRAIT_NODROP.
 		return TRUE
 
@@ -315,7 +316,7 @@
 				I.moveToNullspace()
 			else
 				I.forceMove(newloc)
-		I.dropped(src)
+		I.dropped(src, silent)
 	return TRUE
 
 //Outdated but still in use apparently. This should at least be a human proc.
@@ -380,31 +381,31 @@
 			hidden_slots |= I.transparent_protection
 
 	if(hidden_slots & HIDENECK)
-		obscured |= SLOT_NECK
+		obscured |= ITEM_SLOT_NECK
 	if(hidden_slots & HIDEMASK)
-		obscured |= SLOT_WEAR_MASK
+		obscured |= ITEM_SLOT_MASK
 	if(hidden_slots & HIDEEYES)
-		obscured |= SLOT_GLASSES
+		obscured |= ITEM_SLOT_EYES
 	if(hidden_slots & HIDEEARS)
-		obscured |= SLOT_EARS
+		obscured |= ITEM_SLOT_EARS
 	if(hidden_slots & HIDEGLOVES)
-		obscured |= SLOT_GLOVES
+		obscured |= ITEM_SLOT_GLOVES
 	if(hidden_slots & HIDEJUMPSUIT)
-		obscured |= SLOT_W_UNIFORM
+		obscured |= ITEM_SLOT_ICLOTHING
 	if(hidden_slots & HIDESHOES)
-		obscured |= SLOT_SHOES
+		obscured |= ITEM_SLOT_FEET
 	if(hidden_slots & HIDESUITSTORAGE)
-		obscured |= SLOT_S_STORE
+		obscured |= ITEM_SLOT_SUITSTORE
 
 	return obscured
 
 
-/obj/item/proc/equip_to_best_slot(mob/M)
+/obj/item/proc/equip_to_best_slot(mob/M, swap=FALSE)
 	if(src != M.get_active_held_item())
 		to_chat(M, "<span class='warning'>You are not holding anything to equip!</span>")
 		return FALSE
 
-	if(M.equip_to_appropriate_slot(src))
+	if(M.equip_to_appropriate_slot(src, swap))
 		M.update_inv_hands()
 		return TRUE
 	else
@@ -414,7 +415,7 @@
 	if(M.active_storage && M.active_storage.parent && SEND_SIGNAL(M.active_storage.parent, COMSIG_TRY_STORAGE_INSERT, src,M))
 		return TRUE
 
-	var/list/obj/item/possible = list(M.get_inactive_held_item(), M.get_item_by_slot(SLOT_BELT), M.get_item_by_slot(SLOT_GENERC_DEXTROUS_STORAGE), M.get_item_by_slot(SLOT_BACK))
+	var/list/obj/item/possible = list(M.get_inactive_held_item(), M.get_item_by_slot(ITEM_SLOT_BELT), M.get_item_by_slot(ITEM_SLOT_DEX_STORAGE), M.get_item_by_slot(ITEM_SLOT_BACK))
 	for(var/i in possible)
 		if(!i)
 			continue
@@ -434,12 +435,24 @@
 	if (I)
 		I.equip_to_best_slot(src)
 
+/mob/verb/equipment_swap()
+	set name = "equipment-swap"
+	set hidden = 1
+
+	var/obj/item/I = get_active_held_item()
+	if (I)
+		if(!do_after(src, 1 SECONDS, target = I))
+			to_chat(src, "<span class='warning'>You fumble with your equipment, accidentally dropping it on the floor!</span>")
+			dropItemToGround(I)
+			return
+		I.equip_to_best_slot(src, TRUE)
+
 //used in code for items usable by both carbon and drones, this gives the proper back slot for each mob.(defibrillator, backpack watertank, ...)
 /mob/proc/getBackSlot()
-	return SLOT_BACK
+	return ITEM_SLOT_BACK
 
 /mob/proc/getBeltSlot()
-	return SLOT_BELT
+	return ITEM_SLOT_BELT
 
 
 

@@ -11,7 +11,6 @@
 	var/list/datum/mood_event/mood_events = list()
 	var/insanity_effect = 0 //is the owner being punished for low mood? If so, how much?
 	var/obj/screen/mood/screen_obj
-	var/obj/screen/sanity/screen_obj_sanity
 
 /datum/component/mood/Initialize()
 	if(!isliving(parent))
@@ -43,8 +42,8 @@
 		RegisterSignal(parent, COMSIG_ADD_MOOD_EVENT_RND, .proc/add_event) //Mood events that are only for RnD members
 
 /datum/component/mood/proc/print_mood(mob/user)
-	var/msg = "<span class='info'>*---------*\n<EM>Your current mood</EM>\n"
-	msg += "<span class='notice'>My mental status: </span>" //Long term
+	var/msg = "<span class='info'>*---------*\n<EM>My current mental status:</EM></span>\n"
+	msg += "<span class='notice'>My current sanity: </span>" //Long term
 	switch(sanity)
 		if(SANITY_GREAT to INFINITY)
 			msg += "<span class='nicegreen'>My mind feels like a temple!</span>\n"
@@ -87,7 +86,7 @@
 			msg += event.description
 	else
 		msg += "<span class='nicegreen'>I don't have much of a reaction to anything right now.</span>\n"
-	to_chat(user || parent, msg)
+	to_chat(user, msg)
 
 ///Called after moodevent/s have been added/removed.
 /datum/component/mood/proc/update_mood()
@@ -144,37 +143,28 @@
 			if(absmood > highest_absolute_mood)
 				highest_absolute_mood = absmood
 
+	switch(sanity_level)
+		if(1)
+			screen_obj.color = "#2eeb9a"
+		if(2)
+			screen_obj.color = "#86d656"
+		if(3)
+			screen_obj.color = "#4b96c4"
+		if(4)
+			screen_obj.color = "#dfa65b"
+		if(5)
+			screen_obj.color = "#f38943"
+		if(6)
+			screen_obj.color = "#f15d36"
+
 	if(!conflicting_moodies.len) //no special icons- go to the normal icon states
-		if(sanity < 25)
-			screen_obj.icon_state = "mood_insane"
-		else
-			screen_obj.icon_state = "mood[mood_level]"
-		screen_obj_sanity.icon_state = "sanity[sanity_level]"
+		screen_obj.icon_state = "mood[mood_level]"
 		return
 
 	for(var/i in conflicting_moodies)
 		var/datum/mood_event/event = i
 		if(abs(event.mood_change) == highest_absolute_mood)
 			screen_obj.icon_state = "[event.special_screen_obj]"
-			switch(mood_level)
-				if(1)
-					screen_obj.color = "#747690"
-				if(2)
-					screen_obj.color = "#f15d36"
-				if(3)
-					screen_obj.color = "#f38a43"
-				if(4)
-					screen_obj.color = "#dfa65b"
-				if(5)
-					screen_obj.color = "#4b96c4"
-				if(6)
-					screen_obj.color = "#a8d259"
-				if(7)
-					screen_obj.color = "#86d656"
-				if(8)
-					screen_obj.color = "#30dd26"
-				if(9)
-					screen_obj.color = "#2eeb9a"
 			break
 
 ///Called on SSmood process
@@ -202,15 +192,12 @@
 
 ///Sets sanity to the specified amount and applies effects.
 /datum/component/mood/proc/setSanity(amount, minimum=SANITY_INSANE, maximum=SANITY_GREAT, override = FALSE)
-	// If we're out of the acceptable minimum-maximum range move back towards it in steps of 0.5
+	// If we're out of the acceptable minimum-maximum range move back towards it in steps of 0.7
 	// If the new amount would move towards the acceptable range faster then use it instead
 	if(amount < minimum)
-		amount += CLAMP(minimum - sanity, 0, 0.7)
-	else
-		if(!override && HAS_TRAIT(parent, TRAIT_UNSTABLE))
-			maximum = sanity
-		if(amount > maximum)
-			amount = max(maximum, sanity)
+		amount += clamp(minimum - amount, 0, 0.7)
+	if((!override && HAS_TRAIT(parent, TRAIT_UNSTABLE)) || amount > maximum)
+		amount = min(sanity, amount)
 	if(amount == sanity) //Prevents stuff from flicking around.
 		return
 	sanity = amount
@@ -218,27 +205,27 @@
 	switch(sanity)
 		if(SANITY_INSANE to SANITY_CRAZY)
 			setInsanityEffect(MAJOR_INSANITY_PEN)
-			master.add_movespeed_modifier(MOVESPEED_ID_SANITY, TRUE, 100, override=TRUE, multiplicative_slowdown=1, movetypes=(~FLYING))
+			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/insane)
 			sanity_level = 6
 		if(SANITY_CRAZY to SANITY_UNSTABLE)
 			setInsanityEffect(MINOR_INSANITY_PEN)
-			master.add_movespeed_modifier(MOVESPEED_ID_SANITY, TRUE, 100, override=TRUE, multiplicative_slowdown=0.5, movetypes=(~FLYING))
+			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/crazy)
 			sanity_level = 5
 		if(SANITY_UNSTABLE to SANITY_DISTURBED)
 			setInsanityEffect(0)
-			master.add_movespeed_modifier(MOVESPEED_ID_SANITY, TRUE, 100, override=TRUE, multiplicative_slowdown=0.25, movetypes=(~FLYING))
+			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/disturbed)
 			sanity_level = 4
 		if(SANITY_DISTURBED to SANITY_NEUTRAL)
 			setInsanityEffect(0)
-			master.remove_movespeed_modifier(MOVESPEED_ID_SANITY, TRUE)
+			master.remove_movespeed_modifier(MOVESPEED_ID_SANITY)
 			sanity_level = 3
 		if(SANITY_NEUTRAL+1 to SANITY_GREAT+1) //shitty hack but +1 to prevent it from responding to super small differences
 			setInsanityEffect(0)
-			master.remove_movespeed_modifier(MOVESPEED_ID_SANITY, TRUE)
+			master.remove_movespeed_modifier(MOVESPEED_ID_SANITY)
 			sanity_level = 2
 		if(SANITY_GREAT+1 to INFINITY)
 			setInsanityEffect(0)
-			master.remove_movespeed_modifier(MOVESPEED_ID_SANITY, TRUE)
+			master.remove_movespeed_modifier(MOVESPEED_ID_SANITY)
 			sanity_level = 1
 	update_mood_icon()
 
@@ -297,9 +284,8 @@
 	var/mob/living/owner = parent
 	var/datum/hud/hud = owner.hud_used
 	screen_obj = new
-	screen_obj_sanity = new
+	screen_obj.color = "#4b96c4"
 	hud.infodisplay += screen_obj
-	hud.infodisplay += screen_obj_sanity
 	RegisterSignal(hud, COMSIG_PARENT_QDELETING, .proc/unmodify_hud)
 	RegisterSignal(screen_obj, COMSIG_CLICK, .proc/hud_click)
 
@@ -310,11 +296,11 @@
 	var/datum/hud/hud = owner.hud_used
 	if(hud && hud.infodisplay)
 		hud.infodisplay -= screen_obj
-		hud.infodisplay -= screen_obj_sanity
 	QDEL_NULL(screen_obj)
-	QDEL_NULL(screen_obj_sanity)
 
 /datum/component/mood/proc/hud_click(datum/source, location, control, params, mob/user)
+	if(user != parent)
+		return
 	print_mood(user)
 
 /datum/component/mood/proc/HandleNutrition()
@@ -351,12 +337,39 @@
 			clear_event(null, "charge")
 		if(ETHEREAL_CHARGE_ALMOSTFULL to ETHEREAL_CHARGE_FULL)
 			add_event(null, "charge", /datum/mood_event/charged)
+		if(ETHEREAL_CHARGE_FULL to ETHEREAL_CHARGE_OVERLOAD)
+			add_event(null, "charge", /datum/mood_event/overcharged)
+		if(ETHEREAL_CHARGE_OVERLOAD to ETHEREAL_CHARGE_DANGEROUS)
+			add_event(null, "charge", /datum/mood_event/supercharged)
 
-/datum/component/mood/proc/check_area_mood(datum/source, var/area/A)
+/datum/component/mood/proc/check_area_mood(datum/source, area/A)
+	update_beauty(A)
 	if(A.mood_bonus)
 		add_event(null, "area", /datum/mood_event/area, A.mood_bonus, A.mood_message)
 	else
 		clear_event(null, "area")
+
+/datum/component/mood/proc/update_beauty(area/A)
+	if(A.outdoors) //if we're outside, we don't care.
+		clear_event(null, "area_beauty")
+		return FALSE
+	if(HAS_TRAIT(parent, TRAIT_SNOB))
+		switch(A.beauty)
+			if(-INFINITY to BEAUTY_LEVEL_HORRID)
+				add_event(null, "area_beauty", /datum/mood_event/horridroom)
+				return
+			if(BEAUTY_LEVEL_HORRID to BEAUTY_LEVEL_BAD)
+				add_event(null, "area_beauty", /datum/mood_event/badroom)
+				return
+	switch(A.beauty)
+		if(BEAUTY_LEVEL_BAD to BEAUTY_LEVEL_DECENT)
+			clear_event(null, "area_beauty")
+		if(BEAUTY_LEVEL_DECENT to BEAUTY_LEVEL_GOOD)
+			add_event(null, "area_beauty", /datum/mood_event/decentroom)
+		if(BEAUTY_LEVEL_GOOD to BEAUTY_LEVEL_GREAT)
+			add_event(null, "area_beauty", /datum/mood_event/goodroom)
+		if(BEAUTY_LEVEL_GREAT to INFINITY)
+			add_event(null, "area_beauty", /datum/mood_event/greatroom)
 
 ///Called when parent is ahealed.
 /datum/component/mood/proc/on_revive(datum/source, full_heal)

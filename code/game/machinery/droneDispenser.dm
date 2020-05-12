@@ -11,7 +11,7 @@
 	density = TRUE
 
 	max_integrity = 250
-	integrity_failure = 80
+	integrity_failure = 0.33
 
 	// These allow for different icons when creating custom dispensers
 	var/icon_off = "off"
@@ -85,6 +85,17 @@
 	power_used = 2000
 	starting_amount = 10000
 
+// If the derelict gets lonely, make more friends.
+/obj/machinery/droneDispenser/derelict
+	name = "derelict drone shell dispenser"
+	desc = "A rusty machine that, when supplied with metal and glass, will periodically create a derelict drone shell. Does not need to be manually operated."
+	dispense_type = /obj/effect/mob_spawn/drone/derelict
+	end_create_message = "dispenses a derelict drone shell."
+	metal_cost = 10000
+	glass_cost = 5000
+	starting_amount = 0
+	cooldownTime = 600
+
 // An example of a custom drone dispenser.
 // This one requires no materials and creates basic hivebots
 /obj/machinery/droneDispenser/hivebot
@@ -130,12 +141,12 @@
 
 /obj/machinery/droneDispenser/examine(mob/user)
 	. = ..()
-	if((mode == DRONE_RECHARGING) && !stat && recharging_text)
+	if((mode == DRONE_RECHARGING) && !machine_stat && recharging_text)
 		. += "<span class='warning'>[recharging_text]</span>"
 
 /obj/machinery/droneDispenser/process()
 	..()
-	if((stat & (NOPOWER|BROKEN)) || !anchored)
+	if((machine_stat & (NOPOWER|BROKEN)) || !anchored)
 		return
 
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
@@ -191,8 +202,8 @@
 		if(istype(a, dispense_type))
 			.++
 
-/obj/machinery/droneDispenser/update_icon()
-	if(stat & (BROKEN|NOPOWER))
+/obj/machinery/droneDispenser/update_icon_state()
+	if(machine_stat & (BROKEN|NOPOWER))
 		icon_state = icon_off
 	else if(mode == DRONE_RECHARGING)
 		icon_state = icon_recharging
@@ -209,7 +220,7 @@
 		to_chat(user, "<span class='notice'>You retrieve the materials from [src].</span>")
 
 	else if(I.tool_behaviour == TOOL_WELDER)
-		if(!(stat & BROKEN))
+		if(!(machine_stat & BROKEN))
 			to_chat(user, "<span class='warning'>[src] doesn't need repairs.</span>")
 			return
 
@@ -227,7 +238,7 @@
 			"<span class='notice'>[user] fixes [src]!</span>",
 			"<span class='notice'>You restore [src] to operation.</span>")
 
-		stat &= ~BROKEN
+		machine_stat &= ~BROKEN
 		obj_integrity = max_integrity
 		update_icon()
 	else

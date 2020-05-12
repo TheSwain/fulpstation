@@ -27,7 +27,7 @@
 /obj/item/melee/transforming/energy/add_blood_DNA(list/blood_dna)
 	return FALSE
 
-/obj/item/melee/transforming/energy/is_sharp()
+/obj/item/melee/transforming/energy/get_sharpness()
 	return active * sharpness
 
 /obj/item/melee/transforming/energy/process()
@@ -45,7 +45,7 @@
 			STOP_PROCESSING(SSobj, src)
 			set_light(0)
 
-/obj/item/melee/transforming/energy/is_hot()
+/obj/item/melee/transforming/energy/get_temperature()
 	return active * heat
 
 /obj/item/melee/transforming/energy/ignition_effect(atom/A, mob/user)
@@ -99,7 +99,7 @@
 	throw_speed = 3
 	throw_range = 5
 	sharpness = IS_SHARP
-	embedding = list("embed_chance" = 75, "embedded_impact_pain_multiplier" = 10)
+	embedding = list("embed_chance" = 75, "impact_pain_mult" = 10)
 	armour_penetration = 35
 	block_chance = 50
 
@@ -107,17 +107,18 @@
 	. = ..()
 	if(. && active && sword_color)
 		icon_state = "sword[sword_color]"
+	spark_setup() //FULPSTATION Chaplain Starter Sith PR by Surrealistik Jan 2020; cool spark SFX if it deflects.
 
 /obj/item/melee/transforming/energy/sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(active)
-		return ..()
+		return deflect_check(owner, hitby, attack_text, final_block_chance, damage, attack_type) //FULPSTATION Chaplain Starter Sith PR by Surrealistik Jan 2020; grants bonus block chance if has Sith training.
 	return 0
 
 /obj/item/melee/transforming/energy/sword/cyborg
 	sword_color = "red"
 	var/hitcost = 50
 
-/obj/item/melee/transforming/energy/sword/cyborg/attack(mob/M, var/mob/living/silicon/robot/R)
+/obj/item/melee/transforming/energy/sword/cyborg/attack(mob/M, mob/living/silicon/robot/R)
 	if(R.cell)
 		var/obj/item/stock_parts/cell/C = R.cell
 		if(active && !(C.use(hitcost)))
@@ -140,6 +141,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = IS_SHARP
 	light_color = "#40ceff"
+	tool_behaviour = TOOL_SAW
+	toolspeed = 0.7 //faster as a saw
 
 /obj/item/melee/transforming/energy/sword/cyborg/saw/cyborg_unequip(mob/user)
 	if(!active)

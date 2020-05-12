@@ -10,6 +10,7 @@
 	maturation = 5
 	production = 5
 	yield = 2
+	instability = 20
 	growthstages = 5
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_grow = "cocoapod-grow"
@@ -79,6 +80,7 @@
 	trash = /obj/item/reagent_containers/food/snacks/grown/bungopit
 	filling_color = "#E8C22F"
 	foodtype = FRUIT
+	juice_results = list(/datum/reagent/consumable/bungojuice = 0)
 	tastes = list("bungo" = 2, "tropical fruitiness" = 1)
 	distill_reagent = null
 

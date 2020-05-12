@@ -41,9 +41,11 @@
 	else
 		return ..()
 
-/obj/item/grenade/c4/prime()
+/obj/item/grenade/c4/prime(mob/living/lanced_by)
 	if(QDELETED(src))
 		return
+
+	. = ..()
 	var/turf/location
 	if(target)
 		if(!QDELETED(target))
@@ -67,12 +69,12 @@
 
 /obj/item/grenade/c4/attack_self(mob/user)
 	var/newtime = input(usr, "Please set the timer.", "Timer", 10) as num|null
-	
+
 	if (isnull(newtime))
 		return
 
 	if(user.get_active_held_item() == src)
-		newtime = CLAMP(newtime, 10, 60000)
+		newtime = clamp(newtime, 10, 60000)
 		det_time = newtime
 		to_chat(user, "Timer set for [det_time] seconds.")
 
@@ -100,7 +102,9 @@
 			var/obj/item/I = AM
 			I.throw_speed = max(1, (I.throw_speed - 3))
 			I.throw_range = max(1, (I.throw_range - 3))
-			I.embedding = I.embedding.setRating(embed_chance = 0)
+			if(I.embedding)
+				I.embedding["embed_chance"] = 0
+				I.updateEmbedding()
 		else if(istype(AM, /mob/living))
 			plastic_overlay.layer = FLOAT_LAYER
 
@@ -120,8 +124,6 @@
 			message_say = "FOR THE HIVE!"
 		else if(UM.has_antag_datum(/datum/antagonist/cult))
 			message_say = "FOR NAR'SIE!"
-		else if(UM.has_antag_datum(/datum/antagonist/clockcult))
-			message_say = "FOR RATVAR!"
 		else if(UM.has_antag_datum(/datum/antagonist/rev))
 			message_say = "VIVA LA REVOLUTION!"
 		else if(UM.has_antag_datum(/datum/antagonist/brother))

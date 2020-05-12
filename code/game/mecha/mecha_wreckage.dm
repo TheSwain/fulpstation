@@ -63,7 +63,7 @@
 		return
 	var/type = pick(welder_salvage)
 	var/N = new type(get_turf(user))
-	user.visible_message("[user] cuts [N] from [src].", "<span class='notice'>You cut [N] from [src].</span>")
+	user.visible_message("<span class='notice'>[user] cuts [N] from [src].</span>", "<span class='notice'>You cut [N] from [src].</span>")
 	if(!istype(N, /obj/item/stack))
 		welder_salvage -= type
 	salvage_num--
@@ -75,7 +75,7 @@
 		to_chat(user, "<span class='notice'>You don't see anything that can be cut with [I]!</span>")
 		return
 	var/N = new /obj/item/stack/cable_coil(get_turf(user), rand(1,3))
-	user.visible_message("[user] cuts [N] from [src].", "<span class='notice'>You cut [N] from [src].</span>")
+	user.visible_message("<span class='notice'>[user] cuts [N] from [src].</span>", "<span class='notice'>You cut [N] from [src].</span>")
 	wires_removed = TRUE
 
 /obj/structure/mecha_wreckage/crowbar_act(mob/living/user, obj/item/I)
@@ -103,7 +103,7 @@
 	AI.forceMove(card) //Move the dead AI to the card.
 	card.AI = AI
 	if(AI.client) //AI player is still in the dead AI and is connected
-		to_chat(AI, "The remains of your file system have been recovered on a mobile storage device.")
+		to_chat(AI, "<span class='notice'>The remains of your file system have been recovered on a mobile storage device.</span>")
 	else //Give the AI a heads-up that it is probably going to get fixed.
 		AI.notify_ghost_cloning("You have been recovered from the wreckage!", source = card)
 	to_chat(user, "<span class='boldnotice'>Backup files recovered</span>: [AI.name] ([rand(1000,9999)].exe) salvaged from [name] and stored within local memory.")
@@ -147,7 +147,8 @@
 /obj/structure/mecha_wreckage/ripley
 	name = "\improper Ripley wreckage"
 	icon_state = "ripley-broken"
-	parts = list(/obj/item/mecha_parts/part/ripley_torso,
+	parts = list(
+				/obj/item/mecha_parts/part/ripley_torso,
 				/obj/item/mecha_parts/part/ripley_left_arm,
 				/obj/item/mecha_parts/part/ripley_right_arm,
 				/obj/item/mecha_parts/part/ripley_left_leg,
@@ -157,15 +158,15 @@
 	name = "\improper Ripley MK-II wreckage"
 	icon_state = "ripleymkii-broken"
 
-/obj/structure/mecha_wreckage/ripley/firefighter
-	name = "\improper Firefighter wreckage"
-	icon_state = "firefighter-broken"
-	parts = list(/obj/item/mecha_parts/part/ripley_torso,
-				/obj/item/mecha_parts/part/ripley_left_arm,
-				/obj/item/mecha_parts/part/ripley_right_arm,
-				/obj/item/mecha_parts/part/ripley_left_leg,
-				/obj/item/mecha_parts/part/ripley_right_leg,
-				/obj/item/clothing/suit/fire)
+/obj/structure/mecha_wreckage/clarke
+	name = "\improper Clarke wreckage"
+	icon_state = "clarke-broken"
+	parts = list(
+				/obj/item/mecha_parts/part/clarke_torso,
+				/obj/item/mecha_parts/part/clarke_head,
+				/obj/item/mecha_parts/part/clarke_left_arm,
+				/obj/item/mecha_parts/part/clarke_right_arm,
+				/obj/item/stack/conveyor)
 
 /obj/structure/mecha_wreckage/ripley/deathripley
 	name = "\improper Death-Ripley wreckage"
@@ -177,7 +178,6 @@
 	icon_state = "honker-broken"
 	desc = "All is right in the universe."
 	parts = list(
-				/obj/item/mecha_parts/chassis/honker,
 				/obj/item/mecha_parts/part/honker_torso,
 				/obj/item/mecha_parts/part/honker_head,
 				/obj/item/mecha_parts/part/honker_left_arm,
@@ -199,6 +199,14 @@
 /obj/structure/mecha_wreckage/phazon
 	name = "\improper Phazon wreckage"
 	icon_state = "phazon-broken"
+	parts = list(
+		/obj/item/mecha_parts/part/phazon_torso,
+		/obj/item/mecha_parts/part/phazon_head,
+		/obj/item/mecha_parts/part/phazon_left_arm,
+		/obj/item/mecha_parts/part/phazon_right_arm,
+		/obj/item/mecha_parts/part/phazon_left_leg,
+		/obj/item/mecha_parts/part/phazon_right_leg)
+
 
 
 /obj/structure/mecha_wreckage/odysseus

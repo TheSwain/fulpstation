@@ -23,9 +23,6 @@
 		to_chat(user, "<span class='notice'>We have revived ourselves.</span>")
 	else
 		to_chat(user, "<span class='notice'>We begin our stasis, preparing energy to arise once more.</span>")
-		if(user.stat != DEAD)
-			user.emote("deathgasp")
-			user.tod = station_time_timestamp()
 		user.fakedeath("changeling") //play dead
 		user.update_stat()
 		user.update_mobility()
@@ -36,7 +33,7 @@
 	if(!user || !istype(user))
 		return
 	user.cure_fakedeath("changeling")
-	user.revive(full_heal = TRUE)
+	user.revive(full_heal = TRUE, admin_revive = FALSE)
 	var/list/missing = user.get_missing_limbs()
 	missing -= BODY_ZONE_HEAD // headless changelings are funny
 	if(missing.len)

@@ -14,11 +14,31 @@
 	var/turf_type = null
 	var/mineralType = null
 	novariants = TRUE
+	var/human_maxHealth = 100
 
 /obj/item/stack/tile/Initialize(mapload, amount)
 	. = ..()
 	pixel_x = rand(-3, 3)
 	pixel_y = rand(-3, 3) //randomize a little
+
+/obj/item/stack/tile/examine(mob/user)
+	. = ..()
+	if(throwforce && !is_cyborg) //do not want to divide by zero or show the message to borgs who can't throw
+		var/verb
+		switch(CEILING(human_maxHealth / throwforce, 1)) //throws to crit a human
+			if(1 to 3)
+				verb = "superb"
+			if(4 to 6)
+				verb = "great"
+			if(7 to 9)
+				verb = "good"
+			if(10 to 12)
+				verb = "fairly decent"
+			if(13 to 15)
+				verb = "mediocre"
+		if(!verb)
+			return
+		. += "<span class='notice'>Those could work as a [verb] throwing weapon.</span>"
 
 /obj/item/stack/tile/attackby(obj/item/W, mob/user, params)
 
@@ -76,6 +96,15 @@
 	turf_type = /turf/open/floor/grass
 	resistance_flags = FLAMMABLE
 
+//Fairygrass
+/obj/item/stack/tile/fairygrass
+	name = "fairygrass tile"
+	singular_name = "fairygrass floor tile"
+	desc = "A patch of odd, glowing blue grass."
+	icon_state = "tile_fairygrass"
+	item_state = "tile-fairygrass"
+	turf_type = /turf/open/floor/grass/fairy
+	resistance_flags = FLAMMABLE
 
 //Wood
 /obj/item/stack/tile/wood
@@ -105,18 +134,102 @@
 	item_state = "tile-carpet"
 	turf_type = /turf/open/floor/carpet
 	resistance_flags = FLAMMABLE
-
-/obj/item/stack/tile/carpet/fifty
-	amount = 50
+	tableVariant = /obj/structure/table/wood/fancy
 
 /obj/item/stack/tile/carpet/black
 	name = "black carpet"
 	icon_state = "tile-carpet-black"
 	item_state = "tile-carpet-black"
 	turf_type = /turf/open/floor/carpet/black
+	tableVariant = /obj/structure/table/wood/fancy/black
+
+/obj/item/stack/tile/carpet/blue
+	name = "blue carpet"
+	icon_state = "tile-carpet-blue"
+	item_state = "tile-carpet-blue"
+	turf_type = /turf/open/floor/carpet/blue
+	tableVariant = /obj/structure/table/wood/fancy/blue
+
+/obj/item/stack/tile/carpet/cyan
+	name = "cyan carpet"
+	icon_state = "tile-carpet-cyan"
+	item_state = "tile-carpet-cyan"
+	turf_type = /turf/open/floor/carpet/cyan
+	tableVariant = /obj/structure/table/wood/fancy/cyan
+
+/obj/item/stack/tile/carpet/green
+	name = "green carpet"
+	icon_state = "tile-carpet-green"
+	item_state = "tile-carpet-green"
+	turf_type = /turf/open/floor/carpet/green
+	tableVariant = /obj/structure/table/wood/fancy/green
+
+/obj/item/stack/tile/carpet/orange
+	name = "orange carpet"
+	icon_state = "tile-carpet-orange"
+	item_state = "tile-carpet-orange"
+	turf_type = /turf/open/floor/carpet/orange
+	tableVariant = /obj/structure/table/wood/fancy/orange
+
+/obj/item/stack/tile/carpet/purple
+	name = "purple carpet"
+	icon_state = "tile-carpet-purple"
+	item_state = "tile-carpet-purple"
+	turf_type = /turf/open/floor/carpet/purple
+	tableVariant = /obj/structure/table/wood/fancy/purple
+
+/obj/item/stack/tile/carpet/red
+	name = "red carpet"
+	icon_state = "tile-carpet-red"
+	item_state = "tile-carpet-red"
+	turf_type = /turf/open/floor/carpet/red
+	tableVariant = /obj/structure/table/wood/fancy/red
+
+/obj/item/stack/tile/carpet/royalblack
+	name = "royal black carpet"
+	icon_state = "tile-carpet-royalblack"
+	item_state = "tile-carpet-royalblack"
+	turf_type = /turf/open/floor/carpet/royalblack
+	tableVariant = /obj/structure/table/wood/fancy/royalblack
+
+/obj/item/stack/tile/carpet/royalblue
+	name = "royal blue carpet"
+	icon_state = "tile-carpet-royalblue"
+	item_state = "tile-carpet-royalblue"
+	turf_type = /turf/open/floor/carpet/royalblue
+	tableVariant = /obj/structure/table/wood/fancy/royalblue
+
+
+/obj/item/stack/tile/carpet/fifty
+	amount = 50
 
 /obj/item/stack/tile/carpet/black/fifty
 	amount = 50
+
+/obj/item/stack/tile/carpet/blue/fifty
+	amount = 50
+
+/obj/item/stack/tile/carpet/cyan/fifty
+	amount = 50
+
+/obj/item/stack/tile/carpet/green/fifty
+	amount = 50
+
+/obj/item/stack/tile/carpet/orange/fifty
+	amount = 50
+
+/obj/item/stack/tile/carpet/purple/fifty
+	amount = 50
+
+/obj/item/stack/tile/carpet/red/fifty
+	amount = 50
+
+/obj/item/stack/tile/carpet/royalblack/fifty
+	amount = 50
+
+/obj/item/stack/tile/carpet/royalblue/fifty
+	amount = 50
+
 
 /obj/item/stack/tile/fakespace
 	name = "astral carpet"
@@ -215,11 +328,11 @@
 /obj/item/stack/tile/plasteel
 	name = "floor tile"
 	singular_name = "floor tile"
-	desc = "Those could work as a pretty decent throwing weapon."
+	desc = "The ground you walk on."
 	icon_state = "tile"
 	item_state = "tile"
 	force = 6
-	materials = list(/datum/material/iron=500)
+	custom_materials = list(/datum/material/iron=500)
 	throwforce = 10
 	flags_1 = CONDUCT_1
 	turf_type = /turf/open/floor/plasteel
@@ -228,7 +341,33 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/stack/tile/plasteel/cyborg
-	desc = "The ground you walk on." //Not the usual floor tile desc as that refers to throwing, Cyborgs can't do that - RR
-	materials = list() // All other Borg versions of items have no Metal or Glass - RR
+	custom_materials = null // All other Borg versions of items have no Metal or Glass - RR
 	is_cyborg = 1
 	cost = 125
+
+/obj/item/stack/tile/plastic
+	name = "plastic tile"
+	singular_name = "plastic floor tile"
+	desc = "A tile of cheap, flimsy plastic flooring."
+	icon_state = "tile_plastic"
+	custom_materials = list(/datum/material/plastic=500)
+	turf_type = /turf/open/floor/plastic
+
+/obj/item/stack/tile/material
+	name = "floor tile"
+	singular_name = "floor tile"
+	desc = "The ground you walk on."
+	throwforce = 10
+	icon_state = "material_tile"
+	turf_type = /turf/open/floor/material
+	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
+
+/obj/item/stack/tile/eighties
+	name = "retro tile"
+	singular_name = "retro floor tile"
+	desc = "A stack of floor tiles that remind you of an age of funk."
+	icon_state = "tile_eighties"
+	turf_type = /turf/open/floor/eighties
+
+/obj/item/stack/tile/eighties/loaded
+	amount = 15

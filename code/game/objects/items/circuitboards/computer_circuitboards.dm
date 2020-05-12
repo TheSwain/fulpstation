@@ -38,7 +38,7 @@
 
 /obj/item/circuitboard/computer/card/minor/examine(user)
 	..()
-	to_chat(user, "Currently set to \"[dept_list[target_dept]]\".")
+	to_chat(user, "<span class='notice'>Currently set to \"[dept_list[target_dept]]\".</span>")
 
 
 //obj/item/circuitboard/computer/shield
@@ -197,13 +197,13 @@
 
 /obj/item/circuitboard/computer/libraryconsole/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		if(build_path == /obj/machinery/computer/libraryconsole/bookmanagement)
+		if(build_path == /obj/machinery/computer/bookmanagement)
 			name = "Library Visitor Console (Computer Board)"
 			build_path = /obj/machinery/computer/libraryconsole
 			to_chat(user, "<span class='notice'>Defaulting access protocols.</span>")
 		else
 			name = "Book Inventory Management Console (Computer Board)"
-			build_path = /obj/machinery/computer/libraryconsole/bookmanagement
+			build_path = /obj/machinery/computer/bookmanagement
 			to_chat(user, "<span class='notice'>Access protocols successfully updated.</span>")
 	else
 		return ..()
@@ -268,11 +268,6 @@
 
 //Medical
 
-/obj/item/circuitboard/computer/cloning
-	name = "Cloning (Computer Board)"
-	icon_state = "medical"
-	build_path = /obj/machinery/computer/cloning
-
 /obj/item/circuitboard/computer/crew
 	name = "Crew Monitoring Console (Computer Board)"
 	icon_state = "medical"
@@ -292,11 +287,6 @@
 	name = "PanD.E.M.I.C. 2200 (Computer Board)"
 	icon_state = "medical"
 	build_path = /obj/machinery/computer/pandemic
-
-/obj/item/circuitboard/computer/prototype_cloning
-	name = "Prototype Cloning (Computer Board)"
-	icon_state = "medical"
-	build_path = /obj/machinery/computer/prototype_cloning
 
 /obj/item/circuitboard/computer/scan_consolenew
 	name = "DNA Machine (Computer Board)"
@@ -343,20 +333,6 @@
 /obj/item/circuitboard/computer/rdconsole/production
 	name = "R&D Console Production Only (Computer Board)"
 	build_path = /obj/machinery/computer/rdconsole/production
-
-
-/obj/item/circuitboard/computer/rdconsole/attackby(obj/item/I, mob/user, params)
-	if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		if(build_path == /obj/machinery/computer/rdconsole/core)
-			name = "R&D Console - Robotics (Computer Board)"
-			build_path = /obj/machinery/computer/rdconsole/robotics
-			to_chat(user, "<span class='notice'>Access protocols successfully updated.</span>")
-		else
-			name = "R&D Console (Computer Board)"
-			build_path = /obj/machinery/computer/rdconsole/core
-			to_chat(user, "<span class='notice'>Defaulting access protocols.</span>")
-	else
-		return ..()
 
 /obj/item/circuitboard/computer/rdservercontrol
 	name = "R&D Server Control (Computer Board)"
@@ -430,7 +406,7 @@
 //Supply
 
 /obj/item/circuitboard/computer/bounty
-	name = "Nanotrasen Bounty Console (Computer Board)"
+	name = "\improper Nanotrasen Bounty Console (Computer Board)"
 	icon_state = "supply"
 	build_path = /obj/machinery/computer/bounty
 
@@ -446,7 +422,7 @@
 		contraband = !contraband
 		to_chat(user, "<span class='notice'>Receiver spectrum set to [contraband ? "Broad" : "Standard"].</span>")
 	else
-		to_chat(user, "<span class='notice'>The spectrum chip is unresponsive.</span>")
+		to_chat(user, "<span class='alert'>The spectrum chip is unresponsive.</span>")
 
 /obj/item/circuitboard/computer/cargo/emag_act(mob/living/user)
 	if(!(obj_flags & EMAGGED))
@@ -461,7 +437,7 @@
 /obj/item/circuitboard/computer/cargo/express/multitool_act(mob/living/user)
 	. = ..()
 	if (!(obj_flags & EMAGGED))
-		to_chat(user, "<span class='notice'>Routing protocols are already set to: \"factory defaults\".</span>")
+		to_chat(user, "<span class='alert'>Routing protocols are already set to: \"factory defaults\".</span>")
 	else
 		to_chat(user, "<span class='notice'>You reset the routing protocols to: \"factory defaults\".</span>")
 		obj_flags &= ~EMAGGED

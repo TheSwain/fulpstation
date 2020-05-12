@@ -32,10 +32,9 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/stack/medical/bruise_pack = 2,
-		/obj/item/stack/medical/ointment = 2,
-		/obj/item/reagent_containers/hypospray/medipen = 1,
-		/obj/item/healthanalyzer = 1)
+		/obj/item/stack/medical/suture = 2,
+		/obj/item/stack/medical/mesh = 2,
+		/obj/item/reagent_containers/hypospray/medipen = 1)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/medical
@@ -47,7 +46,7 @@
 /obj/item/storage/firstaid/medical/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_BULKY //holds the same equipment as a medibelt
+	STR.max_w_class = WEIGHT_CLASS_NORMAL //holds the same equipment as a medibelt
 	STR.max_items = 12
 	STR.max_combined_w_class = 24
 	STR.set_holdable(list(
@@ -104,18 +103,18 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/stack/medical/bruise_pack = 2,
-		/obj/item/stack/medical/ointment = 2,
+		/obj/item/stack/medical/suture = 2,
+		/obj/item/stack/medical/mesh = 2,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
-		/obj/item/healthanalyzer = 1,
 		/obj/item/surgical_drapes = 1,
 		/obj/item/scalpel = 1,
 		/obj/item/hemostat = 1,
-		/obj/item/cautery = 1)
+		/obj/item/cautery = 1,
+		/obj/item/healthanalyzer = 1)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/ancient
-	icon_state = "firstaid"
+	icon_state = "oldfirstaid"
 	desc = "A first aid kit with the ability to heal common types of injuries."
 
 /obj/item/storage/firstaid/ancient/PopulateContents()
@@ -126,6 +125,10 @@
 		/obj/item/stack/medical/bruise_pack = 3,
 		/obj/item/stack/medical/ointment= 3)
 	generate_items_inside(items_inside,src)
+
+/obj/item/storage/firstaid/ancient/heirloom
+	desc = "A first aid kit with the ability to heal common types of injuries. You start thinking of the good old days just by looking at it."
+	empty = TRUE // long since been ransacked by hungry powergaming assistants breaking into med storage
 
 /obj/item/storage/firstaid/fire
 	name = "burn treatment kit"
@@ -147,11 +150,10 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/pill/patch/aiuri = 3,
-		/obj/item/reagent_containers/spray/rhigoxane = 1,
+		/obj/item/reagent_containers/spray/hercuri = 1,
 		/obj/item/reagent_containers/hypospray/medipen/oxandrolone = 1,
 		/obj/item/reagent_containers/pill/patch/silversulfadiazine = 3,	//FULP
-		/obj/item/reagent_containers/hypospray/medipen = 1,
-		/obj/item/healthanalyzer = 1)
+		/obj/item/reagent_containers/hypospray/medipen = 1)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/toxin
@@ -177,8 +179,7 @@
 		/obj/item/reagent_containers/syringe/syriniver = 3,
 		/obj/item/storage/pill_bottle/potassiodide = 1,
 		/obj/item/reagent_containers/pill/charcoal = 3,	//FULP
-		/obj/item/reagent_containers/hypospray/medipen/penacid = 1,
-		/obj/item/healthanalyzer = 1)
+		/obj/item/reagent_containers/hypospray/medipen/penacid = 1)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/o2
@@ -203,8 +204,7 @@
 		/obj/item/reagent_containers/syringe/convermol = 3,
 		/obj/item/reagent_containers/hypospray/medipen/salbutamol = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
-		/obj/item/storage/pill_bottle/iron = 1,
-		/obj/item/healthanalyzer = 1)
+		/obj/item/storage/pill_bottle/iron = 1)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/brute
@@ -227,11 +227,10 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/pill/patch/libital = 3,
-		/obj/item/stack/medical/gauze = 1,
-		/obj/item/storage/pill_bottle/trophazole = 1,
 		/obj/item/reagent_containers/pill/patch/stypticpowder = 3,	//FULP
-		/obj/item/reagent_containers/hypospray/medipen/salacid = 1,
-		/obj/item/healthanalyzer = 1)
+		/obj/item/stack/medical/gauze = 1,
+		/obj/item/storage/pill_bottle/C2/probital = 1,
+		/obj/item/reagent_containers/hypospray/medipen/salacid = 1)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/advanced
@@ -239,17 +238,17 @@
 	desc = "An advanced kit to help deal with advanced wounds."
 	icon_state = "radfirstaid"
 	item_state = "firstaid-rad"
-	custom_premium_price = 600
+	custom_premium_price = 1100
 
 /obj/item/storage/firstaid/advanced/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/pill/patch/instabitaluri = 3,
-		/obj/item/reagent_containers/hypospray/medipen/atropine = 2,
-		/obj/item/stack/medical/gauze = 1,
 		/obj/item/reagent_containers/medigel/stypticpowder = 2,	//FULP
 		/obj/item/reagent_containers/medigel/silversulfadiazine = 2,	//FULP
+		/obj/item/reagent_containers/hypospray/medipen/atropine = 2,
+		/obj/item/stack/medical/gauze = 1,
 		/obj/item/storage/pill_bottle/penacid = 1)
 	generate_items_inside(items_inside,src)
 
@@ -364,13 +363,13 @@
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/pill/potassiodide(src)
 
-/obj/item/storage/pill_bottle/trophazole
-	name = "bottle of trophazole pills"
-	desc = "Contains pills used to treat brute damage.The tag in the bottle states 'Eat before ingesting'."
+/obj/item/storage/pill_bottle/C2/probital
+	name = "bottle of probital pills"
+	desc = "Contains pills used to treat brute damage.The tag in the bottle states 'Eat before ingesting, may cause fatigue'."
 
-/obj/item/storage/pill_bottle/trophazole/PopulateContents()
+/obj/item/storage/pill_bottle/C2/probital/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/reagent_containers/pill/trophazole(src)
+		new /obj/item/reagent_containers/pill/C2/probital(src)
 
 /obj/item/storage/pill_bottle/iron
 	name = "bottle of iron pills"
@@ -445,14 +444,6 @@
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/psicodine(src)
 
-/obj/item/storage/pill_bottle/happiness
-	name = "happiness pill bottle"
-	desc = "The label is long gone, in its place an 'H' written with a marker."
-
-/obj/item/storage/pill_bottle/happiness/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/reagent_containers/pill/happiness(src)
-
 /obj/item/storage/pill_bottle/penacid
 	name = "bottle of pentetic acid pills"
 	desc = "Contains pills to expunge radiation and toxins."
@@ -486,3 +477,28 @@
 /obj/item/storage/pill_bottle/floorpill/full/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/floorpill(src)
+
+///////////////////////////////////////// Psychologist inventory pillbottles
+/obj/item/storage/pill_bottle/happinesspsych
+	name = "happiness pills"
+	desc = "Contains pills used as a last resort means to temporarily stabilize depression and anxiety. WARNING: side effects may include slurred speech, drooling, and severe addiction."
+
+/obj/item/storage/pill_bottle/happinesspsych/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/happinesspsych(src)
+
+/obj/item/storage/pill_bottle/lsdpsych
+	name = "mindbreaker toxin pills"
+	desc = "!FOR THERAPEUTIC USE ONLY! Contains pills used to alleviate the symptoms of Reality Dissociation Syndrome."
+
+/obj/item/storage/pill_bottle/lsdpsych/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/lsdpsych(src)
+
+/obj/item/storage/pill_bottle/paxpsych
+	name = "pax pills"
+	desc = "Contains pills used to temporarily pacify patients that are deemed a harm to themselves or others."
+
+/obj/item/storage/pill_bottle/paxpsych/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/paxpsych(src)
