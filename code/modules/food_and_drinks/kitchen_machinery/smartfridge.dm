@@ -100,12 +100,7 @@
 			return TRUE
 
 		if(istype(O, /obj/item/storage/bag) || istype(O, /obj/item/organ_storage)) //FULPSTATION MEDBORG ORGAN STORAGE FIX Surrealistik Nov 2019
-			if(istype(O, /obj/item/organ_storage)) //FULPSTATION MEDBORG ORGAN STORAGE TWEAK Surrealistik Jan 2020 BEGIN
-				O.icon_state = initial(O.icon_state) //We need to properly update the icon and overlays by reverting to our initial state.
-				O.desc = initial(O.desc)
-				O.cut_overlays()
-				O = O.contents[1] //FULPSTATION MEDBORG ORGAN STORAGE TWEAK Surrealistik Jan 2020 END
-			var/obj/item/storage/P = O
+			var/obj/item/P = O //FULPSTATION MEDBORG ORGAN STORAGE TWEAK Surrealistik Jan 2020 END
 			var/loaded = 0
 			for(var/obj/G in P.contents)
 				if(contents.len >= max_n_of_items)
@@ -113,6 +108,9 @@
 				if(accept_check(G))
 					load(G)
 					loaded++
+					if(istype(O, /obj/item/organ_storage)) //FULPSTATION MEDBORG ORGAN STORAGE TWEAK Surrealistik Jan 2020 END
+						var/obj/item/organ_storage/S = O
+						S.clear_organ() //FULPSTATION MEDBORG ORGAN STORAGE TWEAK Surrealistik Jan 2020 END
 			updateUsrDialog()
 
 			if(loaded)
@@ -141,7 +139,7 @@
 
 
 /obj/machinery/smartfridge/proc/accept_check(obj/item/O)
-	if(istype(O, /obj/item/reagent_containers/food/snacks/grown/) || istype(O, /obj/item/seeds/) || istype(O, /obj/item/grown/))
+	if(istype(O, /obj/item/reagent_containers/food/snacks/grown/) || istype(O, /obj/item/seeds/) || istype(O, /obj/item/grown/) || istype(O, /obj/item/graft/))
 		return TRUE
 	return FALSE
 
@@ -170,7 +168,7 @@
 /obj/machinery/smartfridge/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "smartvend", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, ui_key, "SmartVend", name, ui_x, ui_y, master_ui, state)
 		ui.set_autoupdate(FALSE)
 		ui.open()
 

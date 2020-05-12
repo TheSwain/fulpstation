@@ -176,7 +176,7 @@
 										datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "mulebot", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, ui_key, "Mule", name, ui_x, ui_y, master_ui, state)
 		ui.open()
 
 /mob/living/simple_animal/bot/mulebot/ui_data(mob/user)
@@ -669,7 +669,7 @@
 
 // called from mob/living/carbon/human/Crossed()
 // when mulebot is in the same loc
-/mob/living/simple_animal/bot/mulebot/proc/RunOver(mob/living/carbon/human/H)
+/mob/living/simple_animal/bot/mulebot/proc/RunOver(mob/living/carbon/H) //FULP: this used to assume that H was a human, but now H can be a monkey or something instead
 	log_combat(src, H, "run over", null, "(DAMTYPE: [uppertext(BRUTE)])")
 	H.visible_message("<span class='danger'>[src] drives over [H]!</span>", \
 					"<span class='userdanger'>[src] drives over you!</span>")

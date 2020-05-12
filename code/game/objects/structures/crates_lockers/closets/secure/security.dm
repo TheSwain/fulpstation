@@ -124,7 +124,7 @@
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
-	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
+	/*new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src) FULP NOTE: this broke due to undefined type*/
 	new /obj/item/clothing/shoes/jackboots/digitigrade(src) //fulp
 
 /obj/structure/closet/secure_closet/security
@@ -186,7 +186,7 @@
 
 /obj/structure/closet/secure_closet/detective/PopulateContents()
 	..()
-	new /obj/item/clothing/under/rank/security/detective(src)
+	/*new /obj/item/clothing/under/rank/security/detective(src) //FULPSTATION DETECTIVE CLOSET REPLACEMENT by Surrealistik and D4n0w4r APR 2020
 	new /obj/item/clothing/under/rank/security/detective/skirt(src)
 	new /obj/item/clothing/suit/det_suit(src)
 	new /obj/item/clothing/head/fedora/det_hat(src)
@@ -218,7 +218,8 @@
 	new /obj/item/pinpointer/crew(src)
 	new /obj/item/clothing/shoes/laceup/digitigrade(src) //fulp
 	new /obj/item/binoculars(src)
-	new /obj/item/storage/box/rxglasses/spyglasskit(src)
+	new /obj/item/storage/box/rxglasses/spyglasskit(src)*/
+
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections"
 	req_access = list(ACCESS_HOS)

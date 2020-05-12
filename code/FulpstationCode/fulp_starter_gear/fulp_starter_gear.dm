@@ -19,7 +19,7 @@
 
 /obj/item/radio/off/security
 	name = "security station bounced radio"
-	icon = 'icons/Fulpicons/surreal_stash/sec_radio.dmi'
+	icon = 'icons/Fulpicons/Surreal_stuff/sec_radio.dmi'
 	icon_state = "sec_radio"
 	desc = "A sophisticated full range station bounced radio. Preconfigured with a radio frequency for emergency security use in the event of telecom disruption. You can use a Security ID to reset its frequency to the emergency security channel."
 	freerange = TRUE //Can access the full spectrum
@@ -166,4 +166,14 @@
 	materials = list(/datum/material/iron = 2000, /datum/material/glass = 500, /datum/material/silver = 1000, /datum/material/plastic = 1000)
 	build_path = /obj/item/melee/baton
 	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/forensic_disk
+	name = "Forensic Data Disk"
+	desc = "A forensic data storage disk used with the detective's forensic scanner. Has read and write functionality."
+	id = "forensic_data_disk"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
+	build_path = /obj/item/disk/forensic
+	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY

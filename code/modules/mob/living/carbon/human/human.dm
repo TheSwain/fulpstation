@@ -47,6 +47,8 @@
 	sec_hud_set_ID()
 	sec_hud_set_implants()
 	sec_hud_set_security_status()
+	//...fan gear
+	fan_hud_set_fandom()
 	//...and display them.
 	add_to_all_human_data_huds()
 
@@ -207,10 +209,10 @@
 // called when something steps onto a human
 // this could be made more general, but for now just handle mulebot
 /mob/living/carbon/human/Crossed(atom/movable/AM)
-	var/mob/living/simple_animal/bot/mulebot/MB = AM
+	/* var/mob/living/simple_animal/bot/mulebot/MB = AM
 	if(istype(MB))
-		MB.RunOver(src)
-
+		MB.RunOver(src) */
+//FULP: The code for running people over with mulebots has been moved to carbon.dm
 	. = ..()
 	spreadFire(AM)
 
