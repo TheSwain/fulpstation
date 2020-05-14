@@ -32,7 +32,6 @@
 	new /obj/item/gun/energy/e_gun(src)
 	new /obj/item/door_remote/captain(src)
 	new /obj/item/card/id/captains_spare(src)
-	new /obj/item/clothing/shoes/digicombat(src) //fulp
 	new /obj/item/storage/photo_album/Captain(src)
 
 /obj/structure/closet/secure_closet/hop
@@ -61,8 +60,6 @@
 	new /obj/item/pet_carrier(src)
 	new /obj/item/door_remote/civilian(src)
 	new /obj/item/circuitboard/machine/techfab/department/service(src)
-	new /obj/item/clothing/shoes/laceup/digitigrade(src) //fulp
-	new /obj/item/clothing/suit/hooded/wintercoat/captain/hop(src) // [FULP] [PNX] [PAPRITO]
 	new /obj/item/storage/photo_album/HoP(src)
 
 /obj/structure/closet/secure_closet/hos
@@ -97,7 +94,6 @@
 	new /obj/item/gun/energy/e_gun/hos(src)
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
-	new /obj/item/clothing/suit/hooded/wintercoat/security/head(src) // [FULP] [PNX] [PAPRITO]
 	new /obj/item/storage/photo_album/HoS(src)
 
 /obj/structure/closet/secure_closet/warden
@@ -124,8 +120,6 @@
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
-	/*new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src) FULP NOTE: this broke due to undefined type*/
-	new /obj/item/clothing/shoes/jackboots/digitigrade(src) //fulp
 
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"
@@ -134,18 +128,18 @@
 
 /obj/structure/closet/secure_closet/security/PopulateContents()
 	..()
-	/*new /obj/item/clothing/suit/armor/vest(src) //FULPSTATION Improved Sec Starter Gear by Surrealistik Oct 2019
+	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/head/helmet/sec(src)
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/radio/headset/headset_sec/alt(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
-	new /obj/item/flashlight/seclite(src)*/ //FULPSTATION Improved Sec Starter Gear by Surrealistik Oct 2019
+	new /obj/item/flashlight/seclite(src)
 
 /obj/structure/closet/secure_closet/security/sec
 
 /obj/structure/closet/secure_closet/security/sec/PopulateContents()
 	..()
-	// new /obj/item/storage/belt/security/full(src) //FULPSTATION Improved Sec Starter Gear by Surrealistik Oct 2019
+	new /obj/item/storage/belt/security/full(src)
 
 /obj/structure/closet/secure_closet/security/cargo
 
@@ -186,27 +180,6 @@
 
 /obj/structure/closet/secure_closet/detective/PopulateContents()
 	..()
-	/*new /obj/item/clothing/under/rank/security/detective(src) //FULPSTATION DETECTIVE CLOSET REPLACEMENT by Surrealistik and D4n0w4r APR 2020
-	new /obj/item/clothing/under/rank/security/detective/skirt(src)
-	new /obj/item/clothing/suit/det_suit(src)
-	new /obj/item/clothing/head/fedora/det_hat(src)
-	new /obj/item/clothing/gloves/color/black(src)
-	new /obj/item/clothing/under/rank/security/detective/grey(src)
-	new /obj/item/clothing/under/rank/security/detective/grey/skirt(src)
-	new /obj/item/clothing/accessory/waistcoat(src)
-	new /obj/item/clothing/suit/det_suit/grey(src)
-	new /obj/item/clothing/suit/det_suit/noir(src)
-	new /obj/item/clothing/head/fedora(src)
-	new /obj/item/clothing/shoes/laceup(src)
-	new /obj/item/clothing/suit/det_suit/disco(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
-	new /obj/item/clothing/suit/det_suit/disco/aerostatic(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
-	new /obj/item/clothing/under/rank/security/detective/disco(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
-	new /obj/item/clothing/under/rank/security/detective/disco/aerostatic(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
-	new /obj/item/clothing/neck/tie/detective/disco_necktie(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
-	new /obj/item/clothing/gloves/color/black/aerostatic_gloves(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
-	new /obj/item/clothing/shoes/sneakers/disco(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
-	new /obj/item/clothing/shoes/jackboots/aerostatic(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
-	new /obj/item/clothing/glasses/sunglasses/disco(src) //FULPSTATION DISCO ELYSIUM DETECTIVE WEAR by Surrealistik and D4n0w4r APR 2020
 	new /obj/item/storage/box/evidence(src)
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/detective_scanner(src)
@@ -216,9 +189,8 @@
 	new /obj/item/clothing/suit/armor/vest/det_suit(src)
 	new /obj/item/storage/belt/holster/detective/full(src)
 	new /obj/item/pinpointer/crew(src)
-	new /obj/item/clothing/shoes/laceup/digitigrade(src) //fulp
 	new /obj/item/binoculars(src)
-	new /obj/item/storage/box/rxglasses/spyglasskit(src)*/
+	new /obj/item/storage/box/rxglasses/spyglasskit(src)
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections"

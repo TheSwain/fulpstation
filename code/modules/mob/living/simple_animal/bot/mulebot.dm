@@ -21,6 +21,7 @@
 	a_intent = INTENT_HARM //No swapping
 	buckle_lying = 0
 	mob_size = MOB_SIZE_LARGE
+	buckle_prevents_pull = TRUE // No pulling loaded shit
 
 	radio_key = /obj/item/encryptionkey/headset_cargo
 	radio_channel = RADIO_CHANNEL_SUPPLY
@@ -669,7 +670,7 @@
 
 // called from mob/living/carbon/human/Crossed()
 // when mulebot is in the same loc
-/mob/living/simple_animal/bot/mulebot/proc/RunOver(mob/living/carbon/H) //FULP: this used to assume that H was a human, but now H can be a monkey or something instead
+/mob/living/simple_animal/bot/mulebot/proc/RunOver(mob/living/carbon/human/H)
 	log_combat(src, H, "run over", null, "(DAMTYPE: [uppertext(BRUTE)])")
 	H.visible_message("<span class='danger'>[src] drives over [H]!</span>", \
 					"<span class='userdanger'>[src] drives over you!</span>")

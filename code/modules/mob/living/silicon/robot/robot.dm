@@ -177,8 +177,9 @@
 	if(shell)
 		GLOB.available_ai_shells -= src
 	else
-		borg_clear_radio() //FULPSTATION Borg Radio PR by Surrealistik Jan 2020; we delete all borg type encryption keys.
-
+		if(T && istype(radio) && istype(radio.keyslot))
+			radio.keyslot.forceMove(T)
+			radio.keyslot = null
 	qdel(wires)
 	qdel(module)
 	qdel(eye_lights)
@@ -218,7 +219,7 @@
 		return
 
 	module.transform_to(modulelist[input_module])
-	fulp_emag_features() //FULPSTATION Sec Borg Upgrades by Surrealistik Feb 2020
+
 
 /mob/living/silicon/robot/proc/updatename(client/C)
 	if(shell)
@@ -496,7 +497,6 @@
 	emagged = new_state
 	module.rebuild_modules()
 	update_icons()
-	fulp_emag_features() //FULPSTATION Sec Borg Upgrades by Surrealistik Feb 2020
 	if(emagged)
 		throw_alert("hacked", /obj/screen/alert/hacked)
 	else
@@ -809,7 +809,6 @@
 
 /mob/living/silicon/robot/proc/ResetModule()
 	SEND_SIGNAL(src, COMSIG_BORG_SAFE_DECONSTRUCT)
-	borg_clear_radio() //FULPSTATION BORG RADIOS by Surrealistik Jan 2020
 	uneq_all()
 	shown_robot_modules = FALSE
 	if(hud_used)
@@ -1009,7 +1008,6 @@
 			M.visible_message("<span class='boldwarning'>Unfortunately, [M] just can't seem to hold onto [src]!</span>")
 			return
 	M.visible_message("<span class='boldwarning'>[M] is being loaded onto [src]!</span>")//if you have better flavor text for this by all means change it
-	fulp_borg_unbuckle(M) //FULPSTATION MEDBORG CHANGES -Surrealistik Feb 2020
 	if(!do_after(src, 5, target = M))
 		return
 	if(iscarbon(M) && !M.incapacitated() && !riding_datum.equip_buckle_inhands(M, 1))

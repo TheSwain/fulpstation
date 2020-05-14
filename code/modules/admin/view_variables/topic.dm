@@ -92,10 +92,10 @@
 			var/newamt
 			switch(Text)
 				if("brute")
-					L.adjustBruteLoss(amount, forced=TRUE)	// FULP: This should ALWAYS be forced. It also lets us fix Bloodsucker damage as Admins.
+					L.adjustBruteLoss(amount)
 					newamt = L.getBruteLoss()
 				if("fire")
-					L.adjustFireLoss(amount, forced=TRUE)	// FULP
+					L.adjustFireLoss(amount)
 					newamt = L.getFireLoss()
 				if("toxin")
 					L.adjustToxLoss(amount)

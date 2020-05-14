@@ -29,7 +29,7 @@
 
 /obj/item/borg_chameleon/Initialize()
 	. = ..()
-	default_name = pick(GLOB.ai_names) //We store our default name. FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
+	friendlyName = pick(GLOB.ai_names)
 
 /obj/item/borg_chameleon/Destroy()
 	listeningTo = null
@@ -41,7 +41,7 @@
 
 /obj/item/borg_chameleon/equipped(mob/user)
 	. = ..()
-	//disrupt(user) //FULPSTATION BORG CHAMELEON PATCH by Surrealistik May 2020
+	disrupt(user)
 
 /obj/item/borg_chameleon/attack_self(mob/living/silicon/robot/user)
 	if (user && user.cell && user.cell.charge >  activationCost)
@@ -61,8 +61,6 @@
 		if(animation_playing)
 			to_chat(user, "<span class='notice'>\the [src] is recharging.</span>")
 			return
-		if(!fulp_borg_chameleon_menu(user)) //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
-			return
 		animation_playing = TRUE
 		to_chat(user, "<span class='notice'>You activate \the [src].</span>")
 		playsound(src, 'sound/effects/seedling_chargeup.ogg', 100, TRUE, -6)
@@ -81,7 +79,7 @@
 			animate(offset=f:offset-1, time=rand()*20+10)
 		if (do_after(user, 50, target=user) && user.cell.use(activationCost))
 			playsound(src, 'sound/effects/bamf.ogg', 100, TRUE, -6)
-			to_chat(user, "<span class='notice'>You are now disguised as the <b>[disguise_text]</b> borg <b>[friendlyName]</b>. </span>")  //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
+			to_chat(user, "<span class='notice'>You are now disguised as the Nanotrasen engineering borg \"[friendlyName]\".</span>")
 			activate(user)
 		else
 			to_chat(user, "<span class='warning'>The chameleon field fizzles.</span>")

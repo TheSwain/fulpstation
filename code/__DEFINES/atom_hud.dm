@@ -65,7 +65,6 @@
 #define DATA_HUD_FAN					10
 
 //antag HUD defines
-
 #define ANTAG_HUD_CULT			11
 #define ANTAG_HUD_REV			12
 #define ANTAG_HUD_OPS			13
@@ -83,7 +82,6 @@
 #define ANTAG_HUD_FUGITIVE	25
 #define ANTAG_HUD_GANGSTER	26
 #define ANTAG_HUD_SPACECOP	27
-#define ANTAG_HUD_BLOODSUCKER   28  // FULPSTATION // Check atom_hud.dm to see what the current top number is. Put this one last! DON'T LEAVE SPACE BETWEEN HUDS!
 
 
 // Notification action types

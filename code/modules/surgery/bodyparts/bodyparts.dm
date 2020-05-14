@@ -270,9 +270,9 @@
 
 	if(change_icon_to_default)
 		if(status == BODYPART_ORGANIC)
-			icon = icon_greyscale // DEFAULT_BODYPART_ICON_ORGANIC				// FULP Another Icon ref swap
+			icon = DEFAULT_BODYPART_ICON_ORGANIC
 		else if(status == BODYPART_ROBOTIC)
-			icon = icon_greyscale_robotic // DEFAULT_BODYPART_ICON_ROBOTIC 		// FULP
+			icon = DEFAULT_BODYPART_ICON_ROBOTIC
 
 	if(owner)
 		owner.updatehealth()
@@ -399,7 +399,7 @@
 
 	if(is_organic_limb())
 		if(should_draw_greyscale)
-			limb.icon = icon_greyscale // 'icons/mob/human_parts_greyscale.dmi' //   FULP // This REALLY should be a reference. Temporarily added to beefmen.dm
+			limb.icon = 'icons/mob/human_parts_greyscale.dmi'
 			if(should_draw_gender)
 				limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
 			else if(use_digitigrade)
@@ -407,38 +407,21 @@
 			else
 				limb.icon_state = "[species_id]_[body_zone]"
 		else
-			limb.icon = icon  //'icons/mob/human_parts.dmi'//    FULP // Why the fuck give a bodypart the icon value and not reference it??
+			limb.icon = 'icons/mob/human_parts.dmi'
 			if(should_draw_gender)
 				limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
 			else
 				limb.icon_state = "[species_id]_[body_zone]"
-
-		// FULP: Did we have a fixed species yet? Use that. Otherwise, use this.
-		var/aux_state = "[species_id]_[aux_zone]"
-		if (species_id != "husk")
-			// Load Stored Value
-			if (organicDropLocked && prevOrganicState != null && prevOrganicIcon != null)
-				limb.icon_state = prevOrganicState
-				limb.icon = prevOrganicIcon
-				aux_state = prevOrganicState_Aux
-			// Save Current Value
-			else
-				prevOrganicState_Aux = aux_state
-				prevOrganicState = limb.icon_state
-				prevOrganicIcon = limb.icon
-		//message_admins("[organicDropLocked?"*L ":""][owner] getting [src]: [limb.icon_state] from icon [limb.icon] [should_draw_greyscale ? " (GREYSCALE)" :""]")
-		// FULP: End
-
 		if(aux_zone)
-			aux = image(limb.icon, aux_state, -aux_layer, image_dir) // FULP EDIT: Added var/aux_state, was "[species_id]_[aux_zone]"
+			aux = image(limb.icon, "[species_id]_[aux_zone]", -aux_layer, image_dir)
 			. += aux
+
 	else
-		limb.icon = ReturnLocalAugmentIcon() // <-- We now return what the part would look like on the current mob with its current parts // on_greyscale_robotic // icon	 //	  FULP // Same as above
+		limb.icon = icon
 		if(should_draw_gender)
 			limb.icon_state = "[body_zone]_[icon_gender]"
 		else
 			limb.icon_state = "[body_zone]"
-
 		if(aux_zone)
 			aux = image(limb.icon, "[aux_zone]", -aux_layer, image_dir)
 			. += aux

@@ -121,7 +121,6 @@ There are several things that need to be remembered:
 			target_overlay = "[target_overlay]_d"
 		else if(U.adjusted == DIGITIGRADE_STYLE)
 			target_overlay = "[target_overlay]_l"
-			digisuit_icon_update(U) //FULP
 
 
 		var/mutable_appearance/uniform_overlay
@@ -500,7 +499,9 @@ generate/load female uniform sprites matching all previously decided variables
 	if(override_state)
 		t_state = override_state
 	else
-		if(isinhands && item_state)
+		if (mob_overlay_state)
+			t_state = mob_overlay_state
+		else if(isinhands && item_state)
 			t_state = item_state
 		else
 			t_state = icon_state

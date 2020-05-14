@@ -53,9 +53,6 @@ GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or ghetto c
 		/obj/item/clothing/mask/breath = 1,
 		/obj/item/shard = 1,
 
-		/obj/item/stake/basic = 1, //FULP
-		/obj/item/stake/hardened = 1, //FULP
-
 		/obj/item/reagent_containers/pill/floorpill = 1,
 		/obj/item/toy/eightball = 1,
 		) = 8,
@@ -189,8 +186,6 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		) = 8,
 
 	list(//strange objects
-		/obj/item/book/granter/language_book/random = 5, //FULP
-		/obj/item/stake/hardened/silver = 2, //FULP	"" = 3
 		/obj/item/relic = 5,
 		) = 8,
 

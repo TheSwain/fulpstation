@@ -130,7 +130,7 @@ GENE SCANNER
 
 
 // Used by the PDA medical scanner too
-/proc/healthscan(mob/user, mob/living/M, mode = SCANNER_VERBOSE, advanced = FALSE, log = FALSE) //FULPSTATION EXPANDED DETECTIVE KIT by Surrealistik Mar 2020
+/proc/healthscan(mob/user, mob/living/M, mode = SCANNER_VERBOSE, advanced = FALSE)
 	if(isliving(user) && (user.incapacitated() || user.is_blind()))
 		return
 
@@ -191,7 +191,9 @@ GENE SCANNER
 				trauma_text += trauma_desc
 			render_list += "<span class='alert ml-1'>Cerebral traumas detected: subject appears to be suffering from [english_list(trauma_text)].</span>\n"
 		if(C.roundstart_quirks.len)
-			render_list += "<span class='info ml-1'>Subject has the following physiological traits: [C.get_trait_string(FALSE, CAT_QUIRK_ALL)].</span>\n"
+			render_list += "<span class='info ml-1'>Subject Major Disabilities: [C.get_trait_string(FALSE, CAT_QUIRK_MAJOR_DISABILITY)].</span>\n"
+			if(advanced)
+				render_list += "<span class='info ml-1'>Subject Minor Disabilities: [C.get_trait_string(FALSE, CAT_QUIRK_MINOR_DISABILITY)].</span>\n"
 	if(advanced)
 		render_list += "<span class='info ml-1'>Brain Activity Level: [(200 - M.getOrganLoss(ORGAN_SLOT_BRAIN))/2]%.</span>\n"
 
@@ -336,7 +338,7 @@ GENE SCANNER
 				var/mob/living/carbon/human/H = C
 				if(H.bleed_rate)
 					render_list += "<span class='alert ml-1'><b>Subject is bleeding!</b></span>\n"
-			var/blood_percent =  round((C.scan_blood_volume() / BLOOD_VOLUME_NORMAL)*100) // FULPSTATION: Vamps don't show blood % when using Masquerade
+			var/blood_percent =  round((C.blood_volume / BLOOD_VOLUME_NORMAL)*100)
 			var/blood_type = C.dna.blood_type
 			if(blood_id != /datum/reagent/blood) // special blood substance
 				var/datum/reagent/R = GLOB.chemical_reagents_list[blood_id]
@@ -357,11 +359,7 @@ GENE SCANNER
 			render_list += "<span class='notice ml-2'>[cyberimp_detect]</span>\n"
 
 	SEND_SIGNAL(M, COMSIG_NANITE_SCAN, user, FALSE)
-	var/health_report = jointext(render_list, "") //FULPSTATION EXPANDED DETECTIVE KIT by Surrealistik Mar 2020
-	to_chat(user, health_report, trailing_newline = FALSE) // we handled the last <br> so we don't need handholding
-
-	if(log) //FULPSTATION EXPANDED DETECTIVE KIT by Surrealistik Mar 2020
-		return health_report
+	to_chat(user, jointext(render_list, ""), trailing_newline = FALSE) // we handled the last <br> so we don't need handholding
 
 /proc/chemscan(mob/living/user, mob/living/M)
 	if(istype(M) && M.reagents)

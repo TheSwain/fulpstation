@@ -87,9 +87,6 @@
 	var/datum/atom_hud/secsensor = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
 	secsensor.add_hud_to(src)
 
-	//FULPSTATION BODY CAM NETWORK
-	secbot_register_body_camera()
-
 /mob/living/simple_animal/bot/secbot/Destroy()
 	QDEL_NULL(weapon)
 	return ..()
@@ -177,7 +174,7 @@ Auto Patrol: []"},
 
 /mob/living/simple_animal/bot/secbot/proc/retaliate(mob/living/carbon/human/H)
 	var/judgement_criteria = judgement_criteria()
-	threatlevel = H.assess_threat_fulp(judgement_criteria, src, TRUE, null, weaponcheck=CALLBACK(src, .proc/check_for_weapons)) //FULPSTATION SECBOT FEEDBACK PR -Surrealistik Feb 2020
+	threatlevel = H.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
 	threatlevel += 6
 	if(threatlevel >= 4)
 		target = H
@@ -286,7 +283,7 @@ Auto Patrol: []"},
 		C.stuttering = 5
 		C.Paralyze(100)
 		var/mob/living/carbon/human/H = C
-		threat = H.assess_threat_fulp(judgement_criteria, src, FALSE, null, weaponcheck=CALLBACK(src, .proc/check_for_weapons)) //FULPSTATION SECBOT FEEDBACK PR -Surrealistik Feb 2020
+		threat = H.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
 	else
 		C.Paralyze(100)
 		C.stuttering = 5
@@ -294,9 +291,8 @@ Auto Patrol: []"},
 
 	log_combat(src,C,"stunned")
 	if(declare_arrests)
-		secbot_declare_arrest_completion(C, threat) //FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Oct 2019; this makes a record of the arrest, including timestamp and location.
-		//var/area/location = get_area(src) // FULP REMOVE
-		//speak("[arrest_type ? "Detaining" : "Arresting"] level [threat] scumbag <b>[C]</b> in [location].", radio_channel)  // FULP REMOVE
+		var/area/location = get_area(src)
+		speak("[arrest_type ? "Detaining" : "Arresting"] level [threat] scumbag <b>[C]</b> in [location].", radio_channel)
 	C.visible_message("<span class='danger'>[src] stuns [C]!</span>",\
 							"<span class='userdanger'>[src] stuns you!</span>")
 
@@ -419,7 +415,7 @@ Auto Patrol: []"},
 		if((C.name == oldtarget_name) && (world.time < last_found + 100))
 			continue
 
-		fulp_threat_assess_carbon_filter(C, judgement_criteria) //FULPSTATION SECBOT FEEDBACK PR -Surrealistik Feb 2020
+		threatlevel = C.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
 
 		if(!threatlevel)
 			continue
@@ -428,9 +424,6 @@ Auto Patrol: []"},
 			target = C
 			oldtarget_name = C.name
 			speak("Level [threatlevel] infraction alert!")
-			if(declare_arrests) //FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Jan 2020
-				secbot_declare_arrest_attempt(C, threatlevel) //FULPSTATION IMPROVED RECORD SECURITY PR -Surrealistik Jan 2020
-
 			if(ranged)
 				playsound(src, pick('sound/voice/ed209_20sec.ogg', 'sound/voice/edplaceholder.ogg'), 50, FALSE)
 			else
@@ -444,7 +437,7 @@ Auto Patrol: []"},
 
 /mob/living/simple_animal/bot/secbot/proc/check_for_weapons(var/obj/item/slot_item)
 	if(slot_item && (slot_item.item_flags & NEEDS_PERMIT))
-		return slot_item //FULPSTATION SECBOT FEEDBACK PR -Surrealistik Feb 2020
+		return TRUE
 	return FALSE
 
 /mob/living/simple_animal/bot/secbot/explode()

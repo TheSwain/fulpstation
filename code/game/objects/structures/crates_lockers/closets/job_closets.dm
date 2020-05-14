@@ -1,5 +1,4 @@
 // Closets for specific jobs
-// Snippets on the ends relating to language granters are FULPCODE
 
 /obj/structure/closet/gmcloset
 	name = "formal closet"
@@ -45,8 +44,6 @@
 		/obj/item/clothing/head/chefhat = 1,
 		/obj/item/reagent_containers/glass/rag = 1)
 	generate_items_inside(items_inside,src)
-	if(prob(20))
-		new /obj/item/book/granter/language_book/monkey(src) //FULP
 
 /obj/structure/closet/jcloset
 	name = "custodial closet"
@@ -71,8 +68,6 @@
 	new /obj/item/clothing/shoes/galoshes(src)
 	new /obj/item/watertank/janitor(src)
 	new /obj/item/storage/belt/janitor(src)
-	if(prob(20))
-		new /obj/item/book/granter/language_book/draconic(src) //FULP
 
 
 /obj/structure/closet/lawcloset
@@ -96,8 +91,6 @@
 	new /obj/item/clothing/shoes/laceup(src)
 	new /obj/item/clothing/accessory/lawyers_badge(src)
 	new /obj/item/clothing/accessory/lawyers_badge(src)
-	if(prob(20))
-		new /obj/item/book/granter/language_book/blahsucker(src) //FULP
 
 /obj/structure/closet/wardrobe/chaplain_black
 	name = "chapel wardrobe"
@@ -116,10 +109,6 @@
 	new /obj/item/storage/backpack/cultpack(src)
 	new /obj/item/storage/fancy/candle_box(src)
 	new /obj/item/storage/fancy/candle_box(src)
-	if(prob(10))
-		new /obj/item/book/granter/language_book/narsian(src) //FULP
-	else if(prob(10))
-		new /obj/item/book/granter/language_book/blahsucker(src) //FULP
 	return
 
 /obj/structure/closet/wardrobe/red
@@ -139,8 +128,6 @@
 		/obj/item/clothing/head/soft/sec = 3,
 		/obj/item/clothing/mask/bandana/red = 2)
 	generate_items_inside(items_inside,src)
-//	if(prob(5))
-//		new /obj/item/book/granter/language_book/russian(src) //FULP
 	return
 
 /obj/structure/closet/wardrobe/cargotech
@@ -156,8 +143,6 @@
 		/obj/item/clothing/head/soft = 3,
 		/obj/item/radio/headset/headset_cargo = 1)
 	generate_items_inside(items_inside,src)
-//	if(prob(20))
-//		new /obj/item/book/granter/language_book/piratespeak(src) //FULP
 
 /obj/structure/closet/wardrobe/atmospherics_yellow
 	name = "atmospherics wardrobe"
@@ -214,8 +199,6 @@
 		/obj/item/clothing/shoes/sneakers/white = 3,
 		/obj/item/clothing/head/soft/paramedic = 3)
 	generate_items_inside(items_inside,src)
-	if(prob(20))
-		new /obj/item/book/granter/language_book/aphasia(src) //FULP
 	return
 
 /obj/structure/closet/wardrobe/robotics_black
@@ -235,8 +218,6 @@
 		new /obj/item/clothing/mask/bandana/skull(src)
 	if(prob(40))
 		new /obj/item/clothing/mask/bandana/skull(src)
-	if(prob(20))
-		new /obj/item/book/granter/language_book/drone(src) //FULP
 	return
 
 
@@ -253,8 +234,6 @@
 		/obj/item/storage/backpack/satchel/chem = 2,
 		/obj/item/storage/bag/chemistry = 2)
 	generate_items_inside(items_inside,src)
-	if(prob(20))
-		new /obj/item/book/granter/language_book/beachbum(src) //FULP
 	return
 
 
@@ -270,10 +249,6 @@
 		/obj/item/storage/backpack/genetics = 2,
 		/obj/item/storage/backpack/satchel/gen = 2)
 	generate_items_inside(items_inside,src)
-	if(prob(10))
-		new /obj/item/book/granter/language_book/monkey(src) //FULP
-	else if(prob(10))
-		new /obj/item/book/granter/language_book/aphasia(src) //FULP
 	return
 
 
@@ -290,8 +265,6 @@
 		/obj/item/storage/backpack/virology = 2,
 		/obj/item/storage/backpack/satchel/vir = 2)
 	generate_items_inside(items_inside,src)
-	if(prob(20))
-		new /obj/item/book/granter/language_book/monkey(src) //FULP
 	return
 
 /obj/structure/closet/wardrobe/science_white
@@ -310,10 +283,6 @@
 		/obj/item/radio/headset/headset_sci = 2,
 		/obj/item/clothing/mask/gas = 3)
 	generate_items_inside(items_inside,src)
-	if(prob(20))
-		new /obj/item/book/granter/language_book/slime(src) //FULP
-	else if(prob(20))
-		new /obj/item/book/granter/language_book/xeno(src) //FULP
 	return
 
 /obj/structure/closet/wardrobe/botanist
@@ -330,8 +299,6 @@
 		/obj/item/clothing/under/rank/civilian/hydroponics = 3,
 		/obj/item/clothing/mask/bandana = 3)
 	generate_items_inside(items_inside,src)
-//	if(prob(20))
-//		new /obj/item/book/granter/language_book/mushroom(src) //FULP
 
 /obj/structure/closet/wardrobe/curator
 	name = "treasure hunting wardrobe"
@@ -343,6 +310,4 @@
 	new /obj/item/clothing/under/rank/civilian/curator/treasure_hunter(src)
 	new /obj/item/clothing/shoes/workboots/mining(src)
 	new /obj/item/storage/backpack/satchel/explorer(src)
-	if(prob(20))
-		new /obj/item/book/granter/language_book/common(src) //FULP
 

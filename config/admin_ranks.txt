@@ -39,23 +39,18 @@ Include =
 Exclude = AUTOADMIN
 Edit =
 
-Name = Mentor
-Include = MENTOR
-Exclude =
-Edit =
-
 Name = Moderator
 Include = ADMIN
 Exclude =
 Edit =
 
 Name = Admin Candidate
-Include = @ BAN
+Include = @
 Exclude =
 Edit =
 
-Name = Admin Jr.
-Include = @ SPAWN VAREDIT FUN
+Name = Trial Admin
+Include = @ SPAWN VAREDIT BAN
 Exclude =
 Edit =
 
@@ -64,20 +59,15 @@ Include = @ POSSESS POLL BUILD SERVER FUN
 Exclude =
 Edit =
 
-Name = Admin
+Name = Game Admin
 Include = @ STEALTH SOUND DEBUG
 Exclude =
 Edit =
 
-Name = Fulp Crew
+Name = Game Master
 Include = EVERYTHING
 Exclude =
 Edit = EVERYTHING
-
-Name = Fu1p Crew
-Include = EVERYTHING
-Exclude = SERVER DEBUG
-Edit =
 
 Name = Lazy Master
 Include = EVERYTHING
