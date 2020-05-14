@@ -4,7 +4,7 @@
 	report_type = "devil"
 	antag_flag = ROLE_DEVIL
 	false_report_weight = 1
-	protected_jobs = list("Prisoner", "Lawyer", "Curator", "Chaplain", "Head of Security", "Captain", "AI")
+	protected_jobs = list("Prisoner", "Lawyer", "Curator", "Chaplain", "Head of Security", "Captain", "AI", "Head of Personnel", "Deputy")
 	required_players = 0
 	required_enemies = 1
 	recommended_enemies = 4
@@ -50,6 +50,8 @@
 		return FALSE
 	for(var/antag in devils)
 		GLOB.pre_setup_antags += antag
+	// FULPSTATION: Assign Hunters (as many as monsters, plus one)
+	assign_monster_hunters(devils.len / 1.5, FALSE, devils)	// FULP
 	return TRUE
 
 

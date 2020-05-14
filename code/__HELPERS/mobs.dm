@@ -189,8 +189,6 @@ GLOBAL_LIST_EMPTY(species_list)
 
 	var/target_loc = target.loc
 
-	LAZYADD(user.do_afters, target)
-	LAZYADD(target.targeted_by, user)
 	var/holding = user.get_active_held_item()
 	var/datum/progressbar/progbar
 	if (progress)
@@ -208,9 +206,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			break
 		if(uninterruptible)
 			continue
-		if(!(target in user.do_afters))
-			. = FALSE
-			break
+
 		if(drifting && !user.inertia_dir)
 			drifting = FALSE
 			user_loc = user.loc
@@ -220,9 +216,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			break
 	if(!QDELETED(progbar))
 		progbar.end_progress()
-	if(!QDELETED(target))
-		LAZYREMOVE(user.do_afters, target)
-		LAZYREMOVE(target.targeted_by, user)
+
 
 //some additional checks as a callback for for do_afters that want to break on losing health or on the mob taking action
 /mob/proc/break_do_after_checks(list/checked_health, check_clicks)
@@ -337,8 +331,6 @@ GLOBAL_LIST_EMPTY(species_list)
 	var/list/originalloc = list()
 	for(var/atom/target in targets)
 		originalloc[target] = target.loc
-		LAZYADD(user.do_afters, target)
-		LAZYADD(target.targeted_by, user)
 
 	var/holding = user.get_active_held_item()
 	var/datum/progressbar/progbar
@@ -376,12 +368,6 @@ GLOBAL_LIST_EMPTY(species_list)
 					break mainloop
 	if(!QDELETED(progbar))
 		progbar.end_progress()
-
-	for(var/thing in targets)
-		var/atom/target = thing
-		if(!QDELETED(target))
-			LAZYREMOVE(user.do_afters, target)
-			LAZYREMOVE(target.targeted_by, user)
 
 /proc/is_species(A, species_datum)
 	. = FALSE

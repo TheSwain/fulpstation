@@ -23,7 +23,6 @@
 	var/autotraitor_cooldown = 450 // 15 minutes (ticks once per 2 sec)
 
 /datum/dynamic_ruleset/roundstart/traitor/pre_execute()
-	. = ..()
 	var/num_traitors = antag_cap[indice_pop] * (scaled_times + 1)
 	for (var/i = 1 to num_traitors)
 		var/mob/M = pick_n_take(candidates)
@@ -65,7 +64,6 @@
 	var/const/min_team_size = 2
 
 /datum/dynamic_ruleset/roundstart/traitorbro/pre_execute()
-	. = ..()
 	var/num_teams = (antag_cap[indice_pop]/min_team_size) * (scaled_times + 1) // 1 team per scaling
 	for(var/j = 1 to num_teams)
 		if(candidates.len < min_team_size || candidates.len < required_candidates)
@@ -115,7 +113,6 @@
 	var/team_mode_probability = 30
 
 /datum/dynamic_ruleset/roundstart/changeling/pre_execute()
-	. = ..()
 	var/num_changelings = antag_cap[indice_pop] * (scaled_times + 1)
 	for (var/i = 1 to num_changelings)
 		var/mob/M = pick_n_take(candidates)
@@ -173,7 +170,6 @@
 	return ..()
 
 /datum/dynamic_ruleset/roundstart/wizard/pre_execute()
-	. = ..()
 	if(GLOB.wizardstart.len == 0)
 		return FALSE
 	mode.antags_rolled += 1
@@ -217,7 +213,6 @@
 	. = ..()
 
 /datum/dynamic_ruleset/roundstart/bloodcult/pre_execute()
-	. = ..()
 	var/cultists = antag_cap[indice_pop]
 	mode.antags_rolled += cultists
 	for(var/cultists_number = 1 to cultists)
@@ -277,7 +272,6 @@
 	. = ..()
 
 /datum/dynamic_ruleset/roundstart/nuclear/pre_execute()
-	. = ..()
 	// If ready() did its job, candidates should have 5 or more members in it
 	var/operatives = antag_cap[indice_pop]
 	mode.antags_rolled += operatives
@@ -365,7 +359,6 @@
 	var/finished = FALSE
 
 /datum/dynamic_ruleset/roundstart/revs/pre_execute()
-	. = ..()
 	var/max_candidates = antag_cap[indice_pop]
 	mode.antags_rolled += max_candidates
 	for(var/i = 1 to max_candidates)
@@ -481,7 +474,6 @@
 	high_population_requirement = 101
 
 /datum/dynamic_ruleset/roundstart/extended/pre_execute()
-	. = ..()
 	message_admins("Starting a round of extended.")
 	log_game("Starting a round of extended.")
 	mode.spend_threat(mode.threat)
@@ -532,7 +524,6 @@
 	antag_cap = list(1,1,1,2,2,2,3,3,3,4)
 
 /datum/dynamic_ruleset/roundstart/devil/pre_execute()
-	. = ..()
 	var/num_devils = antag_cap[indice_pop]
 	mode.antags_rolled += num_devils
 
@@ -590,7 +581,6 @@
 	var/datum/team/monkey/monkey_team
 
 /datum/dynamic_ruleset/roundstart/monkey/pre_execute()
-	. = ..()
 	var/carriers_to_make = max(round(mode.roundstart_pop_ready / players_per_carrier, 1), 1)
 	mode.antags_rolled += carriers_to_make
 

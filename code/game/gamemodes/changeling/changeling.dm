@@ -5,6 +5,10 @@ GLOBAL_LIST_INIT(slot2type, list("head" = /obj/item/clothing/head/changeling, "w
 GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our this objective to all lings
 
 
+/datum/game_mode	// FULP: We need changelings stored in game_mode so we can find them with hunters!
+	var/list/datum/mind/changelings = list() // FULP
+
+
 /datum/game_mode/changeling
 	name = "changeling"
 	config_tag = "changeling"
@@ -12,7 +16,7 @@ GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our th
 	antag_flag = ROLE_CHANGELING
 	false_report_weight = 10
 	restricted_jobs = list("AI", "Cyborg")
-	protected_jobs = list("Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
+	protected_jobs = list("Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Deputy")
 	required_players = 15
 	required_enemies = 1
 	recommended_enemies = 4
@@ -24,7 +28,7 @@ GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our th
 	<span class='notice'>Crew</span>: Root out and eliminate the changeling menace."
 
 	var/const/changeling_amount = 4 //hard limit on changelings if scaling is turned off
-	var/list/changelings = list()
+	//var/list/changelings = list() // FULP REMOVE, see above
 
 /datum/game_mode/changeling/pre_setup()
 
@@ -52,6 +56,8 @@ GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our th
 			changeling.special_role = ROLE_CHANGELING
 			changeling.restricted_roles = restricted_jobs
 			GLOB.pre_setup_antags += changeling
+		// FULPSTATION: Assign Hunters (as many as monsters, plus one)
+		assign_monster_hunters(changelings.len, FALSE, changelings)	// FULP
 		return TRUE
 	else
 		setup_error = "Not enough changeling candidates"

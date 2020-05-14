@@ -278,9 +278,9 @@
 	cached_flat_icon = null
 	var/job = assignment ? ckey(GetJobName()) : null
 	if(registered_name && registered_name != "Captain")
-		. += mutable_appearance(icon, "assigned")
+		. += mutable_appearance(icon, "assigned") // FULP: Swain Update (NO CHANGE, JUST NOTES) - "assigned" is just a blank-ish icon in card.dmi. Let's let it just keep calling from there.
 	if(job)
-		. += mutable_appearance(icon, "id[job]")
+		. += mutable_appearance(return_icon_job(), "id[job]") //FULP: Temporarily using a return proc that points to your job's icon. Was "job_icon", but this is moved to the job itself as "id_icon"
 
 /obj/item/card/id/proc/update_in_wallet()
 	if(istype(loc, /obj/item/storage/wallet))

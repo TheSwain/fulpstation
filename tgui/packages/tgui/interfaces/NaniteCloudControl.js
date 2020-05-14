@@ -229,13 +229,13 @@ export const NaniteCloudBackupDetails = (props, context) => {
             )}>
             <Section>
               <NaniteInfoBox program={program} />
-              {(!!can_rule || !!program.has_rules) && (
+              {!!can_rule && (
                 <Section
                   mt={-2}
                   title="Rules"
                   level={2}
-                  buttons={(!!can_rule
-                    && <Button
+                  buttons={(
+                    <Button
                       icon="plus"
                       content="Add Rule from Disk"
                       color="good"
@@ -245,7 +245,7 @@ export const NaniteCloudBackupDetails = (props, context) => {
                   )}>
                   {program.has_rules ? (
                     rules.map(rule => (
-                      <Box key={rule.display}>
+                      <Fragment key={rule.display}>
                         <Button
                           icon="minus-circle"
                           color="bad"
@@ -253,8 +253,8 @@ export const NaniteCloudBackupDetails = (props, context) => {
                             program_id: program.id,
                             rule_id: rule.id,
                           })} />
-                        {` ${rule.display}`}
-                      </Box>
+                        {rule.display}
+                      </Fragment>
                     ))
                   ) : (
                     <Box color="bad">

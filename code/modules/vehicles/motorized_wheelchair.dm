@@ -6,7 +6,8 @@
 	var/power_efficiency = 1
 	var/power_usage = 100
 	var/panel_open = FALSE
-	var/list/required_parts = list(/obj/item/stock_parts/manipulator, 
+	var/t5 = 0 //FULP Var for what the overall rating of the parts is
+	var/list/required_parts = list(/obj/item/stock_parts/manipulator,
 							/obj/item/stock_parts/manipulator,
 							/obj/item/stock_parts/capacitor)
 	var/obj/item/stock_parts/cell/power_cell
@@ -17,9 +18,12 @@
 
 /obj/vehicle/ridden/wheelchair/motorized/proc/refresh_parts()
 	speed = 1 // Should never be under 1
+	t5 = 0 // FULP reset
 	for(var/obj/item/stock_parts/manipulator/M in contents)
+		t5 += M.rating
 		speed += M.rating
 	for(var/obj/item/stock_parts/capacitor/C in contents)
+		t5 += C.rating
 		power_efficiency = C.rating
 	var/datum/component/riding/D = GetComponent(/datum/component/riding)
 	D.vehicle_move_delay = round(CONFIG_GET(number/movedelay/run_delay) * delay_multiplier) / speed
@@ -42,7 +46,7 @@
 			canmove = FALSE
 			addtimer(VARSET_CALLBACK(src, canmove, TRUE), 20)
 			return FALSE
-		if(power_cell.charge < power_usage / max(power_efficiency, 1))			
+		if(power_cell.charge < power_usage / max(power_efficiency, 1))
 			to_chat(user, "<span class='warning'>The display on [src] blinks 'Out of Power'.</span>")
 			canmove = FALSE
 			addtimer(VARSET_CALLBACK(src, canmove, TRUE), 20)
@@ -74,7 +78,7 @@
 		to_chat(user, "<span class='notice'>You remove the power cell from [src].</span>")
 		return
 	return ..()
-	
+
 /obj/vehicle/ridden/wheelchair/motorized/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		I.play_tool_sound(src)
@@ -142,6 +146,15 @@
 		explosion(src, -1, 1, 3, 2, 0)
 		visible_message("<span class='boldwarning'>[src] explodes!!</span>")
 		return
+	if(t5 >= 15 && A.density && isliving(A)) //FULP: If T5 is greater than or equal to 15, run that fucker over and just keep on driving!
+		var/mob/living/D = A
+		var/atom/throw_target = get_edge_target_turf(D, pick(GLOB.cardinals))
+		D.throw_at(throw_target, 2, 3) //FULP: YEET
+		D.Knockdown(85)
+		D.adjustStaminaLoss(40) //FULP: Just like a mulebot, this does no damage on the initial hit- but it does LOADS of damage if you run a prone person over (see Crossed() in carbon.dm for the code for that))
+		D.visible_message("<span class='danger'>[src] rams into [D], sending [D] flying!</span>", "<span class='userdanger'>[src] rams you!</span>")
+		return
+	// FULP: If T5 (T5 identifier) is less than 15, execute as normal
 	// If the speed is higher than delay_multiplier throw the person on the wheelchair away
 	if(A.density && speed > delay_multiplier && has_buckled_mobs())
 		var/mob/living/H = buckled_mobs[1]

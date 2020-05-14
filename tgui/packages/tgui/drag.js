@@ -1,9 +1,3 @@
-/**
- * @file
- * @copyright 2020 Aleksej Komarov
- * @license MIT
- */
-
 import { vecAdd, vecInverse, vecMultiply } from 'common/vector';
 import { winget, winset } from './byond';
 import { createLogger } from './logging';

@@ -44,13 +44,13 @@ GLOBAL_VAR(restart_counter)
 	config.Load(params[OVERRIDE_CONFIG_DIRECTORY_PARAMETER])
 
 	load_admins()
+	load_mentors()
 
 	//SetupLogs depends on the RoundID, so lets check
 	//DB schema and set RoundID if we can
 	SSdbcore.CheckSchemaVersion()
 	SSdbcore.SetRoundID()
 	SetupLogs()
-	load_poll_data()
 
 #ifndef USE_CUSTOM_ERROR_HANDLER
 	world.log = file("[GLOB.log_directory]/dd.log")
@@ -278,6 +278,9 @@ GLOBAL_VAR(restart_counter)
 	..()
 
 /world/proc/update_status()
+
+	status = update_status_fulp()  // FULPSTATION Use our code and bail!
+	return
 
 	var/list/features = list()
 

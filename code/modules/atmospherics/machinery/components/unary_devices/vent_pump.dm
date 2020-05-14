@@ -295,7 +295,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume
 	name = "large air vent"
-	power_channel = AREA_USAGE_EQUIP
+	power_channel = EQUIP
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/New()
 	..()

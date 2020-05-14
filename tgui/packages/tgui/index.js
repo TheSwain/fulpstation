@@ -1,9 +1,3 @@
-/**
- * @file
- * @copyright 2020 Aleksej Komarov
- * @license MIT
- */
-
 // Polyfills
 import 'core-js/es';
 import 'core-js/web/immediate';

@@ -12,23 +12,8 @@
 	var/datum/plant_gene/trait/stored_trait
 	///Determines the appearance of the graft. Rudimentary right now so it just picks randomly.
 	var/graft_appearance
-	///Seed that the graft was taken from, used for applying parent stats. Can be unexpectedly nulled by the parent plant getting deleted.
+	///Seed type that the graft was taken from, used for applying parent stats.
 	var/obj/item/seeds/parent_seed = null
-	/// The name of the plant this was taken from.
-	var/parent_name = ""
-	///The lifespan stat of the parent seed when the graft was taken.
-	var/lifespan
-	///The endurance stat of the parent seed when the graft was taken.
-	var/endurance
-	///The production stat of the parent seed when the graft was taken.
-	var/production
-	///The weed_rate stat of the parent seed when the graft was taken.
-	var/weed_rate
-	///The weed_chance stat of the parent seed when the graft was taken.
-	var/weed_chance
-	///The yield stat of the parent seed when the graft was taken.
-	var/yield
-
 
 /obj/item/graft/Initialize()
 	. = ..()
@@ -49,8 +34,8 @@
   */
 /obj/item/graft/proc/get_graft_text()
 	var/text = "- Plant Graft -\n"
-	if(parent_name)
-		text += "- Parent Plant: [parent_name] -\n"
+	if(parent_seed)
+		text += "- Parent Plant: [parent_seed.plantname] -\n"
 	if(stored_trait)
 		text += "- Graftable Traits: [stored_trait.get_name()] -\n"
 	return text

@@ -14,7 +14,7 @@ Format:
 endmap
 
 map boxstation
-	#default
+	default
 	#voteweight 1.5
 	votable
 endmap
@@ -23,6 +23,12 @@ map metastation
 	minplayers 25
 	#voteweight 0.5
 	votable
+endmap
+
+map kilostation
+	minplayers 25
+	votable
+	disabled
 endmap
 
 map pubbystation
@@ -37,15 +43,13 @@ endmap
 map donutstation
 	minplayers 50
 	votable
-endmap
-
-map kilostation
-	minplayers 25
-	votable
+	disabled
 endmap
 
 map runtimestation
+	disabled
 endmap
 
 map multiz_debug
+	disabled
 endmap

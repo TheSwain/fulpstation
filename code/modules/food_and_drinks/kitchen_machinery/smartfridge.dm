@@ -99,8 +99,8 @@
 				update_icon()
 			return TRUE
 
-		if(istype(O, /obj/item/storage/bag))
-			var/obj/item/storage/P = O
+		if(istype(O, /obj/item/storage/bag) || istype(O, /obj/item/organ_storage)) //FULPSTATION MEDBORG ORGAN STORAGE FIX Surrealistik Nov 2019
+			var/obj/item/P = O //FULPSTATION MEDBORG ORGAN STORAGE TWEAK Surrealistik Jan 2020 END
 			var/loaded = 0
 			for(var/obj/G in P.contents)
 				if(contents.len >= max_n_of_items)
@@ -108,6 +108,9 @@
 				if(accept_check(G))
 					load(G)
 					loaded++
+					if(istype(O, /obj/item/organ_storage)) //FULPSTATION MEDBORG ORGAN STORAGE TWEAK Surrealistik Jan 2020 END
+						var/obj/item/organ_storage/S = O
+						S.clear_organ() //FULPSTATION MEDBORG ORGAN STORAGE TWEAK Surrealistik Jan 2020 END
 			updateUsrDialog()
 
 			if(loaded)
@@ -447,6 +450,7 @@
 					/obj/item/reagent_containers/glass/beaker,
 					/obj/item/reagent_containers/spray,
 					/obj/item/reagent_containers/medigel,
+					/obj/item/reagent_containers/hypospray/medipen, //FULP
 					/obj/item/reagent_containers/chem_pack
 	))
 
@@ -470,9 +474,9 @@
 /obj/machinery/smartfridge/chemistry/preloaded
 	initial_contents = list(
 		/obj/item/reagent_containers/pill/epinephrine = 12,
-		/obj/item/reagent_containers/pill/multiver = 5,
+		/obj/item/reagent_containers/pill/charcoal = 5,	//FULP
 		/obj/item/reagent_containers/glass/bottle/epinephrine = 1,
-		/obj/item/reagent_containers/glass/bottle/multiver = 1)
+		/obj/item/reagent_containers/glass/bottle/charcoal = 1)	//FULP
 
 // ----------------------------
 // Virology Medical Smartfridge

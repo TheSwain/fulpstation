@@ -25,7 +25,7 @@
 	idle_power_usage = 50		//when inactive, this turret takes up constant 50 Equipment power
 	active_power_usage = 300	//when active, this turret takes up constant 300 Equipment power
 	req_access = list(ACCESS_SEC_DOORS)
-	power_channel = AREA_USAGE_EQUIP	//drains power from the EQUIPMENT channel
+	power_channel = EQUIP	//drains power from the EQUIPMENT channel
 
 	var/base_icon_state = "standard"
 	var/scan_range = 7
@@ -99,25 +99,6 @@
 	if(!has_cover)
 		INVOKE_ASYNC(src, .proc/popUp)
 
-/obj/machinery/porta_turret/proc/toggle_on(var/set_to)
-	var/current = on
-	if (!isnull(set_to))
-		on = set_to
-	else
-		on = !on
-	if (current != on)
-		check_should_process()
-		if (!on)
-			popDown()
-
-/obj/machinery/porta_turret/proc/check_should_process()
-	if (datum_flags & DF_ISPROCESSING)
-		if (!on || !anchored || (machine_stat & BROKEN) || !powered())
-			end_processing()
-	else
-		if (on && anchored && !(machine_stat & BROKEN) && powered())
-			begin_processing()
-
 /obj/machinery/porta_turret/update_icon_state()
 	if(!anchored)
 		icon_state = "turretCover"
@@ -179,8 +160,8 @@
 
 /obj/machinery/porta_turret/ui_interact(mob/user)
 	. = ..()
-
-	var/list/dat = list("Status: <a href='?src=[REF(src)];power=1'>[on ? "On" : "Off"]</a><br>")
+	var/dat
+	dat += "Status: <a href='?src=[REF(src)];power=1'>[on ? "On" : "Off"]</a><br>"
 	dat += "Behaviour controls are [locked ? "locked" : "unlocked"]<br>"
 
 	if(!locked)
@@ -201,7 +182,7 @@
 
 
 	var/datum/browser/popup = new(user, "autosec", "Automatic Portable Turret Installation", 300, 300)
-	popup.set_content(dat.Join(""))
+	popup.set_content(dat)
 	popup.open()
 
 /obj/machinery/porta_turret/Topic(href, href_list)
@@ -212,7 +193,7 @@
 
 	if(href_list["power"] && !locked)
 		if(anchored)	//you can't turn a turret on/off if it's not anchored/secured
-			toggle_on()
+			on = !on	//toggle on/off
 		else
 			to_chat(usr, "<span class='warning'>It has to be secured first!</span>")
 		interact(usr)
@@ -245,9 +226,6 @@
 	if(!anchored || (machine_stat & BROKEN) || !powered())
 		update_icon()
 		remove_control()
-	check_should_process()
-
-
 
 /obj/machinery/porta_turret/attackby(obj/item/I, mob/user, params)
 	if(machine_stat & BROKEN)
@@ -312,10 +290,10 @@
 	audible_message("<span class='hear'>[src] hums oddly...</span>")
 	obj_flags |= EMAGGED
 	controllock = TRUE
-	toggle_on(FALSE) //turns off the turret temporarily
+	on = FALSE //turns off the turret temporarily
 	update_icon()
 	//6 seconds for the traitor to gtfo of the area before the turret decides to ruin his shit
-	addtimer(CALLBACK(src, .proc/toggle_on, TRUE), 6 SECONDS)
+	addtimer(VARSET_CALLBACK(src, on, TRUE), 6 SECONDS)
 	//turns it back on. The cover popUp() popDown() are automatically called in process(), no need to define it here
 
 
@@ -333,10 +311,10 @@
 		if(prob(20))
 			turret_flags |= TURRET_FLAG_SHOOT_ALL // Shooting everyone is a pretty big deal, so it's least likely to get turned on
 
-		toggle_on(FALSE)
+		on = FALSE
 		remove_control()
 
-		addtimer(CALLBACK(src, .proc/toggle_on, TRUE), rand(60,600))
+		addtimer(VARSET_CALLBACK(src, on, TRUE), rand(60,600))
 
 /obj/machinery/porta_turret/take_damage(damage, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
 	. = ..()
@@ -374,7 +352,7 @@
 				cover.parent_turret = src	//assign the cover its parent_turret, which would be this (src)
 
 	if(!on || (machine_stat & (NOPOWER|BROKEN)) || manual_control)
-		return PROCESS_KILL
+		return
 
 	var/list/targets = list()
 	for(var/mob/A in view(scan_range, base))
@@ -407,7 +385,7 @@
 				if(LAZYLEN(faction) && (ROLE_SYNDICATE in faction) && sillyconerobot.emagged == TRUE)
 					continue
 
-		else if(iscarbon(A))
+		if(iscarbon(A))
 			var/mob/living/carbon/C = A
 			//If not emagged, only target carbons that can use items
 			if(mode != TURRET_LETHAL && (C.stat || C.handcuffed || !(C.mobility_flags & MOBILITY_USE)))
@@ -425,7 +403,6 @@
 			else if(turret_flags & TURRET_FLAG_SHOOT_ANOMALOUS) //non humans who are not simple animals (xenos etc)
 				if(!in_faction(C))
 					targets += C
-
 	for(var/A in GLOB.mechas_list)
 		if((get_dist(A, base) < scan_range) && can_see(base, A, scan_range))
 			var/obj/mecha/Mech = A
@@ -589,7 +566,9 @@
 		return
 
 	shoot_cyborgs ? (turret_flags |= TURRET_FLAG_SHOOT_BORGS) : (turret_flags &= ~TURRET_FLAG_SHOOT_BORGS)
-	toggle_on(on)
+	src.on = on
+	if(!on)
+		popDown()
 	src.mode = mode
 	power_change()
 
@@ -1095,9 +1074,9 @@
 	if(on)
 		if(team_color == "blue")
 			if(istype(P, /obj/projectile/beam/lasertag/redtag))
-				toggle_on(FALSE)
-				addtimer(CALLBACK(src, .proc/toggle_on, TRUE), 10 SECONDS)
+				on = FALSE
+				addtimer(VARSET_CALLBACK(src, on, TRUE), 10 SECONDS)
 		else if(team_color == "red")
 			if(istype(P, /obj/projectile/beam/lasertag/bluetag))
-				toggle_on(FALSE)
-				addtimer(CALLBACK(src, .proc/toggle_on, TRUE), 10 SECONDS)
+				on = FALSE
+				addtimer(VARSET_CALLBACK(src, on, TRUE), 10 SECONDS)

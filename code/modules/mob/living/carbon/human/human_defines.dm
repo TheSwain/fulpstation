@@ -61,5 +61,3 @@
 	var/lastpuke = 0
 	var/last_fire_update
 	var/account_id
-
-	var/hardcore_survival_score = 0

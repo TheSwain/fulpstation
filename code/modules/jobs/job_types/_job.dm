@@ -29,6 +29,8 @@
 	//How many players have this job
 	var/current_positions = 0
 
+	var/list/human_command = list("Captain", "Head of Personnel", "Head of Security")
+
 	//Supervisors, who this person answers to directly
 	var/supervisors = ""
 
@@ -224,6 +226,7 @@
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
 		C.assignment = J.title
+		C.linkedJobType = J.type // FULP: We remember our job type. We don't need a reference to the exact instance inside SSjob. Just the type will do. *** ALSO LOCATED IN card.dm
 		if(H.age)
 			C.registered_age = H.age
 		C.update_label()

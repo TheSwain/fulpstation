@@ -67,11 +67,6 @@
 		return
 	else
 		linked.linked = src
-		var/area/my_area = get_area(src)
-		if(my_area)
-			linked.power_usage = my_area.power_usage
-		else
-			linked.power_usage = new /list(AREA_USAGE_LEN)
 
 	generate_program_list()
 	load_program(offline_program, FALSE, FALSE)
@@ -80,7 +75,6 @@
 	emergency_shutdown()
 	if(linked)
 		linked.linked = null
-		linked.power_usage = new /list(AREA_USAGE_LEN)
 	return ..()
 
 /obj/machinery/computer/holodeck/power_change()

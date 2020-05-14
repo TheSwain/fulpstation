@@ -1,9 +1,3 @@
-/**
- * @file
- * @copyright 2020 Aleksej Komarov
- * @license MIT
- */
-
 import { sendLogEntry } from 'tgui-dev-server/link/client';
 import { callByond } from './byond';
 

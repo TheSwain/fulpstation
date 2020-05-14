@@ -40,7 +40,7 @@
 		var/obj/item/clothing/CH = H.head
 		if (CS.clothing_flags & CH.clothing_flags & STOPSPRESSUREDAMAGE)
 			atmos_sealed = TRUE
-	if((!istype(H.w_uniform, /obj/item/clothing/under/plasmaman) || !istype(H.head, /obj/item/clothing/head/helmet/space/plasmaman) || !istype(H.gloves, /obj/item/clothing/gloves)) && !atmos_sealed)
+	if((!istype(H.w_uniform, /obj/item/clothing/under/plasmaman) || !istype(H.head, /obj/item/clothing/head/helmet/space/plasmaman)) && !atmos_sealed) //fulp edit
 		if(environment)
 			if(environment.total_moles())
 				if(environment.gases[/datum/gas/oxygen] && (environment.gases[/datum/gas/oxygen][MOLES]) >= 1) //Same threshhold that extinguishes fire
@@ -133,6 +133,9 @@
 
 		if("Mime")
 			O = new /datum/outfit/plasmaman/mime
+		
+		if("Deputy")									//FULP
+			O = new /datum/outfit/plasmaman/security	//FULP - put your other jobs between Mime and Clown
 
 		if("Clown")
 			O = new /datum/outfit/plasmaman/clown

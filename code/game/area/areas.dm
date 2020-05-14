@@ -43,6 +43,12 @@
 	var/power_equip = TRUE
 	var/power_light = TRUE
 	var/power_environ = TRUE
+	var/used_equip = 0
+	var/used_light = 0
+	var/used_environ = 0
+	var/static_equip
+	var/static_light = 0
+	var/static_environ
 
 	var/has_gravity = 0
 	///Are you forbidden from teleporting to the area? (centcom, mobs, wizard, hand teleporter)
@@ -69,9 +75,6 @@
 	var/xenobiology_compatible = FALSE
 	/// typecache to limit the areas that atoms in this area can smooth with, used for shuttles IIRC
 	var/list/canSmoothWithAreas
-
-	var/list/power_usage
-
 
 /**
   * A list of teleport locations
@@ -115,7 +118,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	// rather than waiting for atoms to initialize.
 	if (unique)
 		GLOB.areas_by_type[type] = src
-	power_usage = new /list(AREA_USAGE_LEN) // Some atoms would like to use power in Initialize()
 	return ..()
 
 /**
@@ -462,11 +464,11 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	if(always_unpowered)
 		return 0
 	switch(chan)
-		if(AREA_USAGE_EQUIP)
+		if(EQUIP)
 			return power_equip
-		if(AREA_USAGE_LIGHT)
+		if(LIGHT)
 			return power_light
-		if(AREA_USAGE_ENVIRON)
+		if(ENVIRON)
 			return power_environ
 
 	return 0
@@ -487,19 +489,44 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		M.power_change()				// reverify power status (to update icons etc.)
 	update_icon()
 
+/**
+  * Return the usage of power per channel
+  */
+/area/proc/usage(chan)
+	var/used = 0
+	switch(chan)
+		if(LIGHT)
+			used += used_light
+		if(EQUIP)
+			used += used_equip
+		if(ENVIRON)
+			used += used_environ
+		if(TOTAL)
+			used += used_light + used_equip + used_environ
+		if(STATIC_EQUIP)
+			used += static_equip
+		if(STATIC_LIGHT)
+			used += static_light
+		if(STATIC_ENVIRON)
+			used += static_environ
+	return used
 
 /**
   * Add a static amount of power load to an area
   *
   * Possible channels
-  * *AREA_USAGE_STATIC_EQUIP
-  * *AREA_USAGE_STATIC_LIGHT
-  * *AREA_USAGE_STATIC_ENVIRON
+  * *STATIC_EQUIP
+  * *STATIC_LIGHT
+  * *STATIC_ENVIRON
   */
 /area/proc/addStaticPower(value, powerchannel)
 	switch(powerchannel)
-		if(AREA_USAGE_STATIC_START to AREA_USAGE_STATIC_END)
-			power_usage[powerchannel] += value
+		if(STATIC_EQUIP)
+			static_equip += value
+		if(STATIC_LIGHT)
+			static_light += value
+		if(STATIC_ENVIRON)
+			static_environ += value
 
 /**
   * Clear all power usage in area
@@ -507,17 +534,22 @@ GLOBAL_LIST_EMPTY(teleportlocs)
   * Clears all power used for equipment, light and environment channels
   */
 /area/proc/clear_usage()
-	for(var/i in AREA_USAGE_DYNAMIC_START to AREA_USAGE_DYNAMIC_END)
-		power_usage[i] = 0
+	used_equip = 0
+	used_light = 0
+	used_environ = 0
 
 /**
   * Add a power value amount to the stored used_x variables
   */
 /area/proc/use_power(amount, chan)
-	switch(chan)
-		if(AREA_USAGE_DYNAMIC_START to AREA_USAGE_DYNAMIC_END)
-			power_usage[chan] += amount
 
+	switch(chan)
+		if(EQUIP)
+			used_equip += amount
+		if(LIGHT)
+			used_light += amount
+		if(ENVIRON)
+			used_environ += amount
 
 /**
   * Call back when an atom enters an area

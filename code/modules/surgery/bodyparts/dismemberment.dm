@@ -89,6 +89,9 @@
 	update_limb(1)
 	C.bodyparts -= src
 
+	if (status == BODYPART_ORGANIC) // FULP: This limb is now LOCKED to the type of its previous owner!
+		organicDropLocked = TRUE
+
 	if(held_index)
 		if(C.hand_bodyparts[held_index] == src)
 			// We only want to do this if the limb being removed is the active hand part.
