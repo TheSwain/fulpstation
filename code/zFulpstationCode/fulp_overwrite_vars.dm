@@ -254,10 +254,51 @@
 //** Engiborgs now start with a manipulator for wall mounted frames and basic
 //** electronics which can be upgraded to hold stock parts and circuitboards
 //*****************************************************************************
-
+/obj/item/robot_module/standard
+	basic_modules = list(
+		/obj/item/laser_pointer, //replaced flash
+		/obj/item/reagent_containers/borghypo/epi,
+		/obj/item/healthanalyzer,
+		/obj/item/weldingtool/largetank/cyborg,
+		/obj/item/wrench/cyborg,
+		/obj/item/crowbar/cyborg,
+		/obj/item/stack/sheet/metal/cyborg,
+		/obj/item/stack/rods/cyborg,
+		/obj/item/stack/tile/plasteel/cyborg,
+		/obj/item/extinguisher,
+		/obj/item/pickaxe,
+		/obj/item/t_scanner/adv_mining_scanner,
+		/obj/item/restraints/handcuffs/cable/zipties,
+		/obj/item/soap/nanotrasen,
+		/obj/item/borg/cyborghug)	
+		
+/obj/item/robot_module/medical
+	basic_modules = list( 
+		/obj/item/laser_pointer, //replaced flash
+		/obj/item/healthanalyzer,
+		/obj/item/reagent_containers/borghypo,
+		/obj/item/borg/apparatus/beaker/medical,
+		/obj/item/reagent_containers/dropper,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/surgical_drapes,
+		/obj/item/retractor,
+		/obj/item/hemostat,
+		/obj/item/cautery,
+		/obj/item/surgicaldrill,
+		/obj/item/scalpel,
+		/obj/item/circular_saw,
+		/obj/item/shockpaddles/cyborg, //FULPSTATION MEDBORG UPGRADES by Surrealistik March 2020
+		/obj/item/extinguisher/mini,
+		/obj/item/holobed_projector/robot, //FULPSTATION MEDBORG UPGRADES by Surrealistik March 2020
+		/obj/item/borg/cyborghug/medical,
+		/obj/item/stack/medical/gauze/cyborg,
+		/obj/item/organ_storage,
+		/obj/item/soap/nanotrasen, //FULPSTATION MEDBORG UPGRADES by Surrealistik March 2020
+		/obj/item/borg/lollipop)
+		
 /obj/item/robot_module/engineering
 	basic_modules = list(
-		/obj/item/assembly/flash/cyborg,
+		/obj/item/laser_pointer, //replaced flash
 		/obj/item/borg/sight/meson,
 		/obj/item/construction/rcd/borg,
 		/obj/item/pipe_dispenser,
@@ -281,7 +322,118 @@
 		/obj/item/stack/tile/plasteel/cyborg,
 		/obj/item/borg/apparatus/circuit,
 		/obj/item/stack/cable_coil/cyborg)
+		
+/obj/item/robot_module/peacekeeper
+	basic_modules = list(
+		/obj/item/laser_pointer, //replaced flash
+		/obj/item/rsf/cookiesynth,
+		/obj/item/harmalarm,
+		/obj/item/reagent_containers/borghypo/peace,
+		/obj/item/holosign_creator/cyborg,
+		/obj/item/borg/cyborghug/peacekeeper,
+		/obj/item/extinguisher,
+		/obj/item/borg/projectile_dampen)
+		
+/obj/item/robot_module/janitor
+	basic_modules = list(
+		/obj/item/laser_pointer, //replaced flash
+		/obj/item/screwdriver/cyborg,
+		/obj/item/crowbar/cyborg,
+		/obj/item/stack/tile/plasteel/cyborg,
+		/obj/item/soap/nanotrasen,
+		/obj/item/storage/bag/trash/cyborg,
+		/obj/item/melee/flyswatter,
+		/obj/item/extinguisher/mini,
+		/obj/item/mop/cyborg,
+		/obj/item/reagent_containers/glass/bucket,
+		/obj/item/paint/paint_remover,
+		/obj/item/lightreplacer/cyborg,
+		/obj/item/holosign_creator/janibarrier,
+		/obj/item/reagent_containers/spray/cyborg_drying)		
 
+/obj/item/robot_module/clown
+	basic_modules = list(
+		/obj/item/laser_pointer, //replaced flash
+		/obj/item/toy/crayon/rainbow,
+		/obj/item/instrument/bikehorn,
+		/obj/item/stamp/clown,
+		/obj/item/bikehorn,
+		/obj/item/bikehorn/airhorn,
+		/obj/item/paint/anycolor,
+		/obj/item/soap/nanotrasen,
+		/obj/item/pneumatic_cannon/pie/selfcharge/cyborg,
+		/obj/item/razor,					//killbait material
+		/obj/item/lipstick/purple,
+		/obj/item/reagent_containers/spray/waterflower/cyborg,
+		/obj/item/borg/cyborghug/peacekeeper,
+		/obj/item/borg/lollipop/clown,
+		/obj/item/picket_sign/cyborg,
+		/obj/item/reagent_containers/borghypo/clown,
+		/obj/item/extinguisher/mini)
+				
+/obj/item/robot_module/butler
+	basic_modules = list(
+		/obj/item/laser_pointer, //replaced flash
+		/obj/item/reagent_containers/glass/beaker/large, //I know a shaker is more appropiate but this is for ease of identification
+		/obj/item/reagent_containers/food/condiment/enzyme,
+		/obj/item/pen,
+		/obj/item/toy/crayon/spraycan/borg,
+		/obj/item/extinguisher/mini,
+		/obj/item/hand_labeler/borg,
+		/obj/item/razor,
+		/obj/item/rsf,
+		/obj/item/instrument/guitar,
+		/obj/item/instrument/piano_synth,
+		/obj/item/reagent_containers/dropper,
+		/obj/item/lighter,
+		/obj/item/storage/bag/tray,
+		/obj/item/reagent_containers/borghypo/borgshaker,
+		/obj/item/borg/lollipop,
+		/obj/item/stack/pipe_cleaner_coil/cyborg,
+		/obj/item/borg/apparatus/beaker/service)		
+		
+/obj/item/robot_module/miner
+	basic_modules = list(
+		/obj/item/laser_pointer, //replaced flash
+		/obj/item/borg/sight/meson,
+		/obj/item/storage/bag/ore/cyborg,
+		/obj/item/pickaxe/drill/cyborg,
+		/obj/item/shovel,
+		/obj/item/crowbar/cyborg,
+		/obj/item/weldingtool/mini,
+		/obj/item/extinguisher/mini,
+		/obj/item/storage/bag/sheetsnatcher/borg,
+		/obj/item/gun/energy/kinetic_accelerator/cyborg,
+		/obj/item/gps/cyborg,
+		/obj/item/stack/marker_beacon)
+		
+/obj/item/robot_module/syndicate_medical
+	basic_modules = list(
+		/obj/item/assembly/flash/cyborg,
+		/obj/item/reagent_containers/borghypo/syndicate,
+		/obj/item/shockpaddles/syndicate/cyborg,
+		/obj/item/healthanalyzer,
+		/obj/item/borg/apparatus/beaker, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
+		/obj/item/reagent_containers/dropper, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
+		/obj/item/reagent_containers/syringe, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
+		/obj/item/surgical_drapes,
+		/obj/item/retractor,
+		/obj/item/hemostat,
+		/obj/item/cautery,
+		/obj/item/surgicaldrill,
+		/obj/item/scalpel,
+		/obj/item/melee/transforming/energy/sword/cyborg/saw,
+		/obj/item/holobed_projector/robot, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
+		/obj/item/crowbar/cyborg,
+		/obj/item/extinguisher/mini,
+		/obj/item/pinpointer/syndicate_cyborg,
+		/obj/item/stack/medical/gauze/cyborg,
+		/obj/item/gun/medbeam,
+		/obj/item/borg/cyborghug/medical, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
+		/obj/item/borg/lollipop, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
+		/obj/item/borg_chameleon, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020,
+		/obj/item/organ_storage)		
+				
 /obj/item/borg/apparatus/circuit
 	name = "basic component manipulation apparatus"
 	desc = "A special apparatus for carrying and manipulating engineering components like electronics and wall mounted frames. Alt-Z or right-click to drop the stored object."
