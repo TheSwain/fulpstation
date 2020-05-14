@@ -36,25 +36,41 @@ DATU: Datums for map templates
 	name = "Prototype Captain's quarter"
 	icon_state = "blue"
 
-/area/ruin/has_grav/prototype/nhallway
-	name = "Prototype North Hall"
+/area/ruin/has_grav/prototype/arrivals
+	name = "Prototype Arrivals"
 	icon_state = "hallP"
 
-/area/ruin/has_grav/prototype/shallway
-	name = "Prototype South Hall"
+/area/ruin/has_grav/prototype/hallway
+	name = "Prototype Main Hallway"
 	icon_state = "hallS"
 
-/area/ruin/has_grav/prototype/chemistry
-	name = "Prototype Chemistry"
+/area/ruin/has_grav/prototype/medsci
+	name = "Prototype Med-Sci"
 	icon_state = "green"
 
-/area/ruin/has_grav/prototype/garden
-	name = "Prototype Garden"
+/area/ruin/has_grav/prototype/botany
+	name = "Prototype Botany"
 	icon_state = "garden"
 
 /area/ruin/has_grav/prototype/engineering
 	name = "Prototype Engineering"
 	icon_state = "engi_storage"
+
+/area/ruin/has_grav/prototype/solars
+	name = "Prototype Solars"
+	icon_state = "engi_storage"
+
+/area/ruin/has_grav/prototype/kitchen
+	name = "Prototype Kitchen"
+	icon_state = "kitchen"
+
+/area/ruin/has_grav/prototype/brig
+	name = "Prototype Brig"
+	icon_state = "maint_brig"
+
+/area/ruin/has_grav/prototype/dorms
+	name = "Prototype Dormitories"
+	icon_state = "dorms"
 
 /obj/item/book/story/ProtoStory
 	icon = 'icons/obj/library.dmi'
