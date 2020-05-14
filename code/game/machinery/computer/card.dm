@@ -257,6 +257,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		var/target_name = inserted_modify_id ? html_encode(inserted_modify_id.name) : "--------"
 		var/target_owner = (inserted_modify_id && inserted_modify_id.registered_name) ? html_encode(inserted_modify_id.registered_name) : "--------"
 		var/target_rank = (inserted_modify_id && inserted_modify_id.assignment) ? html_encode(inserted_modify_id.assignment) : "Unassigned"
+		var/target_age = (inserted_modify_id && inserted_modify_id.registered_age) ? html_encode(inserted_modify_id.registered_age) : "--------"
 
 		if(!authenticated)
 			header += {"<br><i>Please insert the cards into the slots</i><br>
@@ -303,7 +304,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					<input type='hidden' name='src' value='[REF(src)]'>
 					<input type='hidden' name='choice' value='reg'>
 					<b>registered name:</b> <input type='text' id='namefield' name='reg' value='[target_owner]' style='width:250px; background-color:white;' onchange='markRed()'>
-					<input type='submit' value='Rename' onclick='markGreen()'>
+					<b>registered age:</b> <input type='number' id='namefield' name='setage' value='[target_age]' style='width:50px; background-color:white;' onchange='markRed()'>
+					<input type='submit' value='Submit' onclick='markGreen()'>
 					</form>
 					<b>Assignment:</b> "}
 
@@ -445,6 +447,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		if ("assign")
 			if (authenticated == 2)
 				var/t1 = href_list["assign_target"]
+				inserted_modify_id.linkedJobType = null // FULP: We must forget our job type.  *** ALSO LOCATED IN _job.dm
 				if(t1 == "Custom")
 					var/newJob = reject_bad_text(input("Enter a custom job assignment.", "Assignment", inserted_modify_id ? inserted_modify_id.assignment : "Unassigned"), MAX_NAME_LEN)
 					if(newJob)
@@ -469,6 +472,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						inserted_modify_id.registered_account.account_job = jobdatum // this is a terrible idea and people will grief but sure whatever
 
 					inserted_modify_id.access = ( istype(src, /obj/machinery/computer/card/centcom) ? get_centcom_access(t1) : jobdatum.get_access() )
+					inserted_modify_id.linkedJobType = jobdatum.type // FULP: We remember our job type. We don't need a reference to the exact instance inside SSjob. Just the type will do. *** ALSO LOCATED IN _job.dm
 				if (inserted_modify_id)
 					inserted_modify_id.assignment = t1
 					playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
@@ -482,6 +486,14 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			if (authenticated)
 				var/t2 = inserted_modify_id
 				if ((authenticated && inserted_modify_id == t2 && (in_range(src, usr) || issilicon(usr)) && isturf(loc)))
+					var/newAge = text2num(href_list["setage"])|null
+					if(newAge && isnum(newAge))
+						inserted_modify_id.registered_age = newAge
+						playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+					else if(!isnull(newAge))
+						to_chat(usr, "<span class='alert'>Invalid age entered- age not updated.</span>")
+						updateUsrDialog()
+
 					var/newName = reject_bad_name(href_list["reg"])
 					if(newName)
 						inserted_modify_id.registered_name = newName

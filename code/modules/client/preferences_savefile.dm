@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX	33
+#define SAVEFILE_VERSION_MAX	34
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -55,6 +55,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	if(current_version < 33)
 		toggles |= SOUND_ENDOFROUND
+
+	if(current_version < 34)
+		auto_fit_viewport = TRUE
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
 	if(current_version < 19)
@@ -165,6 +168,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["lastchangelog"]		>> lastchangelog
 	S["UI_style"]			>> UI_style
 	S["hotkeys"]			>> hotkeys
+	S["chat_on_map"]		>> chat_on_map
+	S["max_chat_length"]	>> max_chat_length
+	S["see_chat_non_mob"] 	>> see_chat_non_mob
 	S["tgui_fancy"]			>> tgui_fancy
 	S["tgui_lock"]			>> tgui_lock
 	S["buttons_locked"]		>> buttons_locked
@@ -208,6 +214,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	lastchangelog	= sanitize_text(lastchangelog, initial(lastchangelog))
 	UI_style		= sanitize_inlist(UI_style, GLOB.available_ui_styles, GLOB.available_ui_styles[1])
 	hotkeys			= sanitize_integer(hotkeys, 0, 1, initial(hotkeys))
+	chat_on_map		= sanitize_integer(chat_on_map, 0, 1, initial(chat_on_map))
+	max_chat_length = sanitize_integer(max_chat_length, 1, CHAT_MESSAGE_MAX_LENGTH, initial(max_chat_length))
+	see_chat_non_mob	= sanitize_integer(see_chat_non_mob, 0, 1, initial(see_chat_non_mob))
 	tgui_fancy		= sanitize_integer(tgui_fancy, 0, 1, initial(tgui_fancy))
 	tgui_lock		= sanitize_integer(tgui_lock, 0, 1, initial(tgui_lock))
 	buttons_locked	= sanitize_integer(buttons_locked, 0, 1, initial(buttons_locked))
@@ -248,6 +257,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["lastchangelog"], lastchangelog)
 	WRITE_FILE(S["UI_style"], UI_style)
 	WRITE_FILE(S["hotkeys"], hotkeys)
+	WRITE_FILE(S["chat_on_map"], chat_on_map)
+	WRITE_FILE(S["max_chat_length"], max_chat_length)
+	WRITE_FILE(S["see_chat_non_mob"], see_chat_non_mob)
 	WRITE_FILE(S["tgui_fancy"], tgui_fancy)
 	WRITE_FILE(S["tgui_lock"], tgui_lock)
 	WRITE_FILE(S["buttons_locked"], buttons_locked)
@@ -313,6 +325,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!S["feature_ethcolor"] || S["feature_ethcolor"] == "#000")
 		WRITE_FILE(S["feature_ethcolor"]	, "9c3030")
 
+	if(!S["feature_beefcolor"] || S["feature_beefcolor"] == "") // FULP
+		WRITE_FILE(S["feature_beefcolor"]	, "e73f4e")
+	if(!S["feature_beefeyes"] || S["feature_beefeyes"] == "") // FULP
+		WRITE_FILE(S["feature_beefeyes"]	, "Olives")
+	if(!S["feature_beefmouth"] || S["feature_beefmouth"] == "") // FULP
+		WRITE_FILE(S["feature_beefmouth"]	, "Smile1")
+
 	//Character
 	S["real_name"]			>> real_name
 	S["gender"]				>> gender
@@ -334,6 +353,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["randomise"]	>>  randomise
 	S["feature_mcolor"]					>> features["mcolor"]
 	S["feature_ethcolor"]					>> features["ethcolor"]
+	S["feature_beefcolor"]					>> features["beefcolor"] // FULP
+	S["feature_beefeyes"]					>> features["beefeyes"] // FULP
+	S["feature_beefmouth"]					>> features["beefmouth"] // FULP
 	S["feature_lizard_tail"]			>> features["tail_lizard"]
 	S["feature_lizard_snout"]			>> features["snout"]
 	S["feature_lizard_horns"]			>> features["horns"]
@@ -389,6 +411,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!features["ethcolor"] || features["ethcolor"] == "#000")
 		features["ethcolor"] = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
 
+	if(!features["beefcolor"] || features["beefcolor"] == "") // FULP
+		features["beefcolor"] = GLOB.color_list_beefman[pick(GLOB.color_list_beefman)]
+	if(!features["beefeyes"] || features["beefeyes"] == "") // FULP
+		features["beefeyes"] = pick(GLOB.eyes_beefman)
+	if(!features["beefmouth"] || features["beefmouth"] == "") // FULP
+		features["beefmouth"] = pick(GLOB.mouths_beefman)
+
 	randomise = SANITIZE_LIST(randomise)
 
 	if(gender == MALE)
@@ -419,6 +448,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
 	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 3, 0)
 	features["ethcolor"]	= copytext_char(features["ethcolor"], 1, 7)
+	features["beefcolor"]	= copytext_char(features["beefcolor"], 1, 7) // FULP
+	features["beefeyes"]	= sanitize_inlist(features["beefeyes"], GLOB.eyes_beefman) // FULP
+	features["beefmouth"]	= sanitize_inlist(features["beefmouth"], GLOB.mouths_beefman) // FULP
 	features["tail_lizard"]	= sanitize_inlist(features["tail_lizard"], GLOB.tails_list_lizard)
 	features["tail_human"] 	= sanitize_inlist(features["tail_human"], GLOB.tails_list_human, "None")
 	features["snout"]	= sanitize_inlist(features["snout"], GLOB.snouts_list)
@@ -473,6 +505,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["phobia"], phobia)
 	WRITE_FILE(S["feature_mcolor"]					, features["mcolor"])
 	WRITE_FILE(S["feature_ethcolor"]					, features["ethcolor"])
+	WRITE_FILE(S["feature_beefcolor"]					, features["beefcolor"]) // FULP
+	WRITE_FILE(S["feature_beefeyes"]					, features["beefeyes"]) // FULP
+	WRITE_FILE(S["feature_beefmouth"]					, features["beefmouth"]) // FULP
 	WRITE_FILE(S["feature_lizard_tail"]			, features["tail_lizard"])
 	WRITE_FILE(S["feature_human_tail"]				, features["tail_human"])
 	WRITE_FILE(S["feature_lizard_snout"]			, features["snout"])

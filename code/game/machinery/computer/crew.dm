@@ -70,6 +70,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	jobs["Security Response Officer"] = 221
 	jobs["Engineer Response Officer"] = 222
 	jobs["Medical Response Officer"] = 223
+	jobs["Deputy"] = 16 //FULP
 	jobs["Assistant"] = 999 //Unknowns/custom jobs should appear after civilians, and before assistants
 
 	src.jobs = jobs
@@ -81,7 +82,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 							datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "crew", "crew monitor", 800, 600 , master_ui, state)
+		ui = new(user, src, ui_key, "CrewConsole", "crew monitor", 800, 600 , master_ui, state)
 		ui.open()
 
 /datum/crewmonitor/proc/show(mob/M, source)

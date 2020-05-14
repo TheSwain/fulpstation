@@ -392,8 +392,8 @@
 			to_chat(src, "<span class='notice'>You have given up life and succumbed to death.</span>")
 		death()
 
-/mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE, ignore_stasis = FALSE)
-	if(stat || IsUnconscious() || IsStun() || IsParalyzed() || (check_immobilized && IsImmobilized()) || (!ignore_restraints && restrained(ignore_grab)) || (!ignore_stasis && IS_IN_STASIS(src)))
+/mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, ignore_stasis = FALSE)
+	if(stat || HAS_TRAIT(src, TRAIT_INCAPACITATED) || (!ignore_restraints && restrained(ignore_grab)) || (!ignore_stasis && IS_IN_STASIS(src)))
 		return TRUE
 
 /mob/living/canUseStorage()
@@ -539,7 +539,7 @@
 				O.applyOrganDamage(excess_healing*-1)//1 excess = 5 organ damage healed
 
 		adjustOxyLoss(-20, TRUE)
-		adjustToxLoss(-20, TRUE) //slime friendly
+		adjustToxLoss(-20, TRUE, TRUE) //slime friendly
 		updatehealth()
 		grab_ghost()
 	SEND_SIGNAL(src, COMSIG_LIVING_REVIVE, full_heal, admin_revive)
@@ -968,7 +968,7 @@
 	return TRUE
 
 //used in datum/reagents/reaction() proc
-/mob/living/proc/get_permeability_protection(list/target_zones)
+/mob/living/proc/get_permeability_protection(list/target_zones = list())  // FULP: Added " = list()"  because we were getting an error for this proc in carbon.dm line 620. Maybe this fixes it?
 	return 0
 
 /mob/living/proc/harvest(mob/living/user) //used for extra objects etc. in butchering
@@ -1028,7 +1028,7 @@
 		return TRUE
 	return FALSE
 
-/mob/living/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE)
+/mob/living/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
 	stop_pulling()
 	. = ..()
 
@@ -1173,6 +1173,7 @@
 	var/knockdown = IsKnockdown()
 	var/ignore_legs = get_leg_ignore()
 	var/canmove = !IsImmobilized() && !stun && conscious && !paralyzed && !buckled && (!stat_softcrit || !pulledby) && !chokehold && !IsFrozen() && !IS_IN_STASIS(src) && (has_arms || ignore_legs || has_legs)
+	canmove = canmove && !IsFrenzied() // FULPSTATION: Bloodsuckers etc. cannot be controlled in Frenzy.
 	if(canmove)
 		mobility_flags |= MOBILITY_MOVE
 	else
@@ -1438,12 +1439,12 @@
 	if(lying_angle != 0) //We are not standing up.
 		if(layer == initial(layer)) //to avoid things like hiding larvas.
 			layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
-		if(. != 0) //We became prone and were not before. We lose density and stop bumping passable dense things.
+		if(. == 0) //We became prone and were not before. We lose density and stop bumping passable dense things.
 			density = FALSE
 	else //We are prone.
 		if(layer == LYING_MOB_LAYER)
 			layer = initial(layer)
-		if(.) //We weren't pone before, so we become dense and things can bump into us again.
+		if(.) //We were prone before, so we become dense and things can bump into us again.
 			density = initial(density)
 
 
@@ -1495,3 +1496,36 @@
 	if(!apply_change)
 		return BODYTEMP_NORMAL
 	return BODYTEMP_NORMAL + get_body_temp_normal_change()
+
+///Checks if the user is incapacitated or on cooldown.
+/mob/living/proc/can_look_up()
+	return !((next_move > world.time) || incapacitated(ignore_restraints = TRUE))
+
+/**
+ * look_up Changes the perspective of the mob to any openspace turf above the mob
+ *
+ * This also checks if an openspace turf is above the mob before looking up or resets the perspective if already looking up
+ *
+ */
+/mob/living/proc/look_up()
+
+	if(client.perspective != MOB_PERSPECTIVE) //We are already looking up.
+		stop_look_up()
+		return
+	if(!can_look_up())
+		return
+	var/turf/ceiling = get_step_multiz(src, UP)
+	if(!ceiling) //We are at the highest z-level.
+		to_chat(src, "<span class='warning'>You can't see through the ceiling above you.</span>")
+		return
+	else if(!istransparentturf(ceiling)) //There is no turf we can look through above us
+		to_chat(src, "<span class='warning'>You can't see through the floor above you.</span>")
+		return
+
+	changeNext_move(CLICK_CD_LOOK_UP)
+	reset_perspective(ceiling)
+	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, .proc/stop_look_up) //We stop looking up if we move.
+
+/mob/living/proc/stop_look_up()
+	reset_perspective()
+	UnregisterSignal(src, COMSIG_MOVABLE_PRE_MOVE)

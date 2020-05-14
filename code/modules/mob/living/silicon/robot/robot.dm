@@ -177,9 +177,8 @@
 	if(shell)
 		GLOB.available_ai_shells -= src
 	else
-		if(T && istype(radio) && istype(radio.keyslot))
-			radio.keyslot.forceMove(T)
-			radio.keyslot = null
+		borg_clear_radio() //FULPSTATION Borg Radio PR by Surrealistik Jan 2020; we delete all borg type encryption keys.
+
 	qdel(wires)
 	qdel(module)
 	qdel(eye_lights)
@@ -188,6 +187,12 @@
 	eye_lights = null
 	cell = null
 	return ..()
+
+/mob/living/silicon/robot/Topic(href, href_list)
+	. = ..()
+	//Show alerts window if user clicked on "Show alerts" in chat
+	if (href_list["showalerts"])
+		robot_alerts()
 
 /mob/living/silicon/robot/proc/pick_module()
 	if(module.type != /obj/item/robot_module)
@@ -213,7 +218,7 @@
 		return
 
 	module.transform_to(modulelist[input_module])
-
+	fulp_emag_features() //FULPSTATION Sec Borg Upgrades by Surrealistik Feb 2020
 
 /mob/living/silicon/robot/proc/updatename(client/C)
 	if(shell)
@@ -223,9 +228,11 @@
 	var/changed_name = ""
 	if(custom_name)
 		changed_name = custom_name
-	if(changed_name == "" && C && C.prefs.custom_names["cyborg"] != DEFAULT_CYBORG_NAME)
-		if(apply_pref_name("cyborg", C))
-			return //built in camera handled in proc
+	if(SSticker.anonymousnames) //only robotic renames will allow for anything other than the anonymous one
+		changed_name = anonymous_ai_name(is_ai = FALSE)
+	if(!changed_name && C && C.prefs.custom_names["cyborg"] != DEFAULT_CYBORG_NAME)
+		apply_pref_name("cyborg", C)
+		return //built in camera handled in proc
 	if(!changed_name)
 		changed_name = get_standard_name()
 
@@ -489,6 +496,7 @@
 	emagged = new_state
 	module.rebuild_modules()
 	update_icons()
+	fulp_emag_features() //FULPSTATION Sec Borg Upgrades by Surrealistik Feb 2020
 	if(emagged)
 		throw_alert("hacked", /obj/screen/alert/hacked)
 	else
@@ -801,6 +809,7 @@
 
 /mob/living/silicon/robot/proc/ResetModule()
 	SEND_SIGNAL(src, COMSIG_BORG_SAFE_DECONSTRUCT)
+	borg_clear_radio() //FULPSTATION BORG RADIOS by Surrealistik Jan 2020
 	uneq_all()
 	shown_robot_modules = FALSE
 	if(hud_used)
@@ -864,7 +873,8 @@
 /mob/living/silicon/robot/Exited(atom/A)
 	if(hat && hat == A)
 		hat = null
-	update_icons()
+		if(!QDELETED(src)) //Don't update icons if we are deleted.
+			update_icons()
 	. = ..()
 
 /**
@@ -999,6 +1009,7 @@
 			M.visible_message("<span class='boldwarning'>Unfortunately, [M] just can't seem to hold onto [src]!</span>")
 			return
 	M.visible_message("<span class='boldwarning'>[M] is being loaded onto [src]!</span>")//if you have better flavor text for this by all means change it
+	fulp_borg_unbuckle(M) //FULPSTATION MEDBORG CHANGES -Surrealistik Feb 2020
 	if(!do_after(src, 5, target = M))
 		return
 	if(iscarbon(M) && !M.incapacitated() && !riding_datum.equip_buckle_inhands(M, 1))
@@ -1027,7 +1038,7 @@
 
 
 /mob/living/silicon/robot/proc/TryConnectToAI()
-	connected_ai = select_active_ai_with_fewest_borgs()
+	connected_ai = select_active_ai_with_fewest_borgs(z)
 	if(connected_ai)
 		connected_ai.connected_robots += src
 		lawsync()

@@ -73,6 +73,10 @@
 		/datum/reagent/fuel/oil,
 		/datum/reagent/saltpetre
 	)
+	//available with T5 manipulator (Quantum) [XEON Code]
+	var/list/t5_reagents = list( //FULP
+		/datum/reagent/medicine/CF/trekamol //FULP [Saliferous]
+	)
 	var/list/emagged_reagents = list(
 		/datum/reagent/toxin/carpotoxin,
 		/datum/reagent/medicine/mine_salve,
@@ -92,6 +96,8 @@
 		emagged_reagents = sortList(emagged_reagents, /proc/cmp_reagents_asc)
 	if(upgrade_reagents)
 		upgrade_reagents = sortList(upgrade_reagents, /proc/cmp_reagents_asc)
+	if(t5_reagents) //FULP [XEON]
+		t5_reagents = sortList(t5_reagents, /proc/cmp_reagents_asc) //FULP
 	update_icon()
 
 /obj/machinery/chem_dispenser/Destroy()
@@ -157,7 +163,13 @@
 /obj/machinery/chem_dispenser/contents_explosion(severity, target)
 	..()
 	if(beaker)
-		beaker.ex_act(severity, target)
+		switch(severity)
+			if(EXPLODE_DEVASTATE)
+				SSexplosions.highobj += beaker
+			if(EXPLODE_HEAVY)
+				SSexplosions.medobj += beaker
+			if(EXPLODE_LIGHT)
+				SSexplosions.lowobj += beaker
 
 /obj/machinery/chem_dispenser/handle_atom_del(atom/A)
 	..()
@@ -169,7 +181,7 @@
 											datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "chem_dispenser", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, ui_key, "ChemDispenser", name, ui_x, ui_y, master_ui, state)
 		if(user.hallucinating())
 			ui.set_autoupdate(FALSE) //to not ruin the immersion by constantly changing the fake chemicals
 		ui.open()
@@ -378,6 +390,8 @@
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		if (M.rating > 3)
 			dispensable_reagents |= upgrade_reagents
+		if (M.rating > 4) //FULP [Saliferous]
+			dispensable_reagents |= t5_reagents //FULP
 	powerefficiency = round(newpowereff, 0.01)
 
 /obj/machinery/chem_dispenser/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/new_beaker)

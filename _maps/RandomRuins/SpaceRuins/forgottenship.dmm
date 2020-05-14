@@ -418,7 +418,6 @@
 /obj/machinery/mineral/ore_redemption{
 	name = "Syndicate ore redemption machine";
 	ore_multiplier = 4;
-	ore_pickup_rate = 20;
 	req_access = list(150)
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -494,8 +493,8 @@
 	secure = 1
 	},
 /obj/item/crowbar/red,
-/obj/item/ammo_box/magazine/pistolm9mm,
-/obj/item/ammo_box/magazine/pistolm9mm,
+/obj/item/ammo_box/magazine/m9mm,
+/obj/item/ammo_box/magazine/m9mm,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "bx" = (

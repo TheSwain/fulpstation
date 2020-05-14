@@ -83,7 +83,13 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/contents_explosion(severity, target)
 	..()
 	if(beaker)
-		beaker.ex_act(severity, target)
+		switch(severity)
+			if(EXPLODE_DEVASTATE)
+				SSexplosions.highobj += beaker
+			if(EXPLODE_HEAVY)
+				SSexplosions.medobj += beaker
+			if(EXPLODE_LIGHT)
+				SSexplosions.lowobj += beaker
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/handle_atom_del(atom/A)
 	..()
@@ -184,7 +190,9 @@
 	if(mob_occupant.stat == DEAD) // We don't bother with dead people.
 		return
 
-	if(mob_occupant.health >= mob_occupant.getMaxHealth()) // Don't bother with fully healed people.
+	//if(mob_occupant.health >= mob_occupant.getMaxHealth()) // Don't bother with fully healed people.
+	var/total_damage = mob_occupant.getOxyLoss() + mob_occupant.getToxLoss() + mob_occupant.getFireLoss_nonProsthetic() + mob_occupant.getBruteLoss_nonProsthetic() + mob_occupant.getCloneLoss()// FULP: Check damage, minus prosthetics.
+	if (total_damage <= 0)
 		on = FALSE
 		update_icon()
 		playsound(src, 'sound/machines/cryo_warning.ogg', volume) // Bug the doctors.
@@ -333,7 +341,7 @@
 																	datum/tgui/master_ui = null, datum/ui_state/state = GLOB.notcontained_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "cryo", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, ui_key, "Cryo", name, ui_x, ui_y, master_ui, state)
 		ui.open()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/ui_data()
@@ -363,10 +371,10 @@
 		data["occupant"]["health"] = round(mob_occupant.health, 1)
 		data["occupant"]["maxHealth"] = mob_occupant.maxHealth
 		data["occupant"]["minHealth"] = HEALTH_THRESHOLD_DEAD
-		data["occupant"]["bruteLoss"] = round(mob_occupant.getBruteLoss(), 1)
+		data["occupant"]["bruteLoss"] = round(mob_occupant.getBruteLoss_nonProsthetic(), 1) // FULP: Don't count Prosthetics.
 		data["occupant"]["oxyLoss"] = round(mob_occupant.getOxyLoss(), 1)
 		data["occupant"]["toxLoss"] = round(mob_occupant.getToxLoss(), 1)
-		data["occupant"]["fireLoss"] = round(mob_occupant.getFireLoss(), 1)
+		data["occupant"]["fireLoss"] = round(mob_occupant.getFireLoss_nonProsthetic(), 1) // FULP: Don't count Prosthetics.
 		data["occupant"]["bodyTemperature"] = round(mob_occupant.bodytemperature, 1)
 		if(mob_occupant.bodytemperature < TCRYO)
 			data["occupant"]["temperaturestatus"] = "good"
@@ -415,13 +423,13 @@
 				. = TRUE
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/CtrlClick(mob/user)
-	if(user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK) && !state_open)
+	if(can_interact(user) && !state_open)
 		on = !on
 		update_icon()
 	return ..()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/AltClick(mob/user)
-	if(user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+	if(can_interact(user))
 		if(state_open)
 			close_machine()
 		else
@@ -461,6 +469,6 @@
 		if(node)
 			node.atmosinit()
 			node.addMember(src)
-		build_network()
+		SSair.add_to_rebuild_queue(src)
 
 #undef CRYOMOBS

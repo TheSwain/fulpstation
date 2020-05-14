@@ -84,6 +84,7 @@
 	if(attached_accessory && slot != ITEM_SLOT_HANDS && ishuman(user))
 		var/mob/living/carbon/human/H = user
 		attached_accessory.on_uniform_equip(src, user)
+		H.fan_hud_set_fandom()
 		if(attached_accessory.above_suit)
 			H.update_inv_wear_suit()
 
@@ -92,6 +93,7 @@
 		attached_accessory.on_uniform_dropped(src, user)
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
+			H.fan_hud_set_fandom()
 			if(attached_accessory.above_suit)
 				H.update_inv_wear_suit()
 
@@ -118,7 +120,7 @@
 				to_chat(user, "<span class='notice'>You attach [I] to [src].</span>")
 
 			var/accessory_color = attached_accessory.icon_state
-			accessory_overlay = mutable_appearance('icons/mob/clothing/accessories.dmi', "[accessory_color]")
+			accessory_overlay = mutable_appearance(I.mob_overlay_icon, "[accessory_color]") //FULP modified - changed hardcoded file path to I.mob_overlay_icon
 			accessory_overlay.alpha = attached_accessory.alpha
 			accessory_overlay.color = attached_accessory.color
 
@@ -126,6 +128,7 @@
 				var/mob/living/carbon/human/H = loc
 				H.update_inv_w_uniform()
 				H.update_inv_wear_suit()
+				H.fan_hud_set_fandom()
 
 			return TRUE
 
@@ -147,6 +150,7 @@
 			var/mob/living/carbon/human/H = loc
 			H.update_inv_w_uniform()
 			H.update_inv_wear_suit()
+			H.fan_hud_set_fandom()
 
 
 /obj/item/clothing/under/examine(mob/user)

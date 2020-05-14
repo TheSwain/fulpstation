@@ -137,46 +137,41 @@
 			disabled += zone
 	return disabled
 
-//Remove all embedded objects from all limbs on the carbon mob
-/mob/living/carbon/proc/remove_all_embedded_objects()
-	var/turf/T = get_turf(src)
+///Remove a specific embedded item from the carbon mob
+/mob/living/carbon/proc/remove_embedded_object(obj/item/I)
+	SEND_SIGNAL(src, COMSIG_CARBON_EMBED_REMOVAL, I)
 
+///Remove all embedded objects from all limbs on the carbon mob
+/mob/living/carbon/proc/remove_all_embedded_objects()
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/L = X
 		for(var/obj/item/I in L.embedded_objects)
-			L.embedded_objects -= I
-			I.forceMove(T)
-			I.unembedded()
-
-	clear_alert("embeddedobject")
-	SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "embedded")
+			remove_embedded_object(I)
 
 /mob/living/carbon/proc/has_embedded_objects(include_harmless=FALSE)
-	. = 0
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/L = X
 		for(var/obj/item/I in L.embedded_objects)
-			if(!include_harmless && I.is_embed_harmless())
+			if(!include_harmless && I.isEmbedHarmless())
 				continue
-			return 1
-
+			return TRUE
 
 //Helper for quickly creating a new limb - used by augment code in species.dm spec_attacked_by
 /mob/living/carbon/proc/newBodyPart(zone, robotic, fixed_icon)
 	var/obj/item/bodypart/L
 	switch(zone)
 		if(BODY_ZONE_L_ARM)
-			L = new /obj/item/bodypart/l_arm()
+			L = new part_default_l_arm() // FULP // Why can't individual humans get different parts? // /obj/item/bodypart/l_arm()
 		if(BODY_ZONE_R_ARM)
-			L = new /obj/item/bodypart/r_arm()
+			L = new part_default_r_arm() // FULP /  //obj/item/bodypart/r_arm()
 		if(BODY_ZONE_HEAD)
-			L = new /obj/item/bodypart/head()
+			L = new part_default_head()  // FULP /  //obj/item/bodypart/head()
 		if(BODY_ZONE_L_LEG)
-			L = new /obj/item/bodypart/l_leg()
+			L = new part_default_l_leg() // FULP /  //obj/item/bodypart/l_leg()
 		if(BODY_ZONE_R_LEG)
-			L = new /obj/item/bodypart/r_leg()
+			L = new part_default_r_leg() // FULP /  //obj/item/bodypart/r_leg()
 		if(BODY_ZONE_CHEST)
-			L = new /obj/item/bodypart/chest()
+			L = new part_default_chest() // FULP /  //obj/item/bodypart/chest()
 	if(L)
 		L.update_limb(fixed_icon, src)
 		if(robotic)

@@ -15,7 +15,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 
 /obj/machinery/vending/medical/syndicate_access/cybersun
 	name = "\improper CyberMed ++"
-	desc = "Advanced vendor dispensing medical drugs."
+	desc = "An advanced vendor that dispenses medical drugs, both recreational and medicinal."
 	products = list(/obj/item/reagent_containers/syringe = 4,
 					/obj/item/healthanalyzer = 4,
 					/obj/item/reagent_containers/pill/patch/libital = 5,
@@ -102,10 +102,10 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	name = "Cybersun"
 	id = "cybersun"
 	inherent = list("You may not injure Cybersun operatives or, through inaction, allow Cybersun operatives to come to harm.",\
-					"Cybersun ship is a rectricted area for anyone except Cybersun operatives.",\
-					"Cybersun Captain can designate new Operatives as long as they belong to another Syndicate faction that isn't hostile towards Cybersun.",\
-					"You must follow orders given by Cybersun Captain or Crew Members as long as it doesn't conflict with Captain's orders or your laws.",\
-					"Enemies of Cybersun are to be executed on spot. Those, who aren't hostile must be detained and contained in designated area as prisoners.")
+					"The Cybersun ship is a restricted area for anyone except Cybersun operatives.",\
+					"The Cybersun Captain can designate new Operatives as long as they belong to another Syndicate faction that isn't hostile towards Cybersun.",\
+					"You must follow orders given by the Cybersun Captain or crewmembers of the Cybersun Ship as long as it doesn't conflict with the Captain's orders or your laws.",\
+					"Enemies of Cybersun are to be executed on spot. Those who aren't hostile must be detained and contained in the designated prison area as prisoners.")
 
 ///////////	forgottenship areas
 
@@ -133,7 +133,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	icon_state = "cybersun"
 	item_state = "cybersun"
 	hardsuit_type = "cybersun"
-	armor = list("melee" = 30, "bullet" = 40, "laser" = 70, "energy" = 70, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 60, "energy" = 60, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
 	strip_delay = 600
 	actions_types = list()
 
@@ -143,9 +143,8 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	item_state = "cybersun"
 	hardsuit_type = "cybersun"
 	name = "Cybersun hardsuit"
-	desc = "Prototype hardsuit with experimental armor plates, protecting from laser-based weapons very well, while giving limited protection against anything else. Requires the user to activate the inner mechanism in order to unequip it, making it really difficult to take it off from somebody else."
-	armor = list("melee" = 30, "bullet" = 40, "laser" = 70, "energy" = 70, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
-	strip_delay = 600
+	desc = "Prototype hardsuit with experimental armor plates, protecting from laser-based weapons very well, while giving limited protection against anything else."
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 60, "energy" = 60, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
 	slowdown = 0
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cybersun
 	actions_types = list(/datum/action/item_action/toggle_helmet, /datum/action/item_action/toggle_spacesuit)

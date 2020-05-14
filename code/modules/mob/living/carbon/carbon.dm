@@ -217,6 +217,16 @@
 								"<span class='userdanger'>[usr] [internal ? "opens" : "closes"] the valve on your [ITEM.name].</span>", null, null, usr)
 				to_chat(usr, "<span class='notice'>You [internal ? "open" : "close"] the valve on [src]'s [ITEM.name].</span>")
 
+	if(href_list["embedded_object"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
+		var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in bodyparts
+		if(!L)
+			return
+		var/obj/item/I = locate(href_list["embedded_object"]) in L.embedded_objects
+		if(!I || I.loc != src) //no item, no limb, or item is not in limb or in the person anymore
+			return
+		SEND_SIGNAL(src, COMSIG_CARBON_EMBED_RIP, I, L)
+		return
+
 /mob/living/carbon/on_fall()
 	. = ..()
 	loc.handle_fall(src)//it's loc so it doesn't call the mob's handle_fall which does nothing
@@ -523,6 +533,7 @@
 		enter_stamcrit()
 	else if(stam_paralyzed)
 		stam_paralyzed = FALSE
+		REMOVE_TRAIT(src,TRAIT_INCAPACITATED, STAMINA)
 	else
 		return
 	update_health_hud()
@@ -1064,3 +1075,15 @@
 
 	if(shoes && !(HIDESHOES in obscured) && shoes.washed(washer))
 		update_inv_shoes()
+
+//FULP: This code used to be in human.dm, but we've moved it here (and improved it) so that mulebots and motorized wheelchairs can run over both humans AND monkeys (and xenos)
+/mob/living/carbon/Crossed(atom/movable/AM)
+	if(istype(AM, /mob/living/simple_animal/bot/mulebot)) //are we being run over by a mulebot?
+		var/mob/living/simple_animal/bot/mulebot/MB = AM
+		MB.RunOver(src)
+	else if(istype(AM, /obj/vehicle/ridden/wheelchair/motorized)) //are we being run over by a motorized wheelchair?
+		var/obj/vehicle/ridden/wheelchair/motorized/MW = AM
+		if(MW.t5 >= 15 && !(MW.pulledby)) //is that wheelchair fully upgraded with T5 parts? also, is it NOT being pulled by someone?
+			MW.RunOver(src)
+	. = ..()
+

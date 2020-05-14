@@ -6,7 +6,7 @@
 */
 /mob/living/carbon/human/UnarmedAttack(atom/A, proximity)
 
-	if(!has_active_hand()) //can't attack without a hand.
+	if(!has_active_hand() && !A.use_without_hands) //can't attack without a hand.  // FULP: Unless this thing is MEANT to be used no matter what.
 		to_chat(src, "<span class='notice'>You look at your arm and sigh.</span>")
 		return
 
@@ -176,9 +176,13 @@
 	Nothing happening here
 */
 /mob/living/simple_animal/slime/UnarmedAttack(atom/A)
+	if(isturf(A))
+		return ..()
 	A.attack_slime(src)
+
 /atom/proc/attack_slime(mob/user)
 	return
+
 /mob/living/simple_animal/slime/RestrainedClickOn(atom/A)
 	return
 

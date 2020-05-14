@@ -113,7 +113,7 @@
 			S.source = get_or_create_estorage(/datum/robot_energy_storage/pipe_cleaner)
 
 		if(S && S.source)
-			S.custom_materials = null
+			S.set_custom_materials(null)
 			S.is_cyborg = 1
 
 	if(I.loc != src)
@@ -227,6 +227,19 @@
 		R.hud_used.update_robot_modules_display()
 	SSblackbox.record_feedback("tally", "cyborg_modules", 1, R.module)
 
+/**
+  * check_menu: Checks if we are allowed to interact with a radial menu
+  *
+  * Arguments:
+  * * user The mob interacting with a menu
+  */
+/obj/item/robot_module/proc/check_menu(mob/user)
+	if(!istype(user))
+		return FALSE
+	if(user.incapacitated() || !user.Adjacent(src))
+		return FALSE
+	return TRUE
+
 /obj/item/robot_module/standard
 	name = "Standard"
 	basic_modules = list(
@@ -251,11 +264,11 @@
 
 /obj/item/robot_module/medical
 	name = "Medical"
-	basic_modules = list(
+	basic_modules = list( //FULPSTATION MEDBORG UPGRADES by Surrealistik March 2020
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/healthanalyzer,
 		/obj/item/reagent_containers/borghypo,
-		/obj/item/borg/apparatus/beaker,
+		/obj/item/borg/apparatus/beaker/medical, //FULPSTATION MEDBORG UPGRADES by Surrealistik March 2020
 		/obj/item/reagent_containers/dropper,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/surgical_drapes,
@@ -265,11 +278,13 @@
 		/obj/item/surgicaldrill,
 		/obj/item/scalpel,
 		/obj/item/circular_saw,
+		/obj/item/shockpaddles/cyborg, //FULPSTATION MEDBORG UPGRADES by Surrealistik March 2020
 		/obj/item/extinguisher/mini,
-		/obj/item/roller/robo,
+		/obj/item/holobed_projector/robot, //FULPSTATION MEDBORG UPGRADES by Surrealistik March 2020
 		/obj/item/borg/cyborghug/medical,
 		/obj/item/stack/medical/gauze/cyborg,
 		/obj/item/organ_storage,
+		/obj/item/soap/nanotrasen, //FULPSTATION MEDBORG UPGRADES by Surrealistik March 2020
 		/obj/item/borg/lollipop)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/hacked)
 	cyborg_base_icon = "medical"
@@ -344,7 +359,7 @@
 	name = "Peacekeeper"
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
-		/obj/item/cookiesynth,
+		/obj/item/rsf/cookiesynth,
 		/obj/item/harmalarm,
 		/obj/item/reagent_containers/borghypo/peace,
 		/obj/item/holosign_creator/cyborg,
@@ -470,10 +485,15 @@
 
 /obj/item/robot_module/butler/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in sortList(list("Waitress", "Butler", "Tophat", "Kent", "Bro"))
-	if(!borg_icon)
-		return FALSE
-	switch(borg_icon)
+	var/list/service_icons = sortList(list(
+		"Waitress" = image(icon = 'icons/mob/robots.dmi', icon_state = "service_f"),
+		"Butler" = image(icon = 'icons/mob/robots.dmi', icon_state = "service_m"),
+		"Bro" = image(icon = 'icons/mob/robots.dmi', icon_state = "brobot"),
+		"Kent" = image(icon = 'icons/mob/robots.dmi', icon_state = "kent"),
+		"Tophat" = image(icon = 'icons/mob/robots.dmi', icon_state = "tophat")
+		))
+	var/service_robot_icon = show_radial_menu(R, R , service_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+	switch(service_robot_icon)
 		if("Waitress")
 			cyborg_base_icon = "service_f"
 		if("Butler")
@@ -488,6 +508,8 @@
 			cyborg_base_icon = "tophat"
 			special_light_key = null
 			hat_offset = INFINITY //He is already wearing a hat
+		else
+			return FALSE
 	return ..()
 
 /obj/item/robot_module/miner
@@ -513,10 +535,13 @@
 
 /obj/item/robot_module/miner/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in sortList(list("Lavaland Miner", "Asteroid Miner", "Spider Miner"))
-	if(!borg_icon)
-		return FALSE
-	switch(borg_icon)
+	var/list/miner_icons = sortList(list(
+		"Lavaland Miner" = image(icon = 'icons/mob/robots.dmi', icon_state = "miner"),
+		"Asteroid Miner" = image(icon = 'icons/mob/robots.dmi', icon_state = "minerOLD"),
+		"Spider Miner" = image(icon = 'icons/mob/robots.dmi', icon_state = "spidermin")
+		))
+	var/miner_robot_icon = show_radial_menu(R, R , miner_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+	switch(miner_robot_icon)
 		if("Lavaland Miner")
 			cyborg_base_icon = "miner"
 		if("Asteroid Miner")
@@ -524,6 +549,8 @@
 			special_light_key = "miner"
 		if("Spider Miner")
 			cyborg_base_icon = "spidermin"
+		else
+			return FALSE
 	return ..()
 
 /obj/item/robot_module/miner/rebuild_modules()
@@ -567,8 +594,12 @@
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/reagent_containers/borghypo/syndicate,
+		/obj/item/reagent_containers/borghypo, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
 		/obj/item/shockpaddles/syndicate/cyborg,
 		/obj/item/healthanalyzer,
+		/obj/item/borg/apparatus/beaker, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
+		/obj/item/reagent_containers/dropper, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
+		/obj/item/reagent_containers/syringe, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
 		/obj/item/surgical_drapes,
 		/obj/item/retractor,
 		/obj/item/hemostat,
@@ -576,13 +607,15 @@
 		/obj/item/surgicaldrill,
 		/obj/item/scalpel,
 		/obj/item/melee/transforming/energy/sword/cyborg/saw,
-		/obj/item/roller/robo,
-		/obj/item/card/emag,
+		/obj/item/holobed_projector/robot, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
 		/obj/item/crowbar/cyborg,
 		/obj/item/extinguisher/mini,
 		/obj/item/pinpointer/syndicate_cyborg,
 		/obj/item/stack/medical/gauze/cyborg,
 		/obj/item/gun/medbeam,
+		/obj/item/borg/cyborghug/medical, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
+		/obj/item/borg/lollipop, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020
+		/obj/item/borg_chameleon, //FULPSTATION SYNDICATE MEDBORG UPDATE by Surrealistik March 2020,
 		/obj/item/organ_storage)
 
 	cyborg_base_icon = "synd_medical"

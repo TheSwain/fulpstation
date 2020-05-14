@@ -36,7 +36,7 @@
 	report_type = "cult"
 	antag_flag = ROLE_CULTIST
 	false_report_weight = 10
-	restricted_jobs = list("Prisoner","Chaplain","AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel")
+	restricted_jobs = list("Prisoner","Chaplain","AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Deputy")
 	protected_jobs = list()
 	required_players = 29
 	required_enemies = 4
@@ -85,6 +85,8 @@
 	if(cultists_to_cult.len>=required_enemies)
 		for(var/antag in cultists_to_cult)
 			GLOB.pre_setup_antags += antag
+		// FULPSTATION: Assign Hunters (as many as monsters, plus one)
+		assign_monster_hunters(cultists_to_cult.len / 1.5, FALSE, cultists_to_cult)	// FULP
 		return TRUE
 	else
 		setup_error = "Not enough cultist candidates"

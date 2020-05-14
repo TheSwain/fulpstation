@@ -224,6 +224,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	send_speech(message, message_range, src, bubble_type, spans, language, message_mode)
 
+	//FULPSTATION: Suffocating carbons can't speak (see breath.dm) (PR #252)
+	check_if_can_breathe(src)
+	//END FULPSTATION
+
 	if(succumbed)
 		succumb(1)
 		to_chat(src, compose_message(src, language, message, , spans, message_mode))
@@ -245,6 +249,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		deaf_message = "<span class='notice'>You can't hear yourself!</span>"
 		deaf_type = 2 // Since you should be able to hear yourself without looking
 
+	// Create map text prior to modifying message for goonchat
+	if (client?.prefs.chat_on_map && stat != UNCONSCIOUS && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
+		create_chat_message(speaker, message_language, raw_message, spans, message_mode)
+
 	// Recompose message for AI hrefs, language incomprehension.
 	message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mode)
 
@@ -263,7 +271,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			var/mob/M = _M
 			if(QDELETED(M))	//Some times nulls and deleteds stay in this list. This is a workaround to prevent ic chat breaking for everyone when they do.
 				continue	//Remove if underlying cause (likely byond issue) is fixed. See TG PR #49004.
-			if(M.stat != DEAD) //not dead, not important
+			if(!M || M.stat != DEAD) //not dead, not important	// FULPFIX: If this person does not exist. 4/13/19
 				continue
 			if(get_dist(M, src) > 7 || M.z != z) //they're out of range of normal hearing
 				if(eavesdropping_modes[message_mode] && !(M.client.prefs.chat_toggles & CHAT_GHOSTWHISPER)) //they're whispering and we have hearing whispers at any range off
@@ -291,7 +299,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	//speech bubble
 	var/list/speech_bubble_recipients = list()
 	for(var/mob/M in listening)
-		if(M.client)
+		if(M.client && !M.client.prefs.chat_on_map)
 			speech_bubble_recipients.Add(M.client)
 	var/image/I = image('icons/mob/talk.dmi', src, "[bubble_type][say_test(message)]", FLY_LAYER)
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA

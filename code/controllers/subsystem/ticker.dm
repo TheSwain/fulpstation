@@ -27,7 +27,11 @@ SUBSYSTEM_DEF(ticker)
 	var/admin_delay_notice = ""				//a message to display to anyone who tries to restart the world after a delay
 	var/ready_for_reboot = FALSE			//all roundend preparation done with, all that's left is reboot
 
-	var/triai = 0							//Global holder for Triumvirate
+	///If not set to ANON_DISABLED then people spawn with a themed anon name (see anonymousnames.dm)
+	var/anonymousnames = ANON_DISABLED
+	///Boolean to see if the game needs to set up a triumvirate ai (see tripAI.dm)
+	var/triai = FALSE
+
 	var/tipped = 0							//Did we broadcast the tip of the day yet?
 	var/selected_tip						// What will be the tip of the day?
 
@@ -147,6 +151,7 @@ SUBSYSTEM_DEF(ticker)
 			to_chat(world, "<span class='boldnotice'>Welcome to [station_name()]!</span>")
 			send2chat("New round starting on [SSmapping.config.map_name]!", CONFIG_GET(string/chat_announce_new_game))
 			current_state = GAME_STATE_PREGAME
+			ResetExtendedMode()// FULPSTATION: Reset to "secret" if left on "secret extended" or "extended"
 			//Everyone who wants to be an observer is now spawned
 			create_observers()
 			fire()
@@ -335,10 +340,12 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/station_explosion_detonation(atom/bomb)
 	if(bomb)	//BOOM
-		var/turf/epi = bomb.loc
 		qdel(bomb)
-		if(epi)
-			explosion(epi, 0, 256, 512, 0, TRUE, TRUE, 0, TRUE)
+	for(var/T in GLOB.station_turfs)
+		if(prob(33))
+			SSexplosions.highturf += T
+		else
+			SSexplosions.medturf += T
 
 /datum/controller/subsystem/ticker/proc/create_characters()
 	for(var/i in GLOB.new_player_list)
@@ -426,7 +433,7 @@ SUBSYSTEM_DEF(ticker)
 		queued_players.len = 0
 		queue_delay = 0
 		return
-
+		// FULP: Fuck Git. I NEVER CHANGED THIS LINE but it thinks I did. It tells me I removed a 2xTab and made this blank. Fucking ridiculous. Now I leave this here so I know why future conflicts happen.
 	queue_delay++
 	var/mob/dead/new_player/next_in_line = queued_players[1]
 
@@ -472,6 +479,7 @@ SUBSYSTEM_DEF(ticker)
 
 	delay_end = SSticker.delay_end
 
+	anonymousnames = SSticker.anonymousnames
 	triai = SSticker.triai
 	tipped = SSticker.tipped
 	selected_tip = SSticker.selected_tip
@@ -636,11 +644,7 @@ SUBSYSTEM_DEF(ticker)
 		'sound/roundend/newroundsexy.ogg',
 		'sound/roundend/apcdestroyed.ogg',
 		'sound/roundend/bangindonk.ogg',
-		'sound/roundend/leavingtg.ogg',
-		'sound/roundend/its_only_game.ogg',
-		'sound/roundend/yeehaw.ogg',
-		'sound/roundend/disappointed.ogg',
-		'sound/roundend/scrunglartiy.ogg',
+		'sound/roundend/imaghoul.ogg',
 		'sound/roundend/petersondisappointed.ogg'\
 		)
 	///The reference to the end of round sound that we have chosen.

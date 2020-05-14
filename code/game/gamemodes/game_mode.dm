@@ -86,6 +86,10 @@
 
 ///Everyone should now be on the station and have their normal gear.  This is the place to give the special roles extra things
 /datum/game_mode/proc/post_setup(report) //Gamemodes can override the intercept report. Passing TRUE as the argument will force a report.
+
+	// FULPSTATION: Finalize Hunters
+	finalize_monster_hunters() // FULP
+
 	if(!report)
 		report = !CONFIG_GET(flag/no_intercept_report)
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/display_roundstart_logout_report), ROUNDSTART_LOGOUT_REPORT_TIME)
@@ -431,7 +435,7 @@
 	valid_positions += GLOB.medical_positions
 	valid_positions += GLOB.science_positions
 	valid_positions += GLOB.supply_positions
-	valid_positions += GLOB.civilian_positions
+	valid_positions += GLOB.service_positions
 	valid_positions += GLOB.security_positions
 	if(CONFIG_GET(flag/reopen_roundstart_suicide_roles_command_positions))
 		valid_positions += GLOB.command_positions //add any remaining command positions

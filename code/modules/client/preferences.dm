@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//doohickeys for savefiles
 	var/path
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
-	var/max_save_slots = 3
+	var/max_save_slots = 5				//FULP: 5  races, 5 slots. Why not?
 
 	//non-preference stuff
 	var/muted = 0
@@ -28,6 +28,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/UI_style = null
 	var/buttons_locked = FALSE
 	var/hotkeys = TRUE
+	var/chat_on_map = TRUE
+	var/max_chat_length = CHAT_MESSAGE_MAX_LENGTH
+	var/see_chat_non_mob = TRUE
 
 	// Custom Keybindings
 	var/list/key_bindings = list()
@@ -300,8 +303,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<span style='border: 1px solid #161616; background-color: #[features["ethcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=color_ethereal;task=input'>Change</a><BR>"
 
+			if(istype(pref_species, /datum/species/beefman)) // FULP yeah we did the same as Ethereal so sue us
+				if(!use_skintones)
+					dat += APPEARANCE_CATEGORY_COLUMN
+				// Fill Empties
+				proof_beefman_features(features) // <--- This is so we don't have to mess with any other lines of code!
+				dat += "<h3>Doneness</h3>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features["beefcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=color_beef;task=input'>Change</a><BR>"
+				dat += "<h3>Eyes</h3>"
+				dat += "<a href='?_src_=prefs;preference=eyes_beef;task=input'>[features["beefeyes"]]</a><BR>"
+				dat += "<h3>Mouth</h3>"
+				dat += "<a href='?_src_=prefs;preference=mouth_beef;task=input'>[features["beefmouth"]]</a><BR>"
 
-			if((EYECOLOR in pref_species.species_traits) && !(NOEYESPRITES in pref_species.species_traits))
+			if((EYECOLOR in pref_species.species_traits)) // FULP Edit: If we want Eye Color, let it show eye color. Maybe we want eye color to affect something else? (Beef Eyes) && !(NOEYESPRITES in pref_species.species_traits))
 
 				if(!use_skintones && !mutant_colors)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -516,6 +530,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>UI Style:</b> <a href='?_src_=prefs;task=input;preference=ui'>[UI_style]</a><br>"
 			dat += "<b>tgui Monitors:</b> <a href='?_src_=prefs;preference=tgui_lock'>[(tgui_lock) ? "Primary" : "All"]</a><br>"
 			dat += "<b>tgui Style:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(tgui_fancy) ? "Fancy" : "No Frills"]</a><br>"
+			dat += "<b>Show Runechat Chat Bubbles:</b> <a href='?_src_=prefs;preference=chat_on_map'>[chat_on_map ? "Enabled" : "Disabled"]</a><br>"
+			dat += "<b>Runechat message char limit:</b> <a href='?_src_=prefs;preference=max_chat_length;task=input'>[max_chat_length]</a><br>"
+			dat += "<b>See Runechat for non-mobs:</b> <a href='?_src_=prefs;preference=see_chat_non_mob'>[see_chat_non_mob ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<br>"
 			dat += "<b>Action Buttons:</b> <a href='?_src_=prefs;preference=action_buttons'>[(buttons_locked) ? "Locked In Place" : "Unlocked"]</a><br>"
 			dat += "<b>Hotkey mode:</b> <a href='?_src_=prefs;preference=hotkeys'>[(hotkeys) ? "Hotkeys" : "Default"]</a><br>"
@@ -659,35 +676,40 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Hide Dead Chat:</b> <a href = '?_src_=prefs;preference=toggle_dead_chat'>[(chat_toggles & CHAT_DEAD)?"Shown":"Hidden"]</a><br>"
 				dat += "<b>Hide Radio Messages:</b> <a href = '?_src_=prefs;preference=toggle_radio_chatter'>[(chat_toggles & CHAT_RADIO)?"Shown":"Hidden"]</a><br>"
 				dat += "<b>Hide Prayers:</b> <a href = '?_src_=prefs;preference=toggle_prayers'>[(chat_toggles & CHAT_PRAYER)?"Shown":"Hidden"]</a><br>"
+				dat += "<b>Ignore Being Summoned as Cult Ghost:</b> <a href = '?_src_=prefs;preference=toggle_ignore_cult_ghost'>[(toggles & ADMIN_IGNORE_CULT_GHOST)?"Don't Allow Being Summoned":"Allow Being Summoned"]</a><br>"
 				if(CONFIG_GET(flag/allow_admin_asaycolor))
 					dat += "<br>"
 					dat += "<b>ASAY Color:</b> <span style='border: 1px solid #161616; background-color: [asaycolor ? asaycolor : "#FF4500"];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=asaycolor;task=input'>Change</a><br>"
 
 				//deadmin
 				dat += "<h2>Deadmin While Playing</h2>"
-				if(CONFIG_GET(flag/auto_deadmin_players))
+				var/timegate = CONFIG_GET(number/auto_deadmin_timegate)
+				if(timegate)
+					dat += "<b>Noted roles will automatically deadmin during the first [FLOOR(timegate / 600, 1)] minutes of the round, and will defer to individual preferences after.</b><br>"
+
+				if(CONFIG_GET(flag/auto_deadmin_players) && !timegate)
 					dat += "<b>Always Deadmin:</b> FORCED</a><br>"
 				else
-					dat += "<b>Always Deadmin:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_always'>[(toggles & DEADMIN_ALWAYS)?"Enabled":"Disabled"]</a><br>"
+					dat += "<b>Always Deadmin:</b> [timegate ? "(Time Locked) " : ""]<a href = '?_src_=prefs;preference=toggle_deadmin_always'>[(toggles & DEADMIN_ALWAYS)?"Enabled":"Disabled"]</a><br>"
 					if(!(toggles & DEADMIN_ALWAYS))
 						dat += "<br>"
-						if(!CONFIG_GET(flag/auto_deadmin_antagonists))
-							dat += "<b>As Antag:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_antag'>[(toggles & DEADMIN_ANTAGONIST)?"Deadmin":"Keep Admin"]</a><br>"
+						if(!CONFIG_GET(flag/auto_deadmin_antagonists) || (CONFIG_GET(flag/auto_deadmin_antagonists) && !timegate))
+							dat += "<b>As Antag:</b> [timegate ? "(Time Locked) " : ""]<a href = '?_src_=prefs;preference=toggle_deadmin_antag'>[(toggles & DEADMIN_ANTAGONIST)?"Deadmin":"Keep Admin"]</a><br>"
 						else
 							dat += "<b>As Antag:</b> FORCED<br>"
 
-						if(!CONFIG_GET(flag/auto_deadmin_heads))
-							dat += "<b>As Command:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_head'>[(toggles & DEADMIN_POSITION_HEAD)?"Deadmin":"Keep Admin"]</a><br>"
+						if(!CONFIG_GET(flag/auto_deadmin_heads) || (CONFIG_GET(flag/auto_deadmin_heads) && !timegate))
+							dat += "<b>As Command:</b> [timegate ? "(Time Locked) " : ""]<a href = '?_src_=prefs;preference=toggle_deadmin_head'>[(toggles & DEADMIN_POSITION_HEAD)?"Deadmin":"Keep Admin"]</a><br>"
 						else
 							dat += "<b>As Command:</b> FORCED<br>"
 
-						if(!CONFIG_GET(flag/auto_deadmin_security))
-							dat += "<b>As Security:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_security'>[(toggles & DEADMIN_POSITION_SECURITY)?"Deadmin":"Keep Admin"]</a><br>"
+						if(!CONFIG_GET(flag/auto_deadmin_security) || (CONFIG_GET(flag/auto_deadmin_security) && !timegate))
+							dat += "<b>As Security:</b> [timegate ? "(Time Locked) " : ""]<a href = '?_src_=prefs;preference=toggle_deadmin_security'>[(toggles & DEADMIN_POSITION_SECURITY)?"Deadmin":"Keep Admin"]</a><br>"
 						else
 							dat += "<b>As Security:</b> FORCED<br>"
 
-						if(!CONFIG_GET(flag/auto_deadmin_silicons))
-							dat += "<b>As Silicon:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_silicon'>[(toggles & DEADMIN_POSITION_SILICON)?"Deadmin":"Keep Admin"]</a><br>"
+						if(!CONFIG_GET(flag/auto_deadmin_silicons) || (CONFIG_GET(flag/auto_deadmin_silicons) && !timegate))
+							dat += "<b>As Silicon:</b> [timegate ? "(Time Locked) " : ""]<a href = '?_src_=prefs;preference=toggle_deadmin_silicon'>[(toggles & DEADMIN_POSITION_SILICON)?"Deadmin":"Keep Admin"]</a><br>"
 						else
 							dat += "<b>As Silicon:</b> FORCED<br>"
 
@@ -1335,6 +1357,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_etherealcolor)
 						features["ethcolor"] = GLOB.color_list_ethereal[new_etherealcolor]
 
+				if("color_beef") // FULP We are copying Ethereal
+					var/new_beefcolor = input(user, "Select your doneness:", "Character Preference") as null|anything in GLOB.color_list_beefman
+					if(new_beefcolor)
+						features["beefcolor"] = GLOB.color_list_beefman[new_beefcolor]
+				if("eyes_beef")
+					var/new_eyes = input(user, "Choose your Eyes:", "Character Preference")  as null|anything in GLOB.eyes_beefman
+					if(new_eyes)
+						features["beefeyes"] = new_eyes
+				if("mouth_beef")
+					var/new_mouth = input(user, "Choose your Mouth:", "Character Preference")  as null|anything in GLOB.mouths_beefman
+					if(new_mouth)
+						features["beefmouth"] = new_mouth
 
 				if("tail_lizard")
 					var/new_tail
@@ -1492,6 +1526,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(phobiaType)
 						phobia = phobiaType
 
+				if ("max_chat_length")
+					var/desiredlength = input(user, "Choose the max character length of shown Runechat messages. Valid range is 1 to [CHAT_MESSAGE_MAX_LENGTH] (default: [initial(max_chat_length)]))", "Character Preference", max_chat_length)  as null|num
+					if (!isnull(desiredlength))
+						max_chat_length = clamp(desiredlength, 1, CHAT_MESSAGE_MAX_LENGTH)
+
 		else
 			switch(href_list["preference"])
 				if("publicity")
@@ -1579,6 +1618,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					key_bindings = (hotkeys) ? deepCopyList(GLOB.hotkey_keybinding_list_by_key) : deepCopyList(GLOB.classic_keybinding_list_by_key)
 					user.client.update_movement_keys()
 
+				if("chat_on_map")
+					chat_on_map = !chat_on_map
+				if("see_chat_non_mob")
+					see_chat_non_mob = !see_chat_non_mob
+
 				if("action_buttons")
 					buttons_locked = !buttons_locked
 				if("tgui_fancy")
@@ -1613,6 +1657,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					toggles ^= DEADMIN_POSITION_SECURITY
 				if("toggle_deadmin_silicon")
 					toggles ^= DEADMIN_POSITION_SILICON
+				if("toggle_ignore_cult_ghost")
+					toggles ^= ADMIN_IGNORE_CULT_GHOST
 
 
 				if("be_special")

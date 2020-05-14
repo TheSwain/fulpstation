@@ -22,6 +22,8 @@
 					/obj/item/storage/backpack/satchel/sec = 3,
 					/obj/item/storage/backpack/duffelbag/sec = 3,
 					/obj/item/clothing/under/rank/security/officer = 3,
+					/obj/item/clothing/suit/armor/vest/alt = 6, //FULPSTATION Improved Sec Starter Gear by Surrealistik MAR 2020 Compensate for loss of gear from sec-lockers (~6).
+					/obj/item/clothing/head/helmet = 6, //FULPSTATION Improved Sec Starter Gear by Surrealistik MAR 2020 Compensate for loss of gear from sec-lockers (~6).
 					/obj/item/clothing/shoes/jackboots = 3,
 					/obj/item/clothing/head/beret/sec = 3,
 					/obj/item/clothing/head/soft/sec = 3,
@@ -30,7 +32,8 @@
 					/obj/item/clothing/under/rank/security/officer/skirt = 3,
 					/obj/item/clothing/under/rank/security/officer/grey = 3,
 					/obj/item/clothing/under/pants/khaki = 3,
-					/obj/item/clothing/under/rank/security/officer/blueshirt = 3)
+					/obj/item/clothing/under/rank/security/officer/blueshirt = 3,
+					/obj/item/clothing/shoes/jackboots/digitigrade = 2)
 	premium = list(/obj/item/clothing/under/rank/security/officer/formal = 3,
 					/obj/item/clothing/suit/security/officer = 3,
 					/obj/item/clothing/head/beret/sec/navyofficer = 3)
@@ -64,7 +67,8 @@
 					/obj/item/clothing/shoes/sneakers/white = 4,
 					/obj/item/clothing/head/soft/paramedic = 4,
 					/obj/item/clothing/suit/apron/surgical = 4,
-					/obj/item/clothing/mask/surgical = 4)
+					/obj/item/clothing/mask/surgical = 4,
+					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/medi_wardrobe
 	payment_department = ACCOUNT_MED
 
@@ -88,7 +92,8 @@
 					/obj/item/clothing/suit/hazardvest = 3,
 					/obj/item/clothing/shoes/workboots = 3,
 					/obj/item/clothing/head/hardhat = 3,
-					/obj/item/clothing/head/hardhat/weldhat = 3)
+					/obj/item/clothing/head/hardhat/weldhat = 3,
+					/obj/item/clothing/shoes/workboots/digitigrade = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/engi_wardrobe
 	payment_department = ACCOUNT_ENG
 	light_color = "#fbff23"
@@ -109,7 +114,8 @@
 					/obj/item/clothing/suit/hooded/wintercoat/engineering/atmos = 3,
 					/obj/item/clothing/under/rank/engineering/atmospheric_technician = 3,
 					/obj/item/clothing/under/rank/engineering/atmospheric_technician/skirt = 3,
-					/obj/item/clothing/shoes/sneakers/black = 3)
+					/obj/item/clothing/shoes/sneakers/black = 3,
+					/obj/item/clothing/shoes/workboots/digitigrade = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/atmos_wardrobe
 	payment_department = ACCOUNT_ENG
 	light_color = "#fbff23"
@@ -129,7 +135,9 @@
 					/obj/item/clothing/shoes/sneakers/black = 3,
 					/obj/item/clothing/gloves/fingerless = 3,
 					/obj/item/clothing/head/soft = 3,
-					/obj/item/radio/headset/headset_cargo = 3)
+					/obj/item/radio/headset/headset_cargo = 3,
+					/obj/item/clothing/shoes/workboots/digitigrade = 1,
+					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 1)
 	premium = list(/obj/item/clothing/under/rank/cargo/miner = 3)
 	refill_canister = /obj/item/vending_refill/wardrobe/cargo_wardrobe
 	payment_department = ACCOUNT_CAR
@@ -149,6 +157,7 @@
 					/obj/item/clothing/shoes/sneakers/black = 2,
 					/obj/item/clothing/gloves/fingerless = 2,
 					/obj/item/clothing/head/soft/black = 2,
+					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 1,
 					/obj/item/clothing/mask/bandana/skull = 2)
 	contraband = list(/obj/item/clothing/suit/hooded/techpriest = 2,
 					/obj/item/organ/tongue/robot = 2)
@@ -173,6 +182,7 @@
 					/obj/item/clothing/suit/toggle/labcoat/science = 3,
 					/obj/item/clothing/shoes/sneakers/white = 3,
 					/obj/item/radio/headset/headset_sci = 3,
+					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 2,
 					/obj/item/clothing/mask/gas = 3)
 	refill_canister = /obj/item/vending_refill/wardrobe/science_wardrobe
 	payment_department = ACCOUNT_SCI
@@ -194,6 +204,7 @@
 					/obj/item/clothing/under/rank/civilian/hydroponics = 3,
 					/obj/item/clothing/under/rank/civilian/hydroponics/skirt = 3,
 					/obj/item/clothing/mask/bandana = 3,
+					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 2,
 					/obj/item/clothing/accessory/armband/hydro = 3)
 	refill_canister = /obj/item/vending_refill/wardrobe/hydro_wardrobe
 	payment_department = ACCOUNT_SRV
@@ -220,9 +231,10 @@
 					/obj/item/storage/backpack/satchel/explorer = 1,
 					/obj/item/clothing/glasses/regular = 2,
 					/obj/item/clothing/glasses/regular/jamjar = 1,
+					/obj/item/clothing/shoes/laceup/digitigrade = 1,
 					/obj/item/storage/bag/books = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/curator_wardrobe
-	payment_department = ACCOUNT_CIV
+	payment_department = ACCOUNT_SRV
 /obj/item/vending_refill/wardrobe/curator_wardrobe
 	machine_name = "CuraDrobe"
 
@@ -248,8 +260,10 @@
 					/obj/item/circuitboard/machine/dish_drive = 1,
 					/obj/item/clothing/glasses/sunglasses/reagent = 1,
 					/obj/item/clothing/neck/petcollar = 1,
+					/obj/item/clothing/shoes/laceup/digitigrade = 1,
 					/obj/item/storage/belt/bandolier = 1,
 					/obj/item/storage/pill_bottle/dice/hazard = 1,
+					/obj/item/clothing/suit/hooded/wintercoat/service/bartender = 2, //Placed by fulp, by Homingpenguins
 					/obj/item/storage/bag/money = 2)
 	premium = list(/obj/item/storage/box/dishdrive = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/bar_wardrobe
@@ -277,6 +291,7 @@
 					/obj/item/clothing/under/rank/civilian/cookjorts = 2,
 					/obj/item/clothing/shoes/cookflops = 2,
 					/obj/item/reagent_containers/glass/rag = 1,
+					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 1,
 					/obj/item/clothing/suit/hooded/wintercoat = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/chef_wardrobe
 	payment_department = ACCOUNT_SRV
@@ -305,6 +320,7 @@
 					/obj/item/storage/bag/trash = 2,
 					/obj/item/clothing/shoes/galoshes = 2,
 					/obj/item/watertank/janitor = 1,
+					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 1,
 					/obj/item/storage/belt/janitor = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/jani_wardrobe
 	payment_department = ACCOUNT_SRV
@@ -339,9 +355,11 @@
 					/obj/item/clothing/under/rank/civilian/lawyer/black = 1,
 					/obj/item/clothing/under/rank/civilian/lawyer/black/skirt = 1,
 					/obj/item/clothing/shoes/laceup = 2,
+					/obj/item/clothing/shoes/laceup/digitigrade = 1,
+					/obj/item/clothing/suit/hooded/wintercoat/security/lawyer = 2, //Placed by fulp, by Homingpenguins
 					/obj/item/clothing/accessory/lawyers_badge = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/law_wardrobe
-	payment_department = ACCOUNT_CIV
+	payment_department = ACCOUNT_SRV
 /obj/item/vending_refill/wardrobe/law_wardrobe
 	machine_name = "LawDrobe"
 
@@ -366,8 +384,9 @@
 					/obj/item/clothing/suit/chaplainsuit/whiterobe = 1,
 					/obj/item/clothing/head/taqiyahwhite = 1,
 					/obj/item/clothing/head/taqiyahred = 3,
-					/obj/item/clothing/suit/chaplainsuit/monkrobeeast = 1,
-					/obj/item/clothing/head/beanie/rasta = 1)
+					/obj/item/clothing/head/beanie/rasta = 1,
+					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 1,
+					/obj/item/clothing/suit/chaplainsuit/monkrobeeast = 1)
 	contraband = list(/obj/item/toy/plush/plushvar = 1,
 					/obj/item/toy/plush/narplush = 1,
 					/obj/item/clothing/head/medievaljewhat = 3,
@@ -376,7 +395,7 @@
 	premium = list(/obj/item/clothing/suit/chaplainsuit/bishoprobe = 1,
 					/obj/item/clothing/head/bishopmitre = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/chap_wardrobe
-	payment_department = ACCOUNT_CIV
+	payment_department = ACCOUNT_SRV
 /obj/item/vending_refill/wardrobe/chap_wardrobe
 	machine_name = "ChapDrobe"
 
@@ -392,6 +411,8 @@
 					/obj/item/clothing/suit/toggle/labcoat/chemist = 2,
 					/obj/item/storage/backpack/chemistry = 2,
 					/obj/item/storage/backpack/satchel/chem = 2,
+					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 1,
+					/obj/item/clothing/suit/hooded/wintercoat/medical/chem = 2, //Placed by fulp, by Homingpenguins
 					/obj/item/storage/bag/chemistry = 2)
 	contraband = list(/obj/item/reagent_containers/spray/syndicate = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/chem_wardrobe
@@ -410,9 +431,11 @@
 					/obj/item/clothing/shoes/sneakers/white = 2,
 					/obj/item/clothing/suit/toggle/labcoat/genetics = 2,
 					/obj/item/storage/backpack/genetics = 2,
+					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 1,
+					/obj/item/clothing/suit/hooded/wintercoat/medical/gen = 2, //Placed by fulp, by Homingpenguins
 					/obj/item/storage/backpack/satchel/gen = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/gene_wardrobe
-	payment_department = ACCOUNT_MED
+	payment_department = ACCOUNT_SCI
 /obj/item/vending_refill/wardrobe/gene_wardrobe
 	machine_name = "GeneDrobe"
 
@@ -428,8 +451,39 @@
 					/obj/item/clothing/suit/toggle/labcoat/virologist = 2,
 					/obj/item/clothing/mask/surgical = 2,
 					/obj/item/storage/backpack/virology = 2,
+					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 1,
 					/obj/item/storage/backpack/satchel/vir = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/viro_wardrobe
 	payment_department = ACCOUNT_MED
 /obj/item/vending_refill/wardrobe/viro_wardrobe
 	machine_name = "ViroDrobe"
+
+/obj/machinery/vending/wardrobe/det_wardrobe
+	name = "\improper DetDrobe"
+	desc = "A machine for all your detective needs, as long as you need clothes."
+	icon_state = "detdrobe"
+	product_ads = "Apply your brilliant deductive methods in style!"
+	vend_reply = "Thank you for using the DetDrobe!"
+	products = list(/obj/item/clothing/under/rank/security/detective = 2,
+					/obj/item/clothing/under/rank/security/detective/skirt = 2,
+					/obj/item/clothing/shoes/sneakers/brown = 2,
+					/obj/item/clothing/suit/det_suit = 2,
+					/obj/item/clothing/head/fedora/det_hat = 2,
+					/obj/item/clothing/under/rank/security/detective/grey = 2,
+					/obj/item/clothing/under/rank/security/detective/grey/skirt = 2,
+					/obj/item/clothing/accessory/waistcoat = 2,
+					/obj/item/clothing/shoes/laceup = 2,
+					/obj/item/clothing/suit/det_suit/grey = 1,
+					/obj/item/clothing/suit/det_suit/noir = 1,
+					/obj/item/clothing/head/fedora = 2,
+					/obj/item/clothing/gloves/color/black = 2,
+					/obj/item/clothing/gloves/color/latex = 2,
+					/obj/item/reagent_containers/food/drinks/flask/det = 2,
+					/obj/item/storage/fancy/cigarettes = 5)
+	premium = list(/obj/item/clothing/head/flatcap = 1)
+	refill_canister = /obj/item/vending_refill/wardrobe/det_wardrobe
+	extra_price = 350
+	payment_department = ACCOUNT_SEC
+
+/obj/item/vending_refill/wardrobe/det_wardrobe
+	machine_name = "DetDrobe"

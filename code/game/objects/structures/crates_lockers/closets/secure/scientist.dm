@@ -25,4 +25,6 @@
 	new /obj/item/laser_pointer(src)
 	new /obj/item/door_remote/research_director(src)
 	new /obj/item/circuitboard/machine/techfab/department/science(src)
+	new /obj/item/clothing/shoes/laceup/digitigrade(src) //fulp
+	new /obj/item/clothing/suit/hooded/wintercoat/science/head(src) // [FULP] [PNX] [PAPRITO]
 	new /obj/item/storage/photo_album/RD(src)

@@ -72,7 +72,7 @@ GLOBAL_VAR(command_name)
 		var/datum/holiday/holiday = SSevents.holidays[holiday_name]
 		if(istype(holiday, /datum/holiday/friday_thirteenth))
 			random = 13
-		name = holiday.getStationPrefix()
+		//name = holiday.getStationPrefix() // Fulpstation: No Holiday Names Please
 		//get normal name
 	if(!name)
 		name = pick(GLOB.station_names)
@@ -86,15 +86,15 @@ GLOBAL_VAR(command_name)
 	// ID Number
 	switch(random)
 		if(1)
-			new_station_name += "[rand(1, 99)]"
+			new_station_name += "[rand(1, 25)]" // FULPSTATION: We don't like the options.
 		if(2)
-			new_station_name += pick(GLOB.greek_letters)
+			new_station_name += "[rand(1, 25)]"
 		if(3)
-			new_station_name += "\Roman[rand(1,99)]"
+			new_station_name += "[rand(1, 25)]"
 		if(4)
-			new_station_name += pick(GLOB.phonetic_alphabet)
+			new_station_name += "\Roman[rand(1,49)]"
 		if(5)
-			new_station_name += pick(GLOB.numbers_as_words)
+			new_station_name += pick(GLOB.phonetic_alphabet) //	new_station_name += pick(GLOB.numbers_as_words)
 		if(13)
 			new_station_name += pick("13","XIII","Thirteen")
 	return new_station_name
