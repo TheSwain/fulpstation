@@ -602,7 +602,7 @@
 	display_name = "Weapon Development Technology"
 	description = "Our researchers have found new ways to weaponize just about everything now."
 	prereq_ids = list("engineering")
-	design_ids = list("pin_testing", "tele_shield")
+	design_ids = list("pin_testing", "pin_explorer", "tele_shield")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
@@ -1117,7 +1117,7 @@
 	display_name = "Australicus Security Protocols"
 	description = "It is said that security in the Australicus sector is tight, so we took some pointers from their equipment. Thankfully, our sector lacks any signs of these, 'dropbears'."
 	prereq_ids = list("base")
-	design_ids = list("pin_explorer", "stun_boomerang")
+	design_ids = list("stun_boomerang")
 
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 2500
