@@ -134,7 +134,7 @@
 	learnable_language = /datum/language/vampiric
 	remarks = list("Oh? On heaven?", "Jotaro was here, Dio is a loser...", "Who's this Johnathan guy anyway?", "Hey is this a reference to...", "I should really burn this...")
 	icon_state = "book_vampire"
-	language_name = "Blah-Sucker"
+	language_name = "Blyat-Cyka"
 
 ///obj/item/book/granter/language_book/russian // s o o n
 //	name = "The Cyka's Guide To Space-Russian"
