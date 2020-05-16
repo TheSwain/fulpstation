@@ -13,8 +13,8 @@ Format:
 	votable (is this map votable)
 endmap
 
-map newstation
-	default
+map heliostation
+	minplayers 25
 	#voteweight 1.5
 	votable
 endmap
