@@ -290,6 +290,6 @@
 	log_admin("[target] has become a Vassal, and is enslaved to [creator].")
 
 	return TRUE
-
-/datum/game_mode/proc/remove_vassal(datum/mind/vassal)
-	vassal.remove_antag_datum(ANTAG_DATUM_VASSAL)
+	
+/datum/game_mode/proc/remove_vassal(mob/living/target)
+	target.mind.remove_antag_datum(ANTAG_DATUM_VASSAL)
