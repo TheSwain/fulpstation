@@ -6039,7 +6039,7 @@
 "cmg" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{dir = 4},/turf/open/floor/plasteel,/area/quartermaster/sorting)
 "cmh" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{dir = 10},/turf/open/floor/plasteel,/area/quartermaster/sorting)
 "cmi" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/science/test_area)
-"cmj" = (/obj/structure/rack,/obj/item/stack/sheet/metal/fifty,/obj/effect/turf_decal/tile/brown,/obj/effect/turf_decal/tile/brown{dir = 8},/obj/effect/turf_decal/tile/brown{dir = 1},/turf/open/floor/plasteel,/area/quartermaster/warehouse)
+"cmj" = (/obj/structure/rack,/obj/item/stack/sheet/metal/fifty,/obj/effect/turf_decal/tile/brown,/obj/effect/turf_decal/tile/brown{dir = 8},/obj/effect/turf_decal/tile/brown{dir = 1},/obj/item/stack/conveyor{amount = 10},/turf/open/floor/plasteel,/area/quartermaster/warehouse)
 "cmk" = (/obj/item/stack/sheet/cardboard,/obj/effect/turf_decal/tile/brown,/obj/effect/turf_decal/tile/brown{dir = 8},/turf/open/floor/plasteel,/area/quartermaster/warehouse)
 "cml" = (/obj/effect/turf_decal/tile/brown,/obj/effect/turf_decal/tile/brown{dir = 8},/obj/structure/cable,/obj/machinery/atmospherics/pipe/simple/supply/hidden,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,/turf/open/floor/plasteel,/area/quartermaster/warehouse)
 "cmm" = (/obj/structure/closet/crate/hydroponics,/obj/machinery/button/door{id = "qm_warehouse"; name = "Warehouse Door Control"; pixel_x = -1; pixel_y = -24; req_access_txt = "31"},/obj/effect/turf_decal/tile/brown,/obj/effect/turf_decal/tile/brown{dir = 8},/turf/open/floor/plasteel,/area/quartermaster/warehouse)
