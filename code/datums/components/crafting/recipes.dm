@@ -848,7 +848,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/makeshiftliberatorpistol
+/datum/crafting_recipe/makeshiftliberatorpistolmagazine
 	name = "Improvised Pistol Magazine"
 	result = /obj/item/ammo_box/magazine/liberator10mm
 	reqs = list(/obj/item/stack/sheet/plasteel = 2,
