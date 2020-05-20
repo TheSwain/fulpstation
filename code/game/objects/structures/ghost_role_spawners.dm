@@ -705,7 +705,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt/leader
-	l_pocket = /obj/item/gun/ballistic/automatic/pistol/aps
+	l_pocket = /obj/item/ammo_box/magazine/m9mm_aps
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	id = /obj/item/card/id/syndicate_command/captain_id
-	backpack_contents = list(/obj/item/documents/syndicate/red, /obj/item/paper/fluff/ruins/forgottenship/password)
+	backpack_contents = list(/obj/item/documents/syndicate/red, /obj/item/paper/fluff/ruins/forgottenship/password, /obj/item/gun/ballistic/automatic/pistol/aps)
