@@ -83,3 +83,13 @@
 	caliber = ".50"
 	max_ammo = 7
 	multiple_sprites = AMMO_BOX_PER_BULLET
+
+/obj/item/ammo_box/magazine/liberator10mm
+	name = "Makeshift 10mm magazine"
+	desc = "A Makeshift Pistol magazine. Load with 10mm bullets. Usable in Makeshift Pistol."
+	icon_state = "libmag"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
+	max_ammo = 5
+	multiload = TRUE
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
