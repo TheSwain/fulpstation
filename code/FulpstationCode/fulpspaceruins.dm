@@ -32,6 +32,13 @@ DATU: Datums for map templates
 	power_equip = FALSE
 	power_environ = FALSE
 
+/area/ruin/has_grav/DnDmansion
+	requires_power = FALSE
+	outdoors = FALSE
+	power_light = TRUE
+	power_equip = TRUE
+	power_environ = TRUE
+
 /area/ruin/has_grav/prototype/Captain
 	name = "Prototype Captain's quarter"
 	icon_state = "blue"
