@@ -388,6 +388,13 @@
 	admin_notes = "This motherfucker is BIG. You might need to force dock it."
 	credit_cost = 50000
 
+/datum/map_template/shuttle/emergency/cruise
+	suffix = "snowpiercer"
+	name = "The Snowpiercer"
+	description = "Due to the lack of appropriate supplies on the Luxury shuttle, the Snowpiercer is a re-purposed Luxury shuttle sporting a highly furnished and well supplied Medbay, a Brig with its own cell, 2 seperate cabin classes and 2 sections for the Cockpit, the Captain's Quarters and Cockpit Control."
+	admin_notes = "Based on the train from Snowpiercer, have you seen the movie?"
+	credit_cost = 15000
+
 /datum/map_template/shuttle/ferry/base
 	suffix = "base"
 	name = "transport ferry"
