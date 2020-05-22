@@ -240,5 +240,6 @@ There is no point for a testament, but maybe a confession is appropriate. I've n
 	id = "dndmansion"
 	suffix = "DnDmansion.dmm"
 	name = "dndmansion"
-	placement_weight = 0 //Fun spawners in space are rare. Might be toned down in the future.
+	placement_weight = 0
+	unpickable = TRUE
 	description = "A rich guy hired a bunch of nerds so he can watch you play dnd. That nerd is you. have fun."
