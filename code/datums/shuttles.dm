@@ -388,12 +388,12 @@
 	admin_notes = "This motherfucker is BIG. You might need to force dock it."
 	credit_cost = 50000
 
-/datum/map_template/shuttle/emergency/cruise
+/datum/map_template/shuttle/emergency/snowpiercer
 	suffix = "snowpiercer"
 	name = "Snowpiercer Emergency Shuttle"
-	description = "The Snowpiercer is NT's attempt at upgrading their aging standard shuttle fleet, outfitted with fully furnished medbays and expanded Command cockpits. The addition of a Chemistry lab aids in cases of shortages of medical items in Medbay."
+	description = "The Snowpiercer is NT's attempt at upgrading their aging standard shuttle fleet, being outfitted with fully furnished medbays and expanded Command cockpits. The addition of a Chemistry lab aids in cases of shortages of medical items in Medbay."
 	admin_notes = "Based on the train from Snowpiercer, have you seen the movie?"
-	credit_cost = 15000
+	credit_cost = 12500
 
 /datum/map_template/shuttle/ferry/base
 	suffix = "base"
