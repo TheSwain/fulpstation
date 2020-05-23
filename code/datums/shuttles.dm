@@ -390,8 +390,8 @@
 
 /datum/map_template/shuttle/emergency/cruise
 	suffix = "snowpiercer"
-	name = "Snowpiercer Luxury Emergency Shuttle"
-	description = "Escape in style, and comfort! This shuttle includes all the amenities of the Luxury shuttle and expanded care/security facilities! Additional features include two seperate rooms for Command staff, a Captain's Quarters and a Command Staff cockpit."
+	name = "Snowpiercer Emergency Shuttle"
+	description = "The Snowpiercer is NT's attempt at upgrading their aging standard shuttle fleet, outfitted with fully furnished medbays and expanded Command cockpits. The addition of a Chemistry lab aids in cases of shortages of medical items in Medbay."
 	admin_notes = "Based on the train from Snowpiercer, have you seen the movie?"
 	credit_cost = 15000
 
