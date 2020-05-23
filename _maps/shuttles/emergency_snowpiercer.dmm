@@ -153,6 +153,7 @@
 "YI" = (/obj/structure/extinguisher_cabinet,/turf/closed/wall/mineral/titanium,/area/shuttle/escape)
 "YV" = (/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel/shuttle,/area/shuttle/escape)
 "Zp" = (/obj/effect/turf_decal/stripes/line{dir = 4},/obj/item/banner/command,/turf/open/floor/plasteel/shuttle,/area/shuttle/escape)
+"Zq" = (/obj/structure/table/reinforced,/obj/machinery/cell_charger,/obj/item/stock_parts/cell/bluespace,/turf/open/floor/mineral/titanium/blue,/area/shuttle/escape)
 "Zr" = (/obj/structure/cable,/obj/structure/tank_dispenser,/obj/machinery/light{dir = 4},/turf/open/floor/plating,/area/shuttle/escape)
 "ZF" = (/obj/structure/rack,/obj/item/storage/toolbox/mechanical{pixel_y = 3},/obj/item/storage/toolbox/emergency,/obj/machinery/light{dir = 4},/turf/open/floor/plating,/area/shuttle/escape)
 "ZK" = (/turf/open/floor/carpet/royalblue,/area/shuttle/escape)
@@ -169,9 +170,9 @@ xmnAHOZFKgObjiDxDxDxDxjiObKgUqUqUqvjUHKgYVSqggKgElEKEKVaKgTsTsTsTsTsTsTsTsTsTs
 xmnANeNMKgAHVqOiVqOiVqOiVrKgFygLgLgLjOKgYVSqKaQFTVMPMPRdctTsTsTsTsTsTsTsTsTsTs
 xmnAHOnRKgfKOiVqOitcKLzWKeKggLgLgLgLgLKgYVSqggKgtIxgxgZWKgTsTsTsTsTsTsTsTsTsTs
 xmnAUDZrKgVxVqOiVqGgVqOiVrKgEvrafZlIRCKgYVSqZpKgKgHjHjKgKgKgYIctctctctKgKgKgKg
-xmnAwlYIKgKgjiYIKgKgKgKgKgKgKgKgKgYIKgKgYVSqKaKgpXOiOiqqPIKLKLKLKLsXsVKgKgKgKg
+xmnAwlYIKgKgjiYIKgKgKgKgKgKgKgKgKgYIKgKgYVSqKaKgpXOiOiqqPIKLKLZqKLsXsVKgKgKgKg
 xmnAUDkbKgTdVqOicMFXQaJDVrKgMQAaAaAaVsbQYVSqKaKgOiOiOiOiOiOiOiOiOiOiKLKgKgKgTs
 xmnAUDXWKgtkOiVqOiVqOiVqqFlJMRMgMgMgMgzlYVSqKaKgxJxJxJxJxJxJxJxJxJOiKLKgKgTsTs
 xmnAACjvKgdLlNOipzqFVqOiFPKgfTiQiQiQDUbQQPKqKUKgkZwozPANFfyACyfFDAKLKAKgTsTsTs
-KgKgKgKgKgKgPEKgKgPEKgYIKgKgKgYIKgKgKgKgKgYIKgKgKgKgKgKgKgKgKgKgKgKgKgTsTsTsTs
+KgKgKgKgKgKgPEKgKgPEKgYIKgKgKgYIKgKgKgKgKgYIKgKgKgctctctctctctctctKgKgTsTsTsTs
 "}
