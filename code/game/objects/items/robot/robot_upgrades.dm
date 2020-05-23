@@ -372,7 +372,7 @@
 		to produce more advanced and complex medical reagents."
 	icon_state = "cyborg_upgrade3"
 	require_module = 1
-	module_type = list(/obj/item/robot_module/medical)
+	module_type = list(/obj/item/robot_module/medical, /obj/item/robot_module/med_cybersun)
 	var/list/additional_reagents = list()
 
 /obj/item/borg/upgrade/hypospray/action(mob/living/silicon/robot/R, user = usr)
@@ -462,7 +462,7 @@
 		out procedures"
 	icon_state = "cyborg_upgrade3"
 	require_module = 1
-	module_type = list(/obj/item/robot_module/medical, /obj/item/robot_module/syndicate_medical)
+	module_type = list(/obj/item/robot_module/medical, /obj/item/robot_module/syndicate_medical, /obj/item/robot_module/med_cybersun)
 
 /obj/item/borg/upgrade/processor/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
@@ -575,7 +575,7 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "pinpointer_crew"
 	require_module = TRUE
-	module_type = list(/obj/item/robot_module/medical, /obj/item/robot_module/syndicate_medical)
+	module_type = list(/obj/item/robot_module/medical, /obj/item/robot_module/syndicate_medical, /obj/item/robot_module/med_cybersun)
 	var/datum/action/crew_monitor
 
 /obj/item/borg/upgrade/pinpointer/action(mob/living/silicon/robot/R, user = usr)
@@ -663,7 +663,7 @@
 	desc = "A supplementary beaker storage apparatus for medical cyborgs."
 	icon_state = "cyborg_upgrade3"
 	require_module = TRUE
-	module_type = list(/obj/item/robot_module/medical)
+	module_type = list(/obj/item/robot_module/medical, /obj/item/robot_module/med_cybersun)
 
 /obj/item/borg/upgrade/beaker_app/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
