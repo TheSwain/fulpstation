@@ -138,7 +138,7 @@
 "TV" = (/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/shuttle/escape)
 "Uq" = (/obj/structure/table/reinforced,/obj/machinery/door/window/southright{req_access_txt = "5"},/obj/machinery/door/window/northright,/turf/open/floor/mineral/titanium/yellow,/area/shuttle/escape)
 "UD" = (/turf/open/floor/plating,/area/shuttle/escape)
-"UH" = (/obj/machinery/door/airlock/shuttle{req_access_txt = "5"},/turf/open/space/basic,/area/shuttle/escape)
+"UH" = (/obj/machinery/door/airlock/shuttle{req_access_txt = "5"},/turf/open/floor/mineral/titanium/yellow,/area/shuttle/escape)
 "Va" = (/obj/effect/turf_decal/stripes/line{dir = 5},/obj/item/kirbyplants/fullysynthetic,/turf/open/floor/plasteel,/area/shuttle/escape)
 "Vg" = (/obj/structure/window/reinforced/spawner/east,/obj/structure/window/reinforced/spawner/north,/obj/structure/window/reinforced/spawner,/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/plating/grass,/area/shuttle/escape)
 "Vq" = (/turf/open/floor/mineral/titanium/white,/area/shuttle/escape)
@@ -164,11 +164,11 @@ xmnAxVnyhteznWjSjSfrjSjSjSfrjSjSjSgshgjkjLkykVKgmkZKpctZKguIuVuZAxAEKgKgTsTsTs
 xmnAUDHOtHYVKaAVqnqnqnqnqnqnqnqnAXYVKabAYVSqKaKgISZKZKoaKgXRXRXRXREOGLKgKgTsTs
 xmnAUDHOhtYVKanjHaHEHHoGzdoGHEIQVgYVKabAYVSqKaKgISZKZKZKJZZKZKZKZKEOLpKgKgKgTs
 xmnAHOLQKgYVKaAVxexexexexexexexeeDYVKaYIYVSqKaKgQnZKZKMHKgnbZKMHZKEOMOKgKgKgKg
-xmnANeQzKgQPSwSASASASASAVtSASASASAWqXpKgYVSqZpKgKgjgjgKgKgKgYIKgKgKgKgKgKgKgKg
+xmnANeQzKgQPSwSASASASASAVtSASASASAWqXpKgYVSqZpKgKgjgjgKgKgKgYIctctctctKgKgKgKg
 xmnAHOZFKgObjiDxDxDxDxjiObKgUqUqUqvjUHKgYVSqggKgElEKEKVaKgTsTsTsTsTsTsTsTsTsTs
 xmnANeNMKgAHVqOiVqOiVqOiVrKgFygLgLgLjOKgYVSqKaQFTVMPMPRdctTsTsTsTsTsTsTsTsTsTs
 xmnAHOnRKgfKOiVqOitcKLzWKeKggLgLgLgLgLKgYVSqggKgtIxgxgZWKgTsTsTsTsTsTsTsTsTsTs
-xmnAUDZrKgVxVqOiVqGgVqOiVrKgEvrafZlIRCKgYVSqZpKgKgHjHjKgKgKgYIKgKgKgKgKgKgKgKg
+xmnAUDZrKgVxVqOiVqGgVqOiVrKgEvrafZlIRCKgYVSqZpKgKgHjHjKgKgKgYIctctctctKgKgKgKg
 xmnAwlYIKgKgjiYIKgKgKgKgKgKgKgKgKgYIKgKgYVSqKaKgpXOiOiqqPIKLKLKLKLsXsVKgKgKgKg
 xmnAUDkbKgTdVqOicMFXQaJDVrKgMQAaAaAaVsbQYVSqKaKgOiOiOiOiOiOiOiOiOiOiKLKgKgKgTs
 xmnAUDXWKgtkOiVqOiVqOiVqqFlJMRMgMgMgMgzlYVSqKaKgxJxJxJxJxJxJxJxJxJOiKLKgKgTsTs
