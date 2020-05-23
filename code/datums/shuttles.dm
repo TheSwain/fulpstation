@@ -390,7 +390,7 @@
 
 /datum/map_template/shuttle/emergency/cruise
 	suffix = "snowpiercer"
-	name = "The Snowpiercer"
+	name = "Snowpiercer Luxury Emergency Shuttle"
 	description = "Escape in style, and comfort! This shuttle includes all the amenities of the Luxury shuttle and expanded care/security facilities! Additional features include two seperate rooms for Command staff, a Captain's Quarters and a Command Staff cockpit."
 	admin_notes = "Based on the train from Snowpiercer, have you seen the movie?"
 	credit_cost = 15000
