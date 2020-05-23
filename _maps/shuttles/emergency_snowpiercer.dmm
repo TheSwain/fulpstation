@@ -27,6 +27,7 @@
 "jk" = (/obj/structure/chair/comfy/brown,/turf/open/floor/carpet/royalblue,/area/shuttle/escape)
 "jy" = (/turf/open/floor/mineral/titanium/blue,/area/shuttle/escape)
 "jL" = (/obj/machinery/light{dir = 8},/turf/open/floor/carpet/royalblue,/area/shuttle/escape)
+"jS" = (/obj/machinery/door/airlock/shuttle,/turf/open/floor/plasteel,/area/shuttle/escape)
 "ky" = (/obj/machinery/computer/med_data{dir = 1},/turf/open/floor/mineral/titanium/blue,/area/shuttle/escape)
 "kS" = (/turf/open/floor/mineral/plastitanium/red/brig,/area/shuttle/escape)
 "kV" = (/obj/effect/turf_decal/stripes/line{dir = 5},/obj/structure/table/reinforced,/obj/machinery/light{dir = 1},/turf/open/floor/mineral/plastitanium/red/brig,/area/shuttle/escape)
@@ -40,7 +41,7 @@
 "ny" = (/obj/structure/sign/nanotrasen,/turf/closed/wall/mineral/titanium,/area/shuttle/escape)
 "nA" = (/obj/structure/shuttle/engine/heater{dir = 8},/turf/open/floor/engine/hull/reinforced,/area/shuttle/escape)
 "nQ" = (/obj/machinery/light{dir = 1},/turf/open/floor/wood,/area/shuttle/escape)
-"nW" = (/obj/machinery/door/airlock/shuttle,/obj/docking_port/mobile/emergency{dir = 2},/turf/closed/wall/mineral/titanium,/area/shuttle/escape)
+"nW" = (/obj/machinery/door/airlock/shuttle,/obj/docking_port/mobile/emergency{dir = 2},/turf/open/floor/plasteel,/area/shuttle/escape)
 "oa" = (/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/light{dir = 1},/turf/open/floor/mineral/plastitanium/red/brig,/area/shuttle/escape)
 "oG" = (/obj/structure/chair/comfy/shuttle,/obj/structure/window/reinforced/spawner/west,/obj/effect/turf_decal/bot,/turf/open/floor/mineral/titanium/white,/area/shuttle/escape)
 "pc" = (/obj/effect/turf_decal/stripes/line{dir = 6},/obj/structure/table/reinforced,/obj/item/storage/firstaid,/obj/machinery/light,/turf/open/floor/plasteel,/area/shuttle/escape)
@@ -51,7 +52,7 @@
 "tZ" = (/obj/machinery/light{dir = 1},/turf/open/floor/mineral/titanium/blue,/area/shuttle/escape)
 "uI" = (/obj/effect/turf_decal/stripes/line{dir = 6},/obj/structure/table/reinforced,/obj/machinery/light,/turf/open/floor/mineral/plastitanium/red/brig,/area/shuttle/escape)
 "uV" = (/obj/structure/chair/comfy/shuttle{dir = 4},/obj/machinery/light{dir = 1},/turf/open/floor/mineral/titanium/blue,/area/shuttle/escape)
-"uZ" = (/obj/structure/table/reinforced,/obj/machinery/light,/turf/open/floor/mineral/titanium/blue,/area/space)
+"uZ" = (/obj/structure/table/reinforced,/obj/machinery/light,/turf/open/space/basic,/area/shuttle/escape)
 "vz" = (/obj/structure/chair/comfy/shuttle{dir = 4},/obj/structure/window/reinforced/spawner/west,/obj/effect/turf_decal/bot,/turf/open/floor/mineral/titanium/white,/area/shuttle/escape)
 "wD" = (/obj/machinery/door/airlock/command{name = "Captain's Quarters"},/turf/open/floor/carpet/royalblue,/area/shuttle/escape)
 "wJ" = (/obj/machinery/chem_dispenser/drinks/beer{dir = 8},/obj/structure/table/wood/fancy/royalblack,/turf/open/floor/wood,/area/shuttle/escape)
@@ -130,7 +131,7 @@
 "ZK" = (/obj/structure/grille,/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/mineral/plastitanium/red/brig,/area/shuttle/escape)
 
 (1,1,1) = {"
-KgKgxVnyKgKgnWKgKgKgKgKgnyxVKgKghBhBKghBhBKghBhBKgKgKgKgKgKgKghBKgKgxVKgKgKgGpGpGpGpGpGpGpKgKgNeNeNe
+KgKgxVnyKgKgnWKgjSKgKgKgnyxVKgKghBhBKghBhBKghBhBKgKgKgKgKgKgKghBKgKgxVKgKgKgGpGpGpGpGpGpGpKgKgNeNeNe
 xmnAATlztHtHAvtHtHAvtHtHlzsMKgmgAXAXnQAXcJaUAXAXISKgHToagXXROYgXgXgXgXkVKgKICljkjkClClClClbAKgKgNeNe
 xmnAUDHOhtvzKanjvzKahtoGzdHOKgAXVgaTaTVgYVSqAXAXwJKgifkSkSZKkSkSkSkSkSezKgjLClXpXpClClVtClClHanyKgNe
 xmnAUDHOhtvzKahtvzKaxeoGzdHOKgAXeDnknkCWYVSqAXAXQnKgifkSkSnbkSkSkSkSkSezKgClClHHWqClClEOSwZpZFKgKgKg

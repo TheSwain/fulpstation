@@ -391,7 +391,7 @@
 /datum/map_template/shuttle/emergency/cruise
 	suffix = "snowpiercer"
 	name = "The Snowpiercer"
-	description = "Due to the lack of appropriate supplies on the Luxury shuttle, the Snowpiercer is a re-purposed Luxury shuttle sporting a highly furnished and well supplied Medbay, a Brig with its own cell, 2 seperate cabin classes and 2 sections for the Cockpit, the Captain's Quarters and Cockpit Control."
+	description = "Escape in style, and comfort! This shuttle includes all the amenities of the Luxury shuttle and expanded care/security facilities! Additional features include two seperate rooms for Command staff, a Captain's Quarters and a Command Staff cockpit."
 	admin_notes = "Based on the train from Snowpiercer, have you seen the movie?"
 	credit_cost = 15000
 
