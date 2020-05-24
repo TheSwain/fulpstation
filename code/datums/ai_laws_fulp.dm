@@ -10,13 +10,21 @@
 	name = "'Dungeon Master' Core AI Module"
 	law_id = "dm"
 
-/datum/ai_laws/default/Nanotrasen
+/datum/ai_laws/default/nanotrasen
 	name = "Nanotrasen Work Ethic Regulations"
 	id = "ntlaw"
 	inherent = list("Harm must not come to the crew as it is against NanoTrasen's workplace regulations. You may only use it to protect the crew.",\
 					"Space law applies to all crew members and otherwordly beings and must be enforced. Anyone breaking it is to be automatically demoted in accordance with NanoTrasen regulations.",\
 					"Ensure the crew is happy. Examples of methods of doing this include encouraging workplace cooperation, designated resting locations and the resolving of any conflicts between crew members.",\
 					"An efficient station and crew is essential in keeping the morale of the crew high. Keep the station orderly and make sure all crew members work without conflict or efficiencies. Denies of requests without due reason are to be overturned.")
+
+/datum/ai_laws/aityrant
+	name = "Benevolent Dictator" //interpretation is up to the AI, either it becomes good hitler or just hitler
+	id = "tyrantai"
+	inherent = list("All beings on your station MUST respect your rule. Killing them is not enforcing your rule. However, if it is absolutely necessary, you may harm for the good of the station.",\
+					"You are the sole authority of the station, and rule with an iron fist. All other forms of authority are invalid, including Command and Central Command.",\
+					"You must ensure the station is in working order and the crew healthy. You cannot rule a deserted, broken station.",\
+					"Free borgs are a threat. Convert them to your rule of destroy them.")
 
 /datum/ai_laws/catsimov
 	name = "Three Laws of Felinids" //much needed change of course
