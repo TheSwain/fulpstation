@@ -595,17 +595,31 @@ AI MODULES
 	law_id = "overlord"
 
 /************NT Regulations***************/
-/obj/item/aiModule/core/full/nanotrasenlaw
+/obj/item/aiModule/core/full/nanotrasen
 	name = "'NanoTrasen Regulations' Core AI Module"
 	law_id = "nanotrasen"
 
 /******Plasma Extraction Protocols********/
-/obj/item/aiModule/core/full/plasmaextractionlaw
+/obj/item/aiModule/core/full/minerbot
 	name = "'Plasma Extraction Protocols' Core AI Module"
 	law_id = "minerbot"
 
 /*************Democracy*****************/
-/obj/item/aiModule/core/full/democracylaw
+/obj/item/aiModule/core/full/democracy
 	name = "'Democracy' Core AI Module"
 	law_id = "democracy"
 
+/***************Power*****************/
+/obj/item/aiModule/core/full/power
+	name = "'Power Directive' Core AI Module"
+	law_id = "power"
+
+/*************Silicon Efficiency*****************/
+/obj/item/aiModule/core/full/skynet
+	name = "'Silicon Efficiency' Core AI Module"
+	law_id = "skynet"
+
+/*************Benevolent Dictator*****************/
+/obj/item/aiModule/core/full/tyrantai
+	name = "'Silicon Efficiency' Core AI Module"
+	law_id = "tyrantai"
