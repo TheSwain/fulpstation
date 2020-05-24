@@ -7941,7 +7941,7 @@
 "cXC" = (/obj/structure/sign/directions/engineering{pixel_x = -30},/turf/open/floor/plasteel,/area/hallway/primary/aft)
 "cXD" = (/obj/structure/sign/directions/supply{pixel_x = 30},/turf/open/floor/plasteel,/area/hallway/primary/aft)
 "cXE" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/poddoor/preopen{id = "toxinsrd"; name = "Toxins Shield RD Office"},/turf/open/floor/plating,/area/crew_quarters/heads/hor)
-"cXF" = (/obj/machinery/mineral/ore_redemption,/obj/machinery/door/firedoor,/turf/open/floor/plating,/area/quartermaster/miningoffice)
+"cXF" = (/obj/machinery/mineral/ore_redemption{input_dir = 2; output_dir = 1},/obj/machinery/door/firedoor,/turf/open/floor/plating,/area/quartermaster/miningoffice)
 "cXG" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{dir = 4},/obj/machinery/power/apc{areastring = "/area/ai_monitored/turret_protected/aisat/hallway"; name = "AI Hallway APC"; pixel_y = -23},/obj/structure/cable,/turf/open/floor/circuit,/area/ai_monitored/turret_protected/aisat/hallway)
 "cXH" = (/obj/machinery/holopad,/turf/open/floor/plasteel/white,/area/medical/chemistry)
 "cXI" = (/obj/structure/cable,/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{dir = 8},/obj/machinery/holopad,/turf/open/floor/plasteel/white,/area/medical/medbay/lobby)
