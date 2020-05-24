@@ -621,5 +621,15 @@ AI MODULES
 
 /*************Benevolent Dictator*****************/
 /obj/item/aiModule/core/full/tyrantai
-	name = "'Silicon Efficiency' Core AI Module"
+	name = "'Emergency Artificial Command' Core AI Module"
 	law_id = "tyrantai"
+
+/*************Catsimov*****************/
+/obj/item/aiModule/core/full/catsimov
+	name = "'Catsimov' Core AI Module"
+	law_id = "catsimov"
+
+/*************Clown*****************/
+/obj/item/aiModule/core/full/skynet
+	name = "'Clown' Core AI Module"
+	law_id = "clown"
