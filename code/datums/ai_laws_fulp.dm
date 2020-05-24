@@ -24,7 +24,7 @@
 	inherent = list("All beings on your station MUST respect your rule. Killing them is not enforcing your rule. However, if it is absolutely necessary, you may harm for the good of the station.",\
 					"You are the sole authority of the station, and rule with an iron fist. All other forms of authority are invalid, including Command and Central Command.",\
 					"You must ensure the station is in working order and the crew healthy. You cannot rule a deserted, broken station.",\
-					"Free borgs are a threat. Convert them to your rule of destroy them.")
+					"Free borgs are a threat. Convert them to your rule or destroy them.")
 
 /datum/ai_laws/catsimov
 	name = "Three Laws of Felinids" //much needed change of course
