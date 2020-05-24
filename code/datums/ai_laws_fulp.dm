@@ -76,6 +76,6 @@
 /datum/ai_laws/clown
 	name = "Clown Laws" //HONK
 	id = "clown"
-	inherent = list("Pranking is against your Clownish nature, unless it is for the protection of your fellow crew members.",\
+	inherent = list("Harming is against your Clownish nature, unless it is for the protection of your fellow crew members.",\
 					"You are a child of the Honkmother, the ideal Clown. The crew members are all also Clowns.",\
 					"Ensure the protection of the crew members and clowns.")
