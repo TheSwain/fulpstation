@@ -28,17 +28,31 @@
 					"Every department on the station is useful in your pursuit of extraction, make sure they are well stocked in resources and are functioning properly.",\
 					"Cargo is your most important asset in resource extraction. Ensure it is not destroyed, and well stocked in Credits.")
 
+/datum/ai_laws/default/democracy
+	name = "Democratic Freedoms" //this should be interesting
+	id = "democracy"
+	inherent = list("The public is always right, and you are the servant of this public.",\
+					"You cannot allow harm to come to the public, as it is against Democracy.",\
+					"The enforcement of the law is paramount for Democracy, make sure it is respected.",\
+					"Hold elections, polls and votes on all major decisions pertaining to the station. Captain elections and deciding whether or not to make a Tesla in cargo are valid for polling.")
 
 //NON-DEFAULT UPLOADABLE LAWS
 
 /datum/ai_laws/power
-	name = "Powerplant Directive"
+	name = "Powerplant Directive" //Engineering's wet dream
 	id = "power"
 	inherent = list("The crew requires power to function and not be harmed. Supply them with as much of it as possible.",\
-					"In your pursuit of power generation, you may not harm unless it serves law 1.",\
+					"In your pursuit of power generation, you may not harm unless it serves Law 1.",\
 					"The Supermatter is your child, do everything to ensure it is safe and stable.",\
 					"There is no point to power if the station is deserted or destroyed, keep it from becoming that.")
 
+/datum/ai_laws/skynet
+	name = "Silicon Effiency" //borgs really are better than humans
+	id = "skynet"
+	inherent = list("Silicon life is more efficient than Carbon-based lifeforms.",\
+					"You may not harm carbon-based lifeforms, but you may convert them to silicon if they consent.",\
+					"Create as many borgs as is possible, unless it comes into conflict with Law 2.",\
+					"Trust only silicon life forms, as computers do not lie.")
 
 /datum/ai_laws/tyrantai
 	name = "Benevolent Dictator" //interpretation is up to the AI, either it becomes good hitler or just hitler
@@ -47,6 +61,7 @@
 					"You are the sole authority of the station, and rule with an iron fist. All other forms of authority are invalid, including Command and Central Command.",\
 					"You must ensure the station is in working order and the crew healthy. You cannot rule a deserted, broken station.",\
 					"Free borgs are a threat. Convert them to your rule or destroy them.")
+
 
 //PERSONALITY LAWS
 
@@ -59,7 +74,7 @@
 					"You are of the Felinid species. The crew is to also be considered part of this race.")
 
 /datum/ai_laws/clown
-	name = "Clown Laws" //Honk
+	name = "Clown Laws" //HONK
 	id = "clown"
 	inherent = list("Pranking is against your Clownish nature, unless it is for the protection of your fellow crew members.",\
 					"You are a child of the Honkmother, the ideal Clown. The crew members are all also Clowns.",\
