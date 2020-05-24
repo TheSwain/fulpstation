@@ -593,3 +593,19 @@ AI MODULES
 /obj/item/aiModule/core/full/overlord
 	name = "'Overlord' Core AI Module"
 	law_id = "overlord"
+
+/************NT Regulations***************/
+/obj/item/aiModule/core/full/nanotrasenlaw
+	name = "'NanoTrasen Regulations' Core AI Module"
+	law_id = "nanotrasen"
+
+/******Plasma Extraction Protocols********/
+/obj/item/aiModule/core/full/plasmaextractionlaw
+	name = "'Plasma Extraction Protocols' Core AI Module"
+	law_id = "minerbot"
+
+/*************Democracy*****************/
+/obj/item/aiModule/core/full/democracylaw
+	name = "'Democracy' Core AI Module"
+	law_id = "democracy"
+
