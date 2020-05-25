@@ -151,6 +151,29 @@ There is no point for a testament, but maybe a confession is appropriate. I've n
 	new/obj/structure/fluff/empty_sleeper/syndicate(get_turf(src))
 	return ..()
 
+/obj/effect/mob_spawn/human/old_guard_captain
+	name = "Old Guard Captain"
+	roundstart = FALSE
+	death = FALSE
+	random = TRUE
+	mob_name = "Old Guard Captain"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+
+	short_desc = "You are a Captain from a forgotten era."
+	flavour_text = "Once the pride of the navy, your ship has fallen into disrepair from abandonement and years of disuse. You've just woken up, and darkness embraces you..."
+	important_info = "You are not an antagonist! Do not harm other beings!"
+	outfit = /datum/outfit/syndicate_engineer
+	assignedrole = "Old Guard Captain"
+
+/datum/outfit/old_guard_captain
+	name = "Old Guard Captain"
+	uniform = /obj/item/clothing/under/rank/captain
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	gloves = /obj/item/clothing/gloves/color/captain
+	internals_slot = ITEM_SLOT_DEX_STORAGE//SLOT_R_STORE
+	id = /obj/item/card/id/syndicate/anyone
+
 /obj/effect/mob_spawn/human/Dndplayer
     name = "DnD player"
     roundstart = FALSE
