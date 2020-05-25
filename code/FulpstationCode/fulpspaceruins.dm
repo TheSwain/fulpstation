@@ -56,6 +56,55 @@ DATU: Datums for map templates
 	name = "Prototype Engineering"
 	icon_state = "engi_storage"
 
+//Old Guard
+
+/area/ruin/has_grav/oldship
+	requires_power = TRUE
+	outdoors = FALSE
+	power_light = FALSE
+	power_equip = FALSE
+	power_environ = FALSE
+
+/area/ruin/has_grav/oldship/sleeperroom
+	name = "Sleeper Room"
+	icon_state = "blue"
+
+/area/ruin/has_grav/oldship/restarea
+	name = "Resting area"
+	icon_state = "red"
+
+/area/ruin/has_grav/oldship/eva
+	name = "EVA"
+	icon_state = "blue-red"
+
+/area/ruin/has_grav/oldship/security
+	name = "Security"
+	icon_state = "yellow"
+
+/area/ruin/has_grav/oldship/medbay
+	name = "Medbay"
+	icon_state = "purple"
+
+/area/ruin/has_grav/oldship/science
+	name = "Science"
+	icon_state = "green"
+
+/area/ruin/has_grav/oldship/hallway
+	name = "Hallway"
+	icon_state = "hallC"
+
+/area/ruin/has_grav/oldship/bridge
+	name = "Bridge"
+	icon_state = "bridge"
+
+/area/ruin/has_grav/oldship/emergencyengineering
+	name = "Backup Engineering"
+	icon_state = "SolarcontrolAP"
+
+/area/ruin/has_grav/oldship/engineering
+	name = "Engineering"
+	icon_state = "engine"
+
 /obj/item/book/story/ProtoStory
 	icon = 'icons/obj/library.dmi'
 	name = "Prototype Station diary"
