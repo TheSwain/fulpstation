@@ -208,11 +208,10 @@ There is no point for a testament, but maybe a confession is appropriate. I've n
 	mob_name = "Old Guard Captain"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-
 	short_desc = "You are a Captain from a forgotten era."
 	flavour_text = "Once the pride of the navy, your ship has fallen into disrepair from abandonement and years of disuse. You've just woken up, and darkness embraces you..."
 	important_info = "You are not an antagonist! Do not harm other sapient beings!"
-	/datum/outfit/old_guard_captain
+	outfit = /datum/outfit/old_guard_captain
 	assignedrole = "Old Guard Captain"
 
 /datum/outfit/old_guard_captain
