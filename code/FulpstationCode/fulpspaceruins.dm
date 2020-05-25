@@ -300,6 +300,13 @@ There is no point for a testament, but maybe a confession is appropriate. I've n
 	placement_weight = 3 //Fun spawners in space are rare. Might be toned down in the future.
 	description = "Apparently, the first station built by NanoStrasen, but the Syndicates may want to reclaim it."
 
+/datum/map_template/ruin/space/oldguard
+	id = "oldguardspawner"
+	suffix = "oldguard_ship.dmm"
+	name = "Abandoned Captain"
+	placement_weight = 5
+	description = "Abandoned Captain in the middle of nowhere"
+
 /datum/map_template/ruin/space/dndmansion
 	id = "dndmansion"
 	suffix = "DnDmansion.dmm"
