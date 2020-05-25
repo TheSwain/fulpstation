@@ -8,7 +8,7 @@
 	var/stage = GRENADE_EMPTY
 	var/list/obj/item/reagent_containers/glass/beakers = list()
 	var/list/allowed_containers = list(/obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle)
-	var/list/banned_containers = list(/obj/item/reagent_containers/glass/beaker/bluespace) //Containers to exclude from specific grenade subtypes
+	var/list/banned_containers = list(/obj/item/reagent_containers/glass/beaker/bluespace, /obj/item/reagent_containers/glass/beaker/beaker_of_holding) //Containers to exclude from specific grenade subtypes
 	var/affected_area = 3
 	var/ignition_temp = 10 // The amount of heat added to the reagents when this grenade goes off.
 	var/threatscale = 1 // Used by advanced grenades to make them slightly more worthy.
@@ -208,7 +208,7 @@
 	casedesc = "This casing affects a larger area than the basic model and can fit exotic containers, including slime cores and bluespace beakers. Heats contents by 25°K upon ignition."
 	icon_state = "large_grenade"
 	allowed_containers = list(/obj/item/reagent_containers/glass, /obj/item/reagent_containers/food/condiment, /obj/item/reagent_containers/food/drinks)
-	banned_containers = list()
+	banned_containers = list(/obj/item/reagent_containers/glass/beaker/beaker_of_holding)
 	affected_area = 5
 	ignition_temp = 25 // Large grenades are slightly more effective at setting off heat-sensitive mixtures than smaller grenades.
 	threatscale = 1.1	// 10% more effective.
