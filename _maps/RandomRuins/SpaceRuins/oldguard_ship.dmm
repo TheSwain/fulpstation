@@ -1,160 +1,213 @@
-"aD" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"bW" = (/obj/item/shard,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plating{heat_capacity = 1e+006; icon_state = "platingdmg1"},/area/space)
-"cf" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/lighter,/turf/open/floor/plasteel,/area/space)
-"cs" = (/obj/machinery/atmospherics/pipe/heat_exchanging/simple{dir = 4},/turf/open/floor/plating,/area/space)
-"cu" = (/obj/structure/shuttle/engine/huge,/turf/open/space/basic,/area/space)
-"cZ" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"dY" = (/turf/closed/mineral/random,/area/space)
-"er" = (/obj/structure/table,/obj/item/reagent_containers/food/condiment/milk,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"eW" = (/turf/closed/wall/mineral/titanium,/area/space)
-"hy" = (/obj/structure/sign/departments/engineering,/turf/closed/wall/mineral/titanium,/area/space)
-"ik" = (/obj/machinery/atmospherics/pipe/heat_exchanging/simple,/turf/open/floor/plating,/area/space)
-"jj" = (/obj/structure/chair/sofa{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"jM" = (/obj/effect/decal/cleanable/dirt/dust,/turf/closed/wall/mineral/titanium,/area/space)
-"nq" = (/obj/machinery/door/airlock/command,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"nB" = (/obj/machinery/atmospherics/pipe/heat_exchanging/manifold{dir = 4},/turf/open/floor/plating,/area/space)
-"rE" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/space/basic,/area/space)
-"uU" = (/turf/closed/mineral/random/high_chance,/area/space)
-"xr" = (/obj/structure/table/reinforced,/obj/item/flashlight/glowstick/blue,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"yf" = (/obj/effect/decal/remains/human,/turf/open/floor/plating,/area/space)
-"Aj" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/turf/open/floor/plasteel,/area/space)
-"AT" = (/obj/machinery/door/airlock/public/glass,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"Fl" = (/obj/structure/showcase/machinery/tv,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"Fs" = (/obj/structure/table/reinforced,/obj/item/crowbar,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light/broken{dir = 8},/obj/effect/decal/cleanable/glass,/turf/open/floor/plasteel,/area/space)
-"Gf" = (/obj/structure/lattice,/obj/effect/decal/cleanable/glass,/turf/open/space/basic,/area/space)
-"GP" = (/obj/effect/mob_spawn/human/old_guard_captain,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"Ha" = (/obj/structure/table,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"HB" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"IA" = (/obj/item/reagent_containers/food/condiment/enzyme,/obj/effect/decal/cleanable/glass,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"Jg" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt/dust,/obj/item/soap/nanotrasen,/turf/open/floor/plasteel,/area/space)
-"Lt" = (/obj/machinery/door/airlock/public,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"MN" = (/obj/structure/table,/obj/machinery/microwave{pixel_y = 5},/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"NL" = (/obj/effect/spawner/lootdrop/techstorage/engineering,/turf/open/floor/plating,/area/space)
-"OU" = (/obj/machinery/sleeper{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light/broken,/turf/open/floor/plasteel,/area/space)
-"Pz" = (/turf/closed/wall/r_wall,/area/space)
-"QG" = (/obj/structure/chair/sofa/right{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"QS" = (/obj/item/storage/backpack/duffelbag/engineering,/turf/open/floor/plating,/area/space)
-"Rg" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/turf/open/floor/plasteel,/area/space)
-"Rr" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/suit_storage_unit,/turf/open/floor/plasteel,/area/space)
-"RN" = (/obj/machinery/door/airlock/engineering,/turf/open/floor/plating,/area/space)
-"Sh" = (/obj/structure/shuttle/engine/heater,/obj/structure/window/reinforced/spawner/north,/turf/open/floor/plating,/area/space)
-"Tk" = (/turf/open/floor/plasteel,/area/space)
-"Us" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/space)
+"ad" = (/obj/structure/table/reinforced,/obj/item/flashlight/glowstick/blue,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"ae" = (/obj/structure/shuttle/engine/heater,/obj/structure/window/reinforced/spawner/north,/turf/open/floor/plating,/area/space)
+"ao" = (/obj/effect/decal/cleanable/dirt/dust,/obj/item/defibrillator,/turf/open/floor/plasteel/airless/white,/area/space)
+"aM" = (/turf/closed/wall/r_wall,/area/space)
+"bl" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plasteel,/area/space)
+"bZ" = (/obj/machinery/door/airlock/command,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"cc" = (/obj/effect/decal/cleanable/ash,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"cm" = (/obj/structure/lattice,/obj/effect/decal/cleanable/glass,/obj/item/stack/medical/bruise_pack{amount = 12},/turf/open/space/basic,/area/space)
+"cN" = (/obj/machinery/door/airlock/engineering,/turf/open/floor/plating,/area/space)
+"cS" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/circuitboard/machine/protolathe,/turf/open/floor/plasteel,/area/space)
+"dl" = (/obj/item/tank/internals/emergency_oxygen,/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"ed" = (/obj/item/storage/backpack/duffelbag/engineering,/turf/open/floor/plating,/area/space)
+"eg" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 8},/obj/effect/turf_decal/stripes/line{dir = 9},/turf/open/floor/plasteel,/area/space)
+"ek" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light{dir = 4},/obj/item/kirbyplants/dead,/obj/effect/decal/cleanable/cobweb/cobweb2,/turf/open/floor/plasteel,/area/space)
+"em" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/chair/comfy/shuttle{dir = 8},/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"eo" = (/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plasteel,/area/space)
+"fK" = (/obj/structure/sign/departments/engineering,/turf/closed/wall/mineral/titanium,/area/space)
+"gc" = (/turf/open/space/basic,/area/space)
+"gu" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/item/kirbyplants/dead,/turf/open/floor/plasteel,/area/space)
+"gB" = (/obj/effect/mob_spawn/human/old_guard_captain,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"gK" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/storage/box/beakers,/turf/open/floor/plasteel/airless/white,/area/space)
+"hh" = (/turf/closed/mineral/random,/area/space)
+"ht" = (/obj/structure/showcase/machinery/tv,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"hB" = (/obj/machinery/atmospherics/pipe/heat_exchanging/manifold{dir = 4},/turf/open/floor/plating,/area/space)
+"hN" = (/turf/closed/wall/mineral/titanium,/area/space)
+"ia" = (/obj/machinery/atmospherics/pipe/heat_exchanging/manifold{dir = 8},/turf/open/floor/plating,/area/space)
+"ib" = (/obj/effect/decal/cleanable/dirt/dust,/turf/closed/mineral/random,/area/space)
+"iT" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/space/basic,/area/space)
+"jb" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"jo" = (/obj/machinery/sleeper{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light/broken,/turf/open/floor/plasteel,/area/space)
+"jV" = (/obj/effect/spawner/lootdrop/techstorage/engineering,/turf/open/floor/plating,/area/space)
+"kV" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/effect/decal/cleanable/cobweb,/obj/item/melee/baton/loaded,/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"lL" = (/obj/structure/lattice,/obj/effect/decal/cleanable/glass,/turf/open/space/basic,/area/space)
+"lO" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/space)
+"ma" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/chem_dispenser,/turf/open/floor/plasteel/airless/white,/area/space)
+"me" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/closet/crate/freezer/blood,/turf/open/floor/plasteel/airless/white,/area/space)
+"mn" = (/obj/item/reagent_containers/food/snacks/donkpocket{pixel_x = 3},/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"op" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/oil,/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/space)
+"oS" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/chem_heater,/turf/open/floor/plasteel/airless/white,/area/space)
+"pO" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt/dust,/obj/item/soap/nanotrasen,/obj/effect/decal/cleanable/cobweb,/turf/open/floor/plasteel,/area/space)
+"pU" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/oil,/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plasteel,/area/space)
+"rc" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"re" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/blood/old,/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"rk" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/suit_storage_unit,/obj/effect/decal/cleanable/cobweb/cobweb2,/turf/open/floor/plasteel,/area/space)
+"ry" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/space)
+"rB" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/lighter,/turf/open/floor/plasteel,/area/space)
+"rU" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/sign/departments/security,/turf/closed/wall/mineral/titanium,/area/space)
+"so" = (/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/space)
+"sq" = (/obj/machinery/atmospherics/pipe/heat_exchanging/simple,/turf/open/floor/plating,/area/space)
+"td" = (/obj/machinery/door/airlock/public/glass,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"tA" = (/obj/structure/table,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/cobweb,/obj/item/circuitboard/machine/circuit_imprinter,/turf/open/floor/plasteel,/area/space)
+"tH" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/chem_master,/turf/open/floor/plasteel/airless/white,/area/space)
+"vH" = (/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn,/turf/open/floor/plating,/area/space)
+"wm" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/turf/open/floor/plasteel,/area/space)
+"ws" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/remains/human,/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"wy" = (/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w,/turf/open/floor/plating,/area/space)
+"yj" = (/obj/structure/chair/comfy/shuttle{dir = 8},/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"Aa" = (/obj/structure/shuttle/engine/propulsion,/turf/open/space/basic,/area/space)
+"AA" = (/obj/structure/table,/obj/machinery/microwave{pixel_y = 5},/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"AG" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/blood/drip,/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"AP" = (/obj/machinery/atmospherics/pipe/heat_exchanging/simple{dir = 4},/turf/open/floor/plating,/area/space)
+"Br" = (/obj/machinery/door/airlock/public,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"Bs" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/door/airlock/security,/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"Bv" = (/obj/item/shard{icon_state = "small"},/turf/open/space/basic,/area/space)
+"BS" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/space)
+"Cx" = (/obj/structure/table,/obj/item/reagent_containers/food/condiment/milk,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"Dz" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/oil,/turf/open/floor/plasteel,/area/space)
+"DF" = (/obj/structure/table/reinforced,/obj/item/crowbar,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light/broken{dir = 8},/obj/effect/decal/cleanable/glass,/obj/effect/decal/cleanable/cobweb,/turf/open/floor/plasteel,/area/space)
+"EC" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/turf/open/floor/plasteel,/area/space)
+"FU" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/sign/departments/medbay/alt,/turf/closed/wall/mineral/titanium,/area/space)
+"Gm" = (/obj/item/stack/medical/ointment{amount = 12},/turf/open/space/basic,/area/space)
+"GS" = (/obj/structure/lattice,/obj/effect/decal/cleanable/glass,/obj/item/stack/rods,/turf/open/space/basic,/area/space)
+"Hc" = (/obj/structure/chair/sofa/right{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"Hp" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/oil,/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/space)
+"Hs" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/iv_drip,/turf/open/floor/plasteel/airless/white,/area/space)
+"Ia" = (/turf/closed/mineral/random/high_chance,/area/space)
+"IG" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/rack,/obj/item/restraints/handcuffs,/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"IL" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/optable,/turf/open/floor/plasteel/airless/white,/area/space)
+"Jt" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/storage/backpack/duffelbag/med/surgery,/turf/open/floor/plasteel/airless/white,/area/space)
+"JK" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/obj/effect/turf_decal/stripes/line{dir = 8},/obj/effect/turf_decal/stripes/line{dir = 9},/turf/open/floor/plasteel,/area/space)
+"KZ" = (/obj/effect/decal/cleanable/dirt/dust,/obj/item/bodybag,/turf/open/floor/plasteel/airless/white,/area/space)
+"Lv" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 5},/turf/open/floor/plasteel,/area/space)
+"LG" = (/obj/effect/decal/cleanable/dirt/dust,/obj/item/stack/medical/suture,/turf/open/floor/plasteel/airless/white,/area/space)
+"LV" = (/obj/effect/decal/remains/human,/turf/open/floor/plating,/area/space)
+"Mi" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/door/airlock/medical/glass,/turf/open/floor/plasteel/airless/white,/area/space)
+"NB" = (/obj/effect/decal/cleanable/dirt/dust,/obj/item/clothing/head/helmet,/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"NX" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"Oc" = (/obj/item/clothing/head/helmet/space/eva,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"Ow" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/obj/item/shard{icon_state = "medium"; pixel_y = 3; pixel_x = 3},/turf/open/floor/plasteel,/area/space)
+"OA" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/chair/comfy/shuttle,/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"OF" = (/obj/structure/shuttle/engine/huge,/turf/open/space/basic,/area/space)
+"Pk" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/blood/drip,/turf/open/floor/plasteel,/area/space)
+"Pq" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/gibspawner/human,/turf/open/floor/plasteel,/area/space)
+"PM" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/turf/open/floor/plasteel/airless/white,/area/space)
+"Qq" = (/obj/item/shard,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plating{heat_capacity = 1e+006; icon_state = "platingdmg1"},/area/space)
+"QX" = (/obj/effect/decal/cleanable/dirt/dust,/turf/closed/wall/mineral/titanium,/area/space)
+"RK" = (/turf/open/floor/plasteel,/area/space)
+"RN" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/door/airlock/public/glass,/turf/open/floor/plasteel,/area/space)
+"St" = (/obj/structure/chair/sofa{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"TB" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/closet/firecloset/full,/turf/open/floor/mineral/plastitanium/red/brig,/area/space)
+"Ua" = (/obj/item/stack/rods,/obj/structure/lattice,/turf/open/space/basic,/area/space)
 "Ut" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/clothing/mask/breath,/turf/open/floor/plasteel,/area/space)
-"Vm" = (/obj/structure/chair/sofa/left{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"Vo" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/item/kirbyplants/dead,/turf/open/floor/plasteel,/area/space)
-"VN" = (/obj/item/stack/rods,/obj/structure/lattice,/turf/open/space/basic,/area/space)
-"Wl" = (/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w,/turf/open/floor/plating,/area/space)
-"Wn" = (/turf/open/space/basic,/area/space)
-"WH" = (/obj/item/reagent_containers/food/snacks/donkpocket{pixel_x = 3},/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"Xr" = (/obj/structure/shuttle/engine/propulsion,/turf/open/space/basic,/area/space)
-"XE" = (/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn,/turf/open/floor/plating,/area/space)
-"XQ" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light{dir = 4},/obj/item/kirbyplants/dead,/turf/open/floor/plasteel,/area/space)
-"YM" = (/obj/item/shard{icon_state = "small"},/turf/open/space/basic,/area/space)
-"Zd" = (/obj/effect/decal/cleanable/dirt/dust,/turf/closed/mineral/random,/area/space)
-"Zz" = (/obj/machinery/atmospherics/pipe/heat_exchanging/manifold{dir = 8},/turf/open/floor/plating,/area/space)
-"ZV" = (/obj/effect/decal/cleanable/ash,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
-"ZY" = (/obj/item/clothing/head/helmet/space/eva,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"VB" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plasteel,/area/space)
+"VQ" = (/obj/structure/lattice,/obj/effect/decal/cleanable/glass,/obj/item/shard,/turf/open/space/basic,/area/space)
+"VT" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"Xf" = (/obj/structure/chair/sofa/left{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"Ym" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel/airless/white,/area/space)
+"ZH" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/blood/old,/turf/open/floor/plasteel,/area/space)
+"ZU" = (/obj/item/reagent_containers/food/condiment/enzyme,/obj/effect/decal/cleanable/glass,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/space)
+"ZV" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/item/flashlight{pixel_x = -3; pixel_y = -3},/turf/open/floor/plasteel,/area/space)
 
 (1,1,1) = {"
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWeWeWeWeWeWeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWeWTkTkTkTkTkeWeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWeWTkTkTkTkTkTkTkeWeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWeWTkTkTkTkTkTkTkTkTkeWeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWeWTkTkTkTkTkTkTkTkTkTkTkeWeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWeWTkTkTkTkTkTkTkTkTkTkTkTkTkeWeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWeWTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkeWeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWjMjMjMjMaDaDjMjMjMjMjMaDaDjMeWeWeWeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWHaerMNjMaDaDjMJgcZRrjMaDaDjMTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnGfbWHBHBjMaDaDjMaDaDZVjMaDaDjMTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnYMVNIAUsHBLtaDaDnqaDaDaDnqaDaDjMTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnrEHBFlHBLtaDaDnqaDaDZYnqaDaDjMTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnrEHBHBWHjMaDaDjMaDaDaDjMaDaDjMTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWneWeWeWWnWnWnWneWQGjjVmjMaDaDjMUtRgcfjMaDaDjMTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWneWeWeWeWeWWnWnWneWjMjMjMjMaDaDjMjMjMjMjMaDaDjMTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWeWPzPzPzeWeWWnWneWFsGPXQjMaDaDjMaDaDaDjMaDaDjMTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzPzikPzPzeWWnWnrEAjHBHBATaDaDaDaDaDaDaDaDaDjMTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzPzikPzPzeWWnWnrEHBHBHBATHBaDaDaDaDaDaDaDaDjMTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzPzikPzPzeWWnWneWxrOUVojMHBaDjMaDaDaDjMaDaDjMTkTkTkeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzPzikPzPzeWWnWneWjMjMjMjMHBaDjMZdZdaDjMaDaDjMeWeWeWeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzPzikPzPzeWWnWneWuUuUdYeWdYuUeWdYTkTkeWTkTkdYdYTkTkeWWnWnWndYdYdYdYWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzPzikPzPzeWWnWneWuUTkdYeWdYdYdYdYdYTkTkTkdYdYdYdYuUuUuUdYdYdYdYdYdYeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzPzikPzPzeWWnWneWuUTkdYdYdYdYdYdYdYTkTkdYdYdYdYdYdYdYdYdYdYdYuUdYdYeWeWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzPzikPzPzeWeWeWhyTkTkTkdYdYdYuUdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYuUdYdYdYdYWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzZzWlnBNLQSyfXERNTkTkTkdYdYdYuUdYdYdYuUuUuUdYdYdYuUuUdYdYdYuUuUdYdYdYdYWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzikZzWlcscscscsRNTkTkdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYuUuUdYdYuUdYdYdYdYdYWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzikikikPzeWeWeWhyTkTkdYdYdYdYdYdYdYdYdYdYdYuUdYdYdYdYdYdYdYdYdYdYdYdYdYWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzikikikPzeWWnWneWTkTkdYdYuUdYdYdYdYdYdYdYuUdYdYdYdYdYdYdYdYdYdYdYdYdYuUWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzikikikPzeWWnWneWTkTkTkdYdYdYdYdYdYdYdYdYdYdYdYdYdYuUdYdYdYdYdYdYdYuUWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzikikikPzeWWnWneWTkTkTkdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzikikikPzeWWnWneWWnWnWndYdYdYuUdYdYdYdYuUdYdYdYdYuUdYdYdYdYdYdYdYdYdYWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWPzShShShPzeWWnWneWWnWnWnWndYdYuUuUdYdYdYuUuUdYdYdYdYuUdYdYdYdYdYdYdYWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWneWXrWnWnWnXreWWnWneWWnWnWnWnWndYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYdYWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWWnWnWnWnWnWndYuUdYdYdYdYdYdYdYdYdYdYdYdYdYuUuUWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWncuWnWnWnWnWnWneWWnWnWnWnWnWnWnuUuUuUdYdYdYdYdYdYdYdYdYdYdYuUWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWWnWnWnWnWnWnWnWnWndYdYdYdYWnWnWnWndYdYdYdYWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWneWWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
-WnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWnWn
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNhNhNhNhNhNhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNhNRKRKRKRKRKhNhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNhNRKRKRKRKRKRKRKhNhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNhNRKRKRKRKRKRKRKRKRKhNhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNhNRKRKRKRKRKRKRKRKRKRKRKhNhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNhNRKRKRKRKRKRKRKRKRKRKRKRKRKhNhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNhNRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKhNhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKRKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNQXQXQXQXRNRNQXQXQXQXQXRNRNQXhNhNhNhNGmgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNtACxAAQXJKLvQXpOrcrkQXegLvQXmaoStHhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgclLQqPqZHQXryVBQXECjbccQXryVBFUaoYmPMlLBvgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcBvUaZUDzVTBrryblbZjbjbjbbZryVBMiYmYmPMGSgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgciTPkhtVTBrryVBbZjbjbOcbZryVBMiYmPMVQlLgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgciTZVPkmnQXryVBQXOwjbjbQXryVBFUYmYmPMcmgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgchNhNhNgcgcgcgchNHcStXfQXrypUQXUtcSrBQXryVBQXYmYmHsiTgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgchNhNhNhNhNgcgcgchNQXQXQXQXryVBQXQXQXQXQXryVBQXYmYmILiTgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNhNaMaMaMhNhNgcgchNDFgBekQXryblrUkVOATBrUryVBQXKZYmJtiTgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMaMsqaMaMhNgcgciTwmVTVTtdryVBBsNXAGwsBsryVBQXYmYmHsiTgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMaMsqaMaMhNgcgciTVTVTVTtdBSVBBsNXreNXBsryVBQXYmLGILiTgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMaMsqaMaMhNgcgchNadjoguQXlOVBrUNBNXIGrUryVBQXmeYmgKhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMaMsqaMaMhNgcgchNQXQXQXQXopVBQXibibemQXHpVBQXhNhNhNhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMaMsqaMaMhNgcgchNIaIahhhNhhIahNhhdlyjhNsoeohhhhRKRKhNgcgcgchhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMaMsqaMaMhNgcgchNIaRKhhhNhhhhhhhhhhyjhNsohhhhhhhhIaIaIahhhhhhhhhhhhhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMaMsqaMaMhNgcgchNIaRKhhhhhhhhhhhhhhyjhNhhhhhhhhhhhhhhhhhhhhhhIahhhhhNhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMaMsqaMaMhNhNhNfKRKRKRKhhhhhhIahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhIahhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMiawyhBjVedLVvHcNRKRKRKhhhhhhIahhhhhhIaIaIahhhhhhIaIahhhhhhIaIahhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMsqiawyAPAPAPAPcNRKRKhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhIaIahhhhIahhhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMsqsqsqaMhNhNhNfKRKRKhhhhhhhhhhhhhhhhhhhhhhIahhhhhhhhhhhhhhhhhhhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMsqsqsqaMhNgcgchNRKRKhhhhIahhhhhhhhhhhhhhIahhhhhhhhhhhhhhhhhhhhhhhhhhIagcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMsqsqsqaMhNgcgchNRKRKRKhhhhhhhhhhhhhhhhhhhhhhhhhhhhIahhhhhhhhhhhhhhIagcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMsqsqsqaMhNgcgchNRKRKRKhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMsqsqsqaMhNgcgchNgcgcgchhhhhhIahhhhhhhhIahhhhhhhhIahhhhhhhhhhhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNaMaeaeaeaMhNgcgchNgcgcgcgchhhhIaIahhhhhhIaIahhhhhhhhIahhhhhhhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgchNAagcgcgcAahNgcgchNgcgcgcgcgchhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNgcgcgcgcgcgchhIahhhhhhhhhhhhhhhhhhhhhhhhhhIaIagcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcOFgcgcgcgcgcgchNgcgcgcgcgcgcgcIaIaIahhhhhhhhhhhhhhhhhhhhhhIagcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNgcgcgcgcgcgcgcgcgchhhhhhhhgcgcgcgchhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgchNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 "}
