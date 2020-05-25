@@ -76,6 +76,17 @@
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
+	/datum/design/beaker_of_holding
+	name = "Beaker of Holding"
+	desc = "A beaker containing a localized bluespace pocket. Capable of holding an astounding 1000 units."
+	id = "quantumbeaker"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 5000, /datum/material/plasma = 5000, /datum/material/diamond = 2500, /datum/material/bluespace = 2500)
+	build_path = /obj/item/reagent_containers/glass/beaker/beaker_of_holding
+	category = list("Medical Designs")
+	lathe_time_factor = 0.5
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
 //T5 PARTS TECHWEB [XEON/FULP]
 /datum/techweb_node/quantum_tech
 	id = "quantum_tech"
@@ -85,6 +96,16 @@
 	design_ids = list("quantumscan","quantummanip","quantumbin","quantumbeaker")
 	prereq_ids = list("micro_bluespace")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	export_price = 5000
+
+/datum/techweb_node/beaker_of_holding
+	id = "beaker_holding_tech"
+	starting_node = FALSE
+	display_name = "Beaker of Holding"
+	description = "We're really pushing the limits of chemistry here."
+	design_ids = list("beaker_of_holding")
+	prereq_ids = list("bluespace_storage")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
 //T5 OBJECT [XEON/FULP]
@@ -152,6 +173,16 @@
 	. = ..()
 	charge = 0
 	update_icon()
+
+/obj/item/reagent_containers/glass/beaker/beaker_of_holding
+	name = "Beaker of Holding"
+	desc = "A beaker containing a localized bluespace pocket. Capable of holding an astounding 1000 units."
+	icon_state = "beakerofholding"
+	icon = 'icons/Fulpicons/beakerofholding.dmi'
+	custom_materials = list(/datum/material/iron = 10000, /datum/material/glass = 5000, /datum/material/plasma = 5000, /datum/material/diamond = 2500, /datum/material/bluespace = 2500)
+	volume = 1000
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,300,500,1000)
 
 ///T5 RPED
 /obj/item/storage/part_replacer/bluespace/tier5
