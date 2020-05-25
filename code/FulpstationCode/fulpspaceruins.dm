@@ -163,7 +163,7 @@ There is no point for a testament, but maybe a confession is appropriate. I've n
 	short_desc = "You are a Captain from a forgotten era."
 	flavour_text = "Once the pride of the navy, your ship has fallen into disrepair from abandonement and years of disuse. You've just woken up, and darkness embraces you..."
 	important_info = "You are not an antagonist! Do not harm other beings!"
-	outfit = /datum/outfit/syndicate_engineer
+	/datum/outfit/old_guard_captain
 	assignedrole = "Old Guard Captain"
 
 /datum/outfit/old_guard_captain
