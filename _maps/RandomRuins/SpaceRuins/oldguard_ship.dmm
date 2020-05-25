@@ -14,9 +14,7 @@
 "cc" = (/obj/structure/closet/crate/engineering,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
 "cm" = (/turf/closed/wall/r_wall/rust,/area/ruin/unpowered/no_grav)
 "cr" = (/obj/effect/decal/cleanable/dirt/dust,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/restarea)
-"cx" = (/obj/machinery/light{dir = 1},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "cA" = (/obj/structure/shuttle/engine/heater,/obj/structure/window/reinforced/spawner/north,/turf/open/floor/plating,/area/space)
-"cL" = (/turf/closed/wall/r_wall,/area/ruin/has_grav/oldship/emergencyengineering)
 "cN" = (/obj/structure/lattice/catwalk,/obj/structure/cable,/obj/structure/cable,/turf/open/space/basic,/area/ruin/unpowered/no_grav)
 "cS" = (/obj/structure/lattice/catwalk,/obj/structure/cable,/turf/open/space/basic,/area/ruin/unpowered/no_grav)
 "dj" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
@@ -24,8 +22,7 @@
 "du" = (/obj/item/tank/internals/emergency_oxygen,/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "dF" = (/obj/effect/decal/remains/human,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "dG" = (/obj/machinery/conveyor{dir = 10; id = "beta"},/obj/machinery/light,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
-"dQ" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/closet/firecloset,/obj/item/clothing/suit/fire/firefighter,/obj/machinery/light{dir = 1},/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
-"dW" = (/obj/item/stack/sheet/metal/ten,/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
+"dQ" = (/obj/effect/decal/cleanable/dirt/dust,/obj/item/clothing/suit/fire/firefighter,/obj/machinery/light{dir = 1},/obj/structure/closet,/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "ed" = (/obj/structure/cable,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
 "eg" = (/obj/structure/cable,/turf/closed/wall/r_wall,/area/ruin/unpowered/no_grav)
 "ek" = (/obj/machinery/mecha_part_fabricator,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
@@ -33,9 +30,7 @@
 "eo" = (/obj/machinery/computer/shuttle,/obj/structure/cable,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "eq" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/engineering)
 "et" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 8},/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
-"ez" = (/obj/effect/decal/cleanable/dirt,/obj/item/stack/cable_coil/five,/obj/effect/decal/cleanable/glass,/obj/machinery/light,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "eY" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/components/unary/tank/air,/obj/machinery/light,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
-"fb" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light{dir = 8},/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "ft" = (/obj/item/shard,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plating{heat_capacity = 1e+006; icon_state = "platingdmg1"},/area/space/nearstation)
 "fz" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/space/basic,/area/ruin/has_grav/oldship/restarea)
 "fE" = (/obj/machinery/door/airlock/command,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
@@ -52,6 +47,7 @@
 "hs" = (/obj/item/storage/backpack/duffelbag/engineering,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "ht" = (/obj/structure/table/reinforced,/obj/item/radio/headset/heads/captain,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "hB" = (/obj/effect/decal/cleanable/blood/gibs/bubblegum,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
+"hD" = (/obj/effect/decal/cleanable/dirt,/obj/item/stack/cable_coil/five,/obj/effect/decal/cleanable/glass,/obj/machinery/light,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "hG" = (/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w,/turf/open/floor/plating,/area/space)
 "hN" = (/turf/closed/wall/mineral/titanium,/area/space)
 "hW" = (/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/science)
@@ -65,7 +61,9 @@
 "iJ" = (/obj/item/reagent_containers/food/condiment/enzyme,/obj/effect/decal/cleanable/glass,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "iL" = (/obj/machinery/door/airlock/public,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "iT" = (/obj/structure/table/reinforced,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
+"iW" = (/obj/structure/frame/computer,/obj/structure/cable,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "jb" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt,/obj/item/gun/energy/laser/retro,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
+"jf" = (/obj/item/stack/sheet/metal/ten,/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "jg" = (/obj/machinery/mineral/unloading_machine,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "jh" = (/obj/structure/lattice,/obj/item/stack/rods,/turf/open/space/basic,/area/space/nearstation)
 "jj" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/oil,/obj/effect/turf_decal/stripes/line{dir = 4},/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
@@ -81,6 +79,7 @@
 "kg" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/remains/human,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/engineering)
 "ko" = (/obj/structure/shuttle/engine/propulsion,/turf/open/space/basic,/area/space)
 "kH" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/item/kirbyplants/dead,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/sleeperroom)
+"kO" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light{dir = 8},/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "kR" = (/obj/machinery/atmospherics/components/unary/tank/toxins,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "kV" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "ld" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
@@ -108,18 +107,17 @@
 "oM" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "oP" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 4},/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "oS" = (/obj/effect/decal/cleanable/glass,/turf/open/floor/plating{heat_capacity = 1e+006; icon_state = "platingdmg1"},/area/space)
-"oT" = (/obj/structure/frame/computer,/obj/structure/cable,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "pj" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/shreds,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/sleeperroom)
 "pm" = (/obj/structure/chair/sofa/right{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "pn" = (/obj/machinery/door/airlock/public,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
-"ps" = (/obj/machinery/light{dir = 4},/turf/open/space/basic,/area/space)
-"pt" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/glass,/obj/effect/turf_decal/stripes/line{dir = 1},/obj/item/reagent_containers/food/drinks/mug/coco,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
+"pt" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/glass,/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "pv" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "pO" = (/obj/structure/lattice,/turf/open/space/basic,/area/space/nearstation)
 "pP" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt,/obj/item/tank/internals/oxygen/empty,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "pU" = (/obj/machinery/door/airlock/vault/derelict,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "qc" = (/obj/effect/decal/cleanable/dirt/dust,/turf/closed/wall/mineral/titanium,/area/space)
 "qx" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
+"qK" = (/obj/effect/landmark/carpspawn,/turf/open/space/basic,/area/space)
 "qX" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/optable,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "rc" = (/obj/structure/cable,/obj/machinery/door/airlock/vault/derelict,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "re" = (/obj/item/stack/sheet/mineral/plasma{amount = 10},/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
@@ -136,6 +134,7 @@
 "rU" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/effect/decal/cleanable/oil,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
 "sd" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "si" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
+"sj" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "so" = (/obj/structure/cable,/turf/open/floor/plating{heat_capacity = 1e+006; icon_state = "platingdmg1"},/area/ruin/has_grav/oldship/emergencyengineering)
 "td" = (/obj/structure/lattice,/obj/item/stack/rods/ten,/turf/open/space/basic,/area/space/nearstation)
 "ts" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/glass,/obj/effect/turf_decal/stripes/line{dir = 5},/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
@@ -144,7 +143,6 @@
 "tH" = (/obj/machinery/door/airlock/command,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "tN" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/glass,/obj/item/kitchen/knife,/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "tP" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line,/obj/effect/decal/cleanable/insectguts,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
-"ub" = (/obj/effect/landmark/carpspawn,/turf/open/space/basic,/area/space)
 "ud" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/oil/streak,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "uk" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/effect/turf_decal/stripes/line,/obj/item/circuitboard/computer/rdconsole,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
 "uu" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/remains/human,/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
@@ -152,7 +150,6 @@
 "uI" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/chair/comfy/shuttle,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "uO" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/chem_dispenser,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "uW" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
-"vh" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "vm" = (/obj/effect/decal/cleanable/dirt,/obj/item/stack/cable_coil/five,/obj/effect/decal/cleanable/glass,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "vv" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/insectguts,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "vG" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/obj/effect/decal/cleanable/blood/drip,/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
@@ -176,6 +173,7 @@
 "zi" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/door/airlock/medical/glass,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "zH" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/structure/cable,/obj/effect/turf_decal/bot,/obj/structure/window/reinforced/spawner/east,/obj/structure/chair/comfy/shuttle{dir = 8},/turf/open/floor/black,/area/ruin/has_grav/oldship/hallway)
 "zN" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/space/basic,/area/ruin/has_grav/oldship/emergencyengineering)
+"zY" = (/turf/closed/wall/r_wall,/area/ruin/has_grav/oldship/emergencyengineering)
 "Aa" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/oil/streak,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
 "Ao" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/clothing/mask/breath,/obj/effect/turf_decal/stripes/line{dir = 8},/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
 "AA" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
@@ -217,15 +215,17 @@
 "Gm" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "Gp" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/gibspawner/human,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "Gy" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/item/flashlight{pixel_x = -3; pixel_y = -3},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
-"GP" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
+"GL" = (/obj/machinery/light{dir = 1},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "GS" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 5},/obj/item/kirbyplants/dead,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "GZ" = (/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/engineering)
 "Hc" = (/obj/effect/decal/cleanable/dirt,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/emergencyengineering)
 "Hd" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/chem_master,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "Hp" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/power/port_gen/pacman,/obj/effect/decal/cleanable/cobweb,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/obj/machinery/light{dir = 1},/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "Hs" = (/obj/machinery/telecomms/message_server,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
+"HB" = (/obj/machinery/light{dir = 4},/turf/open/space/basic,/area/space)
 "HJ" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/obj/effect/turf_decal/stripes/line{dir = 8},/obj/effect/turf_decal/stripes/line{dir = 9},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "HP" = (/obj/machinery/atmospherics/pipe/heat_exchanging/simple{dir = 4},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
+"HX" = (/obj/structure/chair/comfy/shuttle{dir = 8},/obj/machinery/light{dir = 4},/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "Ia" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/space/basic,/area/ruin/has_grav/oldship/bridge)
 "In" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/blood/old,/obj/structure/cable,/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "Iq" = (/obj/machinery/portable_atmospherics/canister/oxygen,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
@@ -242,6 +242,7 @@
 "JK" = (/obj/effect/decal/cleanable/robot_debris,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "JR" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/lighter,/obj/effect/turf_decal/stripes/line{dir = 6},/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
 "JT" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light{dir = 4},/obj/item/kirbyplants/dead,/obj/effect/decal/cleanable/cobweb/cobweb2,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/sleeperroom)
+"Ke" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "Ko" = (/obj/effect/decal/cleanable/dirt/dust,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/sleeperroom)
 "KE" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "KI" = (/obj/effect/decal/cleanable/dirt/dust,/obj/item/clothing/glasses/hud/health,/obj/structure/cable,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
@@ -254,8 +255,8 @@
 "Lv" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/effect/turf_decal/bot,/obj/structure/window/reinforced/spawner/east,/obj/structure/chair/comfy/shuttle{dir = 8},/turf/open/floor/black,/area/ruin/has_grav/oldship/hallway)
 "Lz" = (/obj/structure/sign/departments/engineering,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/engineering)
 "LA" = (/obj/effect/decal/cleanable/blood/gibs/bubblegum,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
-"LE" = (/obj/structure/chair/comfy/shuttle{dir = 8},/obj/machinery/light{dir = 4},/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "LG" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/bot,/obj/structure/window/reinforced/spawner/west,/obj/structure/chair/comfy/shuttle{dir = 4},/turf/open/floor/black,/area/ruin/has_grav/oldship/hallway)
+"LJ" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "LO" = (/obj/effect/decal/cleanable/dirt,/obj/item/storage/bag/ore,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/engineering)
 "LR" = (/obj/effect/decal/cleanable/glass,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "LV" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
@@ -274,7 +275,6 @@
 "NC" = (/turf/closed/mineral/random/high_chance,/area/ruin/has_grav/oldship/hallway)
 "NQ" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/oil,/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "NX" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/reinforced,/obj/item/stack/cable_coil/five,/obj/item/wrench,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
-"Oa" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "Oc" = (/obj/machinery/airalarm,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/emergencyengineering)
 "Oi" = (/obj/effect/decal/cleanable/glass,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "Om" = (/obj/effect/turf_decal/stripes/line{dir = 4},/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
@@ -362,13 +362,13 @@ gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhgchhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhhhhhhhRKRKRKRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKhhhhhhhhhhhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKhhhhhhhhhhhhRKhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcubgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKhhhhhhhhhhhhRKhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcqKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKhhhhhhhhhhRKhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKhhhhhhRKRKhhhhhhRKhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKhhhhhhRKhhhhRKRKRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhhhhhhhhhhhRKRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhhhhhhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcubgcgcgcgcgcgcgcgcgchhhhRKhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcqKgcgcgcgcgcgcgcgcgchhhhRKhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcadgcadgcadgcgcgcgcgcgcgcadgcadgcadgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcadgcadgcadgcgcgcgcgcgcgcadgcadgcadgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcadgcadgcadgcgcaoaoaogcgcadgcadgcadgcgc
@@ -387,30 +387,30 @@ gcgcgcgcgcwZwZrMBGBGBGBGBGwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcwZBGrMBGrMBGBGBGBGwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcwZrMrMBGrMBGBGBGBGBGwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcwZrMrMBGrMBGBGrMBGBGwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcwZwZBGBGBGBGrMrMwZwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcubgcgcgcgcgcRKhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcwZwZBGBGBGBGrMrMwZwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcqKgcgcgcgcgcRKhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcwZBGBGBGBGrMwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcwZBGBGBGBGrMwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcwZwZwZBGBGwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcwZwZwZwZgcgcgcgcgcgcQGIaIaIaIaIaQGgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGQGeofKfKfKoTQGQGgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGQGeofKfKfKiWQGQGgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGQGnbgBnbnbgKnbhtQGQGgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGQGhBnbiaibnbnbnbiTQGQGQGgcgcgcgcgcgcgcgcgcgchhRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGjbkVjojVkVkVlLvhlOQGQGQGgcgcgcgcgcgcgcgcgcgchhRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGjbkVjojVkVkVlLsjlOQGQGQGgcgcgcgcgcgcgcgcgcgchhRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGmanbjonbLAQGQGQGQGQGQGQGgcgcgcgcgcgcgcgcgcgcgchhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGmegKjonbvhQGmnoeoeopoSpOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGQGpUrcQGQGQGreldldrkpOrygcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcubgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGGPnbkVkVOarBSLrUSLsopOtdgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGmegKjonbsjQGmnoeoeopoSpOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGQGpUrcQGQGQGreldldrkpOrygcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcqKgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGLJnbkVkVKerBSLrUSLsopOtdgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcIanbtAtAtAnbtHvHwmrkpOwsrogcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcpsgcgcIanbtAtAtAnbQGldwmrkwyyjpOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGvhnbnbnbvhQGAawmAAAGAPhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcHBgcgcIanbtAtAtAnbQGldwmrkwyyjpOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGsjnbnbnbsjQGAawmAAAGAPhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgchWhWhWhWhWhWhWhWaOBrBsaOaOaOaOhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKhhgcgcgcgcgcgcgcgc
-gcgcgcgcgcubgcgcgcgcgcgcgchWhWBvpPBSCxDzDFhWECFUGmGSHcHpcLaOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKhhhhhhgcgcgcgcgcgcgc
+gcgcgcgcgcqKgcgcgcgcgcgcgchWhWBvpPBSCxDzDFhWECFUGmGSHcHpzYaOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKhhhhhhgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgchWhWIGILJtdjdjJKuWhWKZLvLGLVMiNBNXOcaOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKhhhhRKgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgchWOwOAOFuWPkPquWPMhWKZQqQXRNStTBUaUtaOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhhhhhRKgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcQKdjPkhWhWhWhWhWhWhWVBLvLGLVHcVQVTXfzNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhhhhhhhgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcQKYmuWZHZUZVpttNtsRPKZLvLGLVHcDXDXvmzNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcQKOimMmKPhpvpvpvoPvKmyzHQEsdicWgnQABzNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgchWoKdjPAUStPoMjkGhRPiijkjkEeHcezudeYaOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgchWoKdjPAUStPoMjkGhRPiijkjkEeHchDudeYaOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgchWUsUsUsqcCwNpgsgsgsgsgsCwNptuxUxUxUxUjxgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcbDGgFwLucrHJTWgsRgKXbagsYHTWtuuOlmHdxUgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcwsftGpKWcrawMXgsORTMZNgsawMXSsTkUIKEwsYMgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
@@ -418,14 +418,14 @@ gcgcgcgcgcgcgcgcgcgcgcYMlTiJQxJypnawSYfEUbrtsifEawMXziOHUIIDLhgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcfzjtRenyiLetSGYeGbTMSgfEawSGymUIJzJowsgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcfzGyvvDkcrawMXgsjMvYsigsawYISsOHKIKEJmgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgchNhNhNgcgcgcgcbDpmmbXBcrawjjgsAoukJRgsawMXtufMUIJDySgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgchNhNhNhNhNgcgcgcSeKoKoKoKoawMXaJaJaJaJaJawMXtufbUIqXySgcgcgcubgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgchNhNhNhNhNgcgcgcSeKoKoKoKoawMXaJaJaJaJaJawMXtukOUIqXySgcgcgcqKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNhNaeaeaehNhNgcgcSeiwBcJTKoawSYCMlluIdQCMawOqtukcUIMjySgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeaehNgcgcACDShmhmrsetEyTUVcvGuuTUawMXtuOHUIJDySgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeaehNgcgcACbGpjbGwQNzEyuErhInVcTUawMXtuOHFiqXySgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeaehNgcgcSeZCRokHKoqxMXCMLYVcVcCMawRYtuBPOHrIxUgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeaehNgcgcSeKoKoKoKoPJMXaJMdMdmUaJNQMXtuxUxUxUxUgcgcwZwZwZwZwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeaehNgcgcGZQiQixpGZWoNCiECjduXQiEQhOmhNhhSSguhNwZwZwZhhhhhhhhwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgchNaeaexwaeaehNgcgcGZQieqxpGZWoWoCjCjCjLEiEQhWohNhhhhRKRKRKhhhhhhhhhhhhhNwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgchNaeaexwaeaehNgcgcGZQieqxpGZWoWoCjCjCjHXiEQhWohNhhhhRKRKRKhhhhhhhhhhhhhNwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeaehNgcgcGZQieqxpxphhhhCjCjCjXQiEWoWohNhhhhhhhhhhhhhhhhRKhhhhhNIrwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeQuGZGZGZLzQHeqlnxphhhhRKhhhhhhhhhhhhhNhhhhhhhhhhhhhhhhRKhhhhhhhhwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeVzhGMsNchsdFvSDLboeqLOxphhhhRKhhhhhhRKRKRKhhhhhhRKRKhhhhhhRKRKhhhhhhhhwZgcgcgcgcRKRKRKgcgcgcgcgcgcgcgcgcgc
@@ -435,16 +435,16 @@ gcgcgchNaexwxwxwaehNgcgcGZkdeqxpxpRKhhhhhhRKhhhhhhRKhhhhhhhhhhhhhhhhhhhhhhhhhhrM
 gcgcgchNaexwxwxwaehNgcgcGZboeqkgxphhhhhhhhRKhhhhhhhhhhhhhhhhRKhhhhhhhhhhhhhhRKwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaexwxwxwaehNgcgcGZPECCCCxphhhhhhhhhhRKhhhhhhhhhhhhhhhhhhhhhhhhRKRKhhhhwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaexwxwxwaehNgcgcGZLzDLFgxphhhhRKhhhhhhhhRKhhhhhhhhRKhhhhhhhhRKRKhhhhhhwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgchNaecAcAcAaehNgcgcGZcxQfwhLRxpxpRKRKhhhhhhRKRKhhhhhhhhRKhhhhhhRKhhhhhhwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgchNaecAcAcAaehNgcgcGZGLQfwhLRxpxpRKRKhhhhhhRKRKhhhhhhhhRKhhhhhhRKhhhhhhwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNkogcgcgckohNgcgcGZEdQfgXQfQfxphhhhhhhhhhhhhhhhhhhhhhhhhhhhRKhhhhhhhhwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcGZdWLRXHQfQfIqhhRKhhhhhhhhhhhhhhhhhhhhhhhhhhRKRKwZwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcGZjfLRXHQfQfIqhhRKhhhhhhhhhhhhhhhhhhhhhhhhhhRKRKwZwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcTngcgcgcgcgcgcjhwsEdgXQfQfQfKNQiQiRKhhhhRKhhhhhhhhhhhhhhhhRKwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcpOTuQfnfNfQfQfaBjgZYxpxpQiQikRkRkRkRxphhhhhhwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcGZNmxcgXgXgXgXgXFfXmxpQiQikRkRkRkRkRGZwZwZwZwZgcgcgcgcgcgcgcgcgcgcubgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcGZNmxcgXgXgXgXgXFfXmxpQiQikRkRkRkRkRGZwZwZwZwZgcgcgcgcgcgcgcgcgcgcqKgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcGZDxUChXKNQfQfxcQfdGxpQixpkRkRkRkRkRGZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcGZkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbGZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcGZrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqGZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKgcgcgcgcgcgcgcgc
-gcubgcgcgcgcgcgcgcgcgcgcGZWzWzWzWzWzWzVGWzWzWzVGWzWzWzWzWzWzGZgcgcgcgcgcgcRKgcgcgcgcgcgcRKgcgcRKRKRKRKRKgcgcgcgcgcgc
+gcqKgcgcgcgcgcgcgcgcgcgcGZWzWzWzWzWzWzVGWzWzWzVGWzWzWzWzWzWzGZgcgcgcgcgcgcRKgcgcgcgcgcgcRKgcgcRKRKRKRKRKgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKRKRKgcgcgcgcgcgcgcgcRKRKRKRKRKgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcTngcgcTngcgcgcTngcgcgcTngcgcTngcgcgcgcgcgcgcRKRKRKRKgcgcgcgcgcgcgcRKRKRKRKRKRKRKgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKgcgcgcgcgcgcgcRKRKRKRKRKRKRKRKgcgcgcgcgc
