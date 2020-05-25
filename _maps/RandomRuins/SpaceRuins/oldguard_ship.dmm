@@ -5,7 +5,7 @@
 "aB" = (/obj/item/stack/sheet/mineral/plasma{amount = 10},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "aJ" = (/obj/effect/decal/cleanable/dirt/dust,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/security)
 "aO" = (/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/emergencyengineering)
-"ba" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/suit_storage_unit,/obj/effect/decal/cleanable/cobweb/cobweb2,/obj/effect/turf_decal/stripes/line{dir = 5},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
+"ba" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/suit_storage_unit,/obj/effect/decal/cleanable/cobweb/cobweb2,/obj/effect/turf_decal/stripes/line{dir = 5},/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
 "bl" = (/obj/item/circuitboard/machine/circuit_imprinter,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
 "bo" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/engineering)
 "bD" = (/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/restarea)
@@ -14,23 +14,28 @@
 "cc" = (/obj/structure/closet/crate/engineering,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
 "cm" = (/turf/closed/wall/r_wall/rust,/area/ruin/unpowered/no_grav)
 "cr" = (/obj/effect/decal/cleanable/dirt/dust,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/restarea)
+"cx" = (/obj/machinery/light{dir = 1},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "cA" = (/obj/structure/shuttle/engine/heater,/obj/structure/window/reinforced/spawner/north,/turf/open/floor/plating,/area/space)
+"cL" = (/turf/closed/wall/r_wall,/area/ruin/has_grav/oldship/emergencyengineering)
 "cN" = (/obj/structure/lattice/catwalk,/obj/structure/cable,/obj/structure/cable,/turf/open/space/basic,/area/ruin/unpowered/no_grav)
 "cS" = (/obj/structure/lattice/catwalk,/obj/structure/cable,/turf/open/space/basic,/area/ruin/unpowered/no_grav)
 "dj" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "dl" = (/obj/machinery/door/airlock/external,/obj/structure/cable,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
 "du" = (/obj/item/tank/internals/emergency_oxygen,/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "dF" = (/obj/effect/decal/remains/human,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
-"dG" = (/obj/machinery/conveyor{dir = 10; id = "beta"},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
-"dQ" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/closet/firecloset,/obj/item/clothing/suit/fire/firefighter,/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
+"dG" = (/obj/machinery/conveyor{dir = 10; id = "beta"},/obj/machinery/light,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
+"dQ" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/closet/firecloset,/obj/item/clothing/suit/fire/firefighter,/obj/machinery/light{dir = 1},/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
+"dW" = (/obj/item/stack/sheet/metal/ten,/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "ed" = (/obj/structure/cable,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
 "eg" = (/obj/structure/cable,/turf/closed/wall/r_wall,/area/ruin/unpowered/no_grav)
 "ek" = (/obj/machinery/mecha_part_fabricator,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
 "em" = (/obj/machinery/telecomms/bus,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
-"eo" = (/obj/machinery/computer/shuttle,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
+"eo" = (/obj/machinery/computer/shuttle,/obj/structure/cable,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "eq" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/engineering)
 "et" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 8},/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
-"eY" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/components/unary/tank/air,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
+"ez" = (/obj/effect/decal/cleanable/dirt,/obj/item/stack/cable_coil/five,/obj/effect/decal/cleanable/glass,/obj/machinery/light,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
+"eY" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/components/unary/tank/air,/obj/machinery/light,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
+"fb" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light{dir = 8},/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "ft" = (/obj/item/shard,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plating{heat_capacity = 1e+006; icon_state = "platingdmg1"},/area/space/nearstation)
 "fz" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/space/basic,/area/ruin/has_grav/oldship/restarea)
 "fE" = (/obj/machinery/door/airlock/command,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
@@ -46,7 +51,7 @@
 "hm" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/sleeperroom)
 "hs" = (/obj/item/storage/backpack/duffelbag/engineering,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "ht" = (/obj/structure/table/reinforced,/obj/item/radio/headset/heads/captain,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
-"hB" = (/obj/effect/decal/cleanable/blood/gibs/bubblegum,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
+"hB" = (/obj/effect/decal/cleanable/blood/gibs/bubblegum,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "hG" = (/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w,/turf/open/floor/plating,/area/space)
 "hN" = (/turf/closed/wall/mineral/titanium,/area/space)
 "hW" = (/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/science)
@@ -54,7 +59,7 @@
 "ia" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "ib" = (/mob/living/carbon/alien/humanoid/royal/queen,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "ic" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/emergencyengineering)
-"ii" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 10},/obj/item/kirbyplants/dead,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
+"ii" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 10},/obj/item/kirbyplants/dead,/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "iw" = (/obj/structure/table/reinforced,/obj/item/crowbar,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light/broken{dir = 8},/obj/effect/decal/cleanable/glass,/obj/effect/decal/cleanable/cobweb,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/sleeperroom)
 "iE" = (/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/security)
 "iJ" = (/obj/item/reagent_containers/food/condiment/enzyme,/obj/effect/decal/cleanable/glass,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
@@ -79,7 +84,7 @@
 "kR" = (/obj/machinery/atmospherics/components/unary/tank/toxins,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "kV" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "ld" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
-"ll" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/effect/decal/cleanable/cobweb,/obj/item/melee/baton/loaded,/obj/item/restraints/handcuffs,/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
+"ll" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/effect/decal/cleanable/cobweb,/obj/item/melee/baton/loaded,/obj/item/restraints/handcuffs,/obj/machinery/light{dir = 1},/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "lm" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/chem_heater,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/turf/open/floor/plasteel/airless/white,/area/space)
 "ln" = (/obj/effect/decal/cleanable/dirt,/obj/item/mining_scanner,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/engineering)
 "lL" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
@@ -88,7 +93,7 @@
 "ma" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "mb" = (/obj/structure/chair/sofa{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "me" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt,/obj/machinery/recharger,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
-"mn" = (/obj/machinery/power/solar_control,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
+"mn" = (/obj/machinery/power/solar_control,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
 "my" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "mK" = (/obj/machinery/door/airlock/science,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "mM" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
@@ -98,17 +103,18 @@
 "ny" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "nQ" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/machinery/power/terminal{dir = 4},/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "oe" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
-"op" = (/obj/structure/table/reinforced,/obj/item/circuitboard/machine/cell_charger,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
-"oK" = (/obj/effect/decal/cleanable/oil,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
+"op" = (/obj/structure/table/reinforced,/obj/item/circuitboard/machine/cell_charger,/obj/effect/decal/cleanable/dirt,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
+"oK" = (/obj/effect/decal/cleanable/oil,/obj/effect/decal/cleanable/dirt,/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "oM" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "oP" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 4},/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "oS" = (/obj/effect/decal/cleanable/glass,/turf/open/floor/plating{heat_capacity = 1e+006; icon_state = "platingdmg1"},/area/space)
+"oT" = (/obj/structure/frame/computer,/obj/structure/cable,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "pj" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/shreds,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/sleeperroom)
-"pm" = (/obj/structure/chair/sofa/right{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
+"pm" = (/obj/structure/chair/sofa/right{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "pn" = (/obj/machinery/door/airlock/public,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
+"ps" = (/obj/machinery/light{dir = 4},/turf/open/space/basic,/area/space)
 "pt" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/glass,/obj/effect/turf_decal/stripes/line{dir = 1},/obj/item/reagent_containers/food/drinks/mug/coco,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "pv" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
-"pD" = (/obj/effect/landmark/carpspawn,/turf/open/space/basic,/area/space)
 "pO" = (/obj/structure/lattice,/turf/open/space/basic,/area/space/nearstation)
 "pP" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt,/obj/item/tank/internals/oxygen/empty,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "pU" = (/obj/machinery/door/airlock/vault/derelict,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
@@ -125,26 +131,28 @@
 "rt" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/shreds,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
 "ry" = (/obj/structure/lattice,/obj/item/shard{icon_state = "medium"; pixel_y = 3; pixel_x = 3},/turf/open/space/basic,/area/space/nearstation)
 "rB" = (/obj/machinery/door/airlock/command,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
-"rI" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/storage/box/beakers,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
+"rI" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/storage/box/beakers,/obj/machinery/light,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "rM" = (/turf/closed/mineral/random/high_chance,/area/ruin/unpowered/no_grav)
 "rU" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/effect/decal/cleanable/oil,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
 "sd" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "si" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
 "so" = (/obj/structure/cable,/turf/open/floor/plating{heat_capacity = 1e+006; icon_state = "platingdmg1"},/area/ruin/has_grav/oldship/emergencyengineering)
 "td" = (/obj/structure/lattice,/obj/item/stack/rods/ten,/turf/open/space/basic,/area/space/nearstation)
-"ts" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/glass,/obj/effect/turf_decal/stripes/line{dir = 5},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
+"ts" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/glass,/obj/effect/turf_decal/stripes/line{dir = 5},/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "tu" = (/obj/effect/decal/cleanable/dirt/dust,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/medbay)
 "tA" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/carpet/royalblue,/area/ruin/has_grav/oldship/bridge)
 "tH" = (/obj/machinery/door/airlock/command,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "tN" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/glass,/obj/item/kitchen/knife,/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "tP" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line,/obj/effect/decal/cleanable/insectguts,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
+"ub" = (/obj/effect/landmark/carpspawn,/turf/open/space/basic,/area/space)
 "ud" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/oil/streak,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "uk" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/effect/turf_decal/stripes/line,/obj/item/circuitboard/computer/rdconsole,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
 "uu" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/remains/human,/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "uE" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/door/airlock/security,/obj/structure/cable,/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "uI" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/chair/comfy/shuttle,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
-"uO" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/chem_dispenser,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
+"uO" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/chem_dispenser,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "uW" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
+"vh" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "vm" = (/obj/effect/decal/cleanable/dirt,/obj/item/stack/cable_coil/five,/obj/effect/decal/cleanable/glass,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "vv" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/insectguts,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "vG" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/obj/effect/decal/cleanable/blood/drip,/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
@@ -152,7 +160,7 @@
 "vK" = (/obj/machinery/door/airlock/public,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "vS" = (/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "vY" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
-"wh" = (/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
+"wh" = (/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/obj/machinery/light{dir = 1},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "wm" = (/obj/structure/cable,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
 "ws" = (/obj/structure/lattice,/obj/effect/decal/cleanable/glass,/turf/open/space/basic,/area/space/nearstation)
 "wy" = (/obj/effect/decal/cleanable/glass,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating{heat_capacity = 1e+006; icon_state = "platingdmg1"},/area/ruin/has_grav/oldship/emergencyengineering)
@@ -169,7 +177,7 @@
 "zH" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/structure/cable,/obj/effect/turf_decal/bot,/obj/structure/window/reinforced/spawner/east,/obj/structure/chair/comfy/shuttle{dir = 8},/turf/open/floor/black,/area/ruin/has_grav/oldship/hallway)
 "zN" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/space/basic,/area/ruin/has_grav/oldship/emergencyengineering)
 "Aa" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/oil/streak,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
-"Ao" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/clothing/mask/breath,/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
+"Ao" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/clothing/mask/breath,/obj/effect/turf_decal/stripes/line{dir = 8},/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
 "AA" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
 "AB" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/machinery/power/smes/engineering{charge = 0; name = "backup power storage unit"},/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "AC" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/space/basic,/area/ruin/has_grav/oldship/sleeperroom)
@@ -178,43 +186,43 @@
 "Bc" = (/obj/effect/mob_spawn/human/old_guard_captain,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/sleeperroom)
 "Br" = (/obj/structure/cable,/obj/machinery/door/airlock/command,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
 "Bs" = (/obj/structure/door_assembly/door_assembly_com,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/emergencyengineering)
-"Bv" = (/obj/structure/table/reinforced,/obj/item/stack/sheet/metal/ten,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
+"Bv" = (/obj/structure/table/reinforced,/obj/item/stack/sheet/metal/ten,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "BG" = (/turf/closed/mineral/random,/area/ruin/unpowered/no_grav)
-"BP" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/closet/crate/freezer/blood,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
+"BP" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/closet/crate/freezer/blood,/obj/machinery/light,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "BS" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/glass/beaker/large,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "Cj" = (/turf/closed/mineral/random,/area/ruin/has_grav/oldship/security)
 "Cw" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/door/airlock/public/glass,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "Cx" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt,/obj/item/stock_parts/cell{charge = 100; maxcharge = 15000},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "CC" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/engineering)
-"CL" = (/turf/closed/wall/r_wall,/area/ruin/has_grav/oldship/emergencyengineering)
 "CM" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/sign/departments/security,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/security)
 "Dk" = (/obj/item/reagent_containers/food/snacks/donkpocket{pixel_x = 3},/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
-"Dx" = (/obj/structure/closet/crate/engineering/electrical,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
+"Dx" = (/obj/structure/closet/crate/engineering/electrical,/obj/machinery/light,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "Dz" = (/obj/structure/table/reinforced,/obj/item/storage/box/stockparts{pixel_y = 7},/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
-"DF" = (/obj/machinery/autolathe,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
+"DF" = (/obj/machinery/autolathe,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "DL" = (/obj/machinery/door/airlock/engineering,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "DS" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/sleeperroom)
 "DX" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "Ed" = (/obj/item/shard,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "Ee" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/effect/turf_decal/stripes/line{dir = 6},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "Ey" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 4},/obj/structure/cable,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
-"EC" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 9},/obj/item/kirbyplants/dead,/obj/effect/decal/cleanable/cobweb,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
+"EC" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 9},/obj/item/kirbyplants/dead,/obj/effect/decal/cleanable/cobweb,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "Ff" = (/obj/machinery/mineral/processing_unit_console,/obj/structure/cable,/turf/closed/wall,/area/ruin/has_grav/oldship/engineering)
 "Fg" = (/obj/structure/cable,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/engineering)
 "Fi" = (/obj/effect/decal/cleanable/dirt/dust,/obj/item/stack/medical/suture,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "Fw" = (/obj/structure/table,/obj/item/reagent_containers/food/condiment/milk,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "FU" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "Gb" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 8},/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
-"Gg" = (/obj/structure/table,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/cobweb,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
-"Gh" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 6},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
+"Gg" = (/obj/structure/table,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/cobweb,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
+"Gh" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 6},/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "Gm" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "Gp" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/gibspawner/human,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "Gy" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/item/flashlight{pixel_x = -3; pixel_y = -3},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
-"GS" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 5},/obj/item/kirbyplants/dead,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
+"GP" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
+"GS" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 5},/obj/item/kirbyplants/dead,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "GZ" = (/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/engineering)
 "Hc" = (/obj/effect/decal/cleanable/dirt,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/emergencyengineering)
-"Hd" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/chem_master,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
-"Hp" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/power/port_gen/pacman,/obj/effect/decal/cleanable/cobweb,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
+"Hd" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/chem_master,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
+"Hp" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/power/port_gen/pacman,/obj/effect/decal/cleanable/cobweb,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/obj/machinery/light{dir = 1},/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "Hs" = (/obj/machinery/telecomms/message_server,/turf/open/floor/plating,/area/ruin/unpowered/no_grav)
 "HJ" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/obj/effect/turf_decal/stripes/line{dir = 8},/obj/effect/turf_decal/stripes/line{dir = 9},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "HP" = (/obj/machinery/atmospherics/pipe/heat_exchanging/simple{dir = 4},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
@@ -232,7 +240,7 @@
 "Jz" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/obj/structure/cable,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "JD" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/iv_drip,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
 "JK" = (/obj/effect/decal/cleanable/robot_debris,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
-"JR" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/lighter,/obj/effect/turf_decal/stripes/line{dir = 6},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
+"JR" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/table/reinforced,/obj/item/lighter,/obj/effect/turf_decal/stripes/line{dir = 6},/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
 "JT" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light{dir = 4},/obj/item/kirbyplants/dead,/obj/effect/decal/cleanable/cobweb/cobweb2,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/sleeperroom)
 "Ko" = (/obj/effect/decal/cleanable/dirt/dust,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/sleeperroom)
 "KE" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/glass,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
@@ -242,10 +250,11 @@
 "KX" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 1},/obj/item/storage/backpack/fireproof,/obj/structure/cable,/obj/machinery/power/apc/auto_name/north{start_charge = 0},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
 "KZ" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "Lh" = (/obj/structure/lattice,/obj/effect/decal/cleanable/glass,/obj/item/stack/rods,/turf/open/space/basic,/area/space/nearstation)
-"Lu" = (/obj/structure/table,/obj/machinery/microwave{pixel_y = 5},/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
+"Lu" = (/obj/structure/table,/obj/machinery/microwave{pixel_y = 5},/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "Lv" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/effect/turf_decal/bot,/obj/structure/window/reinforced/spawner/east,/obj/structure/chair/comfy/shuttle{dir = 8},/turf/open/floor/black,/area/ruin/has_grav/oldship/hallway)
 "Lz" = (/obj/structure/sign/departments/engineering,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/engineering)
 "LA" = (/obj/effect/decal/cleanable/blood/gibs/bubblegum,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
+"LE" = (/obj/structure/chair/comfy/shuttle{dir = 8},/obj/machinery/light{dir = 4},/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "LG" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/bot,/obj/structure/window/reinforced/spawner/west,/obj/structure/chair/comfy/shuttle{dir = 4},/turf/open/floor/black,/area/ruin/has_grav/oldship/hallway)
 "LO" = (/obj/effect/decal/cleanable/dirt,/obj/item/storage/bag/ore,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/engineering)
 "LR" = (/obj/effect/decal/cleanable/glass,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
@@ -265,11 +274,12 @@
 "NC" = (/turf/closed/mineral/random/high_chance,/area/ruin/has_grav/oldship/hallway)
 "NQ" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/oil,/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "NX" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/reinforced,/obj/item/stack/cable_coil/five,/obj/item/wrench,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
+"Oa" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/bridge)
 "Oc" = (/obj/machinery/airalarm,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/emergencyengineering)
 "Oi" = (/obj/effect/decal/cleanable/glass,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "Om" = (/obj/effect/turf_decal/stripes/line{dir = 4},/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "Oq" = (/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 4},/obj/effect/decal/cleanable/oil/streak,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
-"Ow" = (/obj/structure/closet,/obj/item/storage/toolbox/mechanical/old,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
+"Ow" = (/obj/structure/closet,/obj/item/storage/toolbox/mechanical/old,/obj/effect/decal/cleanable/dirt,/obj/machinery/light{dir = 8},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "OA" = (/obj/item/shard{icon_state = "medium"; pixel_y = 3; pixel_x = 3},/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "OF" = (/obj/effect/decal/cleanable/oil/streak,/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/science)
 "OH" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
@@ -293,7 +303,7 @@
 "QK" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/space/basic,/area/ruin/has_grav/oldship/science)
 "QX" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/effect/turf_decal/bot,/obj/structure/window/reinforced/spawner/west,/obj/structure/chair/comfy/shuttle{dir = 4},/turf/open/floor/black,/area/ruin/has_grav/oldship/hallway)
 "Re" = (/obj/structure/showcase/machinery/tv,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
-"Rg" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt/dust,/obj/item/soap/nanotrasen,/obj/effect/decal/cleanable/cobweb,/obj/effect/turf_decal/stripes/line{dir = 9},/obj/effect/decal/cleanable/cobweb/cobweb2,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
+"Rg" = (/obj/structure/table/reinforced,/obj/effect/decal/cleanable/dirt/dust,/obj/item/soap/nanotrasen,/obj/effect/decal/cleanable/cobweb,/obj/effect/turf_decal/stripes/line{dir = 9},/obj/effect/decal/cleanable/cobweb/cobweb2,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
 "Ro" = (/obj/machinery/sleeper{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light/broken,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/sleeperroom)
 "RK" = (/turf/closed/mineral/random/high_chance,/area/space)
 "RN" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable,/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
@@ -320,19 +330,19 @@
 "Ut" = (/obj/effect/decal/cleanable/dirt,/obj/structure/closet/crate/solarpanel_small,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "UC" = (/obj/item/stack/sheet/glass{amount = 10},/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "UI" = (/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/plasteel/airless/white,/area/ruin/has_grav/oldship/medbay)
-"US" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 10},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
+"US" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 10},/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "Vc" = (/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "Vz" = (/obj/machinery/atmospherics/pipe/heat_exchanging/manifold{dir = 8},/turf/open/floor/plating,/area/space)
 "VB" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 8},/obj/effect/decal/cleanable/shreds,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "VG" = (/obj/structure/shuttle/engine/propulsion,/turf/open/space/basic,/area/ruin/has_grav/oldship/engineering)
-"VQ" = (/obj/effect/decal/cleanable/dirt,/obj/item/stack/cable_coil/five,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
+"VQ" = (/obj/effect/decal/cleanable/dirt,/obj/item/stack/cable_coil/five,/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "VT" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/power/terminal{dir = 4},/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "Wg" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/shreds,/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "Wo" = (/turf/closed/mineral/random,/area/ruin/has_grav/oldship/hallway)
 "Wz" = (/turf/open/space/basic,/area/ruin/has_grav/oldship/engineering)
 "Xf" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/power/smes/engineering{charge = 0; name = "backup power storage unit"},/turf/open/floor/plating,/area/ruin/has_grav/oldship/emergencyengineering)
 "Xm" = (/obj/machinery/mineral/processing_unit,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
-"XB" = (/obj/structure/chair/sofa/left{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
+"XB" = (/obj/structure/chair/sofa/left{dir = 1},/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/restarea)
 "XH" = (/obj/item/stack/sheet/glass{amount = 10},/obj/structure/cable,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 "XQ" = (/obj/structure/chair/comfy/shuttle{dir = 8},/turf/open/floor/mineral/plastitanium/red/brig,/area/ruin/has_grav/oldship/security)
 "Ye" = (/obj/machinery/door/airlock/command,/obj/effect/decal/cleanable/dirt/dust,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
@@ -343,7 +353,7 @@
 "ZC" = (/obj/structure/table/reinforced,/obj/item/flashlight/glowstick/blue,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/decal/cleanable/dirt/dust,/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/sleeperroom)
 "ZH" = (/obj/structure/extinguisher_cabinet,/turf/closed/wall/mineral/titanium,/area/ruin/has_grav/oldship/science)
 "ZN" = (/obj/effect/decal/cleanable/ash,/obj/effect/decal/cleanable/dirt/dust,/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/eva)
-"ZU" = (/obj/machinery/vending/coffee,/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 9},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
+"ZU" = (/obj/machinery/vending/coffee,/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/stripes/line{dir = 9},/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "ZV" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/glass,/obj/item/kitchen/fork,/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plasteel,/area/ruin/has_grav/oldship/hallway)
 "ZY" = (/obj/machinery/conveyor,/turf/open/floor/plating,/area/ruin/has_grav/oldship/engineering)
 
@@ -352,13 +362,13 @@ gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhgchhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhhhhhhhRKRKRKRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKhhhhhhhhhhhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKhhhhhhhhhhhhRKhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcpDgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKhhhhhhhhhhhhRKhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcubgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKhhhhhhhhhhRKhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKhhhhhhRKRKhhhhhhRKhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKhhhhhhRKhhhhRKRKRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhhhhhhhhhhhRKRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhhhhhhhhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcpDgcgcgcgcgcgcgcgcgchhhhRKhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcubgcgcgcgcgcgcgcgcgchhhhRKhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcadgcadgcadgcgcgcgcgcgcgcadgcadgcadgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcadgcadgcadgcgcgcgcgcgcgcadgcadgcadgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcadgcadgcadgcgcaoaoaogcgcadgcadgcadgcgc
@@ -377,30 +387,30 @@ gcgcgcgcgcwZwZrMBGBGBGBGBGwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcwZBGrMBGrMBGBGBGBGwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcwZrMrMBGrMBGBGBGBGBGwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcwZrMrMBGrMBGBGrMBGBGwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcwZwZBGBGBGBGrMrMwZwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcpDgcgcgcgcgcRKhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcwZwZBGBGBGBGrMrMwZwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcubgcgcgcgcgcRKhhhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcwZBGBGBGBGrMwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKhhhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcwZBGBGBGBGrMwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKhhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcwZwZwZBGBGwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcwZwZwZwZgcgcgcgcgcgcQGIaIaIaIaIaQGgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGQGeofKfKfKfKQGQGgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGQGeofKfKfKoTQGQGgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGQGnbgBnbnbgKnbhtQGQGgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGQGhBnbiaibnbnbnbiTQGQGQGgcgcgcgcgcgcgcgcgcgchhRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGjbkVjojVkVkVlLnblOQGQGQGgcgcgcgcgcgcgcgcgcgchhRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGjbkVjojVkVkVlLvhlOQGQGQGgcgcgcgcgcgcgcgcgcgchhRKgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGmanbjonbLAQGQGQGQGQGQGQGgcgcgcgcgcgcgcgcgcgcgchhgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGmegKjonbnbQGmnoeoeopoSpOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGQGpUrcQGQGQGreldldrkpOrygcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcpDgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGnbnbkVkVkVrBSLrUSLsopOtdgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGmegKjonbvhQGmnoeoeopoSpOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGQGpUrcQGQGQGreldldrkpOrygcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcubgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGGPnbkVkVOarBSLrUSLsopOtdgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcIanbtAtAtAnbtHvHwmrkpOwsrogcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcIanbtAtAtAnbQGldwmrkwyyjpOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGnbnbnbnbnbQGAawmAAAGAPhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcpsgcgcIanbtAtAtAnbQGldwmrkwyyjpOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcQGvhnbnbnbvhQGAawmAAAGAPhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgchWhWhWhWhWhWhWhWaOBrBsaOaOaOaOhNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKhhgcgcgcgcgcgcgcgc
-gcgcgcgcgcpDgcgcgcgcgcgcgchWhWBvpPBSCxDzDFhWECFUGmGSHcHpCLaOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKhhhhhhgcgcgcgcgcgcgc
+gcgcgcgcgcubgcgcgcgcgcgcgchWhWBvpPBSCxDzDFhWECFUGmGSHcHpcLaOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKhhhhhhgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgchWhWIGILJtdjdjJKuWhWKZLvLGLVMiNBNXOcaOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKhhhhRKgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgchWOwOAOFuWPkPquWPMhWKZQqQXRNStTBUaUtaOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhhhhhRKgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcQKdjPkhWhWhWhWhWhWhWVBLvLGLVHcVQVTXfzNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhhhhhhhgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcQKYmuWZHZUZVpttNtsRPKZLvLGLVHcDXDXvmzNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcQKOimMmKPhpvpvpvoPvKmyzHQEsdicWgnQABzNgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgchhRKgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgchWoKdjPAUStPoMjkGhRPiijkjkEeHcvmudeYaOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgchWoKdjPAUStPoMjkGhRPiijkjkEeHcezudeYaOgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgchWUsUsUsqcCwNpgsgsgsgsgsCwNptuxUxUxUxUjxgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcbDGgFwLucrHJTWgsRgKXbagsYHTWtuuOlmHdxUgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcwsftGpKWcrawMXgsORTMZNgsawMXSsTkUIKEwsYMgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
@@ -408,14 +418,14 @@ gcgcgcgcgcgcgcgcgcgcgcYMlTiJQxJypnawSYfEUbrtsifEawMXziOHUIIDLhgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcfzjtRenyiLetSGYeGbTMSgfEawSGymUIJzJowsgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcfzGyvvDkcrawMXgsjMvYsigsawYISsOHKIKEJmgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgchNhNhNgcgcgcgcbDpmmbXBcrawjjgsAoukJRgsawMXtufMUIJDySgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgchNhNhNhNhNgcgcgcSeKoKoKoKoawMXaJaJaJaJaJawMXtuOHUIqXySgcgcgcpDgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgchNhNhNhNhNgcgcgcSeKoKoKoKoawMXaJaJaJaJaJawMXtufbUIqXySgcgcgcubgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNhNaeaeaehNhNgcgcSeiwBcJTKoawSYCMlluIdQCMawOqtukcUIMjySgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeaehNgcgcACDShmhmrsetEyTUVcvGuuTUawMXtuOHUIJDySgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeaehNgcgcACbGpjbGwQNzEyuErhInVcTUawMXtuOHFiqXySgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeaehNgcgcSeZCRokHKoqxMXCMLYVcVcCMawRYtuBPOHrIxUgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeaehNgcgcSeKoKoKoKoPJMXaJMdMdmUaJNQMXtuxUxUxUxUgcgcwZwZwZwZwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeaehNgcgcGZQiQixpGZWoNCiECjduXQiEQhOmhNhhSSguhNwZwZwZhhhhhhhhwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgchNaeaexwaeaehNgcgcGZQieqxpGZWoWoCjCjCjXQiEQhWohNhhhhRKRKRKhhhhhhhhhhhhhNwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgchNaeaexwaeaehNgcgcGZQieqxpGZWoWoCjCjCjLEiEQhWohNhhhhRKRKRKhhhhhhhhhhhhhNwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeaehNgcgcGZQieqxpxphhhhCjCjCjXQiEWoWohNhhhhhhhhhhhhhhhhRKhhhhhNIrwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeaexwaeQuGZGZGZLzQHeqlnxphhhhRKhhhhhhhhhhhhhNhhhhhhhhhhhhhhhhRKhhhhhhhhwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaeVzhGMsNchsdFvSDLboeqLOxphhhhRKhhhhhhRKRKRKhhhhhhRKRKhhhhhhRKRKhhhhhhhhwZgcgcgcgcRKRKRKgcgcgcgcgcgcgcgcgcgc
@@ -425,16 +435,16 @@ gcgcgchNaexwxwxwaehNgcgcGZkdeqxpxpRKhhhhhhRKhhhhhhRKhhhhhhhhhhhhhhhhhhhhhhhhhhrM
 gcgcgchNaexwxwxwaehNgcgcGZboeqkgxphhhhhhhhRKhhhhhhhhhhhhhhhhRKhhhhhhhhhhhhhhRKwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaexwxwxwaehNgcgcGZPECCCCxphhhhhhhhhhRKhhhhhhhhhhhhhhhhhhhhhhhhRKRKhhhhwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNaexwxwxwaehNgcgcGZLzDLFgxphhhhRKhhhhhhhhRKhhhhhhhhRKhhhhhhhhRKRKhhhhhhwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgchNaecAcAcAaehNgcgcGZQfQfwhLRxpxpRKRKhhhhhhRKRKhhhhhhhhRKhhhhhhRKhhhhhhwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgchNaecAcAcAaehNgcgcGZcxQfwhLRxpxpRKRKhhhhhhRKRKhhhhhhhhRKhhhhhhRKhhhhhhwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgchNkogcgcgckohNgcgcGZEdQfgXQfQfxphhhhhhhhhhhhhhhhhhhhhhhhhhhhRKhhhhhhhhwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcGZKNLRXHQfQfIqhhRKhhhhhhhhhhhhhhhhhhhhhhhhhhRKRKwZwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcGZdWLRXHQfQfIqhhRKhhhhhhhhhhhhhhhhhhhhhhhhhhRKRKwZwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcTngcgcgcgcgcgcjhwsEdgXQfQfQfKNQiQiRKhhhhRKhhhhhhhhhhhhhhhhRKwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcpOTuQfnfNfQfQfaBjgZYxpxpQiQikRkRkRkRxphhhhhhwZwZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
-gcgcgcgcgcgcgcgcgcgcgcgcGZNmxcgXgXgXgXgXFfXmxpQiQikRkRkRkRkRGZwZwZwZwZgcgcgcgcgcgcgcgcgcgcpDgcgcgcgcgcgcgcgcgcgcgcgc
+gcgcgcgcgcgcgcgcgcgcgcgcGZNmxcgXgXgXgXgXFfXmxpQiQikRkRkRkRkRGZwZwZwZwZgcgcgcgcgcgcgcgcgcgcubgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcGZDxUChXKNQfQfxcQfdGxpQixpkRkRkRkRkRGZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcGZkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbGZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcGZrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqrqGZgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKgcgcgcgcgcgcgcgc
-gcpDgcgcgcgcgcgcgcgcgcgcGZWzWzWzWzWzWzVGWzWzWzVGWzWzWzWzWzWzGZgcgcgcgcgcgcRKgcgcgcgcgcgcRKgcgcRKRKRKRKRKgcgcgcgcgcgc
+gcubgcgcgcgcgcgcgcgcgcgcGZWzWzWzWzWzWzVGWzWzWzVGWzWzWzWzWzWzGZgcgcgcgcgcgcRKgcgcgcgcgcgcRKgcgcRKRKRKRKRKgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKRKRKgcgcgcgcgcgcgcgcRKRKRKRKRKgcgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcTngcgcTngcgcgcTngcgcgcTngcgcTngcgcgcgcgcgcgcRKRKRKRKgcgcgcgcgcgcgcRKRKRKRKRKRKRKgcgcgcgcgc
 gcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcgcRKRKgcgcgcgcgcgcgcRKRKRKRKRKRKRKRKgcgcgcgcgc
