@@ -172,7 +172,7 @@ There is no point for a testament, but maybe a confession is appropriate. I've n
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	gloves = /obj/item/clothing/gloves/color/captain
 	internals_slot = ITEM_SLOT_DEX_STORAGE//SLOT_R_STORE
-	id = /obj/item/card/id/syndicate/anyone
+	id = /obj/item/card/id/captains_spare
 
 /obj/effect/mob_spawn/human/Dndplayer
     name = "DnD player"
