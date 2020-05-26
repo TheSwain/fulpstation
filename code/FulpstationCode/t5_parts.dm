@@ -180,7 +180,7 @@
 	icon_state = "beakerofholding"
 	icon = 'icons/Fulpicons/beakerofholding.dmi'
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/glass = 5000, /datum/material/plasma = 5000, /datum/material/diamond = 2500, /datum/material/bluespace = 2500)
-	volume = 1250
+	volume = 750
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,300,500,1000)
 
