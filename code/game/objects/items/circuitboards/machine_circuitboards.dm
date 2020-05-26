@@ -33,6 +33,11 @@
 		/obj/item/stock_parts/manipulator/pico = 5,
 		/obj/item/stack/cable_coil = 2)
 
+/obj/item/circuitboard/machine/techfab/department/medical
+	name = "\improper Departmental Techfab (Machine Board) - Command"
+	icon_state = "command"
+	build_path = /obj/machinery/rnd/production/techfab/department/command
+
 //Engineering
 
 /obj/item/circuitboard/machine/announcement_system

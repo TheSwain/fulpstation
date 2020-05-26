@@ -39,3 +39,9 @@
 	allowed_department_flags = DEPARTMENTAL_FLAG_SECURITY
 	department_tag = "Security"
 	circuit = /obj/item/circuitboard/machine/techfab/department/security
+
+/obj/machinery/rnd/production/techfab/department/command
+	name = "department techfab (Command)"
+	allowed_department_flags = DEPARTMENTAL_FLAG_COMMAND
+	department_tag = "Command"
+	circuit = /obj/item/circuitboard/machine/techfab/department/command
