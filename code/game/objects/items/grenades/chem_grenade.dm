@@ -254,6 +254,7 @@
 	icon_state = "cryog"
 	affected_area = 2
 	ignition_temp = -100
+	banned_containers =  list(/obj/item/reagent_containers/glass/beaker/beaker_of_holding)
 
 /obj/item/grenade/chem_grenade/pyro // Intended for pyrotechnical mixes. Produces a small fire upon detonation, igniting potentially flammable mixtures.
 	name = "pyro grenade"
@@ -261,6 +262,7 @@
 	casedesc = "Upon ignition, it rapidly heats contents by 500°K."
 	icon_state = "pyrog"
 	ignition_temp = 500 // This is enough to expose a hotspot.
+	banned_containers =  list(/obj/item/reagent_containers/glass/beaker/beaker_of_holding)
 
 /obj/item/grenade/chem_grenade/adv_release // Intended for weaker, but longer lasting effects. Could have some interesting uses.
 	name = "advanced release grenade"
@@ -268,6 +270,7 @@
 	casedesc = "This casing is able to detonate more than once. Can be configured using a multitool."
 	icon_state = "timeg"
 	var/unit_spread = 10 // Amount of units per repeat. Can be altered with a multitool.
+	banned_containers =  list(/obj/item/reagent_containers/glass/beaker/beaker_of_holding)
 
 /obj/item/grenade/chem_grenade/adv_release/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_MULTITOOL && !active)
