@@ -12,7 +12,7 @@
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_dead = "watermelon-dead"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	mutatelist = list(/obj/item/seeds/watermelon/holy)
+	mutatelist = list(/obj/item/seeds/watermelon/holy, /obj/item/seeds/superwatermelon)
 	reagents_add = list(/datum/reagent/water = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.2)
 
 /obj/item/seeds/watermelon/suicide_act(mob/user)
@@ -76,3 +76,34 @@
 	to_chat(user, "<span class='warning'>[src] rapidly turns into ash!</span>")
 	qdel(src)
 	new /obj/effect/decal/cleanable/ash(drop_location())
+
+//Superior Melon
+/obj/item/seeds/superwatermelon
+	name = "pack of Superior Watermelon seeds"
+	desc = "These seeds grow into Superior Watermelon plants."
+	icon_state = "seed-superwatermelon"
+	species = "superwatermelon"
+	plantname = "Superior Watermelon Vines"
+	product = /obj/item/reagent_containers/food/snacks/grown/superwatermelon
+	rarity = 10
+	lifespan = 20
+	endurance = 20
+	instability = 80
+	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
+	icon_dead = "superwatermelon-dead"
+	genes = list(/datum/plant_gene/trait/repeated_harvest)
+	mutatelist = list(/obj/item/seeds/watermelon/holy)
+	reagents_add = list(/datum/reagent/water = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.2, /datum/reagent/medicine/omnizine/protozine = 0.5)
+
+/obj/item/reagent_containers/food/snacks/grown/superwatermelon
+	seed = /obj/item/seeds/watermelon
+	name = "superior watermelon"
+	desc = "It's full of water and healing goodness"
+	icon_state = "superwatermelon"
+	dried_type = null
+	w_class = WEIGHT_CLASS_NORMAL
+	filling_color = "#008000"
+	bitesize_mod = 3
+	foodtype = FRUIT
+	juice_results = list(/datum/reagent/consumable/watermelonjuice = 0.5, /datum/reagent/medicine/omnizine/protozine = 0.1)
+	wine_power = 55 //wine to water, but less so
