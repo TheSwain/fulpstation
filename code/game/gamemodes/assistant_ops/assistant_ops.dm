@@ -35,10 +35,12 @@
 	back = /obj/item/storage/backpack
 	ears = /obj/item/radio/headset/syndicate/alt
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
-	r_pocket =
+	r_pocket = /obj/item/storage/toolbox/greytide
 	id = /obj/item/card/id/syndicate
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 		/obj/item/kitchen/knife/combat/survival,
+		/datum/design/jawsoflife,
+
 
 	uplink_type = /obj/item/uplink/
 
@@ -46,7 +48,7 @@
 	tc = 0
 
 /datum/outfit/syndicate/assistantop/leader
-	name = "Clown Operative Leader - Basic"
+	name = "Assistant Operative Leader - Basic"
 	id = /obj/item/card/id/syndicate/nuke_leader
 	gloves = /obj/item/clothing/gloves/krav_maga/combatglovesplus
 	command_radio = TRUE
