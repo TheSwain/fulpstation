@@ -1,7 +1,7 @@
 /datum/game_mode/nuclear/assistant_ops
 	name = "assistant ops"
 	config_tag = "assistantops"
-r	required_players = 50 // 30 players - 3 players to be the nuke ops = 27 players remaining
+	required_players = 50 // 30 players - 3 players to be the nuke ops = 27 players remaining
 	required_enemies = 5
 	recommended_enemies = 10
 	enemy_minimum_age = 14

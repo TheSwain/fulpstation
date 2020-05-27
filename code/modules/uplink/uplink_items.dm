@@ -155,6 +155,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle
 	cost = 13 // normally 16
 	include_modes = list(/datum/game_mode/nuclear)
+	exclude_modes = list(/datum/game_mode/nuclear/asssistant_ops)
 
 /datum/uplink_item/bundles_TC/c20r
 	name = "C-20r bundle"
@@ -162,6 +163,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/storage/backpack/duffelbag/syndie/c20rbundle
 	cost = 14 // normally 16
 	include_modes = list(/datum/game_mode/nuclear)
+	exclude_modes = list(/datum/game_mode/nuclear/asssistant_ops)
 
 /datum/uplink_item/bundles_TC/cyber_implants
 	name = "Cybernetic Implants Bundle"
@@ -186,6 +188,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/storage/briefcase/sniperbundle
 	cost = 20 // normally 26
 	include_modes = list(/datum/game_mode/nuclear)
+	exclude_modes = list(/datum/game_mode/nuclear/asssistant_ops)
 
 /datum/uplink_item/bundles_TC/firestarter
 	name = "Spetsnaz Pyro bundle"
@@ -205,7 +208,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/storage/box/syndicate/contract_kit
 	cost = 20
 	player_minimum = 20
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/asssistant_ops)
 
 /datum/uplink_item/bundles_TC/bundle_A
 	name = "Syndi-kit Tactical"
@@ -214,7 +217,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			you will receive. May contain discontinued and/or exotic items."
 	item = /obj/item/storage/box/syndicate/bundle_A
 	cost = 20
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/asssistant_ops)
 
 /datum/uplink_item/bundles_TC/bundle_B
 	name = "Syndi-kit Special"
@@ -222,7 +225,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			In Syndi-kit Special, you will recieve items used by famous syndicate agents of the past. Collectively worth more than 20 telecrystals, the syndicate loves a good throwback."
 	item = /obj/item/storage/box/syndicate/bundle_B
 	cost = 20
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/asssistant_ops)
 
 /datum/uplink_item/bundles_TC/surplus
 	name = "Syndicate Surplus Crate"
@@ -231,7 +234,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/structure/closet/crate
 	cost = 20
 	player_minimum = 25
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 	var/starting_crate_value = 50
 
 /datum/uplink_item/bundles_TC/surplus/super
@@ -321,7 +324,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/gun/ballistic/rocketlauncher
 	cost = 8
 	surplus = 30
-	include_modes = list(/datum/game_mode/nuclear)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/asssistant_ops)
 
 /datum/uplink_item/dangerous/pie_cannon
 	name = "Banana Cream Pie Cannon"
@@ -374,7 +377,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/reagent_containers/spray/chemsprayer/bioterror
 	cost = 20
 	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/throwingweapons
 	name = "Box of Throwing Weapons"
@@ -392,6 +395,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 8
 	surplus = 40
 	include_modes = list(/datum/game_mode/nuclear)
+	exclude_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/smg
 	name = "C-20r Submachine Gun"
@@ -401,6 +405,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 13
 	surplus = 40
 	include_modes = list(/datum/game_mode/nuclear)
+	exclude_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/doublesword
 	name = "Double-Bladed Energy Sword"
@@ -409,7 +414,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/dualsaber
 	player_minimum = 25
 	cost = 16
-	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/doublesword/get_discount()
 	return pick(4;0.8,2;0.65,1;0.5)
@@ -420,7 +425,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			pocketed when inactive. Activating it produces a loud, distinctive noise."
 	item = /obj/item/melee/transforming/energy/sword/saber
 	cost = 8
-	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/shield
 	name = "Energy Shield"
@@ -429,7 +434,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/shield/energy
 	cost = 16
 	surplus = 20
-	include_modes = list(/datum/game_mode/nuclear)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/flamethrower
 	name = "Flamethrower"
@@ -438,7 +443,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/flamethrower/full/tank
 	cost = 4
 	surplus = 40
-	include_modes = list(/datum/game_mode/nuclear)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/rapid
 	name = "Gloves of the North Star"
@@ -453,7 +458,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/storage/box/syndie_kit/guardian
 	cost = 18
 	surplus = 0
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 	player_minimum = 25
 	restricted = TRUE
 
@@ -465,6 +470,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 18
 	surplus = 0
 	include_modes = list(/datum/game_mode/nuclear)
+	exclude_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/carbine
 	name = "M-90gl Carbine"
@@ -474,6 +480,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 18
 	surplus = 50
 	include_modes = list(/datum/game_mode/nuclear)
+	exclude_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/powerfist
 	name = "Power Fist"
@@ -482,6 +489,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			Using a wrench on the piston valve will allow you to tweak the amount of gas used per punch to \
 			deal extra damage and hit targets further. Use a screwdriver to take out any attached tanks."
 	item = /obj/item/melee/powerfist
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 	cost = 6
 
 /datum/uplink_item/dangerous/sniper
@@ -491,6 +499,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 16
 	surplus = 25
 	include_modes = list(/datum/game_mode/nuclear)
+	exclude_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/pistol
 	name = "Makarov Pistol"
@@ -499,6 +508,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/gun/ballistic/automatic/pistol
 	cost = 7
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/aps
 	name = "Stechkin APS Machine Pistol"
@@ -507,14 +517,14 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/gun/ballistic/automatic/pistol/aps
 	cost = 10
 	include_modes = list(/datum/game_mode/nuclear)
-	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/bolt_action
 	name = "Surplus Rifle"
 	desc = "A horribly outdated bolt action weapon. You've got to be desperate to use this."
 	item = /obj/item/gun/ballistic/rifle/boltaction
 	cost = 1
-	include_modes = list(/datum/game_mode/nuclear)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/revolver
 	name = "Syndicate Revolver"
@@ -523,6 +533,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 13
 	surplus = 50
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/foamsmg
 	name = "Toy Submachine Gun"
@@ -530,7 +541,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/gun/ballistic/automatic/c20r/toy
 	cost = 5
 	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/foammachinegun
 	name = "Toy Machine Gun"
@@ -539,7 +550,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/gun/ballistic/automatic/l6_saw/toy
 	cost = 10
 	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/foampistol
 	name = "Toy Pistol with Riot Darts"
@@ -559,14 +570,14 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			to teach the martial art of krav maga to the wearer."
 	item = /obj/item/clothing/gloves/krav_maga/combatglovesplus
 	cost = 5
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 	surplus = 0
 
 /datum/uplink_item/stealthy_weapons/cqc
 	name = "CQC Manual"
 	desc = "A manual that teaches a single user tactical Close-Quarters Combat before self-destructing."
 	item = /obj/item/book/granter/martial/cqc
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 	cost = 13
 	surplus = 0
 
@@ -598,7 +609,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/book/granter/martial/carp
 	cost = 17
 	surplus = 0
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/stealthy_weapons/crossbow
 	name = "Miniature Energy Crossbow"
@@ -612,7 +623,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	player_minimum = 25
 	cost = 10
 	surplus = 50
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/stealthy_weapons/origami_kit
 	name = "Boxed Origami Kit"
@@ -647,7 +658,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			falls asleep, they will be able to move and act."
 	item = /obj/item/pen/sleepy
 	cost = 4
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/stealthy_weapons/suppressor
 	name = "Suppressor"
@@ -930,7 +941,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/grenade/chem_grenade/bioterrorfoam
 	cost = 5
 	surplus = 35
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/explosives/bombanana
 	name = "Bombanana"
@@ -948,7 +959,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/storage/box/syndie_kit/bee_grenades
 	cost = 15
 	surplus = 35
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/explosives/c4
 	name = "Composition C-4"
@@ -1010,14 +1021,14 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/storage/box/syndie_kit/tuberculosisgrenade
 	cost = 12
 	surplus = 35
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 	restricted = TRUE
 
 /datum/uplink_item/explosives/grenadier
 	name = "Grenadier's belt"
 	desc = "A belt containing 26 lethally dangerous and destructive grenades. Comes with an extra multitool and screwdriver."
 	item = /obj/item/storage/belt/grenade/full
-	include_modes = list(/datum/game_mode/nuclear)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/assistant_ops)
 	cost = 22
 	surplus = 0
 
@@ -1054,7 +1065,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			the blast radius before using the detonator."
 	item = /obj/item/syndicatedetonator
 	cost = 3
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/explosives/syndicate_minibomb
 	name = "Syndicate Minibomb"
@@ -1062,7 +1073,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			in addition to dealing high amounts of damage to nearby personnel."
 	item = /obj/item/grenade/syndieminibomb
 	cost = 6
-	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/explosives/tearstache
 	name = "Teachstache Grenade"
@@ -1328,7 +1339,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/assault_pod
 	cost = 30
 	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 	restricted = TRUE
 
 /datum/uplink_item/device_tools/binary
@@ -1348,7 +1359,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			'Advanced Magboots' slow you down in simulated-gravity environments much like the standard issue variety."
 	item = /obj/item/clothing/shoes/magboots/syndie
 	cost = 2
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/device_tools/briefcase_launchpad
 	name = "Briefcase Launchpad"
@@ -1419,7 +1430,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 1
 	surplus = 0
 	restricted = TRUE
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/device_tools/failsafe/spawn_item(spawn_path, mob/user, datum/component/uplink/U)
 	if(!U)
@@ -1463,7 +1474,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			operatives in the fight, even while under fire. Don't cross the streams!"
 	item = /obj/item/gun/medbeam
 	cost = 15
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/device_tools/singularity_beacon
 	name = "Power Beacon"
@@ -1506,7 +1517,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			and other supplies helpful for a field medic."
 	item = /obj/item/storage/firstaid/tactical
 	cost = 4
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/device_tools/soap
 	name = "Syndicate Soap"
@@ -1556,7 +1567,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A potion recovered at great risk by undercover Syndicate operatives and then subsequently modified with Syndicate technology. \
 			Using it will make any animal sentient, and bound to serve you, as well as implanting an internal radio for communication and an internal ID card for opening doors."
 	cost = 4
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 	restricted = TRUE
 
 /datum/uplink_item/device_tools/suspiciousphone
@@ -1594,7 +1605,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/autosurgeon/syndicate/anti_stun
 	cost = 12
 	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/implants/freedom
 	name = "Freedom Implant"
@@ -1610,7 +1621,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			This will permanently destroy your body, however."
 	item = /obj/item/storage/box/syndie_kit/imp_microbomb
 	cost = 2
-	include_modes = list(/datum/game_mode/nuclear)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/implants/macrobomb
 	name = "Macrobomb Implant"
@@ -1618,7 +1629,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			Upon death, releases a massive explosion that will wipe out everything nearby."
 	item = /obj/item/storage/box/syndie_kit/imp_macrobomb
 	cost = 20
-	include_modes = list(/datum/game_mode/nuclear)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/assistant_ops)
 	restricted = TRUE
 
 /datum/uplink_item/implants/radio
@@ -1635,7 +1646,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/autosurgeon/syndicate/reviver
 	cost = 8
 	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/implants/stealthimplant
 	name = "Stealth Implant"
@@ -1681,7 +1692,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 //Race-specific items
 /datum/uplink_item/race_restricted
 	category = "Species-Restricted"
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 	surplus = 0
 
 /datum/uplink_item/race_restricted/syndilamp
@@ -1695,7 +1706,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 // Role-specific items
 /datum/uplink_item/role_restricted
 	category = "Role-Restricted"
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 	surplus = 0
 
 /datum/uplink_item/role_restricted/ancient_jumpsuit
@@ -1929,7 +1940,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/badass/costumes
 	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/nuclear/assistant_ops)
 	cost = 4
 	cant_discount = TRUE
 

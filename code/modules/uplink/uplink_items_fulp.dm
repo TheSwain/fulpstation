@@ -90,3 +90,25 @@
 			This is a cheap knockoff Space-China budget version that holds 2 charges, and regains 1 charge every 30 seconds."
 	item = /obj/item/card/emag/budget
 	cost = 6
+
+/datum/uplink_item/dangerous/etoolbox
+	name = "Energy Toolbox"
+	desc = "The power of a toolbox and an e-sword combined! Dismember your foes with this blunt weapon!"
+	item = /obj/item/melee/transforming/energy/sword/greytide
+	cost = 3
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+
+/datum/uplink_item/dangerous/spear
+	name = "Grey tide spear"
+	desc = "Use this weapon to impale those dirty security officers in style!"
+	item = /obj/item/spear/grey_tide
+	cost = 1
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+
+	/datum/uplink_item/support/clown_reinforcement
+	name = "Clown Reinforcements"
+	desc = "Call in an additional clown to share the fun, equipped with full starting gear, but no telecrystals."
+	item = /obj/item/antag_spawner/nuke_ops/clown
+	cost = 20
+	include_modes = list(/datum/game_mode/nuclear/clown_ops)
+	restricted = TRUE
