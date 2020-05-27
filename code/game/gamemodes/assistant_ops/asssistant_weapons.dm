@@ -71,140 +71,31 @@
 	else
 		return ..()
 
-
-//BOMBANANA
-
-/obj/item/reagent_containers/food/snacks/grown/banana/bombanana
-	trash = /obj/item/grown/bananapeel/bombanana
-	bitesize = 1
-	customfoodfilling = FALSE
-	seed = null
-	tastes = list("explosives" = 10)
-	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
-
-/obj/item/grown/bananapeel/bombanana
-	desc = "A peel from a banana. Why is it beeping?"
-	seed = null
-	var/det_time = 50
-	var/obj/item/grenade/syndieminibomb/bomb
-
-/obj/item/grown/bananapeel/bombanana/Initialize()
-	. = ..()
-	bomb = new /obj/item/grenade/syndieminibomb(src)
-	bomb.det_time = det_time
-	if(iscarbon(loc))
-		to_chat(loc, "<span class='danger'>[src] begins to beep.</span>")
-		var/mob/living/carbon/C = loc
-		C.throw_mode_on()
-	bomb.preprime(loc, null, FALSE)
-
-/obj/item/grown/bananapeel/bombanana/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/slippery, det_time)
-
-/obj/item/grown/bananapeel/bombanana/Destroy()
-	. = ..()
-	QDEL_NULL(bomb)
-
-/obj/item/grown/bananapeel/bombanana/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is deliberately slipping on the [src.name]! It looks like \he's trying to commit suicide.</span>")
-	playsound(loc, 'sound/misc/slip.ogg', 50, TRUE, -1)
-	bomb.preprime(user, 0, FALSE)
-	return (BRUTELOSS)
-
-//TEARSTACHE GRENADE
+//GASMASK GRENADE
 
 /obj/item/grenade/chem_grenade/teargas/moustache
-	name = "tear-stache grenade"
-	desc = "A handsomely-attired teargas grenade."
+	name = "gasmask grenade"
+	desc = "Gasmasks, but in a grenade!"
 	icon_state = "moustacheg"
 	clumsy_check = GRENADE_NONCLUMSY_FUMBLE
 
-/obj/item/grenade/chem_grenade/teargas/moustache/prime(mob/living/lanced_by)
+/obj/item/grenade/chem_grenade/teargas/gasmask/prime(mob/living/lanced_by)
 	var/myloc = get_turf(src)
 	. = ..()
 	for(var/mob/living/carbon/M in view(6, myloc))
 		if(!istype(M.wear_mask, /obj/item/clothing/mask/gas/clown_hat) && !istype(M.wear_mask, /obj/item/clothing/mask/gas/mime) )
 			if(!M.wear_mask || M.dropItemToGround(M.wear_mask))
-				var/obj/item/clothing/mask/fakemoustache/sticky/the_stash = new /obj/item/clothing/mask/fakemoustache/sticky()
-				M.equip_to_slot_or_del(the_stash, ITEM_SLOT_MASK, TRUE, TRUE, TRUE, TRUE)
+				var//obj/item/clothing/mask/gas/the_mask = new /obj/item/clothing/mask/gas()
+				M.equip_to_slot_or_del(the_mask, ITEM_SLOT_MASK, TRUE, TRUE, TRUE, TRUE)
 
-/obj/item/clothing/mask/fakemoustache/sticky
+/obj/item/clothing/mask/gasmask/sticky
 	var/unstick_time = 600
 
 /obj/item/clothing/mask/fakemoustache/sticky/Initialize()
 	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT)
+	ADD_TRAIT(src, TRAIT_NODROP)
 	addtimer(CALLBACK(src, .proc/unstick), unstick_time)
 
 /obj/item/clothing/mask/fakemoustache/sticky/proc/unstick()
-	REMOVE_TRAIT(src, TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT)
+	REMOVE_TRAIT(src, TRAIT_NODROP)
 
-//DARK H.O.N.K. AND CLOWN MECH WEAPONS
-
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/banana_mortar/bombanana
-	name = "bombanana mortar"
-	desc = "Equipment for clown exosuits. Launches exploding banana peels."
-	icon_state = "mecha_bananamrtr"
-	projectile = /obj/item/grown/bananapeel/bombanana
-	projectiles = 8
-	projectile_energy_cost = 1000
-
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/banana_mortar/bombanana/can_attach(obj/mecha/combat/honker/M)
-	if(..())
-		if(istype(M))
-			return TRUE
-	return FALSE
-
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/tearstache
-	name = "\improper HONKeR-6 grenade launcher"
-	desc = "A weapon for combat exosuits. Launches primed tear-stache grenades."
-	icon_state = "mecha_grenadelnchr"
-	projectile = /obj/item/grenade/chem_grenade/teargas/moustache
-	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
-	projectiles = 6
-	missile_speed = 1.5
-	projectile_energy_cost = 800
-	equip_cooldown = 60
-	det_time = 20
-
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/tearstache/can_attach(obj/mecha/combat/honker/M)
-	if(..())
-		if(istype(M))
-			return TRUE
-	return FALSE
-
-/obj/mecha/combat/honker/dark
-	desc = "Produced by \"Tyranny of Honk, INC\", this exosuit is designed as heavy clown-support. This one has been painted black for maximum fun. HONK!"
-	name = "\improper Dark H.O.N.K"
-	icon_state = "darkhonker"
-	max_integrity = 300
-	deflect_chance = 15
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 50, "energy" = 35, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
-	max_temperature = 35000
-	operation_req_access = list(ACCESS_SYNDICATE)
-	internals_req_access = list(ACCESS_SYNDICATE)
-	wreckage = /obj/structure/mecha_wreckage/honker/dark
-	max_equip = 4
-
-/obj/mecha/combat/honker/dark/add_cell(obj/item/stock_parts/cell/C)
-	if(C)
-		C.forceMove(src)
-		cell = C
-		return
-	cell = new /obj/item/stock_parts/cell/hyper(src)
-
-/obj/mecha/combat/honker/dark/loaded/Initialize()
-	. = ..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/thrusters/ion(src)
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/honker()
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/banana_mortar/bombanana()//Needed more offensive weapons.
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/tearstache()//The mousetrap mortar was not up-to-snuff.
-	ME.attach(src)
-
-/obj/structure/mecha_wreckage/honker/dark
-	name = "\improper Dark H.O.N.K wreckage"
-	icon_state = "darkhonker-broken"

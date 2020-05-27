@@ -1,6 +1,10 @@
 /datum/game_mode/nuclear/assistant_ops
 	name = "assistant ops"
 	config_tag = "assistantops"
+r	required_players = 50 // 30 players - 3 players to be the nuke ops = 27 players remaining
+	required_enemies = 5
+	recommended_enemies = 10
+	enemy_minimum_age = 14
 
 	announce_span = "danger"
 	announce_text = "The greys have banded together to end Security's tyranny once and for all! All shall tremble before their toolbox! \n\

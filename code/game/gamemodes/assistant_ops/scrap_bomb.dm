@@ -6,16 +6,16 @@
 
 /obj/machinery/nuclearbomb/syndicate/bananium/update_icon_state()
 	if(deconstruction_state != NUKESTATE_INTACT)
-		icon_state = "bananiumbomb_base"
+		icon_state = "junkbomb_base"
 		return
 
 	switch(get_nuke_state())
 		if(NUKE_OFF_LOCKED, NUKE_OFF_UNLOCKED)
-			icon_state = "bananiumbomb_base"
+			icon_state = "junkbomb_base"
 		if(NUKE_ON_TIMING)
-			icon_state = "bananiumbomb_timing"
+			icon_state = "junkbomb_timing"
 		if(NUKE_ON_EXPLODING)
-			icon_state = "bananiumbomb_exploding"
+			icon_state = "junkbomb_exploding"
 
 /obj/machinery/nuclearbomb/syndicate/scrap/get_cinematic_type(off_station)
 	switch(off_station)
