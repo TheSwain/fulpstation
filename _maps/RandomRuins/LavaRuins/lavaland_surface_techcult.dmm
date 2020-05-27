@@ -1,1069 +1,125 @@
-//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aa" = (
-/turf/template_noop,
-/area/template_noop)
-"ab" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"ac" = (
-/turf/open/floor/plasteel/grimy,
-/area/ruin/powered)
-"ad" = (
-/turf/closed/wall,
-/area/ruin/powered)
-"ae" = (
-/obj/structure/table/wood/fancy/black,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/powered)
-"af" = (
-/obj/machinery/mecha_part_fabricator,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"ag" = (
-/obj/machinery/computer/rdconsole/production,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"ah" = (
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"ai" = (
-/obj/structure/table,
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aj" = (
-/obj/structure/table/wood/fancy/black,
-/obj/item/flashlight/lantern,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/powered)
-"ak" = (
-/obj/structure/table/wood/fancy/black,
-/obj/item/storage/book/bible{
-	icon_state = "gurugranthsahib"
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ruin/powered)
-"al" = (
-/turf/open/floor/plasteel,
-/area/ruin/powered)
-"am" = (
-/obj/structure/bed/pod,
-/obj/effect/mob_spawn/human/techcult{
-	icon_state = "sleeper";
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered)
-"an" = (
-/obj/machinery/conveyor{
-	id = "techcult_fab"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"ao" = (
-/obj/structure/table,
-/obj/item/stock_parts/cell/high{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/stock_parts/cell/high{
-	pixel_x = -4;
-	pixel_y = -4
-	},
-/obj/item/stock_parts/cell/high{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/stock_parts/cell/high{
-	pixel_x = -4;
-	pixel_y = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"ap" = (
-/obj/structure/table/wood,
-/turf/open/floor/plasteel,
-/area/ruin/powered)
-"aq" = (
-/obj/machinery/door/airlock/research/glass{
-	name = "Robotics Lab";
-	req_access = 400;
-	req_access_txt = "0"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"ar" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/yellowsiding{
-	icon_state = "yellowsiding";
-	dir = 9
-	},
-/area/ruin/powered)
-"as" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/yellowsiding{
-	icon_state = "yellowsiding";
-	dir = 5
-	},
-/area/ruin/powered)
-"at" = (
-/obj/machinery/door/airlock{
-	name = "Personal Room";
-	req_access = 400
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered)
-"au" = (
-/obj/item/stack/sheet/metal/twenty,
-/turf/open/floor/circuit,
-/area/ruin/powered)
-"av" = (
-/obj/machinery/conveyor_switch/oneway{
-	id = "techcult_fab"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aw" = (
-/obj/machinery/computer/mech_bay_power_console{
-	icon_state = "computer";
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"ax" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/yellowsiding{
-	icon_state = "yellowsiding";
-	dir = 8
-	},
-/area/ruin/powered)
-"ay" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/yellowsiding/corner{
-	icon_state = "yellowcornersiding";
-	dir = 4
-	},
-/area/ruin/powered)
-"az" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/yellowsiding/corner{
-	icon_state = "yellowcornersiding";
-	dir = 1
-	},
-/area/ruin/powered)
-"aA" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/yellowsiding{
-	icon_state = "yellowsiding";
-	dir = 4
-	},
-/area/ruin/powered)
-"aB" = (
-/obj/machinery/door/airlock/glass{
-	name = "Dormitories";
-	req_access = 400
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered)
-"aC" = (
-/turf/open/floor/circuit/green,
-/area/ruin/powered)
-"aD" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered)
-"aE" = (
-/obj/machinery/mech_bay_recharge_port{
-	icon_state = "recharge_port";
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aF" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/yellowsiding{
-	icon_state = "yellowsiding";
-	dir = 10
-	},
-/area/ruin/powered)
-"aG" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/yellowsiding,
-/area/ruin/powered)
-"aH" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/yellowsiding{
-	icon_state = "yellowsiding";
-	dir = 6
-	},
-/area/ruin/powered)
-"aI" = (
-/obj/structure/closet/secure_closet/mechanicus/implants,
-/turf/open/floor/circuit,
-/area/ruin/powered)
-"aJ" = (
-/turf/open/floor/circuit,
-/area/ruin/powered)
-"aK" = (
-/obj/machinery/door/airlock/research/glass{
-	name = "Surgery";
-	req_access = 400;
-	req_access_txt = "0"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aL" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Chapel";
-	req_access = 400
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aM" = (
-/obj/machinery/rnd/production/protolathe/department/science,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aN" = (
-/obj/machinery/rnd/production/circuit_imprinter,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aO" = (
-/obj/item/stack/cable_coil/five,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aP" = (
-/obj/structure/frame/machine{
-	anchored = 1
-	},
-/obj/item/circuitboard/machine/ore_silo,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aQ" = (
-/obj/structure/table,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/meson,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aR" = (
-/obj/structure/table,
-/obj/item/t_scanner/adv_mining_scanner/lesser,
-/obj/item/t_scanner/adv_mining_scanner/lesser,
-/obj/item/t_scanner/adv_mining_scanner/lesser,
-/obj/item/t_scanner/adv_mining_scanner/lesser,
-/obj/item/t_scanner/adv_mining_scanner/lesser,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aS" = (
-/obj/structure/table,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aT" = (
-/obj/structure/table,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aU" = (
-/obj/structure/table,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aV" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aW" = (
-/obj/machinery/mineral/ore_redemption{
-	input_dir = 8;
-	req_access = 400
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aX" = (
-/obj/structure/table/optable,
-/turf/open/floor/circuit/green,
-/area/ruin/powered)
-"aY" = (
-/obj/structure/frame/computer{
-	anchored = 1;
-	dir = 1;
-	icon_state = "0"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"aZ" = (
-/obj/structure/table,
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_y = 8
-	},
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"ba" = (
-/obj/machinery/computer/operating{
-	icon_state = "computer";
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"bb" = (
-/obj/machinery/door/airlock/mining/glass{
-	name = "Storage Room";
-	req_access = 400
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"bc" = (
-/obj/machinery/door/airlock/grunge{
-	req_access = 400
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"bd" = (
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"be" = (
-/turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"bf" = (
-/obj/effect/mapping_helpers/no_lava,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+"aa" = (/turf/template_noop,/area/template_noop)
+"ab" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/poddoor/preopen{id = "techcult_window"},/turf/open/floor/plating,/area/ruin/powered/mechanicus)
+"ac" = (/turf/open/floor/plasteel/grimy,/area/ruin/powered/mechanicus)
+"ad" = (/obj/effect/mob_spawn/human/techcult/leader,/turf/open/floor/plasteel/grimy,/area/ruin/powered/mechanicus)
+"ae" = (/turf/closed/wall,/area/ruin/powered/mechanicus/robotics)
+"af" = (/obj/machinery/button/door{id = "techcult_window"; name = "Window Shutters"; pixel_x = -26; pixel_y = 6},/turf/open/floor/plasteel/grimy,/area/ruin/powered/mechanicus)
+"ag" = (/obj/structure/table/wood/fancy/black,/turf/open/floor/plasteel/grimy,/area/ruin/powered/mechanicus)
+"ah" = (/turf/closed/wall,/area/ruin/powered/mechanicus/dorms)
+"ai" = (/obj/machinery/mecha_part_fabricator,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/robotics)
+"aj" = (/obj/machinery/computer/rdconsole/production,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/robotics)
+"ak" = (/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/robotics)
+"al" = (/obj/structure/table,/obj/machinery/cell_charger,/obj/item/stock_parts/cell/high,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/robotics)
+"am" = (/obj/machinery/light{icon_state = "tube"; dir = 8},/turf/open/floor/plasteel/grimy,/area/ruin/powered/mechanicus)
+"an" = (/obj/structure/table/wood/fancy/black,/obj/item/flashlight/lantern,/turf/open/floor/plasteel/grimy,/area/ruin/powered/mechanicus)
+"ao" = (/obj/structure/table/wood/fancy/black,/obj/item/storage/book/bible/omnissiah,/turf/open/floor/plasteel/grimy,/area/ruin/powered/mechanicus)
+"ap" = (/obj/machinery/light{icon_state = "tube"; dir = 4},/turf/open/floor/plasteel/grimy,/area/ruin/powered/mechanicus)
+"aq" = (/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
+"ar" = (/obj/effect/turf_decal/tile/green{dir = 1},/obj/effect/turf_decal/tile/green{dir = 8},/obj/effect/turf_decal/tile/green{dir = 4},/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
+"as" = (/obj/machinery/conveyor{id = "techcult_fab"},/obj/effect/turf_decal/bot,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/robotics)
+"at" = (/obj/structure/table,/obj/item/stock_parts/cell/high{pixel_x = 4; pixel_y = 4},/obj/item/stock_parts/cell/high{pixel_x = -4; pixel_y = -4},/obj/item/stock_parts/cell/high{pixel_x = 4; pixel_y = -4},/obj/item/stock_parts/cell/high{pixel_x = -4; pixel_y = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/robotics)
+"au" = (/obj/structure/bed/pod,/obj/effect/mob_spawn/human/techcult{icon_state = "sleeper"; dir = 8},/obj/effect/turf_decal/tile/green{dir = 1},/obj/effect/turf_decal/tile/green,/obj/effect/turf_decal/tile/green{dir = 4},/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
+"av" = (/obj/machinery/door/airlock/research/glass{name = "Robotics Lab"; req_access = 400; req_access_txt = "0"},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/robotics)
+"aw" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel/yellowsiding{icon_state = "yellowsiding"; dir = 9},/area/ruin/powered/mechanicus)
+"ax" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel/yellowsiding{icon_state = "yellowsiding"; dir = 5},/area/ruin/powered/mechanicus)
+"ay" = (/obj/machinery/door/airlock{name = "Personal Room"; req_access = 400},/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
+"az" = (/obj/item/stack/sheet/metal/twenty,/obj/machinery/light{icon_state = "tube"; dir = 8},/turf/open/floor/circuit,/area/ruin/powered/mechanicus/robotics)
+"aA" = (/obj/machinery/conveyor_switch/oneway{id = "techcult_fab"},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/robotics)
+"aB" = (/obj/item/stack/sheet/metal/twenty,/turf/open/floor/circuit,/area/ruin/powered/mechanicus/robotics)
+"aC" = (/obj/machinery/computer/mech_bay_power_console{icon_state = "computer"; dir = 8},/obj/machinery/light{icon_state = "tube"; dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/robotics)
+"aD" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel/yellowsiding{icon_state = "yellowsiding"; dir = 8},/area/ruin/powered/mechanicus)
+"aE" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel/yellowsiding/corner{icon_state = "yellowcornersiding"; dir = 4},/area/ruin/powered/mechanicus)
+"aF" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel/yellowsiding/corner{icon_state = "yellowcornersiding"; dir = 1},/area/ruin/powered/mechanicus)
+"aG" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel/yellowsiding{icon_state = "yellowsiding"; dir = 4},/area/ruin/powered/mechanicus)
+"aH" = (/obj/machinery/door/airlock/glass{name = "Dormitories"; req_access = 400},/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
+"aI" = (/obj/machinery/light/small{icon_state = "bulb"; dir = 1},/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
+"aJ" = (/turf/open/floor/circuit/green,/area/ruin/powered/mechanicus/robotics)
+"aK" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel,/area/ruin/powered/mechanicus)
+"aL" = (/obj/machinery/mech_bay_recharge_port{icon_state = "recharge_port"; dir = 1},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/robotics)
+"aM" = (/turf/closed/wall,/area/ruin/powered/mechanicus/surgery)
+"aN" = (/obj/machinery/door/airlock/research/glass{name = "Robotics Lab"; req_access = 400; req_access_txt = "0"},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"aO" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel/yellowsiding{icon_state = "yellowsiding"; dir = 10},/area/ruin/powered/mechanicus)
+"aP" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel/yellowsiding,/area/ruin/powered/mechanicus)
+"aQ" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel/yellowsiding{icon_state = "yellowsiding"; dir = 6},/area/ruin/powered/mechanicus)
+"aR" = (/obj/structure/closet/secure_closet/mechanicus/implants,/turf/open/floor/circuit,/area/ruin/powered/mechanicus/surgery)
+"aS" = (/obj/effect/mapping_helpers/no_lava,/obj/machinery/light/small{icon_state = "bulb"; dir = 1},/obj/effect/turf_decal/trimline/red/filled/line{icon_state = "trimline_fill"; dir = 1},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/lavaland/surface/outdoors)
+"aT" = (/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"aU" = (/obj/machinery/door/airlock/research/glass{name = "Surgery"; req_access = 400; req_access_txt = "0"},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"aV" = (/turf/closed/wall,/area/ruin/powered/mechanicus/vault)
+"aW" = (/obj/machinery/door/airlock/grunge{name = "Chapel"; req_access = 400},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"aX" = (/obj/machinery/computer/rdconsole/production,/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/obj/effect/turf_decal/tile/brown{dir = 8},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"aY" = (/obj/machinery/rnd/production/protolathe/department/science,/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"aZ" = (/obj/machinery/rnd/production/circuit_imprinter,/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"ba" = (/obj/item/stack/cable_coil/five,/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bb" = (/obj/structure/frame/machine{anchored = 1},/obj/item/circuitboard/machine/ore_silo,/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/obj/effect/turf_decal/tile/brown,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bc" = (/obj/structure/table,/obj/item/clothing/glasses/meson,/obj/item/clothing/glasses/meson,/obj/item/clothing/glasses/meson,/obj/item/clothing/glasses/meson,/obj/item/clothing/glasses/meson,/obj/effect/turf_decal/trimline/red/line{icon_state = "trimline"; dir = 9},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bd" = (/obj/effect/mapping_helpers/no_lava,/obj/effect/turf_decal/trimline/red/filled/line{icon_state = "trimline_fill"; dir = 1},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/lavaland/surface/outdoors)
+"be" = (/turf/open/lava/smooth/lava_land_surface,/area/lavaland/surface/outdoors)
+"bf" = (/obj/effect/mapping_helpers/no_lava,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/lavaland/surface/outdoors)
+"bg" = (/obj/structure/table,/obj/item/t_scanner/adv_mining_scanner/lesser,/obj/item/t_scanner/adv_mining_scanner/lesser,/obj/item/t_scanner/adv_mining_scanner/lesser,/obj/item/t_scanner/adv_mining_scanner/lesser,/obj/item/t_scanner/adv_mining_scanner/lesser,/obj/machinery/light/small{icon_state = "bulb"; dir = 1},/obj/effect/turf_decal/trimline/red/line{icon_state = "trimline"; dir = 1},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bh" = (/obj/structure/table,/obj/item/storage/bag/ore,/obj/item/storage/bag/ore,/obj/item/storage/bag/ore,/obj/item/storage/bag/ore,/obj/item/storage/bag/ore,/obj/effect/turf_decal/trimline/red/line{icon_state = "trimline"; dir = 1},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bi" = (/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bj" = (/obj/effect/turf_decal/trimline/red/line{icon_state = "trimline"; dir = 1},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bk" = (/obj/structure/table,/obj/item/pickaxe,/obj/item/pickaxe,/obj/item/pickaxe,/obj/item/pickaxe,/obj/item/pickaxe,/obj/effect/turf_decal/trimline/red/line{icon_state = "trimline"; dir = 1},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bl" = (/obj/structure/table,/obj/item/flashlight/lantern,/obj/item/flashlight/lantern,/obj/item/flashlight/lantern,/obj/item/flashlight/lantern,/obj/item/flashlight/lantern,/obj/machinery/light/small{icon_state = "bulb"; dir = 1},/obj/effect/turf_decal/trimline/red/line{icon_state = "trimline"; dir = 1},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bm" = (/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 8},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bn" = (/obj/structure/table/optable,/turf/open/floor/circuit/green,/area/ruin/powered/mechanicus/surgery)
+"bo" = (/obj/effect/turf_decal/tile/blue{dir = 1},/obj/effect/turf_decal/tile/blue{dir = 8},/obj/effect/turf_decal/tile/blue{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"bp" = (/obj/effect/turf_decal/tile/blue{dir = 1},/obj/effect/turf_decal/tile/blue{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"bq" = (/obj/effect/turf_decal/tile/blue{dir = 1},/obj/effect/turf_decal/tile/blue,/obj/effect/turf_decal/tile/blue{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"br" = (/obj/machinery/door/airlock/mining/glass{name = "Storage Room"; req_access = 400},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bs" = (/obj/machinery/mineral/ore_redemption{input_dir = 8; req_access = 400},/obj/effect/turf_decal/tile/brown{dir = 4},/obj/effect/turf_decal/tile/brown,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bt" = (/obj/machinery/door/airlock/grunge{req_access = 400},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bu" = (/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 8},/obj/effect/turf_decal/tile/brown,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bv" = (/obj/effect/turf_decal/delivery,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bw" = (/obj/effect/turf_decal/tile/brown{dir = 8},/obj/effect/turf_decal/tile/brown,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bx" = (/obj/machinery/light,/obj/effect/turf_decal/tile/brown{dir = 8},/obj/effect/turf_decal/tile/brown,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"by" = (/obj/effect/turf_decal/loading_area,/obj/effect/turf_decal/tile/brown{dir = 4},/obj/effect/turf_decal/tile/brown{dir = 8},/obj/effect/turf_decal/tile/brown,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bz" = (/obj/effect/turf_decal/tile/blue{dir = 1},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"bA" = (/obj/effect/turf_decal/tile/blue,/obj/effect/turf_decal/tile/blue{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"bB" = (/obj/effect/turf_decal/tile/blue{dir = 8},/obj/effect/turf_decal/tile/blue{dir = 1},/obj/effect/turf_decal/tile/blue,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"bC" = (/obj/effect/turf_decal/tile/blue{dir = 8},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"bD" = (/obj/effect/turf_decal/tile/blue,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"bE" = (/obj/effect/turf_decal/tile/blue{dir = 8},/obj/effect/turf_decal/tile/blue,/obj/effect/turf_decal/tile/blue{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"bF" = (/obj/structure/frame/computer{anchored = 1; dir = 1; icon_state = "0"},/obj/effect/turf_decal/tile/blue{dir = 8},/obj/effect/turf_decal/tile/blue,/obj/effect/turf_decal/tile/blue{dir = 1},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"bG" = (/obj/structure/table,/obj/item/storage/backpack/duffelbag/med/surgery{pixel_y = 8},/obj/item/storage/backpack/duffelbag/med/surgery,/obj/machinery/light,/obj/effect/turf_decal/tile/blue{dir = 8},/obj/effect/turf_decal/tile/blue,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"bH" = (/obj/machinery/computer/operating{icon_state = "computer"; dir = 1},/obj/effect/turf_decal/tile/blue{dir = 8},/obj/effect/turf_decal/tile/blue,/obj/effect/turf_decal/tile/blue{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
+"bI" = (/obj/effect/turf_decal/tile/green{dir = 8},/obj/effect/turf_decal/tile/green,/obj/effect/turf_decal/tile/green{dir = 1},/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
+"bJ" = (/obj/structure/table/wood,/obj/machinery/light/small{icon_state = "bulb"; dir = 4},/obj/effect/turf_decal/tile/green{dir = 8},/obj/effect/turf_decal/tile/green,/obj/effect/turf_decal/tile/green{dir = 4},/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
+"bK" = (/obj/structure/table,/obj/effect/turf_decal/trimline/red/line{icon_state = "trimline"; dir = 5},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bL" = (/obj/effect/turf_decal/trimline/red/line{icon_state = "trimline"; dir = 10},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bM" = (/obj/effect/turf_decal/tile/green{dir = 8},/obj/effect/turf_decal/tile/green{dir = 1},/obj/effect/turf_decal/tile/green{dir = 4},/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
+"bN" = (/obj/structure/table/wood,/obj/machinery/light/small{icon_state = "bulb"; dir = 4},/obj/effect/turf_decal/tile/green{dir = 1},/obj/effect/turf_decal/tile/green{dir = 4},/obj/effect/turf_decal/tile/green,/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
+"bO" = (/obj/effect/turf_decal/tile/green{dir = 8},/obj/effect/turf_decal/tile/green{dir = 1},/obj/effect/turf_decal/tile/green,/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
+"bP" = (/obj/structure/bed/pod,/obj/effect/mob_spawn/human/techcult{icon_state = "sleeper"; dir = 8},/obj/effect/turf_decal/tile/green{dir = 8},/obj/effect/turf_decal/tile/green{dir = 4},/obj/effect/turf_decal/tile/green,/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
+"bQ" = (/obj/effect/turf_decal/trimline/red/line,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bR" = (/obj/effect/turf_decal/trimline/red/line{icon_state = "trimline"; dir = 6},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
 
 (1,1,1) = {"
-aa
-aa
-aa
-be
-be
-be
-be
-be
-be
-be
-be
-be
-be
-be
-be
-be
-be
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(2,1,1) = {"
-aa
-aa
-aa
-be
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(3,1,1) = {"
-aa
-aa
-aa
-be
-ad
-af
-an
-an
-au
-ah
-ah
-ad
-aI
-ah
-ah
-aX
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(4,1,1) = {"
-aa
-aa
-aa
-be
-ad
-ag
-ah
-ah
-av
-ah
-ah
-ad
-aJ
-ah
-ah
-aY
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(5,1,1) = {"
-aa
-aa
-aa
-be
-ad
-af
-an
-an
-au
-ah
-ah
-aq
-ah
-ah
-ah
-aZ
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(6,1,1) = {"
-aa
-aa
-aa
-be
-ad
-ah
-ah
-ah
-ah
-ah
-ah
-ad
-ah
-ah
-ah
-ba
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(7,1,1) = {"
-aa
-aa
-be
-be
-ad
-ai
-ao
-ah
-aw
-aC
-aE
-ad
-ah
-ah
-ah
-aX
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(8,1,1) = {"
-aa
-be
-be
-ab
-ad
-ad
-ad
-aq
-ad
-ad
-ad
-ad
-aK
-ad
-ad
-ad
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(9,1,1) = {"
-be
-be
-ab
-ab
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ad
-aQ
-ah
-ad
-bd
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(10,1,1) = {"
-be
-ab
-ab
-ac
-ac
-ac
-ac
-ar
-ax
-ax
-ax
-aF
-ac
-ad
-aR
-ah
-ad
-bd
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(11,1,1) = {"
-be
-ab
-ac
-ac
-ae
-aj
-ac
-as
-ay
-aD
-aD
-aG
-ac
-ad
-aS
-ah
-ad
-bd
-bd
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(12,1,1) = {"
-be
-ab
-ac
-ac
-ac
-ae
-ac
-ac
-as
-aA
-aA
-aH
-ac
-ad
-ah
-ah
-ad
-bf
-bf
-bf
-bf
-bf
-bf
-aa
-aa
-aa
-"}
-(13,1,1) = {"
-be
-ab
-ac
-ac
-ac
-ak
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-aL
-ah
-ah
-bc
-bf
-bf
-bf
-bf
-bf
-bf
-aa
-aa
-aa
-"}
-(14,1,1) = {"
-be
-ab
-ac
-ac
-ac
-ae
-ac
-ac
-ar
-ax
-ax
-aF
-ac
-ad
-ah
-ah
-ad
-bf
-bf
-bf
-bf
-bf
-bf
-aa
-aa
-aa
-"}
-(15,1,1) = {"
-be
-ab
-ac
-ac
-ae
-aj
-ac
-ar
-az
-aD
-aD
-aG
-ac
-ad
-aT
-ah
-ad
-bd
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(16,1,1) = {"
-be
-ab
-ab
-ac
-ac
-ac
-ac
-as
-aA
-aA
-aA
-aH
-ac
-ad
-aU
-ah
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(17,1,1) = {"
-be
-be
-ab
-ab
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ad
-aV
-ah
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(18,1,1) = {"
-aa
-be
-be
-ab
-ad
-ad
-ad
-ad
-aB
-ad
-ad
-ad
-ad
-ad
-ad
-bb
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(19,1,1) = {"
-aa
-aa
-be
-be
-ad
-al
-al
-at
-al
-at
-al
-al
-ad
-ag
-ah
-ah
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(20,1,1) = {"
-aa
-aa
-aa
-be
-ad
-am
-ap
-ad
-al
-ad
-ap
-am
-ad
-aM
-ah
-ah
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(21,1,1) = {"
-aa
-aa
-aa
-be
-ad
-ad
-ad
-ad
-al
-ad
-ad
-ad
-ad
-aN
-ah
-ah
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(22,1,1) = {"
-aa
-aa
-aa
-be
-ad
-al
-al
-at
-al
-at
-al
-al
-ad
-aO
-ah
-ah
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(23,1,1) = {"
-aa
-aa
-aa
-be
-ad
-am
-ap
-ad
-al
-ad
-ap
-am
-ad
-aP
-aW
-ah
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(24,1,1) = {"
-aa
-aa
-aa
-be
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(25,1,1) = {"
-aa
-aa
-aa
-be
-be
-be
-be
-be
-be
-be
-be
-be
-be
-be
-be
-be
-be
-bd
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aaaaaaaaaaaaaaaabebebebebebebebebeaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaabebeabababababababbebeaaaaaaaaaaaaaa
+aaaaaaaaaaaabebeababacacacacacababbebeaaaaaaaaaaaa
+bebebebebebebeababacacacadacacacababbebebebebebebe
+beaeaeaeaeaeaeaeafacagacacacagacacahahahahahahahbe
+beaeaiajaiakalaeamacanagaoaganacapaharauaharauahbe
+beaeasakasakataeacacacacacacacacacahbIbJahbIbJahbe
+beaeasakasakakavacawaxacacacawaxacahayahahayahahbe
+beaeazaAaBakaCaeacaDaEaxacawaFaGacaHaqaqaIaqaqahbe
+beaeakakakakaJaeacaDaKaGacaDaKaGacahayahahayahahbe
+beaeakakakakaLaeamaDaKaGacaDaKaGapahbMbNahbMbNahbe
+beaMaMaMaNaMaMaMacaOaPaQacaOaPaQacahbObPahbObPahbe
+beaMaRaRbobpbqaUacacacacacacacacacaVaVaVaVaVaVaVbe
+beaMbobpbzaTbAaVaVaVaVaVaWaVaVaVaVaVaXaYaZbabbaVbe
+beaMbBbCaTbDbEaVbcbgbhbjbjbjbkblbKaVbmbibibvbsaVbe
+beaMbnbFbGbHbnaVbLbQbQbQbQbQbQbQbRbrbubwbxbwbyaVbe
+beaMaMaMaMaMaMaVaVaVaVaVbtaVaVaVaVaVaVaVaVaVaVaVbe
+bebebebebebebebebebebeaSbdaSbebebebebebebebebebebe
+aaaaaaaaaaaaaaaabebebebfbfbfbeaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaabebfbfbfaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaabfbfbfaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaabfbfbfaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaabfbfbfaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaabfbfbfaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaabfbfbfaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}

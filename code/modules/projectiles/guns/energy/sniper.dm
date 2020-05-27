@@ -9,11 +9,12 @@
 	fire_sound = 'sound/weapons/laser3.ogg'
 	fire_sound_volume = 90
 	vary_fire_sound = FALSE
+	pin = null
+	cell_type = /obj/item/stock_parts/cell/energy_sniper
 	recoil = 0.3
 	weapon_weight = WEAPON_HEAVY
 	can_flashlight = FALSE
-	ammo_x_offset = 3
-	ammo_y_offset = 3
+	charge_sections = 1
 	w_class = WEIGHT_CLASS_BULKY
 	zoomable = TRUE
 	zoom_amt = 10
@@ -25,6 +26,9 @@
 	. = ..()
 	fire_delay = 30
 
+/obj/item/gun/energy/sniper/pin
+	pin = /obj/item/firing_pin
+
 /obj/item/ammo_casing/energy/sniper
 	projectile_type = /obj/projectile/beam/laser/sniper
 	select_name = "anti-vehicle"
@@ -33,10 +37,15 @@
 /obj/projectile/beam/laser/sniper
 	damage = 80
 	speed = 0.4
-	name = "energy_sniper"
+	name = "energy bullet"
 	icon = 'icons/Fulpicons/energy_sniper.dmi'
 	icon_state = "blue_bullet"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
 	dismemberment = 30
 	armour_penetration = 40
+
+/obj/item/stock_parts/cell/energy_sniper //20 shots, very slow charge rate
+	name = "pulse rifle power cell"
+	maxcharge = 2000
+	chargerate = 50
