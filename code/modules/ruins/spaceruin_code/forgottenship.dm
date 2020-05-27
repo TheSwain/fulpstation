@@ -242,7 +242,10 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 		/obj/item/extinguisher/mini,
 		/obj/item/stack/medical/gauze/cyborg,
 		/obj/item/gun/medbeam/cyborg,
-		/obj/item/organ_storage)
+		/obj/item/organ_storage,
+		/obj/item/screwdriver/cyborg, //For surgery on augmented people
+		/obj/item/wrench/cyborg,
+		/obj/item/multitool/cyborg)
 
 	cyborg_base_icon = "synd_medical"
 	moduleselect_icon = "malf"
