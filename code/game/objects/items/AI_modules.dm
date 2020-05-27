@@ -633,3 +633,8 @@ AI MODULES
 /obj/item/aiModule/core/full/skynet
 	name = "'Clown' Core AI Module"
 	law_id = "clown"
+	
+/*************Boomer*****************/
+/obj/item/aiModule/core/full/boomer
+	name = "'Boomer' Core AI Module"
+	law_id = "boomer"
