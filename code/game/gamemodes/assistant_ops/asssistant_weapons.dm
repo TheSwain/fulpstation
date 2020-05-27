@@ -46,11 +46,11 @@
 /obj/item/clothing/mask/gasmask/sticky
 	var/unstick_time = 600
 
-/obj/item/clothing/mask/fakemoustache/sticky/Initialize()
+/obj/item/clothing/mask/gasmask/sticky/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP)
 	addtimer(CALLBACK(src, .proc/unstick), unstick_time)
 
-/obj/item/clothing/mask/fakemoustache/sticky/proc/unstick()
+/obj/item/clothing/mask/gasmask/sticky/proc/unstick()
 	REMOVE_TRAIT(src, TRAIT_NODROP)
 
