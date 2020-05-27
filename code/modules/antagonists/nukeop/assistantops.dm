@@ -1,4 +1,3 @@
-
 /datum/antagonist/nukeop/assistantop
 	name = "Assistant Operative"
 	roundend_category = "assistant operatives"
