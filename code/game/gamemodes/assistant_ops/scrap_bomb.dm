@@ -38,16 +38,12 @@
 		var/obj/item/clothing/C
 		if(!H.w_uniform || H.dropItemToGround(H.w_uniform))
 			C = new /obj/item/clothing/under/color/grey(H)
-			ADD_TRAIT(C, TRAIT_NODROP, ASSISTANT_NUKE_TRAIT)
 			H.equip_to_slot_or_del(C, ITEM_SLOT_ICLOTHING)
-
 		if(!H.shoes || H.dropItemToGround(H.shoes))
 			C = new /obj/item/clothing/shoes/sneakers/black(H)
-			ADD_TRAIT(C, TRAIT_NODROP, ASSISTANT_NUKE_TRAIT)
 			H.equip_to_slot_or_del(C, ITEM_SLOT_FEET)
 
 		if(!H.wear_mask || H.dropItemToGround(H.wear_mask))
 			C = new /obj/item/clothing/mask/gas(H)
-			ADD_TRAIT(C, TRAIT_NODROP, ASSISTANT_NUKE_TRAIT)
 			H.equip_to_slot_or_del(C, ITEM_SLOT_MASK)
 

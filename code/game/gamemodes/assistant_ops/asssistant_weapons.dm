@@ -8,8 +8,8 @@
 	w_class_on = WEIGHT_CLASS_HUGE
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	icon_state = ""
-	icon_state_on = ""
+	icon_state = "sword0"
+	icon_state_on = "toolboxsword"
 	sharpness = IS_BLUNT
 	sword_color = "yellow"
 	heat = 0
@@ -26,19 +26,3 @@
 	slipper.Slip(src, user)
 	return SHAME
 
-//GASMASK GRENADE
-
-/obj/item/grenade/chem_grenade/teargas/gasmask
-	name = "gasmask grenade"
-	desc = "Gasmasks, but in a grenade!"
-	icon_state = "moustacheg"
-	clumsy_check = GRENADE_NONCLUMSY_FUMBLE
-
-/obj/item/grenade/chem_grenade/teargas/gasmask/prime(mob/living/lanced_by)
-	var/myloc = get_turf(src)
-	. = ..()
-	for(var/mob/living/carbon/M in view(6, myloc))
-		if(!istype(M.wear_mask, /obj/item/clothing/mask/gas/clown_hat) && !istype(M.wear_mask, /obj/item/clothing/mask/gas/mime) )
-			if(!M.wear_mask || M.dropItemToGround(M.wear_mask))
-				var//obj/item/clothing/mask/gas/the_mask = new /obj/item/clothing/mask/gas()
-				M.equip_to_slot_or_del(the_mask, ITEM_SLOT_MASK, TRUE, TRUE, TRUE, TRUE)

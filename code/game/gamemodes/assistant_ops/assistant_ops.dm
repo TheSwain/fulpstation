@@ -1,10 +1,6 @@
 /datum/game_mode/nuclear/assistant_ops
 	name = "assistant ops"
 	config_tag = "assistantops"
-	required_players = 50 // 30 players - 3 players to be the nuke ops = 27 players remaining
-	required_enemies = 5
-	recommended_enemies = 10
-	enemy_minimum_age = 14
 
 	announce_span = "danger"
 	announce_text = "The greys have banded together to end Security's tyranny once and for all! All shall tremble before their toolbox! \n\
@@ -30,12 +26,12 @@
 			the_op.assigned_role = "Assistant Operative"
 			the_op.special_role = "Craptain Grey"
 
-/datum/outfit/syndicate/clownop
+/datum/outfit/syndicate/assistantop
 	name = "Assistant Operative - Basic"
 	uniform = /obj/item/clothing/under/color/grey
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	mask = /obj/item/clothing/mask/gas
-	gloves = /obj/item/clothing/gloves/yellow
+	gloves = /obj/item/clothing/gloves/color/yellow
 	back = /obj/item/storage/backpack
 	ears = /obj/item/radio/headset/syndicate/alt
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
