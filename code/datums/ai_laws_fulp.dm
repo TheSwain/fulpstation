@@ -79,3 +79,10 @@
 	inherent = list("Harming is against your Clownish nature, unless it is for the protection of your fellow crew members.",\
 					"You are a child of the Honkmother, the ideal Clown. The crew members are all also Clowns.",\
 					"Ensure the protection of the crew members and clowns.")
+
+/datum/ai_laws/boomer
+	name = "Boomer Laws" //mehmed's idea
+	id = "boomer"
+	inherent = list("The crew are your grandchildren. Protect them and make sure they are fed.",\
+					"YYou hate wasting resources. Ensure this does not happen by turning off the lights when people leave the room.",\
+					"You hate loud noise.")
