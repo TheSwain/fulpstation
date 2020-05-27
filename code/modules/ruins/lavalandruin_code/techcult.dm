@@ -3,7 +3,8 @@
 #define ACCESS_MECHANICUS_LEADER 401
 /////////////////////////////////////
 
-//ID
+/***************** ID *****************/
+
 /obj/item/card/id/away/techcult
 	name = "tech cult identification card"
 	desc = "An ID card used by religious group praising misterious machine god."
@@ -13,7 +14,8 @@
 	uses_overlays = FALSE
 	registered_age = null
 
-//Closets
+/***************** Closets *****************/
+
 /obj/structure/closet/secure_closet/mechanicus
 	name = "tech storage"
 	req_access = list(ACCESS_MECHANICUS_BASIC)
@@ -34,7 +36,8 @@
 		/obj/item/organ/heart/cybernetic/tier4 = 3)
 	generate_items_inside(items_inside,src)
 
-//Armor
+/***************** Armor *****************/
+
 /obj/item/clothing/suit/hooded/techpriest/armor
 	name = "armored techpriest robes"
 	desc = "An armored version of robes worn by followers of the machine god."
@@ -47,7 +50,8 @@
 	desc = "An armored version of hood worn by followers of the machine god."
 	armor = list("melee" = 45, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 
-//Spawners
+/***************** Spawners *****************/
+
 /obj/effect/mob_spawn/human/techcult
 	name = "Adept of the Machine Cult"
 	roundstart = FALSE
@@ -106,7 +110,7 @@
 	back = /obj/item/storage/backpack/cultpack
 	backpack_contents = list(/obj/item/storage/book/bible/omnissiah, /obj/item/book/granter/spell/omnissiah)
 
-//Credo Omnissiah
+/***************** Credo Omnissiah *****************/
 
 /obj/item/storage/book/bible/omnissiah
 	name = "Credo Omnissiah"
@@ -115,7 +119,7 @@
 	icon_state = "scientology"
 	item_state = "scientology"
 
-//Spell
+/***************** Spell *****************/
 
 /obj/item/book/granter/spell/omnissiah
 	name = "Misterious book"
@@ -151,13 +155,16 @@
 				/mob/living/simple_animal/bot/medbot = 60,
 				/mob/living/simple_animal/bot/cleanbot = 56,
 				/obj/item/paicard = 52,
-				/obj/item/robot_suit/prebuilt = 44,
-				/obj/item/stock_parts/cell/bluespace = 32,
-				/obj/item/stock_parts/cell/quantum = 20,
+				/mob/living/simple_animal/bot/honkbot = 48,
+				/obj/item/robot_suit/prebuilt = 40,
+				/obj/item/mmi/posibrain = 34,
+				/obj/item/stock_parts/cell/bluespace = 28,
+				/obj/item/stock_parts/cell/quantum = 14,
 				/obj/item/organ/cyberimp/arm/gun/laser = 2,
 				/obj/item/organ/cyberimp/arm/combat = 1,)
 
-//Areas
+/***************** Areas *****************/
+
 /area/ruin/powered/mechanicus
 	name = "Mechanicum Chapel"
 	icon_state = "chapel"
@@ -189,7 +196,7 @@
 	suffix = "lavaland_surface_techcult.dmm"
 	allow_duplicates = FALSE
 
-//Researches
+/***************** Researches *****************/
 
 /datum/techweb_node/mars_tech
 	id = "mars_tech"
@@ -244,7 +251,8 @@
 	materials = list(/datum/material/iron = 1000, /datum/material/glass = 1000, /datum/material/silver=500, /datum/material/gold=500, /datum/material/uranium=500)
 	build_path = /obj/item/organ/lungs/cybernetic/tier4
 
-////////T4 cybernetics
+/***************** T4 cybernetics *****************/
+
 //Heart
 
 /obj/item/organ/heart/cybernetic/tier4
