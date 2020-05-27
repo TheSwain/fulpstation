@@ -105,10 +105,3 @@
 	cost = 1
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
-	/datum/uplink_item/support/clown_reinforcement
-	name = "Clown Reinforcements"
-	desc = "Call in an additional clown to share the fun, equipped with full starting gear, but no telecrystals."
-	item = /obj/item/antag_spawner/nuke_ops/clown
-	cost = 20
-	include_modes = list(/datum/game_mode/nuclear/clown_ops)
-	restricted = TRUE

@@ -11,9 +11,6 @@
 	icon_state = "sword0"
 	icon_state_on = "toolboxsword"
 	sharpness = IS_BLUNT
-	sword_color = "yellow"
-	heat = 0
-	light_color = "#ffff00"
 
 /obj/item/melee/transforming/energy/sword/bananium/ignition_effect(atom/A, mob/user)
 	return ""
