@@ -42,15 +42,3 @@
 			if(!M.wear_mask || M.dropItemToGround(M.wear_mask))
 				var//obj/item/clothing/mask/gas/the_mask = new /obj/item/clothing/mask/gas()
 				M.equip_to_slot_or_del(the_mask, ITEM_SLOT_MASK, TRUE, TRUE, TRUE, TRUE)
-
-/obj/item/clothing/mask/gasmask/sticky
-	var/unstick_time = 600
-
-/obj/item/clothing/mask/gasmask/sticky/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP)
-	addtimer(CALLBACK(src, .proc/unstick), unstick_time)
-
-/obj/item/clothing/mask/gasmask/sticky/proc/unstick()
-	REMOVE_TRAIT(src, TRAIT_NODROP)
-
