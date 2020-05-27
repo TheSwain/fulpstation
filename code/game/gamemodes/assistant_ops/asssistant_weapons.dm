@@ -28,7 +28,7 @@
 
 //GASMASK GRENADE
 
-/obj/item/grenade/chem_grenade/teargas/moustache
+/obj/item/grenade/chem_grenade/teargas/gasmask
 	name = "gasmask grenade"
 	desc = "Gasmasks, but in a grenade!"
 	icon_state = "moustacheg"
