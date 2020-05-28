@@ -79,8 +79,8 @@
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 	back = /obj/item/storage/backpack
 	belt = /obj/item/storage/belt/utility/full
-	l_pocket = /obj/item/gun/energy/e_gun/mini
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	l_pocket = /obj/item/kitchen/knife/combat/survival
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	id = /obj/item/card/id/away/techcult
 
 /obj/effect/mob_spawn/human/techcult/leader
