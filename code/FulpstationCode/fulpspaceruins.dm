@@ -252,9 +252,8 @@ There is no point for a testament, but maybe a confession is appropriate. I've n
 /datum/map_template/ruin/space/prototype
 	id = "prototype"
 	suffix = "prototype.dmm"
-	name = "Prototype SS13"
-	placement_weight = 3 //Fun spawners in space are rare. Might be toned down in the future.
-	description = "Apparently, the first station built by NanoStrasen, but the Syndicates may want to reclaim it."
+	name = "Prototype Station"
+	description = "Apparently, one of the first stations built by Nanotrasen, but the Syndicate may want to reclaim it."
 
 /datum/map_template/ruin/space/dndmansion
 	id = "dndmansion"

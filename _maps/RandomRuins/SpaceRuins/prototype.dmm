@@ -17,10 +17,11 @@
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/medsci)
 "af" = (
-/obj/structure/table/wood,
-/obj/item/flashlight/lamp,
-/turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered)
+/obj/structure/closet/secure_closet/freezer/meat,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plasteel/airless/cafeteria,
+/area/ruin/has_grav/prototype/kitchen)
 "ag" = (
 /obj/effect/mob_spawn/human/syndicate_engineer,
 /obj/machinery/light{
@@ -89,20 +90,20 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/hypospray/medipen/survival,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/has_grav/prototype/brig)
 "av" = (
 /obj/structure/table/reinforced,
 /obj/item/gun/energy/disabler,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/has_grav/prototype/brig)
 "aw" = (
 /obj/structure/table/reinforced,
 /obj/item/poster/random_official,
 /obj/item/poster/random_official,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/has_grav/prototype/brig)
 "ax" = (
 /obj/machinery/suit_storage_unit/standard_unit,
@@ -130,52 +131,63 @@
 /turf/open/floor/wood,
 /area/ruin/has_grav/prototype/Captain)
 "aB" = (
-/obj/structure/closet/secure_closet/freezer/meat,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plasteel/cafeteria,
-/area/ruin/has_grav/prototype/kitchen)
-"aC" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/cafeteria,
+/obj/structure/sign/poster/official/fruit_bowl{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/airless/cafeteria,
 /area/ruin/has_grav/prototype/kitchen)
-"aD" = (
+"aC" = (
 /obj/machinery/processor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/airless/cafeteria,
 /area/ruin/has_grav/prototype/kitchen)
-"aE" = (
+"aD" = (
 /obj/machinery/vending/boozeomat/all_access,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/airless/cafeteria,
 /area/ruin/has_grav/prototype/kitchen)
-"aF" = (
+"aE" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/airless/cafeteria,
 /area/ruin/has_grav/prototype/kitchen)
+"aF" = (
+/obj/machinery/door/airlock{
+	name = "Shower"
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/hallway)
 "aG" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/hallway)
 "aH" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
+	},
 /area/ruin/has_grav/prototype/hallway)
 "aI" = (
-/obj/machinery/door/airlock{
-	name = "Shower"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/hallway)
-"aJ" = (
 /obj/machinery/shower{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/hallway)
+"aJ" = (
+/obj/machinery/power/apc/auto_name/west{
+	cell_type = /obj/item/stock_parts/cell/high/empty
+	},
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sink/kitchen{
+	dir = 4;
+	icon_state = "sink_alt";
+	pixel_x = -10
+	},
+/turf/open/floor/plasteel/airless/cafeteria,
+/area/ruin/has_grav/prototype/kitchen)
 "aK" = (
 /turf/template_noop,
 /area/ruin/has_grav/prototype/medsci)
@@ -201,13 +213,16 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/secure/gear{
 	anchored = 1;
-	req_access_txt = "20"
+	name = "mining gear crate";
+	req_access_txt = "0"
 	},
 /obj/item/crusher_trophy/goliath_tentacle,
 /obj/item/crusher_trophy/legion_skull,
 /obj/item/crusher_trophy/watcher_wing,
 /obj/item/kinetic_crusher,
 /obj/item/lazarus_injector,
+/obj/item/mining_scanner,
+/obj/item/storage/bag/ore,
 /turf/open/floor/wood,
 /area/ruin/has_grav/prototype/Captain)
 "aP" = (
@@ -220,25 +235,32 @@
 /area/ruin/has_grav/prototype/brig)
 "aQ" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/has_grav/prototype/brig)
 "aR" = (
 /obj/machinery/atmospherics/components/unary/vent_pump,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/has_grav/prototype/brig)
 "aS" = (
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/west{
+	cell_type = /obj/item/stock_parts/cell/high/empty
+	},
+/obj/machinery/airalarm/directional/south,
+/obj/item/wallframe/button,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/has_grav/prototype/brig)
 "aT" = (
 /obj/structure/closet/syndicate,
 /obj/item/melee/baton,
 /obj/effect/spawner/lootdrop/maintenance/three,
 /obj/item/clothing/under/rank/security/officer/formal,
-/obj/item/clothing/head/beret/sec/navyhos,
 /obj/item/restraints/handcuffs,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/suit/security/officer,
+/obj/item/clothing/head/beret/sec/navyofficer,
 /turf/open/floor/plasteel/dark,
 /area/ruin/has_grav/prototype/brig)
 "aU" = (
@@ -254,17 +276,21 @@
 /turf/open/floor/plating,
 /area/ruin/has_grav/prototype/hallway)
 "aW" = (
-/obj/machinery/door/airlock{
-	name = "Toilet"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/hallway)
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/airless/cafeteria,
+/area/ruin/has_grav/prototype/kitchen)
 "aX" = (
-/obj/structure/toilet{
-	dir = 8
+/obj/machinery/door/window{
+	base_state = "right";
+	dir = 4;
+	icon_state = "right";
+	layer = 3
 	},
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/hallway)
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/airless/cafeteria,
+/area/ruin/has_grav/prototype/kitchen)
 "aY" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -283,28 +309,23 @@
 /turf/open/floor/wood,
 /area/ruin/has_grav/prototype/Captain)
 "bb" = (
-/obj/machinery/power/apc/auto_name/west{
-	cell_type = /obj/item/stock_parts/cell/high/empty
-	},
-/obj/structure/cable,
+/obj/structure/table,
+/obj/item/kitchen/knife,
+/obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/airless/cafeteria,
 /area/ruin/has_grav/prototype/kitchen)
 "bc" = (
-/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/cafeteria,
+/mob/living/simple_animal/hostile/carp{
+	icon_state = "base";
+	dir = 8
+	},
+/turf/open/floor/plasteel/airless/cafeteria,
 /area/ruin/has_grav/prototype/kitchen)
 "bd" = (
-/obj/machinery/door/window{
-	base_state = "right";
-	dir = 4;
-	icon_state = "right";
-	layer = 3
-	},
-/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/airless/cafeteria,
 /area/ruin/has_grav/prototype/kitchen)
 "be" = (
 /turf/closed/wall,
@@ -315,7 +336,9 @@
 	icon_state = "u_guilty_l"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
 /area/ruin/has_grav/prototype/hallway)
 "bg" = (
 /mob/living/simple_animal/hostile/carp,
@@ -336,14 +359,12 @@
 /turf/open/floor/plating,
 /area/ruin/has_grav/prototype/arrivals)
 "bl" = (
-/obj/effect/decal/cleanable/blood/gibs/limb,
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/science,
-/obj/item/circuitboard/machine/protolathe,
-/obj/item/circuitboard/machine/circuit_imprinter,
-/obj/item/circuitboard/computer/rdconsole,
-/obj/item/storage/box/beakers,
-/turf/open/floor/plating,
+/mob/living/simple_animal/hostile/carp/megacarp,
+/turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/hallway)
 "bm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -381,6 +402,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/circuitboard/machine/chem_dispenser,
 /obj/item/circuitboard/machine/chem_master,
+/obj/item/clothing/neck/stethoscope,
 /turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/medsci)
 "bq" = (
@@ -408,9 +430,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/has_grav/prototype/brig)
 "bt" = (
-/obj/machinery/door/airlock{
-	name = "Cabin 4"
-	},
+/obj/structure/door_assembly,
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/dorms)
 "bu" = (
@@ -422,13 +442,13 @@
 /area/ruin/space/has_grav/powered)
 "bv" = (
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/west{
-	cell_type = /obj/item/stock_parts/cell/high/empty
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 6
 	},
-/obj/machinery/airalarm/directional/south,
-/obj/item/wallframe/button,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/has_grav/prototype/brig)
 "bw" = (
 /turf/open/floor/plating/airless,
@@ -439,21 +459,28 @@
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/hallway)
 "by" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 6
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer1{
+	icon_state = "scrub_map-1";
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/has_grav/prototype/brig)
 "bz" = (
-/obj/machinery/door/airlock{
-	name = "Cabin 6"
+/obj/machinery/airalarm/directional/west,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/under/rank/centcom/commander,
+/obj/item/clothing/head/centhat,
+/obj/item/clothing/suit/armor/vest{
+	layer = 2.9
 	},
-/turf/open/floor/plating/airless,
-/area/ruin/has_grav/prototype/dorms)
+/obj/item/clothing/shoes/combat{
+	layer = 2.9
+	},
+/obj/structure/closet/cabinet,
+/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
+/turf/open/floor/wood,
+/area/ruin/has_grav/prototype/Captain)
 "bA" = (
 /obj/structure/girder/displaced,
 /obj/structure/lattice,
@@ -465,11 +492,11 @@
 "bC" = (
 /obj/item/solar_assembly,
 /obj/structure/cable,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/solars)
 "bD" = (
 /obj/structure/cable,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/solars)
 "bE" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
@@ -489,27 +516,12 @@
 /turf/open/floor/engine/air,
 /area/ruin/has_grav/prototype/engineering)
 "bH" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer1{
-	icon_state = "scrub_map-1";
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/has_grav/prototype/brig)
+/turf/open/floor/plating/airless,
+/area/ruin/has_grav/prototype/solars)
 "bI" = (
-/obj/machinery/airalarm/directional/west,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/under/rank/centcom/commander,
-/obj/item/clothing/head/centhat,
-/obj/item/clothing/suit/armor/vest{
-	layer = 2.9
-	},
-/obj/item/clothing/shoes/combat{
-	layer = 2.9
-	},
-/obj/structure/closet/cabinet,
-/turf/open/floor/wood,
-/area/ruin/has_grav/prototype/Captain)
+/obj/item/clothing/glasses/science,
+/turf/template_noop,
+/area/template_noop)
 "bJ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer1{
 	icon_state = "scrub_map-1";
@@ -561,14 +573,15 @@
 /area/ruin/has_grav/prototype/Captain)
 "bP" = (
 /obj/structure/table,
-/obj/item/kitchen/knife,
-/obj/machinery/airalarm/directional/west,
+/obj/machinery/microwave,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/airless/cafeteria,
 /area/ruin/has_grav/prototype/kitchen)
 "bQ" = (
+/obj/structure/table,
+/obj/item/trash/plate,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/airless/cafeteria,
 /area/ruin/has_grav/prototype/kitchen)
 "bR" = (
 /obj/structure/window/reinforced/fulltile,
@@ -577,16 +590,18 @@
 /turf/open/floor/grass,
 /area/ruin/has_grav/prototype/arrivals)
 "bS" = (
-/obj/structure/cable,
+/obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/obj/structure/closet/crate/science,
+/obj/item/circuitboard/machine/protolathe,
+/obj/item/storage/box/beakers,
+/obj/item/circuitboard/computer/rdconsole/production,
+/turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/hallway)
 "bT" = (
-/obj/effect/decal/cleanable/blood/drip{
-	icon_state = "gib5-old"
-	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/hallway)
 "bU" = (
 /obj/effect/decal/cleanable/dirt,
@@ -597,24 +612,23 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "Brig"
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/brig)
 "bW" = (
-/obj/structure/table,
-/obj/machinery/microwave,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/cafeteria,
-/area/ruin/has_grav/prototype/kitchen)
+/obj/machinery/door/airlock{
+	name = "Toilet"
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/hallway)
 "bX" = (
-/obj/structure/table,
-/obj/item/trash/plate,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/cafeteria,
-/area/ruin/has_grav/prototype/kitchen)
+/obj/structure/toilet{
+	dir = 8
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/hallway)
 "bY" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
 	dir = 8;
@@ -629,10 +643,13 @@
 /turf/open/floor/engine/o2,
 /area/ruin/has_grav/prototype/engineering)
 "ca" = (
-/obj/structure/cable,
-/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip{
+	icon_state = "gib5-old"
+	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
 /area/ruin/has_grav/prototype/hallway)
 "cb" = (
 /obj/machinery/atmospherics/components/unary/vent_pump,
@@ -665,6 +682,18 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/obj/item/ammo_casing/spent{
+	pixel_x = 3;
+	pixel_y = -6
+	},
+/obj/item/ammo_casing/spent{
+	pixel_x = -6;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/hallway)
 "cg" = (
@@ -684,9 +713,6 @@
 /obj/structure/window/spawner/north,
 /turf/open/floor/plating,
 /area/ruin/has_grav/prototype/botany)
-"cj" = (
-/turf/open/floor/plating,
-/area/ruin/has_grav/prototype/solars)
 "ck" = (
 /obj/machinery/door/window/northright{
 	name = "Terrarium"
@@ -992,7 +1018,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/arrivals)
 "dh" = (
 /turf/open/floor/plating/airless,
@@ -1008,11 +1034,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/has_grav/prototype/botany)
-"dk" = (
-/turf/open/floor/plating/airless{
-	icon_state = "platingdmg2"
-	},
-/area/ruin/has_grav/prototype/hallway)
 "dl" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable,
@@ -1084,13 +1105,13 @@
 "dx" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/dorms)
 "dy" = (
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/dorms)
 "dz" = (
 /turf/open/floor/plating/airless{
@@ -1100,11 +1121,11 @@
 "dA" = (
 /obj/structure/frame/machine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "dB" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "dC" = (
 /obj/structure/cable,
@@ -1122,9 +1143,7 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/structure/closet/crate/engineering{
-	name = "Solar Assembly Crate"
-	},
+/obj/structure/closet/crate/solarpanel_medium,
 /turf/open/floor/plating,
 /area/ruin/has_grav/prototype/engineering)
 "dF" = (
@@ -1132,12 +1151,12 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "dG" = (
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "dH" = (
 /obj/machinery/power/smes,
@@ -1165,6 +1184,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/official/build{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/engineering)
 "dK" = (
@@ -1265,13 +1287,25 @@
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/hallway)
 "dX" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/dorms)
+/obj/item/stack/sheet/mineral/plasma{
+	amount = 50
+	},
+/obj/item/stack/sheet/mineral/plasma{
+	amount = 50
+	},
+/obj/structure/closet/crate/secure/plasma{
+	locked = 0
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/engineering)
 "dY" = (
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "dZ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer1{
@@ -1279,7 +1313,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "ea" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -1291,7 +1325,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "eb" = (
 /obj/machinery/atmospherics/components/unary/vent_pump{
@@ -1299,7 +1333,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "ec" = (
 /obj/machinery/airalarm/directional/north,
@@ -1396,18 +1430,11 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/engineering)
 "er" = (
-/obj/structure/cable,
-/obj/machinery/door/airlock/public/glass{
-	name = "Botany"
+/obj/machinery/door/airlock{
+	name = "Cabin 1"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 8
-	},
-/turf/open/floor/plasteel,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/dorms)
 "es" = (
 /obj/structure/chair{
@@ -1448,17 +1475,17 @@
 /area/ruin/has_grav/prototype/hallway)
 "ex" = (
 /obj/machinery/door/airlock{
-	name = "Cabin 1"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/dorms)
-"ey" = (
-/obj/machinery/door/airlock{
 	name = "Cabin 2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/dorms)
+"ey" = (
+/obj/machinery/door/airlock{
+	name = "Cabin 3"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/dorms)
 "ez" = (
 /obj/effect/decal/cleanable/blood/footprints{
@@ -1468,12 +1495,13 @@
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/hallway)
 "eA" = (
-/obj/machinery/door/airlock{
-	name = "Cabin 3"
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/west{
+	cell_type = /obj/item/stock_parts/cell/high/empty
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/dorms)
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/botany)
 "eB" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
@@ -1488,16 +1516,15 @@
 /area/ruin/has_grav/prototype/hallway)
 "eC" = (
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/west{
-	cell_type = /obj/item/stock_parts/cell/high/empty
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "eD" = (
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "eE" = (
 /obj/structure/cable,
@@ -1515,21 +1542,20 @@
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/hallway)
 "eF" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/botany)
-"eG" = (
 /obj/machinery/hydroponics/constructable{
 	anchored = 0
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/botany)
+"eG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/watertank/high,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "eH" = (
 /obj/structure/lattice,
+/obj/item/clothing/glasses/science,
 /mob/living/simple_animal/hostile/carp,
 /turf/template_noop,
 /area/ruin/has_grav/prototype/medsci)
@@ -1551,11 +1577,9 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/dorms)
 "eL" = (
-/obj/structure/window/spawner,
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/botany)
+/obj/structure/table/wood,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered)
 "eM" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/command{
@@ -1564,12 +1588,16 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/wood,
 /area/ruin/has_grav/prototype/Captain)
 "eN" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	icon_state = "manifold-2";
 	dir = 1
+	},
+/obj/structure/sign/warning/nosmoking{
+	pixel_y = 32
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/engineering)
@@ -1580,20 +1608,20 @@
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/engineering)
 "eP" = (
-/obj/machinery/door/window{
-	name = "Botany"
-	},
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/structure/window/spawner,
+/obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "eQ" = (
 /obj/structure/window/spawner,
-/obj/machinery/vending/hydronutrients,
+/obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/obj/item/reagent_containers/spray/cleaner,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "eR" = (
 /obj/structure/cable,
@@ -1605,25 +1633,21 @@
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/engineering)
 "eS" = (
-/obj/structure/window/spawner,
-/obj/machinery/vending/hydroseeds,
+/obj/machinery/door/window{
+	name = "Botany"
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "eT" = (
-/obj/structure/cable,
-/obj/machinery/door/airlock/public/glass{
-	name = "Dormitories"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/arrivals)
+/obj/structure/window/spawner,
+/obj/machinery/vending/hydronutrients,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/botany)
 "eU" = (
 /obj/structure/lattice,
 /obj/item/wallframe/button,
@@ -1660,6 +1684,18 @@
 /obj/item/stack/sheet/glass/fifty{
 	layer = 2.99
 	},
+/obj/item/stack/sheet/metal/fifty{
+	layer = 2.99
+	},
+/obj/item/stack/sheet/metal/fifty{
+	layer = 2.99
+	},
+/obj/item/stack/sheet/glass/fifty{
+	layer = 2.99
+	},
+/obj/item/stack/sheet/glass/fifty{
+	layer = 2.99
+	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/engineering)
 "eX" = (
@@ -1684,6 +1720,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer1{
 	icon_state = "scrub_map-1";
 	dir = 8
+	},
+/obj/structure/sign/departments/engineering{
+	pixel_y = -32
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/engineering)
@@ -1713,28 +1752,29 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/dorms)
 "fd" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 8
-	},
+/obj/structure/window/spawner,
+/obj/machinery/vending/hydroseeds,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "fe" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer1,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/botany)
+/obj/machinery/door/airlock/public/glass{
+	name = "Dormitories"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/arrivals)
 "ff" = (
 /obj/structure/cable,
-/obj/item/shard{
-	icon_state = "medium"
+/obj/machinery/door/airlock/public/glass{
+	name = "Botany"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -1743,14 +1783,10 @@
 	icon_state = "pipe11-1";
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/botany)
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/dorms)
 "fg" = (
 /obj/structure/cable,
-/obj/machinery/door/airlock/engineering{
-	name = "Engineering"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -1759,8 +1795,8 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/engineering)
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/botany)
 "fh" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -1821,9 +1857,11 @@
 /turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/arrivals)
 "fn" = (
-/obj/structure/window/spawner/north,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer1,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "fo" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1940,13 +1978,20 @@
 /turf/template_noop,
 /area/ruin/has_grav/prototype/arrivals)
 "fE" = (
-/obj/machinery/atmospherics/components/unary/vent_pump{
-	icon_state = "vent_map-2";
+/obj/structure/cable,
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/arrivals)
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/botany)
 "fF" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt,
@@ -2015,21 +2060,26 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/arrivals)
 "fO" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood/gibs/body,
-/obj/effect/decal/cleanable/blood/gibs/old,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/carp/megacarp,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/has_grav/prototype/hallway)
 "fP" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/carp{
-	icon_state = "base";
+/obj/structure/cable,
+/obj/machinery/door/airlock/engineering{
+	name = "Engineering"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
 	dir = 8
 	},
-/turf/open/floor/plasteel/cafeteria,
-/area/ruin/has_grav/prototype/kitchen)
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/engineering)
 "fQ" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/carp{
@@ -2161,9 +2211,9 @@
 	},
 /area/ruin/has_grav/prototype/hallway)
 "gp" = (
+/obj/structure/window/spawner/north,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/reagent_dispensers/watertank/high,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/airless,
 /area/ruin/has_grav/prototype/botany)
 "gq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2201,21 +2251,13 @@
 	},
 /area/ruin/has_grav/prototype/botany)
 "gv" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+/obj/machinery/atmospherics/components/unary/vent_pump{
+	icon_state = "vent_map-2";
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stack/sheet/mineral/plasma{
-	amount = 50
-	},
-/obj/item/stack/sheet/mineral/plasma{
-	amount = 50
-	},
-/obj/structure/closet/crate/secure/plasma{
-	locked = 0
-	},
-/turf/open/floor/plasteel,
-/area/ruin/has_grav/prototype/engineering)
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/arrivals)
 "gw" = (
 /obj/structure/chair{
 	dir = 4
@@ -2240,6 +2282,31 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"gA" = (
+/obj/structure/sign/departments/evac,
+/turf/closed/wall,
+/area/ruin/has_grav/prototype/arrivals)
+"gB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/nanotrasen{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/hallway)
+"gC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/departments/medbay/alt{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/hallway)
+"gD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/departments/science/alt{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/has_grav/prototype/hallway)
 
 (1,1,1) = {"
 aa
@@ -2310,7 +2377,7 @@ aa
 aa
 "}
 (3,1,1) = {"
-aa
+bI
 aa
 aK
 fZ
@@ -2351,7 +2418,7 @@ fY
 an
 gq
 ad
-bU
+gD
 bU
 cn
 be
@@ -2369,7 +2436,7 @@ bk
 bk
 aa
 ei
-af
+eL
 gr
 ei
 aa
@@ -2395,8 +2462,8 @@ be
 bR
 be
 bR
-be
-fE
+gA
+gv
 fM
 cG
 cK
@@ -2419,7 +2486,7 @@ ga
 ae
 bn
 ad
-bU
+gC
 fr
 dT
 be
@@ -2529,7 +2596,7 @@ be
 be
 be
 be
-eT
+fe
 be
 be
 be
@@ -2560,8 +2627,8 @@ ew
 go
 ab
 dx
-dX
-ex
+eK
+er
 eK
 eV
 dh
@@ -2594,7 +2661,7 @@ dC
 cS
 ab
 dy
-dX
+eK
 ab
 dh
 eV
@@ -2657,13 +2724,13 @@ aj
 aP
 aj
 aj
-dk
+aH
 cH
 bB
 ab
 dx
-dX
-ey
+eK
+ex
 ep
 da
 cU
@@ -2689,14 +2756,14 @@ aa
 ak
 au
 aQ
-bv
+aS
 aj
 fz
 bB
 cH
 ab
 dy
-dX
+eK
 ab
 ec
 cU
@@ -2723,7 +2790,7 @@ aa
 ak
 av
 aR
-by
+bv
 bV
 bB
 cH
@@ -2756,20 +2823,20 @@ aa
 aa
 ak
 aw
-aS
-bH
+aQ
+by
 aj
 eU
 ez
 cS
 ab
 dx
-dX
-eA
+eK
+ey
 eK
 dh
 gk
-bz
+bt
 dh
 cU
 cW
@@ -2798,7 +2865,7 @@ eB
 go
 ab
 dy
-dX
+eK
 ab
 eK
 fc
@@ -2835,7 +2902,7 @@ ab
 ab
 ab
 ab
-er
+ff
 ab
 ab
 ab
@@ -2859,7 +2926,7 @@ aa
 ap
 ax
 aU
-bI
+bz
 ao
 cS
 cy
@@ -2867,10 +2934,10 @@ bU
 do
 dA
 dY
-eC
-eL
-fd
-fn
+eA
+eP
+fg
+gp
 dB
 dd
 cX
@@ -2901,10 +2968,10 @@ bU
 dj
 dB
 dZ
-eD
-eL
-fd
-fn
+eC
+eQ
+fg
+gp
 cq
 gn
 gm
@@ -2935,9 +3002,9 @@ bU
 gu
 dF
 ea
-eF
-eP
-fe
+eD
+eS
+fn
 ck
 dd
 cV
@@ -2948,7 +3015,7 @@ aa
 aa
 bC
 eh
-cj
+bH
 aa
 bC
 eh
@@ -2969,9 +3036,9 @@ bU
 do
 dB
 eb
-eG
-eQ
-fd
+eF
+eT
+fg
 df
 cV
 cY
@@ -2982,9 +3049,9 @@ aa
 dw
 bD
 eh
-cj
+bH
 aa
-cj
+bH
 eh
 bD
 aa
@@ -2997,15 +3064,15 @@ ay
 ay
 ay
 ao
-bU
+gB
 cB
 cn
 bh
 dG
 dB
-gp
-eS
-ff
+eG
+fd
+fE
 ci
 gm
 cq
@@ -3016,7 +3083,7 @@ aa
 aa
 bD
 eh
-cj
+bH
 aa
 bD
 dl
@@ -3039,7 +3106,7 @@ bi
 bi
 bi
 bi
-fg
+fP
 bi
 bi
 bi
@@ -3048,13 +3115,13 @@ bi
 aa
 aa
 aa
-cj
+bH
 eh
-cj
+bH
 aa
-cj
+bH
 eh
-cj
+bH
 aa
 "}
 (25,1,1) = {"
@@ -3082,23 +3149,23 @@ bi
 aa
 aa
 aa
-cj
+bH
 eh
-cj
+bH
 aa
 bC
 eh
-cj
+bH
 aa
 "}
 (26,1,1) = {"
 aa
 aa
 aq
-aB
+af
+aJ
 bb
-bP
-aF
+aE
 bU
 cB
 cO
@@ -3129,10 +3196,10 @@ bC
 aa
 aa
 aq
-aC
+aB
+aW
 bc
-fP
-aF
+aE
 bU
 cD
 cP
@@ -3150,28 +3217,28 @@ bi
 aa
 aa
 aa
-cj
+bH
 eh
-cj
+bH
 aa
 bD
 eh
-cj
+bH
 aa
 "}
 (28,1,1) = {"
 aa
 aa
 aq
-aD
-bc
-bQ
-bW
+aC
+aW
+bd
+bP
 bU
 cD
 cQ
 bi
-gv
+dX
 bw
 cT
 cT
@@ -3186,21 +3253,21 @@ aa
 aa
 bC
 eh
-cj
+bH
 aa
 bD
 eh
-cj
+bH
 aa
 "}
 (29,1,1) = {"
 aa
 aa
 aq
+aD
+aW
+bd
 aE
-bc
-bQ
-aF
 bU
 cD
 cP
@@ -3218,23 +3285,23 @@ aa
 aa
 aa
 aa
-cj
+bH
 eh
 bD
 aa
-cj
+bH
 dl
-cj
+bH
 aa
 "}
 (30,1,1) = {"
 aa
 aa
 dm
-aF
-bd
-aF
-bX
+aE
+aX
+aE
+bQ
 bU
 cB
 dc
@@ -3252,13 +3319,13 @@ cJ
 aa
 aa
 aa
-cj
+bH
 eh
 bC
 aa
-cj
+bH
 dl
-cj
+bH
 gy
 "}
 (31,1,1) = {"
@@ -3267,8 +3334,8 @@ aa
 bA
 aG
 bf
-bS
-ca
+bT
+fO
 co
 cB
 fQ
@@ -3286,13 +3353,13 @@ aa
 aa
 aa
 aa
-cj
+bH
 eh
-cj
+bH
 aa
 bC
 eh
-cj
+bH
 aa
 "}
 (32,1,1) = {"
@@ -3300,8 +3367,8 @@ aa
 aa
 dn
 bx
-fO
-bT
+bl
+ca
 cb
 cp
 cM
@@ -3332,9 +3399,9 @@ aa
 (33,1,1) = {"
 aa
 aa
-fH
 aH
-bl
+aG
+bS
 bU
 fR
 bU
@@ -3367,13 +3434,13 @@ aa
 aa
 aa
 ar
-aI
+aF
 ar
-aI
+aF
 ar
-aW
+bW
 ar
-aW
+bW
 bj
 bF
 bM
@@ -3401,13 +3468,13 @@ aa
 aa
 aa
 ar
-aJ
+aI
 ar
-aJ
+aI
 ar
-aX
+bX
 ar
-aX
+bX
 bj
 bG
 fV
