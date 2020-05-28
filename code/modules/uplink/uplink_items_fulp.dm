@@ -105,3 +105,16 @@
 	cost = 1
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
+/datum/uplink_item/suits/hardsuit/assistant
+	name = "Assistant Hardsuit"
+	desc = "The assistant's choice of hardsuit. Same protection as Blood-red."
+	item = /obj/item/clothing/suit/space/hardsuit/assistant
+	cost = 0
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+
+/datum/uplink_item/suits/hardsuit/assistantelite
+	name = "Assistant Elite Hardsuit"
+	desc = "Used for ELITE greytiding."
+	item = /obj/item/clothing/suit/space/hardsuit/eliteassistant
+	cost = 8
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)

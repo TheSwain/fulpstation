@@ -58,6 +58,11 @@
 	var/datum/component/uplink/hidden_uplink = GetComponent(/datum/component/uplink)
 	hidden_uplink.set_gamemode(/datum/game_mode/nuclear/clown_ops)
 
+/obj/item/uplink/assistanntop/Initialize()
+	. = ..()
+	var/datum/component/uplink/hidden_uplink = GetComponent(/datum/component/uplink)
+	hidden_uplink.set_gamemode(/datum/game_mode/nuclear/assistant_ops)
+
 /obj/item/uplink/old
 	name = "dusty radio"
 	desc = "A dusty looking radio."

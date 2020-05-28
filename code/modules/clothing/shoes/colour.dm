@@ -13,9 +13,9 @@
 	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
 
 /obj/item/clothing/shoes/sneakers/black/assistant
-	name = "black shoes"
+	name = "Combat Assistant shoes"
 	icon_state = "black"
-	desc = "A pair of black shoes."
+	desc = "Engineered to protect the user from slipping, sweet!"
 	custom_price = 50
 
 	cold_protection = FEET
