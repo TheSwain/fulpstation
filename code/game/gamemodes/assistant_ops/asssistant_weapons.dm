@@ -3,6 +3,7 @@
 /obj/item/melee/transforming/energy/sword/greytide
 	name = "energy toolbox"
 	desc = "What could possibly go wrong?"
+	icon_state = "toolboxsword"
 	attack_verb_on = list("BONKED!")
 	w_class = WEIGHT_CLASS_HUGE
 	w_class_on = WEIGHT_CLASS_HUGE

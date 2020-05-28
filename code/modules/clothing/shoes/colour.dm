@@ -12,6 +12,18 @@
 	heat_protection = FEET
 	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
 
+/obj/item/clothing/shoes/sneakers/black/assistant
+	name = "black shoes"
+	icon_state = "black"
+	desc = "A pair of black shoes."
+	custom_price = 50
+
+	cold_protection = FEET
+	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
+	heat_protection = FEET
+	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
+	clothing_flags = NOSLIP
+
 /obj/item/clothing/shoes/sneakers/brown
 	name = "brown shoes"
 	desc = "A pair of brown shoes."
