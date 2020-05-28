@@ -927,10 +927,9 @@
 
 
 /obj/item/clothing/head/helmet/space/hardsuit/assistant
-	name = "Assistanthardsuit helmet"
+	name = "Assistant hardsuit helmet"
 	desc = "Err, totally not Syndicate property painted grey, promise!"
-	icon_state = "helmetassistant"
-	item_state = "helmetassistant"
+	icon_state = "helmetforassistant"
 	hardsuit_type = "assistant"
 	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
 	strip_delay = 600
@@ -942,7 +941,7 @@
 	item_state = "assistanthardsuit"
 	hardsuit_type = "assistant"
 	name = "Assistant hardsuit"
-	desc = ", totally not Syndicate property painted grey, promise!"
+	desc = "Err, totally not Syndicate property painted grey, promise!"
 	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
 	slowdown = 0
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/assistant
