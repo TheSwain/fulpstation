@@ -922,3 +922,30 @@
 	actions_types = list()
 
 #undef HARDSUIT_EMP_BURN
+
+//Assistant
+
+
+/obj/item/clothing/head/helmet/space/hardsuit/assistant
+	name = "Assistanthardsuit helmet"
+	desc = "Err, totally not Syndicate property painted grey, promise!"
+	icon_state = "helmetassistant"
+	item_state = "helmetassistant"
+	hardsuit_type = "assistant"
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
+	strip_delay = 600
+	actions_types = list()
+
+
+/obj/item/clothing/suit/space/hardsuit/assistant
+	icon_state = "assistanthardsuit"
+	item_state = "assistanthardsuit"
+	hardsuit_type = "assistant"
+	name = "Assistant hardsuit"
+	desc = ", totally not Syndicate property painted grey, promise!"
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
+	slowdown = 0
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/assistant
+	actions_types = list(/datum/action/item_action/toggle_helmet, /datum/action/item_action/toggle_spacesuit)
+	jetpack = /obj/item/tank/jetpack/suit
+
