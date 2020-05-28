@@ -948,11 +948,13 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet, /datum/action/item_action/toggle_spacesuit)
 	jetpack = /obj/item/tank/jetpack/suit
 
+//Elite assistant
+
 /obj/item/clothing/head/helmet/space/hardsuit/eliteassistant
 	name = "Elite Assistant hardsuit helmet"
 	desc = "Err, totally not Syndicate property painted grey, promise!"
 	icon_state = "elitehelmet"
-	hardsuit_type = "assistant"
+	hardsuit_type = "eliteassistant"
 	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
 	strip_delay = 600
 	actions_types = list()
@@ -960,8 +962,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/eliteassistant
 	icon_state = "eliteassistant"
-	item_state = "eliteicon"
-	hardsuit_type = "assistant"
+	item_state = "eliteassistant"
+	hardsuit_type = "eliteassistant"
 	name = "Elite Assistant hardsuit"
 	desc = "Err, totally not Syndicate property painted grey, promise!"
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 55, "bio" = 100, "rad" = 70, "fire" = 100, "acid" = 100)
