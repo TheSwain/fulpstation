@@ -35,7 +35,7 @@
 	icon_state = "bloodred_pajamas"
 	item_state = "bl_suit"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
-	
+
 /obj/item/clothing/under/syndicate/tacticool
 	name = "tacticool turtleneck"
 	desc = "Just looking at it makes you want to buy an SKS, go into the woods, and -operate-."
@@ -89,3 +89,10 @@
 	can_adjust = FALSE
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = NONE
+
+/obj/item/clothing/under/syndicate/assistantop
+	name = "assistant combat jumpsuit"
+	desc = "The classic jumpsuit, but beefed up."
+	icon_state = "grey"
+	item_state = "gy_suit"
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)

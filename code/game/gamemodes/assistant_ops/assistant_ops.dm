@@ -31,7 +31,7 @@
 
 /datum/outfit/syndicate/assistantop
 	name = "Assistant Operative - Basic"
-	uniform = /obj/item/clothing/under/color/grey
+	uniform = /obj/item/clothing/under/syndicate/assistantop
 	shoes = /obj/item/clothing/shoes/sneakers/black/assistant
 	mask = /obj/item/clothing/mask/gas
 	gloves = /obj/item/clothing/gloves/color/yellow
