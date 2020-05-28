@@ -942,7 +942,7 @@
 	hardsuit_type = "assistant"
 	name = "Assistant hardsuit"
 	desc = "Err, totally not Syndicate property painted grey, promise!"
-	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
 	slowdown = 0
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/assistant
 	actions_types = list(/datum/action/item_action/toggle_helmet, /datum/action/item_action/toggle_spacesuit)
