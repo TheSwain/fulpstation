@@ -105,16 +105,32 @@
 	cost = 1
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
-/datum/uplink_item/suits/hardsuit/assistant
+/datum/uplink_item/suits/assistant
 	name = "Assistant Hardsuit"
-	desc = "The assistant's choice of hardsuit. Same protection as Blood-red."
+	desc = "The assistant's choice of hardsuit. Same protection as Blood-red. Comes with insuls, so have no worries when  \
+	cutting wires attached to the SM!."
 	item = /obj/item/clothing/suit/space/hardsuit/assistant
 	cost = 0
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
-/datum/uplink_item/suits/hardsuit/assistantelite
+/datum/uplink_item/suits/assistantelite
 	name = "Assistant Elite Hardsuit"
 	desc = "Used for ELITE greytiding."
 	item = /obj/item/clothing/suit/space/hardsuit/eliteassistant
+	cost = 8
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+
+/datum/uplink_item/dangerous/improvshotty
+	name = "Improvised Shotgun"
+	desc = "Every greytider's wet dream, the ultimate shotgun! Disregard the haters who claim this weapon is unreliable, \
+	when chambered with special greytide ammo this weapon becomes a fierce force to reckon with!."
+	item = /obj/item/spear/grey_tide
+	cost = 1
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+
+/datum/uplink_item/ammo/shotgun/discountbag
+	name = "12g Ammo Discounted Duffel Bag"
+	desc = "Use with the improvised shotgun for maximum results! Make sure to share too!"
+	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/shotgun
 	cost = 8
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)

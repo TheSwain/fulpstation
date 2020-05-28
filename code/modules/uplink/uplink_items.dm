@@ -170,7 +170,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A random selection of cybernetic implants. Guaranteed 5 high quality implants. Comes with an autosurgeon."
 	item = /obj/item/storage/box/cyber_implants
 	cost = 40
-	include_modes = list(/datum/game_mode/nuclear)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/bundles_TC/medical
 	name = "Medical bundle"
@@ -178,7 +178,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			a Donksoft LMG, a box of riot darts and a pair of magboots to rescue your friends in no-gravity environments."
 	item = /obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle
 	cost = 15 // normally 20
-	include_modes = list(/datum/game_mode/nuclear)
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/bundles_TC/sniper
 	name = "Sniper bundle"
@@ -334,6 +334,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/pneumatic_cannon/pie/selfcharge
 	surplus = 0
 	include_modes = list(/datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/bananashield
 	name = "Bananium Energy Shield"
