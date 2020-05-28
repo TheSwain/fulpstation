@@ -100,7 +100,7 @@
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/syndicate/assistantop/skirt
-	name = "assistant combat jumpsuit"
+	name = "assistant combat jumpskirt"
 	desc = "The classic jumpsuit, but beefed up."
 	icon_state = "grey_skirt"
 	item_state = "gy_suit"
