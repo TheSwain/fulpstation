@@ -134,3 +134,11 @@
 	item = /obj/item/card/emag/budget
 	cost = 6
 
+/datum/uplink_item/device_tools/hulk
+ame = "Hulk Mutation"
+	desc = "So, being a normal greytider just wasn't enough was it? Now you want to be a SUPER grey tider! \
+			Well here's the Hulk mutation! With this baby that we stole from genetics, you can turn yourself into greytide killing \
+			machine and get goodies such as stun immunity."
+	item = /obj/item/dnainjector/hulkmut
+	cost = 10
+
