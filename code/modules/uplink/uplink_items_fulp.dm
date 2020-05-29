@@ -141,4 +141,18 @@ ame = "Hulk Mutation"
 			machine and get goodies such as stun immunity."
 	item = /obj/item/dnainjector/hulkmut
 	cost = 10
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
+/datum/uplink_item/support/deathripley
+	name = "Death Ripley"
+	desc = "Oh god where did you get this? Goddamn greytiders..."
+	item = /obj/mecha/working/ripley/deathripley
+	cost = 80
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+
+/datum/uplink_item/dangerous/espear
+	name = "Energy spear"
+	desc = "The greytide spear wasn't enough? Well here's an energy spear I suppose."
+	item = /obj/item/spear/grey_tide
+	cost = 5
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
