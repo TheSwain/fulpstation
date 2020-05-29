@@ -164,10 +164,3 @@
 	cost = 5
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
-/datum/uplink_item/dangerous/stunprod
-	name = "Advanced Stunprod"
-	desc = "Better than the normal one, 100% stun chance!"
-	item = /obj/item/melee/baton/cattleprod/assistant
-	cost = 5
-	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
-
