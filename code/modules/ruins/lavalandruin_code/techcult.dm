@@ -89,7 +89,7 @@
 	random = TRUE
 	death = FALSE
 	show_flavour = TRUE
-	mob_name = "the leader of tech cult"
+	mob_name = "the leader of a tech cult"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	short_desc = "You are the leader of the machine cult on Lavaland."
@@ -99,6 +99,7 @@
 	assignedrole = "Tech Cult Leader"
 
 /obj/effect/mob_spawn/human/techcult/leader/special(mob/living/new_spawn)
+	..()
 	new_spawn.mind.holy_role = HOLY_ROLE_PRIEST
 
 /datum/outfit/techcult/lead
@@ -123,11 +124,11 @@
 
 /obj/item/book/granter/spell/omnissiah
 	name = "Misterious book"
+	desc = "The sacred texts, allowing a higher tech priests to directly communicate with what is believed to be the Machine God itself."
 	spell = /obj/effect/proc_holder/spell/aoe_turf/conjure/tech
 	spellname = "holy gift"
 	icon_state ="bookcharge"
-	desc = "The sacred texts, allowing a higher tech priests to directly communicate with what is believed to be the Machine God itself."
-	remarks = list("But will it make me a mech?", "I could've just use the exosuit fabricator, huh?", "All powerful god, send me a honkbot!", "So it is a pocket robotic factory.")
+	remarks = list("But will it make me a mech?", "I could've just use the exosuit fabricator, huh?", "All powerful god, send me a honkbot!", "So it is a pocket robotic factory.", "This page is just full of binary code...", "Can it give me a laser arm?", "But can I get combat implants from here?")
 
 /obj/item/book/granter/spell/omnissiah/recoil(mob/living/user)
 	..()
@@ -145,7 +146,7 @@
 	range = 0
 	summon_type = list(/obj/effect/spawner/lootdrop/omnissiah)
 	action_icon_state = "emp"
-	cast_sound = 'sound/magic/summonitems_generic.ogg'
+	cast_sound = 'sound/magic/disable_tech.ogg'
 
 /obj/effect/spawner/lootdrop/omnissiah
 	name = "omnissiah gift spawner"
@@ -306,3 +307,46 @@
 	owner.reagents.add_reagent(/datum/reagent/medicine/salbutamol, 10)
 	dose_available = FALSE
 	addtimer(VARSET_CALLBACK(src, dose_available, TRUE), 1 MINUTES)
+
+// Reviver Implant PLUS
+/obj/item/organ/cyberimp/chest/reviver/plus
+	name = "Reviver implant PLUS"
+	desc = "This implant will attempt to heal you REALLY FAST if you lose consciousness. For the true warriors!"
+	icon_state = "chest_implant"
+	implant_color = "#CC0605"
+	slot = ORGAN_SLOT_HEART_AID
+
+/obj/item/organ/cyberimp/chest/reviver/plus/on_life()
+	if(reviving)
+		if(owner.stat == UNCONSCIOUS)
+			addtimer(CALLBACK(src, .proc/heal), 15) //Fast
+		else
+			cooldown = revive_cost + world.time
+			reviving = FALSE
+			to_chat(owner, "<span class='notice'>Your reviver implant shuts down and starts recharging. It will be ready again in [DisplayTimeText(revive_cost)].</span>")
+		return
+
+	if(cooldown > world.time)
+		return
+	if(owner.stat != UNCONSCIOUS)
+		return
+	if(owner.suiciding)
+		return
+
+	revive_cost = 0
+	reviving = TRUE
+	to_chat(owner, "<span class='notice'>You feel a faint buzzing as your reviver implant starts patching your wounds...</span>")
+
+/obj/item/organ/cyberimp/chest/reviver/plus/heal()
+	if(owner.getOxyLoss())
+		owner.adjustOxyLoss(-10) //REAL fast
+		revive_cost += 5
+	if(owner.getBruteLoss())
+		owner.adjustBruteLoss(-5)
+		revive_cost += 30
+	if(owner.getFireLoss())
+		owner.adjustFireLoss(-5)
+		revive_cost += 30
+	if(owner.getToxLoss())
+		owner.adjustToxLoss(-3)
+		revive_cost += 30
