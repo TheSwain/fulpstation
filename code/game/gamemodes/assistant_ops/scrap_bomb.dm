@@ -4,7 +4,7 @@
 	icon = 'icons/obj/machines/nuke.dmi'
 	icon_state = "nuclearbomb0"
 
-/obj/machinery/nuclearbomb/syndicate/bananium/update_icon_state()
+/obj/machinery/nuclearbomb/syndicate/scrap/update_icon_state()
 	if(deconstruction_state != NUKESTATE_INTACT)
 		icon_state = "nuclearbomb0"
 		return
