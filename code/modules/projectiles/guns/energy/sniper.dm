@@ -1,6 +1,6 @@
 /obj/item/gun/energy/sniper
 	name = "energy sniper rifle"
-	desc = "And advanced piece of weaponry forged on Mars in 40th Millenia."
+	desc = "An advanced piece of weaponry forged on Mars in 40th Millenia."
 	icon_state = "sniper"
 	item_state = "sniper"
 	icon = 'icons/Fulpicons/energy_sniper.dmi'

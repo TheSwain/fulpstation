@@ -14,6 +14,11 @@
 	uses_overlays = FALSE
 	registered_age = null
 
+/obj/item/card/id/away/techcult/lead
+	name = "tech cult leader ID card"
+	desc = "An ID card used by leader of the religious group praising misterious machine god."
+	access = list(ACCESS_MECHANICUS_BASIC, ACCESS_MECHANICUS_LEADER, ACCESS_ROBOTICS)
+
 /***************** Closets *****************/
 
 /obj/structure/closet/secure_closet/mechanicus
@@ -68,7 +73,7 @@
 	assignedrole = "Tech Priest"
 
 /obj/effect/mob_spawn/human/techcult/special(mob/living/new_spawn)
-	new_spawn.grant_language(/datum/language/machine, TRUE, TRUE, LANGUAGE_MIND)
+	new_spawn.grant_language(/datum/language/machine, TRUE, TRUE, LANGUAGE_MIND) //They have to implant robotic box instead of a tongue to speak this language though.
 
 /datum/outfit/techcult
 	name = "Tech Priest"
@@ -159,8 +164,14 @@
 				/mob/living/simple_animal/bot/honkbot = 48,
 				/obj/item/robot_suit/prebuilt = 40,
 				/obj/item/mmi/posibrain = 34,
-				/obj/item/stock_parts/cell/bluespace = 28,
-				/obj/item/stock_parts/cell/quantum = 14,
+				/obj/item/stock_parts/cell/quantum = 18,
+				/obj/item/organ/cyberimp/chest/reviver/plus = 11,
+				/obj/item/bodypart/chest/robot/empproof = 7,
+				/obj/item/bodypart/head/robot/empproof = 7,
+				/obj/item/bodypart/l_arm/robot/empproof = 7,
+				/obj/item/bodypart/r_arm/robot/empproof = 7,
+				/obj/item/bodypart/l_leg/robot/empproof = 7,
+				/obj/item/bodypart/r_leg/robot/empproof = 7,
 				/obj/item/organ/cyberimp/arm/gun/laser = 2,
 				/obj/item/organ/cyberimp/arm/combat = 1,)
 
@@ -199,15 +210,17 @@
 
 /***************** Researches *****************/
 
+//Main Tech
 /datum/techweb_node/mars_tech
 	id = "mars_tech"
 	display_name = "Marsian Technology"
-	description = "A complicated technology, used my Marsian scientists and soldiers alike."
-	boost_item_paths = list(/obj/item/gun/energy/sniper, /obj/item/organ/heart/cybernetic/tier4)
+	description = "A complicated technology, used by Marsian scientists and soldiers alike."
+	boost_item_paths = list(/obj/item/gun/energy/sniper, /obj/item/organ/heart/cybernetic/tier4, /obj/item/organ/lungs/cybernetic/tier4, /obj/item/organ/cyberimp/chest/reviver/plus)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 10000
 	hidden = TRUE
 
+//Sniper Rifle - Tech
 /datum/techweb_node/energy_sniper
 	id = "energy_sniper"
 	display_name = "Energy Sniper Rifle"
@@ -219,38 +232,58 @@
 
 /datum/design/energysniper
 	name = "Energy Sniper Rifle"
-	desc = "An advanced piece of weaponry used by soldiers of Mars and misterious followers of Machine God."
+	desc = "An advanced piece of weaponry forged on Mars in 40th Millenia."
 	id = "energysniper"
+	construction_time = 200
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 12000, /datum/material/glass = 8000, /datum/material/diamond = 5000, /datum/material/uranium = 10000, /datum/material/silver = 5000, /datum/material/gold = 5000)
 	build_path = /obj/item/gun/energy/sniper
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+//Organs - Tech
 /datum/techweb_node/cyber_organs_ultra
 	id = "cyber_organs_ultra"
-	display_name = "Energy Sniper Rifle"
-	description = "An advanced piece of weaponry, used by highly advanced group of religious fanatics on Mars."
+	display_name = "Quadro-Cybernetic Organs"
+	description = "An advanced set of cybernetic organs, used by highly advanced group of religious fanatics on Mars."
 	prereq_ids = list("cyber_organs_upgraded", "mars_tech")
-	design_ids = list("cybernetic_heart_tier4")
+	design_ids = list("cybernetic_heart_tier4", "cybernetic_lungs_tier4")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
 /datum/design/cybernetic_heart/tier4
 	name = "Quadro-Cybernetic Heart"
-	desc = "An experimental quadro-cybernetic heart."
+	desc = "An electronic device designed to mimic the functions of an organic human heart. Can inject with set of chemicals when user enter critical condition and regenerate the dose later."
 	id = "cybernetic_heart_tier4"
-	construction_time = 60
-	materials = list(/datum/material/iron = 1000, /datum/material/glass = 1000, /datum/material/silver=500, /datum/material/gold=500, /datum/material/uranium=500)
+	construction_time = 100
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 1000, /datum/material/silver=500, /datum/material/gold=500, /datum/material/uranium=500, /datum/material/diamond=500)
 	build_path = /obj/item/organ/heart/cybernetic/tier4
 
 /datum/design/cybernetic_lungs/tier4
 	name = "Quadro-Cybernetic Lungs"
-	desc = "An experimental quadro-cybernetic lungs."
+	desc = "Advanced set of cybernetic lungs capable of filtering high amounts of toxins, cold and heat in the air. This one is capable of working with as low as 6KPa of oxygen. Supplies the body with salbutamol, should the user enter critical condition."
 	id = "cybernetic_lungs_tier4"
-	construction_time = 60
-	materials = list(/datum/material/iron = 1000, /datum/material/glass = 1000, /datum/material/silver=500, /datum/material/gold=500, /datum/material/uranium=500)
+	construction_time = 100
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 1000, /datum/material/silver=500, /datum/material/gold=500, /datum/material/uranium=500, /datum/material/diamond=500)
 	build_path = /obj/item/organ/lungs/cybernetic/tier4
+
+//Implants - Tech
+/datum/techweb_node/mars_cyber_implants
+	id = "mars_cyber_implants"
+	display_name = "Marsian Cybernetic Implants"
+	description = "Highly advanced cybernetic implants used to improve efficiency to the maximum."
+	prereq_ids = list("combat_cyber_implants", "mars_tech")
+	design_ids = list("ci-reviver-plus")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 5000
+
+/datum/design/cyberimp_reviver
+	name = "Reviver Implant PLUS"
+	desc = "This implant will attempt to heal you REALLY FAST if you lose consciousness. For the true warriors!"
+	id = "ci-reviver-plus"
+	construction_time = 100
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 2000, /datum/material/uranium = 1500, /datum/material/gold = 1000, /datum/material/diamond=500)
+	build_path = /obj/item/organ/cyberimp/chest/reviver/plus
 
 /***************** T4 cybernetics *****************/
 
@@ -263,7 +296,7 @@
 	icon_state = "heart-c-u3"
 	maxHealth = 3 * STANDARD_ORGAN_THRESHOLD
 	dose_available = TRUE
-	emp_vulnerability = 0
+	emp_vulnerability = 5
 
 /obj/item/organ/heart/cybernetic/tier4/on_life()
 	. = ..()
@@ -287,7 +320,7 @@
 	safe_co2_max = 50
 	safe_oxygen_min = 6
 	maxHealth = 3 * STANDARD_ORGAN_THRESHOLD
-	emp_vulnerability = 0
+	emp_vulnerability = 5
 
 	var/dose_available = TRUE
 
@@ -312,14 +345,12 @@
 /obj/item/organ/cyberimp/chest/reviver/plus
 	name = "Reviver implant PLUS"
 	desc = "This implant will attempt to heal you REALLY FAST if you lose consciousness. For the true warriors!"
-	icon_state = "chest_implant"
 	implant_color = "#CC0605"
-	slot = ORGAN_SLOT_HEART_AID
 
 /obj/item/organ/cyberimp/chest/reviver/plus/on_life()
 	if(reviving)
 		if(owner.stat == UNCONSCIOUS)
-			addtimer(CALLBACK(src, .proc/heal), 15) //Fast
+			addtimer(CALLBACK(src, .proc/heal), 10) //Fast
 		else
 			cooldown = revive_cost + world.time
 			reviving = FALSE
@@ -343,10 +374,59 @@
 		revive_cost += 5
 	if(owner.getBruteLoss())
 		owner.adjustBruteLoss(-5)
-		revive_cost += 30
+		revive_cost += 40
 	if(owner.getFireLoss())
 		owner.adjustFireLoss(-5)
-		revive_cost += 30
+		revive_cost += 40
 	if(owner.getToxLoss())
 		owner.adjustToxLoss(-3)
-		revive_cost += 30
+		revive_cost += 40
+
+/***************** EMP-Proof Robotic Limbs *****************/
+
+/obj/item/bodypart/chest/robot/empproof
+	name = "emp-proof cyborg chest"
+	empproof = TRUE //EMP PROOF HAHA
+
+/obj/item/bodypart/head/robot/empproof
+	name = "emp-proof cyborg head"
+	empproof = TRUE
+
+/obj/item/bodypart/l_arm/robot/empproof
+	name = "emp-proof cyborg left arm"
+	empproof = TRUE
+
+/obj/item/bodypart/l_leg/robot/empproof
+	name = "emp-proof cyborg left leg"
+	empproof = TRUE
+
+/obj/item/bodypart/r_arm/robot/empproof
+	name = "emp-proof cyborg right arm"
+	empproof = TRUE
+
+/obj/item/bodypart/r_leg/robot/empproof
+	name = "emp-proof cyborg right leg"
+	empproof = TRUE
+
+/obj/item/bodypart/Initialize()
+	..()
+	if(empproof)
+		desc += " This one is EMP-Proof, but won't help with cyborg production."
+
+/mob/living/carbon/human/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_CONTENTS)
+		return
+	var/informed = FALSE
+	for(var/obj/item/bodypart/L in src.bodyparts)
+		if(L.status == BODYPART_ROBOTIC && !L.empproof)
+			if(!informed)
+				to_chat(src, "<span class='userdanger'>You feel a sharp pain as your robotic limbs overload.</span>")
+				informed = TRUE
+			switch(severity)
+				if(1)
+					L.receive_damage(0,10)
+					Paralyze(200)
+				if(2)
+					L.receive_damage(0,5)
+					Paralyze(100)
