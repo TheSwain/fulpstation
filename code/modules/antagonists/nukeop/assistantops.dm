@@ -11,7 +11,7 @@
 	nukeop_outfit = /datum/outfit/syndicate/assistantop/leader
 	challengeitem = /obj/item/nuclear_challenge/assistantop
 
-/datum/antagonist/nukeop/leader/assistant/give_alias()
+/datum/antagonist/nukeop/leader/assistanopt/give_alias()
 	title = pick("Greytide McGee", "Assistant Assistant", "Dorms King", "Unknown")
 	if(nuke_team && nuke_team.syndicate_name)
 		owner.current.real_name = "[nuke_team.syndicate_name] [title]"
