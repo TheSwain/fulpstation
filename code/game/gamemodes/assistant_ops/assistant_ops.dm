@@ -2,7 +2,7 @@
 	name = "assistant ops"
 	config_tag = "assistantops"
 	required_players = 40
-	required_enemies = 7
+	required_enemies = 5
 	recommended_enemies = 15
 
 	announce_span = "danger"
