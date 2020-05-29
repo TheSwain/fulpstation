@@ -20,7 +20,7 @@
 /obj/machinery/nuclearbomb/syndicate/scrap/get_cinematic_type(off_station)
 	switch(off_station)
 		if(0)
-			return CINEMATIC_NUKE_WIN
+			return CINEMATIC_NUKE_CLOWNOP
 		if(1)
 			return CINEMATIC_NUKE_MISS
 		if(2)
