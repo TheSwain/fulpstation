@@ -156,3 +156,11 @@
 	item = /obj/item/spear/espear
 	cost = 5
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+
+/datum/uplink_item/dangerous/pnecannon
+	name = "Pneumatic Cannon"
+	desc = "Shove it full of spears and fire it on your unwitting foes! They'll never see it coming!"
+	item = /obj/item/pneumatic_cannon
+	cost = 5
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+
