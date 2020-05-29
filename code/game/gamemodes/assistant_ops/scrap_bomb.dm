@@ -4,7 +4,7 @@
 	icon = 'icons/obj/machines/nuke.dmi'
 	icon_state = "nuclearbomb0"
 
-/obj/machinery/nuclearbomb/syndicate/bananium/update_icon_state()
+/obj/machinery/nuclearbomb/syndicate/scrap/update_icon_state()
 	if(deconstruction_state != NUKESTATE_INTACT)
 		icon_state = "nuclearbomb0"
 		return
@@ -20,10 +20,7 @@
 /obj/machinery/nuclearbomb/syndicate/scrap/get_cinematic_type(off_station)
 	switch(off_station)
 		if(0)
-			if(istype(NM) && !NM.nuke_team.syndies_escaped())
-				return CINEMATIC_ANNIHILATION
-			else
-				return CINEMATIC_NUKE_WIN
+			return CINEMATIC_NUKE_CLOWNOP
 		if(1)
 			return CINEMATIC_NUKE_MISS
 		if(2)
