@@ -2,7 +2,7 @@
 	name = "scrap fission explosive"
 	desc = "You probably shouldn't stick around to see if this is armed."
 	icon = 'icons/obj/machines/nuke.dmi'
-	icon_state = "bananiumbomb_base"
+	icon_state = "nuclearbomb0"
 
 /obj/machinery/nuclearbomb/syndicate/bananium/update_icon_state()
 	if(deconstruction_state != NUKESTATE_INTACT)
