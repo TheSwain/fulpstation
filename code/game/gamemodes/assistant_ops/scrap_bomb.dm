@@ -15,7 +15,7 @@
 		if(NUKE_ON_TIMING)
 			icon_state = "nuclearbomb2"
 		if(NUKE_ON_EXPLODING)
-			icon_state = "nucleaerbomb3"
+			icon_state = "nuclearbomb3"
 
 /obj/machinery/nuclearbomb/syndicate/scrap/get_cinematic_type(off_station)
 	switch(off_station)
