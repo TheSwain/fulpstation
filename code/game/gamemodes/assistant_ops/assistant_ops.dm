@@ -1,9 +1,9 @@
 /datum/game_mode/nuclear/assistant_ops
 	name = "assistant ops"
 	config_tag = "assistantops"
-	required_players = 80
-	required_enemies = 7
-	recommended_enemies = 15
+	required_players = 40
+	required_enemies = 3
+	recommended_enemies = 7
 
 	announce_span = "danger"
 	announce_text = "The greys have banded together to end Security's tyranny once and for all! All shall tremble before their toolbox! \n\
