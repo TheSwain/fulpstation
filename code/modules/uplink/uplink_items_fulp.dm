@@ -135,7 +135,7 @@
 	cost = 6
 
 /datum/uplink_item/device_tools/hulk
-ame = "Hulk Mutation"
+	name = "Hulk Mutation"
 	desc = "So, being a normal greytider just wasn't enough was it? Now you want to be a SUPER grey tider! \
 			Well here's the Hulk mutation! With this baby that we stole from genetics, you can turn yourself into greytide killing \
 			machine and get goodies such as stun immunity."
@@ -153,6 +153,6 @@ ame = "Hulk Mutation"
 /datum/uplink_item/dangerous/espear
 	name = "Energy spear"
 	desc = "The greytide spear wasn't enough? Well here's an energy spear I suppose."
-	item = /obj/item/spear/grey_tide
+	item = /obj/item/spear/espear
 	cost = 5
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
