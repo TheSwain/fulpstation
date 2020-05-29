@@ -489,7 +489,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		if(initial(SA.gold_core_spawnable) == mob_class)
 			mob_spawn_critters += T
 
-	var/chosen = pick(mob_spawn_nicecritters)
+	var/chosen = pick(mob_spawn_critters)
 	var/mob/living/simple_animal/C = new chosen(spawn_location)
 	return C
 
