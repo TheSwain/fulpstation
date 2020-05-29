@@ -147,6 +147,10 @@
 	excludefromjob = list("Head of Personnel")
 	altitems = list(/obj/item/clothing/head/mob_holder)
 
+/datum/objective_item/steal/iandog/New()
+	special_equipment += /obj/item/lazarus_injector
+	..()
+
 /datum/objective_item/steal/iandog/check_special_completion(obj/item/I)
 	if(istype(I, /obj/item/pet_carrier))
 		var/obj/item/pet_carrier/C = I
