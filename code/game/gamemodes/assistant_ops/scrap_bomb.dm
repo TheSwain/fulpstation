@@ -8,7 +8,6 @@
 	switch(off_station)
 		if(0)
 			return CINEMATIC_NUKE_CLOWNOP
-			SSticker.mode.station_was_nuked = TRUE
 		if(1)
 			return CINEMATIC_NUKE_MISS
 		if(2)
