@@ -170,3 +170,15 @@
 	. = ..()
 	if(active)
 		user.throw_item(target)
+
+/obj/item/grenade/assistant
+	name = "Greybull Grenade"
+	desc = "Hidden in a greybull, ready to explode!"
+	w_class = WEIGHT_CLASS_SMALL
+	icon = 'icons/obj/grenade.dmi'
+	icon_state = "energy_drink"
+	item_state = "energy_drink"
+	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
+	throw_speed = 3
+	throw_range = 7

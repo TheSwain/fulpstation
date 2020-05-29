@@ -1060,7 +1060,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "Grenadier's belt"
 	desc = "A belt containing 26 lethally dangerous and destructive grenades. Comes with an extra multitool and screwdriver."
 	item = /obj/item/storage/belt/grenade/full
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/assistant_ops)
+	include_modes = list(/datum/game_mode/nuclear)
+	exclude_modes = list(/datum/game_mode/nuclear/assistant_ops)
 	cost = 22
 	surplus = 0
 
