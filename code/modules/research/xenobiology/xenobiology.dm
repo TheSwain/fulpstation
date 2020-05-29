@@ -742,6 +742,11 @@
 
 /obj/item/slimepotion/slime/sentience/proc/after_success(mob/living/user, mob/living/simple_animal/SM)
 	return
+	
+/obj/item/slimepotion/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	if(!.) //if the bottle wasn't caught
+		attack(hit_atom, throwingdatum?.thrower)
 
 /obj/item/slimepotion/slime/sentience/nuclear
 	name = "syndicate intelligence potion"
