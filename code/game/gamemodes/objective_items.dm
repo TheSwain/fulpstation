@@ -171,6 +171,10 @@
 	excludefromjob = list("Chief Engineer")
 	altitems = list(/obj/item/clothing/head/mob_holder)
 
+/datum/objective_item/steal/poly/New()
+	special_equipment += /obj/item/lazarus_injector
+	..()
+
 /datum/objective_item/steal/poly/check_special_completion(obj/item/B)
 	if(istype(B, /obj/item/pet_carrier))
 		var/obj/item/pet_carrier/A = B
@@ -191,6 +195,10 @@
 	excludefromjob = list("Chief Medical Officer")
 	altitems = list(/obj/item/clothing/head/mob_holder)
 
+/datum/objective_item/steal/runtimecat/New()
+	special_equipment += /obj/item/lazarus_injector
+	..()
+
 /datum/objective_item/steal/runtimecat/check_special_completion(obj/item/H)
 	if(istype(H, /obj/item/pet_carrier))
 		var/obj/item/pet_carrier/T = H
@@ -210,6 +218,10 @@
 	difficulty = 20
 	excludefromjob = list("Captain")
 	altitems = list(/obj/item/clothing/head/mob_holder)
+
+/datum/objective_item/steal/renaultfox/New()
+	special_equipment += /obj/item/lazarus_injector
+	..()
 
 /datum/objective_item/steal/renaultfox/check_special_completion(obj/item/K)
 	if(istype(K, /obj/item/pet_carrier))
