@@ -1,8 +1,8 @@
 /datum/game_mode/nuclear/assistant_ops
 	name = "assistant ops"
 	config_tag = "assistantops"
-	required_players = 80
-	required_enemies = 7
+	required_players = 40
+	required_enemies = 5
 	recommended_enemies = 15
 
 	announce_span = "danger"
@@ -43,7 +43,7 @@
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,
 		/obj/item/kitchen/knife/combat/survival,
 		/obj/item/crowbar/power)
-	uplink_type = /obj/item/uplink/assistanntop/
+	uplink_type = /obj/item/uplink/assistantop
 
 /datum/outfit/syndicate/assistantop/no_crystals
 	tc = 0

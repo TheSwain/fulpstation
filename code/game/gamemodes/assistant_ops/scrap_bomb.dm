@@ -2,12 +2,13 @@
 	name = "scrap fission explosive"
 	desc = "You probably shouldn't stick around to see if this is armed."
 	icon = 'icons/obj/machines/nuke.dmi'
-	icon_state = "bananiumbomb_base"
+	icon_state = "nuclearbomb0"
 
 /obj/machinery/nuclearbomb/syndicate/scrap/get_cinematic_type(off_station)
 	switch(off_station)
 		if(0)
-			return CINEMATIC_NUKE_WIN
+			return CINEMATIC_NUKE_CLOWNOP
+			SSticker.mode.station_was_nuked = TRUE
 		if(1)
 			return CINEMATIC_NUKE_MISS
 		if(2)

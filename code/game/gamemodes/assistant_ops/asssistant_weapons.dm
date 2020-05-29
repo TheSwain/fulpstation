@@ -5,7 +5,7 @@
 	desc = "What could possibly go wrong?"
 	icon_state = "toolboxsword"
 	attack_verb_on = list("BONKED!")
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_SMALL
 	w_class_on = WEIGHT_CLASS_HUGE
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
