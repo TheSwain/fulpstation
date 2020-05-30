@@ -179,3 +179,9 @@
 	surplus = 35
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
+/datum/uplink_item/device_tools/capspare
+	name = "Captain's Spare ID Card."
+	desc = "I mean, the Captain is basically an assistant with AA."
+	item = /obj/item/card/id/captains_spare
+	cost = 8
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
