@@ -172,7 +172,7 @@
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/explosives/assistantgrenade
-	name = "Bioterror Foam Grenade"
+	name = "Greytide Grenade"
 	desc = "A standard grenade, but hidden within a Grey Bull! Surprise your enemies with a fizzy blow!"
 	item = /obj/item/grenade/assistant
 	cost = 2

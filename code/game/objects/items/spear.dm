@@ -156,6 +156,7 @@
 	name = "\improper E-Spear"
 	desc = "Some crafty greytider decided his spear just wasn't powerful enough, and made it burn at over 3500 Kelvins!"
 	icon_state = "espear0"
+	item_state = "espear0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	attack_verb = list("gored")
