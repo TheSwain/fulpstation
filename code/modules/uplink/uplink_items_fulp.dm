@@ -173,6 +173,7 @@
 	cost = 5
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
+<<<<<<< HEAD
 /datum/uplink_item/explosives/assistantgrenade
 	name = "Bioterror Foam Grenade"
 	desc = "A standard grenade, but hidden within a Grey Bull! Surprise your enemies with a fizzy blow!"
@@ -183,3 +184,5 @@
 
 
 >>>>>>> parent of dc454b0fd7... Revert "Grenades"
+=======
+>>>>>>> parent of 6213201574... Revert "Added stunprod"
