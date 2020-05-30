@@ -39,7 +39,7 @@
 /area/shuttle/escape)
 "av" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/shuttle/escape)
 "aw" = (
 /obj/structure/chair/comfy/shuttle{
@@ -105,6 +105,9 @@
 /area/shuttle/escape)
 "aS" = (
 /obj/machinery/porta_turret,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark/corner{
 	dir = 4
 	},
@@ -116,6 +119,9 @@
 /area/shuttle/escape)
 "ba" = (
 /obj/machinery/porta_turret,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark/corner{
 	dir = 1
 	},
@@ -125,6 +131,9 @@
 /obj/item/kirbyplants{
 	pixel_y = 14
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/corner,
 /area/shuttle/escape)
 "bc" = (
@@ -133,22 +142,61 @@
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/shuttle/escape)
-"be" = (
-/obj/machinery/button{
+"bd" = (
+/obj/machinery/door/airlock/vault{
+	id_tag = 1;
+	name = "Cockpit";
 	req_access_txt = "19"
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/plasteel/dark,
 /area/shuttle/escape)
-"bf" = (
+"be" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/advanced,
 /turf/open/floor/plasteel/dark/side,
 /area/shuttle/escape)
+"bf" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/disabler,
+/turf/open/floor/plasteel/dark/corner{
+	dir = 8
+	},
+/area/shuttle/escape)
+"bh" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/disabler,
+/turf/open/floor/plasteel/dark/corner,
+/area/shuttle/escape)
+"bi" = (
+/obj/structure/table/reinforced,
+/obj/item/kirbyplants{
+	pixel_y = 14
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/corner{
+	dir = 8
+	},
+/area/shuttle/escape)
+"bj" = (
+/obj/structure/extinguisher_cabinet,
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/escape)
 "bk" = (
 /obj/machinery/door/airlock/vault{
+	id_tag = 3;
+	name = "Cockpit";
 	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/dark,
+/area/shuttle/escape)
+"bl" = (
+/obj/machinery/iv_drip,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "bm" = (
 /obj/effect/turf_decal/stripes/line{
@@ -156,16 +204,20 @@
 	},
 /turf/open/floor/engine,
 /area/shuttle/escape)
-"bn" = (
-/obj/structure/table/reinforced,
-/obj/item/gun/energy/disabler,
-/turf/open/floor/plasteel/dark/corner{
-	dir = 8
-	},
+"bo" = (
+/obj/structure/closet/crate/freezer/blood,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"bp" = (
+/obj/structure/closet/crate/freezer/surplus_limbs,
+/turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "bq" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/energy/disabler,
+/obj/item/storage/toolbox/mechanical,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/corner,
 /area/shuttle/escape)
 "bs" = (
@@ -190,17 +242,20 @@
 /area/shuttle/escape)
 "bw" = (
 /obj/machinery/door/airlock/vault{
-	req_access_txt = "5"
+	name = "Operating Room";
+	req_access_txt = "40"
 	},
 /turf/open/floor/engine,
 /area/shuttle/escape)
-"bA" = (
-/obj/machinery/stasis,
+"bG" = (
+/obj/structure/table/optable,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
-"bF" = (
-/obj/structure/table/reinforced,
-/obj/item/defibrillator,
+"bH" = (
+/obj/machinery/computer/operating{
+	dir = 1
+	},
+/obj/machinery/light,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "bI" = (
@@ -217,9 +272,11 @@
 /turf/open/floor/grass,
 /area/shuttle/escape)
 "bL" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/turf/open/floor/mineral/titanium/blue,
+/obj/machinery/vending/wallmed{
+	name = "Emergency NanoMed";
+	use_power = 0
+	},
+/turf/closed/wall/mineral/plastitanium,
 /area/shuttle/escape)
 "bN" = (
 /obj/structure/window/reinforced/spawner/east,
@@ -227,29 +284,14 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass,
 /area/shuttle/escape)
-"bQ" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/mineral/titanium/white,
-/area/shuttle/escape)
 "bT" = (
-/obj/structure/table/reinforced,
-/obj/item/kirbyplants{
-	pixel_y = 14
-	},
-/turf/open/floor/plasteel/dark/corner{
-	dir = 8
-	},
-/area/shuttle/escape)
-"bU" = (
-/obj/machinery/vending/wallmed{
-	name = "Emergency NanoMed";
-	use_power = 0
-	},
+/obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/plastitanium,
 /area/shuttle/escape)
-"bW" = (
-/obj/machinery/door/airlock/vault,
-/turf/open/floor/mineral/titanium/white,
+"bU" = (
+/obj/structure/table/reinforced,
+/obj/item/defibrillator,
+/turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "bX" = (
 /obj/structure/sign/nanotrasen,
@@ -269,20 +311,13 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/engine,
 /area/shuttle/escape)
-"ca" = (
-/obj/structure/sign/departments/medbay/alt,
-/turf/closed/wall/mineral/plastitanium,
-/area/shuttle/escape)
-"cc" = (
-/obj/structure/closet/crate/freezer/blood,
-/turf/open/floor/mineral/titanium/blue,
-/area/shuttle/escape)
-"cd" = (
-/obj/structure/closet/crate/freezer/surplus_limbs,
+"cb" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "ce" = (
-/obj/machinery/vending/medical,
+/obj/machinery/iv_drip,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "cf" = (
@@ -299,6 +334,9 @@
 /turf/open/floor/engine,
 /area/shuttle/escape)
 "ch" = (
+/obj/machinery/computer/med_data{
+	dir = 4
+	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "ci" = (
@@ -314,6 +352,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/machinery/light,
 /turf/open/floor/engine,
 /area/shuttle/escape)
 "cl" = (
@@ -327,25 +366,28 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
+/obj/machinery/light,
 /turf/open/floor/engine,
 /area/shuttle/escape)
+"cn" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/mineral/titanium/white,
+/area/shuttle/escape)
 "co" = (
-/obj/machinery/iv_drip,
+/obj/machinery/stasis,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "cp" = (
-/obj/structure/table/optable,
+/obj/machinery/light,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "cq" = (
-/obj/machinery/computer/operating{
-	dir = 1
-	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "cr" = (
-/obj/structure/extinguisher_cabinet,
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/plasteel/dark/side{
+	dir = 6
+	},
 /area/shuttle/escape)
 "cs" = (
 /obj/structure/sign/departments/security,
@@ -353,47 +395,68 @@
 /area/shuttle/escape)
 "ct" = (
 /obj/machinery/door/airlock/vault{
+	name = "Security";
 	req_access_txt = "1"
 	},
 /turf/open/floor/engine,
 /area/shuttle/escape)
 "cu" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/toolbox/mechanical,
-/turf/open/floor/plasteel/dark/corner,
-/area/shuttle/escape)
-"cv" = (
-/turf/open/floor/plasteel/dark/side{
-	dir = 6
-	},
-/area/shuttle/escape)
-"cw" = (
-/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark/side{
 	dir = 4
 	},
 /area/shuttle/escape)
-"cy" = (
+"cv" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/emergency,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/corner{
 	dir = 8
 	},
 /area/shuttle/escape)
-"cz" = (
+"cw" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
 /turf/open/floor/plasteel/dark/side{
 	dir = 4
 	},
 /area/shuttle/escape)
+"cx" = (
+/obj/machinery/computer/rdconsole/core,
+/turf/open/floor/plasteel/dark/side,
+/area/shuttle/escape)
+"cy" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-21"
+	},
+/turf/open/floor/plasteel/dark/side{
+	dir = 6
+	},
+/area/shuttle/escape)
+"cz" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/fire,
+/obj/item/crowbar/red,
+/turf/open/floor/plasteel/dark/side{
+	dir = 8
+	},
+/area/shuttle/escape)
 "cA" = (
-/obj/machinery/defibrillator_mount/loaded,
+/obj/machinery/button{
+	id = 1;
+	name = "Command Door Button";
+	req_access_txt = "19"
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/shuttle/escape)
 "cB" = (
-/obj/machinery/computer/rdconsole/core,
-/turf/open/floor/plasteel/dark/side,
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/turf/open/floor/plasteel/dark/side{
+	dir = 4
+	},
 /area/shuttle/escape)
 "cC" = (
 /obj/structure/table/reinforced,
@@ -412,12 +475,11 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "cF" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-21"
+/obj/machinery/button{
+	id = 3;
+	req_access_txt = "19"
 	},
-/turf/open/floor/plasteel/dark/side{
-	dir = 6
-	},
+/turf/closed/wall/mineral/plastitanium,
 /area/shuttle/escape)
 "cG" = (
 /obj/structure/table/reinforced,
@@ -427,9 +489,19 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
+"cI" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
 "cJ" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -454,6 +526,7 @@
 /area/shuttle/escape)
 "cX" = (
 /obj/machinery/door/airlock/vault{
+	name = "Brig";
 	req_access_txt = "2"
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -476,40 +549,7 @@
 /obj/structure/shuttle/engine/propulsion,
 /turf/open/floor/engine,
 /area/shuttle/escape)
-"eh" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"hx" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid,
-/obj/effect/turf_decal/stripes/line{
-	dir = 10
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"ih" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/handcuffs,
-/obj/item/storage/firstaid/tactical,
-/obj/effect/turf_decal/stripes/line{
-	dir = 10
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"qs" = (
-/obj/machinery/door/airlock/vault,
-/turf/open/floor/engine,
-/area/shuttle/escape)
-"sr" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/window/reinforced/spawner/west,
-/obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/grass,
-/area/shuttle/escape)
-"tj" = (
+"eK" = (
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner,
@@ -517,7 +557,65 @@
 /obj/item/reagent_containers/spray/waterflower,
 /turf/open/floor/grass,
 /area/shuttle/escape)
-"uR" = (
+"gb" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"hu" = (
+/obj/machinery/defibrillator_mount/loaded,
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/escape)
+"kQ" = (
+/obj/machinery/stasis,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"mA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"nB" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-22"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/shuttle/escape)
+"rl" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"tc" = (
+/obj/machinery/button{
+	id = 2;
+	name = "Brig Blast Door Button";
+	req_access_txt = "1"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/escape)
+"tv" = (
+/obj/machinery/vending/medical,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"vO" = (
 /obj/structure/table/reinforced,
 /obj/item/book/manual/wiki/security_space_law,
 /obj/item/melee/baton,
@@ -526,19 +624,110 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
-"vt" = (
+"DK" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/advanced,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"Ew" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/light,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"FS" = (
+/obj/machinery/stasis,
+/obj/machinery/light,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"Hq" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid,
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"It" = (
+/obj/machinery/door/airlock/vault{
+	name = "Medbay";
+	req_access_txt = "5"
+	},
+/turf/open/floor/engine,
+/area/shuttle/escape)
+"Jm" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/item/grown/novaflower,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"Jx" = (
+/obj/machinery/door/airlock/vault{
+	name = "Operating Room";
+	req_access_txt = "19"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/escape)
+"Nu" = (
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/item/reagent_containers/food/snacks/grown/rainbow_flower,
 /turf/open/floor/grass,
 /area/shuttle/escape)
-"xV" = (
+"OG" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/firstaid/tactical,
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"PY" = (
+/obj/machinery/door/poddoor{
+	id = 2
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"Tz" = (
 /obj/machinery/door/airlock/vault,
-/obj/docking_port/mobile/emergency,
 /turf/open/floor/engine,
 /area/shuttle/escape)
-"yY" = (
+"TG" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"Ud" = (
+/obj/structure/table/reinforced,
+/obj/item/toy/plush/goatplushie/angry/kinggoat,
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"Wz" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-22"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/shuttle/escape)
+"WQ" = (
+/obj/docking_port/mobile/emergency,
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/escape)
+"YS" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -547,112 +736,29 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
-"BF" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 9
-	},
-/turf/open/floor/engine,
-/area/shuttle/escape)
-"CS" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/stripes/line{
-	dir = 5
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"FE" = (
-/obj/machinery/door/airlock/vault{
-	req_access_txt = "40"
-	},
-/turf/open/floor/engine,
-/area/shuttle/escape)
-"GI" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/window/reinforced/spawner/west,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/item/grown/novaflower,
-/turf/open/floor/grass,
-/area/shuttle/escape)
-"Hj" = (
-/obj/structure/table/reinforced,
-/obj/item/toy/plush/goatplushie/angry/kinggoat,
-/obj/effect/turf_decal/stripes/line{
-	dir = 6
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"Ke" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"QH" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/advanced,
-/turf/open/floor/mineral/titanium/blue,
-/area/shuttle/escape)
-"QT" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 5
-	},
-/turf/open/floor/engine,
-/area/shuttle/escape)
-"Vn" = (
-/obj/structure/table/reinforced,
-/obj/machinery/cell_charger,
-/turf/open/floor/plasteel/dark/side{
-	dir = 4
-	},
-/area/shuttle/escape)
-"Vt" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/fire,
-/obj/item/crowbar/red,
-/turf/open/floor/plasteel/dark/side{
-	dir = 8
-	},
-/area/shuttle/escape)
-"WO" = (
-/obj/machinery/door/poddoor,
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"ZC" = (
-/obj/machinery/computer/med_data{
-	dir = 4
-	},
-/turf/open/floor/mineral/titanium/blue,
-/area/shuttle/escape)
 
 (1,1,1) = {"
 aa
 cS
-cr
+bj
+cS
+cS
+cA
+cS
+cS
+WQ
 cS
 cS
 cS
 cS
 cS
-cS
-cS
-cS
-cS
-cS
-cS
-qs
+Tz
 bX
-xV
+Tz
 cS
 cS
 cS
-cS
+tc
 cS
 cS
 cS
@@ -661,13 +767,13 @@ aa
 (2,1,1) = {"
 cS
 cS
-cu
+bq
 ap
 az
-Vn
+cB
 aS
 bc
-BF
+Wz
 bI
 bI
 bI
@@ -681,19 +787,19 @@ cS
 cC
 cT
 cT
-ih
+OG
 cS
 cS
 "}
 (3,1,1) = {"
 cS
 bb
-cv
+cr
 aQ
 aQ
 aQ
 aZ
-bk
+bd
 bm
 bs
 bY
@@ -708,40 +814,40 @@ cs
 cJ
 db
 db
-Ke
+Ew
 dc
 de
 "}
 (4,1,1) = {"
 av
-bf
+be
 ar
 ar
 aQ
 aQ
 aZ
-be
+cS
 bm
 bt
-sr
+TG
 bK
 bN
-vt
-GI
-sr
-tj
+Nu
+Jm
+TG
+eK
 cl
 ct
-eh
+mA
 db
 db
-Ke
+gb
 dc
 de
 "}
 (5,1,1) = {"
 av
-bn
+bf
 ai
 as
 aC
@@ -762,7 +868,7 @@ cs
 cJ
 db
 db
-Ke
+Ew
 dc
 de
 "}
@@ -775,7 +881,7 @@ aD
 aN
 aZ
 cS
-QT
+nB
 cg
 cg
 cg
@@ -789,7 +895,7 @@ cS
 cE
 cW
 cW
-uR
+vO
 dc
 de
 "}
@@ -802,16 +908,16 @@ aE
 aN
 aZ
 cS
-cS
+bT
 bw
-ca
-bQ
-bQ
-bQ
 cS
-ca
-FE
 cS
+cS
+It
+bT
+cn
+cn
+cn
 cS
 cS
 cX
@@ -828,22 +934,22 @@ av
 aF
 aN
 aZ
-bU
-co
-ch
-bF
-bL
-ZC
-co
-bU
-ce
-ch
+cS
+tv
 cq
+bH
+bL
+ce
+cq
+bU
+cb
+ch
+ce
 cS
 cG
 cY
 cY
-hx
+Hq
 dc
 de
 "}
@@ -855,22 +961,22 @@ av
 aG
 aN
 aZ
-cA
-bA
+cS
+bo
+ci
+bG
+hu
+kQ
 ci
 ci
 ci
 ci
-bA
-cA
-cc
-ci
-cp
-cA
+FS
+cS
 cJ
 db
 db
-Ke
+Ew
 dc
 de
 "}
@@ -879,159 +985,159 @@ av
 av
 av
 av
-cB
+cx
 aN
 aZ
 cS
-ch
+cb
 ci
-ci
-ci
-ci
-ch
+ce
 cS
-bL
+cq
 ci
-co
+ci
+ci
+ci
+cq
 cS
-cJ
+cI
 db
 db
-Ke
+gb
 dc
 de
 "}
 (11,1,1) = {"
 av
-bq
+bh
+cu
 cw
-cz
-cF
+cy
 aQ
 aZ
-bU
-co
-ci
-ci
-ci
-ci
-co
-bU
-QH
-ci
-ch
 cS
-cJ
+DK
+ci
+cq
+bL
+ce
+ci
+ci
+ci
+ci
+ce
+cS
+cI
 db
 db
-Ke
+gb
 dc
 de
 "}
 (12,1,1) = {"
 av
-bf
+be
 aw
 aw
 aQ
 aQ
 aZ
-cA
-bA
+cS
+cb
+ci
+ce
+hu
+co
 ci
 ci
 ci
-ci
-bA
-cA
-bL
 ci
 co
 cS
-cJ
+cI
 db
 db
-Ke
+gb
 dc
 de
 "}
 (13,1,1) = {"
 cS
-bT
+bi
 ao
 aQ
 aQ
 aQ
 aZ
 bk
-ch
+bp
+ci
+bG
+Jx
+cq
 ci
 ci
 ci
-ci
-ch
-bW
-cd
 ci
 cp
-cA
+cS
 cJ
 db
 db
-Ke
+Ew
 dc
 de
 "}
 (14,1,1) = {"
 cS
 cS
-cy
+cv
 ay
-Vt
+cz
 aR
 ba
 cS
-co
-bA
-ch
-co
-bA
-ch
+tv
+cq
+bH
 cS
+bl
+co
+cq
 ce
-ch
+co
 cq
 cS
-CS
-yY
-yY
-Hj
+rl
+YS
+YS
+Ud
 cS
 cS
 "}
 (15,1,1) = {"
 aa
 cS
-cr
+bj
+cS
+cS
+cF
 cS
 cS
 cS
 cS
 cS
 cS
-cA
-bU
 cS
-cA
-bU
+hu
+bL
 cS
-cS
-cS
+hu
+bL
 cS
 cS
-cS
-WO
-WO
+PY
+PY
 cS
 cS
 aa
