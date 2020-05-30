@@ -208,10 +208,6 @@
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
-"bp" = (
-/obj/structure/closet/crate/freezer/surplus_limbs,
-/turf/open/floor/mineral/titanium/blue,
-/area/shuttle/escape)
 "bq" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical,
@@ -246,6 +242,10 @@
 	req_access_txt = "40"
 	},
 /turf/open/floor/engine,
+/area/shuttle/escape)
+"bA" = (
+/obj/structure/closet/crate/freezer/surplus_limbs,
+/turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "bG" = (
 /obj/structure/table/optable,
@@ -549,169 +549,7 @@
 /obj/structure/shuttle/engine/propulsion,
 /turf/open/floor/engine,
 /area/shuttle/escape)
-"eK" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/window/reinforced/spawner/west,
-/obj/structure/window/reinforced/spawner,
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/item/reagent_containers/spray/waterflower,
-/turf/open/floor/grass,
-/area/shuttle/escape)
-"gb" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"hu" = (
-/obj/machinery/defibrillator_mount/loaded,
-/turf/closed/wall/mineral/plastitanium,
-/area/shuttle/escape)
-"kQ" = (
-/obj/machinery/stasis,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/mineral/titanium/blue,
-/area/shuttle/escape)
-"mA" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"nB" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 5
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/engine,
-/area/shuttle/escape)
-"rl" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/stripes/line{
-	dir = 5
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"tc" = (
-/obj/machinery/button{
-	id = 2;
-	name = "Brig Blast Door Button";
-	req_access_txt = "1"
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/shuttle/escape)
-"tv" = (
-/obj/machinery/vending/medical,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/mineral/titanium/blue,
-/area/shuttle/escape)
-"vO" = (
-/obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/security_space_law,
-/obj/item/melee/baton,
-/obj/effect/turf_decal/stripes/line{
-	dir = 6
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"DK" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/advanced,
-/turf/open/floor/mineral/titanium/blue,
-/area/shuttle/escape)
-"Ew" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/line,
-/obj/machinery/light,
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"FS" = (
-/obj/machinery/stasis,
-/obj/machinery/light,
-/turf/open/floor/mineral/titanium/blue,
-/area/shuttle/escape)
-"Hq" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid,
-/obj/effect/turf_decal/stripes/line{
-	dir = 10
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"It" = (
-/obj/machinery/door/airlock/vault{
-	name = "Medbay";
-	req_access_txt = "5"
-	},
-/turf/open/floor/engine,
-/area/shuttle/escape)
-"Jm" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/window/reinforced/spawner/west,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/item/grown/novaflower,
-/turf/open/floor/grass,
-/area/shuttle/escape)
-"Jx" = (
-/obj/machinery/door/airlock/vault{
-	name = "Operating Room";
-	req_access_txt = "19"
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/escape)
-"Nu" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/window/reinforced/spawner/west,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/item/reagent_containers/food/snacks/grown/rainbow_flower,
-/turf/open/floor/grass,
-/area/shuttle/escape)
-"OG" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/handcuffs,
-/obj/item/storage/firstaid/tactical,
-/obj/effect/turf_decal/stripes/line{
-	dir = 10
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"PY" = (
-/obj/machinery/door/poddoor{
-	id = 2
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"Tz" = (
-/obj/machinery/door/airlock/vault,
-/turf/open/floor/engine,
-/area/shuttle/escape)
-"TG" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/window/reinforced/spawner/west,
-/obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/grass,
-/area/shuttle/escape)
-"Ud" = (
-/obj/structure/table/reinforced,
-/obj/item/toy/plush/goatplushie/angry/kinggoat,
-/obj/effect/turf_decal/stripes/line{
-	dir = 6
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"Wz" = (
+"dw" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-22"
 	},
@@ -723,16 +561,171 @@
 	},
 /turf/open/floor/engine,
 /area/shuttle/escape)
-"WQ" = (
-/obj/docking_port/mobile/emergency,
-/turf/closed/wall/mineral/plastitanium,
-/area/shuttle/escape)
-"YS" = (
+"fi" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
 /obj/effect/turf_decal/caution/stand_clear{
 	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"fO" = (
+/obj/structure/table/reinforced,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/melee/baton,
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"hL" = (
+/obj/machinery/stasis,
+/obj/machinery/light,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"iH" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/advanced,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"kX" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"mK" = (
+/obj/structure/table/reinforced,
+/obj/item/toy/plush/goatplushie/angry/kinggoat,
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"mX" = (
+/obj/machinery/stasis,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"np" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/item/grown/novaflower,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"sY" = (
+/obj/machinery/door/airlock/vault{
+	name = "Medbay";
+	req_access_txt = "5"
+	},
+/turf/open/floor/engine,
+/area/shuttle/escape)
+"uL" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-22"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/shuttle/escape)
+"wM" = (
+/obj/machinery/vending/medical,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"Bp" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/light,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"DI" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/firstaid/tactical,
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"Gg" = (
+/obj/machinery/door/poddoor{
+	id = 2
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"KA" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"KJ" = (
+/obj/machinery/door/airlock/vault,
+/turf/open/floor/engine,
+/area/shuttle/escape)
+"Lb" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/item/reagent_containers/food/snacks/grown/rainbow_flower,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"MK" = (
+/obj/machinery/defibrillator_mount/loaded,
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/escape)
+"MS" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"NF" = (
+/obj/machinery/button{
+	id = 2;
+	name = "Brig Blast Door Button";
+	req_access_txt = "1"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/escape)
+"Rw" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/escape)
+"UD" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/item/reagent_containers/spray/waterflower,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"Yu" = (
+/obj/docking_port/mobile/emergency,
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/escape)
+"YW" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid,
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
@@ -746,19 +739,19 @@ cS
 cA
 cS
 cS
-WQ
+Yu
 cS
 cS
 cS
 cS
 cS
-Tz
+KJ
 bX
-Tz
+KJ
 cS
 cS
 cS
-tc
+NF
 cS
 cS
 cS
@@ -773,7 +766,7 @@ az
 cB
 aS
 bc
-Wz
+dw
 bI
 bI
 bI
@@ -787,7 +780,7 @@ cS
 cC
 cT
 cT
-OG
+DI
 cS
 cS
 "}
@@ -814,7 +807,7 @@ cs
 cJ
 db
 db
-Ew
+Bp
 dc
 de
 "}
@@ -829,19 +822,19 @@ aZ
 cS
 bm
 bt
-TG
+KA
 bK
 bN
-Nu
-Jm
-TG
-eK
+Lb
+np
+KA
+UD
 cl
 ct
-mA
+Rw
 db
 db
-gb
+MS
 dc
 de
 "}
@@ -868,7 +861,7 @@ cs
 cJ
 db
 db
-Ew
+Bp
 dc
 de
 "}
@@ -881,7 +874,7 @@ aD
 aN
 aZ
 cS
-nB
+uL
 cg
 cg
 cg
@@ -895,7 +888,7 @@ cS
 cE
 cW
 cW
-vO
+fO
 dc
 de
 "}
@@ -913,7 +906,7 @@ bw
 cS
 cS
 cS
-It
+sY
 bT
 cn
 cn
@@ -935,7 +928,7 @@ aF
 aN
 aZ
 cS
-tv
+wM
 cq
 bH
 bL
@@ -949,7 +942,7 @@ cS
 cG
 cY
 cY
-Hq
+YW
 dc
 de
 "}
@@ -965,18 +958,18 @@ cS
 bo
 ci
 bG
-hu
-kQ
+MK
+mX
 ci
 ci
 ci
 ci
-FS
+hL
 cS
 cJ
 db
 db
-Ew
+Bp
 dc
 de
 "}
@@ -1003,7 +996,7 @@ cS
 cI
 db
 db
-gb
+MS
 dc
 de
 "}
@@ -1016,7 +1009,7 @@ cy
 aQ
 aZ
 cS
-DK
+iH
 ci
 cq
 bL
@@ -1030,7 +1023,7 @@ cS
 cI
 db
 db
-gb
+MS
 dc
 de
 "}
@@ -1046,7 +1039,7 @@ cS
 cb
 ci
 ce
-hu
+MK
 co
 ci
 ci
@@ -1057,7 +1050,7 @@ cS
 cI
 db
 db
-gb
+MS
 dc
 de
 "}
@@ -1070,10 +1063,10 @@ aQ
 aQ
 aZ
 bk
-bp
+cq
 ci
 bG
-Jx
+cS
 cq
 ci
 ci
@@ -1084,7 +1077,7 @@ cS
 cJ
 db
 db
-Ew
+Bp
 dc
 de
 "}
@@ -1097,8 +1090,8 @@ cz
 aR
 ba
 cS
-tv
-cq
+wM
+bA
 bH
 cS
 bl
@@ -1108,10 +1101,10 @@ ce
 co
 cq
 cS
-rl
-YS
-YS
-Ud
+kX
+fi
+fi
+mK
 cS
 cS
 "}
@@ -1129,15 +1122,15 @@ cS
 cS
 cS
 cS
-hu
+MK
 bL
 cS
-hu
+MK
 bL
 cS
 cS
-PY
-PY
+Gg
+Gg
 cS
 cS
 aa
