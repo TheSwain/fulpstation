@@ -15,7 +15,9 @@
 	var/list/boost_item_paths = list()		//Associative list, path = list(point type = point_value).
 	var/autounlock_by_boost = TRUE			//boosting this will autounlock this node.
 	var/export_price = 0					//Cargo export price.
-	var/list/research_costs = list()					//Point cost to research. type = amount
+	var/list/research_cost = 0 // The research point cost.
+	var/research_department = TECHWEB_POINT_TYPE_GENERIC // Preferred department points. If left Generic, it will only accept Generic.
+	var/use_generic_points = TRUE // If TRUE, this can be researched with generic points. If FALSE, it can only be researched with its department points.
 	var/category = "Misc"				//Category
 
 /datum/techweb_node/error_node
@@ -48,7 +50,7 @@
 	VARSET_TO_LIST(., boost_item_paths)
 	VARSET_TO_LIST(., autounlock_by_boost)
 	VARSET_TO_LIST(., export_price)
-	VARSET_TO_LIST(., research_costs)
+	VARSET_TO_LIST(., research_cost)
 	VARSET_TO_LIST(., category)
 
 /datum/techweb_node/deserialize_list(list/input, list/options)
@@ -64,7 +66,7 @@
 	VARSET_FROM_LIST(input, boost_item_paths)
 	VARSET_FROM_LIST(input, autounlock_by_boost)
 	VARSET_FROM_LIST(input, export_price)
-	VARSET_FROM_LIST(input, research_costs)
+	VARSET_FROM_LIST(input, research_cost)
 	VARSET_FROM_LIST(input, category)
 	Initialize()
 	return src
@@ -84,18 +86,30 @@
 
 /datum/techweb_node/proc/get_price(datum/techweb/host)
 	if(host)
-		var/list/actual_costs = research_costs
+		var/actual_cost = research_cost
 		if(host.boosted_nodes[id])
 			var/list/L = host.boosted_nodes[id]
 			for(var/i in L)
-				if(actual_costs[i])
-					actual_costs[i] -= L[i]
-		return actual_costs
+				actual_cost -= L[i]
+		return actual_cost
 	else
-		return research_costs
+		return research_cost
+
+/datum/techweb_node/proc/get_cost_list()
+	var/list/L = list(TECHWEB_POINT_TYPE_GENERIC)
+
+	if(research_department != TECHWEB_POINT_TYPE_GENERIC)
+		if(use_generic_points)
+			L = list(research_department, TECHWEB_POINT_TYPE_GENERIC) // order is important
+		else
+			L = list(research_department)
+
+	return L
+
 
 /datum/techweb_node/proc/price_display(datum/techweb/TN)
-	return techweb_point_display_generic(get_price(TN))
+	return get_price(TN)
+	//return techweb_point_display_generic(get_price(TN))
 
 /datum/techweb_node/proc/on_research() //new proc, not currently in file
     return

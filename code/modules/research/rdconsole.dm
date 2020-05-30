@@ -152,8 +152,8 @@ Nothing else in the console has ID requirements.
 	if(!istype(TN))
 		say("Node unlock failed: Unknown error.")
 		return FALSE
-	var/list/price = TN.get_price(stored_research)
-	if(stored_research.can_afford(price))
+	var/price = TN.get_price(stored_research)
+	if(stored_research.can_afford_node(TN))
 		investigate_log("[key_name(user)] researched [id]([json_encode(price)]) on techweb id [stored_research.id].", INVESTIGATE_RESEARCH)
 		if(stored_research == SSresearch.science_tech)
 			SSblackbox.record_feedback("associative", "science_techweb_unlock", 1, list("id" = "[id]", "name" = TN.display_name, "price" = "[json_encode(price)]", "time" = SQLtime()))
@@ -175,7 +175,7 @@ Nothing else in the console has ID requirements.
 						logname = "User: [ID.registered_name]"
 			var/i = stored_research.research_logs.len
 			stored_research.research_logs += null
-			stored_research.research_logs[++i] = list(TN.display_name, price["General Research"], logname, "[get_area(src)] ([src.x],[src.y],[src.z])")
+			stored_research.research_logs[++i] = list(TN.display_name, price, logname, "[get_area(src)] ([src.x],[src.y],[src.z])")
 			return TRUE
 		else
 			say("Failed to research node: Internal database error!")
@@ -610,7 +610,7 @@ Nothing else in the console has ID requirements.
 				var/list/already_boosted = stored_research.boosted_nodes[N.id]
 				for(var/i in worth)
 					var/already_boosted_amount = already_boosted? stored_research.boosted_nodes[N.id][i] : 0
-					var/amt = min(worth[i], N.research_costs[i]) - already_boosted_amount
+					var/amt = min(worth[i], N.research_cost[i]) - already_boosted_amount
 					if(amt > 0)
 						differences[i] = amt
 				if (length(differences))
@@ -685,7 +685,7 @@ Nothing else in the console has ID requirements.
 		l += "<div><h3>Available for Research:</h3>"
 		for(var/datum/techweb_node/N in avail)
 			var/not_unlocked = (stored_research.available_nodes[N.id] && !stored_research.researched_nodes[N.id])
-			var/has_points = (stored_research.can_afford(N.get_price(stored_research)))
+			var/has_points = stored_research.can_afford_node(N)
 			var/research_href = not_unlocked? (has_points? "<A href='?src=[REF(src)];research_node=[N.id]'>Research</A>" : "<span class='linkOff bad'>Not Enough Points</span>") : null
 			l += "<A href='?src=[REF(src)];view_node=[N.id];back_screen=[screen]'>[N.display_name]</A>[research_href]"
 		l += "</div><div><h3>Locked Nodes:</h3>"
@@ -706,20 +706,22 @@ Nothing else in the console has ID requirements.
 		return l
 	var/display_name = node.display_name
 	if (selflink)
-		display_name = "<A href='?src=[REF(src)];view_node=[node.id];back_screen=[screen]'>[display_name]</A>"
-	l += "<div class='statusDisplay technode'><b>[display_name]</b> [RDSCREEN_NOBREAK]"
-	if(minimal)
+		display_name = "<a href='?src=[REF(src)];view_node=[node.id];back_screen=[screen]'>[display_name]</a>"
+	var/color = techweb_department_color(node.research_department);
+	l += "<div class='statusDisplay technode' style='border-color:[color]'><b style='color:[color]'>[display_name]</b> [RDSCREEN_NOBREAK]"
+	if(minimal) // collapsed nodes, not our display preference
 		l += "<br>[node.description]"
 	else
 		if(stored_research.researched_nodes[node.id])
 			l += "<span class='linkOff'>Researched</span>"
 		else if(stored_research.available_nodes[node.id])
-			if(stored_research.can_afford(node.get_price(stored_research)))
-				l += "<BR><A href='?src=[REF(src)];research_node=[node.id]'>[node.price_display(stored_research)]</A>"
+			if(stored_research.can_afford_node(node))
+				l += "<a href='?src=[REF(src)];research_node=[node.id]'>[node.price_display(stored_research)]</a>"
 			else
-				l += "<BR><span class='linkOff'>[node.price_display(stored_research)]</span>"  // gray - too expensive
+				l += "<span class='linkOff'>[node.price_display(stored_research)]</span>"  // gray - too expensive
+			l += "<span style='color:[color]'>[TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES[node.research_department]]</span>"
 		else
-			l += "<BR><span class='linkOff bad'>[node.price_display(stored_research)]</span>"  // red - missing prereqs
+			l += "<span class='linkOff bad'>[node.price_display(stored_research)]</span>"  // red - missing prereqs
 		if(ui_mode == RDCONSOLE_UI_MODE_NORMAL)
 			l += "[node.description]"
 			for(var/i in node.design_ids)

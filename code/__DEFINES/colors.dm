@@ -42,6 +42,16 @@
 #define COLOR_PALE_PURPLE_GRAY "#CBB1CA"
 #define COLOR_PURPLE_GRAY      "#AE8CA8"
 
+// Departmental Color Coding
+#define JOB_COLOR_COMMAND     "#ccccff"
+#define JOB_COLOR_ENGINEERING "#ffeeaa"
+#define JOB_COLOR_SUPPLY      "#d7b088"
+#define JOB_COLOR_SILICON     "#ccffcc"
+#define JOB_COLOR_SERVICE     "#bbe291"
+#define JOB_COLOR_MEDICAL     "#ccccff"
+#define JOB_COLOR_SCIENCE     "#ffddff"
+#define JOB_COLOR_SECURITY    "#ffdddd"
+
 //Color defines used by the assembly detailer.
 #define COLOR_ASSEMBLY_BLACK   "#545454"
 #define COLOR_ASSEMBLY_BGRAY   "#9497AB"

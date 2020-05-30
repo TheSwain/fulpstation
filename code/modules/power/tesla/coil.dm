@@ -90,7 +90,9 @@
 		if(D)
 			D.adjust_money(min(power_produced, 1))
 		if(istype(linked_techweb))
-			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 1)) // x4 coils = ~240/m point bonus for R&D
+			// x4 coils = ~180/m point bonus for R&D and another ~180/m for Engineering specifically
+			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_GENERIC, min(power_produced * 0.75, 1))
+			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_ENGINEERING, min(power_produced * 0.75, 1))
 		addtimer(CALLBACK(src, .proc/reset_shocked), 10)
 		zap_buckle_check(power)
 		playsound(src.loc, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
@@ -128,7 +130,9 @@
 		if(D)
 			D.adjust_money(min(power_produced, 3))
 		if(istype(linked_techweb))
-			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 3)) // x4 coils with a pulse per second or so = ~720/m point bonus for R&D
+			// x4 coils with a pulse per second or so = ~540/m point bonus for both R&D and Engineering
+			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_GENERIC, min(power_produced * 0.75, 3))
+			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_ENGINEERING, min(power_produced * 0.75, 3))
 		addtimer(CALLBACK(src, .proc/reset_shocked), 10)
 		zap_buckle_check(power)
 		playsound(src.loc, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)

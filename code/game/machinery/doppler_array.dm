@@ -149,7 +149,9 @@
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_SCI)
 		if(D)
 			D.adjust_money(point_gain)
-			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, point_gain)
+			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_GENERIC, point_gain * 0.8)
+			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_SCIENCE, point_gain * 0.1)
+			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_ENGINEERING, point_gain * 0.1)
 			say("Explosion details and mixture analyzed and sold to the highest bidder for [point_gain] cr, with a reward of [point_gain] points.")
 
 	else //you've made smaller bombs

@@ -25,7 +25,7 @@
 			ret += "[SSresearch.point_types[i]]: [pointlist[i]]"
 		else
 			ret += "ERRORED POINT TYPE: [pointlist[i]]"
-	return ret.Join("<BR>")
+	return ret.Join("<br/>")
 
 /proc/techweb_point_display_rdconsole(pointlist, last_pointlist)
 	var/list/ret = list()
@@ -33,5 +33,24 @@
 		var/research_line = "[SSresearch.point_types[i] || "ERRORED POINT TYPE"]: [pointlist[i]]"
 		if(last_pointlist[i] > 0)
 			research_line += " (+[(last_pointlist[i]) * ((SSresearch.flags & SS_TICKER)? (600 / (world.tick_lag * SSresearch.wait)) : (600 / SSresearch.wait))]/ minute)"
-		ret += research_line
-	return ret.Join("<BR>")
+		ret += "<span style='color: [techweb_department_color(SSresearch.point_types[i])]'>" + research_line + "</span>"
+	return ret.Join(", ")
+
+/proc/techweb_department_color(pointtype)
+	switch(pointtype)
+		if(TECHWEB_POINT_TYPE_GENERIC)
+			return "#FFFFFF"
+		if(TECHWEB_POINT_TYPE_SECURITY)
+			return JOB_COLOR_SECURITY
+		if(TECHWEB_POINT_TYPE_MEDICAL)
+			return JOB_COLOR_MEDICAL
+		if(TECHWEB_POINT_TYPE_SUPPLY)
+			return JOB_COLOR_SUPPLY
+		if(TECHWEB_POINT_TYPE_SCIENCE)
+			return JOB_COLOR_SCIENCE
+		if(TECHWEB_POINT_TYPE_ENGINEERING)
+			return JOB_COLOR_ENGINEERING
+		if(TECHWEB_POINT_TYPE_SERVICE)
+			return JOB_COLOR_SERVICE
+		else
+			return COLOR_WHITE

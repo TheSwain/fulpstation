@@ -62,17 +62,28 @@
 
 #define RESEARCH_MATERIAL_RECLAMATION_ID "__materials"
 
-///Techweb names for new point types. Can be used to define specific point values for specific types of research (science, security, engineering, etc.)
+// Techweb names for new point types. Can be used to define specific point values for specific types of research (science, security, engineering, etc.)
+// Note: I trierd replacing these with Department Flags, but list() DO NOT WORK WELL with numeric indices. It will desperately try to interpret it as an ordered array.
 #define TECHWEB_POINT_TYPE_GENERIC "General Research"
-#define TECHWEB_POINT_TYPE_NANITES "Nanite Research"
+#define TECHWEB_POINT_TYPE_SECURITY "Security Research"
+#define TECHWEB_POINT_TYPE_MEDICAL "Medical Research"
+#define TECHWEB_POINT_TYPE_SUPPLY "Supply Research"
+#define TECHWEB_POINT_TYPE_SCIENCE "Science Research"
+#define TECHWEB_POINT_TYPE_ENGINEERING "Engineering Research"
+#define TECHWEB_POINT_TYPE_SERVICE "Service Research"
 
-#define TECHWEB_POINT_TYPE_DEFAULT TECHWEB_POINT_TYPE_GENERIC
-
-///Associative names for techweb point values, see: [/modules/research/techweb/all_nodes][all_nodes]
+// Associative names for techweb point values, see: [/modules/research/techweb/all_nodes][all_nodes]
 #define TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES list(\
 	TECHWEB_POINT_TYPE_GENERIC = "General Research",\
-	TECHWEB_POINT_TYPE_NANITES = "Nanite Research"\
-	)
+	TECHWEB_POINT_TYPE_SECURITY = "Security Research",\
+	TECHWEB_POINT_TYPE_MEDICAL = "Medical Research",\
+	TECHWEB_POINT_TYPE_SUPPLY = "Supply Research",\
+	TECHWEB_POINT_TYPE_SCIENCE = "Science Research",\
+	TECHWEB_POINT_TYPE_ENGINEERING = "Engineering Research",\
+	TECHWEB_POINT_TYPE_SERVICE = "Service Research"\
+)
+
+//
 
 ///R&D point value for a maxcap bomb. Can be adjusted if need be. Current Value Cap Radius: 100
 #define TECHWEB_BOMB_POINTCAP		50000

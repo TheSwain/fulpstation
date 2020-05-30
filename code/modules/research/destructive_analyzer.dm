@@ -111,7 +111,7 @@ Note: Must be placed within 3 tiles of the R&D Console
 		var/list/already_boosted = linked_console.stored_research.boosted_nodes[TN.id]
 		for(var/i in worths)
 			var/used = already_boosted? already_boosted[i] : 0
-			var/value = min(worths[i], TN.research_costs[i]) - used
+			var/value = min(worths[i], TN.research_cost[i]) - used
 			if(value > 0)
 				differences[i] = value
 		if(length(worths) && !length(differences))

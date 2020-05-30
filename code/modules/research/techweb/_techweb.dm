@@ -101,6 +101,19 @@
 		l[i] = amount
 	add_point_list(l)
 
+// Remove points with preference based on point_types
+/datum/techweb/proc/remove_points(cost, point_types = list(TECHWEB_POINT_TYPE_GENERIC))
+	for(var/i in point_types)
+		if(SSresearch.point_types[i] && research_points[i] > 0)
+			if (research_points[i] >= cost)
+				research_points[i] -= cost
+				cost = 0
+			else
+				cost -= research_points[i]
+				research_points[i] = 0
+		if (cost <= 0)
+			return
+
 /datum/techweb/proc/remove_point_list(list/pointlist)
 	for(var/i in pointlist)
 		if(SSresearch.point_types[i] && pointlist[i] > 0)
@@ -200,11 +213,23 @@
 	for(var/i in pointlist)
 		. += pointlist[i]
 
-/datum/techweb/proc/can_afford(list/pointlist)
+// point checks with explicit category requirements
+/datum/techweb/proc/can_afford_list(list/pointlist)
 	for(var/i in pointlist)
 		if(research_points[i] < pointlist[i])
 			return FALSE
 	return TRUE
+
+// point checks with flexible category requirements
+/datum/techweb/proc/can_afford_points(cost, point_types = list(TECHWEB_POINT_TYPE_GENERIC))
+	for(var/i in point_types)
+		cost -= research_points[i]
+		if (cost <= 0)
+			return TRUE
+	return FALSE
+
+/datum/techweb/proc/can_afford_node(datum/techweb_node/N)
+	return can_afford_points(N.research_cost, N.get_cost_list())
 
 /datum/techweb/proc/printout_points()
 	return techweb_point_display_generic(research_points)
@@ -217,10 +242,10 @@
 		return FALSE
 	update_node_status(node)
 	if(!force)
-		if(!available_nodes[node.id] || (auto_adjust_cost && (!can_afford(node.get_price(src)))))
+		if(!available_nodes[node.id] || (auto_adjust_cost && (!can_afford_node(node))))
 			return FALSE
 	if(auto_adjust_cost)
-		remove_point_list(node.get_price(src))
+		remove_points(node.get_price(src), node.get_cost_list())
 	researched_nodes[node.id] = TRUE				//Add to our researched list
 	for(var/id in node.unlock_ids)
 		visible_nodes[id] = TRUE

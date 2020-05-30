@@ -519,8 +519,9 @@
 	description = "Security upgrades for cyborgs."
 	prereq_ids = list("sec_basic")
 	design_ids = list("borg_upgrade_cameralink", "borg_upgrade_secprojector", "borg_upgrade_e-bola", "borg_upgrade_pepperspray")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+	research_cost = 2000
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/cyborg_upg_combat
 	id = "cyborg_upg_cmb"
@@ -528,8 +529,9 @@
 	description = "Combat upgrades for cyborgs."
 	prereq_ids = list("cyborg_upg_sec", "weaponry")
 	design_ids = list("borg_upgrade_e_gun_cooler", "borg_upgrade_e_gun_kill")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	research_cost = 10000
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /mob/proc/check_for_item(typepath)
 	if(locate(typepath) in src)

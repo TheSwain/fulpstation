@@ -4,7 +4,8 @@ SUBSYSTEM_DEF(research)
 	priority = FIRE_PRIORITY_RESEARCH
 	wait = 10
 	init_order = INIT_ORDER_RESEARCH
-	//TECHWEB STATIC
+
+	// TECHWEB STATIC
 	var/list/techweb_nodes = list()				//associative id = node datum
 	var/list/techweb_designs = list()			//associative id = node datum
 	var/list/datum/techweb/techwebs = list()
@@ -13,36 +14,38 @@ SUBSYSTEM_DEF(research)
 	var/datum/techweb_node/error_node/error_node	//These two are what you get if a node/design is deleted and somehow still stored in a console.
 	var/datum/design/error_design/error_design
 
-	//ERROR LOGGING
+	// ERROR LOGGING
 	var/list/invalid_design_ids = list()		//associative id = number of times
 	var/list/invalid_node_ids = list()			//associative id = number of times
 	var/list/invalid_node_boost = list()		//associative id = error message
 
 	var/list/obj/machinery/rnd/server/servers = list()
 
+	var/list/techweb_access = list(ACCESS_TOX) // Overrides rdconsole.dm req_access
 	var/list/techweb_nodes_starting = list()	//associative id = TRUE
 	var/list/techweb_categories = list()		//category name = list(node.id = TRUE)
 	var/list/techweb_boost_items = list()		//associative double-layer path = list(id = list(point_type = point_discount))
 	var/list/techweb_nodes_hidden = list()		//Node ids that should be hidden by default.
 	var/list/techweb_nodes_experimental = list()	//Node ids that are exclusive to the BEPIS.
 	var/list/techweb_point_items = list(		//path = list(point type = value)
-	/obj/item/assembly/signaler/anomaly = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+		/obj/item/assembly/signaler/anomaly = 10000
 	)
 	var/list/errored_datums = list()
-	var/list/point_types = list()				//typecache style type = TRUE list
+	var/list/point_types = TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES
 	var/list/slime_already_researched = list() 	//Slime cores that have already been researched
-	//----------------------------------------------
-	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 52.3)
-	var/multiserver_calculation = FALSE
-	var/last_income
-	//^^^^^^^^ ALL OF THESE ARE PER SECOND! ^^^^^^^^
 
-	//Aiming for 1.5 hours to max R&D
-	//[88nodes * 5000points/node] / [1.5hr * 90min/hr * 60s/min]
-	//Around 450000 points max???
+	// Mining calculations (done per second)
+	var/multi_server_calculation = TRUE
+	var/single_server_income = 52.3
+	var/multi_server_income = 30
+	var/multi_server_ineffeciency = 0.8 // Each server is only n% as effecient than the last.
+	var/departmental_effeciency = 1.25 // When assigned to a department, servers are n% as effecient as general research.
+	var/last_income
+
+	// Orange wants 1 hour for endgame content.
+	// https://hackmd.io/@tgstation/Sy8W0nvv8
 
 /datum/controller/subsystem/research/Initialize()
-	point_types = TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES
 	initialize_all_techweb_designs()
 	initialize_all_techweb_nodes()
 	science_tech = new /datum/techweb/science
@@ -54,27 +57,61 @@ SUBSYSTEM_DEF(research)
 
 /datum/controller/subsystem/research/fire()
 	var/list/bitcoins = list()
-	if(multiserver_calculation)
-		var/eff = calculate_server_coefficient()
-		for(var/obj/machinery/rnd/server/miner in servers)
-			var/list/result = (miner.mine())	//SLAVE AWAY, SLAVE.
-			for(var/i in result)
-				result[i] *= eff
-				bitcoins[i] = bitcoins[i]? bitcoins[i] + result[i] : result[i]
-	else
-		for(var/obj/machinery/rnd/server/miner in servers)
-			if(miner.working)
-				bitcoins = single_server_income.Copy()
-				break			//Just need one to work.
+	var/income_time_difference = 1
+
 	if (!isnull(last_income))
-		var/income_time_difference = world.time - last_income
-		science_tech.last_bitcoins = bitcoins  // Doesn't take tick drift into account
-		for(var/i in bitcoins)
-			bitcoins[i] *= income_time_difference / 10
-		science_tech.add_point_list(bitcoins)
+		income_time_difference = (world.time - last_income) / 10
 	last_income = world.time
 
-/datum/controller/subsystem/research/proc/calculate_server_coefficient()	//Diminishing returns.
+	if(multi_server_calculation)
+		// Each department has its own effeciency coeffecient to encourage diversified, thoughtful research instead of hammering generic.
+		var/list/effs = list(
+			TECHWEB_POINT_TYPE_GENERIC = 1,
+			TECHWEB_POINT_TYPE_SECURITY = 1,
+			TECHWEB_POINT_TYPE_MEDICAL = 1,
+			TECHWEB_POINT_TYPE_SUPPLY = 1,
+			TECHWEB_POINT_TYPE_SCIENCE = 1,
+			TECHWEB_POINT_TYPE_ENGINEERING = 1,
+			TECHWEB_POINT_TYPE_SERVICE = 1
+		)
+		for(var/obj/machinery/rnd/server/miner in servers)
+			if(miner.working)
+				miner.pool_efficiency = effs[miner.department_pool] * miner.get_temp_effeciency() * miner.part_efficiency
+				var/list/result = miner.mine(multi_server_income, effs[miner.department_pool])
+				for(var/i in result)
+					result[i] *= effs[miner.department_pool]
+					bitcoins[i] = bitcoins[i] ? bitcoins[i] + result[i] : result[i]
+					miner.total_mining_income += result[i] * income_time_difference // Add points to the server's personal total.
+					if(miner.machine_stat & EMAGGED)
+						miner.total_syndicate_income += result[i] // Credit the points to the Syndicate's bank.
+						bitcoins[i] = 0 // :^)
+				// Each server further reduces subsequent servers effeciency.
+				effs[miner.department_pool] *= multi_server_ineffeciency
+			else
+				miner.pool_efficiency = 0
+	else
+		var/has_miner = FALSE
+		// Find the first working server and then bail.
+		for(var/obj/machinery/rnd/server/miner in servers)
+			if(miner.working && !has_miner)
+				bitcoins = miner.mine(single_server_income, 1)
+				for(var/i in bitcoins)
+					miner.total_mining_income += bitcoins[i] * income_time_difference // Add points to the server's personal total.
+					if(miner.machine_stat & EMAGGED)
+						miner.total_syndicate_income += bitcoins[i] // Credit the points to the Syndicate's bank.
+						bitcoins[i] = 0 // :^)
+				miner.pool_efficiency = miner.get_temp_effeciency()
+				break
+			else
+				miner.pool_efficiency = 0
+
+	// Compensate for lag and apply points.
+	science_tech.last_bitcoins = bitcoins  // Doesn't take tick drift into account
+	for(var/i in bitcoins)
+		bitcoins[i] *= income_time_difference
+		science_tech.add_point_list(bitcoins) // Add points.
+
+/datum/controller/subsystem/research/proc/calculate_server_coefficient() // Diminishing returns.
 	var/amt = servers.len
 	if(!amt)
 		return 0
@@ -278,3 +315,20 @@ SUBSYSTEM_DEF(research)
 			else
 				techweb_boost_items[path] = list(node.id = node.boost_item_paths[path])
 		CHECK_TICK
+
+/datum/controller/subsystem/research/proc/get_point_css_class(point)
+	switch(point)
+		if(TECHWEB_POINT_TYPE_GENERIC)
+			return ""
+		if(TECHWEB_POINT_TYPE_SECURITY)
+			return "security"
+		if(TECHWEB_POINT_TYPE_MEDICAL)
+			return "medical"
+		if(TECHWEB_POINT_TYPE_SCIENCE)
+			return "science"
+		if(TECHWEB_POINT_TYPE_SERVICE)
+			return "service"
+		if(TECHWEB_POINT_TYPE_ENGINEERING)
+			return "engineering"
+		else
+			return ""
