@@ -156,3 +156,30 @@
 	item = /obj/item/spear/espear
 	cost = 5
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+<<<<<<< HEAD
+=======
+
+/datum/uplink_item/dangerous/pnecannon
+	name = "Pneumatic Cannon"
+	desc = "Shove it full of spears and fire it on your unwitting foes! They'll never see it coming!"
+	item = /obj/item/pneumatic_cannon
+	cost = 5
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+
+/datum/uplink_item/dangerous/stunprod
+	name = "Advanced Stunprod"
+	desc = "Better than the normal one, 100% stun chance!"
+	item = /obj/item/melee/baton/cattleprod/assistant
+	cost = 5
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+
+/datum/uplink_item/explosives/assistantgrenade
+	name = "Bioterror Foam Grenade"
+	desc = "A standard grenade, but hidden within a Grey Bull! Surprise your enemies with a fizzy blow!"
+	item = /obj/item/grenade/assistant
+	cost = 2
+	surplus = 35
+	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+
+
+>>>>>>> parent of dc454b0fd7... Revert "Grenades"
