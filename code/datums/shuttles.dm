@@ -388,6 +388,13 @@
 	admin_notes = "This motherfucker is BIG. You might need to force dock it."
 	credit_cost = 50000
 
+/datum/map_template/shuttle/emergency/safehouse
+	suffix = "safehouse"
+	name = "Project Safehouse"
+	description = "After the failed project safehouse, NanoTrasen added this shuttle to the fleet for use in dangerous evacuations. Heavily reinforced, hijacks are unlikely in this,"
+	admin_notes = "Funny fallout reference haha, creds to hobo for the idea"
+	credit_cost = 20000
+
 /datum/map_template/shuttle/ferry/base
 	suffix = "base"
 	name = "transport ferry"
