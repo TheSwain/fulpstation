@@ -515,8 +515,8 @@
 	name = "Assistant Ops"
 	antag_datum = /datum/antagonist/nukeop/assistantop
 	antag_leader_datum = /datum/antagonist/nukeop/leader/assistantop
-	requirements = list(101,101,101,101,101,101,101,101,101,101)
-	high_population_requirement = 101
+	requirements = list(90,90,90,80,60,40,30,20,10,10)
+	high_population_requirement = 10
 
 /datum/dynamic_ruleset/roundstart/nuclear/assistant_ops/pre_execute()
 	. = ..()
