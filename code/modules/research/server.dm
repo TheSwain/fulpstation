@@ -27,14 +27,15 @@
 	var/temp_tolerance_high = T0C + 60 // 60C, maximum comfortable temperature before effeciency loss
 	var/temp_tolerance_max = T0C + 100 // 100C, maximum temperature before the RD server shuts itself off
 	var/temp_penalty_coefficient = 0.025 // Reduces effeciency by n% per degree Celsius over temp_tolerance_high
-	// Antagonist Fun
-	var/total_syndicate_income = 0
-	var/malf_ai_slave = FALSE
 	// Communication
 	var/obj/item/radio/radio
 	var/radio_key = /obj/item/encryptionkey/headset_sci
-	var/science_channel = RADIO_CHANNEL_SCIENCE
-	var/syndicate_channel = RADIO_CHANNEL_SYNDICATE
+	var/obj/item/radio/radio_syn
+	var/radio_key_syn = /obj/item/encryptionkey/syndicate
+	// Antagonist Fun
+	var/telecrystal_cost = 9000
+	var/total_syndicate_income = 0
+	var/malf_ai_slave = FALSE
 
 /obj/machinery/rnd/server/Initialize()
 	. = ..()
@@ -97,16 +98,30 @@
 	produce_heat()
 	// AI Malf Points
 	var/area/A = get_area(src)
-	for(var/obj/machinery/power/apc/APC in GLOB.apcs_list)
+	for(var/i in GLOB.apcs_list)
+		var/obj/machinery/power/apc/APC = i
+		if(!APC.operating || !APC.malfhack || !APC.malfai)
+			continue
 		if(get_area(APC) != A)
 			continue
-		if(APC.operating && APC.malfhack && APC.malfai)
-			if(APC.malfai.malfresearch(src))
-				var/datum/effect_system/spark_spread/sparks = new
-				sparks.set_up(1, 1, src)
-				sparks.attach(src)
-				sparks.start()
-				produce_heat()
+		if(APC.malfai.malfresearch(src))
+			scintillate()
+			produce_heat()
+
+
+/obj/machinery/rnd/server/proc/add_mining_income(var/income)
+	total_mining_income += income // Add points to the server's personal total.
+	// Credit the points to the Syndicate's bank.
+	if(machine_stat & EMAGGED)
+		total_syndicate_income += income
+		if (telecrystal_cost <= total_syndicate_income)
+			total_syndicate_income -= telecrystal_cost
+			for(var/datum/antagonist/A in GLOB.antagonists)
+				if (A.owner)
+					var/datum/component/uplink/U = A.owner.find_syndicate_uplink()
+					U.telecrystals += rand(1,2)
+			radio_syn.talk_into(src, "A telecrystal reward has been given to each active Syndicate uplink as a reward for stolen research.", RADIO_CHANNEL_SYNDICATE)
+			scintillate()
 
 
 /obj/machinery/rnd/server/proc/get_department_name()
@@ -118,6 +133,10 @@
 	if(machine_stat & EMAGGED)
 		return
 	machine_stat |= EMAGGED
+	radio_syn = new(src)
+	radio_syn.keyslot = new radio_key_syn
+	radio_syn.listening = 0
+	radio_syn.recalculateChannels()
 	playsound(src, "sparks", 75, TRUE)
 	to_chat(user, "<span class='notice'>The [name] is now slaved to Syndicate research posts.</span>")
 
@@ -126,11 +145,13 @@
 	if(. & EMP_PROTECT_SELF)
 		return
 	machine_stat |= EMPED
-	addtimer(CALLBACK(src, .proc/unemp), 600)
+	research_disabled = TRUE
+	addtimer(CALLBACK(src, .proc/unemp), 60)
 	refresh_working()
 
 /obj/machinery/rnd/server/proc/unemp()
 	machine_stat &= ~EMPED
+	// Remove the EMP flag, but do not automatically restart
 	refresh_working()
 
 /obj/machinery/rnd/server/proc/toggle_disable()
@@ -171,6 +192,12 @@
 /obj/machinery/rnd/server/proc/get_temp_effeciency()
 	return 1 - (max((current_temp - temp_tolerance_high), 0) * temp_penalty_coefficient)
 
+/obj/machinery/rnd/server/proc/scintillate()
+	var/datum/effect_system/spark_spread/sparks = new
+	sparks.set_up(1, 1, src)
+	sparks.attach(src)
+	sparks.start()
+
 /obj/machinery/rnd/server/proc/produce_heat()
 	if(machine_stat & (NOPOWER|BROKEN) || !working)
 		return PROCESS_KILL
@@ -191,7 +218,7 @@
 		current_temp = max(current_temp - temp_per_cycle, temp_tolerance_low) // we never run cooler than freezing.
 	air_update_turf()
 	if(current_temp > temp_tolerance_max)
-		radio.talk_into(src, "Terminating research work due to unsafe processor temperatures.", science_channel, language = get_selected_language())
+		radio.talk_into(src, "Terminating research work due to unsafe processor temperatures.", RADIO_CHANNEL_SCIENCE)
 		research_disabled = TRUE
 		refresh_working()
 		return

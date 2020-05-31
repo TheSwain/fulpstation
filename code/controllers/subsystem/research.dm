@@ -80,11 +80,10 @@ SUBSYSTEM_DEF(research)
 				var/list/result = miner.mine(multi_server_income, effs[miner.department_pool])
 				for(var/i in result)
 					result[i] *= effs[miner.department_pool]
-					bitcoins[i] = bitcoins[i] ? bitcoins[i] + result[i] : result[i]
-					miner.total_mining_income += result[i] * income_time_difference // Add points to the server's personal total.
+					miner.add_mining_income(result[i] * income_time_difference)
 					if(miner.machine_stat & EMAGGED)
-						miner.total_syndicate_income += result[i] // Credit the points to the Syndicate's bank.
-						bitcoins[i] = 0 // :^)
+						result[i] = 0
+					bitcoins[i] = bitcoins[i] ? bitcoins[i] + result[i] : result[i]
 				// Each server further reduces subsequent servers effeciency.
 				effs[miner.department_pool] *= multi_server_ineffeciency
 			else
@@ -96,10 +95,9 @@ SUBSYSTEM_DEF(research)
 			if(miner.working && !has_miner)
 				bitcoins = miner.mine(single_server_income, 1)
 				for(var/i in bitcoins)
-					miner.total_mining_income += bitcoins[i] * income_time_difference // Add points to the server's personal total.
+					miner.add_mining_income(bitcoins[i] * income_time_difference)
 					if(miner.machine_stat & EMAGGED)
-						miner.total_syndicate_income += bitcoins[i] // Credit the points to the Syndicate's bank.
-						bitcoins[i] = 0 // :^)
+						bitcoins[i] = 0
 				miner.pool_efficiency = miner.get_temp_effeciency()
 				break
 			else
