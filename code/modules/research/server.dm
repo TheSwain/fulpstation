@@ -33,7 +33,7 @@
 	var/obj/item/radio/radio_syn
 	var/radio_key_syn = /obj/item/encryptionkey/syndicate
 	// Antagonist Fun
-	var/telecrystal_cost = 9000
+	var/telecrystal_cost = 9000 // 1 TC every 5 minutes. 1 hour, 15 minutes to refund emag.
 	var/total_syndicate_income = 0
 	var/datum/component/uplink/uplink
 
@@ -115,10 +115,11 @@
 	if(machine_stat & EMAGGED)
 		total_syndicate_income += income
 		// can afford, has uplink, and we have space for more TC.
-		if(telecrystal_cost <= total_syndicate_income && istype(uplink, /datum/component/uplink) && uplink.telecrystals < uplink.telecrystals_initial)
+		// removed cap on TC because you can just game it by removing them as TC.
+		if(telecrystal_cost <= total_syndicate_income && istype(uplink, /datum/component/uplink)) // uplink.telecrystals < uplink.telecrystals_initial
 			// cap at starting TC to prevent illegal buys (romerol)
 			total_syndicate_income -= telecrystal_cost
-			uplink.telecrystals = min(uplink.telecrystals + 2, uplink.telecrystals_initial)
+			uplink.telecrystals += 1 // = min(uplink.telecrystals + 1, uplink.telecrystals_initial)
 			radio_syn.talk_into(src, "A telecrystal reward has been dispatched to UNKNOWN AGENT.", RADIO_CHANNEL_SYNDICATE)
 			scintillate()
 
