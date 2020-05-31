@@ -182,7 +182,7 @@
 
 /datum/uplink_item/device_tools/capspare
 	name = "Captain's Spare ID Card."
-	desc = "I mean, the Captain is basically an assistant with AA."
+	desc = "I mean, the Captain is basically an assistant with AA. Its reccomended you all pool in TC for this."
 	item = /obj/item/card/id/captains_spare
 	cost = 72
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
