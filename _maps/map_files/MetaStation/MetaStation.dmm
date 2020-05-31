@@ -49461,7 +49461,7 @@
 /area/medical/pharmacy)
 "cjX" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/computer/rdconsole/production{
+/obj/machinery/computer/rdconsole{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -57671,7 +57671,7 @@
 	receive_ore_updates = 1
 	},
 /obj/effect/turf_decal/bot,
-/obj/machinery/computer/rdconsole/production{
+/obj/machinery/computer/rdconsole{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -73506,7 +73506,7 @@
 /obj/machinery/light_switch{
 	pixel_x = 26
 	},
-/obj/machinery/computer/rdconsole/production,
+/obj/machinery/computer/rdconsole,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/checker,
 /area/engine/storage_shared)
@@ -79358,7 +79358,7 @@
 	dir = 1;
 	layer = 2.9
 	},
-/obj/machinery/computer/rdconsole/production,
+/obj/machinery/computer/rdconsole,
 /turf/open/floor/plasteel/white,
 /area/science/misc_lab/range)
 "xgL" = (

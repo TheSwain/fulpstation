@@ -25903,7 +25903,7 @@
 	pixel_x = -25;
 	pixel_y = -8
 	},
-/obj/machinery/computer/rdconsole/production{
+/obj/machinery/computer/rdconsole{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -25993,7 +25993,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/computer/rdconsole/production,
+/obj/machinery/computer/rdconsole,
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
 "bpf" = (
@@ -28639,7 +28639,7 @@
 /area/maintenance/department/engine)
 "bvw" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/computer/rdconsole/production{
+/obj/machinery/computer/rdconsole{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -37789,7 +37789,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/yellow,
-/obj/machinery/computer/rdconsole/production{
+/obj/machinery/computer/rdconsole{
 	dir = 8
 	},
 /turf/open/floor/plasteel,

@@ -21660,7 +21660,7 @@
 /turf/open/floor/plasteel/white,
 /area/science/robotics/lab)
 "bhw" = (
-/obj/machinery/computer/rdconsole/production,
+/obj/machinery/computer/rdconsole,
 /turf/open/floor/plasteel/white,
 /area/science/robotics/lab)
 "bhx" = (
@@ -23894,7 +23894,7 @@
 /turf/open/floor/plasteel/white,
 /area/science/lab)
 "bnn" = (
-/obj/machinery/computer/rdconsole/production{
+/obj/machinery/computer/rdconsole{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -52645,7 +52645,7 @@
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "pjA" = (
-/obj/machinery/computer/rdconsole/production{
+/obj/machinery/computer/rdconsole{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/yellow{

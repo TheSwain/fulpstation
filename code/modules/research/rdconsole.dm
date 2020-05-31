@@ -45,12 +45,6 @@ Nothing else in the console has ID requirements.
 	var/searchtype = ""
 	var/ui_mode = RDCONSOLE_UI_MODE_NORMAL
 
-	var/research_control = TRUE
-
-/obj/machinery/computer/rdconsole/production
-	circuit = /obj/item/circuitboard/computer/rdconsole/production
-	research_control = FALSE
-
 /proc/CallMaterialName(ID)
 	if (istype(ID, /datum/material))
 		var/datum/material/material = ID
@@ -240,7 +234,7 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/proc/ui_main_menu()
 	var/list/l = list()
-	if(research_control)
+	//if(research_control)
 		l += "<H2><a href='?src=[REF(src)];switch_screen=[RDSCREEN_TECHWEB]'>Technology</a>"
 	if(d_disk)
 		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_DESIGNDISK]'>Design Disk</a>"
@@ -979,8 +973,8 @@ Nothing else in the console has ID requirements.
 	if(ls["disk_slot"])
 		disk_slot_selected = text2num(ls["disk_slot"])
 	if(ls["research_node"])
-		if(!research_control)
-			return				//honestly should call them out for href exploiting :^)
+		//if(!research_control)
+		//	return				//honestly should call them out for href exploiting :^)
 		if(!SSresearch.science_tech.available_nodes[ls["research_node"]])
 			return			//Nope!
 		research_node(ls["research_node"], usr)
