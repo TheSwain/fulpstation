@@ -782,6 +782,7 @@
 	design_ids = list("mech_repair_droid")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_ENGINEERING
 
 /datum/techweb_node/odysseus
 	id = "mecha_odysseus"
@@ -792,6 +793,7 @@
 	"odysseus_main", "odysseus_peri")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_MEDICAL
 
 /datum/techweb_node/clarke
 	id = "mecha_clarke"
@@ -801,6 +803,7 @@
 	design_ids = list("clarke_chassis", "clarke_torso", "clarke_head", "clarke_left_arm", "clarke_right_arm", "clarke_main", "clarke_peri")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SUPPLY
 
 /datum/techweb_node/gygax
 	id = "mech_gygax"
@@ -811,6 +814,7 @@
 	"gygax_peri", "gygax_targ", "gygax_armor")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/durand
 	id = "mech_durand"
@@ -831,6 +835,7 @@
 	"phazon_peri", "phazon_targ", "phazon_armor")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/adv_mecha_tools
 	id = "adv_mecha_tools"
@@ -840,6 +845,7 @@
 	design_ids = list("mech_rcd", "mech_thrusters")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_ENGINEERING
 
 /datum/techweb_node/med_mech_tools
 	id = "med_mech_tools"
@@ -849,6 +855,7 @@
 	design_ids = list("mech_sleeper", "mech_syringe_gun", "mech_medi_beam")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_MEDICAL
 
 /datum/techweb_node/mech_modules
 	id = "adv_mecha_modules"
@@ -858,6 +865,7 @@
 	design_ids = list("mech_energy_relay", "mech_ccw_armor", "mech_proj_armor", "mech_generator_nuclear")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/mech_scattershot
 	id = "mecha_tools"
@@ -867,6 +875,7 @@
 	design_ids = list("mech_scattershot", "mech_scattershot_ammo")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/mech_carbine
 	id = "mech_carbine"
@@ -876,6 +885,7 @@
 	design_ids = list("mech_carbine", "mech_carbine_ammo")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/mech_ion
 	id = "mmech_ion"
@@ -885,6 +895,7 @@
 	design_ids = list("mech_ion")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/mech_tesla
 	id = "mech_tesla"
@@ -894,6 +905,7 @@
 	design_ids = list("mech_tesla")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/mech_laser
 	id = "mech_laser"
@@ -903,6 +915,7 @@
 	design_ids = list("mech_laser")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/mech_laser_heavy
 	id = "mech_laser_heavy"
@@ -912,6 +925,7 @@
 	design_ids = list("mech_laser_heavy")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/mech_disabler
 	id = "mech_disabler"
@@ -921,6 +935,7 @@
 	design_ids = list("mech_disabler")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/mech_grenade_launcher
 	id = "mech_grenade_launcher"
@@ -930,6 +945,7 @@
 	design_ids = list("mech_grenade_launcher", "mech_grenade_launcher_ammo")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/mech_missile_rack
 	id = "mech_missile_rack"
@@ -939,6 +955,7 @@
 	design_ids = list("mech_missile_rack", "mech_missile_rack_ammo")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/clusterbang_launcher
 	id = "clusterbang_launcher"
@@ -948,6 +965,7 @@
 	design_ids = list("clusterbang_launcher", "clusterbang_launcher_ammo")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/mech_teleporter
 	id = "mech_teleporter"
@@ -957,6 +975,7 @@
 	design_ids = list("mech_teleporter")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SCIENCE
 
 /datum/techweb_node/mech_wormhole_gen
 	id = "mech_wormhole_gen"
@@ -966,6 +985,7 @@
 	design_ids = list("mech_wormhole_gen")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SCIENCE
 
 /datum/techweb_node/mech_lmg
 	id = "mech_lmg"
@@ -975,6 +995,7 @@
 	design_ids = list("mech_lmg", "mech_lmg_ammo")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SECURITY
 
 /datum/techweb_node/mech_diamond_drill
 	id = "mech_diamond_drill"
@@ -984,6 +1005,7 @@
 	design_ids = list("mech_diamond_drill")
 	research_cost = 2500
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SUPPLY
 
 /////////////////////////Nanites/////////////////////////
 /datum/techweb_node/nanite_base
@@ -1213,7 +1235,6 @@
 	description = "It is said that security in the Australicus sector is tight, so we took some pointers from their equipment. Thankfully, our sector lacks any signs of these, 'dropbears'."
 	prereq_ids = list("base")
 	design_ids = list("pin_explorer", "stun_boomerang")
-
 	research_cost = 2500
 	export_price = 2500
 	hidden = TRUE
@@ -1226,7 +1247,6 @@
 	Ethical concerns about loss of free will do not apply to criminals, according to galactic law."
 	prereq_ids = list("base")
 	design_ids = list("hypnochair")
-
 	research_cost = 3500
 	export_price = 3500
 	hidden = TRUE
@@ -1237,7 +1257,6 @@
 	display_name = "Advanced Sticky Technology"
 	description = "Taking a good joke too far? Nonsense!"
 	design_ids = list("super_sticky_tape", "pointy_tape")
-
 	research_cost = 2500
 	export_price = 2500
 	hidden = TRUE
@@ -1249,7 +1268,6 @@
 	description = "Nanotrasen would like to remind its researching staff that it is never acceptable to \"glomp\" your coworkers, and further \"scientific trials\" on the subject \
 	will no longer be accepted in its academic journals."
 	design_ids = list("tackle_dolphin", "tackle_rocket")
-
 	research_cost = 2500
 	export_price = 2500
 	hidden = TRUE

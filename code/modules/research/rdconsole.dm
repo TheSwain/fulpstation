@@ -734,7 +734,7 @@ Nothing else in the console has ID requirements.
 				l += "<span class='linkOff'>[node.price_display(stored_research)]</span>"  // gray - too expensive
 		else
 			l += "<span class='linkOff bad'>[node.price_display(stored_research)]</span>"  // red - missing prereqs
-		if(node.use_generic_points)
+		if(node.use_generic_points && node.research_department != TECHWEB_POINT_TYPE_GENERIC)
 			l += "<span style='color:[color]'>[TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES[node.research_department]]</span>"
 		else
 			l += "<span style='color:[color]'>Only [TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES[node.research_department]]</span>"
