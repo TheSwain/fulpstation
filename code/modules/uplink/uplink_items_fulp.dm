@@ -147,7 +147,7 @@
 	name = "Death Ripley"
 	desc = "Oh god where did you get this? Goddamn greytiders..."
 	item = /obj/mecha/working/ripley/deathripley
-	cost = 80
+	cost = 40
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/dangerous/espear
@@ -171,7 +171,7 @@
 	cost = 5
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
-/datum/uplink_item/explosives/assistantgrenade
+//datum/uplink_item/explosives/assistantgrenade
 	name = "Greytide Grenade"
 	desc = "A standard grenade, but hidden within a Grey Bull! Surprise your enemies with a fizzy blow!"
 	item = /obj/item/grenade/frag/assistant
@@ -183,5 +183,5 @@
 	name = "Captain's Spare ID Card."
 	desc = "I mean, the Captain is basically an assistant with AA."
 	item = /obj/item/card/id/captains_spare
-	cost = 8
+	cost = 72
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
