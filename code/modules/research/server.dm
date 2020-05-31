@@ -95,6 +95,19 @@
 	. = list()
 	.[department_pool] = income
 	produce_heat()
+	// AI Malf Points
+	var/area/A = get_area(src)
+	for(var/obj/machinery/power/apc/APC in GLOB.apcs_list)
+		if(get_area(APC) != A)
+			continue
+		if(APC.operating && APC.malfhack && APC.malfai)
+			if(APC.malfai.malfresearch(src))
+				var/datum/effect_system/spark_spread/sparks = new
+				sparks.set_up(1, 1, src)
+				sparks.attach(src)
+				sparks.start()
+				produce_heat()
+
 
 /obj/machinery/rnd/server/proc/get_department_name()
 	if(machine_stat & EMAGGED)

@@ -57,6 +57,7 @@
 	var/control_disabled = FALSE	// Set to 1 to stop AI from interacting via Click()
 	var/malfhacking = FALSE		// More or less a copy of the above var, so that malf AIs can hack and still get new cyborgs -- NeoFite
 	var/malf_cooldown = 0		//Cooldown var for malf modules, stores a worldtime + cooldown
+	var/malf_research_time = 300 // Average number of seconds it takes for one slaved RD server to generate a processing point.
 
 	var/obj/machinery/power/apc/malfhack
 	var/explosive = FALSE		//does the AI explode when it dies?
@@ -931,6 +932,15 @@
 		playsound(get_turf(src), 'sound/machines/ding.ogg', 50, TRUE, ignore_walls = FALSE)
 		to_chat(src, "Hack complete. \The [apc] is now under your exclusive control.")
 		apc.update_icon()
+
+/mob/living/silicon/ai/proc/malfresearch(obj/machinery/rnd/server/server)
+	// Called when an RD server generates research points. We want about a point every 5 minutes per server.
+	if(rand(0,malf_research_time)==0)
+		malf_picker.processing_time += 1
+		playsound(get_turf(src), 'sound/machines/ping.ogg', 20, TRUE, ignore_walls = FALSE)
+		to_chat(src, "<strong>[server]</strong> has generated processing power while slaved to you.")
+		return TRUE
+	return FALSE
 
 /mob/living/silicon/ai/verb/deploy_to_shell(var/mob/living/silicon/robot/target)
 	set category = "AI Commands"
