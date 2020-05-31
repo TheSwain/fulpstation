@@ -91,6 +91,16 @@
 	research_department = TECHWEB_POINT_TYPE_SERVICE
 
 /////////////////////////Advanced Surgery/////////////////////////
+/datum/techweb_node/exp_tools_medical
+	id = "exp_tools_medical"
+	display_name = "Experimental Surgical"
+	description = "Highly advanced surgical tools."
+	design_ids = list("laserscalpel", "mechanicalpinches", "searingtool")
+	prereq_ids = list("adv_biotech")
+	research_cost = 2500
+	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_MEDICAL
+
 /datum/techweb_node/imp_wt_surgery
 	id = "imp_wt_surgery"
 	display_name = "Improved Wound-Tending Surgery"
@@ -586,7 +596,7 @@
 	id = "janitor"
 	display_name = "Advanced Sanitation Technology"
 	description = "Clean things better, faster, stronger, and harder!"
-	prereq_ids = list("adv_engi")
+	prereq_ids = list("engineering")
 	design_ids = list("holobarrier_jani", "advmop", "buffer", "blutrash", "light_replacer", "spraybottle", "beartrap")
 	research_cost = 2500
 	export_price = 5000
@@ -596,17 +606,27 @@
 	id = "botany"
 	display_name = "Botanical Engineering"
 	description = "Botanical tools"
-	prereq_ids = list("adv_engi", "biotech")
+	prereq_ids = list("engineering", "biotech")
 	design_ids = list("portaseeder", "flora_gun", "hydro_tray", "biogenerator", "seed_extractor")
 	research_cost = 2500
 	export_price = 5000
 	research_department = TECHWEB_POINT_TYPE_SERVICE
 
-/datum/techweb_node/exp_tools
-	id = "exp_tools"
+/datum/techweb_node/exp_tools_botany
+	id = "exp_tools_botany"
+	display_name = "Experimental Botany"
+	description = "Highly advanced Botanical tools."
+	design_ids = list("gene_shears")
+	prereq_ids = list("botany")
+	research_cost = 2500
+	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SERVICE
+
+/datum/techweb_node/exp_tools_engineering
+	id = "exp_tools_engineering"
 	display_name = "Experimental Tools"
-	description = "Highly advanced tools."
-	design_ids = list("exwelder", "jawsoflife", "handdrill", "laserscalpel", "mechanicalpinches", "searingtool", "gene_shears") // why the fuck are medical tools here
+	description = "Highly advanced engineering tools."
+	design_ids = list("exwelder", "jawsoflife", "handdrill") // why the fuck are medical tools here
 	prereq_ids = list("adv_engi")
 	research_cost = 2500
 	export_price = 5000
@@ -985,6 +1005,7 @@
 	design_ids = list("purging_nanites", "metabolic_nanites", "stealth_nanites", "memleak_nanites","sensor_voice_nanites", "voice_nanites")
 	research_cost = 1000
 	export_price = 4000
+	use_generic_points = FALSE
 
 /datum/techweb_node/nanite_mesh
 	id = "nanite_mesh"
@@ -993,6 +1014,7 @@
 	prereq_ids = list("nanite_base","engineering")
 	design_ids = list("hardening_nanites", "dermal_button_nanites", "refractive_nanites", "cryo_nanites", "conductive_nanites", "shock_nanites", "emp_nanites", "temperature_nanites")
 	research_cost = 1000
+	export_price = 5000
 	export_price = 5000
 
 /datum/techweb_node/nanite_bio
@@ -1003,7 +1025,7 @@
 	design_ids = list("regenerative_nanites", "bloodheal_nanites", "coagulating_nanites","poison_nanites","flesheating_nanites",\
 					"sensor_crit_nanites","sensor_death_nanites", "sensor_health_nanites", "sensor_damage_nanites", "sensor_species_nanites")
 	research_cost = 1000
-	export_price = 5000
+	use_generic_points = FALSE
 
 /datum/techweb_node/nanite_neural
 	id = "nanite_neural"
@@ -1013,6 +1035,7 @@
 	design_ids = list("nervous_nanites", "brainheal_nanites", "paralyzing_nanites", "stun_nanites", "selfscan_nanites","good_mood_nanites","bad_mood_nanites")
 	research_cost = 2000
 	export_price = 5000
+	use_generic_points = FALSE
 
 /datum/techweb_node/nanite_synaptic
 	id = "nanite_synaptic"
@@ -1022,6 +1045,7 @@
 	design_ids = list("mindshield_nanites", "pacifying_nanites", "blinding_nanites", "sleep_nanites", "mute_nanites", "speech_nanites","hallucination_nanites")
 	research_cost = 2000
 	export_price = 5000
+	use_generic_points = FALSE
 
 /datum/techweb_node/nanite_harmonic
 	id = "nanite_harmonic"
@@ -1031,6 +1055,7 @@
 	design_ids = list("fakedeath_nanites","aggressive_nanites","defib_nanites","regenerative_plus_nanites","brainheal_plus_nanites","purging_plus_nanites","adrenaline_nanites")
 	research_cost = 4000
 	export_price = 8000
+	use_generic_points = FALSE
 
 /datum/techweb_node/nanite_combat
 	id = "nanite_military"
@@ -1040,6 +1065,7 @@
 	design_ids = list("explosive_nanites","pyro_nanites","meltdown_nanites","viral_nanites","nanite_sting_nanites")
 	research_cost = 5000
 	export_price = 12500
+	use_generic_points = FALSE
 
 /datum/techweb_node/nanite_hazard
 	id = "nanite_hazard"
@@ -1049,6 +1075,7 @@
 	design_ids = list("spreading_nanites","mindcontrol_nanites","mitosis_nanites")
 	research_cost = 7000
 	export_price = 15000
+	use_generic_points = FALSE
 
 /datum/techweb_node/nanite_replication_protocols
 	id = "nanite_replication_protocols"
