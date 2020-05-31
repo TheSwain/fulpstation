@@ -172,13 +172,13 @@
 	cost = 5
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
-//datum/uplink_item/explosives/assistantgrenade
-	name = "Greytide Grenade"
-	desc = "A standard grenade, but hidden within a Grey Bull! Surprise your enemies with a fizzy blow!"
-	item = /obj/item/grenade/frag/assistant
-	cost = 2
-	surplus = 35
-	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+//datum/uplink_item/explosives/assistantgrenade temporarily disabled till mob icon added
+	//name = "Greytide Grenade"
+	//desc = "A standard grenade, but hidden within a Grey Bull! Surprise your enemies with a fizzy blow!"
+	//item = /obj/item/grenade/frag/assistant
+	//cost = 2
+	//surplus = 35
+	//include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/device_tools/capspare
 	name = "Captain's Spare ID Card."
