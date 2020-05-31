@@ -28,6 +28,7 @@
 	item = /obj/item/clothing/suit/space/hardsuit/assistant
 	cost = 0
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
+	surplus = 15
 
 /datum/uplink_item/suits/assistantelite
 	name = "Assistant Elite Hardsuit"
