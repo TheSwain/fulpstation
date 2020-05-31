@@ -28,7 +28,7 @@ Nothing else in the console has ID requirements.
 	var/obj/machinery/rnd/production/protolathe/linked_lathe				//Linked Protolathe
 	var/obj/machinery/rnd/production/circuit_imprinter/linked_imprinter	//Linked Circuit Imprinter
 
-	req_access = list(ACCESS_TOX)	//lA AND SETTING MANIPULATION REQUIRES SCIENTIST ACCESS.
+	req_access = list()
 
 	//UI VARS
 	var/screen = RDSCREEN_MENU
@@ -138,6 +138,19 @@ Nothing else in the console has ID requirements.
 	else if(!(linked_destroy && linked_destroy.busy) && !(linked_lathe && linked_lathe.busy) && !(linked_imprinter && linked_imprinter.busy))
 		. = ..()
 
+/obj/machinery/computer/rdconsole/proc/CanAccessTechnology(mob/M)
+	if(SSresearch.techweb_access.len==0)
+		return TRUE
+	var/obj/item/card/id/I = M.get_idcard(TRUE)
+	if (istype(I, /obj/item/pda))
+		var/obj/item/pda/pda = I
+		I = pda.id
+	if(I && istype(I))
+		for(var/IA in SSresearch.techweb_access)
+			if (IA in I.access)
+				return TRUE
+	return FALSE
+
 /obj/machinery/computer/rdconsole/proc/research_node(id, mob/user)
 	if(!stored_research.available_nodes[id] || stored_research.researched_nodes[id])
 		say("Node unlock failed: Either already researched or not available!")
@@ -233,21 +246,23 @@ Nothing else in the console has ID requirements.
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_main_menu()
-	var/list/l = list()
-	//if(research_control)
-		l += "<H2><a href='?src=[REF(src)];switch_screen=[RDSCREEN_TECHWEB]'>Technology</a>"
+	var/l = ""
+	var/div = "<div style='margin:1em 0'>"
+	var/divx = "</div>"
+	if (CanAccessTechnology(usr))
+		l += div+"<a href='?src=[REF(src)];switch_screen=[RDSCREEN_TECHWEB]'><b>Technology</b></a>"+divx
 	if(d_disk)
-		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_DESIGNDISK]'>Design Disk</a>"
+		l += div+"<a href='?src=[REF(src)];switch_screen=[RDSCREEN_DESIGNDISK]'><b>Design Disk</b></a>"+divx
 	if(t_disk)
-		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_TECHDISK]'>Tech Disk</a>"
+		l += div+"<a href='?src=[REF(src)];switch_screen=[RDSCREEN_TECHDISK]'><b>Tech Disk</b></a>"+divx
 	if(linked_destroy)
-		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_DECONSTRUCT]'>Destructive Analyzer</a>"
+		l += div+"<a href='?src=[REF(src)];switch_screen=[RDSCREEN_DECONSTRUCT]'><b>Destructive Analyzer</b></a>"+divx
 	if(linked_lathe)
-		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_PROTOLATHE]'>Protolathe</a>"
+		l += div+"<a href='?src=[REF(src)];switch_screen=[RDSCREEN_PROTOLATHE]'><b>Protolathe</b></a>"+divx
 	if(linked_imprinter)
-		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_IMPRINTER]'>Circuit Imprinter</a>"
-	l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_SETTINGS]'>Settings</a></H2>"
-	return l
+		l += div+"<a href='?src=[REF(src)];switch_screen=[RDSCREEN_IMPRINTER]'><b>Circuit Imprinter</b></a>"+divx
+	l += div+"<a href='?src=[REF(src)];switch_screen=[RDSCREEN_SETTINGS]'><b>Settings</b></a>"+divx
+	return list(l)
 
 /obj/machinery/computer/rdconsole/proc/ui_locked()
 	return list("<h3><a href='?src=[REF(src)];switch_screen=[RDSCREEN_MENU];unlock_console=1'>SYSTEM LOCKED</a></h3></br>")
@@ -643,6 +658,8 @@ Nothing else in the console has ID requirements.
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_techweb()
+	if (!CanAccessTechnology(usr))
+		return list("<p style='color:red;'>Access denied.</p>")
 	var/list/l = list()
 	if(ui_mode != RDCONSOLE_UI_MODE_LIST)
 		var/list/columns = list()
@@ -713,9 +730,12 @@ Nothing else in the console has ID requirements.
 				l += "<a href='?src=[REF(src)];research_node=[node.id]'>[node.price_display(stored_research)]</a>"
 			else
 				l += "<span class='linkOff'>[node.price_display(stored_research)]</span>"  // gray - too expensive
-			l += "<span style='color:[color]'>[TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES[node.research_department]]</span>"
 		else
 			l += "<span class='linkOff bad'>[node.price_display(stored_research)]</span>"  // red - missing prereqs
+		if(node.use_generic_points)
+			l += "<span style='color:[color]'>[TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES[node.research_department]]</span>"
+		else
+			l += "<span style='color:[color]'>Only [TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES[node.research_department]]</span>"
 		if(ui_mode == RDCONSOLE_UI_MODE_NORMAL)
 			l += "[node.description]"
 			for(var/i in node.design_ids)
@@ -973,8 +993,8 @@ Nothing else in the console has ID requirements.
 	if(ls["disk_slot"])
 		disk_slot_selected = text2num(ls["disk_slot"])
 	if(ls["research_node"])
-		//if(!research_control)
-		//	return				//honestly should call them out for href exploiting :^)
+		if(!CanAccessTechnology(usr))
+			return				//honestly should call them out for href exploiting :^)
 		if(!SSresearch.science_tech.available_nodes[ls["research_node"]])
 			return			//Nope!
 		research_node(ls["research_node"], usr)

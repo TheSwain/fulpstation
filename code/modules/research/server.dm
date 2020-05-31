@@ -241,9 +241,9 @@
 			if("rd")
 				SSresearch.techweb_access = list(ACCESS_RD)
 			if("command")
-				SSresearch.techweb_access = list(ACCESS_HEADS)
+				SSresearch.techweb_access = list(ACCESS_RD, ACCESS_HEADS)
 			if("science")
-				SSresearch.techweb_access = list(ACCESS_TOX)
+				SSresearch.techweb_access = list(ACCESS_RD, ACCESS_HEADS, ACCESS_TOX)
 			else
 				SSresearch.techweb_access = list()
 
