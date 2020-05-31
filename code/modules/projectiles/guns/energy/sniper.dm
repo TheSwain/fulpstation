@@ -11,7 +11,6 @@
 	vary_fire_sound = FALSE
 	pin = null
 	cell_type = /obj/item/stock_parts/cell/energy_sniper
-	recoil = 0.3
 	weapon_weight = WEAPON_HEAVY
 	can_flashlight = FALSE
 	charge_sections = 1
@@ -42,8 +41,7 @@
 	icon_state = "blue_bullet"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
-	dismemberment = 30
-	armour_penetration = 40
+	armour_penetration = 25
 
 /obj/item/stock_parts/cell/energy_sniper //20 shots, very slow charge rate
 	name = "pulse rifle power cell"

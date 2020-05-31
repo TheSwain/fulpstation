@@ -41,18 +41,18 @@
 "aO" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel/yellowsiding{icon_state = "yellowsiding"; dir = 10},/area/ruin/powered/mechanicus)
 "aP" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel/yellowsiding,/area/ruin/powered/mechanicus)
 "aQ" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plasteel/yellowsiding{icon_state = "yellowsiding"; dir = 6},/area/ruin/powered/mechanicus)
-"aR" = (/obj/structure/closet/secure_closet/mechanicus/implants,/turf/open/floor/circuit,/area/ruin/powered/mechanicus/surgery)
+"aR" = (/obj/structure/closet/secure_closet/mechanicus/implants,/obj/item/organ/heart/cybernetic/tier4,/obj/item/organ/cyberimp/arm/surgery/plus,/obj/item/organ/cyberimp/chest/reviver/plus,/obj/item/organ/lungs/cybernetic/tier4,/turf/open/floor/circuit,/area/ruin/powered/mechanicus/surgery)
 "aS" = (/obj/effect/mapping_helpers/no_lava,/obj/machinery/light/small{icon_state = "bulb"; dir = 1},/obj/effect/turf_decal/trimline/red/filled/line{icon_state = "trimline_fill"; dir = 1},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ruin/powered/mechanicus/vault)
 "aT" = (/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
 "aU" = (/obj/machinery/door/airlock/research/glass{name = "Surgery"; req_access = 400; req_access_txt = "0"},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/surgery)
 "aV" = (/turf/closed/wall,/area/ruin/powered/mechanicus/vault)
 "aW" = (/obj/machinery/door/airlock/grunge{name = "Chapel"; req_access = 400},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
 "aX" = (/obj/machinery/computer/rdconsole/production,/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/obj/effect/turf_decal/tile/brown{dir = 8},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
-"aY" = (/obj/machinery/rnd/production/protolathe/department/science,/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
-"aZ" = (/obj/machinery/rnd/production/circuit_imprinter,/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"aY" = (/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/obj/machinery/rnd/production/protolathe,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"aZ" = (/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/obj/machinery/autolathe,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
 "ba" = (/obj/item/stack/cable_coil/five,/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
 "bb" = (/obj/structure/frame/machine{anchored = 1},/obj/item/circuitboard/machine/ore_silo,/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/obj/effect/turf_decal/tile/brown,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
-"bc" = (/obj/structure/table,/obj/item/clothing/glasses/meson,/obj/item/clothing/glasses/meson,/obj/item/clothing/glasses/meson,/obj/item/clothing/glasses/meson,/obj/item/clothing/glasses/meson,/obj/effect/turf_decal/trimline/red/line{icon_state = "trimline"; dir = 9},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bc" = (/obj/effect/turf_decal/trimline/red/line{icon_state = "trimline"; dir = 9},/obj/machinery/mineral/equipment_vendor,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
 "bd" = (/obj/effect/mapping_helpers/no_lava,/obj/effect/turf_decal/trimline/red/filled/line{icon_state = "trimline_fill"; dir = 1},/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/ruin/powered/mechanicus/vault)
 "be" = (/turf/open/lava/smooth/lava_land_surface,/area/lavaland/surface/outdoors)
 "bf" = (/obj/effect/mapping_helpers/no_lava,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/lavaland/surface/outdoors)
@@ -94,6 +94,8 @@
 "bP" = (/obj/structure/bed/pod,/obj/effect/mob_spawn/human/techcult{icon_state = "sleeper"; dir = 8},/obj/effect/turf_decal/tile/green{dir = 8},/obj/effect/turf_decal/tile/green{dir = 4},/obj/effect/turf_decal/tile/green,/turf/open/floor/plasteel,/area/ruin/powered/mechanicus/dorms)
 "bQ" = (/obj/effect/turf_decal/trimline/red/line,/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
 "bR" = (/obj/effect/turf_decal/trimline/red/line{icon_state = "trimline"; dir = 6},/turf/open/floor/plasteel/dark,/area/ruin/powered/mechanicus/vault)
+"bS" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/ruin/powered/mechanicus/vault)
+"bT" = (/obj/structure/closet/secure_closet/mechanicus/augs,/turf/open/floor/circuit,/area/ruin/powered/mechanicus/surgery)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaabebebebebebebebebeaaaaaaaaaaaaaaaa
@@ -108,11 +110,11 @@ beaeazaAaBakaCaeacaDaEaxacawaFaGacaHaqaqaIaqaqahbe
 beaeakakakakaJaeacaDaKaGacaDaKaGacahayahahayahahbe
 beaeakakakakaLaeamaDaKaGacaDaKaGapahbMbNahbMbNahbe
 beaMaMaMaNaMaMaMacaOaPaQacaOaPaQacahbObPahbObPahbe
-beaMaRaRbobpbqaUacacacacacacacacacaVaVaVaVaVaVaVbe
+beaMaRbTbobpbqaUacacacacacacacacacaVaVaVaVaVaVaVbe
 beaMbobpbzaTbAaVaVaVaVaVaWaVaVaVaVaVaXaYaZbabbaVbe
 beaMbBbCaTbDbEaVbcbgbhbjbjbjbkblbKaVbmbibibvbsaVbe
 beaMbnbFbGbHbnaVbLbQbQbQbQbQbQbQbRbrbubwbxbwbyaVbe
-beaMaMaMaMaMaMaVaVaVaVaVbtaVaVaVaVaVaVaVaVaVaVaVbe
+beaMaMaMaMaMaMaVbSbSbSaVbtaVbSbSbSaVaVaVaVaVaVaVbe
 bebebebebebebebebebebeaSbdaSbebebebebebebebebebebe
 aaaaaaaaaaaaaaaabebebebfbfbfbeaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaabebfbfbfaaaaaaaaaaaaaaaaaaaaaa

@@ -34,26 +34,76 @@
 		/obj/item/organ/cyberimp/arm/toolset = 1,
 		/obj/item/organ/cyberimp/arm/surgery = 1,
 		/obj/item/organ/cyberimp/chest/reviver = 3,
-		/obj/item/organ/cyberimp/mouth/breathing_tube = 3,
 		/obj/item/organ/cyberimp/chest/nutriment/plus = 3,
 		/obj/item/organ/tongue/robot = 3,
-		/obj/item/organ/lungs/cybernetic/tier4 = 3,
-		/obj/item/organ/heart/cybernetic/tier4 = 3)
+		/obj/item/organ/lungs/cybernetic/tier3 = 3,
+		/obj/item/organ/heart/cybernetic/tier3 = 3)
+	generate_items_inside(items_inside,src)
+
+/obj/structure/closet/secure_closet/mechanicus/augs
+	name = "augmentation storage"
+
+/obj/structure/closet/secure_closet/mechanicus/augs/PopulateContents()
+	..()
+	var/static/items_inside = list(
+		/obj/item/bodypart/chest/robot = 2,
+		/obj/item/bodypart/head/robot = 2,
+		/obj/item/bodypart/l_arm/robot = 2,
+		/obj/item/bodypart/r_arm/robot = 2,
+		/obj/item/bodypart/l_leg/robot = 2,
+		/obj/item/bodypart/r_leg/robot = 3)
 	generate_items_inside(items_inside,src)
 
 /***************** Armor *****************/
 
+//Basic
 /obj/item/clothing/suit/hooded/techpriest/armor
 	name = "armored techpriest robes"
 	desc = "An armored version of robes worn by followers of the machine god."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife/combat/bone, /obj/item/kitchen/knife/combat/survival)
-	armor = list("melee" = 45, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 45, "bullet" = 10, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 	hoodtype = /obj/item/clothing/head/hooded/techpriest/armor
 
 /obj/item/clothing/head/hooded/techpriest/armor
 	name = "armored techpriest's hood"
 	desc = "An armored version of hood worn by followers of the machine god."
-	armor = list("melee" = 45, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 45, "bullet" = 10, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+
+//Leader
+//Don't yell at me, it's super balanced, and in world of Lavaland everything is overpowered anyway.
+/obj/item/clothing/suit/hooded/techpriest/armor/lead
+	name = "blessed tech robes"
+	desc = "From the rage of the beast, Machine God protect us."
+	armor = list("melee" = 65, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+	hoodtype = /obj/item/clothing/head/hooded/techpriest/armor/lead
+
+/obj/item/clothing/suit/hooded/techpriest/armor/lead/Initialize()
+	. = ..()
+	AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_OCLOTHING)
+
+/obj/item/clothing/head/hooded/techpriest/armor/lead
+	name = "blessed tech hood"
+	desc = "From the weakness of the mind, Omnissiah set us free."
+	armor = list("melee" = 65, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+
+/obj/item/clothing/head/hooded/techpriest/armor/lead/Initialize()
+	. = ..()
+	AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_OCLOTHING)
+
+//Only the chosen ones can use it!
+/obj/item/clothing/suit/hooded/techpriest/armor/lead/equipped(mob/living/user, slot)
+	..()
+	if(!("Mechanicus" in user.faction))
+		to_chat(user, "<span class='warning'>The machine god will never allow this!</span>")
+		user.dropItemToGround(src, TRUE)
+		user.Paralyze(60)
+		user.Dizzy(300)
+	else
+		if(!(user.mind.holy_role))
+			to_chat(user, "<span class='warning'>Your time will come later.</span>")
+			user.dropItemToGround(src, TRUE)
+			user.Paralyze(40)
+			user.Dizzy(80)
 
 /***************** Spawners *****************/
 
@@ -66,14 +116,17 @@
 	mob_name = "tech priest"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	short_desc = "You are the member of the machine cult on Lavaland."
-	flavour_text = ""
-	important_info = "Listen to your leader, help those in need and cleanse this land from monsters."
+	short_desc = "You are a member of the machine cult on Lavaland."
+	flavour_text = "The flesh is weak and humans are fragile. You exist only to research universe and enchance abilities with power of science."
+	important_info = "Listen to your leader, help those in need and protect your religion."
 	outfit = /datum/outfit/techcult
 	assignedrole = "Tech Priest"
 
 /obj/effect/mob_spawn/human/techcult/special(mob/living/new_spawn)
 	new_spawn.grant_language(/datum/language/machine, TRUE, TRUE, LANGUAGE_MIND) //They have to implant robotic box instead of a tongue to speak this language though.
+
+/datum/outfit/techcult/post_equip(mob/living/carbon/human/H)
+	H.faction |= "Mechanicus"
 
 /datum/outfit/techcult
 	name = "Tech Priest"
@@ -98,8 +151,8 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	short_desc = "You are the leader of the machine cult on Lavaland."
-	flavour_text = ""
-	important_info = "Lead your cult to the perfection, help those in need."
+	flavour_text = "You are the one who started the expedition on Lavaland. Your goals are to research life, ruins and anything else you can find here. You must encourage your followers to abandon the weak flesh and help them to do so."
+	important_info = "Lead your cult to the perfection, protect your religion."
 	outfit = /datum/outfit/techcult/lead
 	assignedrole = "Tech Cult Leader"
 
@@ -110,11 +163,12 @@
 /datum/outfit/techcult/lead
 	name = "Tech Cult Leader"
 	uniform = /obj/item/clothing/under/rank/civilian/chaplain
+	suit = /obj/item/clothing/suit/hooded/techpriest/armor/lead
 	gloves = /obj/item/clothing/gloves/combat
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/night
 	r_hand = /obj/item/gun/energy/sniper/pin
 	back = /obj/item/storage/backpack/cultpack
-	backpack_contents = list(/obj/item/storage/book/bible/omnissiah, /obj/item/book/granter/spell/omnissiah)
+	backpack_contents = list(/obj/item/storage/book/bible/omnissiah, /obj/item/book/granter/spell/omnissiah, /obj/item/organ/heart/cybernetic/tier4)
 
 /***************** Credo Omnissiah *****************/
 
@@ -165,13 +219,10 @@
 				/obj/item/robot_suit/prebuilt = 40,
 				/obj/item/mmi/posibrain = 34,
 				/obj/item/stock_parts/cell/quantum = 18,
+				/obj/item/organ/heart/cybernetic/tier4 = 13,
+				/obj/item/organ/lungs/cybernetic/tier4 = 13,
 				/obj/item/organ/cyberimp/chest/reviver/plus = 11,
-				/obj/item/bodypart/chest/robot/empproof = 7,
-				/obj/item/bodypart/head/robot/empproof = 7,
-				/obj/item/bodypart/l_arm/robot/empproof = 7,
-				/obj/item/bodypart/r_arm/robot/empproof = 7,
-				/obj/item/bodypart/l_leg/robot/empproof = 7,
-				/obj/item/bodypart/r_leg/robot/empproof = 7,
+				/obj/item/organ/cyberimp/arm/surgery/plus = 11,
 				/obj/item/organ/cyberimp/arm/gun/laser = 2,
 				/obj/item/organ/cyberimp/arm/combat = 1,)
 
@@ -215,7 +266,7 @@
 	id = "mars_tech"
 	display_name = "Marsian Technology"
 	description = "A complicated technology, used by Marsian scientists and soldiers alike."
-	boost_item_paths = list(/obj/item/gun/energy/sniper, /obj/item/organ/heart/cybernetic/tier4, /obj/item/organ/lungs/cybernetic/tier4, /obj/item/organ/cyberimp/chest/reviver/plus)
+	boost_item_paths = list(/obj/item/gun/energy/sniper, /obj/item/gun/energy/sniper/pin, /obj/item/organ/heart/cybernetic/tier4, /obj/item/organ/lungs/cybernetic/tier4, /obj/item/organ/cyberimp/chest/reviver/plus, /obj/item/organ/cyberimp/arm/surgery/plus)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 10000
 	hidden = TRUE
@@ -245,7 +296,7 @@
 /datum/techweb_node/cyber_organs_ultra
 	id = "cyber_organs_ultra"
 	display_name = "Quadro-Cybernetic Organs"
-	description = "An advanced set of cybernetic organs, used by highly advanced group of religious fanatics on Mars."
+	description = "An advanced set of cybernetic organs, used by a group of religious fanatics on Mars."
 	prereq_ids = list("cyber_organs_upgraded", "mars_tech")
 	design_ids = list("cybernetic_heart_tier4", "cybernetic_lungs_tier4")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
@@ -273,17 +324,95 @@
 	display_name = "Marsian Cybernetic Implants"
 	description = "Highly advanced cybernetic implants used to improve efficiency to the maximum."
 	prereq_ids = list("combat_cyber_implants", "mars_tech")
-	design_ids = list("ci-reviver-plus")
+	design_ids = list("ci-reviver-plus", "ci-surgery-plus")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
-/datum/design/cyberimp_reviver
+/datum/design/cyberimp_reviver_plus
 	name = "Reviver Implant PLUS"
 	desc = "This implant will attempt to heal you REALLY FAST if you lose consciousness. For the true warriors!"
 	id = "ci-reviver-plus"
 	construction_time = 100
 	materials = list(/datum/material/iron = 2000, /datum/material/glass = 2000, /datum/material/uranium = 1500, /datum/material/gold = 1000, /datum/material/diamond=500)
 	build_path = /obj/item/organ/cyberimp/chest/reviver/plus
+	build_type = PROTOLATHE | MECHFAB
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/cyberimp_surgical_plus
+	name = "Advanced Surgical Toolset Implant"
+	desc = "A set of advanced surgical tools hidden behind a concealed panel on the user's arm."
+	id = "ci-surgery-plus"
+	construction_time = 100
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 2500, /datum/material/silver = 2000, /datum/material/gold = 1000)
+	build_path = /obj/item/organ/cyberimp/arm/surgery/plus
+	build_type = PROTOLATHE | MECHFAB
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+//EMP Proof limbs - Tech
+/datum/techweb_node/mars_robotics_empproof
+	id = "mars_robotics_empproof"
+	display_name = "EMP-Proof Augmentation"
+	description = "Advanced research that prevents robotic limbs from overloading when affected by electromagnetic pulse. Doesn't work with Cyborgs."
+	prereq_ids = list("adv_robotics", "emp_super", "mars_tech")
+	design_ids = list("borg_chest_empproof", "borg_head_empproof", "borg_l_arm_empproof", "borg_r_arm_empproof", "borg_l_leg_empproof", "borg_r_leg_empproof")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 5000
+
+/datum/design/borg_chest/emp
+	name = "Cyborg Torso"
+	id = "borg_chest_empproof"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/chest/robot/empproof
+	materials = list(/datum/material/iron=40000, /datum/material/plasma=20000, /datum/material/uranium=10000)
+	construction_time = 150
+	category = list("Misc", "Medical Designs")
+
+/datum/design/borg_head/emp
+	name = "Cyborg Head"
+	id = "borg_head_empproof"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/head/robot/empproof
+	materials = list(/datum/material/iron=5000, /datum/material/plasma=2500, /datum/material/uranium=1250)
+	construction_time = 150
+	category = list("Misc", "Medical Designs")
+
+/datum/design/borg_l_arm/emp
+	name = "Cyborg Left Arm"
+	id = "borg_l_arm_empproof"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/l_arm/robot/empproof
+	materials = list(/datum/material/iron=10000, /datum/material/plasma=5000, /datum/material/uranium=2500)
+	construction_time = 100
+	category = list("Misc", "Medical Designs")
+
+/datum/design/borg_r_arm/emp
+	name = "Cyborg Right Arm"
+	id = "borg_r_arm_empproof"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/r_arm/robot/empproof
+	materials = list(/datum/material/iron=10000, /datum/material/plasma=5000, /datum/material/uranium=2500)
+	construction_time = 100
+	category = list("Misc", "Medical Designs")
+
+/datum/design/borg_l_leg/emp
+	name = "Cyborg Left Leg"
+	id = "borg_l_leg_empproof"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/l_leg/robot/empproof
+	materials = list(/datum/material/iron=10000, /datum/material/plasma=5000, /datum/material/uranium=2500)
+	construction_time = 100
+	category = list("Misc", "Medical Designs")
+
+/datum/design/borg_r_leg/emp
+	name = "Cyborg Right Leg"
+	id = "borg_r_leg_empproof"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/r_leg/robot/empproof
+	materials = list(/datum/material/iron=10000, /datum/material/plasma=5000, /datum/material/uranium=2500)
+	construction_time = 100
+	category = list("Misc", "Medical Designs")
 
 /***************** T4 cybernetics *****************/
 
@@ -337,15 +466,15 @@
 		used_dose()
 
 /obj/item/organ/lungs/cybernetic/tier4/proc/used_dose()
-	owner.reagents.add_reagent(/datum/reagent/medicine/salbutamol, 10)
+	owner.reagents.add_reagent(/datum/reagent/medicine/salbutamol, 5)
 	dose_available = FALSE
-	addtimer(VARSET_CALLBACK(src, dose_available, TRUE), 1 MINUTES)
+	addtimer(VARSET_CALLBACK(src, dose_available, TRUE), 2 MINUTES)
 
 // Reviver Implant PLUS
 /obj/item/organ/cyberimp/chest/reviver/plus
 	name = "Reviver implant PLUS"
 	desc = "This implant will attempt to heal you REALLY FAST if you lose consciousness. For the true warriors!"
-	implant_color = "#CC0605"
+	implant_color = "#CC0605" //Cooler red
 
 /obj/item/organ/cyberimp/chest/reviver/plus/on_life()
 	if(reviving)
@@ -382,6 +511,55 @@
 		owner.adjustToxLoss(-3)
 		revive_cost += 40
 
+//Advanced Surgical Toolset Implant
+/obj/item/organ/cyberimp/arm/surgery/plus
+	name = "advanced surgical toolset implant"
+	desc = "A set of advanced surgical tools hidden behind a concealed panel on the user's arm."
+	contents = newlist(/obj/item/retractor/advanced/augment, /obj/item/surgicaldrill/advanced/augment, /obj/item/scalpel/advanced/augment, /obj/item/surgical_drapes)
+
+/obj/item/organ/cyberimp/arm/surgery/plus/emag_act(mob/user)
+	if(!(locate(/obj/item/reagent_containers/borghypo/hacked/augment) in items_list))
+		to_chat(user, "<span class='notice'>You unlock and hack integrated hypospray located in [src]!</span>") //Oh god oh fuck
+		items_list += new /obj/item/reagent_containers/borghypo/hacked/augment(src)
+		return 1
+	return 0
+
+/obj/item/retractor/advanced/augment
+	toolspeed = 0.3 //I AM SPEED!!
+
+/obj/item/surgicaldrill/advanced/augment
+	toolspeed = 0.3 //Still not as fast as alien tools though.
+
+/obj/item/scalpel/advanced/augment
+	toolspeed = 0.3
+
+/obj/item/reagent_containers/borghypo/hacked/augment //Kill people with toxins!
+	name = "hypospray"
+	desc = "A very dangerous tool that is able to synthesize even more dangerous chemicals."
+	recharge_time = 30 //10u every minute
+
+/obj/item/reagent_containers/borghypo/hacked/augment/regenerate_reagents()
+	for(var/i in 1 to reagent_ids.len)
+		var/datum/reagents/RG = reagent_list[i]
+		if(RG.total_volume < RG.maximum_volume)
+			RG.add_reagent(reagent_ids[i], 5)
+
+/obj/item/reagent_containers/borghypo/hacked/augment/add_reagent(datum/reagent/reagent)
+	reagent_ids |= reagent
+	var/datum/reagents/RG = new(10)
+	RG.my_atom = src
+	reagent_list += RG
+
+	var/datum/reagents/R = reagent_list[reagent_list.len]
+	R.add_reagent(reagent, 10)
+
+	modes[reagent] = modes.len + 1
+
+	if(initial(reagent.harmful))
+		reagent_names["[initial(reagent.name)] (Has Side-Effects)"] = reagent
+	else
+		reagent_names[initial(reagent.name)] = reagent
+
 /***************** EMP-Proof Robotic Limbs *****************/
 
 /obj/item/bodypart/chest/robot/empproof
@@ -390,11 +568,11 @@
 
 /obj/item/bodypart/head/robot/empproof
 	name = "emp-proof cyborg head"
-	empproof = TRUE
+	empproof = TRUE //Well, actually it's EMP - RESISTANT, your limbs will still take damage from it.
 
 /obj/item/bodypart/l_arm/robot/empproof
 	name = "emp-proof cyborg left arm"
-	empproof = TRUE
+	empproof = TRUE //But hey, no stun.
 
 /obj/item/bodypart/l_leg/robot/empproof
 	name = "emp-proof cyborg left leg"
@@ -411,22 +589,4 @@
 /obj/item/bodypart/Initialize()
 	..()
 	if(empproof)
-		desc += " This one is EMP-Proof, but won't help with cyborg production."
-
-/mob/living/carbon/human/emp_act(severity)
-	. = ..()
-	if(. & EMP_PROTECT_CONTENTS)
-		return
-	var/informed = FALSE
-	for(var/obj/item/bodypart/L in src.bodyparts)
-		if(L.status == BODYPART_ROBOTIC && !L.empproof)
-			if(!informed)
-				to_chat(src, "<span class='userdanger'>You feel a sharp pain as your robotic limbs overload.</span>")
-				informed = TRUE
-			switch(severity)
-				if(1)
-					L.receive_damage(0,10)
-					Paralyze(200)
-				if(2)
-					L.receive_damage(0,5)
-					Paralyze(100)
+		desc += " This one is EMP-Proof, though it only protects against paralizing effects of EMP."
