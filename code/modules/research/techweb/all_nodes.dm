@@ -996,6 +996,7 @@
 						"relay_nanites", "monitoring_nanites", "research_nanites" ,"researchplus_nanites", "access_nanites", "repairing_nanites","sensor_nanite_volume", "repeater_nanites", "relay_repeater_nanites","red_diag_nanites")
 	research_cost = 1000
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SCIENCE
 
 /datum/techweb_node/nanite_smart
 	id = "nanite_smart"
@@ -1006,6 +1007,7 @@
 	research_cost = 1000
 	export_price = 4000
 	use_generic_points = FALSE
+	research_department = TECHWEB_POINT_TYPE_SCIENCE
 
 /datum/techweb_node/nanite_mesh
 	id = "nanite_mesh"
@@ -1016,6 +1018,7 @@
 	research_cost = 1000
 	export_price = 5000
 	export_price = 5000
+	research_department = TECHWEB_POINT_TYPE_SCIENCE
 
 /datum/techweb_node/nanite_bio
 	id = "nanite_bio"
@@ -1026,6 +1029,7 @@
 					"sensor_crit_nanites","sensor_death_nanites", "sensor_health_nanites", "sensor_damage_nanites", "sensor_species_nanites")
 	research_cost = 1000
 	use_generic_points = FALSE
+	research_department = TECHWEB_POINT_TYPE_SCIENCE
 
 /datum/techweb_node/nanite_neural
 	id = "nanite_neural"
@@ -1036,6 +1040,7 @@
 	research_cost = 2000
 	export_price = 5000
 	use_generic_points = FALSE
+	research_department = TECHWEB_POINT_TYPE_SCIENCE
 
 /datum/techweb_node/nanite_synaptic
 	id = "nanite_synaptic"
@@ -1046,6 +1051,7 @@
 	research_cost = 2000
 	export_price = 5000
 	use_generic_points = FALSE
+	research_department = TECHWEB_POINT_TYPE_SCIENCE
 
 /datum/techweb_node/nanite_harmonic
 	id = "nanite_harmonic"
@@ -1056,6 +1062,7 @@
 	research_cost = 4000
 	export_price = 8000
 	use_generic_points = FALSE
+	research_department = TECHWEB_POINT_TYPE_SCIENCE
 
 /datum/techweb_node/nanite_combat
 	id = "nanite_military"
@@ -1066,6 +1073,7 @@
 	research_cost = 5000
 	export_price = 12500
 	use_generic_points = FALSE
+	research_department = TECHWEB_POINT_TYPE_SCIENCE
 
 /datum/techweb_node/nanite_hazard
 	id = "nanite_hazard"
@@ -1076,6 +1084,7 @@
 	research_cost = 7000
 	export_price = 15000
 	use_generic_points = FALSE
+	research_department = TECHWEB_POINT_TYPE_SCIENCE
 
 /datum/techweb_node/nanite_replication_protocols
 	id = "nanite_replication_protocols"
@@ -1087,6 +1096,8 @@
 	export_price = 2500
 	hidden = TRUE
 	experimental = TRUE
+	use_generic_points = FALSE
+	research_department = TECHWEB_POINT_TYPE_SCIENCE
 
 ////////////////////////Alien technology////////////////////////
 /datum/techweb_node/alientech //AYYYYYYYYLMAOO tech
