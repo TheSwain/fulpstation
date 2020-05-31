@@ -517,7 +517,6 @@
 	antag_leader_datum = /datum/antagonist/nukeop/leader/assistantop
 	requirements = list(90,90,90,80,60,40,30,20,10,10)
 	high_population_requirement = 10
-	antag_cap = list(2,2,2,3,3,3,4,4,7,15)
 
 /datum/dynamic_ruleset/roundstart/nuclear/assistant_ops/pre_execute()
 	. = ..()
