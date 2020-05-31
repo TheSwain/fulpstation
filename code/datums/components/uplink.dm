@@ -15,6 +15,8 @@
 	var/locked = TRUE
 	var/allow_restricted = TRUE
 	var/telecrystals
+	var/telecrystals_initial
+	var/obj/machinery/rnd/server/rdserver
 	var/selected_cat
 	var/owner = null
 	var/datum/game_mode/gamemode
@@ -62,6 +64,7 @@
 	active = _enabled
 	gamemode = _gamemode
 	telecrystals = starting_tc
+	telecrystals_initial = starting_tc
 	if(!lockable)
 		active = TRUE
 		locked = FALSE

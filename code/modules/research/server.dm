@@ -35,7 +35,7 @@
 	// Antagonist Fun
 	var/telecrystal_cost = 9000
 	var/total_syndicate_income = 0
-	var/malf_ai_slave = FALSE
+	var/datum/component/uplink/uplink
 
 /obj/machinery/rnd/server/Initialize()
 	. = ..()
@@ -114,15 +114,13 @@
 	// Credit the points to the Syndicate's bank.
 	if(machine_stat & EMAGGED)
 		total_syndicate_income += income
-		if (telecrystal_cost <= total_syndicate_income)
+		// can afford, has uplink, and we have space for more TC.
+		if(telecrystal_cost <= total_syndicate_income && istype(uplink, /datum/component/uplink) && uplink.telecrystals < uplink.telecrystals_initial)
+			// cap at starting TC to prevent illegal buys (romerol)
 			total_syndicate_income -= telecrystal_cost
-			for(var/datum/antagonist/A in GLOB.antagonists)
-				if (A.owner)
-					var/datum/component/uplink/U = A.owner.find_syndicate_uplink()
-					U.telecrystals += rand(1,2)
-			radio_syn.talk_into(src, "A telecrystal reward has been given to each active Syndicate uplink as a reward for stolen research.", RADIO_CHANNEL_SYNDICATE)
+			uplink.telecrystals = min(uplink.telecrystals + 2, uplink.telecrystals_initial)
+			radio_syn.talk_into(src, "A telecrystal reward has been dispatched to UNKNOWN AGENT.", RADIO_CHANNEL_SYNDICATE)
 			scintillate()
-
 
 /obj/machinery/rnd/server/proc/get_department_name()
 	if(machine_stat & EMAGGED)
@@ -131,14 +129,31 @@
 
 /obj/machinery/rnd/server/emag_act(mob/user)
 	if(machine_stat & EMAGGED)
+		to_chat(user, "<span class='warning'>[name] shows signs of tampering and is slaved to a Syndicate uplink device already.</span>")
 		return
+	// slave the RD to the Uplink device
+	var/datum/mind/M = user.mind
+	if(!istype(M, /datum/mind))
+		return
+	var/datum/component/uplink/U = M.find_syndicate_uplink()
+	if(!istype(U, /datum/component/uplink))
+		to_chat(user, "<span class='boldwarning'>No uplink device found on your person.</span>")
+		return
+	if(istype(U.rdserver, /obj/machinery/rnd/server))
+		to_chat(user, "<span class='boldwarning'>Your uplink device can only handle incoming data from a single server.</span>")
+		return
+	// begin emagging
 	machine_stat |= EMAGGED
+	// add radio
 	radio_syn = new(src)
 	radio_syn.keyslot = new radio_key_syn
 	radio_syn.listening = 0
 	radio_syn.recalculateChannels()
-	playsound(src, "sparks", 75, TRUE)
-	to_chat(user, "<span class='notice'>The [name] is now slaved to Syndicate research posts.</span>")
+	// add owner
+	uplink = U
+	U.rdserver = src
+	to_chat(user, "<strong class='notice'>The [name] is now slaved to your uplink device and will generate rewards over time!</strong>")
+	scintillate()
 
 /obj/machinery/rnd/server/emp_act()
 	. = ..()
@@ -197,6 +212,7 @@
 	sparks.set_up(1, 1, src)
 	sparks.attach(src)
 	sparks.start()
+	playsound(src, "sparks", 50, TRUE)
 
 /obj/machinery/rnd/server/proc/produce_heat()
 	if(machine_stat & (NOPOWER|BROKEN) || !working)
