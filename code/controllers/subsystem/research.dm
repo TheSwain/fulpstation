@@ -75,17 +75,19 @@ SUBSYSTEM_DEF(research)
 			TECHWEB_POINT_TYPE_SERVICE = 1
 		)
 		for(var/obj/machinery/rnd/server/miner in servers)
-			if(miner.working)
-				miner.pool_efficiency = effs[miner.department_pool] * miner.get_temp_effeciency() * miner.part_efficiency
+			if(miner.working && SSmapping.level_trait(miner.z, ZTRAIT_STATION))
+				var/E = (miner.machine_stat & EMAGGED)
+				miner.pool_efficiency = E ? 1 : effs[miner.department_pool] * miner.get_temp_effeciency() * miner.part_efficiency
 				var/list/result = miner.mine(multi_server_income, effs[miner.department_pool])
 				for(var/i in result)
 					result[i] *= effs[miner.department_pool]
 					miner.add_mining_income(result[i] * income_time_difference)
-					if(miner.machine_stat & EMAGGED)
+					if(E)
 						result[i] = 0
 					bitcoins[i] = bitcoins[i] ? bitcoins[i] + result[i] : result[i]
 				// Each server further reduces subsequent servers effeciency.
-				effs[miner.department_pool] *= multi_server_ineffeciency
+				if(!E)
+					effs[miner.department_pool] *= multi_server_ineffeciency
 			else
 				miner.pool_efficiency = 0
 	else

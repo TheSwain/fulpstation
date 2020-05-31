@@ -331,6 +331,8 @@
 	dat += "<th style='width:80px;text-align:left;'>Status</th>"
 	dat += "</tr></thead><tbody>"
 	for(var/obj/machinery/rnd/server/S in GLOB.machines)
+		if(z != S.z)
+			continue
 		var/area/A = get_area(S)
 		dat += "<tr>"
 		dat += "<td style='font-weight: bold;'>[S.name]</td>"
