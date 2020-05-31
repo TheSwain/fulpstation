@@ -21,7 +21,7 @@ SUBSYSTEM_DEF(research)
 
 	var/list/obj/machinery/rnd/server/servers = list()
 
-	var/list/techweb_access = list(ACCESS_TOX) // Overrides rdconsole.dm req_access
+	var/list/techweb_access = list(ACCESS_RD, ACCESS_HEADS, ACCESS_TOX) // Overrides rdconsole.dm req_access
 	var/list/techweb_nodes_starting = list()	//associative id = TRUE
 	var/list/techweb_categories = list()		//category name = list(node.id = TRUE)
 	var/list/techweb_boost_items = list()		//associative double-layer path = list(id = list(point_type = point_discount))
