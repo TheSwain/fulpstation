@@ -139,6 +139,8 @@ Nothing else in the console has ID requirements.
 		. = ..()
 
 /obj/machinery/computer/rdconsole/proc/CanAccessTechnology(mob/M)
+	if(obj_flags & EMAGGED)
+		return TRUE
 	if(SSresearch.techweb_access.len==0)
 		return TRUE
 	var/obj/item/card/id/I = M.get_idcard(TRUE)
