@@ -141,7 +141,7 @@
 			Well here's the Hulk mutation! With this baby that we stole from genetics, you can turn yourself into greytide killing \
 			machine and get goodies such as stun immunity."
 	item = /obj/item/dnainjector/hulkmut
-	cost = 10
+	cost = 15
 	include_modes = list(/datum/game_mode/nuclear/assistant_ops)
 
 /datum/uplink_item/support/deathripley
