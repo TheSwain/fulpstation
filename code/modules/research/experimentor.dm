@@ -475,7 +475,11 @@
 		playsound(src, 'sound/effects/supermatter.ogg', 50, 3, -1)
 		var/obj/item/relic/R = loaded_item
 		if (!R.revealed)
-			var/points = rand(3500,3750) // discovery reward
+			var/list/points = list( // discovery reward
+				TECHWEB_POINT_TYPE_GENERIC = rand(1750,2000),
+				TECHWEB_POINT_TYPE_SCIENCE = rand(1750,2000),
+				TECHWEB_POINT_TYPE_MEDICAL = rand(1750,2000)
+			)
 			new /obj/item/research_notes(drop_location(src), points, "experimentation")
 			visible_message("<span class='notice'> This discovery netted [points] points for research.</span>")
 		R.reveal()

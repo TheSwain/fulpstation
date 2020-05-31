@@ -183,7 +183,7 @@
 			else
 				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
 				visible_message("<span class='notice'>You insert [E] into a slot on the [src]. It pings and prints out some research notes worth [E.research] points!</span>")
-				new /obj/item/research_notes(drop_location(), E.research, "xenobiology")
+				new /obj/item/research_notes(drop_location(), list(TECHWEB_POINT_TYPE_SCIENCE = E.research), "xenobiology")
 				SSresearch.slime_already_researched[E.type] = TRUE
 				qdel(O)
 				return

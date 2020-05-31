@@ -109,7 +109,7 @@ Nothing else in the console has ID requirements.
 /obj/machinery/computer/rdconsole/attackby(obj/item/D, mob/user, params)
 	if(istype(D, /obj/item/research_notes))
 		var/obj/item/research_notes/R = D
-		SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = R.value))
+		SSresearch.science_tech.add_point_list(R.points)
 		playsound(src,'sound/machines/copier.ogg', 100, TRUE)
 		qdel(R)
 		return TRUE
