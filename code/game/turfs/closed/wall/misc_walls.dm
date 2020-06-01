@@ -26,6 +26,14 @@
 			stored_pulling.forceMove(src)
 			H.start_pulling(stored_pulling, supress_message = TRUE)
 
+/turf/closed/wall/mineral/cult/ratvar_act()
+	. = ..()
+	if(istype(src, /turf/closed/wall/mineral/cult)) //if we haven't changed type
+		var/previouscolor = color
+		color = "#FAE48C"
+		animate(src, color = previouscolor, time = 8)
+		addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)
+
 /turf/closed/wall/mineral/cult/artificer
 	name = "runed stone wall"
 	desc = "A cold stone wall engraved with indecipherable symbols. Studying them causes your head to pound."
