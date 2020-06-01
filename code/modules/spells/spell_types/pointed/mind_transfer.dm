@@ -30,7 +30,7 @@
 
 	var/mob/living/victim = targets[1] //The target of the spell whos body will be transferred to.
 	var/datum/mind/VM = victim.mind
-	if(victim.anti_magic_check(TRUE, FALSE) || VM.has_antag_datum(/datum/antagonist/wizard) || VM.has_antag_datum(/datum/antagonist/cult) || VM.has_antag_datum(/datum/antagonist/changeling) || VM.has_antag_datum(/datum/antagonist/rev) || victim.key[1] == "@")
+	if((target.anti_magic_check(TRUE, FALSE) || TM.has_antag_datum(/datum/antagonist/wizard) || TM.has_antag_datum(/datum/antagonist/cult) || TM.has_antag_datum(/datum/antagonist/clockcult) || TM.has_antag_datum(/datum/antagonist/changeling) || TM.has_antag_datum(/datum/antagonist/rev)) || cmptext(copytext(target.key,1,2),"@"))
 		if(!silent)
 			to_chat(user, "<span class='warning'>[victim.p_their(TRUE)] mind is resisting your spell!</span>")
 		return FALSE

@@ -17,6 +17,7 @@
 		/datum/language/monkey,
 		/datum/language/narsie,
 		/datum/language/beachbum,
+		/datum/language/ratvar,
 		/datum/language/aphasia,
 		/datum/language/piratespeak,
 		/datum/language/vampiric, // FULP
@@ -86,6 +87,7 @@
 	var/static/list/languages_possible_fly = typecacheof(list(
 		/datum/language/common,
 		/datum/language/draconic,
+		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/monkey,
 		/datum/language/narsie,
