@@ -1200,6 +1200,10 @@
 		/obj/item/stock_parts/capacitor = /obj/item/stock_parts/capacitor/quadratic,
 		/obj/item/stock_parts/micro_laser = /obj/item/stock_parts/micro_laser/quadultra)
 
+/obj/item/circuitboard/machine/clockwork
+	name = "clockwork board (Report This)"
+	icon_state = "clock_mod"
+
 /obj/item/circuitboard/machine/hypnochair
 	name = "Enhanced Interrogation Chamber (Machine Board)"
 	icon_state = "security"
