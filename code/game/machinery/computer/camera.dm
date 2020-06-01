@@ -229,6 +229,7 @@
 	network = list("thunder")
 	density = FALSE
 	circuit = null
+	clockwork = TRUE //it'd look very weird
 	light_power = 0
 
 /obj/machinery/computer/security/telescreen/update_icon_state()
