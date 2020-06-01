@@ -153,6 +153,12 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	animate(src, color = old_color, time = 10, flags = ANIMATION_PARALLEL)
 	addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 10)
 
+/mob/dead/observer/ratvar_act()
+	var/old_color = color
+	color = "#FAE48C"
+	animate(src, color = old_color, time = 10, flags = ANIMATION_PARALLEL)
+	addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 10)
+
 /mob/dead/observer/Destroy()
 	// Update our old body's medhud since we're abandoning it
 	if(mind && mind.current)
