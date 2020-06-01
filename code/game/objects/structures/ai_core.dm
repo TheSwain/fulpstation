@@ -224,6 +224,8 @@
 					if(brain)
 						var/mob/living/brain/B = brain.brainmob
 						SSticker.mode.remove_antag_for_borging(B.mind)
+						if(!istype(brain.laws, /datum/ai_laws/ratvar))
+							remove_servant_of_ratvar(brain.brainmob, TRUE)
 
 						var/mob/living/silicon/ai/A = null
 
