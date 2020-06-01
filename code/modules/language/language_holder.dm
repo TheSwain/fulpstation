@@ -295,6 +295,10 @@ Key procs
 	spoken_languages = list(/datum/language/swarmer = list(LANGUAGE_ATOM))
 	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
 
+/datum/language_holder/clockmob
+	languages = list(/datum/language/common, /datum/language/ratvar)
+	only_speaks_language = /datum/language/ratvar
+
 /datum/language_holder/venus
 	understood_languages = list(/datum/language/sylvan = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/sylvan = list(LANGUAGE_ATOM))
