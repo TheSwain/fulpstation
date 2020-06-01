@@ -452,6 +452,8 @@
 				if(issilicon(target))
 					var/mob/living/silicon/S = L
 					S.emp_act(EMP_HEAVY)
+				if(is_servant_of_ratvar(L))
+					L.adjustBruteLoss(15)
 				else if(iscarbon(target))
 					var/mob/living/carbon/C = L
 					C.silent += 6
