@@ -514,18 +514,18 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 		if(mind && (mind.assigned_role == "Scientist" || mind.assigned_role == "Research Director"))
 			if(SSresearch.science_tech)
-				if(drunkenness >= 12.9 && drunkenness <= 13.8)
+				// https://xkcd.com/323/
+				var/ballmer_peak = 13.35
+				var/ballmer_diff = 3
+				if(drunkenness >= ballmer_peak - ballmer_diff && drunkenness <= ballmer_peak + ballmer_diff)
 					drunkenness = round(drunkenness, 0.01)
-					var/ballmer_percent = 0
-					if(drunkenness == 13.35) // why run math if I dont have to
-						ballmer_percent = 1
-					else
-						ballmer_percent = (-abs(drunkenness - 13.35) / 0.9) + 1
+					var/ballmer_percent = (-abs(drunkenness - ballmer_peak) / ballmer_diff) + 1
 					if(prob(5))
 						say(pick_list_replacements(VISTA_FILE, "ballmer_good_msg"), forced = "ballmer")
 					SSresearch.science_tech.add_point_list(list(
-						TECHWEB_POINT_TYPE_GENERIC = BALLMER_POINTS * ballmer_percent,
-						TECHWEB_POINT_TYPE_SERVICE = BALLMER_POINTS * ballmer_percent
+						TECHWEB_POINT_TYPE_GENERIC = round(BALLMER_POINTS * ballmer_percent, 0.01),
+						TECHWEB_POINT_TYPE_SERVICE = round(BALLMER_POINTS * ballmer_percent, 0.01),
+						TECHWEB_POINT_TYPE_SCIENCE = round(BALLMER_POINTS * ballmer_percent, 0.01)
 					))
 				if(drunkenness > 26) // by this point you're into windows ME territory
 					if(prob(5))
