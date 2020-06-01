@@ -36,7 +36,9 @@
 	data["can_hack"] = FALSE
 	if(issilicon(user))
 		var/mob/living/silicon/S = user
-		if(S.hack_software)
+		if(is_servant_of_ratvar(S) && !is_servant_of_ratvar(R))
+			dat += "<A href='?src=[REF(src)];convert=[REF(R)]'>(<font color=#BE8700><i>Convert</i></font>)</A> "
+		else if(S.hack_software)
 			data["can_hack"] = TRUE
 	else if(IsAdminGhost(user))
 		data["can_hack"] = TRUE
