@@ -73,6 +73,15 @@
 	else
 		return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', icon_state)
 
+/obj/item/screwdriver/brass
+	name = "brass screwdriver"
+	desc = "A screwdriver made of brass. The handle feels freezing cold."
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	icon_state = "screwdriver_brass"
+	item_state = "screwdriver_brass"
+	toolspeed = 0.5
+	random_color = FALSE
+
 /obj/item/screwdriver/abductor
 	name = "alien screwdriver"
 	desc = "An ultrasonic screwdriver."

@@ -30,6 +30,13 @@
 	icon_state = "crowbar_red"
 	force = 8
 
+/obj/item/crowbar/brass
+	name = "brass crowbar"
+	desc = "A brass crowbar. It feels faintly warm to the touch."
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	icon_state = "crowbar_brass"
+	toolspeed = 0.5
+
 /obj/item/crowbar/abductor
 	name = "alien crowbar"
 	desc = "A hard-light crowbar. It appears to pry by itself, without any effort required."
@@ -97,7 +104,7 @@
 		to_chat(user, "<span class='notice'>You attach the cutting jaws to [src].</span>")
 		usesound = 'sound/items/jaws_cut.ogg'
 		update_icon()
-		
+
 	else
 		tool_behaviour = TOOL_CROWBAR
 		to_chat(user, "<span class='notice'>You attach the prying jaws to [src].</span>")
