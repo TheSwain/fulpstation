@@ -262,7 +262,7 @@
 	var/staff_cooldown = 20 SECONDS // The minimum time between uses.
 	var/storm_telegraph_duration = 10 SECONDS
 	var/storm_duration = 10 SECONDS
-	var/static/list/excluded_areas = list()
+	var/static/list/excluded_areas = list(/area/reebe/city_of_cogs)
 
 /obj/item/staff/storm/attack_self(mob/user)
 	if(storm_nextuse > world.time)
