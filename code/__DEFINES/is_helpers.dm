@@ -131,6 +131,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isguardian(A) (istype(A, /mob/living/simple_animal/hostile/guardian))
 
+#define isclockmob(A) (istype(A, /mob/living/simple_animal/hostile/clockwork))
+
 #define isconstruct(A) (istype(A, /mob/living/simple_animal/hostile/construct))
 
 #define ismegafauna(A) (istype(A, /mob/living/simple_animal/hostile/megafauna))
@@ -150,6 +152,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define iscameramob(A) (istype(A, /mob/camera))
 
 #define isaicamera(A) (istype(A, /mob/camera/aiEye))
+
+#define iseminence(A) (istype(A, /mob/camera/eminence)
 
 //Objects
 #define isobj(A) istype(A, /obj) //override the byond proc because it returns true on children of /atom/movable that aren't objs
