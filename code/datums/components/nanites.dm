@@ -298,7 +298,7 @@
 		research_value *= 0.5
 	if(host_mob.stat == DEAD)
 		research_value *= 0.75
-	SSresearch.science_tech.add_point_list(list(DEPARTMENTAL_FLAG_SCIENCE = research_value))
+	SSresearch.science_tech.add_point_type(TECHWEB_POINT_TYPE_SCIENCE, research_value)
 
 /datum/component/nanites/proc/nanite_scan(datum/source, mob/user, full_scan)
 	if(!full_scan)
