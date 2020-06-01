@@ -280,6 +280,9 @@
 					O.make_laws()
 
 			SSticker.mode.remove_antag_for_borging(B.mind)
+			if(!istype(M.laws, /datum/ai_laws/ratvar))
+				remove_servant_of_ratvar(BM, TRUE)
+
 			O.job = "Cyborg"
 
 			O.cell = chest.cell
