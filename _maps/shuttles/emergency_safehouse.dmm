@@ -438,12 +438,18 @@
 	},
 /area/shuttle/escape)
 "cA" = (
-/obj/machinery/button{
-	id = 1;
-	name = "Command Door Button";
-	req_access_txt = "19"
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
 	},
-/turf/closed/wall/mineral/plastitanium,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/button{
+	id = "brig_blastdoor";
+	name = "Brig Blast Door";
+	pixel_x = -24
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "cB" = (
 /obj/structure/table/reinforced,
@@ -467,13 +473,6 @@
 	dir = 5
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/escape)
-"cF" = (
-/obj/machinery/button{
-	id = 3;
-	req_access_txt = "19"
-	},
-/turf/closed/wall/mineral/plastitanium,
 /area/shuttle/escape)
 "cG" = (
 /obj/structure/table/reinforced,
@@ -567,14 +566,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
-"kX" = (
-/obj/machinery/button{
-	id = 2;
-	name = "Brig Blast Door Button";
-	req_access_txt = "1"
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/shuttle/escape)
 "on" = (
 /obj/machinery/defibrillator_mount/loaded,
 /turf/closed/wall/mineral/plastitanium,
@@ -634,7 +625,7 @@
 /area/shuttle/escape)
 "IJ" = (
 /obj/machinery/door/poddoor{
-	id = 2
+	id = "brig_blastdoor"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
@@ -730,7 +721,7 @@ cS
 bj
 cS
 cS
-cA
+cS
 cS
 cS
 Tt
@@ -745,7 +736,7 @@ vm
 cS
 cS
 cS
-kX
+cS
 cS
 cS
 cS
@@ -773,7 +764,7 @@ cj
 cS
 cC
 cT
-cT
+cA
 Dn
 cS
 cS
@@ -1108,7 +1099,7 @@ cS
 bj
 cS
 cS
-cF
+cS
 cS
 cS
 cS
