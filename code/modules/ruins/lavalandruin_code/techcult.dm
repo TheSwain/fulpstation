@@ -117,7 +117,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	short_desc = "You are a member of the machine cult on Lavaland."
-	flavour_text = "The flesh is weak and humans are fragile. You exist only to research universe and enchance abilities with power of science."
+	flavour_text = "The flesh is weak and humans are fragile. You exist only to research the universe and enchance your abilities with the power of science."
 	important_info = "Listen to your leader, help those in need and protect your religion."
 	outfit = /datum/outfit/techcult
 	assignedrole = "Tech Priest"
