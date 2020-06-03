@@ -187,7 +187,7 @@
 	spell = /obj/effect/proc_holder/spell/aoe_turf/conjure/tech
 	spellname = "holy gift"
 	icon_state ="bookcharge"
-	remarks = list("But will it make me a mech?", "I could've just use the exosuit fabricator, huh?", "All powerful god, send me a honkbot!", "So it is a pocket robotic factory.", "This page is just full of binary code...", "Can it give me a laser arm?", "But can I get combat implants from here?")
+	remarks = list("But will it make me a mech?", "I could've just used the exosuit fabricator, huh?", "All-powerful god, send me a honkbot!", "So it is a pocket robotics factory.", "This page is just full of binary code...", "Can it give me a laser arm?", "But can I get combat implants from here?")
 
 /obj/item/book/granter/spell/omnissiah/recoil(mob/living/user)
 	..()
