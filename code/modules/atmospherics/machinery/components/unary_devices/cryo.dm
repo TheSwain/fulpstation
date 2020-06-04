@@ -203,7 +203,10 @@
 		return
 	if(mob_occupant.stat == DEAD) // We don't bother with dead people.
 		return
-	if(mob_occupant.health >= mob_occupant.getMaxHealth()) // Don't bother with fully healed people.
+
+	//if(mob_occupant.health >= mob_occupant.getMaxHealth()) // Don't bother with fully healed people.
+	var/total_damage = mob_occupant.getOxyLoss() + mob_occupant.getToxLoss() + mob_occupant.getFireLoss_nonProsthetic() + mob_occupant.getBruteLoss_nonProsthetic() + mob_occupant.getCloneLoss()// FULP: Check damage, minus prosthetics.
+	if (total_damage <= 0)
 		on = FALSE
 		update_icon()
 		playsound(src, 'sound/machines/cryo_warning.ogg', volume) // Bug the doctors.
