@@ -177,7 +177,7 @@
 	desc = "The holy book of Cult Mechanicum."
 	deity_name = "Omnissiah"
 	icon_state = "scientology"
-	item_state = "scientology"
+	inhand_icon_state = "scientology"
 
 /***************** Spell *****************/
 
