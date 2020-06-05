@@ -157,11 +157,19 @@
 		for(var/mob/living/simple_animal/pet/dog/corgi/Ian/D in C)
 			if(D.stat != DEAD)//checks if pet is alive.
 				return TRUE
+		for(var/mob/living/simple_animal/pet/dog/corgi/puppy/D in C)
+			if(D.stat != DEAD)//checks if pet is alive.
+				if(D.desc == "It's the HoP's beloved corgi puppy.")
+					return TRUE
 	if(istype(I, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/C = I
 		for(var/mob/living/simple_animal/pet/dog/corgi/Ian/D in C)
 			if(D.stat != DEAD)//checks if pet is alive.
 				return TRUE
+		for(var/mob/living/simple_animal/pet/dog/corgi/puppy/D in C)
+			if(D.stat != DEAD)//checks if pet is alive.
+				if(D.desc == "It's the HoP's beloved corgi puppy.")
+					return TRUE
 	return FALSE 
 
 /datum/objective_item/steal/poly
