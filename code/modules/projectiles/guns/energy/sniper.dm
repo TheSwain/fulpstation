@@ -2,7 +2,7 @@
 	name = "energy sniper rifle"
 	desc = "An advanced piece of weaponry forged on Mars in 40th Millenia."
 	icon_state = "sniper"
-	item_state = "sniper"
+	inhand_icon_state = "sniper"
 	icon = 'icons/Fulpicons/energy_sniper.dmi'
 	//lefthand_file = 'icons/Fulpicons/energy_sniper_l.dmi'
 	//righthand_file = 'icons/Fulpicons/energy_sniper_r.dmi'
