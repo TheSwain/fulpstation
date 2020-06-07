@@ -19,6 +19,11 @@ map heliostation
 	votable
 endmap
 
+map elysianstation
+	maxplayers 100
+	votable
+endmap
+
 map boxstation
 	#voteweight 1.5
 	votable
