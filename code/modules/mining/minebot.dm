@@ -12,9 +12,11 @@
 	status_flags = CANSTUN|CANKNOCKDOWN|CANPUSH
 	mouse_opacity = MOUSE_OPACITY_ICON
 	faction = list("neutral")
+	weather_immunities = list("ash")  //Now, Minebots are ash-proof! This can be overridden by the Lava-Proof Upgrade, which will add Lava immunity.
 	a_intent = INTENT_HARM
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
+	maxbodytemp = INFINITY
 	move_to_delay = 10
 	health = 125
 	maxHealth = 125
@@ -296,6 +298,18 @@
 		return
 	M.maxHealth += 45
 	M.updatehealth()
+	qdel(src)
+
+//Lava-Proof
+
+/obj/item/mine_bot_upgrade/lavaproof
+	name = "minebot lava-proofing upgrade"
+
+/obj/item/mine_bot_upgrade/lavaproof/upgrade_bot(mob/living/simple_animal/hostile/mining_drone/M, mob/user)
+	if (M.weather_immunities == list("lava", "ash"))
+		to_chat(user, "<span class='warning'>[src] already has lava-proof plating installed!</span>")
+		return
+	M.weather_immunities = list("lava", "ash")
 	qdel(src)
 
 //AI
