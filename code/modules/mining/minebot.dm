@@ -282,10 +282,11 @@
 
 /obj/item/mine_bot_upgrade/proc/upgrade_bot(mob/living/simple_animal/hostile/mining_drone/M, mob/user)
 	if(M.melee_damage_upper != initial(M.melee_damage_upper))
-		to_chat(user, "<span class='warning'>[src] already has a combat upgrade installed!</span>")
+		to_chat(user, "<span class='warning'>The Minebot already has a combat upgrade installed!</span>")
 		return
 	M.melee_damage_lower += 7
 	M.melee_damage_upper += 7
+	to_chat(user, "<span class='notice'>You apply the combat upgrade on the Minebot.</span>")
 	qdel(src)
 
 //Health
@@ -295,10 +296,11 @@
 
 /obj/item/mine_bot_upgrade/health/upgrade_bot(mob/living/simple_animal/hostile/mining_drone/M, mob/user)
 	if(M.maxHealth != initial(M.maxHealth))
-		to_chat(user, "<span class='warning'>[src] already has reinforced armor!</span>")
+		to_chat(user, "<span class='warning'>The Minebot already has reinforced armor!</span>")
 		return
 	M.maxHealth += 45
 	M.updatehealth()
+	to_chat(user, "<span class='notice'>You apply the reinforced armor on the Minebot.</span>")
 	qdel(src)
 
 //Lava-Proofing  --  Fulp-Exclusive
@@ -308,12 +310,27 @@
 
 /obj/item/mine_bot_upgrade/lavaproof/upgrade_bot(mob/living/simple_animal/hostile/mining_drone/M, mob/user)
 	if (M.lava_proof != 0)  //I know this is a bit hacky, but I've tried to use the same technique as the other upgrades, and it somehow just didn't want to work. I've tried several methods, but this is the only one that doesn't accept the upgrade twice. Might have to do with the fact that it's a list in weather_immunities.
-		to_chat(user, "<span class='warning'>[src] already has lava-proof plating installed!</span>")
+		to_chat(user, "<span class='warning'>The Minebot already has lava-proof plating installed!</span>")
 		return
 	M.weather_immunities = list("lava", "ash")
 	M.lava_proof += 1  //Should be pretty straight-forward.
-	to_chat(user, "<span class='notice'>You apply the lava-proof plating on [src].</span>")
+	to_chat(user, "<span class='notice'>You apply the lava-proof plating on the Minebot.</span>")
 	qdel(src)
+
+//Speed  --  Fulp-exclusive
+
+/obj/item/mine_bot_upgrade/speed
+	name = "minebot speed upgrade"
+
+/obj/item/mine_bot_upgrade/speed/upgrade_bot(mob/living/simple_animal/hostile/mining_drone/M, mob/user)
+	if(M.cached_multiplicative_slowdown != 3)  //Checks for the current slowdown of the Minebot, to see if it's not different from the default value, which is 3.
+		to_chat(user, "<span class='warning'>The Minebot already has a speed upgrade installed!</span>")
+		return
+	M.add_movespeed_modifier(/datum/movespeed_modifier/minebot_speedupgrade)  //This makes it so a normal miner would still go twice as fast, but this would still be a significant speed upgrade for the Minebots, going from a slowdown of 3 to a slowdown of 2.
+	to_chat(user, "<span class='notice'>You apply the speed upgrade on the Minebot.</span>")
+	qdel(src)
+
+//Hopefully people will be happy with these new upgrades - GoldenAlpharex, 08/06/2020 (06/08/2020 if you're an American) 
 
 //AI
 
