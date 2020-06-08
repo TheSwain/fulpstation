@@ -12,7 +12,7 @@
 	status_flags = CANSTUN|CANKNOCKDOWN|CANPUSH
 	mouse_opacity = MOUSE_OPACITY_ICON
 	faction = list("neutral")
-	weather_immunities = list("ash")  //Now, Minebots are ash-proof! This can be overridden by the Lava-Proof Upgrade, which will add Lava immunity.
+	weather_immunities = list("ash")  //Now, Minebots are ash-proof! This can be overridden by the Lava-Proof Upgrade, which adds Lava immunity.
 	a_intent = INTENT_HARM
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
@@ -37,6 +37,7 @@
 	healable = 0
 	loot = list(/obj/effect/decal/cleanable/robot_debris)
 	del_on_death = TRUE
+	var/lava_proof = 0  //For the Lava-Proofing upgrade. I know it's a bit hacky, but it's the only way I managed to make it work. More details below.
 	var/mode = MINEDRONE_COLLECT
 	var/light_on = 0
 	var/obj/item/gun/energy/kinetic_accelerator/minebot/stored_gun
@@ -300,16 +301,18 @@
 	M.updatehealth()
 	qdel(src)
 
-//Lava-Proof
+//Lava-Proofing  --  Fulp-Exclusive
 
 /obj/item/mine_bot_upgrade/lavaproof
 	name = "minebot lava-proofing upgrade"
 
 /obj/item/mine_bot_upgrade/lavaproof/upgrade_bot(mob/living/simple_animal/hostile/mining_drone/M, mob/user)
-	if (M.weather_immunities == list("lava", "ash"))
+	if (M.lava_proof != 0)  //I know this is a bit hacky, but I've tried to use the same technique as the other upgrades, and it somehow just didn't want to work. I've tried several methods, but this is the only one that doesn't accept the upgrade twice. Might have to do with the fact that it's a list in weather_immunities.
 		to_chat(user, "<span class='warning'>[src] already has lava-proof plating installed!</span>")
 		return
 	M.weather_immunities = list("lava", "ash")
+	M.lava_proof += 1  //Should be pretty straight-forward.
+	to_chat(user, "<span class='notice'>You apply the lava-proof plating on [src].</span>")
 	qdel(src)
 
 //AI
