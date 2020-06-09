@@ -330,6 +330,38 @@
 	to_chat(user, "<span class='notice'>You apply the speed upgrade on the Minebot.</span>")
 	qdel(src)
 
+//Name Change  -- Fulp-exclusive
+
+/obj/item/mine_bot_upgrade/renaming
+	name = "minebot renaming board"
+	desc = "A Minebot upgrade that allows you to rename your Minebot!"
+	icon_state = "door_electronics"
+	icon = 'icons/obj/module.dmi'
+
+	var/being_used = FALSE
+
+/obj/item/mine_bot_upgrade/renaming/attack(mob/living/M, mob/user)
+
+	if(being_used || !istype(M, /mob/living/simple_animal/hostile/mining_drone))
+		return
+	being_used = TRUE
+
+	to_chat(user, "<span class='notice'>You start changing your Minebot's name...</span>")
+
+	var/new_name = stripped_input(user, "What would you like your Minebot's new name to be?", "Input a name", M.real_name, MAX_NAME_LEN)
+
+	if(!new_name || QDELETED(src) || QDELETED(M) || new_name == M.real_name || !M.Adjacent(user))
+		being_used = FALSE
+		return
+
+	M.visible_message("<span class='notice'><span class='name'>[M]</span> has a new name, <span class='name'>[new_name]</span>.</span>", "<span class='notice'>Your old name of <span class='name'>[M.real_name]</span> fades away, and your new name <span class='name'>[new_name]</span> anchors itself in your mind.</span>")
+	message_admins("[ADMIN_LOOKUPFLW(user)] used [src] on [ADMIN_LOOKUPFLW(M)], renaming them into [new_name].")
+
+	// pass null as first arg to not update records or ID/PDA
+	M.fully_replace_character_name(null, new_name)
+
+	qdel(src)
+
 //Hopefully people will be happy with these new upgrades - GoldenAlpharex, 08/06/2020 (06/08/2020 if you're an American) 
 
 //AI
