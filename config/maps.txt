@@ -19,6 +19,12 @@ map heliostation
 	votable
 endmap
 
+map cerberusstation
+	#voteweight 1.5
+	minplayer 50
+	votable
+endmap
+
 map boxstation
 	#voteweight 1.5
 	votable
