@@ -19,7 +19,7 @@ map heliostation
 	votable
 endmap
 
-map cerberusstation
+map cerberusfacility
 	#voteweight 1.5
 	minplayer 50
 	votable
