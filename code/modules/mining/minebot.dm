@@ -12,7 +12,7 @@
 	status_flags = CANSTUN|CANKNOCKDOWN|CANPUSH
 	mouse_opacity = MOUSE_OPACITY_ICON
 	faction = list("neutral")
-	weather_immunities = list("ash")  //Now, Minebots are ash-proof! This can be overridden by the Lava-Proof Upgrade, which adds Lava immunity.
+	weather_immunities = list("ash")  //Now, Minebots are ash-proof! This can be overridden by the Lava-Proof Upgrade, which adds Lava immunity. Fulp
 	a_intent = INTENT_HARM
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
@@ -37,13 +37,15 @@
 	healable = 0
 	loot = list(/obj/effect/decal/cleanable/robot_debris)
 	del_on_death = TRUE
-	var/lava_proof = 0  //For the Lava-Proofing upgrade. I know it's a bit hacky, but it's the only way I managed to make it work. More details below.
+	var/lava_proof = 0  //For the Lava-Proofing upgrade. I know it's a bit hacky, but it's the only way I managed to make it work. More details below. Fulp
+	var/gpstag = "Nanotransen Minebot"  //Minebots now appear on the GPS! Fulp
 	var/mode = MINEDRONE_COLLECT
 	var/light_on = 0
 	var/obj/item/gun/energy/kinetic_accelerator/minebot/stored_gun
 
 /mob/living/simple_animal/hostile/mining_drone/Initialize()
 	. = ..()
+	AddComponent(/datum/component/gps, gpstag)  //Gives a GPS signal to the Minebot! Fulp
 	stored_gun = new(src)
 	var/datum/action/innate/minedrone/toggle_light/toggle_light_action = new()
 	toggle_light_action.Grant(src)
@@ -340,7 +342,7 @@
 
 	var/being_used = FALSE
 
-/obj/item/mine_bot_upgrade/renaming/attack(mob/living/M, mob/user)
+/obj/item/mine_bot_upgrade/renaming/attack(mob/living/simple_animal/hostile/mining_drone/M, mob/user)
 
 	if(being_used || !istype(M, /mob/living/simple_animal/hostile/mining_drone))
 		return
@@ -356,6 +358,7 @@
 
 	M.visible_message("<span class='notice'><span class='name'>[M]</span> has a new name, <span class='name'>[new_name]</span>.</span>", "<span class='notice'>Your old name of <span class='name'>[M.real_name]</span> fades away, and your new name <span class='name'>[new_name]</span> anchors itself in your mind.</span>")
 	message_admins("[ADMIN_LOOKUPFLW(user)] used [src] on [ADMIN_LOOKUPFLW(M)], renaming them into [new_name].")
+	M.gpstag = "[new_name] - Minebot"  //For some reason, this doesn't update the name in the GPS list, neither does it change anything when I check the variables in-game. Weird.
 
 	// pass null as first arg to not update records or ID/PDA
 	M.fully_replace_character_name(null, new_name)
