@@ -19,6 +19,10 @@ map heliostation
 	votable
 endmap
 
+map modularstation
+	minplayers 25
+endmap
+
 map boxstation
 	#voteweight 1.5
 	votable

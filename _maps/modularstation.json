@@ -1,0 +1,11 @@
+{
+    "map_name": "Build-Your-Own-Station kit!",
+    "map_path": "map_files/ModStation",
+    "map_file": "modularstation.dmm",
+    "shuttles": {
+	    "cargo": "cargo_box",
+	    "ferry": "ferry_fancy",
+	    "whiteship": "whiteship_box",
+	    "emergency": "emergency_box"
+    }
+}
