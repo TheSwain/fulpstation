@@ -358,6 +358,7 @@
 
 	M.visible_message("<span class='notice'><span class='name'>[M]</span> has a new name, <span class='name'>[new_name]</span>.</span>", "<span class='notice'>Your old name of <span class='name'>[M.real_name]</span> fades away, and your new name <span class='name'>[new_name]</span> anchors itself in your mind.</span>")
 	message_admins("[ADMIN_LOOKUPFLW(user)] used [src] on [ADMIN_LOOKUPFLW(M)], renaming them into [new_name].")
+	M.GetComponent(/datum/component/gps, M.gpstag)
 	M.gpstag = "[new_name] - Minebot"  //For some reason, this doesn't update the name in the GPS list, neither does it change anything when I check the variables in-game. Weird.
 
 	// pass null as first arg to not update records or ID/PDA
