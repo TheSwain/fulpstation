@@ -495,7 +495,7 @@
 	qdel(inMeatObj)
 
 
-/obj/item/bodypart/proc/drop_meat(mob/inOwner)
+/obj/item/bodypart/proc/drop_meat(mob/inOwner, is_head)
 
 	//Checks tile for cloning pod, if found then limb stays limb. Stops cloner from breaking beefmen making them useless after being cloned.
 	//var/turf/T = get_turf(src)
@@ -526,7 +526,10 @@
 
 		. = newMeat // Return MEAT
 
-	qdel(src)
+	if ( !is_head )
+	{
+		qdel(src)
+	}
 	//QDEL_IN(src,1) // Delete later. If we do it now, we screw up the "attack chain" that called this meat to attack the Beefman's stump.
 
 /obj/item/bodypart/head/beef
@@ -538,8 +541,8 @@
 /obj/item/bodypart/head/beef/drop_limb(special) // from dismemberment.dm
 	amCondemned = TRUE
 	var/mob/owner_cache = owner
-	..() // Create Meat, Remove Limb
-	return drop_meat(owner_cache)
+	..(special) // Create Meat, Remove Limb
+	return drop_meat(owner_cache, TRUE)
 
 /obj/item/bodypart/chest/beef
 	icon = 'icons/Fulpicons/fulp_bodyparts.dmi'
@@ -550,8 +553,8 @@
 /obj/item/bodypart/chest/beef/drop_limb(special) // from dismemberment.dm
 	amCondemned = TRUE
 	var/mob/owner_cache = owner
-	..() // Create Meat, Remove Limb
-	return drop_meat(owner_cache)
+	..(special) // Create Meat, Remove Limb
+	return drop_meat(owner_cache, FALSE)
 
 /obj/item/bodypart/r_arm/beef
 	icon = 'icons/Fulpicons/fulp_bodyparts.dmi'
@@ -562,8 +565,8 @@
 /obj/item/bodypart/r_arm/beef/drop_limb(special) // from dismemberment.dm
 	amCondemned = TRUE
 	var/mob/owner_cache = owner
-	..() // Create Meat, Remove Limb
-	return drop_meat(owner_cache)
+	..(special) // Create Meat, Remove Limb
+	return drop_meat(owner_cache, FALSE)
 
 /obj/item/bodypart/l_arm/beef
 	icon = 'icons/Fulpicons/fulp_bodyparts.dmi'
@@ -574,8 +577,8 @@
 /obj/item/bodypart/l_arm/beef/drop_limb(special) // from dismemberment.dm
 	amCondemned = TRUE
 	var/mob/owner_cache = owner
-	..() // Create Meat, Remove Limb
-	return drop_meat(owner_cache)
+	..(special) // Create Meat, Remove Limb
+	return drop_meat(owner_cache, FALSE)
 
 /obj/item/bodypart/r_leg/beef
 	icon = 'icons/Fulpicons/fulp_bodyparts.dmi'
@@ -586,8 +589,8 @@
 /obj/item/bodypart/r_leg/beef/drop_limb(special) // from dismemberment.dm
 	amCondemned = TRUE
 	var/mob/owner_cache = owner
-	..() // Create Meat, Remove Limb
-	return drop_meat(owner_cache)
+	..(special) // Create Meat, Remove Limb
+	return drop_meat(owner_cache, FALSE)
 
 /obj/item/bodypart/l_leg/beef
 	icon = 'icons/Fulpicons/fulp_bodyparts.dmi'
@@ -598,8 +601,8 @@
 /obj/item/bodypart/l_leg/beef/drop_limb(special) // from dismemberment.dm
 	amCondemned = TRUE
 	var/mob/owner_cache = owner
-	..() // Create Meat, Remove Limb
-	return drop_meat(owner_cache)
+	..(special) // Create Meat, Remove Limb
+	return drop_meat(owner_cache, FALSE)
 
 
 
