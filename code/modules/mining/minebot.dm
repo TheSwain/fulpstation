@@ -3,7 +3,7 @@
 #define MINEDRONE_ATTACK 2
 
 /mob/living/simple_animal/hostile/mining_drone
-	name = "Nanotrasen minebot"
+	name = "\improper Nanotrasen minebot"
 	desc = "The instructions printed on the side read: This is a small robot used to support miners, can be set to search and collect loose ore, or to help fend off wildlife."
 	gender = NEUTER
 	icon = 'icons/mob/aibots.dmi'
@@ -45,7 +45,6 @@
 
 /mob/living/simple_animal/hostile/mining_drone/Initialize()
 	. = ..()
-	name = "[name] #[rand(1,999)]"
 	AddComponent(/datum/component/gps, gpstag)  //Gives a GPS signal to the Minebot! Fulp
 	stored_gun = new(src)
 	var/datum/action/innate/minedrone/toggle_light/toggle_light_action = new()
@@ -118,7 +117,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/mining_drone/death()
-	DropOre()
+	DropOre(0)
 	if(stored_gun)
 		for(var/obj/item/borg/upgrade/modkit/M in stored_gun.modkits)
 			M.uninstall(stored_gun)
@@ -360,7 +359,7 @@
 	M.visible_message("<span class='notice'><span class='name'>[M]</span> has a new name, <span class='name'>[new_name]</span>.</span>", "<span class='notice'>Your old name of <span class='name'>[M.real_name]</span> fades away, and your new name <span class='name'>[new_name]</span> anchors itself in your mind.</span>")
 	message_admins("[ADMIN_LOOKUPFLW(user)] used [src] on [ADMIN_LOOKUPFLW(M)], renaming them into [new_name].")
 	M.GetComponent(/datum/component/gps, M.gpstag)
-	M.gpstag = "[new_name] - Minebot"  //For some reason, this doesn't update the name in the GPS list, neither does it change anything when I check the variables in-game. Weird. I'll try to figure out a way to fix this eventually, will probably have to be in another PR if nobody helps me out with it.
+	M.gpstag = "[new_name] - Minebot"  //For some reason, this doesn't update the name in the GPS list, neither does it change anything when I check the variables in-game. Weird.
 
 	// pass null as first arg to not update records or ID/PDA
 	M.fully_replace_character_name(null, new_name)
