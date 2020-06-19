@@ -38,18 +38,6 @@
 	shrapnel_type = /obj/projectile/bullet/shrapnel/mega
 	shrapnel_radius = 12
 
-
-/obj/item/grenade/frag/assistant
-	name = "Greybull Grenade"
-	desc = "Hidden in a greybull, ready to explode!"
-	w_class = WEIGHT_CLASS_SMALL
-	icon = 'icons/obj/grenade.dmi'
-	icon_state = "energy_drink"
-	item_state = "energy_drink"
-	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
-
-
 /obj/item/grenade/frag/prime(mob/living/lanced_by)
 	. = ..()
 	update_mob()

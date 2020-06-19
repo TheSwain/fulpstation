@@ -153,15 +153,6 @@
 	throwforce = 18
 	material_flags = NONE
 
-/obj/item/storage/toolbox/greytide
-	name = "Greytide compact toolbox"
-	icon_state = "blue"
-	item_state = "toolbox_blue"
-	material_flags = NONE
-	force = 15
-	throwforce = 18
-	w_class = WEIGHT_CLASS_SMALL
-
 /obj/item/storage/toolbox/syndicate/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
