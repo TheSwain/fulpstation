@@ -17,7 +17,7 @@
 		if(NUKE_ON_EXPLODING)
 			icon_state = "bananiumbomb_exploding"
 
-/obj/machinery/nuclearbomb/syndicate/scrap/get_cinematic_type(off_station)
+/obj/machinery/nuclearbomb/syndicate/bananium/get_cinematic_type(off_station)
 	switch(off_station)
 		if(0)
 			return CINEMATIC_NUKE_CLOWNOP
