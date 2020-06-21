@@ -89,4 +89,4 @@
 			in electronic devices, subverts intended functions, and easily breaks security mechanisms.  \
 			This is a cheap knockoff Space-China budget version that holds 2 charges, and regains 1 charge every 30 seconds."
 	item = /obj/item/card/emag/budget
-	cost = 6
+	cost = 4
