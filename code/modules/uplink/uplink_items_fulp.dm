@@ -86,8 +86,9 @@
 /datum/uplink_item/device_tools/budget_emag
 	name = "Budget Cryptographic Sequencer"
 	desc = "The cryptographic sequencer, electromagnetic card, or emag, is a small card that unlocks hidden functions \
-			in electronic devices, subverts intended functions, and easily breaks security mechanisms.  \
-			This is a cheap knockoff Space-China budget version that holds 2 charges, and regains 1 charge every 30 seconds."
+			in electronic devices, subverts intended functions, and easily breaks security mechanisms. \
+			This is a cheap knockoff Space-China budget version that holds 2 charges, and regains 1 charge every 30 seconds. \
+			Cannot be used to open airlocks."
 	item = /obj/item/card/emag/budget
 	cost = 4
 	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
