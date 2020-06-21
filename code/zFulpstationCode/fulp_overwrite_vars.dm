@@ -320,15 +320,18 @@
 
 //***************************************************************************
 //** FULPSTATION EMAG NERFS by Surrealistik Feb 2020 BEGINS
+//-- Ammendment: Fulp emag tweaks by Drackzo 21/6/20
 //---------------------------------------------------------------------------
 //** Makes the emag much more expensive and introduces a 6 TC budget emag
 //***************************************************************************
 
 /datum/uplink_item/device_tools/emag
-	cost = 15
+	cost = 4
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 
 //***************************************************************************
 //** FULPSTATION EMAG NERFS by Surrealistik Feb 2020 ENDS
+//-- Ammendment: Fulp emag tweaks by Drackzo 21/6/20
 //---------------------------------------------------------------------------
 //** Makes the emag much more expensive and introduces a 6 TC budget emag
 //***************************************************************************
