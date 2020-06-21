@@ -90,3 +90,4 @@
 			This is a cheap knockoff Space-China budget version that holds 2 charges, and regains 1 charge every 30 seconds."
 	item = /obj/item/card/emag/budget
 	cost = 4
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
