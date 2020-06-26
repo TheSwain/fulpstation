@@ -616,7 +616,7 @@
 	icon_state = "poster36_legit"
 
 /obj/structure/sign/poster/official/moth1
-	name = "Safety Moth - Poisoning
+	name = "Safety Moth - Poisoning"
 	desc = "This informational poster uses Safety Moth(TM) to ask the viewer not to poison the station donuts." //created by Azlanon and AyyRobotics, used with permission
 	icon_state = "poster37_legit"
 
@@ -655,9 +655,9 @@
 	desc = "This informational poster uses Safety Moth(TM) to recommend the use of epipens to prevent organ rot."
 	icon_state = "poster44_legit"
 
-/obj/structure/sign/poster/official/hang_in_there
-	name = "Hang In There"
-	desc = "A poster advising you to stay sane. Stay on that branch, little kitty!"
+/obj/structure/sign/poster/official/moth9
+	name = "Safety Moth - Delamination Safety Precautions"
+	desc = "This informational poster uses Safety Moth(TM) to tell the viewer to take cover in lockers when the Supermatter Crystal is delaminating. Running away might be a better strategy." //created by Azlanon and AyyRobotics, used with permission
 	icon_state = "poster45_legit"
 
 /obj/structure/sign/poster/official/smile
@@ -669,5 +669,10 @@
 	name = "We Watch"
 	desc = "Big Brother is always watching."
 	icon_state = "poster47_legit"
+
+/obj/structure/sign/poster/official/hang_in_there
+	name = "Hang In There"
+	desc = "A poster advising you to stay sane. Stay on that branch, little kitty!"
+	icon_state = "poster48_legit"
 
 #undef PLACE_SPEED
