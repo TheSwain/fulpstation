@@ -1,0 +1,152 @@
+"aa" = (/turf/open/space/basic,/area/space)
+"ab" = (/turf/closed/wall/r_wall,/area/space)
+"ac" = (/obj/structure/lattice,/turf/open/space/basic,/area/space)
+"ad" = (/obj/effect/spawner/structure/window/reinforced/tinted,/turf/open/floor/plating,/area/ruin/space/has_grav/powered/biosphere)
+"ae" = (/turf/closed/wall/mineral/wood,/area/ruin/space/has_grav/powered/biosphere)
+"af" = (/turf/closed/wall/mineral/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"ag" = (/obj/structure/table,/obj/item/reagent_containers/food/condiment/enzyme,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"ah" = (/turf/closed/wall/mineral/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"ai" = (/obj/structure/bed,/obj/item/bedsheet/blue,/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"aj" = (/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"ak" = (/obj/structure/bed,/obj/item/bedsheet/blue,/obj/machinery/light/small{dir = 1},/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"al" = (/obj/machinery/light_switch{pixel_y = 32},/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"am" = (/obj/structure/bed,/obj/item/bedsheet/blue,/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"an" = (/obj/machinery/light_switch{pixel_y = 32},/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"ao" = (/obj/structure/bed,/obj/item/bedsheet/blue,/obj/machinery/light/small{dir = 1},/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"ap" = (/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"aq" = (/obj/machinery/door/airlock/wood{name = "Bedroom"},/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"ar" = (/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere)
+"as" = (/obj/structure/rack,/obj/item/clothing/suit/space/syndicate/blue{desc = "Has a dirty tag on it: Property of Syndicate. Something makes you think it is not."},/obj/item/clothing/head/helmet/space/syndicate/blue{desc = "Has a dirty tag on it: Property of Syndicate. Something makes you think it is not."},/turf/open/floor/plasteel/dark,/area/ruin/space/has_grav/powered/biosphere)
+"at" = (/obj/machinery/door/airlock/wood{name = "Bedroom"},/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"au" = (/obj/structure/tank_dispenser/oxygen,/turf/open/floor/plasteel/dark,/area/ruin/space/has_grav/powered/biosphere)
+"av" = (/obj/structure/table,/obj/item/reagent_containers/food/snacks/store/cheesewheel,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"aw" = (/obj/structure/table,/obj/item/reagent_containers/food/snacks/cakebatter,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"ax" = (/obj/structure/sink{pixel_y = 26},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"ay" = (/obj/structure/sink{pixel_y = 26},/obj/structure/mirror{pixel_x = 32},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"az" = (/obj/structure/table/wood,/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"aA" = (/obj/structure/flora/ausbushes/fullgrass,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aB" = (/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aC" = (/obj/structure/flora/ausbushes/lavendergrass,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aD" = (/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"aE" = (/obj/structure/chair{dir = 4},/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"aF" = (/obj/structure/table,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"aG" = (/obj/structure/chair{icon_state = "chair"; dir = 8},/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"aH" = (/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"aI" = (/obj/structure/table,/obj/machinery/light{dir = 1},/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"aJ" = (/obj/structure/flora/ausbushes/sunnybush,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aK" = (/obj/structure/flora/tree/jungle,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aL" = (/obj/structure/flora/ausbushes/sparsegrass,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aM" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/flora/ausbushes/lavendergrass,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aN" = (/obj/structure/flora/ausbushes/fullgrass,/obj/structure/flora/ausbushes/sunnybush,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aO" = (/mob/living/simple_animal/butterfly,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aP" = (/obj/structure/table/reinforced,/obj/item/trash/plate,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"aQ" = (/obj/structure/flora/ausbushes/leafybush,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aR" = (/obj/structure/table/reinforced,/obj/item/storage/bag/tray,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"aS" = (/obj/machinery/door/airlock{name = "Cafeteria"},/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"aT" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/snacks/bbqribs,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"aU" = (/obj/structure/flora/ausbushes/fullgrass,/obj/structure/flora/ausbushes/sparsegrass,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aV" = (/obj/structure/flora/ausbushes/leafybush,/mob/living/simple_animal/butterfly,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aW" = (/obj/structure/flora/ausbushes/fullgrass,/obj/structure/flora/ausbushes/leafybush,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"aX" = (/obj/machinery/door/airlock,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"aY" = (/obj/machinery/microwave,/obj/structure/table,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"aZ" = (/obj/machinery/processor,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"ba" = (/obj/machinery/deepfryer,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"bb" = (/obj/machinery/light/dim,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"bc" = (/turf/closed/wall,/area/ruin/space/has_grav/powered/biosphere)
+"bd" = (/obj/machinery/door/airlock{name = "Shower"},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere)
+"be" = (/turf/closed/wall/r_wall,/area/ruin/space/has_grav/powered/biosphere)
+"bf" = (/obj/machinery/door/airlock/security{name = "Security Office"; req_access_txt = "600"},/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"bg" = (/obj/machinery/door/airlock/highsecurity{name = "HSA-5"; req_access_txt = "601"},/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,/area/ruin/space/has_grav/powered/biosphere)
+"bh" = (/obj/structure/closet,/obj/item/clothing/under/syndicate/tacticool{desc = "A cheap copy of tactical turtleneck. You can almost see 'NT' label on it."; name = "tactical turtleneck"},/obj/item/clothing/shoes/sandal,/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere)
+"bi" = (/obj/structure/closet/secure_closet/freezer/fridge/open,/obj/item/reagent_containers/food/snacks/meat/slab/human{subjectname = "human"},/obj/item/reagent_containers/food/snacks/meat/slab/human{subjectname = "human"},/obj/item/reagent_containers/food/snacks/meat/slab/human{subjectname = "human"},/obj/item/reagent_containers/food/snacks/meat/slab/human{subjectname = "human"},/obj/item/reagent_containers/food/snacks/meat/slab/human{subjectname = "human"},/obj/item/reagent_containers/food/snacks/meat/slab/human{subjectname = "human"},/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,/area/ruin/space/has_grav/powered/biosphere)
+"bj" = (/obj/structure/kitchenspike,/obj/effect/gibspawner/human/bodypartless,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,/area/ruin/space/has_grav/powered/biosphere)
+"bk" = (/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,/area/ruin/space/has_grav/powered/biosphere)
+"bl" = (/obj/machinery/gibber,/obj/effect/gibspawner/human/bodypartless,/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,/area/ruin/space/has_grav/powered/biosphere)
+"bm" = (/obj/structure/table,/obj/item/soap/syndie{desc = "Generic bar of soap with 'syndicate' badly written on it."},/obj/item/bikehorn/rubberducky,/obj/machinery/light/small,/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere)
+"bn" = (/obj/effect/gibspawner/human/bodypartless,/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,/area/ruin/space/has_grav/powered/biosphere)
+"bo" = (/obj/machinery/door/window/northright,/obj/machinery/shower{icon_state = "shower"; dir = 1},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere)
+"bp" = (/obj/structure/window/reinforced/spawner/north,/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"bq" = (/obj/machinery/door/window/brigdoor/northright{req_access_txt = "600"},/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"br" = (/obj/machinery/door/airlock/vault{name = "Entrance"; req_access_txt = "600"},/obj/structure/fans/tiny,/turf/open/floor/plasteel/dark,/area/ruin/space/has_grav/powered/biosphere)
+"bs" = (/obj/structure/chair/office,/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"bt" = (/turf/open/floor/plasteel/dark,/area/ruin/space/has_grav/powered/biosphere)
+"bu" = (/obj/effect/mob_spawn/human/biospheresec,/turf/open/space/basic,/area/space)
+"bv" = (/obj/machinery/light{dir = 8},/turf/open/floor/plasteel/dark,/area/ruin/space/has_grav/powered/biosphere)
+"bw" = (/obj/machinery/light{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/space/has_grav/powered/biosphere)
+"bx" = (/obj/machinery/computer/security{icon_state = "computer"; dir = 1},/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"by" = (/obj/machinery/computer/crew{icon_state = "computer"; dir = 1},/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"bz" = (/obj/machinery/computer/med_data{icon_state = "computer"; dir = 1},/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"bA" = (/obj/machinery/light,/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"bB" = (/obj/machinery/light{dir = 8},/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"bC" = (/obj/structure/table,/obj/item/kitchen/knife/butcher,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"bD" = (/obj/structure/rack,/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"bE" = (/obj/machinery/light{dir = 4},/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"bF" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/snacks/meat/steak/plain/human,/obj/machinery/light{dir = 1},/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"bG" = (/obj/structure/table,/obj/machinery/light,/turf/open/floor/plastic,/area/ruin/space/has_grav/powered/biosphere)
+"bH" = (/obj/machinery/light/dim{icon_state = "tube"; dir = 4},/turf/open/floor/plasteel,/area/ruin/space/has_grav/powered/biosphere)
+"bI" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/ausbushes/sunnybush,/obj/machinery/light/dim,/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"bJ" = (/obj/machinery/light/dim{icon_state = "tube"; dir = 1},/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"bK" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/machinery/light/dim{icon_state = "tube"; dir = 1},/turf/open/floor/grass,/area/ruin/space/has_grav/powered/biosphere)
+"bL" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"bM" = (/obj/structure/chair/wood{dir = 4},/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"bN" = (/obj/structure/table/wood,/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"bO" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"bP" = (/obj/structure/chair/wood{dir = 4},/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"bQ" = (/obj/structure/sink{pixel_y = 26},/obj/structure/mirror{pixel_x = -32},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"bR" = (/obj/structure/sink{pixel_y = 26},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"bS" = (/obj/structure/toilet{icon_state = "toilet00"; dir = 4},/obj/machinery/light/small{brightness = 3; dir = 8},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"bT" = (/obj/machinery/door/airlock{name = "Toilet cabin"},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"bU" = (/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"bV" = (/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"bW" = (/obj/machinery/door/airlock{name = "Toilet cabin"},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"bX" = (/obj/structure/toilet{icon_state = "toilet00"; dir = 8},/obj/machinery/light/small{dir = 4},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"bY" = (/obj/machinery/door/airlock{name = "Toilet"},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"bZ" = (/obj/machinery/door/airlock{name = "Toilet"},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"ca" = (/obj/machinery/light/small,/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"cb" = (/obj/machinery/light,/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"cc" = (/obj/machinery/light,/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"cd" = (/obj/machinery/light/small,/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+"ce" = (/obj/machinery/door/airlock/wood{name = "Dormitories M"},/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_m)
+"cf" = (/obj/machinery/door/airlock/wood{name = "Dormitories F"},/turf/open/floor/wood,/area/ruin/space/has_grav/powered/biosphere/dorm_f)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaabababababababababababababababababababababaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababaaaaaaaaaaaaacaaaaaaaaaaacaaaaaaaaaaaaababaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaababaaaaaaaaaaaaaaacaaaaaaaaaaacaaaaaaaaaaaaaaababaaaaaaaaaaaaaa
+aaaaaaaaaaaaababaaaaaaaaadadadadadadadadadadadadadadadaaaaaaaaababaaaaaaaaaaaa
+aaaaaaaaaaababaaaaaaaaadadafafafafafafaeahahahahahahadadaaaaaaaaababbuaaaaaaaa
+aaaaaaaaababaaaaaaaaadadafafaiajakalaiaeamanaoapamahahadadaaaaaaaaababaaaaaaaa
+aaaaaaaaabaaaaaaaaadadafafafajajajajajaeapapapapapahahahadadaaaaaaaaabaaaaaaaa
+aaaaaaaaabaaaaaaadadafafafafafafaqafafaeahahatahahahahahahadadaaaaaaabaaaaaaaa
+aaaaaaaaabaaaaadadafafaxayafazbLajbMazaebNbOapbPbNahbQbRahahadadaaaaabaaaaaaaa
+aaaaaaaaabaaaaadafbSbTbUbUafazbLajbMazaebNbOapbPbNahbVbVbWbXahadaaaaabaaaaaaaa
+aaaaaaaaabaaaaadafafafbUbUbYajajajajajaeapapapapapbZbVbVahahahadaaaaabaaaaaaaa
+aaaaaaaaabaaaaadafbSbTbUcaafajajcbajajaeapapccapapahcdbVbWbXahadaaaaabaaaaaaaa
+aaaaaaaaabacacadafafafafafafafafafafceaecfahahahahahahahahahahadacacabaaaaaaaa
+aaaaaaaaabaaaaadaAaBbJaBaBaCaBaBbKaBaDaDaDaeaEaFaIaGaHaHbFaHaHadaaaaabaaaaaaaa
+aaaaaaaaabaaaaadaBaJaBaKaBaLaMaNaOaBaDaDbHaeaEaFaFaGaHaHaPaHaHadaaaaabaaaaaaaa
+aaaaaaaaabaaaaadaBaBaBaCaBaBaQaBaBaAaDaDaDaeaEaFaFaGaHaHaRaHaHadaaaaabaaaaaaaa
+aaaaaaaaabaaaaadaBaBaBaBaDaDaDaDaDaDaDaDaDaSaHaHaHaHaHaHaTaHaHadaaaaabaaaaaaaa
+aaaaaaaaabaaaaadaBaBaUaVaDaWaBaBaBaBaDaDaDaeaEaFaGaeaeaeaeaXaeadaaaaabaaaaaaaa
+aaaaaaaaabacacadaBaKaMaBaDaBaBaBaLaBaDaDbHaeaEaFaGaeawagaYaHaZadacacabaaaaaaaa
+aaaaaaaaabaaaaadaJaBaBaBaDaMaBaKaBaAaDaDaDaeaEaFaGaebCaHaHaHbaadaaaaabaaaaaaaa
+aaaaaaaaabaaaaadaBaWbbaBaDaLaBaObIaBaDaDaDaeaEbGaGaeavaHaHaHbaadaaaaabaaaaaaaa
+aaaaaaaaabaaaaadbcbcbcbcbdbebebebebebebfbebebebebebebebebgbebeadaaaaabaaaaaaaa
+aaaaaaaaabaaaaadadbcbcbharbeaDaDaDaDaDaDaDaDaDaDaDbebibjbkbladadaaaaabaaaaaaaa
+aaaaaaaaabaaaaaaadadbcbmarbeaDaDaDbAaDaDaDbAaDaDaDbgbkbkbnadadaaaaaaabaaaaaaaa
+aaaaaaaaabaaaaaaaaadadbcbobebpbqbpbebebrbebebpbqbpbebnbkadadaaaaaaaaabaaaaaaaa
+aaaaaaaaababaaaaaaaaadadbcbebBbsaDbebtbtbtbeaDaDbEbebeadadaaaaaaaaababaaaaaaaa
+aaaaaaaaaaababaaaaaaaaadadbebxbybzbebtbtbtbebDbDbDbeadadaaaaaaaaababaaaaaaaaaa
+aaaaaaaaaaaaababaaaaaaaaadadadadadbebvbtbwbeadadadadadaaaaaaaaababaaaaaaaaaaaa
+aaaaaaaaaaaaaaababaaaaaaaaaaaaaaacbeasbtaubeacaaaaaaaaaaaaaaababaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaababaaaaaaaaaaaaacbeasbtasbeacaaaaaaaaaaaaababaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaababababababababbebebrbebeababababababababaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaabuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+"}
