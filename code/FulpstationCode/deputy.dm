@@ -31,7 +31,7 @@
 /obj/item/clothing/under/rank/security/mallcop
 	name = "deputy shirt"
 	desc = "An awe-inspiring tactical shirt-and-pants combo; because safety never takes a holiday."
-	mob_overlay_icon = 'icons/fulpicons/mith_stash/clothing/under_worn.dmi' //will be sharing a DMI with digisuits
+	worn_icon = 'icons/fulpicons/mith_stash/clothing/under_worn.dmi' //will be sharing a DMI with digisuits
 	icon = 'icons/fulpicons/mith_stash/clothing/under_icons.dmi'
 	icon_state = "mallcop"
 	strip_delay = 50
@@ -52,7 +52,7 @@
 /obj/item/clothing/head/beret/sec/engineering
 	name = "engineering deputy beret"
 	desc = "Perhaps the only thing standing between the supermatter and a station-wide explosive sabotage."
-	mob_overlay_icon = 'icons/fulpicons/mith_stash/clothing/head_worn.dmi'
+	worn_icon = 'icons/fulpicons/mith_stash/clothing/head_worn.dmi'
 	icon = 'icons/fulpicons/mith_stash/clothing/head_icons.dmi'
 	icon_state = "beret_engi"
 	fulp_item = TRUE
@@ -60,7 +60,7 @@
 /obj/item/clothing/head/beret/sec/medical
 	name = "medical deputy beret"
 	desc = "This proud white-blue beret is a welcome sight when the greytide descends on chemistry."
-	mob_overlay_icon = 'icons/fulpicons/mith_stash/clothing/head_worn.dmi'
+	worn_icon = 'icons/fulpicons/mith_stash/clothing/head_worn.dmi'
 	icon = 'icons/fulpicons/mith_stash/clothing/head_icons.dmi'
 	icon_state = "beret_medbay"
 	fulp_item = TRUE
@@ -68,7 +68,7 @@
 /obj/item/clothing/head/beret/sec/science
 	name = "science deputy beret"
 	desc = "This loud purple beret screams 'Dont mess with his matter manipulator!'"
-	mob_overlay_icon = 'icons/fulpicons/mith_stash/clothing/head_worn.dmi'
+	worn_icon = 'icons/fulpicons/mith_stash/clothing/head_worn.dmi'
 	icon = 'icons/fulpicons/mith_stash/clothing/head_icons.dmi'
 	icon_state = "beret_science"
 	fulp_item = TRUE
@@ -76,7 +76,7 @@
 /obj/item/clothing/head/beret/sec/supply
 	name = "supply deputy beret"
 	desc = "The headwear for only the most eagle-eyed Deputy, able to watch both Cargo and Mining."
-	mob_overlay_icon = 'icons/fulpicons/mith_stash/clothing/head_worn.dmi'
+	worn_icon = 'icons/fulpicons/mith_stash/clothing/head_worn.dmi'
 	icon = 'icons/fulpicons/mith_stash/clothing/head_icons.dmi'
 	icon_state = "beret_supply"
 	fulp_item = TRUE
@@ -155,7 +155,7 @@ GLOBAL_LIST_INIT(available_deputy_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MED
 			ears = /obj/item/radio/headset/headset_sec/department/sci
 			head = /obj/item/clothing/head/beret/sec/science
 			head_p = /obj/item/clothing/head/helmet/space/plasmaman/science
-			dep_access = list(ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE)
+			dep_access = list(ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE)
 			destination = /area/security/checkpoint/science
 			spawn_point = get_fulp_spawn(destination)
 
