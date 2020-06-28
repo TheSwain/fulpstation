@@ -215,7 +215,6 @@ There is no point for a testament, but maybe a confession is appropriate. I've n
 
 //FSS4: Bio Sphere
 //600 - basic "security" access around the ruin
-//601 - required to access kitchen.
 
 /obj/item/card/id/away/biosphere
 	name = "Security ID"
@@ -241,7 +240,7 @@ There is no point for a testament, but maybe a confession is appropriate. I've n
 
 /area/ruin/space/has_grav/powered/biosphere
 	name = "Bio Sphere"
-	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg', 'sound/ambience/aurora_caelus_short.ogg')
 
 /area/ruin/space/has_grav/powered/biosphere/dorm_m
 	name = "Bio Sphere Male Dormitories"
