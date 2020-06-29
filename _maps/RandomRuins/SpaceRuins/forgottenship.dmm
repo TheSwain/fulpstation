@@ -46,7 +46,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 8
 	},
-/turf/open/space/basic,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "ag" = (
 /obj/effect/mob_spawn/human/syndicatespace/captain,
@@ -69,6 +69,7 @@
 	icon_state = "tile_corner";
 	dir = 8
 	},
+/obj/item/ai_module/core/full/cybersun,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "ai" = (
@@ -91,7 +92,8 @@
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "ak" = (
 /obj/structure/displaycase{
-	req_one_access_txt = "150";
+	alert = 0;
+	req_one_access_txt = "151";
 	start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/camo
 	},
 /obj/effect/turf_decal/tile/red{
@@ -169,6 +171,8 @@
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/turf_decal/bot_red,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "ax" = (
@@ -189,7 +193,6 @@
 	req_one_access_txt = "150";
 	secure = 1
 	},
-/obj/item/coin/antagtoken,
 /obj/item/encryptionkey/syndicate,
 /obj/item/encryptionkey/syndicate,
 /obj/item/encryptionkey/syndicate,
@@ -262,7 +265,7 @@
 "aF" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Captain's room";
-	req_one_access_txt = "150"
+	req_one_access_txt = "151"
 	},
 /obj/machinery/door/poddoor{
 	id = "fscaproom";
@@ -439,11 +442,6 @@
 	},
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/plasteel/twenty,
-/obj/item/stack/sheet/mineral/plastitanium{
-	amount = 50
-	},
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/rods/fifty,
 /obj/effect/turf_decal/bot,
@@ -507,7 +505,6 @@
 	},
 /obj/item/stack/cable_coil,
 /obj/item/circuitboard/computer/rdconsole,
-/obj/item/storage/box/stockparts/deluxe,
 /obj/item/storage/box/stockparts/deluxe,
 /obj/item/storage/box/beakers,
 /obj/effect/turf_decal/stripes/line{
@@ -603,7 +600,9 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "bs" = (
-/turf/closed/mineral,
+/turf/closed/mineral/strong{
+	turf_type = /turf/open/floor/plating/asteroid/airless
+	},
 /area/ruin/unpowered/no_grav)
 "bt" = (
 /obj/effect/turf_decal/stripes/line{
@@ -639,22 +638,55 @@
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "bx" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Captain's room";
-	req_one_access_txt = "150"
+/obj/effect/turf_decal/bot_red,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/glass/bottle/nutrient/rh,
+/obj/item/reagent_containers/glass/bottle/nutrient/rh,
+/obj/item/reagent_containers/glass/bottle/nutrient/rh,
+/obj/item/reagent_containers/glass/bottle/nutrient/rh,
+/obj/item/reagent_containers/glass/bottle/nutrient/l4z,
+/obj/item/reagent_containers/glass/bottle/nutrient/l4z,
+/obj/item/reagent_containers/glass/bottle/nutrient/l4z,
+/obj/item/reagent_containers/glass/bottle/nutrient/l4z,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/structure/closet/crate/hydroponics,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"by" = (
+/obj/effect/turf_decal/bot_red,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
+/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
+/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
+/obj/item/storage/box/monkeycubes,
+/obj/item/kitchen/knife/butcher{
+	layer = 3.001
 	},
-/obj/machinery/door/poddoor{
-	id = "fscaproom";
-	name = "Captain's blast door";
-	state_open = 1
-	},
-/turf/open/floor/carpet/royalblack,
+/obj/item/kitchen/rollingpin,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "bz" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/aiModule/core/full/cybersun,
+/obj/item/borg/upgrade/transform/cybersun,
 /obj/structure/table,
 /obj/effect/turf_decal/tile/red{
 	icon_state = "tile_corner";
@@ -841,16 +873,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "bT" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
-	},
-/obj/item/stack/ore/diamond{
-	amount = 3
-	},
-/obj/effect/turf_decal/bot_red,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
+/turf/closed/mineral/plasma,
+/area/ruin/unpowered/no_grav)
 "bU" = (
 /obj/machinery/ore_silo,
 /obj/effect/turf_decal/stripes/line{
@@ -1104,6 +1128,9 @@
 	icon_state = "warninglinecorner";
 	dir = 8
 	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "cq" = (
@@ -1263,9 +1290,13 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "cJ" = (
-/obj/effect/turf_decal/stripes/end{
-	icon_state = "warn_end";
-	dir = 4
+/obj/structure/ai_core,
+/obj/item/radio/intercom{
+	desc = "Talk smack through this.";
+	frequency = 1213;
+	name = "syndicate intercom";
+	pixel_x = 32;
+	syndie = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
@@ -1684,7 +1715,7 @@
 	req_one_access_txt = "150";
 	secure = 1
 	},
-/obj/item/clothing/head/HoS/beret/syndicate{
+/obj/item/clothing/head/hos/beret/syndicate{
 	layer = 3.1
 	},
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
@@ -1696,7 +1727,7 @@
 /obj/item/card/id/syndicate_command/captain_id{
 	name = "captain's spare ID"
 	},
-/obj/item/clothing/head/HoS/syndicate,
+/obj/item/clothing/head/hos/syndicate,
 /obj/effect/turf_decal/stripes/end{
 	icon_state = "warn_end";
 	dir = 4
@@ -1968,16 +1999,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "dS" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
-	},
-/obj/item/stack/ore/plasma{
-	amount = 19
-	},
-/obj/effect/turf_decal/bot_red,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
+/turf/closed/mineral/diamond,
+/area/ruin/unpowered/no_grav)
 "dT" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/red{
@@ -2020,7 +2043,6 @@
 /obj/structure/closet/crate/secure/gear{
 	req_one_access_txt = "150"
 	},
-/obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/turf_decal/bot_red,
 /obj/effect/decal/cleanable/dirt,
@@ -2284,6 +2306,47 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
+"ew" = (
+/obj/effect/turf_decal/bot_red,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/seeds/random,
+/obj/item/seeds/orange,
+/obj/item/seeds/nettle,
+/obj/item/seeds/grape,
+/obj/item/seeds/cotton,
+/obj/item/seeds/amanita,
+/obj/item/seeds/aloe,
+/obj/item/seeds/cherry,
+/obj/item/seeds/berry,
+/obj/item/seeds/bamboo,
+/obj/item/cultivator,
+/obj/item/storage/bag/plants/portaseeder,
+/obj/structure/closet/crate/hydroponics,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"ex" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Captain's room";
+	req_one_access_txt = "151"
+	},
+/obj/machinery/door/poddoor{
+	id = "fscaproom";
+	name = "Captain's blast door";
+	state_open = 1
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"ey" = (
+/obj/effect/turf_decal/bot_red,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/critter,
+/mob/living/simple_animal/cow{
+	desc = "Known for their milk and long story of crimes.";
+	faction = list("neutral","Syndicate");
+	name = "syndi-cow"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
 
 (1,1,1) = {"
 aa
@@ -2457,9 +2520,9 @@ aa
 aa
 aa
 aa
+bT
 bq
 bq
-aa
 aa
 aa
 aa
@@ -2505,9 +2568,9 @@ aa
 aa
 aa
 bq
+bT
+bT
 bq
-bq
-aa
 aa
 aa
 aa
@@ -2551,11 +2614,11 @@ aa
 aa
 aa
 aa
-aa
 bq
 bq
-aa
-aa
+bq
+bq
+bq
 aa
 aa
 aa
@@ -2599,18 +2662,18 @@ aa
 aa
 aa
 aa
+bq
+bq
+bq
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+bq
+bq
+bq
+bq
 aa
 aa
 "}
@@ -2653,12 +2716,12 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+bq
+bq
+bq
+bq
+bq
+bq
 aa
 "}
 (9,1,1) = {"
@@ -2670,21 +2733,20 @@ aa
 aa
 aa
 af
-ap
-ap
-ap
+aL
+aL
+aL
 af
 af
-ap
-ap
-ap
+aL
+aL
+aL
 af
 af
-ap
-ap
-ap
+aL
+aL
+aL
 af
-aa
 aa
 aa
 aa
@@ -2705,7 +2767,8 @@ aa
 bq
 bq
 bq
-aa
+bq
+bq
 aa
 "}
 (10,1,1) = {"
@@ -2749,7 +2812,7 @@ aa
 aa
 aa
 aa
-aa
+bq
 bq
 bq
 bq
@@ -2767,13 +2830,13 @@ bZ
 aw
 aA
 aK
-aK
-bT
+bx
+ew
 aA
 aK
-dS
+by
 dV
-aK
+ey
 aK
 aA
 ev
@@ -2797,8 +2860,8 @@ aa
 aa
 aa
 aa
-aa
-aa
+bq
+bq
 aa
 aa
 "}
@@ -2977,8 +3040,8 @@ aY
 ba
 ba
 ba
-ba
-ba
+bq
+bq
 ba
 aY
 aY
@@ -3003,7 +3066,7 @@ dz
 aF
 ao
 ao
-bx
+ex
 aH
 cD
 cU
@@ -3021,12 +3084,12 @@ aa
 aY
 aY
 ba
-ba
+bs
 aZ
 aZ
 aZ
 aZ
-ba
+bq
 ba
 aY
 aa
@@ -3050,7 +3113,7 @@ dz
 bZ
 ao
 ao
-bx
+ex
 aS
 cx
 aS
@@ -3161,7 +3224,7 @@ aa
 aY
 ba
 bq
-ba
+bq
 aZ
 bA
 de
@@ -3208,7 +3271,7 @@ aa
 aY
 aY
 ba
-ba
+bq
 aZ
 bB
 de
@@ -3255,7 +3318,7 @@ aa
 aY
 ba
 ba
-ba
+bq
 aZ
 aZ
 dl
@@ -3356,7 +3419,7 @@ eo
 eq
 cs
 dr
-ba
+bq
 ba
 aY
 aY
@@ -3403,7 +3466,7 @@ bj
 bm
 cw
 dr
-ba
+bq
 aY
 aY
 aY
@@ -3450,7 +3513,7 @@ bh
 bj
 cw
 dr
-bs
+bq
 ba
 ba
 ba
@@ -3544,7 +3607,7 @@ bh
 bj
 em
 dr
-ba
+bq
 ba
 aY
 aY
@@ -3684,7 +3747,7 @@ dr
 dr
 dr
 dr
-ba
+bq
 ba
 bq
 aY
@@ -3728,9 +3791,9 @@ aY
 ba
 ba
 ba
-ba
 bq
-ba
+bq
+bq
 ba
 ba
 aY
@@ -3971,7 +4034,7 @@ aa
 aa
 aa
 aa
-aa
+bq
 aa
 aa
 aa
@@ -4013,12 +4076,12 @@ aa
 aa
 aa
 aa
+bq
+bq
+bq
 aa
-aa
-aa
-aa
-aa
-aa
+bq
+bq
 aa
 aa
 aa
@@ -4059,13 +4122,13 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
 bq
-aa
-aa
-aa
+bq
+bq
+bq
+bq
+bq
+bq
 aa
 aa
 aa
@@ -4105,13 +4168,13 @@ aa
 aa
 aa
 aa
-aa
-aa
 bq
 bq
 bq
+dS
 bq
-aa
+bq
+bq
 aa
 aa
 aa
@@ -4145,8 +4208,8 @@ aa
 aa
 aa
 aa
-aa
-aa
+bq
+bq
 aa
 aa
 aa
@@ -4191,10 +4254,10 @@ aa
 aa
 aa
 aa
-aa
 bq
-aa
-aa
+bq
+bq
+bq
 aa
 aa
 aa
@@ -4241,8 +4304,8 @@ aa
 bq
 bq
 bq
-aa
-aa
+bq
+bq
 aa
 aa
 aa
@@ -4289,8 +4352,8 @@ bq
 bq
 bq
 bq
-aa
-aa
+bq
+bq
 aa
 aa
 aa
@@ -4334,9 +4397,9 @@ aa
 aa
 aa
 bq
-aa
-aa
-aa
+bq
+bq
+bq
 aa
 aa
 aa

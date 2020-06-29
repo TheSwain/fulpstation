@@ -213,10 +213,12 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 //Armory Contraband special loot
 
 /obj/effect/spawner/lootdrop/armory_contraband/cybersun
-	loot = list(/obj/item/gun/ballistic/automatic/pistol = 20,
-				/obj/item/ammo_box/c9mm = 15,
-				/obj/item/gun/ballistic/revolver = 3,
-				/obj/item/gun/medbeam = 1,
+	loot = list(/obj/item/ammo_box/c9mm = 30,
+				/obj/item/gun/ballistic/automatic/surplus = 25,
+				/obj/item/gun/ballistic/automatic/pistol = 20,
+				/obj/item/gun/ballistic/revolver = 10,
+				/obj/item/gun/medbeam = 5,
+				/obj/item/seeds/gatfruit = 2
 
 				)
 
@@ -293,7 +295,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	desc = "Allows for the construction of a Cybersun Cyborg Module."
 	id = "cybersun_medborg"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 20000, /datum/material/glass = 20000)
+	materials = list(/datum/material/iron = 20000, /datum/material/glass = 20000, /datum/material/titanium = 15000, /datum/material/diamond = 10000)
 	build_path = /obj/item/borg/upgrade/transform/cybersun
 	category = list("Imported")
 
