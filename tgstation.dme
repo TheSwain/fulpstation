@@ -2380,7 +2380,6 @@
 #include "code\modules\mentor_fulp\mentor_config_fulp.dm"
 #include "code\modules\mentor_fulp\mentor_globalvars_fulp.dm"
 #include "code\modules\mentor_fulp\mentor_logging_fulp.dm"
-#include "code\modules\mentor_fulp\mentor_memo.dm"
 #include "code\modules\mentor_fulp\mentor_verbs.dm"
 #include "code\modules\mentor_fulp\mentorhelp.dm"
 #include "code\modules\mentor_fulp\mentorpm.dm"
