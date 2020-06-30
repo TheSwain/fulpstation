@@ -1,0 +1,11 @@
+{
+    "map_name": "Cerberus Research Facility",
+    "map_path": "map_files/CereStationReborn",
+    "map_file": "cerestationremade.dmm",
+    "shuttles": {
+	    "cargo": "cargo_box",
+	    "ferry": "ferry_fancy",
+	    "whiteship": "whiteship_box",
+	    "emergency": "emergency_box"
+    }
+}
