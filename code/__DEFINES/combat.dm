@@ -57,6 +57,7 @@
 #define CLICK_CD_HANDCUFFED 10
 #define CLICK_CD_RESIST 20
 #define CLICK_CD_GRABBING 10
+#define CLICK_CD_LOOK_UP 5
 
 //Cuff resist speeds
 #define FAST_CUFFBREAK 1
@@ -69,7 +70,7 @@
 #define GRAB_KILL					3
 
 //Grab breakout odds
-#define BASE_GRAB_RESIST_CHANCE 	30
+#define BASE_GRAB_RESIST_CHANCE 	60 //base chance for whether or not you can escape from a grab
 
 //slowdown when in softcrit. Note that crawling slowdown will also apply at the same time!
 #define SOFTCRIT_ADD_SLOWDOWN 2
@@ -179,6 +180,10 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 ///ammo box will have a different state for full and empty; <icon_state>-max_ammo and <icon_state>-0
 #define AMMO_BOX_FULL_EMPTY 2
 
+#define SUPPRESSED_NONE 0
+#define SUPPRESSED_QUIET 1 ///standard suppressed
+#define SUPPRESSED_VERY 2 /// no message
+
 //Projectile Reflect
 #define REFLECT_NORMAL 				(1<<0)
 #define REFLECT_FAKEPROJECTILE		(1<<1)
@@ -235,3 +240,5 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define BULLET_ACT_BLOCK			"BLOCK"		//It's a blocked hit, whatever that means in the context of the thing it's hitting.
 #define BULLET_ACT_FORCE_PIERCE		"PIERCE"	//It pierces through the object regardless of the bullet being piercing by default.
 #define BULLET_ACT_TURF				"TURF"		//It hit us but it should hit something on the same turf too. Usually used for turfs.
+
+#define NICE_SHOT_RICOCHET_BONUS	10			//if the shooter has the NICE_SHOT trait and they fire a ricocheting projectile, add this to the ricochet chance and auto aim angle

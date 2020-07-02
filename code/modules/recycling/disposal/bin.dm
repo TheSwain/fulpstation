@@ -140,7 +140,7 @@
 		if(user == target)
 			user.visible_message("<span class='warning'>[user] climbs into [src].</span>", "<span class='notice'>You climb into [src].</span>")
 		else
-			target.visible_message("<span class='danger'>[user] has placed [target] in [src].</span>", "<span class='userdanger'>[user] has placed you in [src].</span>")
+			target.visible_message("<span class='danger'>[user] places [target] in [src].</span>", "<span class='userdanger'>[user] places you in [src].</span>")
 			log_combat(user, target, "stuffed", addition="into [src]")
 			target.LAssailant = user
 		update_icon()
@@ -197,7 +197,7 @@
 	flush = FALSE
 
 /obj/machinery/disposal/proc/newHolderDestination(obj/structure/disposalholder/H)
-	for(var/obj/item/smallDelivery/O in src)
+	for(var/obj/item/small_delivery/O in src)
 		H.tomail = TRUE
 		return
 
@@ -285,7 +285,7 @@
 		return
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "disposal_unit", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, ui_key, "DisposalUnit", name, ui_x, ui_y, master_ui, state)
 		ui.open()
 
 /obj/machinery/disposal/bin/ui_data(mob/user)
@@ -347,6 +347,10 @@
 
 /obj/machinery/disposal/bin/update_overlays()
 	. = ..()
+
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
+	luminosity = 0
+
 	if(machine_stat & BROKEN)
 		return
 
@@ -358,15 +362,19 @@
 	if(machine_stat & NOPOWER || panel_open)
 		return
 
+	luminosity = 1
 	//check for items in disposal - occupied light
 	if(contents.len > 0)
 		. += "dispover-full"
+		SSvis_overlays.add_vis_overlay(src, icon, "dispover-full", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
 
 	//charging and ready light
 	if(pressure_charging)
 		. += "dispover-charge"
+		SSvis_overlays.add_vis_overlay(src, icon, "dispover-charge-glow", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
 	else if(full_pressure)
 		. += "dispover-ready"
+		SSvis_overlays.add_vis_overlay(src, icon, "dispover-ready-glow", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
 
 /obj/machinery/disposal/bin/proc/do_flush()
 	set waitfor = FALSE
@@ -428,25 +436,25 @@
 
 //Delivery Chute
 
-/obj/machinery/disposal/deliveryChute
+/obj/machinery/disposal/delivery_chute
 	name = "delivery chute"
 	desc = "A chute for big and small packages alike!"
 	density = TRUE
 	icon_state = "intake"
 	pressure_charging = FALSE // the chute doesn't need charging and always works
 
-/obj/machinery/disposal/deliveryChute/Initialize(mapload, obj/structure/disposalconstruct/make_from)
+/obj/machinery/disposal/delivery_chute/Initialize(mapload, obj/structure/disposalconstruct/make_from)
 	. = ..()
 	trunk = locate() in loc
 	if(trunk)
 		trunk.linked = src	// link the pipe trunk to self
 
-/obj/machinery/disposal/deliveryChute/place_item_in_disposal(obj/item/I, mob/user)
+/obj/machinery/disposal/delivery_chute/place_item_in_disposal(obj/item/I, mob/user)
 	if(I.CanEnterDisposals())
 		..()
 		flush()
 
-/obj/machinery/disposal/deliveryChute/Bumped(atom/movable/AM) //Go straight into the chute
+/obj/machinery/disposal/delivery_chute/Bumped(atom/movable/AM) //Go straight into the chute
 	if(QDELETED(AM) || !AM.CanEnterDisposals())
 		return
 	switch(dir)
@@ -489,5 +497,5 @@
 /obj/machinery/disposal/bin/newHolderDestination(obj/structure/disposalholder/H)
 	H.destinationTag = 1
 
-/obj/machinery/disposal/deliveryChute/newHolderDestination(obj/structure/disposalholder/H)
+/obj/machinery/disposal/delivery_chute/newHolderDestination(obj/structure/disposalholder/H)
 	H.destinationTag = 1

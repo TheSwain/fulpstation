@@ -23,11 +23,13 @@
   * Returns QDEL_HINT_HARDDEL (don't change this)
   */
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
-	GLOB.mob_list -= src
-	GLOB.dead_mob_list -= src
-	GLOB.alive_mob_list -= src
-	GLOB.mob_directory -= tag
+	remove_from_mob_list()
+	remove_from_dead_mob_list()
+	remove_from_alive_mob_list()
 	focus = null
+	if(length(progressbars))
+		stack_trace("[src] destroyed with elements in its progressbars list")
+		progressbars = null
 	for (var/alert in alerts)
 		clear_alert(alert, TRUE)
 	if(observers && observers.len)
@@ -60,12 +62,11 @@
   */
 /mob/Initialize()
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MOB_CREATED, src)
-	GLOB.mob_list += src
-	GLOB.mob_directory[tag] = src
+	add_to_mob_list()
 	if(stat == DEAD)
-		GLOB.dead_mob_list += src
+		add_to_dead_mob_list()
 	else
-		GLOB.alive_mob_list += src
+		add_to_alive_mob_list()
 	set_focus(src)
 	prepare_huds()
 	for(var/v in GLOB.active_alternate_appearances)
@@ -290,17 +291,17 @@
   *
   * Initial is used to indicate whether or not this is the initial equipment (job datums etc) or just a player doing it
   */
-/mob/proc/equip_to_slot_if_possible(obj/item/W, slot, qdel_on_fail = FALSE, disable_warning = FALSE, redraw_mob = TRUE, bypass_equip_delay_self = FALSE, initial = FALSE)
+/mob/proc/equip_to_slot_if_possible(obj/item/W, slot, qdel_on_fail = FALSE, disable_warning = FALSE, redraw_mob = TRUE, bypass_equip_delay_self = FALSE, initial = FALSE, swap = FALSE)
 	if(!istype(W))
 		return FALSE
-	if(!W.mob_can_equip(src, null, slot, disable_warning, bypass_equip_delay_self))
+	if(!W.mob_can_equip(src, null, slot, disable_warning, bypass_equip_delay_self, swap))
 		if(qdel_on_fail)
 			qdel(W)
 		else
 			if(!disable_warning)
 				to_chat(src, "<span class='warning'>You are unable to equip that!</span>")
 		return FALSE
-	equip_to_slot(W, slot, redraw_mob, initial) //This proc should not ever fail.
+	equip_to_slot(W, slot, initial, redraw_mob, swap) //This proc should not ever fail.
 	return TRUE
 
 /**
@@ -333,7 +334,7 @@
   *
   * returns 0 if it cannot, 1 if successful
   */
-/mob/proc/equip_to_appropriate_slot(obj/item/W)
+/mob/proc/equip_to_appropriate_slot(obj/item/W, swap=FALSE)
 	if(!istype(W))
 		return 0
 	var/slot_priority = W.slot_equipment_priority
@@ -351,7 +352,7 @@
 		)
 
 	for(var/slot in slot_priority)
-		if(equip_to_slot_if_possible(W, slot, 0, 1, 1)) //qdel_on_fail = 0; disable_warning = 1; redraw_mob = 1
+		if(equip_to_slot_if_possible(W, slot, FALSE, TRUE, TRUE, FALSE, FALSE, swap)) //qdel_on_fail = FALSE; disable_warning = TRUE; redraw_mob = TRUE;
 			return 1
 
 	return 0
@@ -396,6 +397,7 @@
 /mob/proc/show_inv(mob/user)
 	return
 
+
 /**
   * Examine a mob
   *
@@ -416,9 +418,25 @@
 		return
 
 	face_atom(A)
-	var/list/result = A.examine(src)
+	var/list/result
+	if(client)
+		LAZYINITLIST(client.recent_examines)
+		if(isnull(client.recent_examines[A]) || client.recent_examines[A] < world.time) // originally this wasn't an assoc list, but sometimes the timer failed and atoms stayed in a client's recent_examines, so we check here manually
+			client.recent_examines[A] = world.time + EXAMINE_MORE_TIME
+			result = A.examine(src)
+			addtimer(CALLBACK(src, .proc/clear_from_recent_examines, A), EXAMINE_MORE_TIME)
+		else
+			result = A.examine_more(src)
+	else
+		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
+
 	to_chat(src, result.Join("\n"))
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
+
+/mob/proc/clear_from_recent_examines(atom/A)
+	if(QDELETED(A) || !client)
+		return
+	LAZYREMOVE(client.recent_examines, A)
 
 /**
   * Point at an atom
@@ -437,16 +455,20 @@
 	set name = "Point To"
 	set category = "Object"
 
-	if(!src || !isturf(src.loc) || !(A in view(client.view, src)))
+	if(!src || !isturf(src.loc))
+		return FALSE
+	if(client && !(A in view(client.view, src)))
 		return FALSE
 	if(istype(A, /obj/effect/temp_visual/point))
 		return FALSE
 
-	var/tile = get_turf(A)
+	var/turf/tile = get_turf(A)
 	if (!tile)
 		return FALSE
 
-	new /obj/effect/temp_visual/point(A,invisibility)
+	var/turf/our_tile = get_turf(src)
+	var/obj/visual = new /obj/effect/temp_visual/point(our_tile, invisibility)
+	animate(visual, pixel_x = (tile.x - our_tile.x) * world.icon_size + A.pixel_x, pixel_y = (tile.y - our_tile.y) * world.icon_size + A.pixel_y, time = 1.7, easing = EASE_OUT)
 
 	return TRUE
 
@@ -734,7 +756,7 @@
 			if(statpanel("SDQL2"))
 				stat("Access Global SDQL2 List", GLOB.sdql2_vv_statobj)
 				for(var/i in GLOB.sdql2_queries)
-					var/datum/SDQL2_query/Q = i
+					var/datum/sdql2_query/Q = i
 					Q.generate_stat()
 
 	if(listed_turf && client)
@@ -854,7 +876,11 @@
 	return FALSE
 
 /mob/proc/swap_hand()
-	return
+	var/obj/item/held_item = get_active_held_item()
+	if(SEND_SIGNAL(src, COMSIG_MOB_SWAP_HANDS, held_item) & COMPONENT_BLOCK_SWAP)
+		to_chat(src, "<span class='warning'>Your other hand is too busy holding [held_item].</span>")
+		return FALSE
+	return TRUE
 
 /mob/proc/activate_hand(selhand)
 	return
@@ -1229,17 +1255,22 @@
 /// Updates the grab state of the mob and updates movespeed
 /mob/setGrabState(newstate)
 	. = ..()
-	if(grab_state == GRAB_PASSIVE)
-		remove_movespeed_modifier(MOVESPEED_ID_MOB_GRAB_STATE, update=TRUE)
-	else
-		add_movespeed_modifier(MOVESPEED_ID_MOB_GRAB_STATE, update=TRUE, priority=100, override=TRUE, multiplicative_slowdown=grab_state*3, blacklisted_movetypes=FLOATING)
+	switch(grab_state)
+		if(GRAB_PASSIVE)
+			remove_movespeed_modifier(MOVESPEED_ID_MOB_GRAB_STATE)
+		if(GRAB_AGGRESSIVE)
+			add_movespeed_modifier(/datum/movespeed_modifier/grab_slowdown/aggressive)
+		if(GRAB_NECK)
+			add_movespeed_modifier(/datum/movespeed_modifier/grab_slowdown/neck)
+		if(GRAB_KILL)
+			add_movespeed_modifier(/datum/movespeed_modifier/grab_slowdown/kill)
 
 /mob/proc/update_equipment_speed_mods()
 	var/speedies = equipped_speed_mods()
 	if(!speedies)
-		remove_movespeed_modifier(MOVESPEED_ID_MOB_EQUIPMENT, update=TRUE)
+		remove_movespeed_modifier(/datum/movespeed_modifier/equipment_speedmod)
 	else
-		add_movespeed_modifier(MOVESPEED_ID_MOB_EQUIPMENT, update=TRUE, priority=100, override=TRUE, multiplicative_slowdown=speedies, blacklisted_movetypes=FLOATING)
+		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/equipment_speedmod, multiplicative_slowdown = speedies)
 
 /// Gets the combined speed modification of all worn items
 /// Except base mob type doesnt really wear items

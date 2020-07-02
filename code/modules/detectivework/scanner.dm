@@ -8,7 +8,7 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "forensicnew"
 	w_class = WEIGHT_CLASS_SMALL
-	item_state = "electronic"
+	inhand_icon_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -19,23 +19,25 @@
 	var/range = 8
 	var/view_check = TRUE
 	var/forensicPrintCount = 0
-	actions_types = list(/datum/action/item_action/displayDetectiveScanResults)
+	actions_types = list(/datum/action/item_action/display_detective_scan_results)
 
-/datum/action/item_action/displayDetectiveScanResults
+/datum/action/item_action/display_detective_scan_results
 	name = "Display Forensic Scanner Results"
 
-/datum/action/item_action/displayDetectiveScanResults/Trigger()
+/datum/action/item_action/display_detective_scan_results/Trigger()
 	var/obj/item/detective_scanner/scanner = target
 	if(istype(scanner))
 		scanner.displayDetectiveScanResults(usr)
 
 /obj/item/detective_scanner/attack_self(mob/user)
+	/*
 	if(log.len && !scanning)
 		scanning = 1
 		to_chat(user, "<span class='notice'>Printing report, please wait...</span>")
 		addtimer(CALLBACK(src, .proc/PrintReport), 100)
 	else
-		to_chat(user, "<span class='notice'>The scanner has no logs or is in use.</span>")
+		to_chat(user, "<span class='notice'>The scanner has no logs or is in use.</span>")*/
+	self_mode(user) //FULPSTATION EXPANDED DETECTIVE TOOLS PR Surrealistik Oct 2019
 
 /obj/item/detective_scanner/attack(mob/living/M, mob/user)
 	return
@@ -51,22 +53,21 @@
 	P.info = text("<center><B>Forensic Record - (FR-[])</B></center><HR><BR>", frNum)
 	P.info += jointext(log, "<BR>")
 	P.info += "<HR><B>Notes:</B><BR>"
-	P.info_links = P.info
-	P.updateinfolinks()
 	P.update_icon()
 
 	if(ismob(loc))
 		var/mob/M = loc
 		M.put_in_hands(P)
-		to_chat(M, "<span class='notice'>Report printed. Log cleared.</span>")
+		to_chat(M, "<span class='notice'>Report printed.</span>") //FULPSTATION DETECTIVE LOCKER PR Surrealistik April 2020
 
 	// Clear the logs
-	log = list()
+	//log = list() //FULPSTATION DETECTIVE LOCKER PR Surrealistik April 2020
 	scanning = 0
 
 /obj/item/detective_scanner/afterattack(atom/A, mob/user, params)
 	. = ..()
-	scan(A, user)
+	//scan(A, user)
+	attack_mode(A, user) //FULPSTATION EXPANDED DETECTIVE TOOLS PR Surrealistik Oct 2019
 	return FALSE
 
 /obj/item/detective_scanner/proc/scan(atom/A, mob/user)
@@ -126,7 +127,7 @@
 
 		// Fingerprints
 		if(length(fingerprints))
-			sleep(30)
+			//sleep(30) //FULPSTATION EXPANDED DETECTIVE TOOLS PR Surrealistik Oct 2019; eliminating needless delays.
 			add_log("<span class='info'><B>Prints:</B></span>")
 			for(var/finger in fingerprints)
 				add_log("[finger]")
@@ -134,7 +135,7 @@
 
 		// Blood
 		if (length(blood))
-			sleep(30)
+			//sleep(30) //FULPSTATION EXPANDED DETECTIVE TOOLS PR Surrealistik Oct 2019
 			add_log("<span class='info'><B>Blood:</B></span>")
 			found_something = 1
 			for(var/B in blood)
@@ -142,7 +143,7 @@
 
 		//Fibers
 		if(length(fibers))
-			sleep(30)
+			//sleep(30) //FULPSTATION EXPANDED DETECTIVE TOOLS PR Surrealistik Oct 2019
 			add_log("<span class='info'><B>Fibers:</B></span>")
 			for(var/fiber in fibers)
 				add_log("[fiber]")
@@ -150,7 +151,7 @@
 
 		//Reagents
 		if(length(reagents))
-			sleep(30)
+			//sleep(30) //FULPSTATION EXPANDED DETECTIVE TOOLS PR Surrealistik Oct 2019
 			add_log("<span class='info'><B>Reagents:</B></span>")
 			for(var/R in reagents)
 				add_log("Reagent: <font color='red'>[R]</font> Volume: <font color='red'>[reagents[R]]</font>")

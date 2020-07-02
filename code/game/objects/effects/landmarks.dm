@@ -187,6 +187,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Virologist"
 	icon_state = "Virologist"
 
+/obj/effect/landmark/start/psychologist
+	name = "Psychologist"
+	icon_state = "Psychologist"
+
 /obj/effect/landmark/start/chaplain
 	name = "Chaplain"
 	icon_state = "Chaplain"
@@ -204,7 +208,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/ai/after_round_start()
 	if(latejoin_active && !used)
-		new /obj/structure/AIcore/latejoin_inactive(loc)
+		new /obj/structure/ai_core/latejoin_inactive(loc)
 	return ..()
 
 /obj/effect/landmark/start/ai/secondary
@@ -425,3 +429,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.ruin_landmarks -= src
 	ruin_template = null
 	. = ..()
+
+// handled in portals.dm, id connected to one-way portal
+/obj/effect/landmark/portal_exit
+	name = "portal exit"
+	icon_state = "portal_exit"
+	var/id

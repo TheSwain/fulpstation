@@ -55,18 +55,15 @@
 	return TRUE
 
 /mob/living/carbon/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
-	if(!skipcatch)	//ugly, but easy
-		if(can_catch_item())
-			if(istype(AM, /obj/item))
-				var/obj/item/I = AM
-				if(isturf(I.loc))
-					I.attack_hand(src)
-					if(get_active_held_item() == I) //if our attack_hand() picks up the item...
-						visible_message("<span class='warning'>[src] catches [I]!</span>", \
-										"<span class='userdanger'>You catch [I] in mid-air!</span>")
-						throw_mode_off()
-						return 1
-	..()
+	if(!skipcatch && can_catch_item() && istype(AM, /obj/item) && isturf(AM.loc))
+		var/obj/item/I = AM
+		I.attack_hand(src)
+		if(get_active_held_item() == I) //if our attack_hand() picks up the item...
+			visible_message("<span class='warning'>[src] catches [I]!</span>", \
+							"<span class='userdanger'>You catch [I] in mid-air!</span>")
+			throw_mode_off()
+			return TRUE
+	return ..()
 
 
 /mob/living/carbon/attacked_by(obj/item/I, mob/living/user)
@@ -80,7 +77,7 @@
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
 	send_item_attack_message(I, user, affecting.name)
 	if(I.force)
-		apply_damage(I.force, I.damtype, affecting)
+		apply_damage(I.force, I.damtype, affecting, wound_bonus = I.wound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness())
 		if(I.damtype == BRUTE && affecting.status == BODYPART_ORGANIC)
 			if(prob(33))
 				I.add_mob_blood(src)
@@ -128,6 +125,11 @@
 			if(user.a_intent == INTENT_HELP || user.a_intent == INTENT_DISARM)
 				if(S.next_step(user, user.a_intent))
 					return 1
+
+	for(var/datum/wound/W in all_wounds)
+		if(W.try_handling(user))
+			return 1
+
 	return 0
 
 
@@ -164,8 +166,8 @@
 				if(M.powerlevel < 0)
 					M.powerlevel = 0
 
-				visible_message("<span class='danger'>The [M.name] has shocked [src]!</span>", \
-				"<span class='userdanger'>The [M.name] has shocked you!</span>")
+				visible_message("<span class='danger'>The [M.name] shocks [src]!</span>", \
+				"<span class='userdanger'>The [M.name] shocks you!</span>")
 
 				do_sparks(5, TRUE, src)
 				var/power = M.powerlevel + rand(0,3)
@@ -258,6 +260,9 @@
 		to_chat(M, "<span class='warning'>You can't put [p_them()] out with just your bare hands!</span>")
 		return
 
+	if(M == src && check_self_for_injuries())
+		return
+
 	if(!(mobility_flags & MOBILITY_STAND))
 		if(buckled)
 			to_chat(M, "<span class='warning'>You need to unbuckle [src] first to do that!</span>")
@@ -304,6 +309,27 @@
 	set_resting(FALSE)
 
 	playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
+
+/// Check ourselves to see if we've got any shrapnel, return true if we do. This is a much simpler version of what humans do, we only indicate we're checking ourselves if there's actually shrapnel
+/mob/living/carbon/proc/check_self_for_injuries()
+	if(stat == DEAD || stat == UNCONSCIOUS)
+		return
+
+	var/embeds = FALSE
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/LB = X
+		for(var/obj/item/I in LB.embedded_objects)
+			if(!embeds)
+				embeds = TRUE
+				// this way, we only visibly try to examine ourselves if we have something embedded, otherwise we'll still hug ourselves :)
+				visible_message("<span class='notice'>[src] examines [p_them()]self.</span>", \
+					"<span class='notice'>You check yourself for shrapnel.</span>")
+			if(I.isEmbedHarmless())
+				to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] stuck to your [LB.name]!</a>")
+			else
+				to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>")
+
+	return embeds
 
 
 /mob/living/carbon/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0)
@@ -370,16 +396,16 @@
 			Paralyze((stun_pwr*effect_amount)*0.1)
 			Knockdown(stun_pwr*effect_amount)
 
-		if(istype(ears) && (deafen_pwr || damage_pwr))
+		if(ears && (deafen_pwr || damage_pwr))
 			var/ear_damage = damage_pwr * effect_amount
 			var/deaf = deafen_pwr * effect_amount
-			adjustEarDamage(ear_damage,deaf)
+			ears.adjustEarDamage(ear_damage,deaf)
 
 			if(ears.damage >= 15)
 				to_chat(src, "<span class='warning'>Your ears start to ring badly!</span>")
 				if(prob(ears.damage - 5))
 					to_chat(src, "<span class='userdanger'>You can't hear anything!</span>")
-					ears.damage = min(ears.damage, ears.maxHealth)
+					ears.damage = min(ears.damage, ears.maxHealth) // does this actually do anything useful? all this would do is set an upper bound on damage, is this supposed to be a max?
 					// you need earmuffs, inacusiate, or replacement
 			else if(ears.damage >= 5)
 				to_chat(src, "<span class='warning'>Your ears start to ring!</span>")
@@ -405,5 +431,31 @@
 /mob/living/carbon/can_hear()
 	. = FALSE
 	var/obj/item/organ/ears/ears = getorganslot(ORGAN_SLOT_EARS)
-	if(istype(ears) && !ears.deaf)
+	if(ears && !HAS_TRAIT(src, TRAIT_DEAF))
 		. = TRUE
+
+
+/mob/living/carbon/adjustOxyLoss(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(isnull(.))
+		return
+	if(. <= 50)
+		if(getOxyLoss() > 50)
+			ADD_TRAIT(src, TRAIT_KNOCKEDOUT, OXYLOSS_TRAIT)
+	else if(getOxyLoss() <= 50)
+		REMOVE_TRAIT(src, TRAIT_KNOCKEDOUT, OXYLOSS_TRAIT)
+
+/mob/living/carbon/proc/get_interaction_efficiency(zone)
+	var/obj/item/bodypart/limb = get_bodypart(zone)
+	if(!limb)
+		return
+
+/mob/living/carbon/setOxyLoss(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(isnull(.))
+		return
+	if(. <= 50)
+		if(getOxyLoss() > 50)
+			ADD_TRAIT(src, TRAIT_KNOCKEDOUT, OXYLOSS_TRAIT)
+	else if(getOxyLoss() <= 50)
+		REMOVE_TRAIT(src, TRAIT_KNOCKEDOUT, OXYLOSS_TRAIT)

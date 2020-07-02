@@ -379,7 +379,8 @@
 /mob/living/simple_animal/hostile/proc/OpenFire(atom/A)
 	if(CheckFriendlyFire(A))
 		return
-	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [A]!</span>")
+	if(!(simple_mob_flags & SILENCE_RANGED_MESSAGE))
+		visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [A]!</span>")
 
 
 	if(rapid > 1)
@@ -569,3 +570,10 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 				. += M
 			else if (M.loc.type in hostile_machines)
 				. += M.loc
+
+/mob/living/simple_animal/hostile/tamed(whomst)
+	if(isliving(whomst))
+		var/mob/living/fren = whomst
+		friends = fren
+		faction = fren.faction.Copy()
+	return ..()

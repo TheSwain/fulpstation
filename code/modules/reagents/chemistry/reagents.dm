@@ -81,8 +81,12 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	. = ..()
 	holder = null
 
+/// Applies this reagent to an [/atom]
+/datum/reagent/proc/expose_atom(atom/A, volume)
+	return
+
 /// Applies this reagent to a [/mob/living]
-/datum/reagent/proc/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+/datum/reagent/proc/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(!istype(M))
 		return 0
 	if(method == VAPOR) //smoke, foam, spray
@@ -94,11 +98,11 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	return 1
 
 /// Applies this reagent to an [/obj]
-/datum/reagent/proc/reaction_obj(obj/O, volume)
+/datum/reagent/proc/expose_obj(obj/O, volume)
 	return
 
 /// Applies this reagent to a [/turf]
-/datum/reagent/proc/reaction_turf(turf/T, volume)
+/datum/reagent/proc/expose_turf(turf/T, volume)
 	return
 
 /// Called from [/datum/reagents/proc/metabolize]
@@ -188,6 +192,15 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	if(prob(30))
 		to_chat(M, "<span class='boldannounce'>You're not feeling good at all! You really need some [name].</span>")
 	return
+
+/**
+  * New, standardized method for chemicals to affect hydroponics trays.
+  * Defined on a per-chem level as opposed to by the tray.
+  * Can affect plant's health, stats, or cause the plant to react in certain ways.
+  */
+/datum/reagent/proc/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	if(!mytray)
+		return
 
 /proc/pretty_string_from_reagent_list(list/reagent_list)
 	//Convert reagent list to a printable string for logging etc

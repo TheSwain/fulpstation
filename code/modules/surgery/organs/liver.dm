@@ -35,7 +35,7 @@
 				//handle liver toxin filtration
 				for(var/datum/reagent/toxin/T in C.reagents.reagent_list)
 					var/thisamount = C.reagents.get_reagent_amount(T.type)
-					if (thisamount && thisamount <= toxTolerance)
+					if (thisamount && thisamount <= toxTolerance * (maxHealth - damage) / maxHealth ) //toxTolerance is effectively multiplied by the % that your liver's health is at
 						C.reagents.remove_reagent(T.type, 1)
 					else
 						damage += (thisamount*toxLethality)
@@ -57,6 +57,9 @@
 #undef HAS_SILENT_TOXIN
 #undef HAS_NO_TOXIN
 #undef HAS_PAINFUL_TOXIN
+
+/obj/item/organ/liver/get_availability(datum/species/S)
+	return !(TRAIT_NOMETABOLISM in S.species_traits)
 
 /obj/item/organ/liver/fly
 	name = "insectoid liver"
@@ -114,4 +117,4 @@
 		owner.adjustToxLoss(10)
 		severe_cooldown = world.time + 10 SECONDS
 	if(prob(emp_vulnerability/severity))	//Chance of permanent effects
-		organ_flags = ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
+		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.

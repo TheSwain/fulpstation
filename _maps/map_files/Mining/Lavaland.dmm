@@ -106,7 +106,7 @@
 /area/mine/laborcamp)
 "au" = (
 /obj/structure/table,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/bookmanagement,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/mine/laborcamp)
@@ -344,7 +344,7 @@
 /turf/open/floor/plasteel,
 /area/mine/laborcamp)
 "bk" = (
-/obj/item/twohanded/required/kirbyplants{
+/obj/item/kirbyplants{
 	icon_state = "plant-10"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -539,9 +539,9 @@
 /area/mine/eva)
 "bG" = (
 /obj/structure/table,
-/obj/item/stack/packageWrap,
-/obj/item/stack/packageWrap,
-/obj/item/stack/packageWrap,
+/obj/item/stack/package_wrap,
+/obj/item/stack/package_wrap,
+/obj/item/stack/package_wrap,
 /obj/item/hand_labeler,
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
@@ -1221,17 +1221,17 @@
 	pixel_x = -3;
 	pixel_y = -3
 	},
-/obj/item/reagent_containers/blood/AMinus,
-/obj/item/reagent_containers/blood/BMinus{
+/obj/item/reagent_containers/blood/a_minus,
+/obj/item/reagent_containers/blood/b_minus{
 	pixel_x = -4;
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/blood/BPlus{
+/obj/item/reagent_containers/blood/b_plus{
 	pixel_x = 1;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/blood/OMinus,
-/obj/item/reagent_containers/blood/OPlus{
+/obj/item/reagent_containers/blood/o_minus,
+/obj/item/reagent_containers/blood/o_plus{
 	pixel_x = -2;
 	pixel_y = -1
 	},
@@ -3792,7 +3792,7 @@
 /area/mine/laborcamp)
 "rH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/twohanded/required/kirbyplants{
+/obj/item/kirbyplants{
 	icon_state = "plant-05"
 	},
 /obj/machinery/camera{
@@ -4365,7 +4365,7 @@
 /turf/open/floor/plasteel,
 /area/mine/laborcamp)
 "Gn" = (
-/obj/item/twohanded/required/kirbyplants/random,
+/obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
 "Gz" = (
@@ -4551,7 +4551,7 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/mine/laborcamp)
 "Lg" = (
-/obj/item/twohanded/required/kirbyplants/random,
+/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
