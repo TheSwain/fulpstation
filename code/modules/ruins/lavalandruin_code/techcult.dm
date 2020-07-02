@@ -46,36 +46,56 @@
 /obj/structure/closet/secure_closet/mechanicus/augs/PopulateContents()
 	..()
 	var/static/items_inside = list(
-		/obj/item/bodypart/chest/robot = 2,
-		/obj/item/bodypart/head/robot = 2,
-		/obj/item/bodypart/l_arm/robot = 2,
-		/obj/item/bodypart/r_arm/robot = 2,
-		/obj/item/bodypart/l_leg/robot = 2,
+		/obj/item/bodypart/chest/robot = 3,
+		/obj/item/bodypart/head/robot = 3,
+		/obj/item/bodypart/l_arm/robot = 3,
+		/obj/item/bodypart/r_arm/robot = 3,
+		/obj/item/bodypart/l_leg/robot = 3,
 		/obj/item/bodypart/r_leg/robot = 3)
 	generate_items_inside(items_inside,src)
 
 /***************** Armor *****************/
 
 //Basic
-/obj/item/clothing/suit/hooded/techpriest/armor
+/obj/item/clothing/suit/hooded/techpriest/armor/plate
 	name = "armored techpriest robes"
 	desc = "An armored version of robes worn by followers of the machine god."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife/combat/bone, /obj/item/kitchen/knife/combat/survival)
-	armor = list("melee" = 45, "bullet" = 10, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 30, "bullet" = 10, "laser" = 20, "energy" = 30, "bomb" = 30, "bio" = 60, "rad" = 30, "fire" = 60, "acid" = 60)
 	hoodtype = /obj/item/clothing/head/hooded/techpriest/armor
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/head/hooded/techpriest/armor
+/obj/item/clothing/suit/hooded/techpriest/armor/plate/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/head/hooded/techpriest/armor/plate
 	name = "armored techpriest's hood"
 	desc = "An armored version of hood worn by followers of the machine god."
-	armor = list("melee" = 45, "bullet" = 10, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 30, "bullet" = 10, "laser" = 20, "energy" = 30, "bomb" = 30, "bio" = 60, "rad" = 30, "fire" = 60, "acid" = 60)
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = FIRE_HELM_MAX_TEMP_PROTECT
+
+/obj/item/clothing/head/hooded/techpriest/armor/plate/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 //Leader
 //Don't yell at me, it's super balanced, and in world of Lavaland everything is overpowered anyway.
 /obj/item/clothing/suit/hooded/techpriest/armor/lead
 	name = "blessed tech robes"
 	desc = "From the rage of the beast, Machine God protect us."
-	armor = list("melee" = 65, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+	armor = list("melee" = 75, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 40, "fire" = 100, "acid" = 100)
 	hoodtype = /obj/item/clothing/head/hooded/techpriest/armor/lead
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	transparent_protection = HIDEGLOVES|HIDESUITSTORAGE|HIDEJUMPSUIT|HIDESHOES
 
 /obj/item/clothing/suit/hooded/techpriest/armor/lead/Initialize()
 	. = ..()
@@ -84,7 +104,11 @@
 /obj/item/clothing/head/hooded/techpriest/armor/lead
 	name = "blessed tech hood"
 	desc = "From the weakness of the mind, Omnissiah set us free."
-	armor = list("melee" = 65, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+	armor = list("melee" = 75, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 40, "fire" = 100, "acid" = 100)
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	transparent_protection = HIDEMASK
 
 /obj/item/clothing/head/hooded/techpriest/armor/lead/Initialize()
 	. = ..()
@@ -97,13 +121,13 @@
 		to_chat(user, "<span class='warning'>The machine god will never allow this!</span>")
 		user.dropItemToGround(src, TRUE)
 		user.Paralyze(60)
-		user.Dizzy(300)
+		user.Dizzy(120)
 	else
 		if(!(user.mind.holy_role))
 			to_chat(user, "<span class='warning'>Your time will come later.</span>")
 			user.dropItemToGround(src, TRUE)
-			user.Paralyze(40)
-			user.Dizzy(80)
+			user.Paralyze(30)
+			user.Dizzy(60)
 
 /***************** Spawners *****************/
 
@@ -123,15 +147,13 @@
 	assignedrole = "Tech Priest"
 
 /obj/effect/mob_spawn/human/techcult/special(mob/living/new_spawn)
-	new_spawn.grant_language(/datum/language/machine, TRUE, TRUE, LANGUAGE_MIND) //They have to implant robotic box instead of a tongue to speak this language though.
-
-/datum/outfit/techcult/post_equip(mob/living/carbon/human/H)
-	H.faction |= "Mechanicus"
+	new_spawn.grant_language(/datum/language/machine, TRUE, TRUE, LANGUAGE_MIND)
+	new_spawn.faction |= "Mechanicus"
 
 /datum/outfit/techcult
 	name = "Tech Priest"
 	uniform = /obj/item/clothing/under/color/black
-	suit = /obj/item/clothing/suit/hooded/techpriest/armor
+	suit = /obj/item/clothing/suit/hooded/techpriest/armor/plate
 	shoes = /obj/item/clothing/shoes/cyborg
 	gloves = /obj/item/clothing/gloves/color/black
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
@@ -159,11 +181,13 @@
 /obj/effect/mob_spawn/human/techcult/leader/special(mob/living/new_spawn)
 	..()
 	new_spawn.mind.holy_role = HOLY_ROLE_PRIEST
+	sleep(10)
+	new_spawn.equip_to_slot_or_del(new /obj/item/clothing/suit/hooded/techpriest/armor/lead(new_spawn),ITEM_SLOT_OCLOTHING, TRUE)
 
 /datum/outfit/techcult/lead
 	name = "Tech Cult Leader"
 	uniform = /obj/item/clothing/under/rank/civilian/chaplain
-	suit = /obj/item/clothing/suit/hooded/techpriest/armor/lead
+	suit = null
 	gloves = /obj/item/clothing/gloves/combat
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/night
 	r_hand = /obj/item/gun/energy/sniper/pin
@@ -210,8 +234,7 @@
 /obj/effect/spawner/lootdrop/omnissiah
 	name = "omnissiah gift spawner"
 	lootdoubles = FALSE
-	loot = list(/obj/item/robot_suit = 80,
-				/obj/item/stack/sheet/metal/twenty = 68,
+	loot = list(/obj/item/stack/sheet/metal/twenty = 68,
 				/mob/living/simple_animal/bot/medbot = 60,
 				/mob/living/simple_animal/bot/cleanbot = 56,
 				/obj/item/paicard = 52,
@@ -223,6 +246,7 @@
 				/obj/item/organ/lungs/cybernetic/tier4 = 13,
 				/obj/item/organ/cyberimp/chest/reviver/plus = 11,
 				/obj/item/organ/cyberimp/arm/surgery/plus = 11,
+				/obj/machinery/microwave = 6, //Everyone likes microwaves
 				/obj/item/organ/cyberimp/arm/gun/laser = 2,
 				/obj/item/organ/cyberimp/arm/combat = 1,)
 
@@ -361,7 +385,7 @@
 	export_price = 5000
 
 /datum/design/borg_chest/emp
-	name = "Cyborg Torso"
+	name = "EMP-Proof Cyborg Torso"
 	id = "borg_chest_empproof"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/chest/robot/empproof
@@ -370,7 +394,7 @@
 	category = list("Misc", "Medical Designs")
 
 /datum/design/borg_head/emp
-	name = "Cyborg Head"
+	name = "EMP-Proof Cyborg Head"
 	id = "borg_head_empproof"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/head/robot/empproof
@@ -379,7 +403,7 @@
 	category = list("Misc", "Medical Designs")
 
 /datum/design/borg_l_arm/emp
-	name = "Cyborg Left Arm"
+	name = "EMP-Proof Cyborg Left Arm"
 	id = "borg_l_arm_empproof"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/l_arm/robot/empproof
@@ -388,7 +412,7 @@
 	category = list("Misc", "Medical Designs")
 
 /datum/design/borg_r_arm/emp
-	name = "Cyborg Right Arm"
+	name = "EMP-Proof Cyborg Right Arm"
 	id = "borg_r_arm_empproof"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/r_arm/robot/empproof
@@ -397,7 +421,7 @@
 	category = list("Misc", "Medical Designs")
 
 /datum/design/borg_l_leg/emp
-	name = "Cyborg Left Leg"
+	name = "EMP-Proof Cyborg Left Leg"
 	id = "borg_l_leg_empproof"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/l_leg/robot/empproof
@@ -406,7 +430,7 @@
 	category = list("Misc", "Medical Designs")
 
 /datum/design/borg_r_leg/emp
-	name = "Cyborg Right Leg"
+	name = "EMP-Proof Cyborg Right Leg"
 	id = "borg_r_leg_empproof"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/r_leg/robot/empproof
@@ -498,18 +522,23 @@
 	to_chat(owner, "<span class='notice'>You feel a faint buzzing as your reviver implant starts patching your wounds...</span>")
 
 /obj/item/organ/cyberimp/chest/reviver/plus/heal()
+	var/list/parts = owner.get_damaged_bodyparts(TRUE, TRUE, status = BODYPART_ROBOTIC)
 	if(owner.getOxyLoss())
-		owner.adjustOxyLoss(-10) //REAL fast
+		owner.adjustOxyLoss(-10, TRUE) //REAL fast
 		revive_cost += 5
 	if(owner.getBruteLoss())
-		owner.adjustBruteLoss(-5)
-		revive_cost += 40
+		owner.adjustBruteLoss(-5, TRUE)
+		revive_cost += 50
 	if(owner.getFireLoss())
-		owner.adjustFireLoss(-5)
-		revive_cost += 40
+		owner.adjustFireLoss(-5, TRUE)
+		revive_cost += 50
 	if(owner.getToxLoss())
-		owner.adjustToxLoss(-3)
-		revive_cost += 40
+		owner.adjustToxLoss(-3, TRUE)
+		revive_cost += 30
+	if(parts.len > 0)
+		for(var/obj/item/bodypart/L in parts)
+			L.heal_damage(2, 2, null, BODYPART_ROBOTIC)
+			revive_cost += 10
 
 //Advanced Surgical Toolset Implant
 /obj/item/organ/cyberimp/arm/surgery/plus
