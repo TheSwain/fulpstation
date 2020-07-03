@@ -1,0 +1,23 @@
+"a" = (/turf/closed/wall/mineral/plastitanium,/area/survivalpod)
+"b" = (/obj/structure/sign/mining/syndicate/stripe{icon_state = "stripe"; dir = 1},/turf/closed/wall/mineral/plastitanium,/area/survivalpod)
+"c" = (/obj/structure/sign/mining/syndicate/stripe{icon_state = "stripe"; dir = 8},/turf/closed/wall/mineral/plastitanium,/area/survivalpod)
+"d" = (/turf/open/floor/mineral/plastitanium,/area/survivalpod)
+"e" = (/obj/structure/sign/mining/syndicate/stripe{icon_state = "stripe"; dir = 4},/turf/closed/wall/mineral/plastitanium,/area/survivalpod)
+"f" = (/obj/structure/sign/mining/syndicate/stripe,/turf/closed/wall/mineral/plastitanium,/area/survivalpod)
+"g" = (/obj/machinery/door/airlock/hatch{name = "airlock"; req_access = null},/obj/structure/fans/tiny,/turf/open/floor/mineral/plastitanium,/area/survivalpod)
+"h" = (/obj/structure/sign/mining/syndicate,/turf/closed/wall/mineral/plastitanium,/area/survivalpod)
+"i" = (/obj/structure/fans,/turf/open/floor/mineral/plastitanium,/area/survivalpod)
+"j" = (/obj/machinery/smartfridge/survival_pod/syndi,/turf/open/floor/mineral/plastitanium,/area/survivalpod)
+"k" = (/obj/structure/sign/poster/contraband/d_day_promo{pixel_x = 32},/obj/structure/sign/poster/contraband/space_cube{pixel_y = 32},/obj/machinery/computer/security{desc = "While it looks like standard pod computer, it is in fact a highly TACTICAL camera consol."; icon = 'icons/obj/lavaland/pod_computer.dmi'; icon_keyboard = null; icon_screen = null; icon_state = "pod_computer"; name = "tactical pod computer"; pixel_y = -32},/turf/open/floor/mineral/plastitanium,/area/survivalpod)
+"l" = (/obj/machinery/stasis/survival_pod,/turf/open/floor/mineral/plastitanium,/area/survivalpod)
+"m" = (/obj/structure/chair/office{desc = "Tacticool chair for wannabe operatives."; dir = 1; icon_state = "officechair_dark"; layer = 3.001; name = "tacticool chair"},/turf/open/floor/mineral/plastitanium,/area/survivalpod)
+"n" = (/obj/structure/rack,/obj/item/clothing/mask/gas/syndicate{pixel_x = -4; pixel_y = 4},/obj/item/tank/internals/emergency_oxygen/engi{pixel_x = 4; pixel_y = -4},/turf/open/floor/mineral/plastitanium,/area/survivalpod)
+"o" = (/obj/structure/table/survival_pod,/turf/open/floor/mineral/plastitanium,/area/survivalpod)
+
+(1,1,1) = {"
+aabaa
+aijka
+cldme
+aodna
+afgha
+"}

@@ -90,3 +90,22 @@
 			This is a cheap knockoff Space-China budget version that holds 2 charges, and regains 1 charge every 30 seconds."
 	item = /obj/item/card/emag/budget
 	cost = 6
+
+/datum/uplink_item/role_restricted/shelter_traitor
+	name = "Tacticool Bluespace Shelter"
+	desc = "A fairly simple concept of bluespace capsule redesigned by Syndicate. \
+			Use it wherever you want to assert DOMINANCE and show that YOU are the BOSS!"
+	item = /obj/item/survivalcapsule/fulp/traitor
+	cost = 2
+	restricted_roles = list("Shaft Miner", "Quartermaster")
+
+/datum/uplink_item/device_tools/shelter_nuke
+	name = "Budget Cryptographic Sequencer"
+	desc = "Highly tactical object reverse engineered by syndicate scientists. \
+		While it is small, it contains everything real operative needs - \
+		FIRE-POWER AND FIRE-COVER! \
+		With this - you will be able to destroy those fools easily! \
+		(Fire Power included in form of welding tools)"
+	item = /obj/item/survivalcapsule/fulp/traitor/nuke
+	cost = 6
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
