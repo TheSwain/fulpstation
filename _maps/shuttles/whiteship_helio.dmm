@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/turf/open/space/basic,
-/area/space)
+/turf/template_noop,
+/area/template_noop)
 "ab" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/firecloset/full{
@@ -385,7 +385,6 @@
 /obj/item/stack/medical/suture/medicated,
 /obj/item/bot_assembly/medbot,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/scalpel/advanced,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/abandoned/cargo)
 "aL" = (
@@ -861,7 +860,8 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/russian{
-	environment_smash = 0
+	environment_smash = 0;
+	health = 75
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/bar)
@@ -2590,7 +2590,12 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/russian/ranged/trooper{
-	environment_smash = 0
+	environment_smash = 0;
+	health = 100;
+	minimum_distance = 3;
+	name = "Russian Trooper";
+	rapid_fire_delay = 3;
+	retreat_distance = 2
 	},
 /turf/open/floor/pod/light,
 /area/shuttle/abandoned/cargo)
@@ -3259,7 +3264,8 @@
 "gc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/russian{
-	environment_smash = 0
+	environment_smash = 0;
+	health = 75
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/cargo)
@@ -3269,7 +3275,7 @@
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/pilot{
 	desc = "Syndicate Agent in the middle of a business deal with Russians.";
 	environment_smash = 0;
-	faction = list("russian","syndicate");
+	faction = list("russian","Syndicate");
 	name = "Syndicate Ambassador"
 	},
 /turf/open/floor/plasteel,
@@ -3281,14 +3287,16 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/russian{
-	environment_smash = 0
+	environment_smash = 0;
+	health = 75
 	},
 /turf/open/floor/pod/light,
 /area/shuttle/abandoned/cargo)
 "gf" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/russian/ranged/trooper{
-	environment_smash = 0
+/mob/living/simple_animal/hostile/russian/ranged/officer{
+	environment_smash = 0;
+	faction = list("russian","Syndicate")
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/bridge)
@@ -3317,9 +3325,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/russian/ranged/officer{
-	environment_smash = 0
-	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/bridge)
 "gi" = (
@@ -3730,7 +3735,6 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/folder/red,
-/obj/item/stamp/centcom,
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/bridge)
 
