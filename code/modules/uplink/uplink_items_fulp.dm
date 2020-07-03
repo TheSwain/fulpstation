@@ -100,12 +100,12 @@
 	restricted_roles = list("Shaft Miner", "Quartermaster")
 
 /datum/uplink_item/device_tools/shelter_nuke
-	name = "Budget Cryptographic Sequencer"
+	name = "Tactical Bluespace Shelter"
 	desc = "Highly tactical object reverse engineered by syndicate scientists. \
+		It is also capable of destroying walls in a small area. \
 		While it is small, it contains everything real operative needs - \
 		FIRE-POWER AND FIRE-COVER! \
-		With this - you will be able to destroy those fools easily! \
 		(Fire Power included in form of welding tools)"
 	item = /obj/item/survivalcapsule/fulp/traitor/nuke
-	cost = 6
+	cost = 10 //7x7 shelter that can remove walls, worth it.
 	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)

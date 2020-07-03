@@ -32,12 +32,8 @@
 
 /obj/machinery/smartfridge/survival_pod/syndi/Initialize(mapload)
 	. = ..()
-	if(empty)
-		return
 	for(var/i in 1 to 2)
-		var/obj/item/reagent_containers/food/snacks/donkpocket/warm/W = new(src)
 		var/obj/item/reagent_containers/food/snacks/syndicake/X = new(src)
-		load(W)
 		load(X)
 	if(prob(50))
 		var/obj/item/storage/pill_bottle/dice/hazard/D = new(src)
@@ -45,11 +41,6 @@
 	else
 		var/obj/item/instrument/eguitar/G = new(src)
 		load(G)
-
-/obj/machinery/porta_turret/syndicate/pod/capsule
-	shot_delay = 25 //One shot every 2.5 seconds
-	stun_projectile = /obj/projectile/bullet/syndicate_turret
-	lethal_projectile = /obj/projectile/bullet/syndicate_turret
 
 ////////////////// MAP TEMPLATES //////////////////
 
@@ -76,5 +67,5 @@
 
 /datum/map_template/shelter/nuke/New()
 	. = ..()
-	whitelisted_turfs = typecacheof(/turf/closed/mineral)
+	whitelisted_turfs = typecacheof(/turf/closed/mineral, /turf/closed/wall) //Walls go bzhzhzh...
 	banned_objects = typecacheof(/obj/structure/stone_tile)
