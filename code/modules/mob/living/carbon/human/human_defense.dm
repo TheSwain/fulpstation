@@ -497,12 +497,10 @@
 			switch(severity)
 				if(1)
 					L.receive_damage(0,10)
-					if(!L.empproof) //FULP
-						Paralyze(200)
+					Paralyze(200)
 				if(2)
 					L.receive_damage(0,5)
-					if(!L.empproof) //FULP
-						Paralyze(100)
+					Paralyze(100)
 
 /mob/living/carbon/human/acid_act(acidpwr, acid_volume, bodyzone_hit) //todo: update this to utilize check_obscured_slots() //and make sure it's check_obscured_slots(TRUE) to stop aciding through visors etc
 	var/list/damaged = list()
