@@ -89,20 +89,6 @@
 /obj/effect/turf_decal/delivery/red,
 /turf/open/floor/mineral/plastitanium,
 /area/survivalpod)
-"o" = (
-/obj/structure/window/reinforced/survival_pod{
-	icon_state = "pwindow";
-	dir = 5
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/survivalpod)
-"p" = (
-/obj/structure/window/reinforced/survival_pod{
-	density = 0;
-	dir = 9
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/survivalpod)
 "q" = (
 /obj/structure/window/reinforced/survival_pod{
 	dir = 1
@@ -209,7 +195,7 @@ c
 e
 m
 t
-o
+g
 g
 x
 i
@@ -245,7 +231,7 @@ c
 e
 n
 u
-p
+g
 g
 w
 b
