@@ -1455,6 +1455,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "cG" = (
@@ -1463,6 +1464,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "cH" = (
@@ -1489,22 +1491,21 @@
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "cK" = (
-/obj/docking_port/mobile{
-	callTime = 250;
-	dir = 4;
-	dwidth = 18;
-	height = 31;
-	id = "whiteship";
-	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
-	name = "Heavy Freighter";
-	port_direction = 8;
-	preferred_direction = 4;
-	width = 36
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	icon_state = "pipe11-3";
+	dir = 1
 	},
-/obj/machinery/door/airlock/external,
-/obj/structure/fans/tiny,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/russian/ranged/trooper{
+	dir = 2;
+	environment_smash = 0;
+	health = 100;
+	minimum_distance = 3;
+	name = "Russian Trooper";
+	rapid_fire_delay = 3;
+	retreat_distance = 2
+	},
+/turf/open/floor/pod/light,
 /area/shuttle/abandoned/cargo)
 "cL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -2584,20 +2585,23 @@
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "eR" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	icon_state = "pipe11-3";
-	dir = 1
+/obj/docking_port/mobile{
+	callTime = 250;
+	can_move_docking_ports = 1;
+	dir = 4;
+	dwidth = 18;
+	height = 31;
+	id = "whiteship";
+	launch_status = 0;
+	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
+	name = "Heavy Freighter";
+	port_direction = 4;
+	preferred_direction = 1;
+	width = 36
 	},
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/russian/ranged/trooper{
-	environment_smash = 0;
-	health = 100;
-	minimum_distance = 3;
-	name = "Russian Trooper";
-	rapid_fire_delay = 3;
-	retreat_distance = 2
-	},
-/turf/open/floor/pod/light,
+/obj/machinery/door/airlock/external,
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "eS" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2605,12 +2609,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/bridge)
-"eT" = (
-/obj/structure/cable,
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
-/area/shuttle/abandoned/engine)
 "eU" = (
 /obj/effect/turf_decal/tile/brown{
 	icon_state = "tile_corner";
@@ -3751,7 +3749,7 @@ ac
 ac
 ac
 ac
-cK
+eR
 ac
 aa
 aa
@@ -3862,7 +3860,7 @@ eb
 fh
 fh
 fP
-eR
+cK
 fP
 di
 di
@@ -3880,8 +3878,8 @@ cs
 cs
 cs
 cE
-cR
-cR
+bN
+bN
 ef
 bH
 em
@@ -3919,12 +3917,12 @@ gP
 bN
 cF
 bN
-cR
+bN
 bN
 bH
 bN
 bN
-eT
+fc
 eg
 cZ
 "}
@@ -3956,13 +3954,13 @@ gN
 gP
 bN
 cG
-bN
+cR
 cR
 cR
 ej
 cR
-bN
-fc
+cR
+fd
 eg
 cZ
 "}
@@ -3998,9 +3996,9 @@ bH
 bH
 bH
 bH
-cR
-cR
-fd
+bN
+bN
+fn
 bH
 bG
 "}
