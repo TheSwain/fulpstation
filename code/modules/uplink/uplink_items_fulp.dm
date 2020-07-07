@@ -90,3 +90,13 @@
 			This is a cheap knockoff Space-China budget version that holds 2 charges, and regains 1 charge every 30 seconds."
 	item = /obj/item/card/emag/budget
 	cost = 6
+
+/datum/uplink_item/role_restricted/cybersunsuit
+	name = "Cybersun Hardsuit"
+	desc = "A long forgotten hardsuit made by Cybersun industries. \
+			Offers ROBUST protection against laser-based weapons, while still giving somewhat good chances \
+			to survive assault from a toolbox or shotgun. \
+			Not to mention, it doesn't slow you down and contains an integrated jetpack that runs on standard tanks."
+	item = /obj/item/clothing/suit/space/hardsuit/cybersun
+	cost = 10
+	restricted_roles = list("Cybersun Infiltrator")

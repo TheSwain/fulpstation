@@ -28,7 +28,10 @@
 		var/datum/mind/traitor = antag_pick(antag_candidates)
 		pre_traitors += traitor
 		traitor.special_role = traitor_name
-		traitor.assigned_role = traitor_name
+		if(prob(20))
+			traitor.assigned_role = "Cybersun Infiltrator"
+		else
+			traitor.assigned_role = traitor_name
 		log_game("[key_name(traitor)] has been selected as a [traitor_name]")
 		antag_candidates.Remove(traitor)
 
@@ -51,7 +54,6 @@
 
 /datum/outfit/infiltrator
 	name = "Infiltrator Starting Kit"
-
 	uniform = /obj/item/clothing/under/color/black
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	gloves =  /obj/item/clothing/gloves/color/black
@@ -60,11 +62,17 @@
 	mask = /obj/item/clothing/mask/gas/syndicate
 	id = /obj/item/card/id/syndicate
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	internals_slot = ITEM_SLOT_LPOCKET
 	r_pocket = /obj/item/grenade/c4
 	suit = /obj/item/clothing/suit/space/syndicate/black/red
 	head = /obj/item/clothing/head/helmet/space/syndicate/black/red
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 	/obj/item/tank/jetpack/oxygen/harness=1)
+
+/datum/outfit/infiltrator/cybersun
+	name = "Cybersun Infiltrator Kit"
+	suit = /obj/item/clothing/suit/space/syndicate/black/blue
+	head = /obj/item/clothing/head/helmet/space/syndicate/black/blue
 
 /datum/game_mode/traitor/infiltrator/generate_report()
 	return ""
