@@ -74,5 +74,13 @@
 	suit = /obj/item/clothing/suit/space/syndicate/black/blue
 	head = /obj/item/clothing/head/helmet/space/syndicate/black/blue
 
+/datum/outfit/infiltrator/plasmaman
+	name = "Plasmaman Infiltrator Starting Kit"
+	l_pocket = /obj/item/tank/internals/plasmaman
+
+/datum/outfit/infiltrator/cybersun/plasmaman
+	name = "Plasmaman Cybersun Infiltrator Kit"
+	l_pocket = /obj/item/tank/internals/plasmaman
+
 /datum/game_mode/traitor/infiltrator/generate_report()
 	return ""

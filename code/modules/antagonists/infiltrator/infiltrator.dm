@@ -10,13 +10,19 @@
 	SSticker.mode.traitors += owner
 	if(give_objectives)
 		forge_infiltrator_objectives()
-	var/mob/living/carbon/human/H = owner.current
+	var/mob/living/carbon/human/species/H = owner.current
 	if(owner.assigned_role == "Cybersun Infiltrator")
 		owner.special_role = "Cybersun Infiltrator"
-		H.equipOutfit(/datum/outfit/infiltrator/cybersun)
+		if(H.race == /datum/species/plasmaman)
+			H.equipOutfit(/datum/outfit/infiltrator/cybersun/plasmaman)
+		else
+			H.equipOutfit(/datum/outfit/infiltrator/cybersun)
 	else
 		owner.special_role = special_role
-		H.equipOutfit(/datum/outfit/infiltrator)
+		if(H.race == /datum/species/plasmaman)
+			H.equipOutfit(/datum/outfit/infiltrator/plasmaman)
+		else
+			H.equipOutfit(/datum/outfit/infiltrator)
 	finalize_traitor()
 	//Copy from basic antag_datum.dm because ..() would call standard traitor shit and we don't need it
 	if(!owner)
