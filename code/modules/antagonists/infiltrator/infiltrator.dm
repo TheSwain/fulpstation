@@ -10,19 +10,7 @@
 	SSticker.mode.traitors += owner
 	if(give_objectives)
 		forge_infiltrator_objectives()
-	var/mob/living/carbon/human/species/H = owner.current
-	if(owner.assigned_role == "Cybersun Infiltrator")
-		owner.special_role = "Cybersun Infiltrator"
-		if(H.race == /datum/species/plasmaman)
-			H.equipOutfit(/datum/outfit/infiltrator/cybersun/plasmaman)
-		else
-			H.equipOutfit(/datum/outfit/infiltrator/cybersun)
-	else
-		owner.special_role = special_role
-		if(H.race == /datum/species/plasmaman)
-			H.equipOutfit(/datum/outfit/infiltrator/plasmaman)
-		else
-			H.equipOutfit(/datum/outfit/infiltrator)
+	equip_agent()
 	finalize_traitor()
 	//Copy from basic antag_datum.dm because ..() would call standard traitor shit and we don't need it
 	if(!owner)
@@ -45,8 +33,25 @@
 	for(var/obj/effect/landmark/carpspawn/L in GLOB.landmarks_list)
 		spawn_locs += L.loc
 	owner.current.forceMove(pick(spawn_locs))
-	owner.current.reagents.add_reagent(/datum/reagent/medicine/omnizine, 10) //Fool-Proof: They won't just die in space due to internals being turned off.
+	owner.current.reagents.add_reagent(/datum/reagent/medicine/oxandrolone, 5) //Fool-Proof: They won't just die in space due to internals being turned off.
 	owner.current.reagents.add_reagent(/datum/reagent/medicine/salbutamol, 10)
+
+/datum/antagonist/traitor/infiltrator/proc/equip_agent()
+	var/mob/living/carbon/human/species/S = owner.current
+	var/mob/living/carbon/human/H = owner.current
+
+	if(owner.assigned_role == "Cybersun Infiltrator")
+		owner.special_role = "Cybersun Infiltrator"
+		if(S.race == /datum/species/plasmaman)
+			H.equipOutfit(/datum/outfit/infiltrator/cybersun/plasmaman)
+		else
+			H.equipOutfit(/datum/outfit/infiltrator/cybersun)
+	else
+		owner.special_role = special_role
+		if(S.race == /datum/species/plasmaman)
+			H.equipOutfit(/datum/outfit/infiltrator/plasmaman)
+		else
+			H.equipOutfit(/datum/outfit/infiltrator)
 
 /datum/antagonist/traitor/infiltrator/proc/forge_infiltrator_objectives()
 	var/is_hijacker = FALSE
