@@ -138,12 +138,6 @@
 		if("Deputy")									//FULP
 			O = new /datum/outfit/plasmaman/security	//FULP - put your other jobs between Mime and Clown
 
-		if("Syndicate Infiltrator")						//FULP
-			O = new /datum/outfit/infiltrator/plasmaman //FULP
-
-		if("Cybersun Infiltrator")								 //FULP
-			O = new /datum/outfit/infiltrator/cybersun/plasmaman //FULP
-
 		if("Clown")
 			O = new /datum/outfit/plasmaman/clown
 

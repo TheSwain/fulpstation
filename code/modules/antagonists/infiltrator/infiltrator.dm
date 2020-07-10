@@ -6,11 +6,11 @@
 	job_rank = "Syndicate Infiltrator"
 
 /datum/antagonist/traitor/infiltrator/on_gain()
+	equip_agent()
 	move_to_spawnpoint()
 	SSticker.mode.traitors += owner
 	if(give_objectives)
 		forge_infiltrator_objectives()
-	equip_agent()
 	finalize_traitor()
 	//Copy from basic antag_datum.dm because ..() would call standard traitor shit and we don't need it
 	if(!owner)
@@ -33,18 +33,24 @@
 	for(var/obj/effect/landmark/carpspawn/L in GLOB.landmarks_list)
 		spawn_locs += L.loc
 	owner.current.forceMove(pick(spawn_locs))
-	owner.current.reagents.add_reagent(/datum/reagent/medicine/oxandrolone, 5) //Fool-Proof: They won't just die in space due to internals being turned off.
-	owner.current.reagents.add_reagent(/datum/reagent/medicine/salbutamol, 10)
+	owner.current.reagents.add_reagent(/datum/reagent/medicine/oxandrolone, 5) //Fool-Proof: They won't just die in space due to thermal protection being turned off.
+	owner.current.reagents.add_reagent(/datum/reagent/medicine/leporazine, 10)
 
 /datum/antagonist/traitor/infiltrator/proc/equip_agent()
 	var/mob/living/carbon/human/H = owner.current
 
 	if (owner.assigned_role == "Cybersun Infiltrator")
 		owner.special_role = "Cybersun Infiltrator"
-		H.equipOutfit(/datum/outfit/infiltrator/cybersun)
+		if(isplasmaman(owner.current))
+			H.equipOutfit(/datum/outfit/infiltrator/cybersun/plasmaman)
+		else
+			H.equipOutfit(/datum/outfit/infiltrator/cybersun)
 	else
 		owner.special_role = special_role
-		H.equipOutfit(/datum/outfit/infiltrator)
+		if(isplasmaman(owner.current))
+			H.equipOutfit(/datum/outfit/infiltrator/plasmaman)
+		else
+			H.equipOutfit(/datum/outfit/infiltrator)
 
 /datum/antagonist/traitor/infiltrator/proc/forge_infiltrator_objectives()
 	var/is_hijacker = FALSE
@@ -54,7 +60,7 @@
 	var/objective_count = is_hijacker
 	var/toa = CONFIG_GET(number/traitor_objectives_amount) + 1 //Additional objective.
 	for(var/i = objective_count, i < toa, i++)
-		forge_single_objective()
+		forge_single_inf_objective()
 
 	if(is_hijacker && objective_count <= toa)
 		if (!(locate(/datum/objective/hijack) in objectives))
@@ -82,3 +88,34 @@
 			survive_objective.owner = owner
 			add_objective(survive_objective)
 			return
+
+/datum/antagonist/traitor/infiltrator/proc/forge_single_inf_objective()
+	.=1
+	if(prob(70)) //Less thefts, more blood!
+		var/list/active_ais = active_ais()
+		if(active_ais.len && prob(100/GLOB.joined_player_list.len))
+			var/datum/objective/destroy/destroy_objective = new
+			destroy_objective.owner = owner
+			destroy_objective.find_target()
+			add_objective(destroy_objective)
+		else if(prob(30))
+			var/datum/objective/maroon/maroon_objective = new
+			maroon_objective.owner = owner
+			maroon_objective.find_target()
+			add_objective(maroon_objective)
+		else
+			var/datum/objective/assassinate/kill_objective = new
+			kill_objective.owner = owner
+			kill_objective.find_target()
+			add_objective(kill_objective)
+	else
+		if(prob(15) && !(locate(/datum/objective/download) in objectives) && !(owner.assigned_role in list("Research Director", "Scientist", "Roboticist")))
+			var/datum/objective/download/download_objective = new
+			download_objective.owner = owner
+			download_objective.gen_amount_goal()
+			add_objective(download_objective)
+		else
+			var/datum/objective/steal/steal_objective = new
+			steal_objective.owner = owner
+			steal_objective.find_target()
+			add_objective(steal_objective)
