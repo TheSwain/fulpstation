@@ -37,21 +37,14 @@
 	owner.current.reagents.add_reagent(/datum/reagent/medicine/salbutamol, 10)
 
 /datum/antagonist/traitor/infiltrator/proc/equip_agent()
-	var/mob/living/carbon/human/species/S = owner.current
 	var/mob/living/carbon/human/H = owner.current
 
-	if(owner.assigned_role == "Cybersun Infiltrator")
+	if (owner.assigned_role == "Cybersun Infiltrator")
 		owner.special_role = "Cybersun Infiltrator"
-		if(S.race == /datum/species/plasmaman)
-			H.equipOutfit(/datum/outfit/infiltrator/cybersun/plasmaman)
-		else
-			H.equipOutfit(/datum/outfit/infiltrator/cybersun)
+		H.equipOutfit(/datum/outfit/infiltrator/cybersun)
 	else
 		owner.special_role = special_role
-		if(S.race == /datum/species/plasmaman)
-			H.equipOutfit(/datum/outfit/infiltrator/plasmaman)
-		else
-			H.equipOutfit(/datum/outfit/infiltrator)
+		H.equipOutfit(/datum/outfit/infiltrator)
 
 /datum/antagonist/traitor/infiltrator/proc/forge_infiltrator_objectives()
 	var/is_hijacker = FALSE
