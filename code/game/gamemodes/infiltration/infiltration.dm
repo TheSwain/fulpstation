@@ -77,12 +77,14 @@
 /datum/outfit/infiltrator/plasmaman
 	name = "Plasmaman Infiltrator Starting Kit"
 	uniform = /obj/item/clothing/under/plasmaman
-	l_pocket = /obj/item/tank/internals/plasmaman
+	gloves = /obj/item/clothing/gloves/color/plasmaman/black
+	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
 
 /datum/outfit/infiltrator/cybersun/plasmaman
 	name = "Plasmaman Cybersun Infiltrator Kit"
 	uniform = /obj/item/clothing/under/plasmaman
-	l_pocket = /obj/item/tank/internals/plasmaman
+	gloves = /obj/item/clothing/gloves/color/plasmaman/black
+	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
 
 /datum/game_mode/traitor/infiltrator/generate_report()
 	return ""

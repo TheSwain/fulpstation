@@ -100,3 +100,22 @@
 	item = /obj/item/clothing/suit/space/hardsuit/cybersun
 	cost = 10
 	restricted_roles = list("Cybersun Infiltrator")
+
+/datum/uplink_item/race_restricted/plasmemesuit
+	name = "Surplus Envirosuit"
+	desc = "We heard that plasmamen don't have their own cool stations filled with plasma on Nanotrasen territory \
+		So we decided to let you get one suit from our storage, just in case you don't want to use your space suit 24/7."
+	cost = 2
+	item = /obj/item/storage/box/syndie_kit/plasmeme
+	restricted_species = list("plasmaman")
+	include_modes = list(/datum/game_mode/traitor/infiltrator)
+
+/obj/item/storage/box/syndie_kit/plasmeme/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.set_holdable(list(/obj/item/clothing/suit/space/syndicate, /obj/item/clothing/head/helmet/space/syndicate, /obj/item/clothing/suit/space/eva/plasmaman, /obj/item/clothing/head/helmet/space/plasmaman))
+
+/obj/item/storage/box/syndie_kit/plasmeme/PopulateContents()
+	new /obj/item/clothing/suit/space/eva/plasmaman(src)
+	new /obj/item/clothing/head/helmet/space/plasmaman(src)
