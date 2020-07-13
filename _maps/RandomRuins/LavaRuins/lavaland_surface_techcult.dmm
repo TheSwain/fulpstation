@@ -829,6 +829,46 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/powered/mechanicus)
+"bX" = (
+/obj/structure/closet/crate/secure/weapon{
+	name = "firing pins crate";
+	req_access = 400
+	},
+/obj/item/storage/box/firingpins,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/mechanicus/robotics)
+"bY" = (
+/obj/structure/table/glass,
+/obj/item/storage/firstaid/fire{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/storage/firstaid/brute{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_x = -6;
+	pixel_y = -6
+	},
+/obj/item/storage/firstaid/o2{
+	layer = 2.999;
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/turf/open/floor/circuit,
+/area/ruin/powered/mechanicus/surgery)
+"bZ" = (
+/obj/structure/table/wood/fancy/black,
+/obj/item/storage/fancy/candle_box{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/storage/fancy/candle_box{
+	pixel_x = -4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/mechanicus)
 
 (1,1,1) = {"
 aa
@@ -925,7 +965,7 @@ ak
 ak
 aA
 ak
-ak
+bX
 aM
 bT
 bp
@@ -954,9 +994,9 @@ as
 aB
 ak
 ak
-aN
-bo
-bz
+aM
+bY
+bp
 aT
 bG
 aM
@@ -982,9 +1022,9 @@ ak
 ak
 ak
 ak
-aM
-bp
-aT
+aN
+bo
+bz
 bD
 bH
 aM
@@ -1144,7 +1184,7 @@ ab
 ac
 ac
 ac
-ag
+bZ
 ac
 ac
 ax

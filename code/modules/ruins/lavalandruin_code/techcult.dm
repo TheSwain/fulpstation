@@ -60,7 +60,7 @@
 /obj/item/clothing/suit/hooded/techpriest/armor/plate
 	name = "armored techpriest robes"
 	desc = "An armored version of robes worn by followers of the machine god."
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife/combat/bone, /obj/item/kitchen/knife/combat/survival)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife/combat/bone, /obj/item/kitchen/knife/combat/survival, /obj/item/gun/energy)
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 20, "energy" = 30, "bomb" = 30, "bio" = 60, "rad" = 30, "fire" = 60, "acid" = 60)
 	hoodtype = /obj/item/clothing/head/hooded/techpriest/armor
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
@@ -203,6 +203,47 @@
 	icon_state = "scientology"
 	inhand_icon_state = "scientology"
 
+//Large copy-pasta from religion_sects.dm
+/obj/item/storage/book/bible/omnissiah/bless(mob/living/L, mob/living/user)
+	if(iscyborg(L))
+		var/mob/living/silicon/robot/R = L
+		var/charge_amt = 100
+		R.cell?.charge += charge_amt
+		R.visible_message("<span class='notice'>[user] charges [R] with the power of Omnissiah!</span>")
+		to_chat(R, "<span class='boldnotice'>You are charged by the power of Omnissiah!</span>")
+		SEND_SIGNAL(R, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
+		playsound(user, 'sound/effects/bang.ogg', 25, TRUE, -1)
+		return TRUE
+	if(!ishuman(L))
+		return
+	var/mob/living/carbon/human/H = L
+
+	var/did_we_charge = FALSE
+	var/obj/item/organ/stomach/ethereal/eth_stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
+	if(istype(eth_stomach))
+		eth_stomach.adjust_charge(3)
+		did_we_charge = TRUE
+
+	var/obj/item/bodypart/BP = H.get_bodypart(user.zone_selected)
+	if(BP.status != BODYPART_ROBOTIC)
+		if(!did_we_charge)
+			to_chat(user, "<span class='warning'>Omnissiah scoffs at the idea of healing such fleshy matter!</span>")
+		else
+			H.visible_message("<span class='notice'>[user] charges [H] with the power of Omnissiah!</span>")
+			to_chat(H, "<span class='boldnotice'>You feel charged by the power of Omnissiah!</span>")
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
+			playsound(user, 'sound/machines/synth_yes.ogg', 25, TRUE, -1)
+		return TRUE
+
+	if(BP.heal_damage(10,10,null,BODYPART_ROBOTIC))
+		H.update_damage_overlays()
+
+	H.visible_message("<span class='notice'>[user] [did_we_charge ? "repairs" : "repairs and charges"] [H] with the power of Omnissiah!</span>")
+	to_chat(H, "<span class='boldnotice'>The inner machinations of Omnissiah [did_we_charge ? "repairs" : "repairs and charges"] you!</span>")
+	playsound(user, 'sound/effects/bang.ogg', 25, TRUE, -1)
+	SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
+	return TRUE
+
 /***************** Spell *****************/
 
 /obj/item/book/granter/spell/omnissiah
@@ -246,7 +287,6 @@
 				/obj/item/organ/lungs/cybernetic/tier4 = 13,
 				/obj/item/organ/cyberimp/chest/reviver/plus = 11,
 				/obj/item/organ/cyberimp/arm/surgery/plus = 11,
-				/obj/machinery/microwave = 6, //Everyone likes microwaves
 				/obj/item/organ/cyberimp/arm/gun/laser = 2,
 				/obj/item/organ/cyberimp/arm/combat = 1,)
 
