@@ -5,6 +5,7 @@
 	job_rank = ROLE_SYNDICATE_CYBERSUN
 	antagpanel_category = "Cybersun Operatives"
 	prevent_roundtype_conversion = FALSE
+	show_in_roundend = FALSE
 	show_to_ghosts = TRUE
 
 /datum/antagonist/cybersun/captain

@@ -31,12 +31,13 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 					/obj/item/reagent_containers/medigel/aiuri = 2,
 					/obj/item/reagent_containers/medigel/sterilizine = 1)
 	contraband = list(/obj/item/reagent_containers/glass/bottle/cold = 2,
-					/obj/item/restraints/handcuffs = 4,
-					/obj/item/storage/backpack/duffelbag/syndie/surgery = 1,
+					/obj/item/reagent_containers/glass/bottle/virusfood = 5,
+					/obj/item/restraints/handcuffs = 15,
+					/obj/item/storage/backpack/duffelbag/syndie/surgery = 2,
 					/obj/item/storage/firstaid/tactical = 1)
 	premium = list(/obj/item/storage/pill_bottle/psicodine = 2,
-					/obj/item/reagent_containers/hypospray/medipen = 3,
-					/obj/item/reagent_containers/hypospray/medipen/atropine = 2,
+					/obj/item/reagent_containers/hypospray/medipen = 5,
+					/obj/item/reagent_containers/hypospray/medipen/atropine = 3,
 					/obj/item/storage/firstaid/regular = 3,
 					/obj/item/storage/firstaid/brute = 1,
 					/obj/item/storage/firstaid/fire = 1,
@@ -66,7 +67,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 
 /obj/item/paper/fluff/ruins/forgottenship/missionobj
 	name = "Mission objectives"
-	info = "Greetings, operatives. You are assigned to SCSBC-12(Syndicate Cyber Sun Battle Cruiser 12) to protect our high-ranking officer while he is on his way to next outpost. While you are travelling, he is the captain of this ship and <b>you must</b> obey his orders.<br><br>Remember, disobeying high-ranking officer orders is a reason for termination."
+	info = "Greetings, operatives. You are assigned to SCSBC-12(Syndicate Cyber Sun Battle Cruiser 12) to protect our high-ranking officer while he is on his way to next outpost. While you are travelling, he is the captain of this ship and <b>you must</b> obey his orders.<br><br><b>Remember, disobeying high-ranking officer orders is a reason for termination.</b>"
 
 ///////////	forgottenship items
 
@@ -91,6 +92,11 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 /obj/item/storage/box/firingpins/syndicate/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/firing_pin/implant/pindicate(src)
+
+/obj/item/reagent_containers/glass/bottle/virusfood
+	name = "virus food bottle"
+	desc = "A small bottle of low-potency virus mutagenic."
+	list_reagents = list(/datum/reagent/consumable/virus_food = 30)
 
 ///////////	AI Laws
 
@@ -134,7 +140,6 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	inhand_icon_state = "cybersun"
 	hardsuit_type = "cybersun"
 	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
-	strip_delay = 600
 	actions_types = list()
 
 
@@ -216,8 +221,8 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	loot = list(/obj/item/ammo_box/c9mm = 30,
 				/obj/item/gun/ballistic/automatic/surplus = 25,
 				/obj/item/gun/ballistic/automatic/pistol = 20,
-				/obj/item/gun/ballistic/revolver = 10,
-				/obj/item/gun/medbeam = 5,
+				/obj/item/gun/ballistic/revolver = 15,
+				/obj/item/gun/medbeam = 7,
 				/obj/item/seeds/gatfruit = 2
 
 				)
@@ -273,7 +278,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 
 /obj/item/borg/upgrade/syndifaction/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	R.faction |= ROLE_SYNDICATE
+	R.faction = ROLE_SYNDICATE //Experimental. It removes ALL faction, except for Syndicate.
 
 //Disk for autolathe
 
@@ -295,7 +300,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	desc = "Allows for the construction of a Cybersun Cyborg Module."
 	id = "cybersun_medborg"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 20000, /datum/material/glass = 20000, /datum/material/titanium = 15000, /datum/material/diamond = 10000)
+	materials = list(/datum/material/iron = 20000, /datum/material/glass = 20000, /datum/material/titanium = 10000, /datum/material/diamond = 5000)
 	build_path = /obj/item/borg/upgrade/transform/cybersun
 	category = list("Imported")
 
@@ -318,7 +323,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	icon_dead = null
 	icon_gib = "syndicate_gib"
 	ranged = TRUE
-	rapid = 4
+	rapid = 3
 	rapid_fire_delay = 1
 	rapid_melee = 1
 	retreat_distance = 2

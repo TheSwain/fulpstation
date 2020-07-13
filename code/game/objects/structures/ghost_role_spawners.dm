@@ -645,15 +645,16 @@
 
 /obj/effect/mob_spawn/human/syndicatespace
 	name = "Syndicate Ship Crew Member"
+	mob_name = "a Cybersun operative"
 	roundstart = FALSE
 	death = FALSE
 	show_flavour = FALSE
 	random = TRUE
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
-	short_desc = "You are a syndicate operative on old ship, stuck in hostile space."
+	short_desc = "You are a syndicate operative on an old ship, stuck in hostile space."
 	flavour_text = "Your ship docks after a long time somewhere in hostile space, reporting a malfunction. You are stuck here, with Nanotrasen station nearby. Fix the ship, find a way to power it and follow your captain's orders."
-	important_info = "Obey orders given by your captain. DO NOT let the ship fall into enemy hands."
+	important_info = "Obey orders given by your captain. Protect the ship and DO NOT enter the Space Station 13."
 	outfit = /datum/outfit/syndicatespace/syndicrew
 	assignedrole = ROLE_SYNDICATE_CYBERSUN
 
@@ -669,9 +670,10 @@
 
 /obj/effect/mob_spawn/human/syndicatespace/captain
 	name = "Syndicate Ship Captain"
+	mob_name = "the Cybersun captain"
 	short_desc = "You are the captain of an old ship, stuck in hostile space."
 	flavour_text = "Your ship docks after a long time somewhere in hostile space, reporting a malfunction. You are stuck here, with Nanotrasen station nearby. Command your crew and turn your ship into the most protected fortress."
-	important_info = "Protect the ship and secret documents in your backpack with your own life."
+	important_info = "Protect the ship and secret documents in your backpack with your own life. DO NOT enter the Space Station 13."
 	outfit = /datum/outfit/syndicatespace/syndicrew/syndicaptain
 	assignedrole = ROLE_SYNDICATE_CYBERSUN_CAPTAIN
 
@@ -708,4 +710,4 @@
 	l_pocket = /obj/item/ammo_box/magazine/m9mm_aps
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	id = /obj/item/card/id/syndicate_command/captain_id
-	backpack_contents = list(/obj/item/documents/syndicate/red, /obj/item/paper/fluff/ruins/forgottenship/password, /obj/item/gun/ballistic/automatic/pistol/aps)
+	backpack_contents = list(/obj/item/documents/syndicate, /obj/item/paper/fluff/ruins/forgottenship/password, /obj/item/gun/ballistic/automatic/pistol/aps)
