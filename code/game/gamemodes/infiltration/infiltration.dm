@@ -54,19 +54,19 @@
 
 /datum/outfit/infiltrator
 	name = "Infiltrator Starting Kit"
-	uniform = /obj/item/clothing/under/color/black
-	shoes = /obj/item/clothing/shoes/sneakers/black
-	gloves =  /obj/item/clothing/gloves/color/black
+	uniform = /obj/item/clothing/under/chameleon
+	shoes = /obj/item/clothing/shoes/chameleon
 	back = /obj/item/storage/backpack
 	ears = /obj/item/radio/headset/syndicate
 	mask = /obj/item/clothing/mask/gas/syndicate
 	id = /obj/item/card/id/syndicate
+	belt = /obj/item/pda/chameleon
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 	internals_slot = ITEM_SLOT_LPOCKET
 	r_pocket = /obj/item/grenade/c4
 	suit = /obj/item/clothing/suit/space/syndicate/black/red
 	head = /obj/item/clothing/head/helmet/space/syndicate/black/red
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
+	backpack_contents = list(/obj/item/storage/box/survival=1,\
 	/obj/item/tank/jetpack/oxygen/harness=1)
 
 /datum/outfit/infiltrator/cybersun

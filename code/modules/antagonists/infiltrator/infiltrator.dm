@@ -33,24 +33,31 @@
 	for(var/obj/effect/landmark/carpspawn/L in GLOB.landmarks_list)
 		spawn_locs += L.loc
 	owner.current.forceMove(pick(spawn_locs))
-	owner.current.reagents.add_reagent(/datum/reagent/medicine/oxandrolone, 5) //Fool-Proof: They won't just die in space due to thermal protection being turned off.
-	owner.current.reagents.add_reagent(/datum/reagent/medicine/leporazine, 10)
+	owner.current.reagents.add_reagent(/datum/reagent/medicine/oxandrolone, 10) //Fool-Proof: They won't just die in space due to thermal regulator being turned off.
+	owner.current.reagents.add_reagent(/datum/reagent/medicine/leporazine, 20)
 
 /datum/antagonist/traitor/infiltrator/proc/equip_agent()
 	var/mob/living/carbon/human/H = owner.current
 
+	owner.special_role = special_role
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	H.faction |= ROLE_SYNDICATE
 	if (owner.assigned_role == "Cybersun Infiltrator")
-		owner.special_role = "Cybersun Infiltrator"
 		if(isplasmaman(owner.current))
 			H.equipOutfit(/datum/outfit/infiltrator/cybersun/plasmaman)
 		else
 			H.equipOutfit(/datum/outfit/infiltrator/cybersun)
 	else
-		owner.special_role = special_role
 		if(isplasmaman(owner.current))
 			H.equipOutfit(/datum/outfit/infiltrator/plasmaman)
 		else
 			H.equipOutfit(/datum/outfit/infiltrator)
+
+/datum/antagonist/traitor/infiltrator/greet()
+	to_chat(owner.current, "<span class='alertsyndie'>You are the [owner.assigned_role].</span>")
+	owner.announce_objectives()
+	if(should_give_codewords)
+		give_codewords()
 
 /datum/antagonist/traitor/infiltrator/proc/forge_infiltrator_objectives()
 	var/is_hijacker = FALSE
@@ -101,7 +108,7 @@
 		else if(prob(30))
 			var/datum/objective/maroon/maroon_objective = new
 			maroon_objective.owner = owner
-			maroon_objective.find_target()
+			maroon_objective.find_target_by_role("Syndicate Infiltrator", role_type=TRUE,invert=TRUE)
 			add_objective(maroon_objective)
 		else
 			var/datum/objective/assassinate/kill_objective = new

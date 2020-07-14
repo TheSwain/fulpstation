@@ -103,21 +103,44 @@
 
 /datum/uplink_item/race_restricted/plasmemesuit
 	name = "Surplus Envirosuit"
-	desc = "We heard that plasmamen don't have their own cool stations filled with plasma on Nanotrasen territory \
-		So we decided to let you get one set from our storage, just in case you don't want to use your space suit 24/7 \
-		Comes with standard plasmaman uniform, helmet and special EVA suit."
+	desc = "We heard that plasmamen don't have their own cool stations filled with plasma on Nanotrasen territory. \
+		So we decided to let you get one set from our storage, just in case you don't want to use your space suit 24/7. \
+		This box is designed to store any kind of EVA equipment in it, as long as it is not too big.\
+		Comes with standard plasmaman uniform, helmet and special lightweight version of plasmamen' EVA suit."
 	cost = 4
 	item = /obj/item/storage/box/syndie_kit/plasmeme
 	restricted_species = list("plasmaman")
 	include_modes = list(/datum/game_mode/traitor/infiltrator)
 
+/obj/item/clothing/suit/space/eva/plasmaman/infiltrator
+	desc = "A special syndicate version of plasma containment suit. Capable of everything it's smaller version can do and offers a good protection against hostile environment."
+	w_class = WEIGHT_CLASS_NORMAL
+	slowdown = 0.2
+	armor = list("melee" = 20, "bullet" = 30, "laser" = 20,"energy" = 20, "bomb" = 30, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 80)
+	cell = /obj/item/stock_parts/cell/hyper
+
 /obj/item/storage/box/syndie_kit/plasmeme/ComponentInitialize()
 	. = ..()
+	desc = "Box with unique design allowing it to store any sort of lightweight EVA equipment."
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.set_holdable(list(/obj/item/clothing/suit/space/syndicate, /obj/item/clothing/head/helmet/space/syndicate, /obj/item/clothing/under/plasmaman, /obj/item/clothing/head/helmet/space/plasmaman))
+	STR.set_holdable(list(/obj/item/clothing/suit/space, /obj/item/clothing/head/helmet/space, /obj/item/clothing/under/plasmaman))
 
 /obj/item/storage/box/syndie_kit/plasmeme/PopulateContents()
 	new /obj/item/clothing/under/plasmaman(src)
-	new /obj/item/clothing/suit/space/eva/plasmaman(src)
+	new /obj/item/clothing/suit/space/eva/plasmaman/infiltrator(src)
 	new /obj/item/clothing/head/helmet/space/plasmaman(src)
+
+/datum/uplink_item/race_restricted/diginoslip
+	name = "No-Slip Digitigrade Shoes"
+	desc = "Simple as that - Robust shoes for lizardmen aiming to control the galaxy. \
+		Now nothing can stop you, our friend. \
+		No longer the soap will ruin your villainous plans.\
+		No longer the clown will HONK you with banana by-products!"
+	cost = 2
+	item = /obj/item/clothing/shoes/digicombat/noslip
+	restricted_species = list("lizard")
+
+/obj/item/clothing/shoes/digicombat/noslip
+	desc = "Robust combat boots especially for lizardmen. Perfect for walking over piled human corpses. This pair of shoes is specifically designed to prevent slipping on wet surfaces."
+	clothing_flags = NOSLIP
