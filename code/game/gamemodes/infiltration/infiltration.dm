@@ -3,8 +3,8 @@
 	config_tag = "infiltration"
 	report_type = "infiltration"
 	antag_flag = ROLE_TRAITOR
-	false_report_weight = 0 //Just for now
-	enemy_minimum_age = 7 //It's a bit harder to start from space, you know? Don't want newbies dying in spess because of this.
+	false_report_weight = 10
+	enemy_minimum_age = 14 //It's a bit harder to start from space, you know? Don't want newbies dying in spess because of this.
 	antag_datum = /datum/antagonist/traitor/infiltrator
 	traitor_name = "Syndicate Infiltrator"
 
@@ -28,10 +28,7 @@
 		var/datum/mind/traitor = antag_pick(antag_candidates)
 		pre_traitors += traitor
 		traitor.special_role = traitor_name
-		if(prob(20))
-			traitor.assigned_role = "Cybersun Infiltrator"
-		else
-			traitor.assigned_role = traitor_name
+		traitor.assigned_role = traitor_name
 		log_game("[key_name(traitor)] has been selected as a [traitor_name]")
 		antag_candidates.Remove(traitor)
 
@@ -52,6 +49,8 @@
 		GLOB.pre_setup_antags -= traitor
 	..()
 
+// Outfits
+
 /datum/outfit/infiltrator
 	name = "Infiltrator Starting Kit"
 	uniform = /obj/item/clothing/under/chameleon
@@ -64,8 +63,8 @@
 	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 	internals_slot = ITEM_SLOT_LPOCKET
 	r_pocket = /obj/item/grenade/c4
-	suit = /obj/item/clothing/suit/space/syndicate/black/red
-	head = /obj/item/clothing/head/helmet/space/syndicate/black/red
+	suit = /obj/item/clothing/suit/space/syndicate/black
+	head = /obj/item/clothing/head/helmet/space/syndicate/black
 	backpack_contents = list(/obj/item/storage/box/survival=1,\
 	/obj/item/tank/jetpack/oxygen/harness=1)
 
@@ -73,6 +72,18 @@
 	name = "Cybersun Infiltrator Kit"
 	suit = /obj/item/clothing/suit/space/syndicate/black/blue
 	head = /obj/item/clothing/head/helmet/space/syndicate/black/blue
+
+/datum/outfit/infiltrator/gorlex
+	name = "Gorlex Infiltrator Kit"
+	suit = /obj/item/clothing/suit/space/syndicate/black/red
+	head = /obj/item/clothing/head/helmet/space/syndicate/black/red
+
+/datum/outfit/infiltrator/tiger
+	name = "Gorlex Infiltrator Kit"
+	suit = /obj/item/clothing/suit/space/syndicate/black/orange
+	head = /obj/item/clothing/head/helmet/space/syndicate/black/orange
+
+// Plasmemes
 
 /datum/outfit/infiltrator/plasmaman
 	name = "Plasmaman Infiltrator Starting Kit"
@@ -86,5 +97,23 @@
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
 
+/datum/outfit/infiltrator/gorlex/plasmaman
+	name = "Plasmaman Gorlex Infiltrator Kit"
+	uniform = /obj/item/clothing/under/plasmaman
+	gloves = /obj/item/clothing/gloves/color/plasmaman/black
+	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
+
+/datum/outfit/infiltrator/tiger/plasmaman
+	name = "Plasmaman Gorlex Infiltrator Kit"
+	uniform = /obj/item/clothing/under/plasmaman
+	gloves = /obj/item/clothing/gloves/color/plasmaman/black
+	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
+
+/datum/game_mode/traitor/infiltrator/add_latejoin_traitor(datum/mind/character) //Late joiners in Infiltration gamemode will become normal traitors.
+	var/datum/antagonist/traitor/new_antag = new /datum/antagonist/traitor()
+	character.add_antag_datum(new_antag)
+
 /datum/game_mode/traitor/infiltrator/generate_report()
-	return ""
+	return "Recent events have proved that Syndicate is staging covert operations in your sector. \
+	While you still should expect any sort of traitorous operations from the inside, \
+	There is a possibility of infiltrators from the outside of your station."

@@ -4,6 +4,10 @@
 	show_to_ghosts = TRUE
 	special_role = "Syndicate Infiltrator"
 	job_rank = "Syndicate Infiltrator"
+	should_give_codewords = FALSE //They already get syndicate comms for this.
+	var/hijack_chance = 15 //Some corps are more stealthier, but standard chance is high.
+	var/dagd_chance = 5 //Why would you infiltrate the station and die here?
+	var/kill_chance = 70
 
 /datum/antagonist/traitor/infiltrator/on_gain()
 	equip_agent()
@@ -34,20 +38,39 @@
 		spawn_locs += L.loc
 	owner.current.forceMove(pick(spawn_locs))
 	owner.current.reagents.add_reagent(/datum/reagent/medicine/oxandrolone, 10) //Fool-Proof: They won't just die in space due to thermal regulator being turned off.
-	owner.current.reagents.add_reagent(/datum/reagent/medicine/leporazine, 20)
+	owner.current.reagents.add_reagent(/datum/reagent/medicine/leporazine, 30)
 
 /datum/antagonist/traitor/infiltrator/proc/equip_agent()
 	var/mob/living/carbon/human/H = owner.current
 
 	owner.special_role = special_role
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
-	H.faction |= ROLE_SYNDICATE
-	if (owner.assigned_role == "Cybersun Infiltrator")
+	if(prob(18))
+		owner.assigned_role = "Cybersun Infiltrator"
+		hijack_chance = 5 //We don't like this loud mess of hijack here in Cybersun
+		dagd_chance = 0 //Dying on a mission? Disgusting!
 		if(isplasmaman(owner.current))
 			H.equipOutfit(/datum/outfit/infiltrator/cybersun/plasmaman)
 		else
 			H.equipOutfit(/datum/outfit/infiltrator/cybersun)
+	else if(prob(12)) //Quite rare, for higher hijack chance and epic gear
+		owner.assigned_role = "Gorlex Infiltrator"
+		hijack_chance = 20 //That's why we're here.
+		if(isplasmaman(owner.current))
+			H.equipOutfit(/datum/outfit/infiltrator/gorlex/plasmaman)
+		else
+			H.equipOutfit(/datum/outfit/infiltrator/gorlex)
+	else if(prob(2)) //The rarest of them all - 100% DAGD.
+		owner.assigned_role = "Tiger Co. Infiltrator"
+		hijack_chance = 0 //Pffft, we don't need your SHITTY SHUTTLE, HA!
+		kill_chance = 100 //RIP AND TEAR
+		dagd_chance = 100 //UNTIL IT'S DONE
+		if(isplasmaman(owner.current))
+			H.equipOutfit(/datum/outfit/infiltrator/tiger/plasmaman)
+		else
+			H.equipOutfit(/datum/outfit/infiltrator/tiger)
 	else
+		owner.assigned_role = special_role
 		if(isplasmaman(owner.current))
 			H.equipOutfit(/datum/outfit/infiltrator/plasmaman)
 		else
@@ -58,12 +81,20 @@
 	owner.announce_objectives()
 	if(should_give_codewords)
 		give_codewords()
+	if(owner.assigned_role == "Cybersun Infiltrator")
+		to_chat(owner.current, "<span class='alertwarning'>As a member of our group remember: Your actions may cause unwanted attention, attempt to stay as stealthy as possible!</span>")
+	if(owner.assigned_role == "Gorlex Infiltrator")
+		to_chat(owner.current, "<span class='alertwarning'>As a member of our group remember: While stealth is optional, you still have to finish your mission even if it means going with a fight!</span>")
+	if(owner.assigned_role == "Tiger Co. Infiltrator")
+		to_chat(owner.current, "<span class='alertwarning'>As a member of our group remember: Everyone is your enemy, even the other infiltrators!</span>")
+	if(owner.assigned_role != "Tiger Co. Infiltrator")
+		to_chat(owner.current, "<span class='red'>Keep in mind that Tiger Co. Agents are our mutual enemies, don't try to cooperate with them!</span>")
 
 /datum/antagonist/traitor/infiltrator/proc/forge_infiltrator_objectives()
 	var/is_hijacker = FALSE
 	if (GLOB.joined_player_list.len >= 50) //Requires a big pop for Hijack
-		is_hijacker = prob(15) //A bit higher Hijack chance.
-	var/martyr_chance = prob(10) //Lower DAGD chance.
+		is_hijacker = prob(hijack_chance)
+	var/martyr_chance = prob(dagd_chance)
 	var/objective_count = is_hijacker
 	var/toa = CONFIG_GET(number/traitor_objectives_amount) + 1 //Additional objective.
 	for(var/i = objective_count, i < toa, i++)
@@ -98,7 +129,7 @@
 
 /datum/antagonist/traitor/infiltrator/proc/forge_single_inf_objective()
 	.=1
-	if(prob(70)) //Less thefts, more blood!
+	if(prob(kill_chance))
 		var/list/active_ais = active_ais()
 		if(active_ais.len && prob(100/GLOB.joined_player_list.len))
 			var/datum/objective/destroy/destroy_objective = new
@@ -106,10 +137,16 @@
 			destroy_objective.find_target()
 			add_objective(destroy_objective)
 		else if(prob(30))
-			var/datum/objective/maroon/maroon_objective = new
-			maroon_objective.owner = owner
-			maroon_objective.find_target_by_role("Syndicate Infiltrator", role_type=TRUE,invert=TRUE)
-			add_objective(maroon_objective)
+			if(owner.assigned_role == "Tiger Co. Infiltrator")
+				var/datum/objective/assassinate/kill_objective = new
+				kill_objective.owner = owner
+				kill_objective.find_target_by_role("Syndicate Infiltrator", role_type=TRUE,invert=FALSE) //KILL THOSE IDIOTS TOO!
+				add_objective(kill_objective)
+			else
+				var/datum/objective/maroon/maroon_objective = new
+				maroon_objective.owner = owner
+				maroon_objective.find_target_by_role("Syndicate Infiltrator", role_type=TRUE,invert=TRUE)
+				add_objective(maroon_objective)
 		else
 			var/datum/objective/assassinate/kill_objective = new
 			kill_objective.owner = owner

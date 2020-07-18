@@ -91,6 +91,22 @@
 	item = /obj/item/card/emag/budget
 	cost = 6
 
+/datum/uplink_item/race_restricted/diginoslip
+	name = "No-Slip Digitigrade Shoes"
+	desc = "Simple as that - Robust shoes for lizardmen aiming to control the galaxy. \
+		Now nothing can stop you, our friend. \
+		No longer the soap will ruin your villainous plans. \
+		No longer the clown will HONK you with banana by-products!"
+	cost = 2
+	item = /obj/item/clothing/shoes/digicombat/noslip
+	restricted_species = list("lizard")
+
+/obj/item/clothing/shoes/digicombat/noslip
+	desc = "Robust combat boots especially for lizardmen. Perfect for walking over piled human corpses. This pair of shoes is specifically designed to prevent slipping on wet surfaces."
+	clothing_flags = NOSLIP
+
+////////////// INFILTRATION GAMEMODE ITEMS //////////////
+
 /datum/uplink_item/role_restricted/cybersunsuit
 	name = "Cybersun Hardsuit"
 	desc = "A long forgotten hardsuit made by Cybersun industries. \
@@ -99,7 +115,54 @@
 			Not to mention, it doesn't slow you down and contains an integrated jetpack that runs on standard tanks."
 	item = /obj/item/clothing/suit/space/hardsuit/cybersun
 	cost = 10
+	cant_discount = FALSE
 	restricted_roles = list("Cybersun Infiltrator")
+
+/datum/uplink_item/role_restricted/gorlex
+	cant_discount = FALSE
+	restricted_roles = list("Gorlex Infiltrator")
+
+/datum/uplink_item/role_restricted/gorlex/glovesplus
+	name = "Combat Gloves Plus"
+	desc = "A pair of gloves that are fireproof and electrically insulated, however unlike the regular Combat Gloves these use nanotechnology \
+			to teach the martial art of krav maga to the wearer."
+	item = /obj/item/clothing/gloves/krav_maga/combatglovesplus
+	cost = 6 //Nuke Ops get it for 5.
+
+/datum/uplink_item/role_restricted/gorlex/flukeop
+	name = "Nuclear Operative Bundle"
+	desc = "A starting kit for wannabe nuclear operatives. \
+	Comes with a tactical duffelbag filled with: \
+	blood-red hardsuit, micro-bomb implant, night vision googles, bowman headset, combat gloves and Makarov pistol."
+	item = /obj/item/storage/backpack/duffelbag/syndie/flukeop
+	cost = 15 //Would cost 18
+	cant_discount = TRUE
+
+/obj/item/storage/backpack/duffelbag/syndie/flukeop/PopulateContents()
+	new /obj/item/clothing/suit/space/hardsuit/syndi(src) //8 TC
+	new /obj/item/storage/box/syndie_kit/imp_microbomb(src) //2 TC
+	new /obj/item/clothing/glasses/night(src)
+	new /obj/item/radio/headset/syndicate/alt(src)
+	new /obj/item/clothing/gloves/combat(src) //1 TC?
+	new /obj/item/gun/ballistic/automatic/pistol(src) //7 TC
+
+/datum/uplink_item/role_restricted/tiger //That's where crazy stuff begins
+	cant_discount = FALSE
+	restricted_roles = list("Tiger Co. Infiltrator")
+
+/datum/uplink_item/role_restricted/tiger/macrobomb
+	name = "Macrobomb Implant"
+	desc = "An implant injected into the body, and later activated either manually or automatically upon death. \
+			Upon death, releases a massive explosion that will wipe out everything nearby."
+	item = /obj/item/storage/box/syndie_kit/imp_macrobomb
+	cost = 15 //Yes, nukies get it for 20, but let our dude infiltrate the station and finish his objectives first.
+
+/datum/uplink_item/role_restricted/tiger/manhacks
+	name = "Viscerator Delivery Grenade"
+	desc = "A unique grenade that deploys a swarm of viscerators upon activation, which will chase down and shred \
+			any non-operatives in the area."
+	item = /obj/item/grenade/spawnergrenade/manhacks
+	cost = 5 //Same as nukies
 
 /datum/uplink_item/race_restricted/plasmemesuit
 	name = "Surplus Envirosuit"
@@ -130,17 +193,3 @@
 	new /obj/item/clothing/under/plasmaman(src)
 	new /obj/item/clothing/suit/space/eva/plasmaman/infiltrator(src)
 	new /obj/item/clothing/head/helmet/space/plasmaman(src)
-
-/datum/uplink_item/race_restricted/diginoslip
-	name = "No-Slip Digitigrade Shoes"
-	desc = "Simple as that - Robust shoes for lizardmen aiming to control the galaxy. \
-		Now nothing can stop you, our friend. \
-		No longer the soap will ruin your villainous plans.\
-		No longer the clown will HONK you with banana by-products!"
-	cost = 2
-	item = /obj/item/clothing/shoes/digicombat/noslip
-	restricted_species = list("lizard")
-
-/obj/item/clothing/shoes/digicombat/noslip
-	desc = "Robust combat boots especially for lizardmen. Perfect for walking over piled human corpses. This pair of shoes is specifically designed to prevent slipping on wet surfaces."
-	clothing_flags = NOSLIP
