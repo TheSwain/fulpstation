@@ -439,6 +439,8 @@
 			falls asleep, they will be able to move and act."
 	item = /obj/item/pen/sleepy
 	cost = 4
+	exclude_modes = list() //Has to be an empty list to overwrite it since it's already defined in TG's uplink items file.
+
 
 //***********************************************************
 //**** Sleepy Pen for ops ENDS - Glubtok, Jul 2020
