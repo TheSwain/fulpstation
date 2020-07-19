@@ -9,4 +9,4 @@
 		/datum/reagent/teslium = 1 //To shock the whole thing into life
 	)
 	result = /mob/living/simple_animal/pet/cat/eclat
-	subcategory = CAT_CAKE //Cat! Haha, get it? CAT? GET IT? We get it - Love Felines
+	subcategory = CAT_PASTRY //Cat! Haha, get it? CAT? GET IT? We get it - Love Felines
