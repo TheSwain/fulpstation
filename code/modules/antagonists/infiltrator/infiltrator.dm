@@ -8,6 +8,7 @@
 	var/hijack_chance = 15 //Some corps are more stealthier, but standard chance is high.
 	var/dagd_chance = 5 //Why would you infiltrate the station and die here?
 	var/kill_chance = 70
+	var/obj_mod = 1 //Number of additional objectives not affected by config
 
 /datum/antagonist/traitor/infiltrator/on_gain()
 	equip_agent()
@@ -43,6 +44,7 @@
 /datum/antagonist/traitor/infiltrator/proc/equip_agent()
 	var/mob/living/carbon/human/H = owner.current
 
+	H.delete_equipment() //Just in case we try to roll for specific faction and remove-add antag status a lot.
 	owner.special_role = special_role
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 	if(prob(18))
@@ -55,7 +57,7 @@
 			H.equipOutfit(/datum/outfit/infiltrator/cybersun)
 	else if(prob(12)) //Quite rare, for higher hijack chance and epic gear
 		owner.assigned_role = "Gorlex Infiltrator"
-		hijack_chance = 20 //That's why we're here.
+		hijack_chance = 25 //That's why we're here.
 		if(isplasmaman(owner.current))
 			H.equipOutfit(/datum/outfit/infiltrator/gorlex/plasmaman)
 		else
@@ -65,6 +67,7 @@
 		hijack_chance = 0 //Pffft, we don't need your SHITTY SHUTTLE, HA!
 		kill_chance = 100 //RIP AND TEAR
 		dagd_chance = 100 //UNTIL IT'S DONE
+		obj_mod = 3 //More murders before going full DAGD.
 		if(isplasmaman(owner.current))
 			H.equipOutfit(/datum/outfit/infiltrator/tiger/plasmaman)
 		else
@@ -81,13 +84,17 @@
 	owner.announce_objectives()
 	if(should_give_codewords)
 		give_codewords()
+	if(owner.assigned_role == "Syndicate Infiltrator")
+		to_chat(owner.current, "<span class='alertwarning'>You are a syndicate infiltrator, and you are free to complete your objectives in any way you desire, as long as it helps to finish them, of course.</span>")
 	if(owner.assigned_role == "Cybersun Infiltrator")
 		to_chat(owner.current, "<span class='alertwarning'>As a member of our group remember: Your actions may cause unwanted attention, attempt to stay as stealthy as possible!</span>")
 	if(owner.assigned_role == "Gorlex Infiltrator")
 		to_chat(owner.current, "<span class='alertwarning'>As a member of our group remember: While stealth is optional, you still have to finish your mission even if it means going with a fight!</span>")
+		to_chat(owner.current, "<span class='red'>You might meet Tiger Cooperative Agents(Black-Orange Suits), on this mission. God knows what they will do, but try not to get in their way since they are somewhat useful for you.</span>")
 	if(owner.assigned_role == "Tiger Co. Infiltrator")
-		to_chat(owner.current, "<span class='alertwarning'>As a member of our group remember: Everyone is your enemy, even the other infiltrators!</span>")
-	if(owner.assigned_role != "Tiger Co. Infiltrator")
+		to_chat(owner.current, "<span class='alertwarning'>You are here to seize mass destruction and terror! Everyone is your enemy, even the other infiltrators, except for those Gorlex dudes. Rip and tear until it's done, operative!</span>")
+		to_chat(owner.current, "<span class='red'>Remember, everyone, but Gorlex Marauders(Black-Red Suits) - are your enemies. Thought if your mission requires you to, you will have to kill the Gorlex Infiltrators as well...</span>")
+	if(owner.assigned_role != "Tiger Co. Infiltrator" && owner.assigned_role !=  "Gorlex Infiltrator")
 		to_chat(owner.current, "<span class='red'>Keep in mind that Tiger Co. Agents are our mutual enemies, don't try to cooperate with them!</span>")
 
 /datum/antagonist/traitor/infiltrator/proc/forge_infiltrator_objectives()
@@ -96,7 +103,7 @@
 		is_hijacker = prob(hijack_chance)
 	var/martyr_chance = prob(dagd_chance)
 	var/objective_count = is_hijacker
-	var/toa = CONFIG_GET(number/traitor_objectives_amount) + 1 //Additional objective.
+	var/toa = CONFIG_GET(number/traitor_objectives_amount) + obj_mod //Additional objective.
 	for(var/i = objective_count, i < toa, i++)
 		forge_single_inf_objective()
 
@@ -120,6 +127,15 @@
 		add_objective(martyr_objective)
 		return
 
+
+	else if(prob(20))
+		if(!(locate(/datum/objective/escape/escape_with_identity/infiltrator) in objectives))
+			var/datum/objective/escape/escape_with_identity/infiltrator/id_theft = new
+			id_theft.owner = owner
+			id_theft.find_target_by_role(role = special_role, role_type = TRUE, invert = TRUE)
+			add_objective(id_theft)
+			return
+
 	else
 		if(!(locate(/datum/objective/survive) in objectives)) //Infiltrators don't have to escape on shuttle.
 			var/datum/objective/survive/survive_objective = new
@@ -136,24 +152,18 @@
 			destroy_objective.owner = owner
 			destroy_objective.find_target()
 			add_objective(destroy_objective)
-		else if(prob(30))
-			if(owner.assigned_role == "Tiger Co. Infiltrator")
-				var/datum/objective/assassinate/kill_objective = new
-				kill_objective.owner = owner
-				kill_objective.find_target_by_role("Syndicate Infiltrator", role_type=TRUE,invert=FALSE) //KILL THOSE IDIOTS TOO!
-				add_objective(kill_objective)
-			else
-				var/datum/objective/maroon/maroon_objective = new
-				maroon_objective.owner = owner
-				maroon_objective.find_target_by_role("Syndicate Infiltrator", role_type=TRUE,invert=TRUE)
-				add_objective(maroon_objective)
+		else if((owner.assigned_role == "Tiger Co. Infiltrator") && prob(20))
+			var/datum/objective/assassinate/ti_kill_objective = new
+			ti_kill_objective.owner = owner
+			ti_kill_objective.find_target_by_role(role = special_role, role_type = TRUE, invert = FALSE) //KILL THOSE IDIOTS TOO!
+			add_objective(ti_kill_objective)
 		else
 			var/datum/objective/assassinate/kill_objective = new
 			kill_objective.owner = owner
 			kill_objective.find_target()
 			add_objective(kill_objective)
 	else
-		if(prob(15) && !(locate(/datum/objective/download) in objectives) && !(owner.assigned_role in list("Research Director", "Scientist", "Roboticist")))
+		if(prob(15) && !(locate(/datum/objective/download) in objectives))
 			var/datum/objective/download/download_objective = new
 			download_objective.owner = owner
 			download_objective.gen_amount_goal()

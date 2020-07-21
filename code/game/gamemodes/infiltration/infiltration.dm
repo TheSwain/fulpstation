@@ -109,6 +109,13 @@
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
 
+/datum/objective/escape/escape_with_identity/infiltrator
+	name = "escape with identity (as infiltrator)"
+
+/datum/objective/escape/escape_with_identity/infiltrator/New()
+	give_special_equipment(/obj/item/adv_mulligan)
+	..()
+
 /datum/game_mode/traitor/infiltrator/add_latejoin_traitor(datum/mind/character) //Late joiners in Infiltration gamemode will become normal traitors.
 	var/datum/antagonist/traitor/new_antag = new /datum/antagonist/traitor()
 	character.add_antag_datum(new_antag)
