@@ -36200,7 +36200,7 @@
 /area/medical/pharmacy)
 "bhL" = (
 /obj/machinery/smartfridge/chemistry/preloaded,
-/turf/open/floor/plasteel/white,
+/turf/closed/wall/r_wall,
 /area/medical/pharmacy)
 "bhM" = (
 /obj/machinery/door/firedoor,
@@ -39456,7 +39456,7 @@
 /area/security/checkpoint/medical)
 "bns" = (
 /obj/machinery/smartfridge/chemistry/preloaded,
-/turf/open/floor/plasteel/white,
+/turf/closed/wall/r_wall,
 /area/medical/medbay/lobby)
 "bnt" = (
 /obj/machinery/door/airlock/maintenance{
@@ -48823,7 +48823,7 @@
 /obj/machinery/smartfridge{
 	name = "Hydro-Kitchen Smartfridge"
 	},
-/turf/open/floor/plating,
+/turf/closed/wall,
 /area/crew_quarters/kitchen)
 "bEZ" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
