@@ -10,6 +10,16 @@
 	var/kill_chance = 70
 	var/obj_mod = 1 //Number of additional objectives not affected by config
 
+/datum/antagonist/traitor/infiltrator/event
+	name = "Infiltrator (Event)"
+	should_give_codewords = TRUE //There is a pretty good chance that infiltrator will spawn in Traitors round, so why not?
+	hijack_chance = 0 //Normal mid-round infiltrators will not interrupt the ongoing round with hjiack, \
+	unless they get lucky with faction.
+	dagd_chance = 0
+
+/datum/antagonist/traitor/infiltrator/event/move_to_spawnpoint() //Mid-round infiltrators are moved on spawn by event.
+	owner.current.reagents.add_reagent(/datum/reagent/medicine/leporazine, 10)
+
 /datum/antagonist/traitor/infiltrator/on_gain()
 	equip_agent()
 	move_to_spawnpoint()
@@ -85,21 +95,21 @@
 	if(should_give_codewords)
 		give_codewords()
 	if(owner.assigned_role == "Syndicate Infiltrator")
-		to_chat(owner.current, "<span class='alertwarning'>You are a syndicate infiltrator, and you are free to complete your objectives in any way you desire, as long as it helps to finish them, of course.</span>")
+		to_chat(owner.current, "<span class='alertwarning'>You are a syndicate infiltrator, and you are free to complete your objectives in any way you desire, as long as it helps to finish them, of course. \n</span>")
 	if(owner.assigned_role == "Cybersun Infiltrator")
-		to_chat(owner.current, "<span class='alertwarning'>As a member of our group remember: Your actions may cause unwanted attention, attempt to stay as stealthy as possible!</span>")
+		to_chat(owner.current, "<span class='alertwarning'>As a member of our group remember: Your actions may cause unwanted attention, attempt to stay as stealthy as possible! \n</span>")
 	if(owner.assigned_role == "Gorlex Infiltrator")
-		to_chat(owner.current, "<span class='alertwarning'>As a member of our group remember: While stealth is optional, you still have to finish your mission even if it means going with a fight!</span>")
+		to_chat(owner.current, "<span class='alertwarning'>As a member of our group remember: While stealth is optional, you still have to finish your mission even if it means going with a fight! \n</span>")
 		to_chat(owner.current, "<span class='red'>You might meet Tiger Cooperative Agents(Black-Orange Suits), on this mission. God knows what they will do, but try not to get in their way since they are somewhat useful for you.</span>")
 	if(owner.assigned_role == "Tiger Co. Infiltrator")
-		to_chat(owner.current, "<span class='alertwarning'>You are here to seize mass destruction and terror! Everyone is your enemy, even the other infiltrators, except for those Gorlex dudes. Rip and tear until it's done, operative!</span>")
+		to_chat(owner.current, "<span class='alertwarning'>You are here to seize mass destruction and terror! Everyone is your enemy, even the other infiltrators, except for those Gorlex dudes. Rip and tear until it's done, operative! \n</span>")
 		to_chat(owner.current, "<span class='red'>Remember, everyone, but Gorlex Marauders(Black-Red Suits) - are your enemies. Thought if your mission requires you to, you will have to kill the Gorlex Infiltrators as well...</span>")
 	if(owner.assigned_role != "Tiger Co. Infiltrator" && owner.assigned_role !=  "Gorlex Infiltrator")
 		to_chat(owner.current, "<span class='red'>Keep in mind that Tiger Co. Agents are our mutual enemies, don't try to cooperate with them!</span>")
 
 /datum/antagonist/traitor/infiltrator/proc/forge_infiltrator_objectives()
 	var/is_hijacker = FALSE
-	if (GLOB.joined_player_list.len >= 50) //Requires a big pop for Hijack
+	if (GLOB.joined_player_list.len >= 60) //Requires a big pop for Hijack
 		is_hijacker = prob(hijack_chance)
 	var/martyr_chance = prob(dagd_chance)
 	var/objective_count = is_hijacker

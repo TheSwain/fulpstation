@@ -106,6 +106,8 @@
 	clothing_flags = NOSLIP
 
 ////////////// INFILTRATION GAMEMODE ITEMS //////////////
+#define INFILTRATION_FACTIONS list("Syndicate Infiltrator", "Cybersun Infiltrator", "Gorlex Infiltrator", "Tiger Co. Infiltrator")
+//This define exists for midround spawned infiltrators.
 
 /datum/uplink_item/role_restricted/cybersunsuit
 	name = "Cybersun Hardsuit"
@@ -173,7 +175,7 @@
 	cost = 4
 	item = /obj/item/storage/box/syndie_kit/plasmeme
 	restricted_species = list("plasmaman")
-	include_modes = list(/datum/game_mode/traitor/infiltrator)
+	restricted_roles = INFILTRATION_FACTIONS
 
 /obj/item/clothing/suit/space/eva/plasmaman/infiltrator
 	desc = "A special syndicate version of plasma containment suit. Capable of everything it's smaller version can do and offers a good protection against hostile environment."
@@ -196,10 +198,14 @@
 
 /datum/uplink_item/stealthy_tools/adv_mulligan
 	name = "Advanced Mulligan"
-	desc = "Toxin that permanently changes your DNA into the one of last injected person."
+	desc = "An advanced form of toxin created in one of our laboratories using \
+	technology created with help of changeling operatives. \
+	This item allows you to change your appearance, race and DNA to completely different one. \
+	To use it - stab another person with it and then inject yourself, you will transform into the person you stabbed earlier. \n \
+	Be aware that it can't be used more than once on yourself."
 	item = /obj/item/adv_mulligan
 	cost = 7
-	include_modes = list(/datum/game_mode/traitor/infiltrator)
+	restricted_roles = INFILTRATION_FACTIONS
 
 /obj/item/adv_mulligan
 	name = "Advanced Mulligan"
