@@ -10,8 +10,8 @@
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	custom_materials = list(/datum/material/iron=250, /datum/material/glass=500)
-	var/max_shield_integrity = 250
-	var/shield_integrity = 250
+	var/max_shield_integrity = 25
+	var/shield_integrity = 25
 	var/max_fields = 3
 	var/list/current_fields
 	var/field_distance_limit = 7
