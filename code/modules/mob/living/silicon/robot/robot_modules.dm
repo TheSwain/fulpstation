@@ -332,7 +332,7 @@
 	magpulsing = TRUE
 	hat_offset = -4
 
-/obj/item/robot_module/security
+/* /obj/item/robot_module/security
 	name = "Security"
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
@@ -362,7 +362,7 @@
 			T.cell.give(S.e_cost * coeff)
 			T.update_icon()
 		else
-			T.charge_tick = 0
+			T.charge_tick = 0 */
 
 /obj/item/robot_module/peacekeeper
 	name = "Peacekeeper"
