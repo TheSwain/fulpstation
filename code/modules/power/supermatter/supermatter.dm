@@ -967,6 +967,23 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 /obj/machinery/power/supermatter_crystal/engine
 	is_main_engine = TRUE
 
+//FULP >
+GLOBAL_DATUM(syndicate_supermatter_engine, /obj/machinery/power/supermatter_crystal/syndicate)
+
+/obj/machinery/power/supermatter_crystal/syndicate
+	desc = "Unstable supermatter crystal recovered from earlier Nanotrasen Researches."
+	explosion_power = 70 //Big ka-boom
+	radio_key = /obj/item/encryptionkey/syndicate
+	engineering_channel = "Syndicate"
+	common_channel = "Syndicate"
+
+/obj/machinery/power/supermatter_crystal/syndicate/Initialize()
+	. = ..()
+	GLOB.syndicate_supermatter_engine = src
+	AddComponent(/datum/component/gps, "SBC01 - Starfury")
+
+//FULP <
+
 /obj/machinery/power/supermatter_crystal/shard
 	name = "supermatter shard"
 	desc = "A strangely translucent and iridescent crystal that looks like it used to be part of a larger structure."
