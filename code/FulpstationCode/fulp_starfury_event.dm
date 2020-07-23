@@ -73,8 +73,8 @@
 
 //Turret
 /obj/machinery/porta_turret/syndicate/starfury
-	shot_delay = 6
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 60, "bomb" = 80, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
+	shot_delay = 5
+	armor = list("melee" = 20, "bullet" = 40, "laser" = 60, "energy" = 60, "bomb" = 80, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 
 //Energy Crowbar
 /obj/item/crowbar/combat
