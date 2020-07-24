@@ -149,9 +149,8 @@
 	shuttleId = "starfury"
 	jumpto_ports = list("starfury_home" = 1, "syndicate_ne" = 1, "syndicate_nw" = 1, "syndicate_n" = 1, "syndicate_se" = 1, "syndicate_sw" = 1, "syndicate_s" = 1)
 	shuttlePortId = "starfury_custom"
-	view_range = 140
-	x_offset = -14
-	y_offset = 22
+	view_range = 40
+	y_offset = -30
 
 //IDs
 /obj/item/card/id/syndicate_command/crew_id/med

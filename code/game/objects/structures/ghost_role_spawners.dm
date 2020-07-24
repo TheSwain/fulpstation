@@ -482,6 +482,7 @@
 	outfit = /datum/outfit/syndicate_empty/sbc
 	assignedrole = "Battlecruiser Operative"
 	mob_name = "syndicate operative"
+	random = TRUE
 	roundstart = FALSE
 	death = FALSE
 	anchored = TRUE
