@@ -73,8 +73,8 @@
 
 //Turret
 /obj/machinery/porta_turret/syndicate/starfury
-	shot_delay = 5
-	armor = list("melee" = 20, "bullet" = 40, "laser" = 60, "energy" = 60, "bomb" = 80, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
+	shot_delay = 4
+	armor = list("melee" = 60, "bullet" = 80, "laser" = 70, "energy" = 70, "bomb" = 90, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 
 //Energy Crowbar
 /obj/item/crowbar/combat
@@ -88,6 +88,7 @@
 	attack_verb = list("devastated", "brutalized", "crowbarred")
 	tool_behaviour = null
 	toolspeed = null
+	force_opens = FALSE
 	var/on = FALSE
 
 /obj/item/crowbar/combat/ComponentInitialize()
@@ -96,11 +97,12 @@
 
 /obj/item/crowbar/combat/attack_self(mob/living/user)
 	on = !on
-	force = on ? 18 : initial(force)
+	force = on ? 20 : initial(force)
+	force_opens = on ? TRUE : initial(force_opens)
 	w_class = on ? WEIGHT_CLASS_NORMAL : initial(w_class)
-	throwforce = on ? 10 : initial(throwforce)
+	throwforce = on ? 22 : initial(throwforce)
 	tool_behaviour = on ? TOOL_CROWBAR : initial(tool_behaviour)
-	toolspeed = on ? 0.5 : initial(toolspeed)
+	toolspeed = on ? 0.2 : initial(toolspeed)
 	hitsound = on ? 'sound/weapons/blade1.ogg' : "swing_hit"
 	playsound(user, on ? 'sound/weapons/saberon.ogg' : 'sound/weapons/saberoff.ogg', 5, TRUE)
 	to_chat(user, "<span class='warning'>[src] is now [on ? "active" : "concealed"].</span>")
@@ -122,7 +124,7 @@
 
 //Eyepatch
 /obj/item/clothing/glasses/hud/eyepatch/admiral
-	name = "optical thermal eyepatch"
+	name = "syndicate thermal eyepatch"
 	desc = "An eyepatch with built-in thermal and night-vision optics."
 	icon_state = "eyepatch"
 	inhand_icon_state = "eyepatch"
@@ -151,19 +153,6 @@
 	shuttlePortId = "starfury_custom"
 	view_range = 40
 	y_offset = -30
-
-//IDs
-/obj/item/card/id/syndicate_command/crew_id/med
-	assignment = "Syndicate Medical Doctor"
-
-/obj/item/card/id/syndicate_command/crew_id/engi
-	assignment = "Syndicate Engineer"
-
-/obj/item/card/id/syndicate_command/crew_id/sec
-	assignment = "Syndicate Assault Operative"
-
-/obj/item/card/id/syndicate_command/crew_id/cap
-	assignment = "Syndicate Captain"
 
 //Decals
 /obj/effect/turf_decal/starfury

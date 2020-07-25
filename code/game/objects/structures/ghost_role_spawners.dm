@@ -482,6 +482,7 @@
 	outfit = /datum/outfit/syndicate_empty/sbc
 	assignedrole = "Battlecruiser Operative"
 	mob_name = "syndicate operative"
+	id_job = "Syndicate Operative"
 	random = TRUE
 	roundstart = FALSE
 	death = FALSE
@@ -507,6 +508,7 @@
 	outfit = /datum/outfit/syndicate_empty/SBC/engi
 	assignedrole = "Battlecruiser Engineer"
 	mob_name = "syndicate engineer"
+	id_job = "Syndicate Engineer"
 
 /datum/outfit/syndicate_empty/SBC/engi
 	name = "Syndicate Battlecruiser Ship Engineer"
@@ -515,7 +517,7 @@
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
 	belt = /obj/item/storage/belt/utility/syndicate/sbc
 	back = /obj/item/storage/backpack/industrial
-	id = /obj/item/card/id/syndicate_command/crew_id/engi
+	id = /obj/item/card/id/syndicate_command/crew_id
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/medical
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
@@ -523,8 +525,9 @@
 	flavour_text = "Your job is to maintain the crew's physical health and keep your comrades alive at all cost."
 	important_info = "The armory has nothing to help you with your job, and your role is to assist assault operatives, not to do their work for them."
 	outfit = /datum/outfit/syndicate_empty/SBC/med
-	assignedrole = "Battlecruiser Medic"
+	assignedrole = "Battlecruiser Medical Doctor"
 	mob_name = "syndicate medic"
+	id_job = "Syndicate Medical Doctor"
 
 /datum/outfit/syndicate_empty/SBC/med
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
@@ -534,7 +537,7 @@
 	belt = /obj/item/defibrillator/compact/combat/loaded
 	back = /obj/item/storage/backpack/medic
 	r_hand = /obj/item/gun/medbeam
-	id = /obj/item/card/id/syndicate_command/crew_id/med
+	id = /obj/item/card/id/syndicate_command/crew_id
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault
 	name = "Syndicate Battlecruiser Assault Operative"
@@ -544,6 +547,7 @@
 	outfit = /datum/outfit/syndicate_empty/sbc/assault
 	assignedrole = "Battlecruiser Assault Operative"
 	mob_name = "syndicate assault operative"
+	id_job = "Syndicate Assault Operative"
 
 /datum/outfit/syndicate_empty/sbc/assault
 	name = "Syndicate Battlecruiser Assault Operative"
@@ -556,7 +560,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/pistol
 	back = /obj/item/storage/backpack/security
 	mask = /obj/item/clothing/mask/gas/syndicate
-	id = /obj/item/card/id/syndicate_command/crew_id/sec
+	id = /obj/item/card/id/syndicate_command/crew_id
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/captain
 	name = "Syndicate Battlecruiser Captain"
@@ -565,6 +569,7 @@
 	important_info = "As the captain, this whole operation falls on your shoulders. You do not need to nuke the station, causing sufficient damage and preventing your ship from being destroyed will be enough."
 	outfit = /datum/outfit/syndicate_empty/battlecruiser/assault/captain
 	id_access_list = list(150,151)
+	id_job = "Syndicate Captain"
 	assignedrole = "Battlecruiser Captain"
 	mob_name = "syndicate captain"
 
@@ -578,7 +583,7 @@
 	head = /obj/item/clothing/head/hos/syndicate
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	glasses = /obj/item/clothing/glasses/hud/eyepatch/admiral
-	id = /obj/item/card/id/syndicate_command/crew_id/cap
+	id = /obj/item/card/id/syndicate_command/crew_id
 
 //Ancient cryogenic sleepers. Players become NT crewmen from a hundred year old space station, now on the verge of collapse.
 /obj/effect/mob_spawn/human/oldsec
