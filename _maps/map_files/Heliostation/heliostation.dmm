@@ -7937,7 +7937,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/brig/upper)
 "amT" = (
-/obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
 	dir = 8
 	},
@@ -8381,10 +8380,6 @@
 "anz" = (
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/brig/upper)
-"anA" = (
-/obj/structure/cable,
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/brig/upper)
 "anB" = (
 /obj/effect/turf_decal/tile{
 	color = "#FF6700";
@@ -8792,19 +8787,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/brig/upper)
 "aoc" = (
-/obj/effect/turf_decal/tile/red{
-	color = "#FF0000";
-	name = "Security red corner"
-	},
-/obj/effect/turf_decal/tile/red{
-	color = "#FF0000";
-	dir = 8;
-	name = "Security red corner"
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/brig/upper)
-"aod" = (
-/obj/structure/cable,
 /obj/effect/turf_decal/tile/red{
 	color = "#FF0000";
 	name = "Security red corner"
@@ -9380,7 +9362,6 @@
 /area/ai_monitored/security/armory)
 "aoU" = (
 /obj/structure/table/reinforced,
-/obj/structure/cable,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/westleft{
 	dir = 2;
@@ -9807,7 +9788,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "apy" = (
-/obj/structure/cable,
 /obj/effect/turf_decal/tile/red{
 	color = "#FF0000";
 	dir = 4;
@@ -10482,7 +10462,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "aqy" = (
-/obj/structure/cable,
 /obj/structure/rack,
 /obj/item/storage/box/teargas,
 /obj/item/storage/box/teargas,
@@ -10504,6 +10483,7 @@
 /area/ai_monitored/security/armory)
 "aqA" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1,
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "aqB" = (
@@ -11377,7 +11357,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "arO" = (
-/obj/structure/cable,
 /obj/structure/rack,
 /obj/item/storage/box/flashbangs,
 /obj/item/storage/box/flashbangs,
@@ -11398,6 +11377,7 @@
 /area/ai_monitored/security/armory)
 "arQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "arR" = (
@@ -11983,7 +11963,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "asO" = (
-/obj/structure/cable,
 /obj/structure/rack,
 /obj/item/storage/box/firingpins,
 /obj/item/storage/box/firingpins,
@@ -11993,7 +11972,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "asP" = (
-/obj/structure/cable,
 /obj/structure/rack,
 /obj/item/gun/energy/e_gun,
 /obj/item/gun/energy/e_gun,
@@ -13145,6 +13123,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
 "aus" = (
@@ -14820,6 +14799,7 @@
 	name = "Security Camera";
 	network = list("ss13","security")
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
 "awJ" = (
@@ -15138,6 +15118,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/ai_monitored/storage/eva)
 "axg" = (
@@ -15153,6 +15134,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/ai_monitored/storage/eva)
 "axh" = (
@@ -15226,7 +15208,6 @@
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai_upload)
 "axr" = (
-/obj/structure/cable,
 /obj/machinery/airalarm{
 	name = "air alarm ";
 	pixel_y = 25
@@ -15234,7 +15215,6 @@
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai_upload)
 "axs" = (
-/obj/structure/cable,
 /obj/machinery/computer/upload/ai,
 /obj/structure/window/reinforced{
 	dir = 8
@@ -15426,7 +15406,6 @@
 /turf/open/floor/plasteel,
 /area/ai_monitored/storage/eva)
 "axJ" = (
-/obj/structure/cable,
 /obj/machinery/door/airlock/command/glass{
 	name = "EVA Storage";
 	req_access_txt = "18"
@@ -16103,7 +16082,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "ayD" = (
-/obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
@@ -56100,7 +56078,6 @@
 /turf/open/floor/plating,
 /area/maintenance/department/science)
 "bTd" = (
-/obj/structure/cable,
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = 30
 	},
@@ -57073,6 +57050,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/maintenance/department/science)
 "bUv" = (
@@ -59138,6 +59116,7 @@
 /area/science/mixing/chamber)
 "bYp" = (
 /obj/machinery/blackbox_recorder,
+/obj/structure/cable,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
 "bYq" = (
@@ -61455,6 +61434,9 @@
 	dir = 1;
 	name = "Science purple corner"
 	},
+/obj/item/radio/intercom{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/dark,
 /area/science/mixing)
 "cbY" = (
@@ -61506,6 +61488,7 @@
 /area/engine/lobby)
 "cce" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/tcommsat/server)
 "ccf" = (
@@ -62224,6 +62207,7 @@
 /obj/machinery/power/smes{
 	charge = 5e+006
 	},
+/obj/structure/cable,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
 "cds" = (
@@ -62261,7 +62245,6 @@
 /turf/open/floor/plasteel/dark,
 /area/science/mixing)
 "cdw" = (
-/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/tcommsat/computer)
 "cdx" = (
@@ -62269,11 +62252,9 @@
 	name = "Server Room";
 	req_access_txt = "61"
 	},
-/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/tcommsat/computer)
 "cdy" = (
-/obj/structure/cable,
 /obj/effect/turf_decal/tile/yellow{
 	color = "#FFD700";
 	dir = 1;
@@ -62462,7 +62443,6 @@
 /turf/open/floor/carpet/purple,
 /area/engine/lobby)
 "cdJ" = (
-/obj/structure/cable,
 /obj/effect/turf_decal/tile/yellow{
 	color = "#FFD700";
 	dir = 1;
@@ -63375,7 +63355,6 @@
 /turf/open/floor/carpet/purple,
 /area/engine/lobby)
 "cfn" = (
-/obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
@@ -63779,9 +63758,6 @@
 	dir = 1;
 	name = "Science purple corner"
 	},
-/obj/item/radio/intercom{
-	pixel_x = -30
-	},
 /turf/open/floor/plasteel/dark,
 /area/science/mixing)
 "cgc" = (
@@ -64074,7 +64050,6 @@
 /turf/open/floor/plasteel,
 /area/engine/lobby)
 "cgD" = (
-/obj/structure/cable,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
 	dir = 8
 	},
@@ -64242,7 +64217,6 @@
 	network = list("ss13","engineering")
 	},
 /obj/structure/cable,
-/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel,
 /area/crew_quarters/heads/chief)
 "cgP" = (
@@ -88360,6 +88334,10 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"dUn" = (
+/obj/machinery/holopad/secure,
+/turf/open/floor/plasteel,
+/area/crew_quarters/heads/chief)
 "eqU" = (
 /obj/machinery/status_display/ai{
 	pixel_y = 32
@@ -88848,6 +88826,10 @@
 /obj/item/tank/internals/oxygen,
 /turf/open/floor/plating,
 /area/medical/virology)
+"qfb" = (
+/obj/structure/cable,
+/turf/open/floor/plasteel/showroomfloor,
+/area/security/warden)
 "qlV" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/beer,
@@ -88897,6 +88879,24 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/courtroom)
+"rqR" = (
+/obj/effect/turf_decal/tile/blue{
+	color = "#4169E1";
+	name = "Command blue corner"
+	},
+/obj/effect/turf_decal/tile/blue{
+	color = "#4169E1";
+	dir = 8;
+	name = "Command blue corner"
+	},
+/obj/effect/turf_decal/tile/blue{
+	color = "#4169E1";
+	dir = 4;
+	name = "Command blue corner"
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/ai_monitored/storage/eva)
 "rwL" = (
 /obj/structure/sign/poster/official/random{
 	pixel_x = 30
@@ -89068,6 +89068,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/courtroom)
+"vqD" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/tcommsat/computer)
 "vzr" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 4
@@ -111485,7 +111490,7 @@ bYC
 bZY
 caI
 cbV
-cbV
+caI
 caI
 caI
 chO
@@ -111995,15 +112000,15 @@ bwU
 bUI
 bNg
 bXq
-bYw
-bYw
-bYw
-bYw
+vqD
+vqD
+vqD
+vqD
 cdw
-bYw
-bYw
-bYw
-bYw
+vqD
+vqD
+vqD
+vqD
 bXq
 clI
 cmX
@@ -112255,9 +112260,9 @@ bXq
 bYx
 bZQ
 caL
-bYw
+vqD
 cdx
-bYw
+vqD
 cgt
 chE
 cjq
@@ -114313,7 +114318,7 @@ bHm
 bHm
 cbY
 cdE
-cfg
+dUn
 cgA
 chK
 cjv
@@ -116814,14 +116819,14 @@ aAh
 aAi
 aAi
 aAi
-aCR
-aCR
-aCR
-aCR
-aCR
-aCR
-aCR
-aCR
+aAi
+aAi
+aAi
+aAi
+aAi
+aAi
+aAi
+aAi
 aAi
 azQ
 aak
@@ -117052,8 +117057,8 @@ akJ
 alA
 ami
 amT
-anA
-aod
+anz
+aoc
 aoU
 apy
 aqz
@@ -117078,7 +117083,7 @@ aAi
 aAi
 aAi
 aAi
-aCR
+aAi
 aAi
 azQ
 azQ
@@ -117335,7 +117340,7 @@ aju
 aju
 aGU
 aAi
-aCR
+aAi
 aAi
 aKh
 aGQ
@@ -117592,7 +117597,7 @@ aFn
 aju
 aGU
 aAi
-aCR
+aAi
 aAi
 aAi
 aAi
@@ -118345,7 +118350,7 @@ aqD
 arT
 asU
 aur
-aqD
+qfb
 awI
 aqG
 axV
@@ -128884,7 +128889,7 @@ atp
 atp
 atp
 axg
-axH
+apj
 ayr
 ayU
 azw
@@ -129140,7 +129145,7 @@ aso
 atq
 arc
 arc
-atr
+rqR
 aqd
 aye
 azC
