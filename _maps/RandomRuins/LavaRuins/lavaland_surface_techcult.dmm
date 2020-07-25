@@ -869,6 +869,36 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/powered/mechanicus)
+"ca" = (
+/obj/structure/mirror{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/mechanicus/robotics)
+"cb" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/mechanicus)
+"cc" = (
+/obj/structure/reagent_dispensers/watertank/high,
+/obj/machinery/door/window/northright,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/mechanicus)
+"cd" = (
+/obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/powered/mechanicus)
+"ce" = (
+/obj/item/circuitboard/computer/operating,
+/obj/item/circuitboard/machine/chem_dispenser,
+/obj/item/circuitboard/machine/stasis,
+/obj/item/circuitboard/machine/stasis,
+/obj/structure/closet/crate/medical,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/mechanicus/robotics)
 
 (1,1,1) = {"
 aa
@@ -993,7 +1023,7 @@ as
 as
 aB
 ak
-ak
+ce
 aM
 bY
 bp
@@ -1016,7 +1046,7 @@ aa
 aa
 be
 ae
-ak
+ca
 ak
 ak
 ak
@@ -1133,8 +1163,8 @@ ac
 aw
 aD
 aD
-aD
 aO
+ac
 ac
 aV
 bg
@@ -1161,8 +1191,8 @@ ac
 ax
 aE
 aK
-aK
 aP
+ac
 ac
 aV
 bh
@@ -1189,8 +1219,8 @@ ac
 ac
 ax
 aG
-aG
 aQ
+ac
 bW
 aV
 bj
@@ -1245,8 +1275,8 @@ ac
 ac
 aw
 aD
-aD
 aO
+ac
 ac
 aV
 bV
@@ -1273,9 +1303,9 @@ ac
 aw
 aF
 aK
-aK
 aP
 ac
+cb
 aV
 bk
 bQ
@@ -1301,9 +1331,9 @@ ac
 ax
 aG
 aG
-aG
 aQ
 ac
+cd
 aV
 bl
 bQ
@@ -1331,7 +1361,7 @@ ac
 ac
 ap
 ac
-ac
+cc
 aV
 bK
 bR

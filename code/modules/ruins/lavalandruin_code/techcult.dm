@@ -99,7 +99,7 @@
 
 /obj/item/clothing/suit/hooded/techpriest/armor/lead/Initialize()
 	. = ..()
-	AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_OCLOTHING)
+	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE, ITEM_SLOT_OCLOTHING)
 
 /obj/item/clothing/head/hooded/techpriest/armor/lead
 	name = "blessed tech hood"
@@ -112,7 +112,7 @@
 
 /obj/item/clothing/head/hooded/techpriest/armor/lead/Initialize()
 	. = ..()
-	AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_OCLOTHING)
+	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE, ITEM_SLOT_OCLOTHING)
 
 //Only the chosen ones can use it!
 /obj/item/clothing/suit/hooded/techpriest/armor/lead/equipped(mob/living/user, slot)
@@ -147,6 +147,9 @@
 	assignedrole = "Tech Priest"
 
 /obj/effect/mob_spawn/human/techcult/special(mob/living/new_spawn)
+	var/obj/item/organ/tongue/T = new_spawn.getorgan(/obj/item/organ/tongue)
+	T.languages_possible[/datum/language/machine] = 1
+
 	new_spawn.grant_language(/datum/language/machine, TRUE, TRUE, LANGUAGE_MIND)
 	new_spawn.faction |= "Mechanicus"
 
@@ -179,9 +182,9 @@
 	assignedrole = "Tech Cult Leader"
 
 /obj/effect/mob_spawn/human/techcult/leader/special(mob/living/new_spawn)
-	..()
 	new_spawn.mind.holy_role = HOLY_ROLE_PRIEST
-	sleep(10)
+	new_spawn.faction |= "Mechanicus"
+	new_spawn.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_CURATOR) //Leader knows all languages so he can speak with ashwalkers, for example. All hail Lavaland Union!
 	new_spawn.equip_to_slot_or_del(new /obj/item/clothing/suit/hooded/techpriest/armor/lead(new_spawn),ITEM_SLOT_OCLOTHING, TRUE)
 
 /datum/outfit/techcult/lead
