@@ -63,6 +63,16 @@
 	if (inFeatures["beefmouth"] == null || inFeatures["beefmouth"] == "")
 		inFeatures["beefmouth"] = pick(GLOB.mouths_beefman)
 
+/mob/living/carbon/human/proc/adjust_bl_all(var/type = "add", var/amount)
+	for(var/i in bodyparts)
+		var/obj/item/bodypart/BP = i
+		if (type == "add")
+			BP.generic_bleedstacks += amount
+		if (type == "eq")
+			BP.generic_bleedstacks = amount
+		if (type == "remove")
+			BP.generic_bleedstacks -= amount
+
 /datum/species/beefman/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 
 
@@ -92,9 +102,9 @@
 	// Be Spooked but Educated
 	//C.gain_trauma(pick(startTraumas))
 	if (SStraumas.phobia_types && SStraumas.phobia_types.len) // NOTE: ONLY if phobias have been defined! For some reason, sometimes this gets FUCKED??
-		C.gain_trauma(/datum/brain_trauma/mild/phobia/strangers)
-		C.gain_trauma(/datum/brain_trauma/mild/hallucinations)
-		C.gain_trauma(/datum/brain_trauma/special/bluespace_prophet/phobetor)
+		C.gain_trauma(/datum/brain_trauma/mild/phobia/strangers, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.gain_trauma(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.gain_trauma(/datum/brain_trauma/special/bluespace_prophet/phobetor, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/species/proc/set_beef_color(mob/living/carbon/human/H)
 	return // Do Nothing
@@ -103,7 +113,25 @@
 	fixed_mut_color = H.dna.features["beefcolor"]
 	default_color = fixed_mut_color
 
+//GIBS
 
+/mob/living/carbon/human/species/beefman/spawn_gibs(with_bodyparts)
+	if(with_bodyparts)
+		new /obj/effect/gibspawner/human/beef(drop_location(), src, get_static_viruses())
+	else
+		new /obj/effect/gibspawner/human/bodypartless/beef(drop_location(), src, get_static_viruses())
+
+/obj/effect/gibspawner/human/beef
+	gibtypes = list(/obj/effect/decal/cleanable/blood/gibs/up, /obj/effect/decal/cleanable/blood/gibs/down, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/body, /obj/effect/decal/cleanable/blood/gibs/limb, /obj/effect/decal/cleanable/blood/gibs/core, /obj/item/reagent_containers/food/snacks/meat/slab)
+	gibamounts = list(1, 1, 1, 1, 1, 1, 1, 4)
+	gib_mob_type = /mob/living/carbon/human/species/beefman
+
+/obj/effect/gibspawner/human/bodypartless/beef //only the gibs that don't look like actual full bodyparts (except torso).
+	gibtypes = list(/obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/core, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/core, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/torso, /obj/item/reagent_containers/food/snacks/meat/slab)
+	gibamounts = list(1, 1, 1, 1, 1, 1, 3)
+	gib_mob_type = /mob/living/carbon/human/species/beefman
+
+//
 
 /mob/living/carbon/proc/ReassignForeignBodyparts()
 	if (get_bodypart(BODY_ZONE_HEAD)?.type != part_default_head)  // <----- I think :? is used for procs instead of .? ...but apparently BYOND does that swap for you. //(!istype(get_bodypart(BODY_ZONE_HEAD), part_default_head))
@@ -138,9 +166,9 @@
 	C.ReassignForeignBodyparts()
 
 	// Resolve Trauma
-	C.cure_trauma_type(/datum/brain_trauma/special/bluespace_prophet/phobetor)
-	C.cure_trauma_type(/datum/brain_trauma/mild/phobia/strangers)
-	C.cure_trauma_type(/datum/brain_trauma/mild/hallucinations)
+	C.cure_trauma_type(/datum/brain_trauma/special/bluespace_prophet/phobetor, TRAUMA_RESILIENCE_ABSOLUTE)
+	C.cure_trauma_type(/datum/brain_trauma/mild/phobia/strangers, TRAUMA_RESILIENCE_ABSOLUTE)
+	C.cure_trauma_type(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
 
 
 
@@ -157,21 +185,20 @@
 	// Step 1) Being burned keeps the juices in.
 	var/searJuices = H.getFireLoss_nonProsthetic() / 10
 
-	// Step 2) Bleed out those juices by warmth, minus burn damage.
-	//--H.bleed_rate = clamp((H.bodytemperature - 285) / 20 - searJuices, 0, 5) // Every 20 points above 285 increases bleed rate. Don't worry, you're cold blooded.	DEAD CODE MUST REWORK
-
-	// Step 3) If we're salted, we'll bleed more (it gets reset next tick)
-	/*if (dehydrate > 0)			DEAD CODE MUST REWORK TO FIT WOUNDS PR SOMEHOW
-		H.bleed_rate += 2
+	// Step 2) Bleed out those juices by warmth, minus burn damage. If we are salted - bleed more
+	if (dehydrate > 0)
+		H.adjust_bl_all("eq", clamp((H.bodytemperature - 293) / 20 - searJuices, 2, 10))
 		dehydrate -= 0.5
+	else
+		H.adjust_bl_all("eq", clamp((H.bodytemperature - 293) / 20 - searJuices, 0, 5))
 
 	// Replenish Blood Faster! (But only if you actually make blood)
-	if (dehydrate <= 0 && H.bleed_rate <= 0 && H.blood_volume < BLOOD_VOLUME_NORMAL && !HAS_TRAIT(H, TRAIT_NOMARROW))
-		H.blood_volume += 2*/
-
-// TO-DO // Drop lots of meat on gib?
-/datum/species/beefman/spec_death(gibbed, mob/living/carbon/human/H)
-	return ..()
+	var/bleed_rate = 0
+	for(var/i in H.bodyparts)
+		var/obj/item/bodypart/BP = i
+		bleed_rate += BP.generic_bleedstacks
+	if (dehydrate <= 0 && bleed_rate <= 0 && H.blood_volume < BLOOD_VOLUME_NORMAL && !HAS_TRAIT(H, TRAIT_NOMARROW))
+		H.blood_volume += 4
 
 /datum/species/beefman/before_equip_job(datum/job/J, mob/living/carbon/human/H)
 
@@ -239,9 +266,9 @@
 		dehydrate ++
 		return TRUE
 	// Regain BLOOD
-	else if(istype(chem, /datum/reagent/consumable/nutriment) || istype(chem, /datum/reagent/iron))
+	if(istype(chem, /datum/reagent/consumable/nutriment) || istype(chem, /datum/reagent/iron))
 		if (H.blood_volume < BLOOD_VOLUME_NORMAL)
-			H.blood_volume += 2
+			H.blood_volume += 5
 			H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 			return TRUE
 
@@ -270,15 +297,14 @@
 
 /datum/species/beefman/help(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	// Bleed On
-	/*if (user != target && user.bleed_rate)	DEAD CODE MUST REWORK TO FIT WOUNDS PR SOMEHOW
-		target.add_mob_blood(user)*/
+	if (user != target && user.is_bleeding())
+		target.add_mob_blood(user)
 	return ..()
 
 /datum/species/beefman/grab(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	// Bleed On
-	/*if (user != target && user.bleed_rate)	DEAD CODE MUST REWORK TO FIT WOUNDS PR SOMEHOW
+	if (user != target && user.is_bleeding())
 		target.add_mob_blood(user) //  from atoms.dm, this is how you bloody something!
-		*/
 	return ..()
 
 /datum/species/beefman/disarm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
@@ -318,9 +344,8 @@
 
 /datum/species/beefman/spec_unarmedattacked(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	// Bleed On
-	/*if (user != target && user.bleed_rate)	DEAD CODE MUST REWORK TO FIT WOUNDS PR SOMEHOW
-		target.add_mob_blood(user) //  from atoms.dm, this is how you bloody something!
-		*/
+	if (user != target && user.is_bleeding())
+		target.add_mob_blood(user) //  from atoms.dm, this is how you bloody something!s
 	return ..()
 
 /datum/species/beefman/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
@@ -537,11 +562,6 @@
 	icon_greyscale_robotic = 'icons/Fulpicons/fulp_bodyparts_robotic.dmi'
 	heavy_brute_msg = "mincemeat"
 	heavy_burn_msg = "burned to a crisp"
-/obj/item/bodypart/head/beef/drop_limb(special) // from dismemberment.dm
-	amCondemned = TRUE
-	var/mob/owner_cache = owner
-	..() // Create Meat, Remove Limb
-	return drop_meat(owner_cache)
 
 /obj/item/bodypart/chest/beef
 	icon = 'icons/Fulpicons/fulp_bodyparts.dmi'
@@ -723,8 +743,6 @@
 	name = "mime sash"
 	icon_state = "mime"
 	//item_color = "mime" // The worn item state
-
-
 
 
 ////////////	CUSTOM TRAUMAS

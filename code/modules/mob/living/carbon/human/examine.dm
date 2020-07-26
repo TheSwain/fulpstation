@@ -259,11 +259,6 @@
 
 	if(bleedsuppress)
 		msg += "[t_He] [t_is] embued with a power that defies bleeding.\n" // only statues and highlander sword can cause this so whatever
-	/*else if (istype(dna) && istype(dna.species, /datum/species/beefman)) // FULP: Beefmen don't "bleed" perse. They let out juice based on temperature, not wounds.
-		if (bleed_rate >= 4)
-			msg += "<B>[t_His] natural juices are gushing out uncontrollably!</B>\n"
-		else if (bleed_rate >= 1)
-			msg += "<b>[t_His] natural juices are seeping from [t_his] meat.</b>\n"		DEAD BEEFMEN CODE RIP DUE TO WOUNDS PR */
 	else if(is_bleeding())
 		var/list/obj/item/bodypart/bleeding_limbs = list()
 
@@ -274,6 +269,8 @@
 
 		var/num_bleeds = LAZYLEN(bleeding_limbs)
 		var/bleed_text = "<B>[t_He] [t_is] bleeding from [t_his]"
+		if (istype(dna) && istype(dna.species, /datum/species/beefman))
+			bleed_text = "<B>[t_His] natural juices are seeping from [t_his]"
 		switch(num_bleeds)
 			if(1 to 2)
 				bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " and [bleeding_limbs[2].name]" : ""]"
