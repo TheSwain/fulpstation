@@ -66,12 +66,13 @@
 /mob/living/carbon/human/proc/adjust_bl_all(var/type = "add", var/amount)
 	for(var/i in bodyparts)
 		var/obj/item/bodypart/BP = i
-		if (type == "add")
-			BP.generic_bleedstacks += amount
-		if (type == "eq")
-			BP.generic_bleedstacks = amount
-		if (type == "remove")
-			BP.generic_bleedstacks -= amount
+		switch(type)
+			if ("+")
+				BP.generic_bleedstacks += amount
+			if ("=")
+				BP.generic_bleedstacks = amount
+			if ("-")
+				BP.generic_bleedstacks -= amount
 
 /datum/species/beefman/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 
@@ -112,26 +113,6 @@
 	// Called on Assign, or on Color Change (or any time proof_beefman_features() is used, such as in bs_veil.dm)
 	fixed_mut_color = H.dna.features["beefcolor"]
 	default_color = fixed_mut_color
-
-//GIBS
-
-/mob/living/carbon/human/species/beefman/spawn_gibs(with_bodyparts)
-	if(with_bodyparts)
-		new /obj/effect/gibspawner/human/beef(drop_location(), src, get_static_viruses())
-	else
-		new /obj/effect/gibspawner/human/bodypartless/beef(drop_location(), src, get_static_viruses())
-
-/obj/effect/gibspawner/human/beef
-	gibtypes = list(/obj/effect/decal/cleanable/blood/gibs/up, /obj/effect/decal/cleanable/blood/gibs/down, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/body, /obj/effect/decal/cleanable/blood/gibs/limb, /obj/effect/decal/cleanable/blood/gibs/core, /obj/item/reagent_containers/food/snacks/meat/slab)
-	gibamounts = list(1, 1, 1, 1, 1, 1, 1, 4)
-	gib_mob_type = /mob/living/carbon/human/species/beefman
-
-/obj/effect/gibspawner/human/bodypartless/beef //only the gibs that don't look like actual full bodyparts (except torso).
-	gibtypes = list(/obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/core, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/core, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/torso, /obj/item/reagent_containers/food/snacks/meat/slab)
-	gibamounts = list(1, 1, 1, 1, 1, 1, 3)
-	gib_mob_type = /mob/living/carbon/human/species/beefman
-
-//
 
 /mob/living/carbon/proc/ReassignForeignBodyparts()
 	if (get_bodypart(BODY_ZONE_HEAD)?.type != part_default_head)  // <----- I think :? is used for procs instead of .? ...but apparently BYOND does that swap for you. //(!istype(get_bodypart(BODY_ZONE_HEAD), part_default_head))
@@ -187,10 +168,10 @@
 
 	// Step 2) Bleed out those juices by warmth, minus burn damage. If we are salted - bleed more
 	if (dehydrate > 0)
-		H.adjust_bl_all("eq", clamp((H.bodytemperature - 293) / 20 - searJuices, 2, 10))
+		H.adjust_bl_all("=", clamp((H.bodytemperature - 293) / 20 - searJuices, 2, 10))
 		dehydrate -= 0.5
 	else
-		H.adjust_bl_all("eq", clamp((H.bodytemperature - 293) / 20 - searJuices, 0, 5))
+		H.adjust_bl_all("=", clamp((H.bodytemperature - 293) / 20 - searJuices, 0, 5))
 
 	// Replenish Blood Faster! (But only if you actually make blood)
 	var/bleed_rate = 0
