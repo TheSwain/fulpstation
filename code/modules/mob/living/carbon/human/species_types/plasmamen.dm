@@ -14,7 +14,7 @@
 	burnmod = 1.5
 	heatmod = 1.5
 	brutemod = 1.5
-	payday_modifier = 0.75
+	payday_modifier = 1
 	breathid = "tox"
 	damage_overlay_type = ""//let's not show bloody wounds or burns over bones.
 	var/internal_fire = FALSE //If the bones themselves are burning clothes won't help you much
@@ -134,7 +134,7 @@
 
 		if("Mime")
 			O = new /datum/outfit/plasmaman/mime
-		
+
 		if("Deputy")									//FULP
 			O = new /datum/outfit/plasmaman/security	//FULP - put your other jobs between Mime and Clown
 
