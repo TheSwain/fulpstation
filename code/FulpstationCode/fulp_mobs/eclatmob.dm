@@ -1,4 +1,4 @@
-/mob/living/simple_animal/pet/cat/eclat //for a good pal, Fingus
+/mob/living/simple_animal/pet/cat/cak/eclat //for a good pal, Fingus
 	name = "Eclair"
 	desc = "It's a cream filled cat"
 	icon = 'icons/Fulpicons/fulp_mob_icons/eclat.dmi'
