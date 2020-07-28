@@ -9,8 +9,6 @@
 
 	health = 69
 	maxHealth = 69
-	gender = FEMALE
-	harm_intent_damage = 10
 	butcher_results = list(/obj/item/organ/brain = 1, /obj/item/organ/heart = 1, /obj/item/reagent_containers/food/snacks/donut/choco = 2,  \
 	/obj/item/reagent_containers/food/snacks/meat/slab = 2)
 	held_state = "eclat"
