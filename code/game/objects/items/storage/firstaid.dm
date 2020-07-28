@@ -263,6 +263,7 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
+		/obj/item/reagent_containers/pill/patch/synthflesh = 3,
 		/obj/item/reagent_containers/pill/patch/instabitaluri = 3,
 		///obj/item/reagent_containers/medigel/stypticpowder = 2,	//FULP
 		///obj/item/reagent_containers/medigel/silversulfadiazine = 2,	//FULP
