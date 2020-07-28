@@ -26352,12 +26352,6 @@
 /turf/closed/wall,
 /area/maintenance/aft)
 "bzt" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 4;
-	external_pressure_bound = 140;
-	name = "server vent";
-	pressure_checks = 0
-	},
 /turf/open/floor/circuit/telecomms/server,
 /area/science/server)
 "bzu" = (
@@ -26366,9 +26360,6 @@
 /area/science/server)
 "bzv" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 10
-	},
 /turf/open/floor/plasteel/dark,
 /area/science/server)
 "bzw" = (
@@ -26378,9 +26369,6 @@
 	pixel_y = 32
 	},
 /obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/science/server)
 "bzx" = (
@@ -26872,6 +26860,9 @@
 /area/maintenance/port/aft)
 "bAy" = (
 /obj/effect/landmark/blobstart,
+/obj/machinery/atmospherics/pipe/simple{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark/telecomms,
 /area/science/server)
 "bAz" = (
@@ -26882,11 +26873,14 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark/telecomms,
 /area/science/server)
 "bAA" = (
-/obj/machinery/atmospherics/pipe/manifold{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/server)
@@ -26895,6 +26889,9 @@
 /obj/machinery/door/airlock/command/glass{
 	name = "Server Room";
 	req_access_txt = "30"
+	},
+/obj/machinery/atmospherics/pipe/simple{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/server)
@@ -27358,21 +27355,10 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/maintenance/aft)
-"bBS" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
-	dir = 4;
-	external_pressure_bound = 120;
-	name = "server vent"
-	},
-/turf/open/floor/circuit/telecomms/server,
-/area/science/server)
 "bBU" = (
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -24
-	},
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/server)
@@ -27383,9 +27369,6 @@
 	pixel_y = -32
 	},
 /obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/science/server)
 "bBW" = (
@@ -28711,7 +28694,6 @@
 /turf/open/floor/plasteel,
 /area/crew_quarters/bar)
 "bFE" = (
-/obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
@@ -28724,6 +28706,9 @@
 	},
 /obj/structure/cable,
 /obj/structure/cable,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/break_room)
 "bFG" = (
@@ -32748,22 +32733,16 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 4;
-	external_pressure_bound = 140;
-	name = "killroom vent";
-	pressure_checks = 0
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/open/floor/plasteel/freezer,
 /area/science/xenobiology)
 "bRU" = (
-/obj/machinery/atmospherics/pipe/manifold/general/visible{
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 4
 	},
 /turf/open/floor/plasteel/freezer,
@@ -33180,15 +33159,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
 /turf/open/floor/plating,
-/area/science/xenobiology)
-"bTb" = (
-/obj/machinery/light,
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
-	dir = 1;
-	external_pressure_bound = 120;
-	name = "killroom vent"
-	},
-/turf/open/floor/plasteel/freezer,
 /area/science/xenobiology)
 "bTc" = (
 /obj/structure/disposalpipe/segment,
@@ -42573,7 +42543,7 @@
 "dgr" = (
 /obj/structure/railing,
 /turf/open/floor/plating,
-/area/hallway/secondary/service)
+/area/maintenance/starboard/fore)
 "dgS" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -44180,7 +44150,7 @@
 "fnC" = (
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plating,
-/area/hallway/secondary/service)
+/area/maintenance/starboard/fore)
 "fnE" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
 	dir = 8
@@ -45097,9 +45067,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison)
-"gJG" = (
-/turf/open/floor/plating,
-/area/hallway/secondary/service)
 "gKu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 9
@@ -46037,6 +46004,15 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel/white,
 /area/medical/psychology)
+"hVo" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple{
+	dir = 4
+	},
+/turf/open/floor/plasteel/freezer,
+/area/science/xenobiology)
 "hVK" = (
 /obj/effect/landmark/event_spawn,
 /obj/structure/cable,
@@ -47977,7 +47953,7 @@
 /obj/item/trash/can,
 /mob/living/simple_animal/mouse/white,
 /turf/open/floor/plating,
-/area/hallway/secondary/service)
+/area/maintenance/starboard/fore)
 "kQk" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/maintenance/two,
@@ -50844,14 +50820,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/plasteel,
 /area/quartermaster/office)
-"pvI" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
-	dir = 1;
-	external_pressure_bound = 120;
-	name = "killroom vent"
-	},
-/turf/open/floor/plasteel/freezer,
-/area/science/xenobiology)
 "pwd" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -53516,12 +53484,6 @@
 /area/ai_monitored/turret_protected/ai)
 "tJc" = (
 /obj/machinery/light,
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 4;
-	external_pressure_bound = 140;
-	name = "killroom vent";
-	pressure_checks = 0
-	},
 /turf/open/floor/plasteel/freezer,
 /area/science/xenobiology)
 "tKG" = (
@@ -53729,7 +53691,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/hallway/secondary/service)
+/area/maintenance/starboard/fore)
 "ubo" = (
 /obj/structure/weightmachine/weightlifter,
 /obj/effect/decal/cleanable/dirt,
@@ -53956,9 +53918,6 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/port)
 "usX" = (
-/obj/machinery/atmospherics/pipe/simple/general/visible{
-	dir = 9
-	},
 /turf/open/floor/plasteel/freezer,
 /area/science/xenobiology)
 "uuG" = (
@@ -55219,13 +55178,6 @@
 /obj/item/kirbyplants/fullysynthetic,
 /turf/open/floor/plasteel/showroomfloor,
 /area/hallway/secondary/service)
-"wrp" = (
-/obj/machinery/door/airlock/maintenance{
-	req_access_txt = "12"
-	},
-/obj/effect/mapping_helpers/airlock/abandoned,
-/turf/open/floor/plating,
-/area/hallway/secondary/service)
 "wws" = (
 /obj/machinery/door/airlock/security{
 	name = "Prison Forestry"
@@ -55436,7 +55388,7 @@
 "wNp" = (
 /obj/item/assembly/mousetrap,
 /turf/open/floor/plating,
-/area/hallway/secondary/service)
+/area/maintenance/starboard/fore)
 "wOA" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -96053,12 +96005,12 @@ anf
 anf
 aEl
 anf
-cVb
-gJG
-cVb
+alP
+anf
+alP
 ubb
 wNp
-cVb
+alP
 aGQ
 aIk
 aIp
@@ -96310,12 +96262,12 @@ auC
 alP
 ubv
 anf
-cVb
-gJG
-wrp
+alP
+anf
+atB
 fnC
 kPd
-cVb
+alP
 arr
 jXZ
 aIp
@@ -96567,12 +96519,12 @@ anf
 alP
 awE
 anf
-cVb
-gJG
-cVb
-cVb
-cVb
-cVb
+alP
+anf
+alP
+alP
+alP
+alP
 anf
 aIj
 aJB
@@ -96824,11 +96776,11 @@ apC
 apC
 alP
 anf
-cVb
-gJG
-gJG
-gJG
-gJG
+alP
+anf
+anf
+anf
+anf
 dgr
 aFm
 aIl
@@ -99178,7 +99130,7 @@ buT
 byf
 bzt
 bAy
-bBS
+bzt
 bDb
 bEm
 bEm
@@ -99191,8 +99143,8 @@ bIh
 dBM
 bPz
 bDb
-bRU
-pvI
+hVo
+usX
 bDb
 pqR
 bEm
@@ -99448,8 +99400,8 @@ bIh
 bPy
 mPl
 bDb
-bRU
-bTb
+hVo
+tJc
 bDb
 yck
 bWl
