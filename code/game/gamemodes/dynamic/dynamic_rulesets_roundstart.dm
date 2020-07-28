@@ -761,10 +761,6 @@
 	for (var/i = 1 to num_traitors)
 		var/mob/M = pick_n_take(candidates)
 		assigned += M.mind
-		if(prob(20))
-			M.mind.assigned_role = "Cybersun Infiltrator"
-		else
-			M.mind.assigned_role = "Syndicate Infiltrator"
 		M.mind.special_role = "Syndicate Infiltrator"
 		M.mind.restricted_roles = restricted_roles
 		GLOB.pre_setup_antags += M.mind
