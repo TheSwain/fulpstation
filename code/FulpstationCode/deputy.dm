@@ -1,9 +1,7 @@
 /datum/job/deputy
 	title = "Deputy"
-	flag = DEPUTY
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
 	department_head = list("Head of Security")
-	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 4 //Kept in for posterity
 	spawn_positions = 4 //ditto
@@ -155,7 +153,7 @@ GLOBAL_LIST_INIT(available_deputy_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MED
 			ears = /obj/item/radio/headset/headset_sec/department/sci
 			head = /obj/item/clothing/head/beret/sec/science
 			head_p = /obj/item/clothing/head/helmet/space/plasmaman/science
-			dep_access = list(ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE)
+			dep_access = list(ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE)
 			destination = /area/security/checkpoint/science
 			spawn_point = get_fulp_spawn(destination)
 

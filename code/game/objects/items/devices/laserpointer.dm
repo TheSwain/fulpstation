@@ -4,6 +4,7 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "pointer"
 	inhand_icon_state = "pen"
+	worn_icon_state = "pen"
 	var/pointer_icon_state
 	flags_1 = CONDUCT_1
 	item_flags = NOBLUDGEON
@@ -14,7 +15,7 @@
 	var/energy = 10
 	var/max_energy = 10
 	var/effectchance = 30
-	var/recharging = 0
+	var/recharging = FALSE
 	var/recharge_locked = FALSE
 	var/obj/item/stock_parts/micro_laser/diode //used for upgrading!
 
@@ -102,7 +103,13 @@
 				severity = 0
 
 			//chance to actually hit the eyes depends on internal component
-			if(prob(effectchance * diode.rating) && C.flash_act(severity))
+			if(diode.rating == 5)
+				severity = 3
+				effectchance = 80
+				outmsg = "<span class='notice'>You critically blind [C] by shining [src] in [C.p_their()] eyes.</span>"
+				log_combat(user, C, "critically blinded with a tier 5 laser pointer",src)
+				C.adjustOrganLoss(ORGAN_SLOT_EYES,25)
+			else if(prob(effectchance * diode.rating) && C.flash_act(severity))
 				outmsg = "<span class='notice'>You blind [C] by shining [src] in [C.p_their()] eyes.</span>"
 				log_combat(user, C, "blinded with a laser pointer",src)
 			else
@@ -114,7 +121,12 @@
 		var/mob/living/silicon/S = target
 		log_combat(user, S, "shone in the sensors", src)
 		//chance to actually hit the eyes depends on internal component
-		if(prob(effectchance * diode.rating))
+		if(diode.rating == 5)
+			S.flash_act(10, affect_silicon = 1)
+			S.Paralyze(rand(150,200))
+			to_chat(S, "<span class='danger'>Your sensors were critically overloaded by a laser!</span>")
+			outmsg = "<span class='notice'>You critically overload [S] by shining [src] at [S.p_their()] sensors.</span>"
+		else if(prob(effectchance * diode.rating))
 			S.flash_act(affect_silicon = 1)
 			S.Paralyze(rand(100,200))
 			to_chat(S, "<span class='danger'>Your sensors were overloaded by a laser!</span>")
@@ -177,7 +189,7 @@
 	energy -= 1
 	if(energy <= max_energy)
 		if(!recharging)
-			recharging = 1
+			recharging = TRUE
 			START_PROCESSING(SSobj, src)
 		if(energy <= 0)
 			to_chat(user, "<span class='warning'>[src]'s battery is overused, it needs time to recharge!</span>")
@@ -187,10 +199,13 @@
 	icon_state = "pointer"
 
 /obj/item/laser_pointer/process()
+	if(!diode)
+		recharging = FALSE
+		return PROCESS_KILL
 	if(prob(20 + diode.rating*20 - recharge_locked*2)) //t1 is 20, 2 40
 		energy += 1
 		if(energy >= max_energy)
 			energy = max_energy
-			recharging = 0
+			recharging = FALSE
 			recharge_locked = FALSE
-			..()
+			return ..()
