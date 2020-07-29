@@ -1,0 +1,401 @@
+/mob/living/simple_animal/hostile/megafauna/chaos_marine
+	name = "chaos marine"
+	desc = "A servant of dark gods, chaos marine is always in state of eternal battle."
+	health = 1500
+	maxHealth = 1500
+	icon_state = "chaos_marine"
+	icon_living = "chaos_marine"
+	icon = 'icons/Fulpicons/megafauna.dmi'
+	faction = list("chaos")
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	light_color = "#FF0000"
+	movement_type = GROUND
+	speak_emote = list("roars")
+	speed = 7
+	light_range = 6
+	move_to_delay = 4
+	projectiletype = /obj/projectile/bullet/chaos_bomb
+	projectilesound = 'sound/weapons/gun/l6/shot.ogg'
+	ranged = TRUE
+	ranged_cooldown_time = 20
+	rapid_melee = 2
+	vision_range = 10
+	loot = list(/obj/item/nullrod/scythe/talking/chainsword/chaos, /obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker/chaos)
+	crusher_loot = list(/obj/item/nullrod/scythe/talking/chainsword/chaos, /obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker/chaos)
+	wander = FALSE
+	del_on_death = TRUE
+	blood_volume = BLOOD_VOLUME_NORMAL
+	gps_name = "Chaotic Signal"
+	deathmessage = "falls to the ground, decaying into glowing particles."
+	deathsound = "sound/magic/curse.ogg"
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	attack_action_types = list(/datum/action/innate/megafauna_attack/blood_dash,
+							   /datum/action/innate/megafauna_attack/runic_blast,
+							   /datum/action/innate/megafauna_attack/infernal_summon,
+							   /datum/action/innate/megafauna_attack/blast)
+	move_force = MOVE_FORCE_NORMAL
+	var/turf/starting
+	var/obj/item/nullrod/scythe/talking/chainsword/chaos/mob/weapon
+	var/charging = FALSE
+	var/dash_cooldown = 4 SECONDS
+	var/runic_blast_cooldown = 10 SECONDS
+	var/infernal_summon_cooldown = 30 SECONDS
+	var/dash_mod = 1
+	var/dash_num = 3
+
+/obj/item/nullrod/scythe/talking/chainsword/chaos
+	name = "chainsaw sword"
+	desc = "Blood for the blood god!"
+	throwforce = 25
+	block_chance = 35
+	armour_penetration = 50
+	wound_bonus = 20
+	bare_wound_bonus = 40
+	sharpness = SHARP_EDGED
+
+/obj/item/nullrod/scythe/talking/chainsword/chaos/mob
+	wound_bonus = 0
+	bare_wound_bonus = 5
+	block_chance = 0
+	armour_penetration = 25
+	force = 16
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/Initialize()
+	. = ..()
+	starting = get_turf(src)
+	weapon = new(src)
+
+/turf/closed/indestructible/cult
+	icon = 'icons/turf/walls/cult_wall.dmi'
+	icon_state = "cult"
+	canSmoothWith = null
+	smooth = SMOOTH_MORE
+
+/turf/open/indestructible/cult
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "cult"
+	initial_gas_mix = OPENTURF_LOW_PRESSURE
+
+/datum/action/innate/megafauna_attack/blood_dash
+	name = "Blood Dash"
+	icon_icon = 'icons/effects/effects.dmi'
+	button_icon_state = "rift"
+	chosen_message = "<span class='colossus'>You are now dashing through your enemies, exploding everyone caught in-between.</span>"
+	chosen_attack_num = 1
+
+/datum/action/innate/megafauna_attack/runic_blast
+	name = "Runic Blast"
+	icon_icon = 'icons/obj/rune.dmi'
+	button_icon_state = "4"
+	chosen_message = "<span class='colossus'>You are now setting up a big explosion, with a delay.</span>"
+	chosen_attack_num = 2
+
+/datum/action/innate/megafauna_attack/blast
+	name = "Blast"
+	icon_icon = 'icons/obj/guns/projectile.dmi'
+	button_icon_state = "arg"
+	chosen_message = "<span class='colossus'>You are now shooting at your enemy with explosive bullets.</span>"
+	chosen_attack_num = 3
+
+/datum/action/innate/megafauna_attack/infernal_summon
+	name = "Infernal Summon"
+	icon_icon = 'icons/mob/mob.dmi'
+	button_icon_state = "imp"
+	chosen_message = "<span class='colossus'>You will now summon lesser demons to assist you.</span>"
+	chosen_attack_num = 4
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/AttackingTarget()
+	if(charging)
+		return
+	face_atom(target)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(L.stat == DEAD)
+			visible_message("<span class='danger'>[src] butchers [L]!</span>",
+			"<span class='userdanger'>You butcher [L], restoring your health!</span>")
+			if(!is_station_level(z) || client) //NPC monsters won't heal while on station
+				adjustHealth(-(L.maxHealth * 0.5))
+			L.gib()
+			if(prob(50))
+				telegraph()
+				say(pick("Blood for the blood god!", "Skulls for the skull throne!", "Blood! Blood!!", "Die! Die! Die!", "You will be a fine offering!", "Chaos!"))
+			return TRUE
+	weapon.melee_attack_chain(src, target)
+	return TRUE
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/Move()
+	if(charging)
+		return FALSE
+	return ..()
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/proc/adjustCMspeed()
+	if(health <= maxHealth*0.3)
+		speed = 5
+		dash_mod = 0.5
+		dash_num = 5
+		rapid_melee = 5
+	else if(health <= maxHealth*0.5)
+		speed = 6
+		dash_mod = 0.7
+		dash_num = 4
+		rapid_melee = 4
+	else if(health <= maxHealth*0.8)
+		speed = initial(speed)
+		dash_mod = 0.85
+		dash_num = initial(dash_num)
+		rapid_melee = 3
+	else if(health > maxHealth*0.8)
+		speed = initial(speed)
+		dash_mod = initial(dash_mod)
+		dash_num = initial(dash_num)
+		rapid_melee = initial(rapid_melee)
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/OpenFire()
+	adjustCMspeed()
+
+	if(client)
+		switch(chosen_attack)
+			if(1)
+				blood_dash(target)
+			if(2)
+				runic_blast()
+			if(3)
+				blast()
+			if(4)
+				infernal_summon()
+		return
+
+	Goto(target, move_to_delay, minimum_distance)
+	if(get_dist(src, target) > 1 && dash_cooldown <= world.time && !charging)
+		blood_dash(target)
+	if(get_dist(src, target) <= 4 && runic_blast_cooldown <= world.time && !charging)
+		runic_blast()
+	if(infernal_summon_cooldown <= world.time && !charging)
+		infernal_summon()
+	if(get_dist(src, target) > 4 && ranged_cooldown <= world.time && !charging)
+		blast()
+
+/obj/projectile/bullet/chaos_bomb
+	name ="bolter bullet"
+	desc = "Oh god oh fu..."
+	icon_state = "bolter"
+	damage = 25
+
+/obj/projectile/bullet/chaos_bomb/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(target, -1, 0, 0, 1, 0, flame_range = 2)
+	return BULLET_ACT_HIT
+
+/obj/projectile/bullet/chaos_bomb/blood
+	name = "blood bolt"
+	icon_state = "mini_leaper"
+	damage = 10 //Explosion already fucks you up enough.
+	nondirectional_sprite = TRUE
+	impact_effect_type = /obj/effect/temp_visual/dir_setting/bloodsplatter
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/ex_act(severity, target)
+	return //Resistant to explosions
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/death(gibbed)
+	if(health > 0)
+		return
+	var/obj/effect/portal/permanent/one_way/exit = new /obj/effect/portal/permanent/one_way(starting)
+	exit.id = "chaos_marine_exit"
+	exit.add_atom_colour(COLOR_RED_LIGHT, ADMIN_COLOUR_PRIORITY)
+	exit.set_light(15, 1, LIGHT_COLOR_RED)
+	return ..()
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/proc/blood_dash(target)
+	if(charging || dash_cooldown > world.time)
+		return
+	dash_cooldown = world.time + (4 SECONDS * dash_mod)
+	charging = TRUE
+	var/dir_to_target = get_dir(get_turf(src), get_turf(target))
+	var/turf/T = get_step(get_turf(src), dir_to_target)
+	for(var/i in 1 to dash_num)
+		new /obj/effect/temp_visual/dragon_swoop/legionnaire(T)
+		T = get_step(T, dir_to_target)
+	addtimer(CALLBACK(src, .proc/blood_dash_2, dir_to_target, 0), (5 * dash_mod))
+	playsound(src,'sound/effects/meteorimpact.ogg', 200, 1)
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/proc/blood_dash_2(var/move_dir, var/times_ran)
+	if(times_ran >= dash_num)
+		charging = FALSE
+		return
+	var/turf/T = get_step(get_turf(src), move_dir)
+	if(ismineralturf(T))
+		var/turf/closed/mineral/M = T
+		M.gets_drilled()
+	if(T.density)
+		charging = FALSE
+		return
+	for(var/obj/structure/window/W in T.contents)
+		charging = FALSE
+		return
+	for(var/obj/machinery/door/D in T.contents)
+		if(D.density)
+			charging = FALSE
+			return
+	forceMove(T)
+	playsound(src,"sound/effects/footstep/heavy[pick(1,2)].ogg", 200, 1)
+	for(var/mob/living/L in T.contents - src)
+		if(!faction_check_mob(L))
+			visible_message("<span class='boldwarning'>[src] runs through [L]!</span>")
+			to_chat(L, "<span class='userdanger'>[src] pierces you with a chain-sword!</span>")
+			explosion(L, -1, 0, 2, 1, 0, flame_range = 0)
+			shake_camera(L, 4, 3)
+			playsound(L,"sound/effects/wounds/pierce[pick(1,2,3)].ogg", 200, 1)
+	addtimer(CALLBACK(src, .proc/blood_dash_2, move_dir, (times_ran + 1)), (1.5 * dash_mod))
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/proc/blast()
+	if(ranged_cooldown <= world.time && !Adjacent(target) && !charging)
+		ranged_cooldown = world.time + ranged_cooldown_time
+		visible_message("<span class='danger'>[src] fires the bolter gun!</span>")
+		face_atom(target)
+		new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
+		Shoot(target)
+		changeNext_move(CLICK_CD_RANGE)
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/proc/runic_blast()
+	if(runic_blast_cooldown > world.time || charging)
+		return
+	var/turf/T = get_turf(src)
+	charging = TRUE
+	telegraph()
+	var/newcolor = rgb(149, 10, 10)
+	add_atom_colour(newcolor, TEMPORARY_COLOUR_PRIORITY)
+	new /obj/effect/temp_visual/dragon_swoop/bubblegum(T)
+	SLEEP_CHECK_DEATH(10)
+	explosion(src, -1, 0, 3, 0, 0, flame_range = 5)
+	SLEEP_CHECK_DEATH(5)
+	for(var/i = 1 to 8)
+		shoot_projectile(T, (i*45))
+		SLEEP_CHECK_DEATH(2)
+	SLEEP_CHECK_DEATH(15)
+	remove_atom_colour(TEMPORARY_COLOUR_PRIORITY, newcolor)
+	runic_blast_cooldown = (world.time + 10 SECONDS)
+	charging = FALSE
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/proc/infernal_summon()
+	if(infernal_summon_cooldown > world.time || charging)
+		return
+	charging = TRUE
+	var/newcolor = rgb(149, 10, 10)
+	add_atom_colour(newcolor, TEMPORARY_COLOUR_PRIORITY)
+	var/turf/T = get_turf(src)
+	var/turf/X1 = get_step(T, pick(1,2))
+	var/turf/X2 = get_step(T, pick(4,8))
+	telegraph()
+	new /obj/effect/temp_visual/cult/sparks(X1)
+	new /obj/effect/temp_visual/cult/sparks(X2)
+	SLEEP_CHECK_DEATH(20 * dash_mod)
+	telegraph()
+	new /obj/effect/temp_visual/cult/sparks(X1)
+	new /obj/effect/temp_visual/cult/sparks(X2)
+	SLEEP_CHECK_DEATH(20 * dash_mod)
+	new /obj/effect/temp_visual/cult/blood/out(X1)
+	new /obj/effect/temp_visual/cult/blood/out(X2)
+	playsound(src,'sound/magic/exit_blood.ogg', 200, 1)
+	new /mob/living/simple_animal/hostile/chaos(X1)
+	new /mob/living/simple_animal/hostile/chaos(X2)
+	SLEEP_CHECK_DEATH(15)
+	remove_atom_colour(TEMPORARY_COLOUR_PRIORITY, newcolor)
+	infernal_summon_cooldown = (world.time + 30 SECONDS)
+	charging = FALSE
+
+/mob/living/simple_animal/hostile/chaos
+	name = "lesser demon"
+	real_name = "imp"
+	unique_name = TRUE
+	desc = "A large, menacing creature covered in armored black scales."
+	response_help_continuous = "thinks better of touching"
+	response_help_simple = "think better of touching"
+	response_disarm_continuous = "flails at"
+	response_disarm_simple = "flail at"
+	response_harm_continuous = "punches"
+	response_harm_simple = "punch"
+	icon = 'icons/mob/mob.dmi'
+	icon_state = "imp"
+	icon_living = "imp"
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	speed = 1
+	a_intent = INTENT_HARM
+	stop_automated_movement = 1
+	status_flags = CANPUSH
+	attack_sound = 'sound/magic/demon_attack1.ogg'
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	faction = list("chaos")
+	maxHealth = 75
+	health = 75
+	environment_smash = ENVIRONMENT_SMASH_NONE
+	mob_size = MOB_SIZE_HUGE
+	melee_damage_lower = 6
+	melee_damage_upper = 10
+	see_in_dark = 8
+	light_color = "#FF0000"
+	light_range = 2
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+	del_on_death = TRUE
+	deathmessage = "screams in agony as it sublimates into a sulfurous smoke."
+	deathsound = 'sound/magic/demon_dies.ogg'
+
+/mob/living/simple_animal/hostile/chaos/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/proc/shoot_projectile(turf/marker, set_angle)
+	if(!isnum(set_angle) && (!marker || marker == loc))
+		return
+	var/turf/startloc = get_turf(src)
+	var/obj/projectile/P = new /obj/projectile/bullet/chaos_bomb/blood(startloc)
+	P.preparePixelProjectile(marker, startloc)
+	P.firer = src
+	if(target)
+		P.original = target
+	P.fire(set_angle)
+
+/mob/living/simple_animal/hostile/megafauna/chaos_marine/proc/telegraph()
+	for(var/mob/M in range(10,src))
+		if(M.client)
+			flash_color(M.client, "#C80000", 1)
+			shake_camera(M, 2, 1)
+	playsound(src, 'sound/magic/clockwork/narsie_attack.ogg', 200, TRUE)
+
+/obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker/chaos
+	name = "berserker's hardsuit"
+	allowed = list(/obj/item/gun, /obj/item/nullrod, /obj/item/tank/internals)
+	armor = list("melee" = 75, "bullet" = 50, "laser" = 30, "energy" = 30, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | LAVA_PROOF
+	cell = /obj/item/stock_parts/cell/high/slime
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/berserker/chaos
+	icon_state = "hardsuit-chaos"
+	icon = 'icons/Fulpicons/fulpclothing_worn.dmi'
+	worn_icon = 'icons/Fulpicons/fulpclothing_worn.dmi'
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/berserker/chaos
+	name = "berserker's helmet"
+	armor = list("melee" = 75, "bullet" = 50, "laser" = 30, "energy" = 30, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | LAVA_PROOF
+	icon_state = "hardsuit0-chaos"
+	icon = 'icons/Fulpicons/fulpclothing_worn.dmi'
+	worn_icon = 'icons/Fulpicons/fulpclothing_worn.dmi'
+
+/obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker/chaos/process()
+	. = ..()
+	var/mob/living/carbon/C = loc
+	if(istype(C) && prob(5))
+		if(prob(15))
+			C.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 20)
+			to_chat(C, "<span class='danger'>[pick("Voices... Voices everywhere", "Your mind shatters.", "Voices echo inside your head.")].</span>")
+		SEND_SOUND(C, sound(pick('sound/hallucinations/over_here3.ogg', 'sound/hallucinations/behind_you2.ogg', 'sound/magic/exit_blood.ogg', 'sound/hallucinations/im_here1.ogg', 'sound/hallucinations/turn_around1.ogg', 'sound/hallucinations/turn_around2.ogg')))
+
+//RUIN DATUM
+/datum/map_template/ruin/space/chaos_marine
+	id = "chaosmarine"
+	suffix = "chaosmarine.dmm"
+	name = "Bloody Lair"
+	description = "A seemingly abandoned blood cult base in space, but why was it abandoned?"
+	always_place = TRUE
+	cost = 0
