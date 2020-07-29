@@ -235,7 +235,7 @@ Key procs
 /datum/language_holder/alien
 	understood_languages = list(/datum/language/xenocommon = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/xenocommon = list(LANGUAGE_ATOM))
-	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	blocked_languages = list()
 
 /datum/language_holder/construct
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
@@ -247,7 +247,7 @@ Key procs
 	understood_languages = list(/datum/language/drone = list(LANGUAGE_ATOM),
 								/datum/language/machine = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/drone = list(LANGUAGE_ATOM))
-	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	blocked_languages = list()
 
 /datum/language_holder/drone/syndicate
 	blocked_languages = list()
@@ -261,7 +261,7 @@ Key procs
 /datum/language_holder/lightbringer
 	understood_languages = list(/datum/language/slime = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/slime = list(LANGUAGE_ATOM))
-	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	blocked_languages = list()
 
 /datum/language_holder/lizard
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
@@ -272,7 +272,7 @@ Key procs
 /datum/language_holder/lizard/ash //FULPSTATION: Ashwalkers don't know intergalactic common anymore (PR #244)
 	understood_languages = list(/datum/language/draconic = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/draconic = list(LANGUAGE_ATOM))
-	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	blocked_languages = list()
 
 /datum/language_holder/monkey
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
@@ -293,12 +293,12 @@ Key procs
 /datum/language_holder/swarmer
 	understood_languages = list(/datum/language/swarmer = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/swarmer = list(LANGUAGE_ATOM))
-	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	blocked_languages = list()
 
 /datum/language_holder/venus
 	understood_languages = list(/datum/language/sylvan = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/sylvan = list(LANGUAGE_ATOM))
-	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	blocked_languages = list()
 
 /datum/language_holder/synthetic
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
