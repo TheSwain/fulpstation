@@ -30,13 +30,7 @@
 
 /obj/structure/resindoor/attack_alien(mob/living/carbon/alien/user)
 	if(user.a_intent == INTENT_HARM)
-/obj/structure/resindoor/deconstruct(disassembled = TRUE)
-	var/turf/T = get_turf(src)
-	if(disassembled)
-		new sheetType(T, sheetAmount)
-	else
-		new sheetType(T, max(sheetAmount - 2, 1))
-	qdel(src)
+        return attack_hand(user)
 
 //clicking on resin doors attacks them, or opens them without harm intent
 /obj/structure/resindoor/attack_alien(mob/living/carbon/alien/user)
