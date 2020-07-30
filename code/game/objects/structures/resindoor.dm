@@ -17,6 +17,7 @@
 
 	var/sheetType = /obj/item/stack/sheet/metal //what we're made of
 	var/sheetAmount = 0 //how much we drop when deconstructed
+	close_delay = 20
 
 /obj/structure/resindoor/Initialize()
 	. = ..()
@@ -34,6 +35,12 @@
 		TryToSwitchState(user)
 	else
 		return ..()
+
+/obj/structure/resindoor/Bumped(atom/movable/AM)
+	..()
+	if(!door_opened)
+		if(user.getorgan(/obj/item/organ/alien/plasmavessel)
+			return TryToSwitchState(AM)
 
 /obj/structure/resindoor/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
