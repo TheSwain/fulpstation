@@ -12,8 +12,8 @@
 	var/isSwitchingStates = FALSE //don't try to change stats if we're already opening
 
 	var/close_delay = -1 //-1 if does not auto close.
-	var/openSound = 'sound/effects/stonedoor_openclose.ogg'
-	var/closeSound = 'sound/effects/stonedoor_openclose.ogg'
+	var/openSound = 'sound/Fulpsounds/alien_resin_move1.ogg'
+	var/closeSound = 'sound/Fulpsounds/alien_resin_move1.ogg'
 
 	var/sheetType = /obj/item/stack/sheet/metal //what we're made of
 	var/sheetAmount = 0 //how much we drop when deconstructed
@@ -28,15 +28,12 @@
 	. = ..()
 	move_update_air(T)
 
-/obj/structure/resindoor/attack_alien(mob/living/carbon/alien/user)
-	if(user.a_intent == INTENT_HARM)
-    	return ..()
-
 //clicking on resin doors attacks them, or opens them without harm intent
 /obj/structure/resindoor/attack_alien(mob/living/carbon/alien/user)
 	if(user.a_intent != INTENT_HARM)
 		TryToSwitchState(user)
-		return TRUE
+	else
+		return ..()
 
 /obj/structure/resindoor/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
