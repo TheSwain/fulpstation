@@ -35,6 +35,14 @@
 			TryToSwitchState(AM)
 		return ..()
 
+/obj/structure/resindoor/attack_paw(mob/user)
+	return attack_hand(user)
+
+/obj/structure/resindoor/attack_hand(mob/user)
+	if(user.getorgan(/obj/item/organ/alien/plasmavessel))
+		TryToSwitchState(user)
+	return ..()
+
 //clicking on resin doors attacks them, or opens them without harm intent
 /obj/structure/resindoor/attack_alien(mob/living/carbon/alien/user)
 	if(user.a_intent != INTENT_HARM)
