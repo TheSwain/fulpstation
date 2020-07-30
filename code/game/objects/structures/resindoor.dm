@@ -30,9 +30,7 @@
 
 /obj/structure/resindoor/attack_alien(mob/living/carbon/alien/user)
 	if(user.a_intent == INTENT_HARM)
-		return attack_hand(user)
-	else
-		return ..()
+        deconstruct(TRUE)
 
 //clicking on resin doors attacks them, or opens them without harm intent
 /obj/structure/resindoor/attack_alien(mob/living/carbon/alien/user)
