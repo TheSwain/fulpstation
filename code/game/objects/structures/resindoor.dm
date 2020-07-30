@@ -1,4 +1,4 @@
-/obj/structure/resindoor/resin
+/obj/structure/resindoor
 	name = "resin door"
 	density = TRUE
 	anchored = TRUE
@@ -10,9 +10,13 @@
 
 	var/door_opened = FALSE //if it's open or not.
 	var/isSwitchingStates = FALSE //don't try to change stats if we're already opening
-	var/close_delay = 100 
+
+	var/close_delay = -1 //-1 if does not auto close.
 	var/openSound = 'sound/effects/stonedoor_openclose.ogg'
 	var/closeSound = 'sound/effects/stonedoor_openclose.ogg'
+
+	var/sheetType = /obj/item/stack/sheet/metal //what we're made of
+	var/sheetAmount = 0 //how much we drop when deconstructed
 
 /obj/structure/resindoor/Initialize()
 	. = ..()
@@ -24,14 +28,14 @@
 	. = ..()
 	move_update_air(T)
 
-/obj/structure/resindoor/resin/attack_alien(mob/living/carbon/alien/user)
+/obj/structure/resindoor/attack_alien(mob/living/carbon/alien/user)
 	if(user.a_intent == INTENT_HARM)
 		qdel(src)
 	else
 		return TryToSwitchState(user)
 
 //clicking on resin doors attacks them, or opens them without harm intent
-/obj/structure/resindoor/resin/attack_alien(mob/living/carbon/alien/user)
+/obj/structure/resindoor/attack_alien(mob/living/carbon/alien/user)
 	var/turf/cur_loc = user.loc
 	if(!istype(cur_loc))
 		return FALSE //Some basic logic here
