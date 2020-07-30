@@ -31,7 +31,6 @@
 /obj/machinery/door/resindoor/attack_alien(mob/living/carbon/alien/user)
 	if(user.a_intent == INTENT_HARM)
     	return ..()
-		qdel(src)
 
 //clicking on resin doors attacks them, or opens them without harm intent
 /obj/machinery/door/resindoor/attack_alien(mob/living/carbon/alien/user)
