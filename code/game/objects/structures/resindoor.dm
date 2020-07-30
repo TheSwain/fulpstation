@@ -36,12 +36,6 @@
 	else
 		return ..()
 
-/obj/structure/resindoor/Bumped(atom/movable/AM)
-	..()
-	if(!door_opened)
-		if(user.getorgan(/obj/item/organ/alien/plasmavessel)
-			return TryToSwitchState(AM)
-
 /obj/structure/resindoor/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
 	if(istype(mover, /obj/effect/beam))
