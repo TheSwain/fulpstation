@@ -29,7 +29,7 @@
 	move_update_air(T)
 
 /obj/structure/resindoor/attack_alien(mob/living/carbon/alien/user)
-	if(user.a_intent != INTENT_HARM)
+	if(user.a_intent == INTENT_HARM)
 		return attack_hand(user)
 	else
 		return ..()
