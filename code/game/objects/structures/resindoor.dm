@@ -30,15 +30,9 @@
 
 /obj/structure/resindoor/attack_alien(mob/living/carbon/alien/user)
 	if(user.a_intent == INTENT_HARM)
-		qdel(src)
-	else
-		return TryToSwitchState(user)
 
 //clicking on resin doors attacks them, or opens them without harm intent
 /obj/structure/resindoor/attack_alien(mob/living/carbon/alien/user)
-	var/turf/cur_loc = user.loc
-	if(!istype(cur_loc))
-		return FALSE //Some basic logic here
 	if(user.a_intent != INTENT_HARM)
 		TryToSwitchState(user)
 		return TRUE
