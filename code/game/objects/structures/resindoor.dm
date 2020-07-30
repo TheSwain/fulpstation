@@ -4,3 +4,4 @@
 	icon_state = "resin"
     sheetType = /obj/item/stack/sheet/mineral/plasma
     sheetAmount = 0
+    close_delay = 100
