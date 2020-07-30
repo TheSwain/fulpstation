@@ -1,4 +1,4 @@
-/obj/machinery/door/resin
+/obj/machinery/door/resindoor
 	name = "resin door"
 	density = TRUE
 	anchored = TRUE
@@ -18,32 +18,33 @@
 	var/sheetType = /obj/item/stack/sheet/metal //what we're made of
 	var/sheetAmount = 0 //how much we drop when deconstructed
 
-/obj/machinery/door/resin/Initialize()
+/obj/machinery/door/resindoor/Initialize()
 	. = ..()
 
 	air_update_turf(TRUE)
 
-/obj/machinery/door/resin/Move()
+/obj/machinery/door/resindoor/Move()
 	var/turf/T = loc
 	. = ..()
 	move_update_air(T)
 
-/obj/machinery/door/resin/attack_alien(mob/living/carbon/alien/user)
+/obj/machinery/door/resindoor/attack_alien(mob/living/carbon/alien/user)
 	if(user.a_intent == INTENT_HARM)
     	return ..()
+		qdel(src)
 
 //clicking on resin doors attacks them, or opens them without harm intent
-/obj/machinery/door/resin/attack_alien(mob/living/carbon/alien/user)
+/obj/machinery/door/resindoor/attack_alien(mob/living/carbon/alien/user)
 	if(user.a_intent != INTENT_HARM)
 		TryToSwitchState(user)
 		return TRUE
 
-/obj/machinery/door/resin/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/machinery/door/resindoor/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
 	if(istype(mover, /obj/effect/beam))
 		return !opacity
 
-/obj/machinery/door/resin/proc/TryToSwitchState(atom/user)
+/obj/machinery/door/resindoor/proc/TryToSwitchState(atom/user)
 	if(isSwitchingStates || !anchored)
 		return
 	if(isliving(user))
@@ -60,13 +61,13 @@
 	else if(ismecha(user))
 		SwitchState()
 
-/obj/machinery/door/resin/proc/SwitchState()
+/obj/machinery/door/resindoor/proc/SwitchState()
 	if(door_opened)
 		Close()
 	else
 		Open()
 
-/obj/machinery/door/resin/proc/Open()
+/obj/machinery/door/resindoor/proc/Open()
 	isSwitchingStates = TRUE
 	playsound(src, openSound, 100, TRUE)
 	set_opacity(FALSE)
@@ -82,7 +83,7 @@
 	if(close_delay != -1)
 		addtimer(CALLBACK(src, .proc/Close), close_delay)
 
-/obj/machinery/door/resin/proc/Close()
+/obj/machinery/door/resindoor/proc/Close()
 	if(isSwitchingStates || !door_opened)
 		return
 	var/turf/T = get_turf(src)
@@ -100,5 +101,5 @@
 	update_icon()
 	isSwitchingStates = FALSE
 
-/obj/machinery/door/resin/update_icon_state()
+/obj/machinery/door/resindoor/update_icon_state()
 	icon_state = "[initial(icon_state)][door_opened ? "open":""]"
