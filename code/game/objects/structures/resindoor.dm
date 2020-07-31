@@ -3,6 +3,7 @@
 	density = TRUE
 	anchored = TRUE
 	opacity = TRUE
+	CanAtmosPass = ATMOS_PASS_NO
 	icon = 'icons/Fulpicons/resin.dmi'
 	icon_state = "resin"
 	layer = CLOSED_DOOR_LAYER
@@ -106,6 +107,7 @@
 	sleep(10)
 	density = TRUE
 	set_opacity(TRUE)
+	CanAtmosPass = ATMOS_PASS_NO
 	door_opened = FALSE
 	layer = initial(layer)
 	air_update_turf(1)
