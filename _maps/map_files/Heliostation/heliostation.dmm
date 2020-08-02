@@ -66354,6 +66354,16 @@
 /area/science/test_area)
 "cko" = (
 /obj/machinery/light,
+/obj/structure/table,
+/obj/item/raw_anomaly_core/random{
+	pixel_y = 11
+	},
+/obj/item/raw_anomaly_core/random{
+	pixel_y = 11
+	},
+/obj/item/raw_anomaly_core/random{
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/dark,
 /area/science/mixing)
 "ckp" = (
