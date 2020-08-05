@@ -25987,7 +25987,9 @@
 	pixel_x = -30
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/maintenance/department/medical)
 "aPX" = (
@@ -26327,12 +26329,10 @@
 "aQI" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/plating,
 /area/maintenance/department/medical)
 "aQJ" = (
@@ -26982,6 +26982,11 @@
 /obj/item/tank/internals/plasmaman/belt/empty,
 /obj/item/tank/internals/plasmaman/belt/empty,
 /obj/item/tank/internals/plasmaman/belt/empty,
+/obj/machinery/airalarm{
+	acted_explosions = 4;
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/plasteel{
 	initial_gas_mix = "n2=104;TEMP=293.15"
 	},
@@ -27643,9 +27648,7 @@
 	name = "Medical blue corner"
 	},
 /obj/structure/disposalpipe/trunk,
-/obj/machinery/disposal/delivery_chute{
-	dir = 8
-	},
+/obj/machinery/disposal/bin,
 /turf/open/floor/plasteel{
 	initial_gas_mix = "n2=104;TEMP=293.15"
 	},
@@ -29021,9 +29024,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/structure/disposaloutlet{
-	dir = 8
-	},
+/obj/machinery/disposal/bin,
 /turf/open/floor/plasteel,
 /area/maintenance/fore/secondary{
 	name = "Plasmaman Medbay"
@@ -29609,7 +29610,6 @@
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plasteel,
 /area/maintenance/fore/secondary{
 	name = "Plasmaman Medbay"
@@ -29728,7 +29728,6 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plasteel{
 	initial_gas_mix = "n2=104;TEMP=293.15"
 	},
@@ -56248,6 +56247,7 @@
 	name = "Bar Storage Maintenance";
 	req_access_txt = "25"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/wood,
 /area/crew_quarters/bar)
 "bTw" = (
