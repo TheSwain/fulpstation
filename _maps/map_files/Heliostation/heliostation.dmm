@@ -85987,7 +85987,7 @@
 	dir = 8
 	},
 /obj/machinery/power/apc{
-	areastring = "/area/ai_monitored/turret_protected/aisat/service";
+	areastring = "/area/ai_monitored/turret_protected/aisat/atmos";
 	dir = 1;
 	name = "AI Satellite Service APC";
 	pixel_y = 23
