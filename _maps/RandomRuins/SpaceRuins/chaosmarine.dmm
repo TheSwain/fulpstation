@@ -21,7 +21,7 @@
 /obj/effect/decal/cleanable/blood,
 /obj/structure/destructible/cult/pylon{
 	corrupt_delay = 1e+031;
-	desc = "A floating crystal intended to increase the power of those who server Blood God.";
+	desc = "A floating crystal intended to increase the power of those who serve the Blood God.";
 	last_corrupt = 1e+031
 	},
 /turf/open/indestructible/cult,
@@ -74,7 +74,7 @@
 /area/ruin/space/has_grav/powered)
 "j" = (
 /obj/structure/destructible/cult/forge{
-	desc = "A forge used in crafting the unholy weapons used by the armies of Blood God."
+	desc = "A forge used in crafting the unholy weapons used by the armies of the Blood God."
 	},
 /turf/open/indestructible/cult,
 /area/ruin/space/has_grav/powered)
@@ -114,7 +114,7 @@
 /area/ruin/space/has_grav/powered)
 "q" = (
 /obj/machinery/door/airlock/cult/friendly{
-	name = "The lair"
+	name = "The Lair"
 	},
 /turf/open/indestructible/cult,
 /area/ruin/space/has_grav/powered)

@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/megafauna/chaos_marine
 	name = "chaos marine"
-	desc = "A servant of dark gods, chaos marine is always in state of eternal battle."
+	desc = "Forever a servant of the dark gods, a chaos marine is always in state of eternal battle."
 	health = 2000
 	maxHealth = 2000
 	icon_state = "chaos_marine"
@@ -316,7 +316,7 @@
 /mob/living/simple_animal/hostile/megafauna/chaos_marine/proc/blast()
 	if(ranged_cooldown <= world.time && !Adjacent(target) && !charging)
 		ranged_cooldown = world.time + ranged_cooldown_time
-		visible_message("<span class='danger'>[src] fires the bolter gun!</span>")
+		visible_message("<span class='danger'>[src] fires [p_their()] bolter gun!</span>")
 		face_atom(target)
 		new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
 		Shoot(target)
@@ -326,7 +326,7 @@
 	if(ranged_cooldown <= world.time && !Adjacent(target) && !charging)
 		ranged_cooldown = world.time + ranged_cooldown_time
 		charging = TRUE
-		visible_message("<span class='danger'>[src] rapidly fires the bolter gun!</span>")
+		visible_message("<span class='danger'>[src] rapidly fires [p_their()] bolter gun!</span>")
 		face_atom(target)
 		for(var/i = 1 to 5)
 			new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
@@ -489,7 +489,7 @@
 	icon_state = "daemon"
 	icon_living = "daemon"
 	speed = 4
-	desc = "A powerful creature that was brought here straight from the hellish realm."
+	desc = "A powerful creature that was brought here straight from a hellish realm."
 	melee_damage_lower = 10
 	melee_damage_upper = 14
 	light_range = 4
