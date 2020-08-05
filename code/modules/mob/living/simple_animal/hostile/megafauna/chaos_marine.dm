@@ -323,7 +323,7 @@
 	if(ranged_cooldown <= world.time && !Adjacent(target) && !charging)
 		ranged_cooldown = world.time + ranged_cooldown_time
 		charging = TRUE
-		visible_message("<span class='danger'>[src] rapidly fires the bolter gun!</span>")
+		visible_message("<span class='danger'>[src] rapidly fires [p_their()] bolter gun!</span>")
 		face_atom(target)
 		for(var/i = 1 to 5)
 			new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
