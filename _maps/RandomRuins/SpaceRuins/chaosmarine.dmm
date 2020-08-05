@@ -114,7 +114,7 @@
 /area/ruin/space/has_grav/powered)
 "q" = (
 /obj/machinery/door/airlock/cult/friendly{
-	name = "The lair"
+	name = "The Lair"
 	},
 /turf/open/indestructible/cult,
 /area/ruin/space/has_grav/powered)
