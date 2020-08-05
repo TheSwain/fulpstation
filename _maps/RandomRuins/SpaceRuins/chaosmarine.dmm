@@ -21,7 +21,7 @@
 /obj/effect/decal/cleanable/blood,
 /obj/structure/destructible/cult/pylon{
 	corrupt_delay = 1e+031;
-	desc = "A floating crystal intended to increase the power of those who server Blood God.";
+	desc = "A floating crystal intended to increase the power of those who serve the Blood God.";
 	last_corrupt = 1e+031
 	},
 /turf/open/indestructible/cult,
