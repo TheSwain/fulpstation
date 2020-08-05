@@ -74,7 +74,7 @@
 /area/ruin/space/has_grav/powered)
 "j" = (
 /obj/structure/destructible/cult/forge{
-	desc = "A forge used in crafting the unholy weapons used by the armies of Blood God."
+	desc = "A forge used in crafting the unholy weapons used by the armies of the Blood God."
 	},
 /turf/open/indestructible/cult,
 /area/ruin/space/has_grav/powered)
