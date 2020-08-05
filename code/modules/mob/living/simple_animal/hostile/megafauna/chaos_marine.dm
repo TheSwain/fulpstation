@@ -313,7 +313,7 @@
 /mob/living/simple_animal/hostile/megafauna/chaos_marine/proc/blast()
 	if(ranged_cooldown <= world.time && !Adjacent(target) && !charging)
 		ranged_cooldown = world.time + ranged_cooldown_time
-		visible_message("<span class='danger'>[src] fires the bolter gun!</span>")
+		visible_message("<span class='danger'>[src] fires [p_their()] bolter gun!</span>")
 		face_atom(target)
 		new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
 		Shoot(target)
