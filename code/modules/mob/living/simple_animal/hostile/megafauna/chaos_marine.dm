@@ -58,10 +58,9 @@
 	sharpness = SHARP_EDGED
 
 /obj/item/nullrod/scythe/talking/chainsword/chaos/mob
-	wound_bonus = 0
-	bare_wound_bonus = 5
+	wound_bonus = -50
+	bare_wound_bonus = -50
 	block_chance = 0
-	armour_penetration = 25
 	force = 16
 
 /mob/living/simple_animal/hostile/megafauna/chaos_marine/Initialize()
@@ -78,6 +77,9 @@
 /turf/open/indestructible/cult
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "cult"
+	CanAtmosPass = ATMOS_PASS_NO
+	blocks_air = TRUE
+	planetary_atmos = TRUE
 	initial_gas_mix = OPENTURF_LOW_PRESSURE
 
 /datum/action/innate/megafauna_attack/blood_dash
@@ -274,8 +276,9 @@
 		if(!faction_check_mob(L))
 			visible_message("<span class='boldwarning'>[src] runs through [L]!</span>")
 			to_chat(L, "<span class='userdanger'>[src] pierces you with a chain-sword!</span>")
-			explosion(L, -1, 0, 2, 0, 0, flame_range = 0)
+			explosion(L, -1, 0, 0, 0, 0, flame_range = 2)
 			shake_camera(L, 4, 3)
+			L.adjustBruteLoss(30)
 			playsound(L,"sound/effects/wounds/pierce[pick(1,2,3)].ogg", 200, 1)
 	addtimer(CALLBACK(src, .proc/blood_dash_2, move_dir, (times_ran + 1)), (1.5 * dash_mod))
 
@@ -408,7 +411,7 @@
 	new /obj/effect/temp_visual/cult/sparks(get_turf(src))
 
 /mob/living/simple_animal/hostile/megafauna/chaos_marine/proc/cmdepower()
-	damage_coeff = initial(damage_coeff)
+	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 0.5, CLONE = 0.5, STAMINA = 0, OXY = 0.5)
 	remove_atom_colour(TEMPORARY_COLOUR_PRIORITY, newcolor)
 	new /obj/effect/temp_visual/cult/sparks(get_turf(src))
 
