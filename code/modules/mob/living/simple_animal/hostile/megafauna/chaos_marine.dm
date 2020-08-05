@@ -58,8 +58,8 @@
 	sharpness = SHARP_EDGED
 
 /obj/item/nullrod/scythe/talking/chainsword/chaos/mob
-	wound_bonus = -50
-	bare_wound_bonus = -50
+	wound_bonus = -100
+	bare_wound_bonus = -100
 	block_chance = 0
 	force = 16
 
@@ -77,8 +77,6 @@
 /turf/open/indestructible/cult
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "cult"
-	CanAtmosPass = ATMOS_PASS_NO
-	blocks_air = TRUE
 	planetary_atmos = TRUE
 	initial_gas_mix = OPENTURF_LOW_PRESSURE
 
@@ -86,7 +84,7 @@
 	name = "Blood Dash"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "rift"
-	chosen_message = "<span class='colossus'>You are now dashing through your enemies, exploding everyone caught in-between.</span>"
+	chosen_message = "<span class='colossus'>You are now dashing through your enemies, piercing everyone caught in your path.</span>"
 	chosen_attack_num = 1
 
 /datum/action/innate/megafauna_attack/runic_blast
@@ -130,7 +128,7 @@
 	face_atom(target)
 	if(isliving(target))
 		var/mob/living/L = target
-		if(L.stat == DEAD)
+		if(L.health <= HEALTH_THRESHOLD_DEAD || L.stat == DEAD) //To prevent memento mori limbo
 			visible_message("<span class='danger'>[src] butchers [L]!</span>",
 			"<span class='userdanger'>You butcher [L], restoring your health!</span>")
 			if(!is_station_level(z) || client) //NPC monsters won't heal while on station
@@ -138,7 +136,7 @@
 			L.gib()
 			if(prob(50))
 				telegraph()
-				say(pick("Blood for the blood god!", "Skulls for the skull throne!", "Blood! Blood!!", "Die! Die! Die!", "You will be a fine offering!", "Chaos!"))
+				say(pick("Blood for the blood god!!", "Skulls for the skull throne!!", "Blood, blood!!", "Die! Die! Die!!", "You will be a fine offering!!", "Chaos!!"))
 			return TRUE
 	weapon.melee_attack_chain(src, target)
 	return TRUE
@@ -199,7 +197,7 @@
 		blood_dash(target)
 	if(get_dist(src, target) > round(5*dash_mod) && teleport_cooldown <= world.time && !charging)
 		teleport_b(target)
-	if(get_dist(src, target) > round(4) && ranged_cooldown <= world.time && !charging)
+	if(get_dist(src, target) > 4 && ranged_cooldown <= world.time && !charging)
 		if(health <= maxHealth*0.5)
 			rapid_fire()
 		else
@@ -441,13 +439,13 @@
 	var/mob/living/carbon/C = loc
 	if(istype(C) && prob(4))
 		if(prob(25))
-			C.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 20)
+			C.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 100)
 			to_chat(C, "<span class='danger'>[pick("Voices... Voices everywhere", "Your mind shatters.", "Voices echo inside your head.")].</span>")
 		SEND_SOUND(C, sound(pick('sound/hallucinations/over_here3.ogg', 'sound/hallucinations/behind_you2.ogg', 'sound/magic/exit_blood.ogg', 'sound/hallucinations/im_here1.ogg', 'sound/hallucinations/turn_around1.ogg', 'sound/hallucinations/turn_around2.ogg')))
 
 //DEMONS
 /mob/living/simple_animal/hostile/chaos
-	name = "lesser demon"
+	name = "lesser daemon"
 	real_name = "daemon"
 	unique_name = TRUE
 	desc = "A large, menacing creature covered in armored black scales."
@@ -461,7 +459,7 @@
 	icon_state = "imp"
 	icon_living = "imp"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	speed = 3
+	speed = 4
 	a_intent = INTENT_HARM
 	stop_automated_movement = 1
 	status_flags = CANPUSH
@@ -485,10 +483,9 @@
 	deathsound = 'sound/magic/demon_dies.ogg'
 
 /mob/living/simple_animal/hostile/chaos/greater
-	name = "greater demon"
+	name = "daemon"
 	icon_state = "daemon"
 	icon_living = "daemon"
-	speed = 4
 	desc = "A powerful creature that was brought here straight from a hellish realm."
 	melee_damage_lower = 10
 	melee_damage_upper = 14
@@ -498,10 +495,6 @@
 
 /mob/living/simple_animal/hostile/chaos/ex_act(severity, target)
 	return //Resistant to explosions
-
-/mob/living/simple_animal/hostile/chaos/Initialize(mapload)
-	. = ..()
-	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 
 //RUIN DATUM
 /datum/map_template/ruin/space/chaos_marine
