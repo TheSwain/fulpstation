@@ -4,7 +4,7 @@
 	anchored = TRUE
 	opacity = TRUE
 	CanAtmosPass = ATMOS_PASS_NO
-	icon = 'icons/Fulpicons/resin.dmi'
+	icon = 'icons/Fulpicons/xenodoors.dmi'
 	icon_state = "resin"
 	layer = CLOSED_DOOR_LAYER
 	max_integrity = 200
