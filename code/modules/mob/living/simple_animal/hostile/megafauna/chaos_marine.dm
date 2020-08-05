@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/megafauna/chaos_marine
 	name = "chaos marine"
-	desc = "A servant of dark gods, chaos marine is always in state of eternal battle."
+	desc = "Forever a servant of the dark gods, a chaos marine is always in state of eternal battle."
 	health = 2000
 	maxHealth = 2000
 	icon_state = "chaos_marine"
