@@ -486,7 +486,7 @@
 	icon_state = "daemon"
 	icon_living = "daemon"
 	speed = 4
-	desc = "A powerful creature that was brought here straight from the hellish realm."
+	desc = "A powerful creature that was brought here straight from a hellish realm."
 	melee_damage_lower = 10
 	melee_damage_upper = 14
 	light_range = 4
