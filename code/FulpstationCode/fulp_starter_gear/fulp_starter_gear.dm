@@ -23,6 +23,7 @@
 	icon_state = "sec_radio"
 	desc = "A sophisticated full range station bounced radio. Preconfigured with a radio frequency for emergency security use in the event of telecom disruption. You can use a Security ID to reset its frequency to the emergency security channel."
 	freerange = TRUE //Can access the full spectrum
+	listening = TRUE //starts with its speaker on, so you can actually hear your fellow officers remind you about the existence of these when comms go down
 	subspace_switchable = TRUE
 	req_one_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
 	custom_materials = list(/datum/material/iron = 500, /datum/material/glass = 250)
@@ -177,3 +178,4 @@
 	build_path = /obj/item/disk/forensic
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	
