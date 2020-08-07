@@ -289,6 +289,7 @@
 	icon = "goose"
 	desc = "Drink till you puke and/or break the laws of reality!"
 
+//fulp edit
 /datum/barsign/bassproshots
 	name = "Bass Pro Shots"
 	icon = "bassproshots"
@@ -297,7 +298,7 @@
 /datum/barsign/fransmeatshop
 	name = "Franks Meat Shop"
 	icon = "franksmeatshop"
-	desc = "Home to the valid salad"
+	desc = "Home to the valid salad" 
 
 /datum/barsign/thefulpmoment
 	name = "The Fulp Moment"
@@ -308,6 +309,7 @@
 	name = "The Blue Space Diner"
 	icon = "thebluespacediner"
 	desc = "Come to eat but stay to yeet"
+//end fulp edit
 
 /datum/barsign/hiddensigns
 	hidden = TRUE
