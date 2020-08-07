@@ -292,7 +292,7 @@
 /datum/barsign/bassproshots
 	name = "Bass Pro Shots"
 	icon = "bassproshots"
-	desc = ""
+	desc = "When the Nuke Ops all come down all they really wanna see is the bar by the kitchen down in Space Station 13."
 
 /datum/barsign/fransmeatshop
 	name = "Franks Meat Shop"
@@ -307,7 +307,7 @@
 /datum/barsign/thebluespacediner
 	name = "The Blue Space Diner"
 	icon = "thebluespacediner"
-	desc = ""
+	desc = "Come to eat but stay to yeet"
 
 /datum/barsign/hiddensigns
 	hidden = TRUE
