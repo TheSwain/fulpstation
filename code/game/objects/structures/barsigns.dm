@@ -289,6 +289,26 @@
 	icon = "goose"
 	desc = "Drink till you puke and/or break the laws of reality!"
 
+/datum/barsign/bassproshots
+	name = "Bass Pro Shots"
+	icon = "bassproshots"
+	desc = ""
+
+/datum/barsign/fransmeatshop
+	name = "Franks Meat Shop"
+	icon = "franksmeatshop"
+	desc = "Home to the valid salad"
+
+/datum/barsign/thefulpmoment
+	name = "The Fulp Moment"
+	icon = "thefulpmoment"
+	desc = "The Problems of the Future, Today!"
+
+/datum/barsign/thebluespacediner
+	name = "The Blue Space Diner"
+	icon = "thebluespacediner"
+	desc = ""
+
 /datum/barsign/hiddensigns
 	hidden = TRUE
 
