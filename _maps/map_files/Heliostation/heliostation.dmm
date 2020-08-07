@@ -24225,6 +24225,13 @@
 	name = "Medical blue corner"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/button/door{
+	id = "cmoprivacy";
+	name = "CMO Shutter Control";
+	pixel_x = 25;
+	pixel_y = 37;
+	req_access_txt = "40"
+	},
 /turf/open/floor/plasteel/white,
 /area/crew_quarters/heads/cmo)
 "aNh" = (
@@ -25392,6 +25399,10 @@
 /area/crew_quarters/fitness/recreation)
 "aPt" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "cmoprivacy";
+	name = "CMO Office"
+	},
 /turf/open/floor/plating,
 /area/crew_quarters/heads/cmo)
 "aPu" = (
