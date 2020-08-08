@@ -262,6 +262,12 @@
 	credit_cost = 2000
 	description = "The gold standard in emergency exfiltration, this tried and true design is equipped with everything the crew needs for a safe flight home."
 
+/datum/map_template/shuttle/emergency/helio
+	suffix = "helio"
+	name = "Helio Station Emergency Shuttle"
+	credit_cost = 4000
+	description = "The good ol' maze that is this shuttle. enjoy trying to leave early. comes with plenty of power and seats. security section is also a decient size!"
+
 /datum/map_template/shuttle/emergency/donut
 	suffix = "donut"
 	name = "Donutstation Emergency Shuttle"

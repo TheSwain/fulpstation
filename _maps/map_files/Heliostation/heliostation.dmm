@@ -54707,11 +54707,11 @@
 "bQo" = (
 /obj/docking_port/stationary{
 	dir = 4;
-	dwidth = 12;
+	dwidth = 13;
 	height = 18;
 	id = "emergency_home";
-	name = "BoxStation emergency evac bay";
-	width = 32
+	name = "HelioStation emergency evac bay";
+	width = 29
 	},
 /turf/open/space/basic,
 /area/space)
