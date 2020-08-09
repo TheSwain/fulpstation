@@ -45633,12 +45633,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/science/xenobiology)
-"hAw" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer3{
-	dir = 8
-	},
-/turf/open/space/basic,
-/area/space)
 "hAy" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
 	dir = 4
@@ -66683,7 +66677,7 @@ aaa
 aaa
 aaa
 aaa
-hAw
+aaa
 aaa
 aaa
 aaa
