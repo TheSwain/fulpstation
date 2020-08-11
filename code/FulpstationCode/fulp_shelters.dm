@@ -13,7 +13,7 @@
 /obj/item/survivalcapsule/fulp/traitor/nuke
 	name = "tactical bluespace capsule"
 	desc = "A highly tactical object, reverse-engineered from Nanotrasen capsules. Fire power might not be included."
-	template_id = "shelter_nuke"
+	template_id = "shelter_nuke_ops"
 
 /obj/structure/sign/mining/syndicate
 	name = "\improper Syndicate mining corps sign"
@@ -57,7 +57,7 @@
 
 /datum/map_template/shelter/nuke
 	name = "Tactical Shelter"
-	shelter_id = "shelter_nuke"
+	shelter_id = "shelter_nuke_ops"
 	description = "Highly tactical object reverse engineered from ones of Nanotrasen. \
 		While it is small, it contains everything real operative needs - \
 		FIRE POWER AND COVER! \
