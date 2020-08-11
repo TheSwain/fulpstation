@@ -94,7 +94,8 @@
 /datum/uplink_item/role_restricted/shelter_traitor
 	name = "Tacticool Bluespace Shelter"
 	desc = "A fairly simple concept of bluespace capsule redesigned by Syndicate. \
-			Use it wherever you want to assert DOMINANCE and show that YOU are the BOSS!"
+			Use it wherever you want to assert DOMINANCE and show that YOU are the BOSS! \
+			Contains an advanced camera console disguised as standard Nanotrasen GPS computer."
 	item = /obj/item/survivalcapsule/fulp/traitor
 	cost = 2
 	restricted_roles = list("Shaft Miner", "Quartermaster")
@@ -102,6 +103,7 @@
 /datum/uplink_item/device_tools/shelter_nuke
 	name = "Tactical Bluespace Shelter"
 	desc = "Highly tactical object reverse engineered by syndicate scientists. \
+		Contains an advanced camera console disguised as standard Nanotrasen GPS computer. \
 		It is also capable of destroying walls in a small area. \
 		While it is small, it contains everything real operative needs - \
 		FIRE-POWER AND FIRE-COVER! \
