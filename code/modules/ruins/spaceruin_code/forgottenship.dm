@@ -57,13 +57,13 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 
 /obj/item/paper/fluff/ruins/forgottenship/password/Initialize(mapload)
 	. = ..()
-	info = "Welcome to most advanced cruiser owned by Cyber Sun Industries!<br>You might notice, that this cruiser is equipped with 12 prototype laser turrets making any hostile boarding attempts futile.<br>Other facilities built on the ship are: Simple atmospheric system, Camera system with built-in X-ray visors and Safety module, enabling emergency engines in case of... you know, emergency.<br>Emergency system will bring you to nearest syndicate pod containing everything needed for human life.<br><br><b>In case of emergency, you must remember the pod-door activation code - [GLOB.fscpassword]</b><br><br>Cyber Sun Industries (C) 2484."
+	info = "Welcome to most advanced cruiser owned by Cyber Sun Industries!<br>You might notice, that this cruiser is equipped with prototype laser turrets making any hostile boarding attempts futile.<br>Other facilities built on the ship are: Simple atmospheric system, Camera system with built-in X-ray visors and Safety module, enabling emergency engines in case of... you know, emergency.<br>Emergency system will bring you to nearest syndicate pod containing everything needed for human life.<br><br><b>In case of emergency, you must remember the pod-door activation code - [GLOB.fscpassword]</b><br><br>Cyber Sun Industries (C) 2484."
 	icon_state = "paper_words"
 	inhand_icon_state = "paper"
 
 /obj/item/paper/fluff/ruins/forgottenship/powerissues
 	name = "Power issues"
-	info = "Welcome to battle cruiser SCSBC-12!<br>Our most advanced systems allow you to fly in space and never worry about power issues!<br>However, emergencies occur, and in case of power loss, <b>you must</b> enable emergency generator using uranium as fuel and enable turrets in bridge afterwards.<br><br><b>REMEMBER! CYBERSUN INDUSTRIES ARE NOT RESPONSIBLE FOR YOUR DEATH OR SHIP LOSS WHEN TURRETS ARE DISABLED!</b><br><br>Cyber Sun Industries (C) 2484."
+	info = "Welcome to the SCSBC-12, the pride of Cybersun!<br>Our most advanced systems allow you to fly in space and never worry about power issues!<br>However, emergencies occur, and in case of power loss, <b>you must</b> enable emergency generator using uranium as fuel and enable turrets in bridge afterwards.<br><br><b>REMEMBER! CYBERSUN INDUSTRIES ARE NOT RESPONSIBLE FOR YOUR DEATH OR SHIP LOSS WHEN TURRETS ARE DISABLED!</b><br><br>Cyber Sun Industries (C) 2484."
 
 /obj/item/paper/fluff/ruins/forgottenship/missionobj
 	name = "Mission objectives"
@@ -218,11 +218,9 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 //Armory Contraband special loot
 
 /obj/effect/spawner/lootdrop/armory_contraband/cybersun
-	loot = list(/obj/item/ammo_box/c9mm = 30,
-				/obj/item/gun/ballistic/automatic/surplus = 25,
-				/obj/item/gun/ballistic/automatic/pistol = 20,
-				/obj/item/gun/ballistic/revolver = 15,
-				/obj/item/gun/medbeam = 7,
+	loot = list(/obj/item/gun/ballistic/automatic/pistol = 20,
+				/obj/item/gun/ballistic/revolver = 12,
+				/obj/item/gun/medbeam = 6,
 				/obj/item/seeds/gatfruit = 2
 
 				)
@@ -239,7 +237,6 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 		/obj/item/healthanalyzer/advanced,
 		/obj/item/borg/apparatus/beaker,
 		/obj/item/reagent_containers/dropper,
-		/obj/item/reagent_containers/syringe/piercing,
 		/obj/item/reagent_containers/syringe/bluespace,
 		/obj/item/surgical_drapes,
 		/obj/item/scalpel/advanced,
@@ -278,7 +275,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 
 /obj/item/borg/upgrade/syndifaction/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	R.faction = ROLE_SYNDICATE //Experimental. It removes ALL faction, except for Syndicate.
+	R.faction = list(ROLE_SYNDICATE) //Experimental. It removes ALL faction, except for Syndicate.
 
 //Disk for autolathe
 
@@ -324,7 +321,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	icon_gib = "syndicate_gib"
 	ranged = TRUE
 	rapid = 3
-	rapid_fire_delay = 1
+	rapid_fire_delay = 2
 	rapid_melee = 1
 	retreat_distance = 2
 	minimum_distance = 4

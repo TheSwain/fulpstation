@@ -46,7 +46,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 8
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/open/space/basic,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "ag" = (
 /obj/effect/mob_spawn/human/syndicatespace/captain,
@@ -234,16 +234,16 @@
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "aC" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer1,
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "aD" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer1,
 /obj/machinery/portable_atmospherics/scrubber{
-	anchored = 1
+	anchored = 0
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
@@ -354,6 +354,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "aO" = (
@@ -372,12 +373,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "aR" = (
-/obj/machinery/power/terminal{
-	dir = 1
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
+	icon_state = "manifold-1";
+	dir = 8
 	},
-/obj/structure/cable,
-/obj/item/paper/fluff/ruins/forgottenship/powerissues,
-/turf/open/floor/mineral/plastitanium/red,
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	icon_state = "manifold-2";
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "aS" = (
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
@@ -825,6 +829,13 @@
 "bK" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/red/line,
+/obj/machinery/button/door{
+	id = "fswindow6";
+	name = "window shutters";
+	pixel_x = -26;
+	pixel_y = -26;
+	req_one_access_txt = "150"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "bL" = (
@@ -1210,7 +1221,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "cv" = (
-/obj/machinery/atmospherics/components/unary/vent_pump,
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "cw" = (
@@ -1218,11 +1229,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicate_forgotten_cargopod)
 "cx" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer1{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium/red,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "cy" = (
 /obj/machinery/light/small,
@@ -1238,7 +1247,6 @@
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/syndicate_forgotten_vault)
 "cA" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer1,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	icon_state = "tile_corner";
@@ -1246,10 +1254,10 @@
 	},
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "cB" = (
-/obj/machinery/atmospherics/components/unary/vent_pump,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	icon_state = "tile_corner";
@@ -1257,20 +1265,22 @@
 	},
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "cC" = (
-/obj/machinery/atmospherics/components/unary/vent_pump{
-	dir = 4
-	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "cD" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 4
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "cE" = (
 /obj/structure/cable,
@@ -1401,9 +1411,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "cR" = (
-/obj/machinery/atmospherics/components/unary/vent_pump,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/door/airlock/grunge{
+	name = "Syndicate Ship Airlock";
+	req_one_access_txt = "150"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "cS" = (
 /obj/structure/cable,
@@ -2029,10 +2047,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "dR" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer1{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
+	icon_state = "scrub_map_on-1";
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "dS" = (
@@ -2151,18 +2170,10 @@
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "ec" = (
-/obj/structure/table,
-/obj/machinery/button/door{
-	id = "fslockdown";
-	name = "Window shutters";
-	req_one_access_txt = "150"
+/obj/structure/closet/secure_closet/freezer/fridge{
+	req_access = list(150)
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	icon_state = "tile_corner";
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plastic,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "ed" = (
 /obj/machinery/computer/crew/syndie{
@@ -2266,6 +2277,11 @@
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "el" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "fswindow6";
+	name = "window shutters";
+	state_open = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
 "em" = (
@@ -2388,40 +2404,377 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/syndicate_forgotten_ship)
+"ey" = (
+/obj/structure/closet/secure_closet/freezer/meat{
+	req_access = list(150)
+	},
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"ez" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eA" = (
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eB" = (
+/obj/machinery/button/door{
+	id = "fswindow2";
+	name = "window shutters";
+	pixel_x = -6;
+	pixel_y = -26;
+	req_one_access_txt = "150"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eC" = (
+/obj/structure/table,
+/obj/item/storage/bag/tray,
+/obj/item/kitchen/rollingpin,
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eD" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eE" = (
+/obj/machinery/deepfryer,
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eF" = (
+/obj/machinery/processor,
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eG" = (
+/obj/machinery/button/door{
+	id = "fswindow1";
+	name = "window shutters";
+	pixel_x = -6;
+	pixel_y = 26;
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eH" = (
+/obj/structure/table,
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eI" = (
+/obj/structure/table,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
+	icon_state = "scrub_map_on-1";
+	dir = 4
+	},
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eJ" = (
+/obj/structure/table,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 6
+	},
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eK" = (
+/obj/structure/table,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eL" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "fswindow1";
+	name = "window shutters";
+	state_open = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eM" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "fswindow2";
+	name = "window shutters";
+	state_open = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eN" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "fswindow3";
+	name = "window shutters";
+	state_open = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eO" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "fswindow4";
+	name = "window shutters";
+	state_open = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eP" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "fswindow5";
+	name = "window shutters";
+	state_open = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eQ" = (
+/obj/effect/turf_decal/tile/red{
+	icon_state = "tile_corner";
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	icon_state = "tile_corner";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = "fslockdown";
+	name = "window shutters";
+	pixel_x = 6;
+	pixel_y = 26;
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eR" = (
+/obj/item/electronics/airlock{
+	accesses = list(150);
+	desc = "An airlock circuitry with preset syndicate access level. For use on airlock or windoors.";
+	name = "syndicate airlock electronics";
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/electronics/airlock{
+	accesses = list(150);
+	desc = "An airlock circuitry with preset syndicate access level. For use on airlock or windoors.";
+	name = "syndicate airlock electronics";
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/electronics/airlock{
+	accesses = list(150);
+	desc = "An airlock circuitry with preset syndicate access level. For use on airlock or windoors.";
+	name = "syndicate airlock electronics"
+	},
+/obj/item/electronics/airlock{
+	accesses = list(150);
+	desc = "An airlock circuitry with preset syndicate access level. For use on airlock or windoors.";
+	name = "syndicate airlock electronics";
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/item/electronics/airlock{
+	accesses = list(150);
+	desc = "An airlock circuitry with preset syndicate access level. For use on airlock or windoors.";
+	name = "syndicate airlock electronics";
+	pixel_x = -6;
+	pixel_y = -6
+	},
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eS" = (
+/obj/machinery/button/door{
+	id = "fswindow3";
+	name = "window shutters";
+	pixel_x = -26;
+	pixel_y = -26;
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eT" = (
+/obj/effect/turf_decal/tile/blue{
+	icon_state = "tile_corner";
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	icon_state = "tile_corner";
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "fswindow4";
+	name = "window shutters";
+	pixel_x = -26;
+	pixel_y = 26;
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eU" = (
+/obj/machinery/button/door{
+	id = "fswindow5";
+	name = "window shutters";
+	pixel_x = -26;
+	pixel_y = 26;
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eV" = (
+/obj/machinery/door/window/southright{
+	name = "kitchen";
+	req_access = 150
+	},
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eW" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/item/paper/fluff/ruins/forgottenship/powerissues,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eX" = (
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eY" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"eZ" = (
+/obj/structure/chair/stool/bar,
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"fa" = (
+/obj/structure/chair/stool/bar,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"fb" = (
+/obj/structure/barricade/wooden/crude,
+/obj/machinery/door/airlock/grunge{
+	name = "Warehouse";
+	req_one_access_txt = "150"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"fc" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"fd" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"fe" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"ff" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"fg" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Canteen";
+	req_one_access_txt = "150"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"fh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
+	icon_state = "scrub_map_on-1";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"fi" = (
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"fj" = (
+/obj/effect/turf_decal/bot_red,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
+"fk" = (
+/mob/living/simple_animal/hostile/nanotrasen/ranged/assault,
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/syndicate_forgotten_ship)
 
 (1,1,1) = {"
 aa
 aa
+ap
+ap
+as
+aa
+aa
+ap
+ap
+as
+aa
+aa
+ap
+ap
+as
 aa
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+dS
+dS
+dS
 aa
 aa
 aa
@@ -2439,37 +2792,29 @@ aa
 (2,1,1) = {"
 aa
 aa
+ap
+ap
+ap
+aa
+aa
+ap
+ap
+ap
+aa
+aa
+ap
+ap
+ap
 aa
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+dS
+bT
+bT
+dS
 aa
 aa
 aa
@@ -2485,39 +2830,31 @@ aa
 "}
 (3,1,1) = {"
 aa
+af
+aL
+aL
+aL
+ac
+af
+aL
+aL
+aL
+af
+ac
+aL
+aL
+aL
+af
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+dS
+bq
+bq
+ba
+dS
 aa
 aa
 aa
@@ -2532,38 +2869,30 @@ aa
 "}
 (4,1,1) = {"
 aa
+bZ
+bZ
+bZ
+bZ
+bZ
+bZ
+bZ
+bZ
+bZ
+bZ
+bZ
+bZ
+bZ
+bZ
+bZ
 aa
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-dS
-dS
-dS
+bq
+bq
+bq
 aa
 aa
 aa
@@ -2578,299 +2907,11 @@ aa
 aa
 "}
 (5,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-dS
-bT
-bT
-dS
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(6,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-dS
-bq
-bq
-ba
-dS
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(7,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ap
-ap
-as
-aa
-aa
-ap
-ap
-as
-aa
-aa
-ap
-ap
-as
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-bq
-bq
-bq
-aa
-aa
-aa
-aa
-aa
-dS
-dS
-dS
-ba
-aa
-aa
-"}
-(8,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ap
-ap
-ap
-aa
-aa
-ap
-ap
-ap
-aa
-aa
-ap
-ap
-ap
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-dS
-ba
-bq
-bq
-bq
-dS
-aa
-"}
-(9,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-af
-aL
-aL
-aL
-af
-af
-aL
-aL
-aL
-af
-af
-aL
-aL
-aL
-af
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ba
-ba
-bq
-bq
-dS
-aa
-"}
-(10,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-dS
-bq
-ba
-ba
-aa
-"}
-(11,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
 ac
 aL
 aw
 aA
-aK
+fj
 bx
 ew
 aA
@@ -2879,7 +2920,7 @@ by
 dV
 en
 aK
-aA
+fj
 ev
 aL
 ac
@@ -2901,18 +2942,10 @@ aa
 aa
 aa
 aa
-ba
-dS
 aa
 aa
 "}
-(12,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(6,1,1) = {"
 bZ
 at
 ax
@@ -2945,6 +2978,238 @@ aa
 aa
 aa
 aa
+dS
+dS
+dS
+ba
+aa
+"}
+(7,1,1) = {"
+bZ
+bZ
+bZ
+bZ
+bZ
+aL
+aL
+aL
+dn
+aL
+aL
+aL
+bZ
+bZ
+bZ
+bZ
+bZ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dS
+aa
+aa
+aa
+dS
+ba
+bq
+bq
+bq
+dS
+"}
+(8,1,1) = {"
+aL
+ec
+eA
+eA
+eH
+fk
+eA
+aL
+bI
+aL
+ez
+ez
+ez
+ez
+ez
+eR
+aL
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dS
+dS
+aa
+aa
+aa
+aa
+ba
+ba
+bq
+bq
+dS
+"}
+(9,1,1) = {"
+aL
+aL
+eC
+eA
+eH
+eZ
+eA
+aL
+bI
+aL
+ez
+ez
+ez
+ez
+ez
+aL
+aL
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dS
+dS
+dS
+bq
+bT
+aa
+aa
+aa
+aa
+dS
+bq
+ba
+ba
+"}
+(10,1,1) = {"
+aa
+eL
+eD
+eA
+eI
+eZ
+eA
+aL
+bI
+aL
+ez
+ez
+fh
+ez
+ez
+eM
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dS
+bq
+bq
+bT
+aa
+aa
+aa
+aa
+aa
+aa
+ba
+dS
+aa
+"}
+(11,1,1) = {"
+aa
+eL
+eE
+eA
+eJ
+fa
+fe
+fg
+aR
+fb
+fc
+fc
+fd
+ez
+ez
+eM
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dS
+bq
+bT
+bT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(12,1,1) = {"
+aa
+eL
+eF
+eA
+eK
+eZ
+eA
+aL
+cD
+aL
+ez
+ez
+ff
+ez
+ez
+eM
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+bq
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -2954,29 +3219,23 @@ aa
 aa
 "}
 (13,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+ac
 aL
+eG
+eA
+eH
+eA
+eA
 aL
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-dn
-bZ
-bZ
-bZ
-dn
-bZ
-bZ
-bZ
+cD
 aL
+ez
+ez
+ez
+ez
+eB
+aL
+ac
 aa
 aa
 aa
@@ -2985,11 +3244,9 @@ aa
 aa
 aa
 aa
-aY
-aY
-aY
-aY
-aY
+aa
+aa
+aa
 aa
 aa
 aa
@@ -3001,12 +3258,84 @@ aa
 aa
 "}
 (14,1,1) = {"
+aL
+ey
+eA
+eA
+eV
+eA
+eA
+aL
+cD
+aL
+ez
+ez
+ez
+ez
+ez
+eR
+aL
 aa
 aa
 aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(15,1,1) = {"
+aL
+aL
+bZ
+bZ
+bZ
+aL
+aL
+aL
+cR
+aL
+aL
+aL
+dn
+bZ
+bZ
+bZ
+aL
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aY
+aY
+aY
+aY
+aY
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(16,1,1) = {"
 aL
 aL
 co
@@ -3015,7 +3344,7 @@ ag
 bw
 bZ
 av
-aR
+eW
 az
 bZ
 bD
@@ -3044,16 +3373,8 @@ aa
 aa
 aa
 aa
-aa
-aa
 "}
-(15,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(17,1,1) = {"
 bZ
 ah
 dy
@@ -3062,15 +3383,15 @@ ao
 aO
 bZ
 aN
-cC
+eX
 cy
 bZ
 bE
 cc
 bI
-bI
+eS
 dI
-el
+eN
 aa
 aa
 aa
@@ -3086,21 +3407,13 @@ bq
 ba
 aY
 aY
-aa
-aa
 aa
 aa
 aa
 aa
 aa
 "}
-(16,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(18,1,1) = {"
 bZ
 ak
 dz
@@ -3109,7 +3422,7 @@ ao
 ao
 ex
 aH
-cD
+eY
 cU
 aQ
 bY
@@ -3117,7 +3430,7 @@ bI
 bI
 cP
 dJ
-el
+eN
 aa
 aa
 aa
@@ -3138,16 +3451,8 @@ aa
 aa
 aa
 aa
-aa
-aa
 "}
-(17,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(19,1,1) = {"
 bZ
 ay
 dz
@@ -3155,8 +3460,8 @@ bZ
 ao
 ao
 ex
-aS
-cx
+fi
+cC
 aS
 aQ
 bY
@@ -3164,7 +3469,7 @@ bI
 bI
 cP
 dK
-el
+eN
 aa
 aa
 aa
@@ -3180,21 +3485,13 @@ aZ
 aZ
 ba
 aY
-aa
-aa
 aa
 aa
 aa
 aa
 aa
 "}
-(18,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(20,1,1) = {"
 aL
 bz
 dA
@@ -3211,7 +3508,7 @@ cc
 bI
 dF
 dL
-el
+eN
 aa
 aa
 aa
@@ -3232,16 +3529,8 @@ aa
 aa
 aa
 aa
-aa
-aa
 "}
-(19,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(21,1,1) = {"
 ac
 aL
 dB
@@ -3279,16 +3568,8 @@ aa
 aa
 aa
 aa
-aa
-aa
 "}
-(20,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(22,1,1) = {"
 aa
 aL
 bZ
@@ -3326,20 +3607,12 @@ aY
 aa
 aa
 aa
-aa
-aa
 "}
-(21,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(23,1,1) = {"
 aa
 aL
 ad
-aI
+eT
 aI
 dM
 bZ
@@ -3373,18 +3646,10 @@ aY
 aY
 aa
 aa
-aa
-aa
 "}
-(22,1,1) = {"
+(24,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-el
+eO
 aj
 ar
 ar
@@ -3420,18 +3685,10 @@ ba
 aY
 aa
 aa
-aa
-aa
 "}
-(23,1,1) = {"
+(25,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-el
+eO
 am
 cj
 cm
@@ -3467,16 +3724,8 @@ aY
 aY
 aa
 aa
-aa
-aa
 "}
-(24,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(26,1,1) = {"
 ac
 aL
 bZ
@@ -3514,17 +3763,9 @@ aY
 aY
 aa
 aa
-aa
-aa
 "}
-(25,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-el
+(27,1,1) = {"
+eP
 bO
 bS
 bZ
@@ -3561,16 +3802,8 @@ ba
 aY
 aa
 aa
-aa
-aa
 "}
-(26,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(28,1,1) = {"
 bZ
 al
 al
@@ -3608,18 +3841,10 @@ aY
 aY
 aa
 aa
-aa
-aa
 "}
-(27,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(29,1,1) = {"
 ae
-al
+eU
 al
 aU
 bv
@@ -3655,16 +3880,8 @@ aY
 aa
 aa
 aa
-aa
-aa
 "}
-(28,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(30,1,1) = {"
 bZ
 ai
 al
@@ -3702,17 +3919,9 @@ aa
 aa
 aa
 aa
-aa
-aa
 "}
-(29,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-el
+(31,1,1) = {"
+eP
 cr
 al
 bZ
@@ -3749,16 +3958,8 @@ aa
 aa
 aa
 aa
-aa
-aa
 "}
-(30,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(32,1,1) = {"
 ac
 aL
 cn
@@ -3796,16 +3997,8 @@ aa
 aa
 aa
 aa
-aa
-aa
 "}
-(31,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(33,1,1) = {"
 aa
 bZ
 aL
@@ -3843,16 +4036,8 @@ aa
 aa
 aa
 aa
-aa
-aa
 "}
-(32,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(34,1,1) = {"
 aa
 aa
 aa
@@ -3890,16 +4075,8 @@ aa
 aa
 aa
 aa
-aa
-aa
 "}
-(33,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(35,1,1) = {"
 aL
 bZ
 aL
@@ -3937,16 +4114,8 @@ aa
 aa
 aa
 aa
-aa
-aa
 "}
-(34,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(36,1,1) = {"
 bZ
 aG
 bt
@@ -3954,7 +4123,7 @@ aL
 bG
 at
 at
-cR
+cx
 dQ
 at
 at
@@ -3983,17 +4152,9 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
+dS
 "}
-(35,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(37,1,1) = {"
 aL
 br
 cp
@@ -4025,22 +4186,14 @@ aa
 aa
 aa
 aa
+dS
+dS
+dS
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+dS
+ba
 "}
-(36,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(38,1,1) = {"
 ac
 aL
 cJ
@@ -4071,28 +4224,20 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
 dS
-aa
-aa
-aa
-aa
+ba
+bq
+bq
+bq
+ba
+dS
 "}
-(37,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(39,1,1) = {"
 aa
 bZ
 aL
 aL
-bG
+eQ
 bQ
 bQ
 at
@@ -4108,33 +4253,25 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 dS
 dS
-dS
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 dS
 ba
-aa
-aa
-aa
+ba
+bq
+bq
+bq
+dS
 aa
 "}
-(38,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
+(40,1,1) = {"
 aa
 aa
 bZ
@@ -4143,7 +4280,7 @@ bW
 ce
 cO
 dm
-ec
+dm
 dm
 ed
 ef
@@ -4154,93 +4291,10 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-dS
-ba
-bq
-bq
-bq
-ba
-dS
-aa
-aa
-aa
-aa
-"}
-(39,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ac
-au
-au
-au
-au
-au
-au
-au
-au
-au
-ac
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 dS
 ba
 ba
-bq
-bq
-bq
 dS
-aa
-aa
-aa
-aa
-aa
-"}
-(40,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 aa
 aa
 aa
@@ -4251,20 +4305,7 @@ aa
 aa
 dS
 dS
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 dS
-dS
-dS
-aa
-aa
-aa
-aa
 aa
 aa
 aa
@@ -4273,35 +4314,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ac
+au
+au
+au
+au
+au
+au
+au
+au
+au
+ac
 aa
 aa
 aa
 aa
 aa
 dS
-ba
+bq
 ba
 dS
-aa
-aa
-aa
+dS
 aa
 aa
 aa
@@ -4336,20 +4369,12 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-dS
+bq
+bq
 bq
 ba
+ba
 dS
-dS
-aa
-aa
-aa
 aa
 aa
 aa
@@ -4384,159 +4409,10 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-bq
-bq
-bq
-ba
-ba
-dS
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(44,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 dS
 bq
 ba
 dS
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(45,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(46,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 aa
 aa
 aa
