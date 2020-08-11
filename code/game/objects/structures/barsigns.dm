@@ -309,6 +309,16 @@
 	name = "The Blue Space Diner"
 	icon = "thebluespacediner"
 	desc = "Come to eat but stay to yeet"
+
+/datum/barsign/thebluespacediner
+	name = "The Gold Room"
+	icon = "thegoldroom"
+	desc = "The finest rum in the galaxy."
+
+/datum/barsign/thebluespacediner
+	name = "The Eldritch Horror"
+	icon = "theeldritchhorror"
+	desc = "This bar is praised for reasons far beyond your mortal understanding, but hey, the drinks are insane."
 //end fulp edit
 
 /datum/barsign/hiddensigns
