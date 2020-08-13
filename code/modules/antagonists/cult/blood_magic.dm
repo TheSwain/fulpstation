@@ -461,8 +461,8 @@
 					C.stuttering += 15
 					C.cultslurring += 15
 					C.Jitter(15)
-		uses--
-	..()
+			uses--
+		..()
 
 //Teleportation
 /obj/item/melee/blood_magic/teleport
