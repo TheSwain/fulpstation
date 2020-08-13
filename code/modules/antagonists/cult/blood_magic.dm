@@ -440,7 +440,6 @@
 				target.visible_message("<span class='warning'>[L] starts to glow in a halo of light!</span>", \
 									   "<span class='userdanger'>A feeling of warmth washes over you, rays of holy light surround your body and protect you from the flash of light!</span>")
 
-			else
 			if(HAS_TRAIT(target, TRAIT_MINDSHIELD))
 				var/mob/living/carbon/C = L
 				to_chat(user, "<span class='cultitalic'>Their mind was stronger than expected, but you still managed to do some damage!</span>")
