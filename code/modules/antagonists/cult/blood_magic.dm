@@ -137,7 +137,7 @@
 
 
 //Cult Blood Spells
-/datum/action/innate/cult/blood_spell/stun
+/datum/action/innate/cult/blood_spell/stun/fulp
 	name = "Stun"
 	desc = "Empowers your hand to stun and mute a victim on contact."
 	button_icon_state = "hand"
