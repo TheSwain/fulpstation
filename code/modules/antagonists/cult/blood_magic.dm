@@ -405,7 +405,7 @@
 		source.UpdateButtonIcon()
 
 //Stun
-/obj/item/melee/blood_magic/stun/
+/obj/item/melee/blood_magic/stun
 	name = "Stunning Aura"
 	desc = "Will stun and mute a weak-minded victim on contact."
 	color = RUNE_COLOR_RED
