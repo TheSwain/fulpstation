@@ -51,12 +51,12 @@
 		else
 			if(HAS_TRAIT(target, TRAIT_MINDSHIELD))
 				to_chat(user, "<span class='cultitalic'>Their mind was too strong, but it leaves a damaging effect nonetheless!</span>")
-				C.stuttering += 10
-				C.dizziness += 25
-				C.Jitter(8)
-				C.drop_all_held_items()
-				C.bleed(30)
-				C.apply_damage(60, STAMINA, BODY_ZONE_CHEST)
+					C.stuttering += 10
+					C.dizziness += 25
+					C.Jitter(8)
+					C.drop_all_held_items()
+					C.bleed(30)
+					C.apply_damage(60, STAMINA, BODY_ZONE_CHEST)
 			else
 				to_chat(user, "<span class='cultitalic'>In a brilliant flash of red, [L] falls to the ground!</span>")
 				L.Paralyze(160)
