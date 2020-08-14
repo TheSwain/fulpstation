@@ -432,6 +432,8 @@
 	name = "zealot's blindfold"
 	icon_state = "blindfold"
 	inhand_icon_state = "blindfold"
+	hud_type = DATA_HUD_SECURITY_ADVANCED
+    	hud_trait = TRAIT_SECURITY_HUD
 	flash_protect = FLASH_PROTECTION_FLASH
 
 /obj/item/clothing/glasses/hud/health/night/cultblind/equipped(mob/living/user, slot)
