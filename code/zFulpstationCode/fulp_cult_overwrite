@@ -14,7 +14,7 @@
 		color = RUNE_COLOR_RED
 		invocation = "Fuu ma'jin!"
 
-	/obj/item/melee/blood_magic/stun/fulp/afterattack(atom/target, mob/living/carbon/user, proximity)
+	/obj/item/melee/blood_magic/stun/afterattack(atom/target, mob/living/carbon/user, proximity)
 		if(!isliving(target) || !proximity)
 			return
 		var/mob/living/L = target
