@@ -7,13 +7,6 @@
 	Enjoy!
 */
 
-/datum/action/innate/cult/blood_spell/stun/fulp
-    name = "Stun"
-    desc = "Empowers your hand to stun and mute a victim on contact."
-    button_icon_state = "hand"
-    magic_path = "/obj/item/melee/blood_magic/stun/fulp"
-    health_cost = 10
-
 /obj/item/melee/blood_magic/stun/fulp
 	name = "Stunning Aura"
 	desc = "Will stun and mute a weak-minded victim on contact."
