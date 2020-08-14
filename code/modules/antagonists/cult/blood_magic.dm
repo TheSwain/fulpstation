@@ -438,15 +438,15 @@
 			else
 				target.visible_message("<span class='warning'>[L] starts to glow in a halo of light!</span>", \
 									   "<span class='userdanger'>A feeling of warmth washes over you, rays of holy light surround your body and protect you from the flash of light!</span>")
-
+		else
 			if(HAS_TRAIT(target, TRAIT_MINDSHIELD))
 				var/mob/living/carbon/C = L
-				to_chat(user, "<span class='cultitalic'>Their mind was stronger than expected, but you still managed to do some damage!</span>")
+				to_chat(user, "<span class='cultitalic'>Their mind was too strong, but it still left a damaging effect!</span>")
 				C.stuttering += 8
 				C.dizziness += 30
 				C.Jitter(8)
 				C.drop_all_held_items()
-				C.bleed(40)
+				C.bleed(30)
 				C.apply_damage(60, STAMINA, BODY_ZONE_CHEST)
 			else
 				to_chat(user, "<span class='cultitalic'>In a brilliant flash of red, [L] falls to the ground!</span>")
