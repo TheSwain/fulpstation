@@ -7,7 +7,7 @@
 	Enjoy!
 */
 
-/datum/action/innate/cult/blood_spell/stun
+/datum/action/innate/cult/blood_spell/stun/fulp
 	/obj/item/melee/blood_magic/stun/fulp
 		name = "Stunning Aura"
 		desc = "Will stun and mute a weak-minded victim on contact."
