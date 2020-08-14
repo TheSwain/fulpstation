@@ -405,7 +405,7 @@
 		source.UpdateButtonIcon()
 
 //Stun
-/obj/item/melee/blood_magic/stun
+/obj/item/melee/blood_magic/stun/
 	name = "Stunning Aura"
 	desc = "Will stun and mute a weak-minded victim on contact."
 	color = RUNE_COLOR_RED
@@ -447,11 +447,16 @@
 				var/mob/living/silicon/S = L
 				S.emp_act(EMP_HEAVY)
 			else if(iscarbon(target))
+<<<<<<< Updated upstream
 				var/mob/living/carbon/C = L
 				C.silent += 6
 				C.stuttering += 15
 				C.cultslurring += 15
 				C.Jitter(1.5 SECONDS)
+=======
+				C.silent += 6
+				C.stuttering += 15
+>>>>>>> Stashed changes
 		uses--
 	..()
 
