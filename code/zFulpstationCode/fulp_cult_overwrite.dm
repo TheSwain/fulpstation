@@ -49,19 +49,26 @@
 									   "<span class='userdanger'>A feeling of warmth washes over you, rays of holy light surround your body and protect you from the flash of light!</span>")
 
 		else
-			to_chat(user, "<span class='cultitalic'>In a brilliant flash of red, [L] falls to the ground!</span>")
-			L.Paralyze(16 SECONDS)
-			L.flash_act(1,TRUE)
-			if(issilicon(target))
-				var/mob/living/silicon/S = L
-				S.emp_act(EMP_HEAVY)
-			else if(iscarbon(target))
-				var/mob/living/carbon/C = L
-				C.silent += 6
-				C.stuttering += 15
-				C.cultslurring += 15
-				C.Jitter(1.5 SECONDS)
-				C.silent += 6
-				C.stuttering += 15
+			if(HAS_TRAIT(target, TRAIT_MINDSHIELD))
+				to_chat(user, "<span class='cultitalic'>Their mind was too strong, but it leaves a damaging effect nonetheless!</span>")
+				C.stuttering += 10
+				C.dizziness += 25
+				C.Jitter(8)
+				C.drop_all_held_items()
+				C.bleed(30)
+				C.apply_damage(60, STAMINA, BODY_ZONE_CHEST)
+			else
+				to_chat(user, "<span class='cultitalic'>In a brilliant flash of red, [L] falls to the ground!</span>")
+				L.Paralyze(160)
+				L.flash_act(1,1)
+				if(issilicon(target))
+					var/mob/living/silicon/S = L
+					S.emp_act(EMP_HEAVY)
+				else if(iscarbon(target))
+					var/mob/living/carbon/C = L
+					C.silent += 6
+					C.stuttering += 15
+					C.cultslurring += 15
+					C.Jitter(15)
 		uses--
 	..()
