@@ -76,8 +76,8 @@
 
 //This is a new item, the Influencer's blindfold. It's the Zealot's blindfold but with Security huds rather than Medical.
 
-/obj/item/clothing/glasses/hud/security/night/cultblind/fulp
-    desc = "may Nar'Sie guide you through the darkness and show you those strong of mind."
+/obj/item/clothing/glasses/hud/security/night/cultblind
+    desc = "May Nar'Sie guide you through the darkness and show you those strong of mind."
     name = "Influencer's blindfold"
     icon_state = "blindfold"
     inhand_icon_state = "blindfold"
@@ -111,7 +111,7 @@
     if(cooldowntime > world.time)
         return
     var/list/items = list(
-        "Influencer's Blindfold" = image(icon = 'icons/obj/clothing/glasses.dmi', icon_state = "securityhudnight")
+        "Influencer's Blindfold" = image(icon = 'icons/obj/clothing/glasses.dmi', icon_state = "blindfold")
         )
     var/choice = show_radial_menu(user, src, items, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
     var/list/pickedtype = list()
@@ -124,4 +124,4 @@
             pickedtype += /obj/item/cult_shift
             pickedtype += /obj/item/flashlight/flare/culttorch
         if("Influencer's Blindfold")
-            pickedtype += /obj/item/clothing/glasses/hud/security/night/cultblind/fulp
+            pickedtype += /obj/item/clothing/glasses/hud/security/night/cultblind
