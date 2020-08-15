@@ -29371,6 +29371,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
+/obj/structure/closet/emcloset,
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "bHA" = (
@@ -30244,7 +30245,6 @@
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "bKl" = (
-/obj/structure/closet/emcloset,
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
@@ -30252,32 +30252,25 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/quartermaster/miningdock)
-"bKm" = (
-/obj/structure/sign/warning/vacuum/external,
-/turf/closed/wall,
-/area/quartermaster/miningdock)
-"bKn" = (
 /obj/structure/rack,
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -2;
-	pixel_y = -1
-	},
 /obj/item/pickaxe{
 	pixel_x = 5
 	},
 /obj/item/shovel{
 	pixel_x = -5
 	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -2;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel,
+/area/quartermaster/miningdock)
+"bKm" = (
+/obj/structure/sign/warning/vacuum/external,
+/turf/closed/wall,
 /area/quartermaster/miningdock)
 "bKo" = (
 /obj/machinery/light,
-/turf/open/floor/plasteel,
-/area/quartermaster/miningdock)
-"bKp" = (
-/obj/structure/closet/crate,
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "bKq" = (
@@ -41329,6 +41322,10 @@
 /obj/structure/lattice,
 /turf/open/space,
 /area/space/nearstation)
+"cFt" = (
+/obj/structure/window/reinforced,
+/turf/open/floor/engine,
+/area/maintenance/starboard/aft)
 "cFu" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -44579,6 +44576,13 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer3,
 /turf/open/floor/plasteel/dark,
 /area/engine/gravity_generator)
+"fMy" = (
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/maintenance/starboard/aft)
 "fMU" = (
 /obj/structure/sign/warning/electricshock{
 	pixel_y = -32
@@ -45292,6 +45296,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison)
+"gMP" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/maintenance/starboard/aft)
 "gNs" = (
 /obj/structure/toilet/greyscale{
 	dir = 8
@@ -45759,6 +45769,14 @@
 /mob/living/simple_animal/mouse/brown/tom,
 /turf/open/floor/plating,
 /area/security/prison/safe)
+"hxe" = (
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4;
+	layer = 2.9
+	},
+/turf/open/floor/engine,
+/area/maintenance/starboard/aft)
 "hzh" = (
 /obj/effect/turf_decal/trimline/blue/end{
 	dir = 1;
@@ -45943,6 +45961,13 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/science/xenobiology)
+"hGV" = (
+/obj/machinery/door/window/brigdoor/eastleft{
+	dir = 1;
+	name = "Grenade testing"
+	},
+/turf/open/floor/engine,
+/area/maintenance/starboard/aft)
 "hHq" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/research/glass{
@@ -46877,6 +46902,16 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
+"iYQ" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	layer = 2.9
+	},
+/turf/open/floor/engine,
+/area/maintenance/starboard/aft)
 "iZd" = (
 /obj/structure/sign/warning/securearea{
 	pixel_x = 32
@@ -49574,6 +49609,13 @@
 /obj/item/clothing/mask/breath,
 /turf/open/floor/plating,
 /area/security/prison/safe)
+"mXJ" = (
+/obj/structure/window/reinforced{
+	dir = 4;
+	layer = 2.9
+	},
+/turf/open/floor/engine,
+/area/maintenance/starboard/aft)
 "mYY" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -52935,6 +52977,12 @@
 /obj/effect/turf_decal/tile/yellow,
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
+"srW" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/maintenance/starboard/aft)
 "stT" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
@@ -55258,6 +55306,16 @@
 /obj/item/clothing/under/rank/prisoner/skirt,
 /turf/open/floor/plasteel/cafeteria,
 /area/security/prison)
+"vUj" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4;
+	layer = 2.9
+	},
+/turf/open/floor/engine,
+/area/maintenance/starboard/aft)
 "vUE" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
 	dir = 8
@@ -55914,6 +55972,9 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
+"xcU" = (
+/turf/open/floor/engine,
+/area/maintenance/starboard/aft)
 "xdy" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
@@ -78663,7 +78724,7 @@ agv
 byE
 byE
 dUO
-byE
+bGn
 bGi
 aaf
 aaf
@@ -78920,7 +78981,7 @@ byE
 byE
 bEQ
 bGM
-bKn
+bGn
 bGi
 aoV
 aoV
@@ -79177,7 +79238,7 @@ bBG
 bDo
 xPy
 fnG
-bKp
+bGn
 bGi
 aaf
 aaf
@@ -96932,7 +96993,7 @@ bHd
 cOe
 cOe
 cOe
-cNW
+cOe
 cOe
 cOe
 cOe
@@ -97189,10 +97250,10 @@ bHd
 cOe
 cNW
 cOe
-cNW
-cNW
-cOe
-cNW
+iYQ
+srW
+srW
+fMy
 cOe
 cOe
 cOe
@@ -97446,10 +97507,10 @@ bHd
 cOe
 cNW
 cOe
-cOe
-cOe
-cOe
-cNW
+hGV
+xcU
+xcU
+cFt
 cOe
 cOe
 cOe
@@ -97703,12 +97764,12 @@ cdN
 cOe
 cNW
 cOe
+gMP
+xcU
+xcU
+cFt
 cOe
-cOe
-cOe
-cNW
-cOe
-cdV
+ccV
 cNW
 cqu
 cNW
@@ -97960,10 +98021,10 @@ bAw
 cOe
 cOe
 cOe
-cOe
-cmo
-cOe
-cNW
+vUj
+mXJ
+mXJ
+hxe
 cOe
 ccV
 cNW
