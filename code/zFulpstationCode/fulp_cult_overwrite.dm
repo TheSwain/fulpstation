@@ -78,7 +78,7 @@
 
 /obj/item/clothing/glasses/hud/security/night/cultblind
     desc = "May Nar'Sie guide you through the darkness and show you those strong of mind."
-    name = "Influencer's blindfold"
+    name = "influencer's blindfold"
     icon_state = "blindfold"
     inhand_icon_state = "blindfold"
     flash_protect = FLASH_PROTECTION_FLASH
