@@ -122,4 +122,4 @@
             pickedtype += /obj/item/cult_shift
             pickedtype += /obj/item/flashlight/flare/culttorch
         if("Influencer's Blindfold")
-            pickedtype += /obj/item/clothing/glasses/hud/security/night/cultblindfulp
+            pickedtype += /obj/item/clothing/glasses/hud/security/night/cultblind/fulp
