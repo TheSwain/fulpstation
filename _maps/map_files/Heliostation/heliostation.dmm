@@ -2451,6 +2451,7 @@
 	name = "Prison Orange"
 	},
 /obj/item/seeds/carrot,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "aeL" = (
@@ -2474,6 +2475,7 @@
 	},
 /obj/item/seeds/tower,
 /obj/item/seeds/cabbage,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "aeM" = (
@@ -2490,6 +2492,7 @@
 	dir = 8;
 	name = "Prison Orange"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "aeN" = (
@@ -2507,6 +2510,7 @@
 	dir = 8;
 	name = "Prison Orange"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "aeP" = (
@@ -2520,6 +2524,7 @@
 	dir = 8;
 	name = "Prison Orange"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "aeQ" = (
@@ -2627,6 +2632,7 @@
 	dir = 8;
 	name = "Prison Orange"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "aeY" = (
@@ -2956,6 +2962,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "afB" = (
@@ -8529,6 +8536,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "anM" = (
@@ -10540,6 +10548,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/white,
 /area/security/prison)
 "aqG" = (
@@ -11844,6 +11853,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/white,
 /area/security/prison)
 "asF" = (
@@ -11858,6 +11868,9 @@
 	name = "Prison Orange"
 	},
 /obj/item/reagent_containers/food/condiment/peppermill,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/cafeteria,
 /area/security/prison)
 "asG" = (
@@ -11886,6 +11899,9 @@
 	color = "#FF6700";
 	name = "Prison Orange"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/cafeteria,
 /area/security/prison)
 "asI" = (
@@ -11904,6 +11920,9 @@
 	dir = 8;
 	name = "Prison Camera";
 	network = list("ss13","prison")
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/security/prison)
@@ -19579,6 +19598,7 @@
 	dir = 8;
 	name = "Hallway Camera"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/hallway/primary/fore)
 "aEd" = (
@@ -22060,6 +22080,7 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/hallway/primary/fore)
 "aIN" = (
@@ -60741,12 +60762,12 @@
 /obj/structure/table,
 /obj/item/stock_parts/cell/high/plus,
 /obj/item/stock_parts/cell/high/plus,
-/obj/item/borg/sight/meson,
 /obj/item/t_scanner,
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
 	pixel_x = 24
 	},
+/obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel,
 /area/storage/tech)
 "cbj" = (
@@ -66211,6 +66232,7 @@
 	dir = 8;
 	name = "Hallway Camera"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/hallway/primary/aft)
 "cjX" = (
@@ -88249,6 +88271,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/engine/engineering)
+"diw" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel,
+/area/hallway/primary/fore)
 "djJ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
@@ -88403,6 +88432,23 @@
 	},
 /turf/open/floor/plating,
 /area/medical/virology)
+"eUo" = (
+/obj/effect/turf_decal/tile{
+	color = "#FF6700";
+	dir = 1;
+	name = "Prison Orange"
+	},
+/obj/effect/turf_decal/tile{
+	color = "#FF6700";
+	name = "Prison Orange"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/security/prison)
 "fmY" = (
 /obj/effect/turf_decal/tile/red{
 	color = "#FF0000";
@@ -88508,6 +88554,13 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"hcM" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel,
+/area/hallway/secondary/command)
 "hem" = (
 /obj/effect/turf_decal/tile/red{
 	color = "#FF0000";
@@ -88633,6 +88686,12 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"jpH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel,
+/area/hallway/primary/aft)
 "jKG" = (
 /obj/machinery/hydroponics/constructable,
 /obj/structure/window{
@@ -88708,6 +88767,13 @@
 	},
 /turf/open/floor/plating,
 /area/engine/engineering)
+"lUI" = (
+/obj/structure/sign/directions/engineering{
+	pixel_x = -30
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel,
+/area/hallway/primary/aft)
 "mkq" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Emergency Oxygen Supply"
@@ -88822,6 +88888,17 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/research)
+"nZK" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel,
+/area/hallway/secondary/command)
 "odr" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
@@ -88845,6 +88922,14 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"oXL" = (
+/obj/machinery/light,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel,
+/area/hallway/secondary/command)
 "ppX" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
 /turf/open/floor/plating,
@@ -88986,6 +89071,21 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/courtroom)
+"rtE" = (
+/obj/effect/turf_decal/tile{
+	color = "#FF6700";
+	name = "Prison Orange"
+	},
+/obj/effect/turf_decal/tile{
+	color = "#FF6700";
+	dir = 8;
+	name = "Prison Orange"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel,
+/area/security/prison)
 "rwL" = (
 /obj/structure/sign/poster/official/random{
 	pixel_x = 30
@@ -89075,6 +89175,9 @@
 	name = "Prison Orange"
 	},
 /obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/cafeteria,
 /area/security/prison)
 "tud" = (
@@ -107164,7 +107267,7 @@ acy
 adL
 adL
 aen
-arE
+rtE
 afs
 acO
 agY
@@ -108725,7 +108828,7 @@ ama
 ama
 acO
 arE
-asG
+eUo
 asG
 avi
 awg
@@ -121846,12 +121949,12 @@ alI
 alI
 alI
 axY
-alc
+apd
 aEA
 alc
 aAP
 alc
-apd
+alc
 bwg
 alc
 alc
@@ -121917,7 +122020,7 @@ ccp
 ccp
 bJe
 bJe
-cXC
+lUI
 ckA
 cma
 ccp
@@ -122103,12 +122206,12 @@ alc
 alc
 alc
 alc
-alc
-alc
-alc
-alc
-alc
 apd
+alc
+alc
+alc
+alc
+alc
 alc
 aJs
 alc
@@ -122116,7 +122219,7 @@ alc
 alc
 alc
 alc
-alc
+apd
 alc
 alc
 alc
@@ -122174,7 +122277,7 @@ bJe
 bJe
 cgM
 bJe
-bJe
+bXy
 bJe
 bJe
 bJe
@@ -122360,12 +122463,12 @@ azT
 azT
 azT
 azT
-azT
+diw
 azT
 aFv
 ang
 aHe
-ape
+ang
 ang
 aJt
 alc
@@ -122373,7 +122476,7 @@ alc
 alc
 alc
 alc
-alc
+apd
 alc
 alc
 alc
@@ -122431,7 +122534,7 @@ bJe
 bJe
 cgN
 chT
-chT
+jpH
 chT
 chT
 chT
@@ -122617,12 +122720,12 @@ alc
 alc
 alc
 alc
-alc
+apd
 alc
 azg
 alc
 alc
-apd
+alc
 alc
 aJU
 alc
@@ -122630,7 +122733,7 @@ alc
 alc
 alc
 alc
-alc
+apd
 alc
 alc
 alc
@@ -122688,7 +122791,7 @@ bJe
 bJe
 cgY
 bJe
-bJe
+bXy
 bJe
 bJe
 bJe
@@ -122879,7 +122982,7 @@ aEO
 aFQ
 aGB
 alc
-apd
+alc
 amb
 alc
 alc
@@ -122887,7 +122990,7 @@ buj
 alc
 alc
 aNN
-amb
+apA
 axG
 alc
 aRH
@@ -124150,9 +124253,9 @@ abh
 avN
 awZ
 axB
-aye
-ayO
-azw
+hcM
+nZK
+oXL
 azU
 aAs
 aBd
