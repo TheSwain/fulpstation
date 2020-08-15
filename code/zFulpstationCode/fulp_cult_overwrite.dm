@@ -73,3 +73,53 @@
 					C.Jitter(15)
 		uses--
 	..()
+
+//This is a new item, the Influencer's blindfold. It's the Zealot's blindfold but with Security huds rather than Medical.
+
+/obj/item/clothing/glasses/hud/security/night/cultblind/fulp
+    desc = "may Nar'Sie guide you through the darkness and show you those strong of mind."
+    name = "Influencer's blindfold"
+    icon_state = "blindfold"
+    inhand_icon_state = "blindfold"
+    flash_protect = FLASH_PROTECTION_FLASH
+
+/obj/item/clothing/glasses/hud/security/night/cultblind/fulp/equipped(mob/living/user, slot)
+    ..()
+    if(!iscultist(user))
+        to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
+        user.dropItemToGround(src, TRUE)
+        user.Dizzy(30)
+        user.Paralyze(100)
+        user.blind_eyes(30)
+
+/obj/structure/destructible/cult/tome/attack_hand(mob/living/user)
+    . = ..()
+    if(.)
+        return
+    if(!iscultist(user))
+        to_chat(user, "<span class='warning'>These books won't open and it hurts to even try and read the covers.</span>")
+        return
+    if(!anchored)
+        to_chat(user, "<span class='cultitalic'>You need to anchor [src] to the floor with your dagger first.</span>")
+        return
+    if(cooldowntime > world.time)
+        to_chat(user, "<span class='cult italic'>The magic in [src] is weak, it will be ready to use again in [DisplayTimeText(cooldowntime - world.time)].</span>")
+        return
+    var/list/items = list(
+        "Zealot's Blindfold" = image(icon = 'icons/obj/clothing/glasses.dmi', icon_state = "blindfold"),
+        "Shuttle Curse" = image(icon = 'icons/obj/cult.dmi', icon_state = "shuttlecurse"),
+        "Veil Walker Set" = image(icon = 'icons/obj/cult.dmi', icon_state = "shifter"),
+        "Influencer's Blindfold" = image(icon = 'icons/obj/clothing/glasses.dmi', icon_state = "securityhudnight")
+        )
+    var/choice = show_radial_menu(user, src, items, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+    var/list/pickedtype = list()
+    switch(choice)
+        if("Zealot's Blindfold")
+            pickedtype += /obj/item/clothing/glasses/hud/health/night/cultblind
+        if("Shuttle Curse")
+            pickedtype += /obj/item/shuttle_curse
+        if("Veil Walker Set")
+            pickedtype += /obj/item/cult_shift
+            pickedtype += /obj/item/flashlight/flare/culttorch
+        if("Influencer's Blindfold")
+            pickedtype += /obj/item/clothing/glasses/hud/security/night/cultblindfulp
