@@ -11,16 +11,16 @@
 	name = "Stun"
 	desc = "Empowers your hand to stun and mute a victim on contact."
 	button_icon_state = "hand"
-	magic_path = "/obj/item/melee/blood_magic/stun/fulp"
+	magic_path = "/obj/item/melee/blood_magic/stunfulp"
 	health_cost = 10
 
-/obj/item/melee/blood_magic/stun/fulp
+/obj/item/melee/blood_magic/stunfulp
 	name = "Stunning Aura"
 	desc = "Will stun and mute a weak-minded victim on contact."
 	color = RUNE_COLOR_RED
 	invocation = "Fuu ma'jin!"
 
-/obj/item/melee/blood_magic/stun/fulp/afterattack(atom/target, mob/living/carbon/user, proximity)
+/obj/item/melee/blood_magic/stunfulp/afterattack(atom/target, mob/living/carbon/user, proximity)
 	if(!isliving(target) || !proximity)
 		return
 	var/mob/living/L = target
@@ -53,10 +53,10 @@
 				var/mob/living/carbon/C = L
 				to_chat(user, "<span class='cultitalic'>Their mind is too strong, resisting the spell, but it did some damage nonetheless!</span>")
 				C.stuttering += 8
-				C.dizziness += 25
-				C.Jitter(8)
+				C.dizziness += 20
+				C.Jitter(6)
 				C.drop_all_held_items()
-				C.bleed(40)
+				C.bleed(30)
 				C.apply_damage(60, STAMINA, BODY_ZONE_CHEST)
 			else
 				to_chat(user, "<span class='cultitalic'>In a brilliant flash of red, [L] falls to the ground!</span>")
