@@ -83,7 +83,7 @@
     inhand_icon_state = "blindfold"
     flash_protect = FLASH_PROTECTION_FLASH
 
-/obj/item/clothing/glasses/hud/security/night/cultblind/fulp/equipped(mob/living/user, slot)
+/obj/item/clothing/glasses/hud/security/night/cultblind/equipped(mob/living/user, slot)
     ..()
     if(!iscultist(user))
         to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
@@ -91,14 +91,6 @@
         user.Dizzy(25)
         user.Paralyze(80)
         user.blind_eyes(20)
-
-/obj/structure/destructible/cult/tomefulp
-	name = "archives"
-	desc = "A desk covered in arcane manuscripts and tomes in unknown languages. Looking at the text makes your skin crawl."
-	icon_state = "tomealtar"
-	light_range = 1.5
-	light_color = LIGHT_COLOR_FIRE
-	break_message = "<span class='warning'>The books and tomes of the archives burn into ash as the desk shatters!</span>"
 
 /obj/structure/destructible/cult/tome/attack_hand(mob/living/user)
     . = ..()
