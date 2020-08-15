@@ -36577,13 +36577,6 @@
 /obj/machinery/atmospherics/components/unary/tank/air,
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
-"cdT" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 5
-	},
-/obj/structure/cable,
-/turf/open/floor/plasteel,
-/area/engine/engine_smes)
 "cdU" = (
 /obj/structure/chair/office/light{
 	dir = 4
@@ -37512,6 +37505,7 @@
 	pixel_y = 30
 	},
 /obj/structure/reagent_dispensers/watertank,
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/engine/engine_smes)
 "cig" = (
@@ -37706,6 +37700,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/engine_smes)
 "cjg" = (
@@ -38115,6 +38110,7 @@
 	dir = 1
 	},
 /obj/structure/tank_dispenser,
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/engine/engine_smes)
 "ckL" = (
@@ -41982,6 +41978,10 @@
 	},
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai_upload)
+"cLK" = (
+/obj/structure/cable,
+/turf/closed/wall,
+/area/engine/engine_smes)
 "cLT" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -42291,6 +42291,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/engine/engine_smes)
 "cSN" = (
@@ -42337,6 +42338,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/engine_smes)
 "cSV" = (
@@ -42357,6 +42359,7 @@
 /area/engine/engine_smes)
 "cSX" = (
 /obj/effect/turf_decal/stripes/line,
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/engine_smes)
 "cSY" = (
@@ -83886,7 +83889,7 @@ bOD
 cBK
 bVJ
 bAx
-cjJ
+nsn
 cid
 cSQ
 cen
@@ -84400,7 +84403,7 @@ bWv
 cei
 bVJ
 bAx
-cjJ
+nsn
 cid
 cSQ
 cSU
@@ -84659,7 +84662,7 @@ bVJ
 bAx
 cjJ
 cie
-cdT
+cMC
 cCY
 cnA
 rdP
@@ -84915,7 +84918,7 @@ bYp
 bCq
 bAx
 cjJ
-kul
+cLK
 cSR
 cSV
 kul
