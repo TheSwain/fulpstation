@@ -7932,7 +7932,7 @@
 	width = 23
 	},
 /turf/open/space/basic,
-/area/space/nearstation)
+/area/space)
 "aqD" = (
 /obj/structure/closet/crate{
 	icon_state = "crateopen"
@@ -58505,7 +58505,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/science/xenobiology)
+/area/maintenance/department/science/xenobiology)
 "cLF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -59580,7 +59580,7 @@
 	},
 /obj/structure/chair,
 /turf/open/floor/plating,
-/area/maintenance/starboard/secondary)
+/area/maintenance/starboard/aft)
 "cOa" = (
 /obj/structure/cable,
 /obj/machinery/power/turbine{
@@ -63696,13 +63696,13 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/science/xenobiology)
+/area/maintenance/department/science/xenobiology)
 "ddA" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
 /turf/open/floor/plating,
-/area/science/xenobiology)
+/area/maintenance/department/science/xenobiology)
 "ddB" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -67608,7 +67608,7 @@
 	},
 /obj/structure/disposaloutlet,
 /turf/open/floor/plating/airless,
-/area/space/nearstation)
+/area/science/xenobiology)
 "eMU" = (
 /obj/item/reagent_containers/food/snacks/snowcones/clown,
 /turf/open/floor/grass/snow/safe,
@@ -68297,7 +68297,7 @@
 /turf/open/floor/plasteel{
 	dir = 1
 	},
-/area/crew_quarters/kitchen)
+/area/hydroponics)
 "fHj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -69149,11 +69149,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/white,
 /area/security/prison)
-"gPO" = (
-/obj/structure/grille,
-/obj/structure/lattice,
-/turf/open/space,
-/area/space)
 "gPT" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 1
@@ -70895,10 +70890,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/wood,
 /area/crew_quarters/bar)
-"jJv" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/space)
 "jKK" = (
 /obj/machinery/door/airlock/external{
 	req_access_txt = "13"
@@ -72135,9 +72126,6 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
-"lxj" = (
-/turf/closed/wall/r_wall,
-/area/space)
 "lzk" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
@@ -72945,11 +72933,6 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/security/brig)
-"mGQ" = (
-/obj/structure/grille/broken,
-/obj/structure/lattice,
-/turf/open/space,
-/area/space)
 "mHF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -76764,9 +76747,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/aft/secondary)
-"sFv" = (
-/turf/closed/wall/r_wall,
-/area/science/explab)
 "sGh" = (
 /obj/machinery/door/airlock/external{
 	name = "Solar Maintenance";
@@ -77234,9 +77214,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
-"tCV" = (
-/turf/closed/wall/r_wall,
-/area/space/nearstation)
 "tDM" = (
 /obj/machinery/door/airlock/engineering/glass/critical{
 	heat_proof = 1;
@@ -105854,7 +105831,7 @@ adh
 naq
 adW
 aep
-lxj
+ajm
 lMJ
 aaa
 ajm
@@ -111908,11 +111885,11 @@ aaa
 aaf
 aaf
 gTj
-lAu
+aaa
 aaf
 aaf
 aai
-gPO
+aag
 aaa
 aaa
 aaa
@@ -112166,11 +112143,11 @@ aaf
 aaa
 aaa
 aaa
-lAu
-gTj
-lAu
+aaa
+aaf
+aaa
 aag
-gPO
+aag
 aaa
 aaa
 aaa
@@ -112424,10 +112401,10 @@ dlV
 dlV
 dlV
 dlV
-lxj
+dlV
 aaa
-lAu
-mGQ
+aaa
+aai
 aaa
 aaa
 aaa
@@ -112681,10 +112658,10 @@ cTC
 cTC
 bIx
 ssm
-tCV
+dlV
 aaf
 aaf
-gPO
+aag
 aaa
 aaa
 aaa
@@ -112938,11 +112915,11 @@ cRi
 dlV
 cLE
 cTA
-lxj
+dlV
 aaa
-lAu
+aaa
 aaf
-gPO
+aag
 aaa
 aaa
 aaa
@@ -113197,9 +113174,9 @@ ddz
 cRi
 cRi
 cRi
-lxj
-lAu
-mGQ
+cRi
+aaa
+aai
 aaa
 aaa
 aaa
@@ -113449,14 +113426,14 @@ jhK
 cSn
 cSn
 cSn
-cRi
+dlV
 ddz
 cRi
 cZv
 nay
-tCV
+cRi
 aaf
-gPO
+aag
 aaa
 aaa
 aaa
@@ -113706,12 +113683,12 @@ daB
 daG
 cSn
 cSn
-cRi
+dlV
 ddz
 cRi
 ner
 iUc
-jJv
+cRe
 aaa
 aaa
 aaa
@@ -113963,14 +113940,14 @@ cSn
 cSn
 cSn
 rgz
-cRi
+dlV
 ddA
 daS
 dbv
 cTT
 ddC
 eLW
-gTj
+aaf
 aaa
 aaa
 aaa
@@ -114220,14 +114197,14 @@ ixE
 daH
 cSn
 eVe
+dlV
+cTA
 cRi
 ner
-cRi
 ner
-ner
-jJv
-lAu
-gTj
+cRe
+aaa
+aaf
 aaa
 aaa
 aaa
@@ -114477,14 +114454,14 @@ jhK
 cSn
 cSn
 cSn
-cRi
-ner
+dlV
+cTA
 cRi
 dbw
 tjL
-lxj
-lAu
-gPO
+cRi
+aaa
+aag
 aaa
 aaa
 aaa
@@ -114700,7 +114677,7 @@ cLJ
 cor
 cmZ
 cNZ
-jah
+dxk
 aaa
 aaa
 aaa
@@ -114735,13 +114712,13 @@ daI
 daM
 oXi
 dlV
-ner
+cTA
 cRi
 cRi
 cRi
-tCV
+cRi
 aaf
-gPO
+aag
 aaa
 aaa
 aaa
@@ -114993,12 +114970,12 @@ cRi
 cRi
 dlV
 cTA
-tCV
-gTj
-aaa
-lAu
+dlV
 aaf
-gPO
+aaa
+aaa
+aaf
+aag
 aaa
 aaa
 aaa
@@ -115250,11 +115227,11 @@ cTA
 cTA
 cTA
 cTn
-tCV
+dlV
 aaf
-gTj
-lAu
-mGQ
+aaf
+aaa
+aai
 aaa
 aaa
 aaa
@@ -115507,11 +115484,11 @@ dlV
 dlV
 dlV
 dlV
-tCV
-gTj
+dlV
+aaf
 aaa
-lAu
-gPO
+aaa
+aag
 aaa
 aaa
 aaa
@@ -115762,14 +115739,14 @@ aaf
 aaf
 aaf
 aaf
-aaf
 gTj
-lAu
+aaf
+aaa
 aaf
 aaf
 aag
 aag
-gTj
+aaf
 aaa
 aaa
 aaa
@@ -116023,8 +116000,8 @@ aaa
 aaa
 aaa
 aaa
-lAu
-mGQ
+aaa
+aai
 aaa
 aaa
 aaa
@@ -116475,7 +116452,7 @@ ovj
 ovj
 ovj
 cuZ
-sFv
+cuZ
 gtf
 cuZ
 tsk
