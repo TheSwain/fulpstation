@@ -20,7 +20,7 @@
 	color = RUNE_COLOR_RED
 	invocation = "Fuu ma'jin!"
 
-/obj/item/melee/blood_magic/stun/afterattack(atom/target, mob/living/carbon/user, proximity)
+/obj/item/melee/blood_magic/stun/fulp/afterattack(atom/target, mob/living/carbon/user, proximity)
 	if(!isliving(target) || !proximity)
 		return
 	var/mob/living/L = target
@@ -50,9 +50,10 @@
 
 		else
 			if(HAS_TRAIT(target, TRAIT_MINDSHIELD))
+				var/mob/living/carbon/C = L
 				to_chat(user, "<span class='cultitalic'>Their mind is too strong, resisting the spell, but it did some damage nonetheless!</span>")
 				C.stuttering += 8
-				C.dizziness += 30
+				C.dizziness += 25
 				C.Jitter(8)
 				C.drop_all_held_items()
 				C.bleed(40)
