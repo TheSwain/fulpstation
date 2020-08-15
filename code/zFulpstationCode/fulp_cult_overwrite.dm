@@ -92,7 +92,7 @@
         user.Paralyze(80)
         user.blind_eyes(20)
 
-/obj/structure/destructible/cult/tome
+/obj/structure/destructible/cult/tomefulp
 	name = "archives"
 	desc = "A desk covered in arcane manuscripts and tomes in unknown languages. Looking at the text makes your skin crawl."
 	icon_state = "tomealtar"
@@ -130,4 +130,4 @@
             pickedtype += /obj/item/cult_shift
             pickedtype += /obj/item/flashlight/flare/culttorch
         if("Influencer's Blindfold")
-            pickedtype += /obj/item/clothing/glasses/hud/security/night/cultblind/fulp
+            pickedtype += /obj/item/clothing/glasses/hud/security/night/cultblind
