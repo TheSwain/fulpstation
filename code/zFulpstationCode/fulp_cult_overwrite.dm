@@ -104,19 +104,10 @@
     . = ..()
     if(.)
         return
-    if(!iscultist(user))
-        to_chat(user, "<span class='warning'>These books won't open and it hurts to even try and read the covers.</span>")
-        return
-    if(!anchored)
-        to_chat(user, "<span class='cultitalic'>You need to anchor [src] to the floor with your dagger first.</span>")
-        return
     if(cooldowntime > world.time)
         to_chat(user, "<span class='cult italic'>The magic in [src] is weak, it will be ready to use again in [DisplayTimeText(cooldowntime - world.time)].</span>")
         return
     var/list/items = list(
-        "Zealot's Blindfold" = image(icon = 'icons/obj/clothing/glasses.dmi', icon_state = "blindfold"),
-        "Shuttle Curse" = image(icon = 'icons/obj/cult.dmi', icon_state = "shuttlecurse"),
-        "Veil Walker Set" = image(icon = 'icons/obj/cult.dmi', icon_state = "shifter"),
         "Influencer's Blindfold" = image(icon = 'icons/obj/clothing/glasses.dmi', icon_state = "securityhudnight")
         )
     var/choice = show_radial_menu(user, src, items, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
