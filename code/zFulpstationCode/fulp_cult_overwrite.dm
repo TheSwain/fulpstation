@@ -104,8 +104,11 @@
     . = ..()
     if(.)
         return
+    if(!iscultist(user))
+        return
+    if(!anchored)
+        return
     if(cooldowntime > world.time)
-        to_chat(user, "<span class='cult italic'>The magic in [src] is weak, it will be ready to use again in [DisplayTimeText(cooldowntime - world.time)].</span>")
         return
     var/list/items = list(
         "Influencer's Blindfold" = image(icon = 'icons/obj/clothing/glasses.dmi', icon_state = "securityhudnight")
@@ -121,4 +124,4 @@
             pickedtype += /obj/item/cult_shift
             pickedtype += /obj/item/flashlight/flare/culttorch
         if("Influencer's Blindfold")
-            pickedtype += /obj/item/clothing/glasses/hud/security/night/cultblind
+            pickedtype += /obj/item/clothing/glasses/hud/security/night/cultblind/fulp
