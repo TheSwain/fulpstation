@@ -31545,13 +31545,13 @@
 /turf/open/floor/plasteel,
 /area/tcommsat/computer)
 "bOo" = (
-/obj/item/radio/intercom{
-	dir = 8;
-	freerange = 1;
-	name = "Station Intercom (Telecomms)";
-	pixel_y = 26
-	},
 /obj/structure/cable,
+/obj/machinery/power/apc{
+	areastring = "/area/tcommsat/computer";
+	dir = 1;
+	name = "Telecomms Monitoring APC";
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel,
 /area/tcommsat/computer)
 "bOp" = (
@@ -31738,6 +31738,9 @@
 "bOM" = (
 /obj/structure/table,
 /obj/item/paper_bin,
+/obj/item/radio/intercom{
+	pixel_x = 29
+	},
 /turf/open/floor/plasteel,
 /area/tcommsat/computer)
 "bON" = (
@@ -34324,13 +34327,6 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/obj/machinery/power/apc{
-	areastring = "/area/tcommsat/computer";
-	dir = 1;
-	name = "Telecomms Monitoring APC";
-	pixel_y = 23
-	},
-/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/tcommsat/computer)
 "bWI" = (
@@ -42820,22 +42816,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison)
-"dso" = (
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/engine/engineering)
 "dtc" = (
 /obj/machinery/photocopier,
 /turf/open/floor/wood,
@@ -49842,10 +49822,6 @@
 "nrR" = (
 /turf/closed/wall,
 /area/medical/cryo)
-"nsn" = (
-/obj/structure/cable,
-/turf/closed/wall/r_wall,
-/area/engine/engine_smes)
 "nsK" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -83889,7 +83865,7 @@ bOD
 cBK
 bVJ
 bAx
-nsn
+cjJ
 cid
 cSQ
 cen
@@ -84403,7 +84379,7 @@ bWv
 cei
 bVJ
 bAx
-nsn
+cjJ
 cid
 cSQ
 cSU
@@ -85431,13 +85407,13 @@ mEp
 bYE
 bCq
 bUt
-nsn
+cjJ
 cij
 cjf
 cSX
 ckK
 rdP
-dso
+ahJ
 ckH
 cpu
 tqy
