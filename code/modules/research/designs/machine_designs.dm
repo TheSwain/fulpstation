@@ -320,13 +320,13 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/dnascanner
-	name = "Machine Design (DNA Scanner)"
+/datum/design/board/clonescanner
+	name = "Machine Design (Cloning Scanner)"
 	desc = "The circuit board for a DNA Scanner."
-	id = "dnascanner"
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-	build_path = /obj/item/circuitboard/machine/dnascanner
-	category = list("Research Machinery")
+	id = "clonescanner"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+	build_path = /obj/item/circuitboard/machine/clonescanner
+	category = list ("Medical Machinery")
 
 /datum/design/board/microwave
 	name = "Machine Design (Microwave Board)"
@@ -629,3 +629,4 @@
 	id = "bounty_pad"
 	build_path = /obj/item/circuitboard/machine/bountypad
 	category = list ("Misc. Machinery")
+

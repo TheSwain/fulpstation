@@ -15,11 +15,13 @@
 #define POLL_IGNORE_DRONE "drone"
 #define POLL_IGNORE_FUGITIVE "fugitive"
 #define POLL_IGNORE_PYROSLIME "slime"
+#define POLL_IGNORE_DEFECTIVECLONE "defective_clone"
 #define POLL_IGNORE_SHADE "shade"
 #define POLL_IGNORE_IMAGINARYFRIEND "imaginary_friend"
 #define POLL_IGNORE_SPLITPERSONALITY "split_personality"
 #define POLL_IGNORE_CONTRACTOR_SUPPORT "contractor_support"
 #define POLL_IGNORE_ACADEMY_WIZARD "academy_wizard"
+
 
 
 GLOBAL_LIST_INIT(poll_ignore_desc, list(
@@ -37,6 +39,7 @@ GLOBAL_LIST_INIT(poll_ignore_desc, list(
 	POLL_IGNORE_SWARMER = "Swarmer shells",
 	POLL_IGNORE_DRONE = "Drone shells",
 	POLL_IGNORE_FUGITIVE = "Fugitive Hunter",
+	POLL_IGNORE_DEFECTIVECLONE = "Defective clone",
 	POLL_IGNORE_PYROSLIME = "Slime",
 	POLL_IGNORE_SHADE = "Shade",
 	POLL_IGNORE_IMAGINARYFRIEND = "Imaginary Friend",

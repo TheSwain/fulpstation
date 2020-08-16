@@ -254,3 +254,7 @@
 /datum/mood_event/bald
 	description ="<span class='warning'>I need something to cover my head...</span>\n"
 	mood_change = -3
+
+/datum/mood_event/cloned_corpse
+	description = "<span class='boldwarning'>I recently saw my own corpse...</span>\n"
+	mood_change = -6

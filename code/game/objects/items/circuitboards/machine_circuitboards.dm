@@ -910,8 +910,8 @@
 		/obj/item/stack/sheet/glass = 1)
 	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
 
-/obj/item/circuitboard/machine/dnascanner
-	name = "DNA Scanner (Machine Board)"
+/obj/item/circuitboard/machine/clonescanner
+	name = "Cloning Scanner (Machine Board)"
 	icon_state = "science"
 	build_path = /obj/machinery/dna_scannernew
 	req_components = list(
@@ -1191,3 +1191,5 @@
 		/obj/item/stock_parts/micro_laser = 2,
 		/obj/item/stock_parts/scanning_module = 2
 	)
+
+

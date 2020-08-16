@@ -317,8 +317,8 @@
 		data["diskReadOnly"] = diskette.read_only
 		//data["diskMutations"] = tgui_diskette_mutations
 		data["storage"]["disk"] = tgui_diskette_mutations
-		data["diskHasMakeup"] = (LAZYLEN(diskette.genetic_makeup_buffer) > 0)
-		data["diskMakeupBuffer"] = diskette.genetic_makeup_buffer.Copy()
+		data["diskHasMakeup"] = (LAZYLEN(genetic_makeup_buffer) > 0)
+		data["diskMakeupBuffer"] = genetic_makeup_buffer.Copy()
 	else
 		data["hasDisk"] = FALSE
 		data["diskCapacity"] = 0
@@ -938,7 +938,7 @@
 			if(!istype(buffer_slot))
 				return
 
-			diskette.genetic_makeup_buffer = buffer_slot.Copy()
+			genetic_makeup_buffer = buffer_slot.Copy()
 			return
 
 		// Loads Genetic Makeup from disk to a console buffer
@@ -953,14 +953,14 @@
 
 			// GUARD CHECK - This should not be possible to activate on a diskette
 			//  that doesn't have any genetic data. Unexpected result
-			if(LAZYLEN(diskette.genetic_makeup_buffer) == 0)
+			if(LAZYLEN(genetic_makeup_buffer) == 0)
 				return
 
 			// Convert the index to a number and clamp within the array range, then
 			//  copy the data from the disk to that buffer
 			var/buffer_index = text2num(params["index"])
 			buffer_index = clamp(buffer_index, 1, NUMBER_OF_BUFFERS)
-			genetic_makeup_buffer[buffer_index] = diskette.genetic_makeup_buffer.Copy()
+			genetic_makeup_buffer[buffer_index] = genetic_makeup_buffer.Copy()
 			return
 
 		// Deletes genetic makeup buffer from the inserted diskette
@@ -976,7 +976,7 @@
 				to_chat(usr,"<span class='warning'>Disk is set to read only mode.</span>")
 				return
 
-			diskette.genetic_makeup_buffer.Cut()
+			genetic_makeup_buffer.Cut()
 			return
 
 		// Saves the scanner occupant's genetic makeup to a given console buffer

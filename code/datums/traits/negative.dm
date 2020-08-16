@@ -252,6 +252,12 @@
 	SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "family_heirloom_missing")
 	SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "family_heirloom")
 
+/datum/quirk/family_heirloom/clone_data()
+	return heirloom
+
+/datum/quirk/family_heirloom/on_clone(data)
+	heirloom = data
+
 /datum/quirk/frail
 	name = "Frail"
 	desc = "Your bones might as well be made of glass! You suffer wounds much more easily than most."
