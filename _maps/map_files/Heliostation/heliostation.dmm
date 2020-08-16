@@ -46110,6 +46110,7 @@
 	color = "#4D0067";
 	name = "Science purple corner"
 	},
+/obj/structure/closet/emcloset,
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "bzr" = (
