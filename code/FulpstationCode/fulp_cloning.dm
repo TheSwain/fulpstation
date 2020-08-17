@@ -182,7 +182,7 @@ datum/design/cloning_disk
 
 //Start growing a human clone in the pod!
 /obj/machinery/clonepod/proc/growclone(clonename, ui, mutation_index, mindref, last_death, blood_type, datum/species/mrace, list/features, factions, list/quirks, datum/bank_account/insurance, list/traumas, empty)
-	if(!reagents.has_reagent(/datum/reagent/medicine/CF/synthflesh, fleshamnt))
+	if(!reagents.has_reagent(/datum/reagent/medicine/c2/synthflesh, fleshamnt))
 		connected_message("Cannot start cloning: Not enough synthflesh.")
 		return NONE
 	if(panel_open)
@@ -293,7 +293,7 @@ datum/design/cloning_disk
 			connected_message("Clone Ejected: Loss of power.")
 
 	else if(mob_occupant && (mob_occupant.loc == src))
-		if(!reagents.has_reagent(/datum/reagent/medicine/CF/synthflesh, fleshamnt))
+		if(!reagents.has_reagent(/datum/reagent/medicine/c2/synthflesh, fleshamnt))
 			go_out()
 			log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to insufficient material.")
 			connected_message("Clone Ejected: Not enough material.")
@@ -329,8 +329,8 @@ datum/design/cloning_disk
 			var/dmg_mult = CONFIG_GET(number/damage_multiplier)
 			 //Slowly get that clone healed and finished.
 			mob_occupant.adjustCloneLoss(-((speed_coeff / 2) * dmg_mult))
-			if(reagents.has_reagent(/datum/reagent/medicine/CF/synthflesh, fleshamnt))
-				reagents.remove_reagent(/datum/reagent/medicine/CF/synthflesh, fleshamnt)
+			if(reagents.has_reagent(/datum/reagent/medicine/c2/synthflesh, fleshamnt))
+				reagents.remove_reagent(/datum/reagent/medicine/c2/synthflesh, fleshamnt)
 			else if(reagents.has_reagent(/datum/reagent/blood, fleshamnt*3))
 				reagents.remove_reagent(/datum/reagent/blood, fleshamnt*3)
 			var/progress = CLONE_INITIAL_DAMAGE - mob_occupant.getCloneLoss()
@@ -590,7 +590,7 @@ datum/design/cloning_disk
 
 /obj/machinery/clonepod/prefilled/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/medicine/CF/synthflesh, 100)
+	reagents.add_reagent(/datum/reagent/medicine/c2/synthflesh, 100)
 
 
 /*
