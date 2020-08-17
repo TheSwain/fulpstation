@@ -119,7 +119,7 @@
 
 
 //TO-DO: Make the genetics machine accept them.
-/obj/item/disk/data
+/obj/item/disk/datacloning
 	name = "cloning data disk"
 	icon_state = "datadisk0" //Gosh I hope syndies don't mistake them for the nuke disk.
 	var/list/fields = list()
@@ -128,19 +128,28 @@
 	var/read_only = FALSE //Well,it's still a floppy disk
 
 //Disk stuff.
-/obj/item/disk/data/Initialize()
+/obj/item/disk/datacloning/Initialize()
 	. = ..()
 	icon_state = "datadisk[rand(0,6)]"
 	add_overlay("datadisk_gene")
 
-/obj/item/disk/data/attack_self(mob/user)
+/obj/item/disk/datacloning/attack_self(mob/user)
 	read_only = !read_only
 	to_chat(user, "<span class='notice'>You flip the write-protect tab to [read_only ? "protected" : "unprotected"].</span>")
 
-/obj/item/disk/data/examine(mob/user)
+/obj/item/disk/datacloning/examine(mob/user)
 	. = ..()
 	. += "The write-protect tab is set to [read_only ? "protected" : "unprotected"]."
 
+datum/design/cloning_disk
+	name = "Cloning Data Disk"
+	desc = "Produce additional disks for storing cloning data."
+	id = "cloning_disk"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 300, /datum/material/glass = 100, /datum/material/silver = 50)
+	build_path = /obj/item/disk/datacloning
+	category = list("Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 //Clonepod
 
@@ -675,7 +684,7 @@
 	display_name = "Cloning Research"
 	description = "We have the technology to make him."
 	prereq_ids = list("genetics", "adv_biotech")
-	design_ids = list("clonepod", "clonecontrol")
+	design_ids = list("clonepod", "clonecontrol", "cloning_disk")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 

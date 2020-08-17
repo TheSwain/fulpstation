@@ -17,7 +17,7 @@
 	var/menu = 1 //Which menu screen to display
 	var/list/records = list()
 	var/datum/data/record/active_record
-	var/obj/item/disk/data/diskette //Incompatible format to genetics machine
+	var/obj/item/disk/datacloning/diskette //Incompatible format to genetics machine
 	//select which parts of the diskette to load
 	var/include_se = FALSE //mutations
 	var/include_ui = FALSE //appearance
@@ -135,7 +135,7 @@
 	LAZYREMOVE(pods, pod)
 
 /obj/machinery/computer/cloning/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/disk/data)) //INSERT SOME DISKETTES
+	if(istype(W, /obj/item/disk/datacloning)) //INSERT SOME DISKETTES
 		if (!diskette)
 			if (!user.transferItemToLoc(W,src))
 				return
