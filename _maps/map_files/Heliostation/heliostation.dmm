@@ -39467,8 +39467,8 @@
 	name = "Security red corner"
 	},
 /obj/machinery/computer/security/telescreen{
-	name = "Security Cargo monitor";
-	network = list("engineering","atmos");
+	name = "Security Medbay monitor";
+	network = list("medbay");
 	pixel_y = 30
 	},
 /turf/open/floor/plasteel,

@@ -25658,15 +25658,9 @@
 /area/medical/chemistry)
 "bxb" = (
 /obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/yellow,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
 	dir = 4
 	},
@@ -26370,19 +26364,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/turf/open/floor/plasteel/white,
-/area/medical/chemistry)
-"bza" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
 "bzc" = (
@@ -27740,11 +27721,14 @@
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
 "bCH" = (
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
@@ -35319,14 +35303,11 @@
 /turf/open/floor/plating,
 /area/crew_quarters/heads/chief)
 "bZE" = (
-/obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
@@ -43948,15 +43929,12 @@
 /area/quartermaster/miningdock)
 "eXp" = (
 /obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red,
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
 "eXy" = (
@@ -45035,6 +45013,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison)
+"gyu" = (
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/chemistry)
 "gyK" = (
 /obj/machinery/suit_storage_unit/cmo,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -45611,12 +45602,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/heads/cmo)
-"hjf" = (
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/medical/chemistry)
 "hjm" = (
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
@@ -46682,21 +46667,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/genetics)
-"iDS" = (
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/medical/chemistry)
 "iEJ" = (
 /obj/machinery/door/airlock/external{
 	name = "Escape Pod One"
@@ -52133,19 +52103,6 @@
 	dir = 1
 	},
 /area/hallway/secondary/entry)
-"qUp" = (
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/medical/chemistry)
 "qWw" = (
 /obj/structure/chair{
 	dir = 1
@@ -52479,6 +52436,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison)
+"rCM" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/chemistry)
 "rDX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 4
@@ -55360,6 +55326,19 @@
 /obj/effect/turf_decal/stripes/white/line,
 /turf/open/floor/plasteel,
 /area/security/prison)
+"weE" = (
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/chemistry)
 "weU" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -56088,14 +56067,10 @@
 /turf/open/floor/plasteel/dark,
 /area/science/nanite)
 "xmM" = (
-/obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
@@ -91030,13 +91005,13 @@ hTU
 bJG
 bip
 lrg
-bwE
+bip
 mSR
 bip
 bip
 bip
-xYA
-bip
+weE
+rCM
 bId
 hTU
 bJs
@@ -91286,14 +91261,14 @@ bqS
 jtt
 xIV
 bip
-bip
-bza
+srR
+srR
 bxb
-eXp
-eXp
+srR
+srR
 eXp
 bCH
-bip
+rCM
 bIc
 hTU
 bJs
@@ -91543,14 +91518,14 @@ bqV
 jtt
 bBL
 bip
-bip
-qUp
+bwx
+bwx
 xmM
+bwx
+bwx
 bZE
-bZE
-bZE
-iDS
-bip
+bCH
+rCM
 cCp
 hTU
 bJs
@@ -91801,13 +91776,13 @@ hTU
 bvj
 bip
 bip
-hjf
+bip
 mSR
 bip
 bip
 bip
-xYA
-bip
+gyu
+rCM
 msm
 hTU
 bJs
