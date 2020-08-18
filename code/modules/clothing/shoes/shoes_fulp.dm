@@ -73,16 +73,14 @@
 	worn_icon = 'icons/mob/feet_fulp.dmi'
 	inhand_icon_state = "digi_brown"
 
-// not working, will fix later
-///obj/item/clothing/shoes/magboots/digitigrade
-//	name = "digitigrade magboots"
-//	desc = "A custom-made variant set of magnetic boots, intended to ensure lizardfolk can safely perform EVA."
-//	flags_inv = FULL_DIGITIGRADE
-//	fulp_item = TRUE
-//	icon = 'icons/obj/clothing/shoes_fulp.dmi'
-//	icon_state = "digi_magboots0"
-//	alternate_worn_icon = 'icons/mob/feet_fulp.dmi'
-//	item_state = "digi_magboots0"
+// Magboots Functioning as of SgtHunk's PR :)
+
+/obj/item/clothing/shoes/magboots/lizard
+	name = "digitigrade magboots"
+	desc = "A custom-made variant set of magnetic boots, intended to ensure lizardfolk can safely perform EVA."
+	flags_inv = FULL_DIGITIGRADE
+	fulp_item = TRUE
+	icon_state = "magboots0"
 
 /obj/item/clothing/shoes/sneakers/mime/digitigrade
 	name = "digitigrade mime shoes"
@@ -93,3 +91,13 @@
 	icon_state = "digi_mime"
 	worn_icon = 'icons/mob/feet_fulp.dmi'
 	inhand_icon_state = "digi_mime"
+
+/obj/item/clothing/shoes/bhop/digitigrade
+	name = "digitigrade jump boots"
+	desc = "A specialized pair of combat boots with a built-in propulsion system for rapid foward movement. Customized for Digitigrade lizards."
+	flags_inv = FULL_DIGITIGRADE
+	fulp_item = TRUE
+	icon_state = "jetboots"
+	inhand_icon_state = "jetboots"
+	resistance_flags = FIRE_PROOF
+	permeability_coefficient = 0.05
