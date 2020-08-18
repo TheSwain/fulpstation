@@ -107,7 +107,7 @@
 
 ////////////// INFILTRATION GAMEMODE ITEMS //////////////
 #define INFILTRATION_FACTIONS list("Syndicate Infiltrator", "Cybersun Infiltrator", "Gorlex Infiltrator", "Tiger Co. Infiltrator")
-//This define exists for midround spawned infiltrators.
+//This define exists for midround spawned infiltrators and dynamic mode.
 
 /datum/uplink_item/role_restricted/cybersunsuit
 	name = "Cybersun Hardsuit"
@@ -129,7 +129,7 @@
 	desc = "A pair of gloves that are fireproof and electrically insulated, however unlike the regular Combat Gloves these use nanotechnology \
 			to teach the martial art of krav maga to the wearer."
 	item = /obj/item/clothing/gloves/krav_maga/combatglovesplus
-	cost = 6 //Nuke Ops get it for 5.
+	cost = 5 //Same as nuke ops.
 
 /datum/uplink_item/role_restricted/gorlex/flukeop
 	name = "Nuclear Operative Bundle"
@@ -157,14 +157,14 @@
 	desc = "An implant injected into the body, and later activated either manually or automatically upon death. \
 			Upon death, releases a massive explosion that will wipe out everything nearby."
 	item = /obj/item/storage/box/syndie_kit/imp_macrobomb
-	cost = 15 //Yes, nukies get it for 20, but let our dude infiltrate the station and finish his objectives first.
+	cost = 11 //Yes, nukies get it for 20, but let our dude infiltrate the station and finish his objectives first.
 
 /datum/uplink_item/role_restricted/tiger/manhacks
 	name = "Viscerator Delivery Grenade"
 	desc = "A unique grenade that deploys a swarm of viscerators upon activation, which will chase down and shred \
 			any non-operatives in the area."
 	item = /obj/item/grenade/spawnergrenade/manhacks
-	cost = 5 //Same as nukies
+	cost = 4
 
 /datum/uplink_item/race_restricted/plasmemesuit
 	name = "Surplus Envirosuit"
@@ -208,7 +208,7 @@
 	restricted_roles = INFILTRATION_FACTIONS
 
 /obj/item/adv_mulligan
-	name = "Advanced Mulligan"
+	name = "advanced mulligan"
 	desc = "Toxin that permanently changes your DNA into the one of last injected person."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "dnainjector0"
@@ -252,14 +252,15 @@
 		return
 	if(!used)
 		if(stored)
+			user.visible_message("<span class='warning'>[user.name] shivers in pain and soon transform into [stored.dna.real_name]!</span>", \
+			"<span class='notice'>You inject yourself with [src] and suddenly become a copy of [stored.dna.real_name].</span>")
+
 			user.real_name = stored.real_name
 			stored.dna.transfer_identity(user, transfer_SE=1)
 			user.updateappearance(mutcolor_update=1)
 			user.domutcheck()
 			used = TRUE
 
-			user.visible_message("<span class='warning'>[user.name] shivers in pain and soon transform into [stored.dna.real_name]!</span>", \
-			"<span class='notice'>You inject yourself with [src] and suddenly become a copy of [stored.dna.real_name].</span>")
 			icon_state = "dnainjector0"
 			desc = "Toxin that permanently changes your DNA into the one of last injected person. This one is used up."
 

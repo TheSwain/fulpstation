@@ -90,24 +90,36 @@
 	uniform = /obj/item/clothing/under/plasmaman
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
+	backpack_contents = list(/obj/item/storage/box/survival=1,\
+	/obj/item/tank/jetpack/oxygen/harness=1,\
+	/obj/item/clothing/head/helmet/space/plasmaman=1)
 
 /datum/outfit/infiltrator/cybersun/plasmaman
 	name = "Plasmaman Cybersun Infiltrator Kit"
 	uniform = /obj/item/clothing/under/plasmaman
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
+	backpack_contents = list(/obj/item/storage/box/survival=1,\
+	/obj/item/tank/jetpack/oxygen/harness=1,\
+	/obj/item/clothing/head/helmet/space/plasmaman=1)
 
 /datum/outfit/infiltrator/gorlex/plasmaman
 	name = "Plasmaman Gorlex Infiltrator Kit"
 	uniform = /obj/item/clothing/under/plasmaman
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
+	backpack_contents = list(/obj/item/storage/box/survival=1,\
+	/obj/item/tank/jetpack/oxygen/harness=1,\
+	/obj/item/clothing/head/helmet/space/plasmaman=1)
 
 /datum/outfit/infiltrator/tiger/plasmaman
 	name = "Plasmaman Gorlex Infiltrator Kit"
 	uniform = /obj/item/clothing/under/plasmaman
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
+	backpack_contents = list(/obj/item/storage/box/survival=1,\
+	/obj/item/tank/jetpack/oxygen/harness=1,\
+	/obj/item/clothing/head/helmet/space/plasmaman=1)
 
 /datum/objective/escape/escape_with_identity/infiltrator
 	name = "escape with identity (as infiltrator)"
