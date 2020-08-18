@@ -36,6 +36,11 @@
 			TryToSwitchState(AM)
 		return ..()
 
+/obj/structure/resindoor/Bumped(mob/user, atom/movable/AM)
+	if(user.getorgan(/obj/item/organ/alien/plasmavessel))
+		TryToSwitchState(user, AM)
+	return ..()
+
 /obj/structure/resindoor/attack_paw(mob/user)
 	return attack_hand(user)
 
@@ -88,6 +93,7 @@
 	density = FALSE
 	door_opened = TRUE
 	layer = OPEN_DOOR_LAYER
+	CanAtmosPass = ATMOS_PASS_YES
 	air_update_turf(1)
 	update_icon()
 	isSwitchingStates = FALSE
