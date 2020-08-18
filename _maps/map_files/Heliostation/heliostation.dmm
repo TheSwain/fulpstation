@@ -5202,6 +5202,9 @@
 	dir = 8;
 	name = "Security red corner"
 	},
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_y = -30
+	},
 /turf/open/floor/plasteel,
 /area/security/main)
 "ajf" = (
@@ -8251,6 +8254,9 @@
 "anp" = (
 /obj/effect/landmark/secequipment,
 /obj/effect/turf_decal/bot_red,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = 30
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/brig/upper)
 "anq" = (
@@ -51285,6 +51291,10 @@
 	name = "Security Post Camera";
 	network = list("ss13","rd")
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel,
 /area/security/checkpoint/science/research)
 "bJK" = (
@@ -54511,9 +54521,8 @@
 	},
 /obj/structure/filingcabinet,
 /obj/machinery/light,
-/obj/machinery/light_switch{
-	desc = "Make it dark.";
-	pixel_y = -23
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_y = -30
 	},
 /turf/open/floor/plasteel,
 /area/security/checkpoint/science/research)
@@ -66297,6 +66306,9 @@
 /obj/structure/table,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = 30
+	},
 /turf/open/floor/plasteel,
 /area/security/checkpoint/supply)
 "cke" = (
@@ -73549,10 +73561,6 @@
 	dir = 4;
 	name = "Security red corner"
 	},
-/obj/machinery/airalarm{
-	dir = 8;
-	pixel_x = 24
-	},
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#e8eaff"
@@ -73562,6 +73570,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
+	},
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = 30
 	},
 /turf/open/floor/plasteel,
 /area/security/checkpoint/engineering)
@@ -88542,6 +88553,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/airalarm{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/open/floor/plasteel,
 /area/security/checkpoint/engineering)
 "gCa" = (
