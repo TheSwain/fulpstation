@@ -320,12 +320,13 @@
 
 //***************************************************************************
 //** FULPSTATION EMAG NERFS by Surrealistik Feb 2020 BEGINS
+//** Lowers price of Emag as per Door opening feature removal. -SgtHunk
 //---------------------------------------------------------------------------
-//** Makes the emag much more expensive and introduces a 6 TC budget emag
+//** Makes the emag much more expensive and introduces a 6tc budget emag
 //***************************************************************************
 
 /datum/uplink_item/device_tools/emag
-	cost = 15
+	cost = 4
 
 //***************************************************************************
 //** FULPSTATION EMAG NERFS by Surrealistik Feb 2020 ENDS
