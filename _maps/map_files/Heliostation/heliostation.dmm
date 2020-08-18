@@ -23961,7 +23961,10 @@
 /area/maintenance/fore)
 "aMJ" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
-/obj/effect/spawner/structure/window/hollow,
+/obj/structure/window/reinforced{
+	dir = 4;
+	layer = 2.9
+	},
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "aMK" = (
@@ -89110,6 +89113,10 @@
 "rTh" = (
 /turf/closed/wall/r_wall,
 /area/security/prison/safe)
+"rYR" = (
+/obj/effect/spawner/structure/window/hollow,
+/turf/open/floor/plating,
+/area/maintenance/fore)
 "sxx" = (
 /obj/effect/turf_decal/tile/red{
 	color = "#FF0000";
@@ -124275,7 +124282,7 @@ aKp
 aLg
 aBi
 aMJ
-aMJ
+rYR
 aOn
 aPe
 aQu
@@ -124532,7 +124539,7 @@ aKq
 aLf
 aBi
 aHl
-aMJ
+rYR
 aOn
 aPf
 aQu
@@ -124789,7 +124796,7 @@ aKp
 aLf
 aBi
 aMK
-aMJ
+rYR
 aOn
 aPg
 aQu
@@ -125046,7 +125053,7 @@ aKr
 aLf
 aBi
 aHm
-aMJ
+rYR
 aOn
 aPh
 aQu
