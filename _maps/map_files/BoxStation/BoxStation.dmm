@@ -1897,6 +1897,7 @@
 	name = "AI Core Door";
 	req_access_txt = "16"
 	},
+/obj/structure/cable,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "afs" = (
@@ -23626,6 +23627,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
 	dir = 8
 	},
+/obj/structure/cable,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "bsf" = (
@@ -43295,6 +43297,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 5
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai)
 "eIE" = (
@@ -44966,6 +44969,7 @@
 /area/medical/break_room)
 "gWK" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/engine/gravity_generator)
 "gWW" = (
@@ -45022,6 +45026,7 @@
 	name = "Gravity Generator";
 	req_access_txt = "11"
 	},
+/obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3,
 /turf/open/floor/plasteel/dark,
@@ -45053,6 +45058,7 @@
 /obj/structure/sign/warning/radiation/rad_area{
 	pixel_x = 32
 	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/engine/gravity_generator)
 "hfX" = (
@@ -45385,6 +45391,7 @@
 /turf/open/floor/plasteel,
 /area/engine/gravity_generator)
 "hES" = (
+/obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -45755,6 +45762,14 @@
 /turf/open/floor/plasteel,
 /area/science/nanite)
 "idp" = (
+/obj/machinery/power/apc{
+	areastring = "/area/engine/gravity_generator";
+	dir = 8;
+	name = "Gravity Generator APC";
+	pixel_x = -25;
+	pixel_y = 1
+	},
+/obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
 	dir = 6
 	},
@@ -45810,6 +45825,7 @@
 /turf/open/floor/wood,
 /area/library)
 "ihB" = (
+/obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
 	dir = 4
 	},
@@ -45859,6 +45875,7 @@
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
 "ijf" = (
+/obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 5
 	},
@@ -46348,6 +46365,7 @@
 /area/security/brig)
 "iUz" = (
 /obj/structure/chair/office/light,
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/gravity_generator)
 "iWa" = (
@@ -46752,6 +46770,7 @@
 /obj/structure/table,
 /obj/item/paper/guides/jobs/engi/gravity_gen,
 /obj/item/pen/blue,
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/gravity_generator)
 "jCi" = (
@@ -46779,10 +46798,14 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "jCE" = (
+/obj/machinery/power/smes{
+	charge = 5e+006
+	},
 /obj/machinery/camera{
 	c_tag = "Gravity Generator Room Main";
 	dir = 1
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/gravity_generator)
 "jDb" = (
@@ -46807,6 +46830,9 @@
 "jDf" = (
 /obj/item/radio/intercom{
 	pixel_y = -35
+	},
+/obj/machinery/power/terminal{
+	dir = 8
 	},
 /obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plasteel,
@@ -47529,6 +47555,7 @@
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "kIf" = (
+/obj/structure/cable,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "kIg" = (
@@ -52581,10 +52608,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison)
-"sGC" = (
-/obj/structure/cable,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/ai)
 "sGS" = (
 /obj/effect/turf_decal/tile/green{
 	dir = 1
@@ -53511,6 +53534,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer3{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai)
 "ucw" = (
@@ -85252,7 +85276,7 @@ bef
 dae
 bfv
 bii
-sGC
+bii
 dTe
 tsX
 tsX
