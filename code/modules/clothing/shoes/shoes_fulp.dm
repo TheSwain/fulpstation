@@ -80,7 +80,11 @@
 	desc = "A custom-made variant set of magnetic boots, intended to ensure lizardfolk can safely perform EVA."
 	flags_inv = FULL_DIGITIGRADE
 	fulp_item = TRUE
-	icon_state = "magboots0"
+	icon = 'icons/obj/clothing/shoes_fulp.dmi'
+	icon_state = "digi_magboots0"
+	magboot_state = "digi_magboots"
+	worn_icon = 'icons/mob/feet_fulp.dmi'
+	inhand_icon_state = "digi_magboots"
 
 /obj/item/clothing/shoes/sneakers/mime/digitigrade
 	name = "digitigrade mime shoes"
@@ -97,7 +101,9 @@
 	desc = "A specialized pair of combat boots with a built-in propulsion system for rapid foward movement. Customized for Digitigrade lizards."
 	flags_inv = FULL_DIGITIGRADE
 	fulp_item = TRUE
-	icon_state = "jetboots"
-	inhand_icon_state = "jetboots"
+	icon = 'icons/obj/clothing/shoes_fulp.dmi'
+	icon_state = "digi_jumpboots"
+	worn_icon = 'icons/mob/feet_fulp.dmi'
+	inhand_icon_state = "digi_jumpboots"
 	resistance_flags = FIRE_PROOF
 	permeability_coefficient = 0.05
