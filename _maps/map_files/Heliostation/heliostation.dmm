@@ -13399,7 +13399,7 @@
 	name = "Security red corner"
 	},
 /obj/machinery/door_timer{
-	id = "brig2";
+	id = "Cell 2";
 	name = "Cell 2";
 	pixel_x = 32
 	},
