@@ -37429,7 +37429,6 @@
 /turf/open/floor/plasteel/dark,
 /area/engine/engine_smes)
 "cic" = (
-/obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -37445,10 +37444,12 @@
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 32
 	},
+/obj/machinery/power/smes/engineering{
+	charge = 5e+006
+	},
 /turf/open/floor/plasteel/dark,
 /area/engine/engine_smes)
 "cid" = (
-/obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -37461,6 +37462,9 @@
 	},
 /obj/effect/turf_decal/delivery,
 /obj/structure/cable,
+/obj/machinery/power/smes/engineering{
+	charge = 5e+006
+	},
 /turf/open/floor/plasteel/dark,
 /area/engine/engine_smes)
 "cie" = (
@@ -41079,11 +41083,11 @@
 /obj/machinery/atmospherics/pipe/manifold/general/visible{
 	dir = 8
 	},
-/obj/machinery/power/rad_collector/anchored,
 /obj/structure/window/plasma/reinforced{
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/machinery/power/rad_collector/anchored,
 /turf/open/floor/engine,
 /area/engine/supermatter)
 "cEw" = (
@@ -41102,11 +41106,11 @@
 /obj/machinery/atmospherics/pipe/manifold/general/visible{
 	dir = 4
 	},
-/obj/machinery/power/rad_collector/anchored,
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/machinery/power/rad_collector/anchored,
 /turf/open/floor/engine,
 /area/engine/supermatter)
 "cEz" = (
@@ -41228,22 +41232,22 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 5
 	},
-/obj/machinery/power/rad_collector/anchored,
 /obj/structure/window/plasma/reinforced{
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/machinery/power/rad_collector/anchored,
 /turf/open/floor/engine,
 /area/engine/supermatter)
 "cFh" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 9
 	},
-/obj/machinery/power/rad_collector/anchored,
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/machinery/power/rad_collector/anchored,
 /turf/open/floor/engine,
 /area/engine/supermatter)
 "cFi" = (
