@@ -35,7 +35,7 @@
 	id = "mars_robotics_empproof"
 	display_name = "EMP-Proof Augmentation"
 	description = "Advanced research that prevents robotic limbs from overloading when affected by electromagnetic pulse. Doesn't work with Cyborgs."
-	prereq_ids = list("adv_robotics", "emp_super"/*, "mars_tech"*/) //Must use unlockable tech from random lavaland ruin.
+	prereq_ids = list("adv_robotics", "emp_super", "mars_tech") //Must use unlockable tech from random lavaland ruin.
 	design_ids = list("borg_chest_empproof", "borg_head_empproof", "borg_l_arm_empproof", "borg_r_arm_empproof", "borg_l_leg_empproof", "borg_r_leg_empproof")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
