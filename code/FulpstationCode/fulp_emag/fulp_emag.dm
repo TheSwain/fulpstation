@@ -1,4 +1,4 @@
-/obj/item/card/emag/budget
+/obj/item/card/emag/budget //Guess we can keep it in the code for now, just in case Surreal finds a way to tweak it back, or we manage a compromise. -SgtHunk. (August 2020)
 	desc = "It's a card with a magnetic strip attached to some circuitry. This one appears to be a crude knockoff with a digital counter on closer inspection."
 	name = "budget cryptographic sequencer"
 	var/charges = 2
