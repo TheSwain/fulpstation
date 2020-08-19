@@ -75800,7 +75800,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/structure/cable,
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "czc" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -82362,7 +82362,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cLs" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 9
@@ -84960,7 +84960,7 @@
 "cQZ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRa" = (
 /obj/structure/table,
 /obj/item/gun/energy/laser/practice,
@@ -84973,11 +84973,7 @@
 /obj/structure/transit_tube,
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/ai_monitored/turret_protected/aisat_interior)
-"cRc" = (
-/obj/structure/cable,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRd" = (
 /obj/structure/transit_tube,
 /obj/effect/turf_decal/stripes/line{
@@ -84987,22 +84983,19 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRe" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRf" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat_interior)
-"cRg" = (
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/aisat_interior)
 "cRh" = (
 /obj/structure/closet/firecloset,
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRj" = (
 /obj/structure/transit_tube/station/reverse/flipped{
 	dir = 8
@@ -85014,20 +85007,20 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRl" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRm" = (
 /obj/structure/closet/emcloset,
 /obj/machinery/power/apc{
@@ -85038,7 +85031,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRn" = (
 /obj/machinery/light,
 /obj/machinery/firealarm{
@@ -85047,7 +85040,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRo" = (
 /obj/structure/cable,
 /obj/item/radio/intercom{
@@ -85058,14 +85051,14 @@
 	pixel_y = -27
 	},
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRp" = (
 /obj/structure/cable,
 /obj/machinery/status_display/ai{
 	pixel_y = -32
 	},
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
@@ -85074,7 +85067,7 @@
 	uses = 10
 	},
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRr" = (
 /obj/machinery/status_display/ai{
 	pixel_y = -32
@@ -85087,7 +85080,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRs" = (
 /obj/machinery/airalarm{
 	dir = 1;
@@ -85095,7 +85088,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRt" = (
 /obj/machinery/light,
 /obj/machinery/turretid{
@@ -85104,11 +85097,11 @@
 	pixel_y = -27
 	},
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRu" = (
 /obj/structure/closet/emcloset,
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRv" = (
 /obj/machinery/light{
 	dir = 4
@@ -85197,7 +85190,7 @@
 "cRH" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat_interior)
+/area/ai_monitored/turret_protected/aisat/foyer)
 "cRI" = (
 /obj/machinery/porta_turret/ai,
 /obj/machinery/light{
@@ -85236,7 +85229,7 @@
 	network = list("ss13","minisat")
 	},
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cRN" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
@@ -85270,9 +85263,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/aisat/foyer)
 "cRT" = (
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 26
+/obj/machinery/turretid{
+	control_area = "/area/ai_monitored/turret_protected/aisat_interior";
+	name = "AI turret control";
+	pixel_x = 27
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/aisat/foyer)
@@ -85457,7 +85451,7 @@
 /obj/structure/cable,
 /obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cSq" = (
 /turf/closed/wall/r_wall,
 /area/ai_monitored/turret_protected/aisat/hallway)
@@ -85537,7 +85531,7 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cSB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/firealarm{
@@ -85549,7 +85543,7 @@
 	light_color = "#e8eaff"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cSC" = (
 /obj/machinery/ai_slipper{
 	uses = 10
@@ -85574,7 +85568,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cSG" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
 	dir = 4
@@ -85650,7 +85644,7 @@
 	req_access_txt = "65"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cSO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 4
@@ -85818,7 +85812,7 @@
 	},
 /obj/item/toy/prize/reticence,
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cTe" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 6
@@ -85859,12 +85853,8 @@
 /obj/machinery/ai_slipper{
 	uses = 10
 	},
-/obj/structure/extinguisher_cabinet{
-	dir = 4;
-	pixel_y = -27
-	},
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cTj" = (
 /obj/machinery/status_display/evac{
 	pixel_y = 30
@@ -85919,8 +85909,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 4
 	},
+/obj/machinery/turretid{
+	control_area = "/area/ai_monitored/turret_protected/aisat_interior";
+	name = "AI turret control";
+	pixel_y = 27
+	},
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cTq" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
@@ -85930,7 +85925,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cTr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 4
@@ -85993,7 +85988,7 @@
 	name = "MiniSat Teleport Access"
 	},
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cTx" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
 	dir = 4
@@ -86026,7 +86021,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cTC" = (
 /obj/machinery/computer/station_alert{
 	dir = 1
@@ -86100,7 +86095,7 @@
 "cTK" = (
 /obj/machinery/teleport/station,
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cTL" = (
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -86142,7 +86137,7 @@
 	dir = 4
 	},
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cTS" = (
 /mob/living/simple_animal/bot/cleanbot,
 /turf/open/floor/circuit,
@@ -86186,7 +86181,7 @@
 	dir = 4
 	},
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cTY" = (
 /obj/machinery/computer/monitor{
 	dir = 1
@@ -86327,7 +86322,7 @@
 "cUq" = (
 /obj/machinery/teleport/hub,
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cUr" = (
 /obj/machinery/porta_turret/ai,
 /obj/machinery/light,
@@ -86613,7 +86608,7 @@
 	pixel_x = 26
 	},
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/aisat/foyer)
+/area/ai_monitored/turret_protected/aisat_interior)
 "cUX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable,
@@ -88425,6 +88420,9 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"eEO" = (
+/turf/open/floor/circuit,
+/area/ai_monitored/turret_protected/aisat_interior)
 "eFy" = (
 /obj/effect/turf_decal/tile/yellow{
 	color = "#FFD700";
@@ -88652,6 +88650,11 @@
 /obj/effect/spawner/lootdrop/maintenance/four,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"idi" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/turret_protected/aisat_interior)
 "izP" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -88941,6 +88944,16 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"oLK" = (
+/obj/machinery/status_display/evac{
+	pixel_y = 30
+	},
+/obj/structure/extinguisher_cabinet{
+	dir = 4;
+	pixel_y = -27
+	},
+/turf/open/floor/circuit,
+/area/ai_monitored/turret_protected/aisat_interior)
 "oXL" = (
 /obj/machinery/light,
 /obj/structure/disposalpipe/segment{
@@ -89204,6 +89217,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
+"sWZ" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/circuit,
+/area/ai_monitored/turret_protected/aisat_interior)
 "tbK" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /obj/machinery/portable_atmospherics/canister/air,
@@ -89359,6 +89380,20 @@
 /area/maintenance/solars{
 	name = "AI Solar Maintenance"
 	})
+"vQG" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/open/floor/circuit,
+/area/ai_monitored/turret_protected/aisat/foyer)
 "vZX" = (
 /obj/machinery/holopad/secure,
 /turf/open/floor/plasteel,
@@ -121347,8 +121382,8 @@ aaa
 aaa
 aaa
 cQZ
-cSt
-cSt
+cRx
+cRx
 cRx
 cRx
 cRx
@@ -121861,7 +121896,7 @@ aaa
 cQZ
 cQZ
 cRH
-cRg
+cRO
 cRn
 cRx
 cRx
@@ -122116,9 +122151,9 @@ aak
 aak
 aak
 cQZ
-cRg
-cRg
-cRg
+cRO
+cRO
+cRO
 cRo
 cRx
 cRx
@@ -122631,7 +122666,7 @@ aak
 aak
 cQZ
 cRe
-cRf
+cRL
 cRk
 cRq
 cRy
@@ -122888,7 +122923,7 @@ cQZ
 cQZ
 cQZ
 cQZ
-cRg
+cRO
 cRl
 cRr
 cRx
@@ -123142,11 +123177,11 @@ cAu
 cAu
 cAu
 czb
-cRc
-cRc
+cRS
+cRS
 cLr
-cRc
-cRc
+cRS
+cRS
 cRs
 cRx
 cRx
@@ -123402,8 +123437,8 @@ cQZ
 cQZ
 cQZ
 cQZ
-cRg
-cRg
+cRO
+cRO
 cRt
 cRx
 cRx
@@ -123666,11 +123701,11 @@ cRx
 cRx
 cRI
 cRT
-cRZ
-cRx
+vQG
+cSt
 cTd
-cRx
-cRx
+cSt
+cSt
 cTl
 cUy
 cTn
@@ -123917,18 +123952,18 @@ aaa
 aaa
 aaa
 cQZ
+cRx
+cRx
 cSt
 cSt
-cRx
-cRx
-cRx
-cRx
+cSt
+cSt
 cSA
-cRx
-cSL
-cRx
-cRx
-cRx
+cSt
+oLK
+cSt
+cSt
+cSt
 cTl
 cTl
 cVf
@@ -124176,17 +124211,17 @@ aaa
 aaa
 aaa
 aaa
-cRx
-cRx
-cRx
-cRL
-cSg
-cSD
-cSD
+cSt
+cSt
+cSt
+cRf
+sWZ
+eEO
+eEO
 cTw
 cTR
 cUq
-cRx
+cSt
 cTl
 cTl
 cTl
@@ -124434,16 +124469,16 @@ aaa
 aaa
 aaa
 aaa
-cRx
-cRx
+cSt
+cSt
 cRM
 cSF
 cSp
 cTi
-cRx
+cSt
 cTp
 cTK
-cRx
+cSt
 cTl
 cTl
 cTl
@@ -124691,16 +124726,16 @@ aaa
 aaa
 aaa
 cRw
-cRx
-cRx
-cSu
+cSt
+cSt
+idi
 cSB
 cSN
 cTq
 cTB
 cTX
 cUW
-cRx
+cSt
 cTl
 cVg
 cVs
