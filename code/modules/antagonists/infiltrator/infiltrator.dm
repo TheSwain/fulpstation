@@ -9,6 +9,7 @@
 	var/dagd_chance = 5 //Why would you infiltrate the station and die here?
 	var/kill_chance = 70
 	var/obj_mod = 1 //Number of additional objectives not affected by config
+	var/extra_tc = 0 //Changed by faction
 
 /datum/antagonist/traitor/infiltrator/event
 	name = "Infiltrator (Event)"
@@ -27,6 +28,10 @@
 	if(give_objectives)
 		forge_infiltrator_objectives()
 	finalize_traitor()
+	//Additional TCs (Mostly for Tiger Co. and MI13)
+	var/datum/component/uplink/U = owner.find_syndicate_uplink()
+	if (U)
+		U.telecrystals += extra_tc
 	//Copy from basic antag_datum.dm because ..() would call standard traitor shit and we don't need it
 	if(!owner)
 		CRASH("[src] ran on_gain() without a mind")
@@ -57,41 +62,42 @@
 	H.delete_equipment() //Just in case we try to roll for specific faction and remove-add antag status a lot.
 	owner.special_role = special_role
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
-	var/faction = pickweight(list("Syndicate" = 78, "Cybersun" = 12, "Gorlex" = 8, "Tiger Co." = 2))
+	var/faction = pickweight(list("Syndicate" = 76, "Cybersun" = 12, "Gorlex" = 8, "Tiger Co." = 2, "MI13" = 2))
 	owner.assigned_role = "[faction] Infiltrator"
 
 	switch(faction)
 		if("Cybersun")
 			hijack_chance = 5 //We don't like this loud mess of hijack here in Cybersun
 			dagd_chance = 0 //Dying on a mission? Disgusting!
-			if(isplasmaman(owner.current))
-				H.equipOutfit(/datum/outfit/infiltrator/cybersun/plasmaman)
-			else
-				H.equipOutfit(/datum/outfit/infiltrator/cybersun)
+			H.equipOutfit(/datum/outfit/infiltrator/cybersun)
 
 		if("Gorlex")
 			hijack_chance = 25 //That's why we're here.
 			kill_chance = 80
-			if(isplasmaman(owner.current))
-				H.equipOutfit(/datum/outfit/infiltrator/gorlex/plasmaman)
-			else
-				H.equipOutfit(/datum/outfit/infiltrator/gorlex)
+			H.equipOutfit(/datum/outfit/infiltrator/gorlex)
 
 		if("Tiger Co.") //The rarest of them all - 100% DAGD.
 			hijack_chance = 0 //Pffft, we don't need your SHITTY SHUTTLE, HA!
 			kill_chance = 100 //RIP AND TEAR
 			dagd_chance = 100 //UNTIL IT'S DONE
 			obj_mod = 3 //More murders before going full DAGD.
-			if(isplasmaman(owner.current))
-				H.equipOutfit(/datum/outfit/infiltrator/tiger/plasmaman)
-			else
-				H.equipOutfit(/datum/outfit/infiltrator/tiger)
+			extra_tc = 15 //Absolute destruction.
+			H.equipOutfit(/datum/outfit/infiltrator/tiger)
 
-		if("Syndicate") //Standard "faction". This exists to handle standard equipment.
-			if(isplasmaman(owner.current))
-				H.equipOutfit(/datum/outfit/infiltrator/plasmaman)
-			else
-				H.equipOutfit(/datum/outfit/infiltrator)
+		if("MI13") //Another "rarest" faction. Unlike tigers - has no chance to get hijack/dagd,
+		//but gets A LOT of epic equipment and a bunch of random objectives.
+			hijack_chance = 0
+			dagd_chance = 0
+			kill_chance = 90 //Do you really want someone to get 6 theft objectives..?
+			obj_mod = 5 //Something to do for an hour.
+			extra_tc = 15 //Have fun while staying -=STEALTHY=-
+			H.equipOutfit(/datum/outfit/infiltrator/cybersun/mi13)
+
+		else //Standard "faction". This exists to handle standard equipment.
+			H.equipOutfit(/datum/outfit/infiltrator)
+
+	if(isplasmaman(owner.current)) //Plasmamen equipment
+		H.equipOutfit(/datum/outfit/infiltrator_plasmaman)
 
 /datum/antagonist/traitor/infiltrator/greet()
 	to_chat(owner.current, "<span class='alertsyndie'>You are the [owner.assigned_role].</span>")
@@ -99,8 +105,6 @@
 	if(should_give_codewords)
 		give_codewords()
 	switch(owner.assigned_role)
-		if("Syndicate Infiltrator")
-			to_chat(owner.current, "<span class='alertwarning'>You are a syndicate infiltrator, and you are free to complete your objectives in any way you desire, as long as it helps to finish them, of course. \n</span>")
 		if("Cybersun Infiltrator")
 			to_chat(owner.current, "<span class='alertwarning'>As a member of our group remember: Your actions may cause unwanted attention, attempt to stay as stealthy as possible! \n</span>")
 		if("Gorlex Infiltrator")
@@ -109,7 +113,17 @@
 		if("Tiger Co. Infiltrator")
 			to_chat(owner.current, "<span class='alertwarning'>You are here to seize mass destruction and terror! Everyone is your enemy, even the other infiltrators, except for those Gorlex dudes. Rip and tear until it's done, operative! \n</span>")
 			to_chat(owner.current, "<span class='red'>Remember, everyone, but Gorlex Marauders(Black-Red Suits) - are your enemies. Thought if your mission requires you to, you will have to kill the Gorlex Infiltrators as well...</span>")
-	if(owner.assigned_role != "Tiger Co. Infiltrator" && owner.assigned_role !=  "Gorlex Infiltrator")
+		if("MI13 Infiltrator")
+			to_chat(owner.current, "<span class='alertwarning'>Welcome operative. Formally - you don't exist and you are not here. The only people that are allowed to know about your existance is high command of Cybersun.\n \
+			You must complete your objectives and stay undiscovered AT ALL COST.\n \
+			To do so, you are equipped with all sort of stealth implant and additional telecrystals were added to your uplink.\n \
+			Remember - every innocent victim will be deducted from your pay-check. High amount of such mistakes will lead to your destruction. \n</span>")
+			to_chat(owner.current, "<span class='red'>It's highly likely that you are the only operative we're sending. The only people you are allowed to interact with outside of your objectives are Cybersun Agents. \n \
+			You are also encouraged to destroy any Tiger Co. operatives you might meet on your way.</span>")
+
+		else //Used for Syndicate "faction" and non-existant factions, in case there is an error.
+			to_chat(owner.current, "<span class='alertwarning'>You are a syndicate infiltrator, and you are free to complete your objectives in any way you desire, as long as it helps to finish them, of course. \n</span>")
+	if(owner.assigned_role != "Tiger Co. Infiltrator" && owner.assigned_role !=  "Gorlex Infiltrator" && owner.assigned_role !=  "MI13 Infiltrator")
 		to_chat(owner.current, "<span class='red'>Keep in mind that Tiger Co. Agents are our mutual enemies, don't try to cooperate with them!</span>")
 
 /datum/antagonist/traitor/infiltrator/proc/forge_infiltrator_objectives()
@@ -141,7 +155,7 @@
 		add_objective(martyr_objective)
 		return
 
-	else if(prob(20))
+	if(prob(20))
 		if(!(locate(/datum/objective/escape/escape_with_identity/infiltrator) in objectives))
 			var/datum/objective/escape/escape_with_identity/infiltrator/id_theft = new
 			id_theft.owner = owner

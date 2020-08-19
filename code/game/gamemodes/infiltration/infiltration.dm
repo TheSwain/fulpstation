@@ -82,44 +82,27 @@
 	name = "Gorlex Infiltrator Kit"
 	suit = /obj/item/clothing/suit/space/syndicate/black/orange
 	head = /obj/item/clothing/head/helmet/space/syndicate/black/orange
+	gloves = /obj/item/clothing/gloves/combat
+	r_pocket = /obj/item/grenade/c4/x4
 
-// Plasmemes
+/datum/outfit/infiltrator/cybersun/mi13
+	name = "MI13 Infiltrator Kit"
+	gloves = /obj/item/clothing/gloves/chameleon/combat
+	ears = /obj/item/radio/headset/chameleon
+	mask = /obj/item/clothing/mask/chameleon
+	implants = list(/obj/item/implant/stealth, /obj/item/implant/adrenalin, \
+	/obj/item/implant/freedom, /obj/item/implant/radio/syndicate, /obj/item/implant/explosive)
 
-/datum/outfit/infiltrator/plasmaman
-	name = "Plasmaman Infiltrator Starting Kit"
+//Plasmaman (Spawned on top of previous outfits, not alone)
+
+/datum/outfit/infiltrator_plasmaman
+	name = "Infiltrator Plasma Kit"
 	uniform = /obj/item/clothing/under/plasmaman
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
-	backpack_contents = list(/obj/item/storage/box/survival=1,\
-	/obj/item/tank/jetpack/oxygen/harness=1,\
-	/obj/item/clothing/head/helmet/space/plasmaman=1)
+	backpack_contents = list(/obj/item/clothing/head/helmet/space/plasmaman=1)
 
-/datum/outfit/infiltrator/cybersun/plasmaman
-	name = "Plasmaman Cybersun Infiltrator Kit"
-	uniform = /obj/item/clothing/under/plasmaman
-	gloves = /obj/item/clothing/gloves/color/plasmaman/black
-	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
-	backpack_contents = list(/obj/item/storage/box/survival=1,\
-	/obj/item/tank/jetpack/oxygen/harness=1,\
-	/obj/item/clothing/head/helmet/space/plasmaman=1)
-
-/datum/outfit/infiltrator/gorlex/plasmaman
-	name = "Plasmaman Gorlex Infiltrator Kit"
-	uniform = /obj/item/clothing/under/plasmaman
-	gloves = /obj/item/clothing/gloves/color/plasmaman/black
-	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
-	backpack_contents = list(/obj/item/storage/box/survival=1,\
-	/obj/item/tank/jetpack/oxygen/harness=1,\
-	/obj/item/clothing/head/helmet/space/plasmaman=1)
-
-/datum/outfit/infiltrator/tiger/plasmaman
-	name = "Plasmaman Gorlex Infiltrator Kit"
-	uniform = /obj/item/clothing/under/plasmaman
-	gloves = /obj/item/clothing/gloves/color/plasmaman/black
-	l_pocket = /obj/item/tank/internals/plasmaman/belt/full
-	backpack_contents = list(/obj/item/storage/box/survival=1,\
-	/obj/item/tank/jetpack/oxygen/harness=1,\
-	/obj/item/clothing/head/helmet/space/plasmaman=1)
+//Objective
 
 /datum/objective/escape/escape_with_identity/infiltrator
 	name = "escape with identity (as infiltrator)"
@@ -128,11 +111,109 @@
 	give_special_equipment(/obj/item/adv_mulligan)
 	..()
 
+//Latejoin
+
 /datum/game_mode/traitor/infiltrator/add_latejoin_traitor(datum/mind/character) //Late joiners in Infiltration gamemode will become normal traitors.
 	var/datum/antagonist/traitor/new_antag = new /datum/antagonist/traitor()
 	character.add_antag_datum(new_antag)
 
+//CentCom Report
+
 /datum/game_mode/traitor/infiltrator/generate_report()
 	return "Recent events have proved that Syndicate is staging covert operations in your sector. \
 	While you still should expect any sort of traitorous operations from the inside, \
-	There is a possibility of infiltrators from the outside of your station."
+	There is a high possibility of any sort of Syndicate attack coming from the dark void of space."
+
+//Additional Items used/added by gamemode
+
+/obj/item/adv_mulligan
+	name = "advanced mulligan"
+	desc = "Toxin that permanently changes your DNA into the one of last injected person."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "dnainjector0"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+	var/used = FALSE
+	var/mob/living/carbon/human/stored
+
+/obj/item/adv_mulligan/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
+	return //Stealth
+
+/obj/item/adv_mulligan/afterattack(atom/movable/AM, mob/living/carbon/human/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+	if(!istype(user))
+		return
+	if(used)
+		to_chat(user, "<span class='warning'>[src] has been already used, you can't activate it again!</span>")
+		return
+	if(ishuman(AM))
+		var/mob/living/carbon/human/H = AM
+		if(user.real_name != H.dna.real_name)
+			stored = H
+			to_chat(user, "<span class='notice'>You stealthly stab [H.name] with [src].</span>")
+			desc = "Toxin that permanently changes your DNA into the one of last injected person. It has DNA of <span class='blue'>[stored.dna.real_name]</span> inside."
+			icon_state = "dnainjector"
+		else
+			if(stored)
+				mutate(user)
+			else
+				to_chat(user, "<span class='warning'>You can't stab yourself with [src]!</span>")
+
+/obj/item/adv_mulligan/attack_self(mob/living/carbon/user)
+	mutate(user)
+
+/obj/item/adv_mulligan/proc/mutate(mob/living/carbon/user)
+	if(used)
+		to_chat(user, "<span class='warning'>[src] has been already used, you can't activate it again!</span>")
+		return
+	if(!used)
+		if(stored)
+			user.visible_message("<span class='warning'>[user.name] shivers in pain and soon transform into [stored.dna.real_name]!</span>", \
+			"<span class='notice'>You inject yourself with [src] and suddenly become a copy of [stored.dna.real_name].</span>")
+
+			user.real_name = stored.real_name
+			stored.dna.transfer_identity(user, transfer_SE=1)
+			user.updateappearance(mutcolor_update=1)
+			user.domutcheck()
+			used = TRUE
+
+			icon_state = "dnainjector0"
+			desc = "Toxin that permanently changes your DNA into the one of last injected person. This one is used up."
+
+		else
+			to_chat(user, "<span class='warning'>[src] doesn't have any DNA loaded in it!</span>")
+
+/obj/item/clothing/suit/space/eva/plasmaman/infiltrator
+	desc = "A special syndicate version of plasma containment suit. Capable of everything it's smaller version can do and offers a good protection against hostile environment."
+	w_class = WEIGHT_CLASS_NORMAL
+	slowdown = 0.2
+	armor = list("melee" = 20, "bullet" = 30, "laser" = 20,"energy" = 20, "bomb" = 30, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 80)
+	cell = /obj/item/stock_parts/cell/hyper
+
+/obj/item/storage/box/syndie_kit/plasmeme/ComponentInitialize()
+	. = ..()
+	desc = "Box with unique design allowing it to store any sort of lightweight EVA equipment."
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.set_holdable(list(/obj/item/clothing/suit/space, /obj/item/clothing/head/helmet/space, /obj/item/clothing/under/plasmaman))
+
+/obj/item/storage/box/syndie_kit/plasmeme/PopulateContents()
+	new /obj/item/clothing/under/plasmaman(src)
+	new /obj/item/clothing/suit/space/eva/plasmaman/infiltrator(src)
+	new /obj/item/clothing/head/helmet/space/plasmaman(src)
+
+/obj/item/clothing/gloves/chameleon/combat
+	name = "black gloves"
+	desc = "These tactical gloves provide you with protection against electric shock and heat while also containing the chameleon technology."
+	icon_state = "black"
+	inhand_icon_state = "blackgloves"
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
+	strip_delay = 80
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	heat_protection = HANDS
+	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT

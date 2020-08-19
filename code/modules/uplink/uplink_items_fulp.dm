@@ -41,7 +41,7 @@
 			describing the secrets of saber fighting, force lightning and force push."
 	item = /obj/item/storage/box/syndicate/bundle_sith
 	cost = 19
-	restricted_roles = list("Chaplain", "Curator")
+	restricted_roles = list("Chaplain", "Curator", "Tiger Co. Infiltrator")
 
 /datum/uplink_item/role_restricted/laser_tag_kit_red
 	name = "X-TREME Laser Tag Kit (RADICAL RED)"
@@ -106,7 +106,7 @@
 	clothing_flags = NOSLIP
 
 ////////////// INFILTRATION GAMEMODE ITEMS //////////////
-#define INFILTRATION_FACTIONS list("Syndicate Infiltrator", "Cybersun Infiltrator", "Gorlex Infiltrator", "Tiger Co. Infiltrator")
+#define INFILTRATION_FACTIONS list("Syndicate Infiltrator", "Cybersun Infiltrator", "Gorlex Infiltrator", "Tiger Co. Infiltrator", "MI13 Infiltrator")
 //This define exists for midround spawned infiltrators and dynamic mode.
 
 /datum/uplink_item/role_restricted/cybersunsuit
@@ -177,25 +177,6 @@
 	restricted_species = list("plasmaman")
 	restricted_roles = INFILTRATION_FACTIONS
 
-/obj/item/clothing/suit/space/eva/plasmaman/infiltrator
-	desc = "A special syndicate version of plasma containment suit. Capable of everything it's smaller version can do and offers a good protection against hostile environment."
-	w_class = WEIGHT_CLASS_NORMAL
-	slowdown = 0.2
-	armor = list("melee" = 20, "bullet" = 30, "laser" = 20,"energy" = 20, "bomb" = 30, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 80)
-	cell = /obj/item/stock_parts/cell/hyper
-
-/obj/item/storage/box/syndie_kit/plasmeme/ComponentInitialize()
-	. = ..()
-	desc = "Box with unique design allowing it to store any sort of lightweight EVA equipment."
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.set_holdable(list(/obj/item/clothing/suit/space, /obj/item/clothing/head/helmet/space, /obj/item/clothing/under/plasmaman))
-
-/obj/item/storage/box/syndie_kit/plasmeme/PopulateContents()
-	new /obj/item/clothing/under/plasmaman(src)
-	new /obj/item/clothing/suit/space/eva/plasmaman/infiltrator(src)
-	new /obj/item/clothing/head/helmet/space/plasmaman(src)
-
 /datum/uplink_item/stealthy_tools/adv_mulligan
 	name = "Advanced Mulligan"
 	desc = "An advanced form of toxin created in one of our laboratories using \
@@ -206,63 +187,3 @@
 	item = /obj/item/adv_mulligan
 	cost = 7
 	restricted_roles = INFILTRATION_FACTIONS
-
-/obj/item/adv_mulligan
-	name = "advanced mulligan"
-	desc = "Toxin that permanently changes your DNA into the one of last injected person."
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "dnainjector0"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	w_class = WEIGHT_CLASS_TINY
-	var/used = FALSE
-	var/mob/living/carbon/human/stored
-
-/obj/item/adv_mulligan/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
-	return //Stealth
-
-/obj/item/adv_mulligan/afterattack(atom/movable/AM, mob/living/carbon/human/user, proximity)
-	. = ..()
-	if(!proximity)
-		return
-	if(!istype(user))
-		return
-	if(used)
-		to_chat(user, "<span class='warning'>[src] has been already used, you can't activate it again!</span>")
-		return
-	if(ishuman(AM))
-		var/mob/living/carbon/human/H = AM
-		if(user.real_name != H.dna.real_name)
-			stored = H
-			to_chat(user, "<span class='notice'>You stealthly stab [H.name] with [src].</span>")
-			desc = "Toxin that permanently changes your DNA into the one of last injected person. It has DNA of <span class='blue'>[stored.dna.real_name]</span> inside."
-			icon_state = "dnainjector"
-		else
-			if(stored)
-				mutate(user)
-			else
-				to_chat(user, "<span class='warning'>You can't stab yourself with [src]!</span>")
-
-/obj/item/adv_mulligan/attack_self(mob/living/carbon/user)
-	mutate(user)
-
-/obj/item/adv_mulligan/proc/mutate(mob/living/carbon/user)
-	if(used)
-		to_chat(user, "<span class='warning'>[src] has been already used, you can't activate it again!</span>")
-		return
-	if(!used)
-		if(stored)
-			user.visible_message("<span class='warning'>[user.name] shivers in pain and soon transform into [stored.dna.real_name]!</span>", \
-			"<span class='notice'>You inject yourself with [src] and suddenly become a copy of [stored.dna.real_name].</span>")
-
-			user.real_name = stored.real_name
-			stored.dna.transfer_identity(user, transfer_SE=1)
-			user.updateappearance(mutcolor_update=1)
-			user.domutcheck()
-			used = TRUE
-
-			icon_state = "dnainjector0"
-			desc = "Toxin that permanently changes your DNA into the one of last injected person. This one is used up."
-
-		else
-			to_chat(user, "<span class='warning'>[src] doesn't have any DNA loaded in it!</span>")

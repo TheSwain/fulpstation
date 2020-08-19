@@ -19,7 +19,8 @@
 	if(!candidates.len)
 		return NOT_ENOUGH_PLAYERS
 
-	maximum_infiltrators = pick(1,1,1,2,2,3)
+	var/chance = pickweight(list(1 = 3, 2 = 2, 3 = 1))
+	maximum_infiltrators = pick(chance)
 
 	for(var/i in 1 to maximum_infiltrators)
 		members += pick_n_take(candidates)
