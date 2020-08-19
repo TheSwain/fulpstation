@@ -910,6 +910,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
+/obj/machinery/holopad,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "abW" = (
