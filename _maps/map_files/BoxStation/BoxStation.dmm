@@ -53169,11 +53169,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
-"sNJ" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/open/space,
-/area/space/nearstation)
 "sOs" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/abandoned,
@@ -56334,11 +56329,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/medical/break_room)
-"xLe" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/space/nearstation)
 "xOq" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -65554,7 +65544,7 @@ vul
 auP
 vul
 aaf
-sNJ
+aaf
 aaa
 aaa
 aaa
@@ -79383,11 +79373,11 @@ fbS
 fyS
 aai
 gXs
-xLe
+gXs
 aaa
 aaa
 aaa
-xLe
+gXs
 aaa
 aaa
 aaa
@@ -79640,11 +79630,11 @@ jUA
 aft
 abz
 gXs
-xLe
+gXs
 aaa
 aaa
 aaa
-xLe
+gXs
 aaa
 aaa
 aaa
@@ -79901,7 +79891,7 @@ aaa
 aaa
 aaa
 aaa
-xLe
+gXs
 aaa
 aiU
 aln
@@ -80154,8 +80144,8 @@ fbS
 aft
 abz
 gXs
-xLe
-xLe
+gXs
+gXs
 aaf
 aaf
 aaf
