@@ -19,11 +19,6 @@ map heliostation
 	votable
 endmap
 
-map boxstation
-	#voteweight 1.5
-	votable
-endmap
-
 map metastation
 	#default
 	minplayers 25
