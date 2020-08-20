@@ -128,25 +128,3 @@
 			to_chat(user, "<span class='notice'>You set the advance magboots to Normal mode [src].</span>")
 	I.play_tool_sound(src)
 	. = ..()
-
-/obj/item/clothing/shoes/magboots/advlizard
-	name = "digitigrade magboots"
-	desc = "A custom-made variant set of magnetic boots, intended to ensure lizardfolk can safely perform EVA."
-	flags_inv = FULL_DIGITIGRADE
-	fulp_item = TRUE
-	icon = 'icons/obj/clothing/shoes_fulp.dmi'
-	icon_state = "cedigi_magboots0" //cedigi_magboots0
-	magboot_state = "cedigi_magboots"
-	worn_icon = 'icons/mob/feet_fulp.dmi'
-	inhand_icon_state = "cedigi_magboots"
-
-/obj/item/clothing/shoes/magboots/lizard
-	name = "digitigrade magboots"
-	desc = "A custom-made variant set of magnetic boots, intended to ensure lizardfolk can safely perform EVA."
-	flags_inv = FULL_DIGITIGRADE
-	fulp_item = TRUE
-	icon = 'icons/obj/clothing/shoes_fulp.dmi'
-	icon_state = "digi_magboots0"
-	magboot_state = "digi_magboots"
-	worn_icon = 'icons/mob/feet_fulp.dmi'
-	inhand_icon_state = "digi_magboots"
