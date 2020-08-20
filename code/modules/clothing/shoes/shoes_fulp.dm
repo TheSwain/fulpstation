@@ -110,8 +110,8 @@
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if (flags_inv == NOT_DIGITIGRADE)
 			flags_inv = FULL_DIGITIGRADE
-			icon_state = "magboots0"
-			magboot_state = "magboots"
+			icon_state = "CE_digi_Magboots0"
+			magboot_state = "CE_digi_Magboots1"
 			desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer. They are set to fit digitigrade legs."
 			to_chat(user, "<span class='notice'>You set the advance magboots to Digitigrade mode [src].</span>")
 		else
