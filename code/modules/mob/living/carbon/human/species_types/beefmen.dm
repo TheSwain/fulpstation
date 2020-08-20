@@ -172,7 +172,7 @@
 
 
 /datum/species/beefman/spec_life(mob/living/carbon/human/H)	// This is your life ticker.
-	//..()
+	..()
 	// 		** BLEED YOUR JUICES **         // BODYTEMP_NORMAL = 310.15    // AC set to 293
 
 	// Step 1) Being burned keeps the juices in.
