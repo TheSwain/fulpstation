@@ -93,3 +93,31 @@
 	icon_state = "digi_mime"
 	worn_icon = 'icons/mob/feet_fulp.dmi'
 	inhand_icon_state = "digi_mime"
+
+//this is literally the easiest way my simple brain could think of for implementing CEs magboots without having to change antag code
+/obj/item/clothing/shoes/magboots/advance/digicompatable
+	desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer. They are set to fit normal legs."
+	name = "Advanced magboots"
+	flags_inv = NOT_DIGITIGRADE
+	icon_state = "advmag0"
+	magboot_state = "advmag"
+	slowdown_active = SHOES_SLOWDOWN
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+
+
+/obj/item/clothing/shoes/magboots/advance/digicompatable/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_SCREWDRIVER)
+		if (flags_inv == NOT_DIGITIGRADE)
+			flags_inv = FULL_DIGITIGRADE
+			icon_state = "magboots0"
+			magboot_state = "magboots"
+			desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer. They are set to fit digitigrade legs."
+			to_chat(user, "<span class='notice'>You set the advance magboots to Digitigrade mode [src].</span>")
+		else
+			flags_inv = NOT_DIGITIGRADE
+			icon_state = "advmag0"
+			magboot_state = "advmag"
+			desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer. They are set to fit normal legs."
+			to_chat(user, "<span class='notice'>You set the advance magboots to Normal mode [src].</span>")
+	. = ..()
