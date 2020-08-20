@@ -110,30 +110,43 @@
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if (flags_inv == NOT_DIGITIGRADE)
 			flags_inv = FULL_DIGITIGRADE
-			icon = 'icons/obj/clothing/CE_DIGITIGRADE_MAGBOOTS.dmi'
-			icon_state = "CE_digi_Magboots0"
-			magboot_state = "CE_digi_Magboots"
-			worn_icon = 'icons/mob/CE_FEET.dmi'
-			inhand_icon_state = "CEdigimagboot0"
+			icon = 'icons/obj/clothing/shoes_fulp.dmi'
+			icon_state = "cedigi_magboots0" //cedigi_magboots0
+			magboot_state = "cedigi_magboots"
+			worn_icon = 'icons/mob/feet_fulp.dmi'
+			inhand_icon_state = "cedigi_magboots"
 			desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer. They are set to fit digitigrade legs."
 			to_chat(user, "<span class='notice'>You set the advance magboots to Digitigrade mode [src].</span>")
 		else
 			flags_inv = NOT_DIGITIGRADE
+			icon = 'icons/obj/clothing/shoes.dmi'
 			icon_state = "advmag0"
 			magboot_state = "advmag"
-			worn_icon = "icons/mob/feet.dmi"
+			worn_icon = 'icons/mob/clothing/feet.dmi'
 			inhand_icon_state = "advmag"
 			desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer. They are set to fit normal legs."
 			to_chat(user, "<span class='notice'>You set the advance magboots to Normal mode [src].</span>")
+	I.play_tool_sound(src)
 	. = ..()
+
+/obj/item/clothing/shoes/magboots/advlizard
+	name = "digitigrade magboots"
+	desc = "A custom-made variant set of magnetic boots, intended to ensure lizardfolk can safely perform EVA."
+	flags_inv = FULL_DIGITIGRADE
+	fulp_item = TRUE
+	icon = 'icons/obj/clothing/shoes_fulp.dmi'
+	icon_state = "cedigi_magboots0" //cedigi_magboots0
+	magboot_state = "cedigi_magboots"
+	worn_icon = 'icons/mob/feet_fulp.dmi'
+	inhand_icon_state = "cedigi_magboots"
 
 /obj/item/clothing/shoes/magboots/lizard
 	name = "digitigrade magboots"
 	desc = "A custom-made variant set of magnetic boots, intended to ensure lizardfolk can safely perform EVA."
 	flags_inv = FULL_DIGITIGRADE
 	fulp_item = TRUE
-	icon = 'icons/obj/clothing/CE_DIGITIGRADE_MAGBOOTS.dmi'
-	icon_state = "CE_digi_Magboots0"
-	magboot_state = "CE_digi_Magboots"
-	worn_icon = 'icons/mob/CE_FEET.dmi'
-	inhand_icon_state = "CEdigimagboot"
+	icon = 'icons/obj/clothing/shoes_fulp.dmi'
+	icon_state = "digi_magboots0"
+	magboot_state = "digi_magboots"
+	worn_icon = 'icons/mob/feet_fulp.dmi'
+	inhand_icon_state = "digi_magboots"
