@@ -37549,6 +37549,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/item/toy/katana,
 /turf/open/floor/plasteel,
 /area/crew_quarters/lounge)
 "bjQ" = (
