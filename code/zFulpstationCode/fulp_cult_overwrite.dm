@@ -77,7 +77,7 @@
 //This is a new item, the Influencer's blindfold. It's the Zealot's blindfold but with Security huds rather than Medical.
 
 /obj/item/clothing/glasses/hud/health/night/fulpcultblind
-	desc = "may Nar'Sie guide you through the darkness and shield you from the light."
+	desc = "may Nar'Sie tell you those strong of mind and shield you from the light."
 	name = "zealot's blindfold"
 	icon_state = "blindfold"
 	inhand_icon_state = "blindfold"
