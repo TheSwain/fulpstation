@@ -139,10 +139,6 @@
 	. = ..()
 	var/datum/browser/popup = new(user, "teg", "Thermo-Electric Generator", 460, 300)
 	popup.set_content(get_menu())
-<<<<<<< HEAD
-=======
-	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
->>>>>>> fulpmaster
 	popup.open()
 
 /obj/machinery/power/generator/Topic(href, href_list)

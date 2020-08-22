@@ -333,11 +333,7 @@
 	var/stam_regen = FALSE
 	if(stam_regen_start_time <= world.time)
 		stam_regen = TRUE
-<<<<<<< HEAD
 		if(HAS_TRAIT_FROM(src, TRAIT_INCAPACITATED, STAMINA))
-=======
-		if(stam_paralyzed)
->>>>>>> fulpmaster
 			. |= BODYPART_LIFE_UPDATE_HEALTH //make sure we remove the stamcrit
 	for(var/I in bodyparts)
 		var/obj/item/bodypart/BP = I
@@ -543,20 +539,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 		if(drunkenness >= 41)
 			if(prob(25))
-<<<<<<< HEAD
 				add_confusion(2)
-=======
-				confused += 2
->>>>>>> fulpmaster
 			Dizzy(10)
 
 		if(drunkenness >= 51)
 			if(prob(3))
-<<<<<<< HEAD
 				add_confusion(15)
-=======
-				confused += 15
->>>>>>> fulpmaster
 				vomit() // vomiting clears toxloss, consider this a blessing
 			Dizzy(25)
 

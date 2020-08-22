@@ -69,11 +69,7 @@
 /obj/item/clothing/head/mob_holder/relaymove(mob/user)
 	release()
 
-<<<<<<< HEAD
 /obj/item/clothing/head/mob_holder/container_resist_act()
-=======
-/obj/item/clothing/head/mob_holder/container_resist()
->>>>>>> fulpmaster
 	release()
 
 /obj/item/clothing/head/mob_holder/drone/deposit(mob/living/L)

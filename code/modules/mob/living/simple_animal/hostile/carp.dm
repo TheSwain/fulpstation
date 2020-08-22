@@ -222,24 +222,16 @@
 
 /mob/living/simple_animal/hostile/carp/cayenne
 	name = "Cayenne"
-<<<<<<< HEAD
 	real_name = "Cayenne"
-=======
->>>>>>> fulpmaster
 	desc = "A failed Syndicate experiment in weaponized space carp technology, it now serves as a lovable mascot."
 	gender = FEMALE
 	speak_emote = list("squeaks")
 	gold_core_spawnable = NO_SPAWN
 	faction = list(ROLE_SYNDICATE)
-<<<<<<< HEAD
-=======
-	AIStatus = AI_OFF
->>>>>>> fulpmaster
 	rarechance = 10
 	food_type = list()
 	tame_chance = 0
 	bonus_tame_chance = 0
-<<<<<<< HEAD
 	pet_bonus = TRUE
 	pet_bonus_emote = "bloops happily!"
 
@@ -255,7 +247,5 @@
 	icon_state = "magicarp"
 	maxHealth = 200
 	random_color = FALSE
-=======
->>>>>>> fulpmaster
 
 #undef REGENERATION_DELAY

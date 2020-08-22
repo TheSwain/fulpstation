@@ -206,11 +206,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/datum/asset/spritesheet/assets = get_asset_datum(/datum/asset/spritesheet/simple/pda)
 	assets.send(user)
 
-<<<<<<< HEAD
 	var/datum/asset/spritesheet/emoji_s = get_asset_datum(/datum/asset/spritesheet/chat)
-=======
-	var/datum/asset/spritesheet/emoji_s = get_asset_datum(/datum/asset/spritesheet/goonchat)
->>>>>>> fulpmaster
 	emoji_s.send(user) //Already sent by chat but no harm doing this
 
 	user.set_machine(src)
@@ -908,7 +904,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 			old_id.forceMove(get_turf(src))
 
 
-<<<<<<< HEAD
 /obj/item/pda/pre_attack(obj/target, mob/living/user, params)
 	if(!ismachinery(target))
 		return ..()
@@ -932,9 +927,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 	installed_cartridge.charges --
 	return TRUE
 
-
-=======
->>>>>>> fulpmaster
 // access to status display signals
 /obj/item/pda/attackby(obj/item/C, mob/user, params)
 	if(istype(C, /obj/item/cartridge))

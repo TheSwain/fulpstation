@@ -65,11 +65,7 @@
 
 /datum/nanite_program/brain_heal/check_conditions()
 	if(host_mob.getOrganLoss(ORGAN_SLOT_BRAIN) > 0)
-<<<<<<< HEAD
 		return ..()
-=======
-		return ..()	
->>>>>>> fulpmaster
 	if(iscarbon(host_mob))
 		var/mob/living/carbon/C = host_mob
 		if ( C.has_trauma_type( resilience = TRAUMA_RESILIENCE_BASIC) )
@@ -179,18 +175,6 @@
 	use_rate = 3
 	rogue_types = list(/datum/nanite_program/brain_decay, /datum/nanite_program/brain_misfire)
 
-<<<<<<< HEAD
-=======
-/datum/nanite_program/brain_heal_advanced/check_conditions()
-	if(host_mob.getOrganLoss(ORGAN_SLOT_BRAIN) > 0)
-		return ..()	
-	if(iscarbon(host_mob))
-		var/mob/living/carbon/C = host_mob
-		if ( C.has_trauma_type( resilience = TRAUMA_RESILIENCE_LOBOTOMY) )
-			return ..()
-	return FALSE
-
->>>>>>> fulpmaster
 /datum/nanite_program/brain_heal_advanced/active_effect()
 	host_mob.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2)
 	if(iscarbon(host_mob) && prob(10))

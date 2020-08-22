@@ -93,14 +93,9 @@
 	throw_speed = 1
 	throw_range = 3
 	sharpness = SHARP_EDGED
-<<<<<<< HEAD
 	light_color = COLOR_RED
 	attack_verb_continuous = list("cleaves", "slashes", "tears", "lacerates", "hacks", "rips", "dices", "carves")
 	attack_verb_simple = list("cleave", "slash", "tear", "lacerate", "hack", "rip", "dice", "carve")
-=======
-	light_color = "#ff0000"
-	attack_verb = list("cleaved", "slashed", "tore", "lacerated", "hacked", "ripped", "diced", "carved")
->>>>>>> fulpmaster
 	icon_state = "cultbastard"
 	inhand_icon_state = "cultbastard"
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -645,12 +640,8 @@
 	throw_speed = 2
 	armour_penetration = 30
 	block_chance = 30
-<<<<<<< HEAD
 	attack_verb_continuous = list("attacks", "impales", "stabs", "tears", "lacerates", "gores")
 	attack_verb_simple = list("attack", "impale", "stab", "tear", "lacerate", "gore")
-=======
-	attack_verb = list("attacked", "impaled", "stabbed", "tore", "lacerated", "gored")
->>>>>>> fulpmaster
 	sharpness = SHARP_EDGED
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/datum/action/innate/cult/spear/spear_act

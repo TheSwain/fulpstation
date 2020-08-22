@@ -77,7 +77,6 @@
 		mutant_bodyparts |= "spines"
 	H.update_body()
 
-<<<<<<< HEAD
 /datum/species/lizard/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	var/real_tail_type = C.dna.features["tail_lizard"]
 	var/real_spines = C.dna.features["spines"]
@@ -103,8 +102,6 @@
 		// we don't need to manage that.
 		new_tail.Insert(C, TRUE, FALSE)
 
-=======
->>>>>>> fulpmaster
 /*
  Lizard subspecies: ASHWALKERS
 */

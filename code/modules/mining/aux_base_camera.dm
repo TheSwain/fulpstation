@@ -210,11 +210,7 @@
 
 
 /datum/action/innate/aux_base/window_type
-<<<<<<< HEAD
 	name = "Select Window Glass"
-=======
-	name = "Select Window Type"
->>>>>>> fulpmaster
 	button_icon_state = "window_select"
 
 /datum/action/innate/aux_base/window_type/Activate()

@@ -234,12 +234,7 @@
 			mob_occupant.Unconscious((mob_occupant.bodytemperature * unconscious_factor) * 2000)
 		if(beaker)
 			if(reagent_transfer == 0) // Magically transfer reagents. Because cryo magic.
-<<<<<<< HEAD
 				beaker.reagents.trans_to(occupant, 1, efficiency * 0.25, method = VAPOR) // Transfer reagents.
-=======
-				beaker.reagents.trans_to(occupant, 1, efficiency * 0.25) // Transfer reagents.
-				beaker.reagents.expose(occupant, VAPOR)
->>>>>>> fulpmaster
 				air1.gases[/datum/gas/oxygen][MOLES] -= max(0,air1.gases[/datum/gas/oxygen][MOLES] - 2 / efficiency) //Let's use gas for this
 				air1.garbage_collect()
 			if(++reagent_transfer >= 10 * efficiency) // Throttle reagent transfer (higher efficiency will transfer the same amount but consume less from the beaker).
@@ -307,11 +302,7 @@
 		..(user)
 		return occupant
 
-<<<<<<< HEAD
 /obj/machinery/atmospherics/components/unary/cryo_cell/container_resist_act(mob/living/user)
-=======
-/obj/machinery/atmospherics/components/unary/cryo_cell/container_resist(mob/living/user)
->>>>>>> fulpmaster
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
 	user.visible_message("<span class='notice'>You see [user] kicking against the glass of [src]!</span>", \
@@ -409,17 +400,10 @@
 		data["occupant"]["health"] = round(mob_occupant.health, 1)
 		data["occupant"]["maxHealth"] = mob_occupant.maxHealth
 		data["occupant"]["minHealth"] = HEALTH_THRESHOLD_DEAD
-<<<<<<< HEAD
 		data["occupant"]["bruteLoss"] = round(mob_occupant.getBruteLoss(), 1)
 		data["occupant"]["oxyLoss"] = round(mob_occupant.getOxyLoss(), 1)
 		data["occupant"]["toxLoss"] = round(mob_occupant.getToxLoss(), 1)
 		data["occupant"]["fireLoss"] = round(mob_occupant.getFireLoss(), 1)
-=======
-		data["occupant"]["bruteLoss"] = round(mob_occupant.getBruteLoss_nonProsthetic(), 1) // FULP: Don't count Prosthetics.
-		data["occupant"]["oxyLoss"] = round(mob_occupant.getOxyLoss(), 1)
-		data["occupant"]["toxLoss"] = round(mob_occupant.getToxLoss(), 1)
-		data["occupant"]["fireLoss"] = round(mob_occupant.getFireLoss_nonProsthetic(), 1) // FULP: Don't count Prosthetics.
->>>>>>> fulpmaster
 		data["occupant"]["bodyTemperature"] = round(mob_occupant.bodytemperature, 1)
 		if(mob_occupant.bodytemperature < TCRYO)
 			data["occupant"]["temperaturestatus"] = "good"

@@ -46,11 +46,7 @@
 	var/obj/item/multitool/aiMulti
 	var/mob/living/simple_animal/bot/Bot
 	var/tracking = FALSE //this is 1 if the AI is currently tracking somebody, but the track has not yet been completed.
-<<<<<<< HEAD
 	var/datum/effect_system/spark_spread/spark_system //So they can initialize sparks whenever
-=======
-	var/datum/effect_system/spark_spread/spark_system//So they can initialize sparks whenever/N
->>>>>>> fulpmaster
 
 	//MALFUNCTION
 	var/datum/module_picker/malf_picker
@@ -936,11 +932,7 @@
 		to_chat(src, "Hack complete. \The [apc] is now under your exclusive control.")
 		apc.update_icon()
 
-<<<<<<< HEAD
 /mob/living/silicon/ai/verb/deploy_to_shell(mob/living/silicon/robot/target)
-=======
-/mob/living/silicon/ai/verb/deploy_to_shell(var/mob/living/silicon/robot/target)
->>>>>>> fulpmaster
 	set category = "AI Commands"
 	set name = "Deploy to Shell"
 

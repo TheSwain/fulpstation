@@ -15,12 +15,8 @@
 	drop_sound = 'sound/items/handling/crowbar_drop.ogg'
 	pickup_sound =  'sound/items/handling/crowbar_pickup.ogg'
 
-<<<<<<< HEAD
 	attack_verb_continuous = list("attacks", "bashes", "batters", "bludgeons", "whacks")
 	attack_verb_simple = list("attack", "bash", "batter", "bludgeon", "whack")
-=======
-	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
->>>>>>> fulpmaster
 	tool_behaviour = TOOL_CROWBAR
 	toolspeed = 1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
@@ -103,10 +99,6 @@
 		to_chat(user, "<span class='notice'>You attach the cutting jaws to [src].</span>")
 		usesound = 'sound/items/jaws_cut.ogg'
 		update_icon()
-<<<<<<< HEAD
-
-=======
->>>>>>> fulpmaster
 	else
 		tool_behaviour = TOOL_CROWBAR
 		to_chat(user, "<span class='notice'>You attach the prying jaws to [src].</span>")

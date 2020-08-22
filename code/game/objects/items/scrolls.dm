@@ -60,11 +60,7 @@
 	smoke.start()
 	var/list/L = list()
 	for(var/turf/T in get_area_turfs(thearea.type))
-<<<<<<< HEAD
 		if(!T.is_blocked_turf())
-=======
-		if(!is_blocked_turf(T))
->>>>>>> fulpmaster
 			L += T
 
 	if(!L.len)

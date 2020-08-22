@@ -140,17 +140,10 @@
 	else
 		return ..()
 
-<<<<<<< HEAD
 /obj/structure/big_delivery/relay_container_resist_act(mob/living/user, obj/O)
 	if(ismovable(loc))
 		var/atom/movable/AM = loc //can't unwrap the wrapped container if it's inside something.
 		AM.relay_container_resist_act(user, O)
-=======
-/obj/structure/big_delivery/relay_container_resist(mob/living/user, obj/O)
-	if(ismovable(loc))
-		var/atom/movable/AM = loc //can't unwrap the wrapped container if it's inside something.
-		AM.relay_container_resist(user, O)
->>>>>>> fulpmaster
 		return
 	to_chat(user, "<span class='notice'>You lean on the back of [O] and start pushing to rip the wrapping around it.</span>")
 	if(do_after(user, 50, target = O))

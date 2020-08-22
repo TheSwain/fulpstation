@@ -48,7 +48,6 @@
 /obj/item/storage/proc/emptyStorage()
 	var/datum/component/storage/ST = GetComponent(/datum/component/storage)
 	ST.do_quick_empty()
-<<<<<<< HEAD
 
 /obj/item/storage/Destroy()
 	for(var/obj/important_thing in contents)
@@ -56,5 +55,3 @@
 			continue
 		important_thing.forceMove(drop_location())
 	return ..()
-=======
->>>>>>> fulpmaster

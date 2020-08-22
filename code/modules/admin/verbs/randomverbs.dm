@@ -1351,41 +1351,24 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	var/add_or_remove = input("Remove/Add?", "Trait Remove/Add") as null|anything in list("Add","Remove")
 	if(!add_or_remove)
 		return
-<<<<<<< HEAD
 	var/list/available_traits = list()
-=======
-	var/list/availible_traits = list()
->>>>>>> fulpmaster
 
 	switch(add_or_remove)
 		if("Add")
 			for(var/key in GLOB.traits_by_type)
 				if(istype(D,key))
-<<<<<<< HEAD
 					available_traits += GLOB.traits_by_type[key]
-=======
-					availible_traits += GLOB.traits_by_type[key]
->>>>>>> fulpmaster
 		if("Remove")
 			if(!GLOB.trait_name_map)
 				GLOB.trait_name_map = generate_trait_name_map()
 			for(var/trait in D.status_traits)
 				var/name = GLOB.trait_name_map[trait] || trait
-<<<<<<< HEAD
 				available_traits[name] = trait
 
 	var/chosen_trait = input("Select trait to modify", "Trait") as null|anything in sortList(available_traits)
 	if(!chosen_trait)
 		return
 	chosen_trait = available_traits[chosen_trait]
-=======
-				availible_traits[name] = trait
-
-	var/chosen_trait = input("Select trait to modify", "Trait") as null|anything in sortList(availible_traits)
-	if(!chosen_trait)
-		return
-	chosen_trait = availible_traits[chosen_trait]
->>>>>>> fulpmaster
 
 	var/source = "adminabuse"
 	switch(add_or_remove)

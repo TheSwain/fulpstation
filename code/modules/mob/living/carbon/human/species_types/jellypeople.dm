@@ -449,13 +449,8 @@
 	name = "luminescent glow"
 	desc = "Tell a coder if you're seeing this."
 	icon_state = "nothing"
-<<<<<<< HEAD
 	light_range = LUMINESCENT_DEFAULT_GLOW
 	light_color = COLOR_WHITE
-=======
-	light_color = "#FFFFFF"
-	light_range = LUMINESCENT_DEFAULT_GLOW
->>>>>>> fulpmaster
 
 /obj/effect/dummy/luminescent_glow/Initialize()
 	. = ..()

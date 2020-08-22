@@ -122,7 +122,7 @@
 	refill_canister = /obj/item/vending_refill/wardrobe/atmos_wardrobe
 	payment_department = ACCOUNT_ENG
 	light_color = COLOR_VIVID_YELLOW
-					
+
 
 /obj/item/vending_refill/wardrobe/atmos_wardrobe
 	machine_name = "AtmosDrobe"
@@ -392,7 +392,7 @@
 					/obj/item/clothing/shoes/sneakers/brown/digitigrade = 1,
 					/obj/item/clothing/suit/hooded/wintercoat/service/chap = 2,
 					/obj/item/clothing/suit/chaplainsuit/monkrobeeast = 1)
-	contraband = list(/obj/item/toy/plush/plushvar = 1,
+	contraband = list(/obj/item/toy/plush/ratplush = 1,
 					/obj/item/toy/plush/narplush = 1,
 					/obj/item/clothing/head/medievaljewhat = 3,
 					/obj/item/clothing/suit/chaplainsuit/clownpriest = 1,

@@ -10,8 +10,6 @@
 #define BLOB (STRUCTURE + 1)
 #define STRUCTURE (1)
 
-<<<<<<< HEAD:code/modules/power/tesla/tesla_zap.dm
-=======
 /obj/singularity/energy_ball
 	name = "energy ball"
 	desc = "An energy ball."
@@ -182,7 +180,6 @@
 	var/mob/living/carbon/C = A
 	C.dust()
 
->>>>>>> fulpmaster:code/modules/power/tesla/energy_ball.dm
 /proc/tesla_zap(atom/source, zap_range = 3, power, zap_flags = ZAP_DEFAULT_FLAGS, list/shocked_targets = list())
 	if(QDELETED(source))
 		return

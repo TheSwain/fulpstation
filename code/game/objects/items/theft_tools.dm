@@ -247,11 +247,7 @@
 	return ..()
 
 /obj/item/hemostat/supermatter/update_icon_state()
-<<<<<<< HEAD
 	icon_state = "supermatter_tongs[sliver ? "_loaded" : null]"
-=======
-	icon_state = "supermatter_tongs[sliver ? "loaded" : null]"
->>>>>>> fulpmaster
 
 /obj/item/hemostat/supermatter/afterattack(atom/O, mob/user, proximity)
 	. = ..()

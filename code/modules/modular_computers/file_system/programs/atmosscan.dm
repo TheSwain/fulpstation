@@ -5,7 +5,6 @@
 	extended_desc = "A small built-in sensor reads out the atmospheric conditions around the device."
 	size = 4
 	tgui_id = "NtosAtmos"
-<<<<<<< HEAD
 
 /datum/computer_file/program/atmosscan/run_program(mob/living/user)
 	. = ..()
@@ -13,9 +12,6 @@
 		return
 	if(!computer?.get_modular_computer_part(MC_SENSORS)) //Giving a clue to users why the program is spitting out zeros.
 		to_chat(user, "<span class='warning'>\The [computer] flashes an error: \"hardware\\sensorpackage\\startup.bin -- file not found\".</span>")
-
-=======
->>>>>>> fulpmaster
 
 /datum/computer_file/program/atmosscan/ui_data(mob/user)
 	var/list/data = get_header_data()

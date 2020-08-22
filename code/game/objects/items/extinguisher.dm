@@ -12,12 +12,8 @@
 	throw_range = 7
 	force = 10
 	custom_materials = list(/datum/material/iron = 90)
-<<<<<<< HEAD
 	attack_verb_continuous = list("slams", "whacks", "bashes", "thunks", "batters", "bludgeons", "thrashes")
 	attack_verb_simple = list("slam", "whack", "bash", "thunk", "batter", "bludgeon", "thrash")
-=======
-	attack_verb = list("slammed", "whacked", "bashed", "thunked", "battered", "bludgeoned", "thrashed")
->>>>>>> fulpmaster
 	dog_fashion = /datum/dog_fashion/back
 	resistance_flags = FIRE_PROOF
 	var/max_water = 50
@@ -234,11 +230,7 @@
 		return
 	EmptyExtinguisher(user)
 
-<<<<<<< HEAD
 /obj/item/extinguisher/proc/EmptyExtinguisher(mob/user)
-=======
-/obj/item/extinguisher/proc/EmptyExtinguisher(var/mob/user)
->>>>>>> fulpmaster
 	if(loc == user && reagents.total_volume)
 		reagents.clear_reagents()
 

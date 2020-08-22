@@ -70,12 +70,9 @@
 	switch(mode)
 		if(0)
 			if(M.health >= 0)
-<<<<<<< HEAD
 				if(isanimal(M))
 					M.attack_hand(user) //This enables borgs to get the floating heart icon and mob emote from simple_animal's that have petbonus == true.
 					return
-=======
->>>>>>> fulpmaster
 				if(user.zone_selected == BODY_ZONE_HEAD)
 					user.visible_message("<span class='notice'>[user] playfully boops [M] on the head!</span>", \
 									"<span class='notice'>You playfully boop [M] on the head!</span>")
@@ -309,11 +306,7 @@
 			"<span class='danger'>The siren pierces your hearing!</span>")
 		for(var/mob/living/carbon/M in get_hearers_in_view(9, user))
 			if(M.get_ear_protection() == FALSE)
-<<<<<<< HEAD
 				M.add_confusion(6)
-=======
-				M.confused += 6
->>>>>>> fulpmaster
 		audible_message("<font color='red' size='7'>HUMAN HARM</font>")
 		playsound(get_turf(src), 'sound/ai/harmalarm.ogg', 70, 3)
 		cooldown = world.time + 200
@@ -330,20 +323,12 @@
 			var/bang_effect = C.soundbang_act(2, 0, 0, 5)
 			switch(bang_effect)
 				if(1)
-<<<<<<< HEAD
 					C.add_confusion(5)
-=======
-					C.confused += 5
->>>>>>> fulpmaster
 					C.stuttering += 10
 					C.Jitter(10)
 				if(2)
 					C.Paralyze(40)
-<<<<<<< HEAD
 					C.add_confusion(10)
-=======
-					C.confused += 10
->>>>>>> fulpmaster
 					C.stuttering += 15
 					C.Jitter(25)
 		playsound(get_turf(src), 'sound/machines/warning-buzzer.ogg', 130, 3)

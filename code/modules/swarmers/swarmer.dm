@@ -117,7 +117,7 @@
 		var/mob/living/silicon/borg = target
 		borg.adjustBruteLoss(melee_damage_lower)
 	return ..()
-		
+
 /mob/living/simple_animal/hostile/swarmer/MiddleClickOn(atom/A)
 	. = ..()
 	if(!LAZYLEN(dronelist))
@@ -130,28 +130,17 @@
 		drone.LoseTarget()
 		drone.Goto(clicked_turf, drone.move_to_delay)
 
-<<<<<<< HEAD
 /mob/living/simple_animal/hostile/swarmer/CtrlClickOn(atom/target)
 	face_atom(target)
 	if(!istype(target, /mob/living))
 		return
-=======
-/mob/living/simple_animal/hostile/swarmer/CtrlClickOn(atom/A)
-	face_atom(A)
->>>>>>> fulpmaster
 	if(!isturf(loc))
 		return
 	if(next_move > world.time)
 		return
-<<<<<<< HEAD
 	if(!target.Adjacent(src))
 		return
 	prepare_target(target)
-=======
-	if(!A.Adjacent(src))
-		return
-	prepare_target(src)
->>>>>>> fulpmaster
 
 ////END CTRL CLICK FOR SWARMERS////
 
@@ -235,9 +224,9 @@
 
 	if(!do_mob(src, target, 30))
 		return
-		
+
 	teleport_target(target)
-		
+
 /mob/living/simple_animal/hostile/swarmer/proc/teleport_target(mob/living/target)
 	var/turf/open/floor/safe_turf = find_safe_turf(zlevels = z, extended_safety_checks = TRUE)
 
@@ -444,11 +433,8 @@
   * * mob/drone - The drone to be removed from the list.
   */
 /mob/living/simple_animal/hostile/swarmer/proc/remove_drone(mob/drone, force)
-<<<<<<< HEAD
 	SIGNAL_HANDLER
 
-=======
->>>>>>> fulpmaster
 	UnregisterSignal(drone, COMSIG_PARENT_QDELETING)
 	dronelist -= drone
 

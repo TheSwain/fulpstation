@@ -511,11 +511,7 @@
   * If the seed's instability is >= 20, the seed donates one of it's reagents to that nearby plant.
   * * Range - The Oview range of trays to which to look for plants to donate reagents.
   */
-<<<<<<< HEAD
 /obj/machinery/hydroponics/proc/pollinate(range = 1)
-=======
-/obj/machinery/hydroponics/proc/pollinate(var/range = 1)
->>>>>>> fulpmaster
 	for(var/obj/machinery/hydroponics/T in oview(src, range))
 		//Here is where we check for window blocking.
 		if(!Adjacent(T) && range <= 1)
@@ -530,12 +526,8 @@
 					possible_reagents += reag
 				var/datum/plant_gene/reagent/reagent_gene = pick(possible_reagents) //Let this serve as a lession to delete your WIP comments before merge.
 				if(reagent_gene.can_add(myseed))
-<<<<<<< HEAD
 					if(!reagent_gene.try_upgrade_gene(myseed))
 						myseed.genes += reagent_gene.Copy()
-=======
-					myseed.genes += reagent_gene.Copy()
->>>>>>> fulpmaster
 					myseed.reagents_from_genes()
 					continue
 
@@ -705,10 +697,6 @@
 			snip.forceMove(drop_location())
 			myseed.grafted = TRUE
 			adjustHealth(-5)
-<<<<<<< HEAD
-=======
-			snip.name += " ([snip.parent_seed.plantname])"
->>>>>>> fulpmaster
 			return
 
 	else if(istype(O, /obj/item/geneshears))
@@ -824,11 +812,7 @@
 			myseed.mutatelist = list(fresh_mut_list[locked_mutation])
 			myseed.endurance = (myseed.endurance/2)
 			flowergun.cell.use(flowergun.cell.charge)
-<<<<<<< HEAD
 			flowergun.update_icon()
-=======
-			flowergun.update_overlays()
->>>>>>> fulpmaster
 			to_chat(user, "<span class='notice'>[myseed.plantname]'s mutation was set to [locked_mutation], depleting [flowergun]'s cell!</span>")
 			return
 	else

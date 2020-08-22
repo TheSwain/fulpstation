@@ -74,10 +74,7 @@
 		var/reag_txt = ""
 		if(seed && P_analyzer.scan_mode == PLANT_SCANMODE_CHEMICALS)
 			msg += "<br><span class='info'>*Plant Reagents*</span>"
-<<<<<<< HEAD
 			msg += "<br><span class='info'>Maximum reagent capacity: [reagents.maximum_volume]</span>"
-=======
->>>>>>> fulpmaster
 			var/chem_cap = 0
 			for(var/reagent_id in reagents.reagent_list)
 				var/datum/reagent/R  = reagent_id

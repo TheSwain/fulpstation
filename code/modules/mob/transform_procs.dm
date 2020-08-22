@@ -244,11 +244,7 @@
 	//keep viruses?
 	if (tr_flags & TR_KEEPVIRUS)
 		O.diseases = diseases
-<<<<<<< HEAD
 		diseases = null	//null the old diseases, bye bye!
-=======
-		diseases = list()
->>>>>>> fulpmaster
 		for(var/thing in O.diseases)
 			var/datum/disease/D = thing
 			D.affected_mob = O
@@ -423,11 +419,7 @@
 	if(client)
 		R.updatename(client)
 
-<<<<<<< HEAD
 	if(mind)		//TODO //TODO WHAT
-=======
-	if(mind)		//TODO
->>>>>>> fulpmaster
 		if(!transfer_after)
 			mind.active = FALSE
 		mind.transfer_to(R)

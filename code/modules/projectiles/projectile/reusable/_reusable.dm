@@ -4,10 +4,7 @@
 	var/ammo_type = /obj/item/ammo_casing/caseless
 	var/dropped = FALSE
 	impact_effect_type = null
-<<<<<<< HEAD
 	embedding = null
-=======
->>>>>>> fulpmaster
 
 /obj/projectile/bullet/reusable/on_hit(atom/target, blocked = FALSE)
 	. = ..()

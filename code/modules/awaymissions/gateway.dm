@@ -11,7 +11,6 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 /datum/gateway_destination
 	var/name = "Unknown Destination"
 	var/wait = 0 /// How long after roundstart this destination becomes active
-<<<<<<< HEAD
 	var/enabled = TRUE /// If disabled, the destination won't be available
 	var/hidden = FALSE /// Will not show on gateway controls at all.
 
@@ -21,17 +20,6 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 
 /* Returns user-friendly description why you can't connect to this destination, displayed in UI */
 /datum/gateway_destination/proc/get_available_reason()
-=======
-	var/enabled = TRUE /// If disabled, the destination won't be availible
-	var/hidden = FALSE /// Will not show on gateway controls at all.
-
-/* Can a gateway link to this destination right now. */
-/datum/gateway_destination/proc/is_availible()
-	return enabled && (world.time - SSticker.round_start_time >= wait)
-
-/* Returns user-friendly description why you can't connect to this destination, displayed in UI */
-/datum/gateway_destination/proc/get_availible_reason()
->>>>>>> fulpmaster
 	. = "Unreachable"
 	if(world.time - SSticker.round_start_time < wait)
 		. = "Connection desynchronized. Recalibration in progress."
@@ -64,13 +52,8 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	. = list()
 	.["ref"] = REF(src)
 	.["name"] = name
-<<<<<<< HEAD
 	.["available"] = is_available()
 	.["reason"] = get_available_reason()
-=======
-	.["availible"] = is_availible()
-	.["reason"] = get_availible_reason()
->>>>>>> fulpmaster
 	if(wait)
 		.["timeout"] = max(1 - (wait - (world.time - SSticker.round_start_time)) / wait, 0)
 
@@ -89,17 +72,10 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	if(target_gateway.target == deactivated.destination)
 		target_gateway.deactivate()
 
-<<<<<<< HEAD
 /datum/gateway_destination/gateway/is_available()
 	return ..() && target_gateway.calibrated && !target_gateway.target && target_gateway.powered()
 
 /datum/gateway_destination/gateway/get_available_reason()
-=======
-/datum/gateway_destination/gateway/is_availible()
-	return ..() && target_gateway.calibrated && !target_gateway.target && target_gateway.powered()
-
-/datum/gateway_destination/gateway/get_availible_reason()
->>>>>>> fulpmaster
 	. = ..()
 	if(!target_gateway.calibrated)
 		. = "Exit gateway malfunction. Manual recalibration required."
@@ -283,12 +259,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 		if(!GLOB.the_gateway)
 			to_chat(user,"<span class='warning'>Home gateway is not responding!</span>")
 		if(GLOB.the_gateway.target)
-<<<<<<< HEAD
 			GLOB.the_gateway.deactivate() //this will turn the home gateway off so that it's free for us to connect to
-=======
-			to_chat(user,"<span class='warning'>Home gateway already in use!</span>")
-			return
->>>>>>> fulpmaster
 		activate(GLOB.the_gateway.destination)
 	else
 		deactivate()
@@ -345,11 +316,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 /obj/machinery/computer/gateway_control/proc/try_to_connect(datum/gateway_destination/D)
 	if(!D || !G)
 		return
-<<<<<<< HEAD
 	if(!D.is_available() || G.target)
-=======
-	if(!D.is_availible() || G.target)
->>>>>>> fulpmaster
 		return
 	G.activate(D)
 

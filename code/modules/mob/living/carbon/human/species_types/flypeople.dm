@@ -14,7 +14,6 @@
 	species_language_holder = /datum/language_holder/fly
 	payday_modifier = 0.75
 
-<<<<<<< HEAD
 	mutantheart = /obj/item/organ/heart/fly
 	mutantlungs = /obj/item/organ/lungs/fly
 	mutantliver = /obj/item/organ/liver/fly
@@ -22,18 +21,12 @@
 	mutantappendix = /obj/item/organ/appendix/fly
 	mutant_organs = list(/obj/item/organ/fly, /obj/item/organ/fly/groin)
 
-=======
->>>>>>> fulpmaster
 /datum/species/fly/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(chem.type == /datum/reagent/toxin/pestkiller)
 		H.adjustToxLoss(3)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 		return 1
 
-<<<<<<< HEAD
-=======
-
->>>>>>> fulpmaster
 /datum/species/fly/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(istype(chem, /datum/reagent/consumable))
 		var/datum/reagent/consumable/nutri_check = chem
@@ -49,7 +42,6 @@
 	if(istype(weapon, /obj/item/melee/flyswatter))
 		return 29 //Flyswatters deal 30x damage to flypeople.
 	return 0
-<<<<<<< HEAD
 
 /obj/item/organ/heart/fly
 	desc = "You have no idea what the hell this is, or how it manages to keep something alive in any capacity."
@@ -109,5 +101,3 @@
 
 /obj/item/organ/fly/groin //appendix is the only groin organ so we gotta have one of these too lol
 	zone = BODY_ZONE_PRECISE_GROIN
-=======
->>>>>>> fulpmaster

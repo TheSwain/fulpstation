@@ -35,16 +35,8 @@
 	var/can_off_process = 0
 	var/light_intensity = 2 //how powerful the emitted light is when used.
 	var/burned_fuel_for = 0	//when fuel was last removed
-<<<<<<< HEAD
 	var/acti_sound = 'sound/items/welderactivate.ogg'
 	var/deac_sound = 'sound/items/welderdeactivate.ogg'
-=======
-	heat = 3800
-	tool_behaviour = TOOL_WELDER
-	toolspeed = 1
-	wound_bonus = 10
-	bare_wound_bonus = 15
->>>>>>> fulpmaster
 
 /obj/item/weldingtool/Initialize()
 	. = ..()

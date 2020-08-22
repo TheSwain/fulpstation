@@ -5,11 +5,7 @@
 	desc = "Used to check and claim bounties offered by Nanotrasen"
 	icon_screen = "bounty"
 	circuit = /obj/item/circuitboard/computer/bounty
-<<<<<<< HEAD
 	light_color = COLOR_BRIGHT_ORANGE
-=======
-	light_color = "#E2853D"//orange
->>>>>>> fulpmaster
 	var/printer_ready = 0 //cooldown var
 	var/static/datum/bank_account/cargocash
 

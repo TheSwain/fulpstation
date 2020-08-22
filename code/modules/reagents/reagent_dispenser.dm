@@ -77,13 +77,8 @@
 /obj/structure/reagent_dispensers/fueltank/fire_act(exposed_temperature, exposed_volume)
 	boom()
 
-<<<<<<< HEAD
 /obj/structure/reagent_dispensers/fueltank/zap_act(power, zap_flags)
 	. = ..() //extend the zap
-=======
-/obj/structure/reagent_dispensers/fueltank/zap_act(zap_flags)
-	..() //extend the zap
->>>>>>> fulpmaster
 	if(ZAP_OBJ_DAMAGE & zap_flags)
 		boom()
 
@@ -115,7 +110,6 @@
 		return
 	return ..()
 
-<<<<<<< HEAD
 /obj/structure/reagent_dispensers/fueltank/large
 	name = "high capacity fuel tank"
 	desc = "A tank full of a high quantity of welding fuel. Keep away from open flames."
@@ -125,8 +119,6 @@
 /obj/structure/reagent_dispensers/fueltank/large/boom()
 	explosion(get_turf(src), 1, 2, 7, flame_range = 12)
 	qdel(src)
-=======
->>>>>>> fulpmaster
 
 /obj/structure/reagent_dispensers/peppertank
 	name = "pepper spray refiller"

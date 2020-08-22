@@ -1,10 +1,6 @@
 /datum/wires/conveyor
 	holder_type = /obj/machinery/conveyor_switch
-<<<<<<< HEAD
 	proper_name = "Conveyor"
-=======
-	proper_name = "conveyor"
->>>>>>> fulpmaster
 	/// var holder that logs who put the assembly inside and gets transfered to the switch on pulse
 	var/mob/fingerman
 

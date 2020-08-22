@@ -23,10 +23,6 @@
 	return GLOB.human_adjacent_state
 
 /obj/machinery/computer/emergency_shuttle/ui_interact(mob/user, datum/tgui/ui)
-<<<<<<< HEAD
-=======
-
->>>>>>> fulpmaster
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "EmergencyShuttleConsole", name)

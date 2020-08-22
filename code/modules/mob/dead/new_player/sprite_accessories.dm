@@ -16,11 +16,7 @@
 	from doing this unless you absolutely know what you are doing, and have defined a
 	conversion in savefile.dm
 */
-<<<<<<< HEAD
 /proc/init_sprite_accessory_subtypes(prototype, list/L, list/male, list/female,roundstart = FALSE)//Roundstart argument builds a specific list for roundstart parts where some parts may be locked
-=======
-/proc/init_sprite_accessory_subtypes(prototype, list/L, list/male, list/female,var/roundstart = FALSE)//Roundstart argument builds a specific list for roundstart parts where some parts may be locked
->>>>>>> fulpmaster
 	if(!istype(L))
 		L = list()
 	if(!istype(male))
@@ -1478,11 +1474,7 @@
 
 /datum/sprite_accessory/socks/stockings_green
 	name = "Stockings (Green)"
-<<<<<<< HEAD
 	icon_state = "stockings_green"
-=======
-	icon_state = "stockings_black"
->>>>>>> fulpmaster
 
 /datum/sprite_accessory/socks/stockings_orange
 	name = "Stockings (Orange)"

@@ -78,15 +78,9 @@
 	w_class_on = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
 	armour_penetration = 100
-<<<<<<< HEAD
 	attack_verb_off = list("attacks", "chops", "cleaves", "tears", "lacerates", "cuts")
 	attack_verb_on = list()
 	light_color = LIGHT_COLOR_LIGHT_CYAN
-=======
-	attack_verb_off = list("attacked", "chopped", "cleaved", "tore", "lacerated", "cut")
-	attack_verb_on = list()
-	light_color = "#40ceff"
->>>>>>> fulpmaster
 
 /obj/item/melee/transforming/energy/axe/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -101,11 +95,7 @@
 	force = 3
 	throwforce = 5
 	hitsound = "swing_hit" //it starts deactivated
-<<<<<<< HEAD
 	attack_verb_off = list("taps", "pokes")
-=======
-	attack_verb_off = list("tapped", "poked")
->>>>>>> fulpmaster
 	throw_speed = 3
 	throw_range = 5
 	sharpness = SHARP_EDGED
@@ -117,18 +107,13 @@
 	. = ..()
 	if(. && active && sword_color)
 		icon_state = "sword[sword_color]"
-<<<<<<< HEAD
 
-/obj/item/melee/transforming/energy/sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(active)
-		return ..()
-=======
 	spark_setup() //FULPSTATION Chaplain Starter Sith PR by Surrealistik Jan 2020; cool spark SFX if it deflects.
 
 /obj/item/melee/transforming/energy/sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(active)
 		return deflect_check(owner, hitby, attack_text, final_block_chance, damage, attack_type) //FULPSTATION Chaplain Starter Sith PR by Surrealistik Jan 2020; grants bonus block chance if has Sith training.
->>>>>>> fulpmaster
+
 	return 0
 
 /obj/item/melee/transforming/energy/sword/cyborg
@@ -157,11 +142,7 @@
 	hitcost = 75 //Costs more than a standard cyborg esword
 	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = SHARP_EDGED
-<<<<<<< HEAD
 	light_color = LIGHT_COLOR_LIGHT_CYAN
-=======
-	light_color = "#40ceff"
->>>>>>> fulpmaster
 	tool_behaviour = TOOL_SAW
 	toolspeed = 0.7 //faster as a saw
 
@@ -174,11 +155,7 @@
 	return 0
 
 /obj/item/melee/transforming/energy/sword/saber
-<<<<<<< HEAD
 	var/list/possible_colors = list("red" = COLOR_SOFT_RED, "blue" = LIGHT_COLOR_LIGHT_CYAN, "green" = LIGHT_COLOR_GREEN, "purple" = LIGHT_COLOR_LAVENDER)
-=======
-	var/list/possible_colors = list("red" = LIGHT_COLOR_RED, "blue" = LIGHT_COLOR_LIGHT_CYAN, "green" = LIGHT_COLOR_GREEN, "purple" = LIGHT_COLOR_LAVENDER)
->>>>>>> fulpmaster
 	var/hacked = FALSE
 
 /obj/item/melee/transforming/energy/sword/saber/Initialize(mapload)
@@ -186,29 +163,17 @@
 	if(LAZYLEN(possible_colors))
 		var/set_color = pick(possible_colors)
 		sword_color = set_color
-<<<<<<< HEAD
 		set_light_color(possible_colors[set_color])
-=======
-		light_color = possible_colors[set_color]
->>>>>>> fulpmaster
 
 /obj/item/melee/transforming/energy/sword/saber/process()
 	. = ..()
 	if(hacked)
 		var/set_color = pick(possible_colors)
-<<<<<<< HEAD
 		set_light_color(possible_colors[set_color])
 		update_light()
 
 /obj/item/melee/transforming/energy/sword/saber/red
 	possible_colors = list("red" = COLOR_SOFT_RED)
-=======
-		light_color = possible_colors[set_color]
-		update_light()
-
-/obj/item/melee/transforming/energy/sword/saber/red
-	possible_colors = list("red" = LIGHT_COLOR_RED)
->>>>>>> fulpmaster
 
 /obj/item/melee/transforming/energy/sword/saber/blue
 	possible_colors = list("blue" = LIGHT_COLOR_LIGHT_CYAN)
@@ -241,11 +206,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	icon_state_on = "cutlass1"
-<<<<<<< HEAD
 	light_color = COLOR_RED
-=======
-	light_color = "#ff0000"
->>>>>>> fulpmaster
 
 /obj/item/melee/transforming/energy/blade
 	name = "energy blade"

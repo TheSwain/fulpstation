@@ -423,12 +423,8 @@
 	armour_penetration = 35
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = SHARP_EDGED
-<<<<<<< HEAD
 	attack_verb_continuous = list("chops", "slices", "cuts", "reaps")
 	attack_verb_simple = list("chop", "slice", "cut", "reap")
-=======
-	attack_verb = list("chopped", "sliced", "cut", "reaped")
->>>>>>> fulpmaster
 
 /obj/item/nullrod/scythe/Initialize()
 	. = ..()
@@ -543,12 +539,8 @@
 	w_class = WEIGHT_CLASS_HUGE
 	item_flags = ABSTRACT
 	sharpness = SHARP_EDGED
-<<<<<<< HEAD
 	attack_verb_continuous = list("saws", "tears", "lacerates", "cuts", "chops", "dices")
 	attack_verb_simple = list("saw", "tear", "lacerate", "cut", "chop", "dice")
-=======
-	attack_verb = list("sawed", "tore", "lacerated", "cut", "chopped", "diced")
->>>>>>> fulpmaster
 	hitsound = 'sound/weapons/chainsawhit.ogg'
 	tool_behaviour = TOOL_SAW
 	toolspeed = 2 //slower than a real saw
@@ -566,12 +558,8 @@
 	desc = "Used for absolutely hilarious sacrifices."
 	hitsound = 'sound/items/bikehorn.ogg'
 	sharpness = SHARP_EDGED
-<<<<<<< HEAD
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
-=======
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
->>>>>>> fulpmaster
 
 /obj/item/nullrod/pride_hammer
 	icon_state = "pride"
@@ -619,12 +607,8 @@
 	throw_range = 7
 	throwforce = 30
 	sharpness = SHARP_EDGED
-<<<<<<< HEAD
 	attack_verb_continuous = list("enlightens", "redpills")
 	attack_verb_simple = list("enlighten", "redpill")
-=======
-	attack_verb = list("enlightened", "redpilled")
->>>>>>> fulpmaster
 
 /obj/item/nullrod/armblade
 	name = "dark blessing"

@@ -31,11 +31,7 @@
 	var/ratio = obj_integrity / max_integrity
 	ratio = CEILING(ratio*4, 1) * 25
 
-<<<<<<< HEAD
 	if(smoothing_flags)
-=======
-	if(smooth)
->>>>>>> fulpmaster
 		QUEUE_SMOOTH(src)
 
 	if(ratio > 50)
@@ -73,11 +69,7 @@
 			if(!valid_window_location(T, window_dir))
 				return FALSE
 			to_chat(user, "<span class='notice'>You construct the window.</span>")
-<<<<<<< HEAD
 			var/obj/structure/window/WD = new the_rcd.window_type(T, window_dir)
-=======
-			var/obj/structure/window/WD = new the_rcd.window_type(drop_location())
->>>>>>> fulpmaster
 			WD.set_anchored(TRUE)
 			return TRUE
 	return FALSE

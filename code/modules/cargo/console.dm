@@ -3,10 +3,7 @@
 	desc = "Used to order supplies, approve requests, and control the shuttle."
 	icon_screen = "supply"
 	circuit = /obj/item/circuitboard/computer/cargo
-<<<<<<< HEAD
 	light_color = COLOR_BRIGHT_ORANGE
-=======
->>>>>>> fulpmaster
 
 	var/requestonly = FALSE
 	var/contraband = FALSE
@@ -20,11 +17,6 @@
 	/// var that tracks message cooldown
 	var/message_cooldown
 	var/list/loaded_coupons
-
-<<<<<<< HEAD
-=======
-	light_color = "#E2853D"//orange
->>>>>>> fulpmaster
 
 /obj/machinery/computer/cargo/request
 	name = "supply request console"

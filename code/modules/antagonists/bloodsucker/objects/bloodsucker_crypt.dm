@@ -382,7 +382,7 @@
 	if (!istype(I))
 		I = user.get_inactive_held_item()
 	// Create Strings
-	var/method_string =  I?.attack_verb?.len ? pick(I.attack_verb) : pick("harmed","tortured","wrenched","twisted","scoured","beaten","lashed","scathed")
+	var/method_string =  I?.attack_verb_simple?.len ? pick(I.attack_verb_simple) : pick("harm","torture","wrench","twist","scour","beat","lash","scath")
 	var/weapon_string = I ? I.name : pick("bare hands","hands","fingers","fists")
 
 	// Weapon Bonus + SFX
@@ -559,7 +559,7 @@
 
 	time = 150
 	category = CAT_STRUCTURE
-	always_availible = FALSE	// Disabled til learned
+	always_available = FALSE	// Disabled til learned
 
 
 /datum/crafting_recipe/bloodsucker/candelabrum
@@ -575,7 +575,7 @@
 				)
 	time = 100
 	category = CAT_STRUCTURE
-	always_availible = FALSE	// Disabled til learned
+	always_available = FALSE	// Disabled til learned
 
 
 

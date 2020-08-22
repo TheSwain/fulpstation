@@ -181,13 +181,7 @@
 	if(..())
 		if(reagents.total_volume)
 			if(M.reagents)
-<<<<<<< HEAD
-
 				reagents.trans_to(M, reagents.total_volume, transfered_by = user, method = INJECT)
-=======
-				reagents.expose(M, INJECT, reagents.total_volume)
-				reagents.trans_to(M, reagents.total_volume, transfered_by = user)
->>>>>>> fulpmaster
 
 
 /obj/item/pen/sleepy/Initialize()
@@ -201,12 +195,8 @@
  * (Alan) Edaggers
  */
 /obj/item/pen/edagger
-<<<<<<< HEAD
 	attack_verb_continuous = list("slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts") //these won't show up if the pen is off
 	attack_verb_simple = list("slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
-=======
-	attack_verb = list("slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut") //these won't show up if the pen is off
->>>>>>> fulpmaster
 	sharpness = SHARP_EDGED
 	var/on = FALSE
 

@@ -68,11 +68,7 @@
 	inhand_icon_state = "chain"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-<<<<<<< HEAD
 	attack_verb_continuous = list("flogs", "whips", "lashes", "disciplines")
 	attack_verb_simple = list("flog", "whip", "lash", "discipline")
-=======
-	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
->>>>>>> fulpmaster
 	hitsound = 'sound/weapons/whip.ogg'
 	slot_flags = ITEM_SLOT_BELT

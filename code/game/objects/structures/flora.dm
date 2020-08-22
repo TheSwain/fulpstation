@@ -312,20 +312,16 @@
 	throw_speed = 2
 	throw_range = 4
 
-<<<<<<< HEAD
 	/// Can this plant be trimmed by someone with TRAIT_BONSAI
 	var/trimmable = TRUE
 	var/list/static/random_plant_states
 
-=======
->>>>>>> fulpmaster
 /obj/item/kirbyplants/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/tactical)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE, force_unwielded=10, force_wielded=10)
 	INVOKE_ASYNC(src, /datum.proc/_AddComponent, list(/datum/component/beauty, 500))
 
-<<<<<<< HEAD
 /obj/item/kirbyplants/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
 	if(trimmable && HAS_TRAIT(user,TRAIT_BONSAI) && isturf(loc) && I.get_sharpness())
@@ -345,64 +341,36 @@
 /obj/item/kirbyplants/random
 	icon = 'icons/obj/flora/_flora.dmi'
 	icon_state = "random_plant"
-=======
-/obj/item/kirbyplants/random
-	icon = 'icons/obj/flora/_flora.dmi'
-	icon_state = "random_plant"
-	var/list/static/states
->>>>>>> fulpmaster
 
 /obj/item/kirbyplants/random/Initialize()
 	. = ..()
 	icon = 'icons/obj/flora/plants.dmi'
-<<<<<<< HEAD
 	if(!random_plant_states)
 		generate_states()
 	icon_state = pick(random_plant_states)
 
 /obj/item/kirbyplants/proc/generate_states()
 	random_plant_states = list()
-=======
-	if(!states)
-		generate_states()
-	icon_state = pick(states)
-
-/obj/item/kirbyplants/random/proc/generate_states()
-	states = list()
->>>>>>> fulpmaster
 	for(var/i in 1 to 25)
 		var/number
 		if(i < 10)
 			number = "0[i]"
 		else
 			number = "[i]"
-<<<<<<< HEAD
 		random_plant_states += "plant-[number]"
 	random_plant_states += "applebush"
-=======
-		states += "plant-[number]"
-	states += "applebush"
->>>>>>> fulpmaster
-
 
 /obj/item/kirbyplants/dead
 	name = "RD's potted plant"
 	desc = "A gift from the botanical staff, presented after the RD's reassignment. There's a tag on it that says \"Y'all come back now, y'hear?\"\nIt doesn't look very healthy..."
 	icon_state = "plant-25"
-<<<<<<< HEAD
 	trimmable = FALSE
-=======
->>>>>>> fulpmaster
 
 /obj/item/kirbyplants/photosynthetic
 	name = "photosynthetic potted plant"
 	desc = "A bioluminescent plant."
 	icon_state = "plant-09"
-<<<<<<< HEAD
 	light_color = COLOR_BRIGHT_BLUE
-=======
-	light_color = "#2cb2e8"
->>>>>>> fulpmaster
 	light_range = 3
 
 /obj/item/kirbyplants/fullysynthetic
@@ -410,10 +378,7 @@
 	desc = "A fake, cheap looking, plastic tree. Perfect for people who kill every plant they touch."
 	icon_state = "plant-26"
 	custom_materials = (list(/datum/material/plastic = 8000))
-<<<<<<< HEAD
 	trimmable = FALSE
-=======
->>>>>>> fulpmaster
 
 /obj/item/kirbyplants/fullysynthetic/Initialize()
 	. = ..()
@@ -423,10 +388,7 @@
 	name = "Potty the Potted Plant"
 	desc = "A secret agent staffed in the station's bar to protect the mystical cakehat."
 	icon_state = "potty"
-<<<<<<< HEAD
 	trimmable = FALSE
-=======
->>>>>>> fulpmaster
 
 //a rock is flora according to where the icon file is
 //and now these defines

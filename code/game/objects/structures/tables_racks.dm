@@ -32,14 +32,9 @@
 	custom_materials = list(/datum/material/iron = 2000)
 	max_integrity = 100
 	integrity_failure = 0.33
-<<<<<<< HEAD
 	smoothing_flags = SMOOTH_CORNERS
 	smoothing_groups = list(SMOOTH_GROUP_TABLES)
 	canSmoothWith = list(SMOOTH_GROUP_TABLES)
-=======
-	smooth = SMOOTH_TRUE
-	canSmoothWith = list(/obj/structure/table, /obj/structure/table/reinforced, /obj/structure/table/greyscale)
->>>>>>> fulpmaster
 
 /obj/structure/table/examine(mob/user)
 	. = ..()
@@ -49,11 +44,7 @@
 	return "<span class='notice'>The top is <b>screwed</b> on, but the main <b>bolts</b> are also visible.</span>"
 
 /obj/structure/table/update_icon()
-<<<<<<< HEAD
 	if(smoothing_flags)
-=======
-	if(smooth)
->>>>>>> fulpmaster
 		QUEUE_SMOOTH(src)
 		QUEUE_SMOOTH_NEIGHBORS(src)
 
@@ -249,7 +240,6 @@
 			new framestack(T, framestackamount)
 	qdel(src)
 
-<<<<<<< HEAD
 /obj/structure/table/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)
 		if(RCD_DECONSTRUCT)
@@ -264,9 +254,6 @@
 			return TRUE
 	return FALSE
 
-=======
->>>>>>> fulpmaster
-
 /obj/structure/table/greyscale
 	icon = 'icons/obj/smooth_structures/table_greyscale.dmi'
 	icon_state = "table"
@@ -278,14 +265,9 @@
 	name = "Rolling table"
 	desc = "An NT brand \"Rolly poly\" rolling table. It can and will move."
 	anchored = FALSE
-<<<<<<< HEAD
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
-=======
-	smooth = SMOOTH_FALSE
-	canSmoothWith = list()
->>>>>>> fulpmaster
 	icon = 'icons/obj/smooth_structures/rollingtable.dmi'
 	icon_state = "rollingtable"
 	var/list/attached_items = list()
@@ -296,11 +278,8 @@
 	RegisterSignal(I, COMSIG_MOVABLE_MOVED, .proc/RemoveItemFromTable) //Listen for the pickup event, unregister on pick-up so we aren't moved
 
 /obj/structure/table/rolling/proc/RemoveItemFromTable(datum/source, newloc, dir)
-<<<<<<< HEAD
 	SIGNAL_HANDLER
 
-=======
->>>>>>> fulpmaster
 	if(newloc != loc) //Did we not move with the table? because that shit's ok
 		return FALSE
 	attached_items -= source
@@ -324,10 +303,7 @@
 	icon = 'icons/obj/smooth_structures/glass_table.dmi'
 	icon_state = "glass_table"
 	buildstack = /obj/item/stack/sheet/glass
-<<<<<<< HEAD
 	smoothing_groups = null
-=======
->>>>>>> fulpmaster
 	canSmoothWith = null
 	max_integrity = 70
 	resistance_flags = ACID_PROOF
@@ -410,14 +386,8 @@
 	buildstack = /obj/item/stack/sheet/mineral/wood
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
-<<<<<<< HEAD
 	smoothing_groups = list(SMOOTH_GROUP_WOOD_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES
 	canSmoothWith = list(SMOOTH_GROUP_WOOD_TABLES)
-=======
-	canSmoothWith = list(/obj/structure/table/wood,
-		/obj/structure/table/wood/poker,
-		/obj/structure/table/wood/bar)
->>>>>>> fulpmaster
 
 /obj/structure/table/wood/narsie_act(total_override = TRUE)
 	if(!total_override)
@@ -441,21 +411,8 @@
 	frame = /obj/structure/table_frame
 	framestack = /obj/item/stack/rods
 	buildstack = /obj/item/stack/tile/carpet
-<<<<<<< HEAD
 	smoothing_groups = list(SMOOTH_GROUP_FANCY_WOOD_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES or SMOOTH_GROUP_WOOD_TABLES
 	canSmoothWith = list(SMOOTH_GROUP_FANCY_WOOD_TABLES)
-=======
-	canSmoothWith = list(/obj/structure/table/wood/fancy,
-		/obj/structure/table/wood/fancy/black,
-		/obj/structure/table/wood/fancy/blue,
-		/obj/structure/table/wood/fancy/cyan,
-		/obj/structure/table/wood/fancy/green,
-		/obj/structure/table/wood/fancy/orange,
-		/obj/structure/table/wood/fancy/purple,
-		/obj/structure/table/wood/fancy/red,
-		/obj/structure/table/wood/fancy/royalblack,
-		/obj/structure/table/wood/fancy/royalblue)
->>>>>>> fulpmaster
 	var/smooth_icon = 'icons/obj/smooth_structures/fancy_table.dmi' // see Initialize()
 
 /obj/structure/table/wood/fancy/Initialize()
@@ -521,10 +478,6 @@
 	icon_state = "r_table"
 	deconstruction_ready = 0
 	buildstack = /obj/item/stack/sheet/plasteel
-<<<<<<< HEAD
-=======
-	canSmoothWith = list(/obj/structure/table/reinforced, /obj/structure/table, /obj/structure/table/reinforced/ctf)
->>>>>>> fulpmaster
 	max_integrity = 200
 	integrity_failure = 0.25
 	armor = list("melee" = 10, "bullet" = 30, "laser" = 30, "energy" = 100, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
@@ -560,12 +513,8 @@
 	icon_state = "brass_table"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	buildstack = /obj/item/stack/tile/bronze
-<<<<<<< HEAD
 	smoothing_groups = list(SMOOTH_GROUP_BRONZE_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES
 	canSmoothWith = list(SMOOTH_GROUP_BRONZE_TABLES)
-=======
-	canSmoothWith = list(/obj/structure/table/bronze)
->>>>>>> fulpmaster
 
 /obj/structure/table/bronze/tablepush(mob/living/user, mob/living/pushed_mob)
 	..()
@@ -581,13 +530,9 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "optable"
 	buildstack = /obj/item/stack/sheet/mineral/silver
-<<<<<<< HEAD
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
-=======
-	smooth = SMOOTH_FALSE
->>>>>>> fulpmaster
 	can_buckle = 1
 	buckle_lying = -1
 	buckle_requires_restraints = 1

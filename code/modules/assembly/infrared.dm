@@ -167,11 +167,7 @@
 	listeningTo = newloc
 
 /obj/item/assembly/infra/proc/check_exit(datum/source, atom/movable/offender)
-<<<<<<< HEAD
 	SIGNAL_HANDLER_DOES_SLEEP
-
-=======
->>>>>>> fulpmaster
 	if(QDELETED(src))
 		return
 	if(offender == src || istype(offender,/obj/effect/beam/i_beam))

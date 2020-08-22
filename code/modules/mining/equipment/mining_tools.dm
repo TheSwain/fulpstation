@@ -16,12 +16,8 @@
 	tool_behaviour = TOOL_MINING
 	toolspeed = 1
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
-<<<<<<< HEAD
 	attack_verb_continuous = list("hits", "pierces", "slices", "attacks")
 	attack_verb_simple = list("hit", "pierce", "slice", "attack")
-=======
-	attack_verb = list("hit", "pierced", "sliced", "attacked")
->>>>>>> fulpmaster
 
 /obj/item/pickaxe/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] begins digging into [user.p_their()] chest! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -33,12 +29,8 @@
 /obj/item/pickaxe/rusted
 	name = "rusty pickaxe"
 	desc = "A pickaxe that's been left to rust."
-<<<<<<< HEAD
 	attack_verb_continuous = list("ineffectively hits")
 	attack_verb_simple = list("ineffectively hit")
-=======
-	attack_verb = list("ineffectively hit")
->>>>>>> fulpmaster
 	force = 1
 	throwforce = 1
 
@@ -143,12 +135,8 @@
 	inhand_icon_state = "shovel"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=50)
-<<<<<<< HEAD
 	attack_verb_continuous = list("bashes", "bludgeons", "thrashes", "whacks")
 	attack_verb_simple = list("bash", "bludgeon", "thrash", "whack")
-=======
-	attack_verb = list("bashed", "bludgeoned", "thrashed", "whacked")
->>>>>>> fulpmaster
 	sharpness = SHARP_EDGED
 
 /obj/item/shovel/Initialize()
@@ -186,10 +174,6 @@
 	throwforce = 12
 	w_class = WEIGHT_CLASS_NORMAL
 	toolspeed = 0.7
-<<<<<<< HEAD
 	attack_verb_continuous = list("slashes", "impales", "stabs", "slices")
 	attack_verb_simple = list("slash", "impale", "stab", "slice")
-=======
-	attack_verb = list("slashed", "impaled", "stabbed", "sliced")
->>>>>>> fulpmaster
 	sharpness = SHARP_EDGED

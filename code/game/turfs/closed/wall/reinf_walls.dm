@@ -47,11 +47,7 @@
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		to_chat(M, "<span class='warning'>This wall is far too strong for you to destroy.</span>")
 
-<<<<<<< HEAD
 /turf/closed/wall/r_wall/hulk_recoil(obj/item/bodypart/arm, mob/living/carbon/human/hulkman, damage = 41)
-=======
-/turf/closed/wall/r_wall/hulk_recoil(obj/item/bodypart/arm, mob/living/carbon/human/hulkman, var/damage = 41)
->>>>>>> fulpmaster
 	return ..()
 
 /turf/closed/wall/r_wall/try_decon(obj/item/W, mob/user, turf/T)
@@ -203,11 +199,7 @@
 		smoothing_flags = NONE
 		clear_smooth_overlays()
 	else
-<<<<<<< HEAD
 		smoothing_flags = SMOOTH_CORNERS
-=======
-		smooth = SMOOTH_TRUE
->>>>>>> fulpmaster
 		QUEUE_SMOOTH_NEIGHBORS(src)
 		QUEUE_SMOOTH(src)
 

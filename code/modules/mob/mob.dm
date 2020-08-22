@@ -211,11 +211,7 @@
 		if(!msg)
 			continue
 
-<<<<<<< HEAD
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags) && !M.is_blind())
-=======
-		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags))
->>>>>>> fulpmaster
 			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = visible_message_flags)
 
 		M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
@@ -245,11 +241,7 @@
 	if(audible_message_flags & EMOTE_MESSAGE)
 		message = "<b>[src]</b> [message]"
 	for(var/mob/M in hearers)
-<<<<<<< HEAD
 		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags) && M.can_hear())
-=======
-		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags))
->>>>>>> fulpmaster
 			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
 		M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
 
@@ -509,11 +501,8 @@
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
 
 /mob/proc/clear_from_recent_examines(atom/A)
-<<<<<<< HEAD
 	SIGNAL_HANDLER
 
-=======
->>>>>>> fulpmaster
 	if(!client)
 		return
 	UnregisterSignal(A, COMSIG_PARENT_QDELETING)
@@ -1092,15 +1081,11 @@
 
 ///Can the mob interact() with an atom?
 /mob/proc/can_interact_with(atom/A)
-<<<<<<< HEAD
 	if(isAdminGhostAI(src) || Adjacent(A))
 		return TRUE
 	var/datum/dna/mob_dna = has_dna()
 	if(mob_dna?.check_mutation(TK) && tkMaxRangeCheck(src, A))
 		return TRUE
-=======
-	return isAdminGhostAI(src) || Adjacent(A)
->>>>>>> fulpmaster
 
 ///Can the mob use Topic to interact with machines
 /mob/proc/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE)

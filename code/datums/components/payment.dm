@@ -27,13 +27,8 @@
 	RegisterSignal(parent, COMSIG_OBJ_ATTEMPT_CHARGE, .proc/attempt_charge)
 	RegisterSignal(parent, COMSIG_OBJ_ATTEMPT_CHARGE_CHANGE, .proc/change_cost)
 
-<<<<<<< HEAD
 /datum/component/payment/proc/attempt_charge(datum/source, atom/movable/target, extra_fees = 0)
 	SIGNAL_HANDLER
-
-=======
-/datum/component/payment/proc/attempt_charge(datum/source, atom/movable/target, var/extra_fees = 0)
->>>>>>> fulpmaster
 	if(!cost) //In case a free variant of anything is made it'll skip charging anyone.
 		return
 	if(!ismob(target))
@@ -71,13 +66,8 @@
 	card.registered_account.bank_card_talk("[cost] credits deducted from your account.")
 	playsound(src, 'sound/effects/cashregister.ogg', 20, TRUE)
 
-<<<<<<< HEAD
 /datum/component/payment/proc/change_cost(datum/source, new_cost)
 	SIGNAL_HANDLER
-
-=======
-/datum/component/payment/proc/change_cost(datum/source, var/new_cost)
->>>>>>> fulpmaster
 	if(!isnum(new_cost))
 		CRASH("change_cost called with variable new_cost as not a number.")
 	cost = new_cost

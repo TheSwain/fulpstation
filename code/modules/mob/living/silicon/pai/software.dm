@@ -1,11 +1,6 @@
 // TODO:
 //	- Potentially roll HUDs and Records into one
 //	- Shock collar/lock system for prisoner pAIs?
-<<<<<<< HEAD
-=======
-//  - Put cable in user's hand instead of on the ground
-//  - Camera jack
->>>>>>> fulpmaster
 
 
 /mob/living/silicon/pai/var/list/available_software = list(
@@ -23,12 +18,6 @@
 															"security records" = 10,
 															"camera zoom" = 10,
 															"host scan" = 10,
-<<<<<<< HEAD
-=======
-															//"camera jack" = 10,
-															//"heartbeat sensor" = 10,
-															//"projection array" = 15,
->>>>>>> fulpmaster
 															"medical HUD" = 20,
 															"security HUD" = 20,
 															"loudness booster" = 20,
@@ -78,11 +67,6 @@
 				left_part = medicalAnalysis()
 			if("doorjack")
 				left_part = softwareDoor()
-<<<<<<< HEAD
-=======
-			if("camerajack")
-				left_part = softwareCamera()
->>>>>>> fulpmaster
 			if("signaller")
 				left_part = softwareSignal()
 			if("loudness")
@@ -100,12 +84,7 @@
 			<head>
 				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 				<style type=\"text/css\">
-<<<<<<< HEAD
 					body { background-image:url('[SSassets.transport.get_asset_url("paigrid.png")]'); }
-=======
-					body { background-image:url('html/paigrid.png'); }
->>>>>>> fulpmaster
-
 					#header { text-align:center; color:white; font-size: 30px; height: 35px; width: 100%; letter-spacing: 2px; z-index: 5}
 					#content {position: relative; left: 10px; height: 400px; width: 100%; z-index: 0}
 
@@ -171,7 +150,6 @@
 
 			if("image") // Set pAI card display face
 				var/newImage = input("Select your new display image.", "Display Image", "Happy") in sortList(list("Happy", "Cat", "Extremely Happy", "Face", "Laugh", "Off", "Sad", "Angry", "What", "Sunglasses"))
-<<<<<<< HEAD
 				switch(newImage)
 					if(null)
 						card.emotion_icon = "null"
@@ -180,34 +158,6 @@
 					else
 						card.emotion_icon = "[lowertext(newImage)]"
 				card.update_icon()
-=======
-				var/pID = 1
-
-				switch(newImage)
-					if("Happy")
-						pID = 1
-					if("Cat")
-						pID = 2
-					if("Extremely Happy")
-						pID = 3
-					if("Face")
-						pID = 4
-					if("Laugh")
-						pID = 5
-					if("Off")
-						pID = 6
-					if("Sad")
-						pID = 7
-					if("Angry")
-						pID = 8
-					if("What")
-						pID = 9
-					if("Null")
-						pID = 10
-					if("Sunglasses")
-						pID = 11
-				card.setEmotion(pID)
->>>>>>> fulpmaster
 
 			if("news")
 				newscaster.ui_interact(src)
@@ -309,18 +259,12 @@
 
 			if("doorjack")
 				if(href_list["jack"])
-<<<<<<< HEAD
 					if(hacking_cable?.machine)
 						hackdoor = hacking_cable.machine
-=======
-					if(cable && cable.machine)
-						hackdoor = cable.machine
->>>>>>> fulpmaster
 						hackloop()
 				if(href_list["cancel"])
 					hackdoor = null
 				if(href_list["cable"])
-<<<<<<< HEAD
 					qdel(hacking_cable) //clear any old cables
 					hacking_cable = new
 					var/transfered_to_mob
@@ -333,21 +277,9 @@
 						hacking_cable.forceMove(drop_location())
 						hacking_cable.visible_message("<span class='warning'>A port on [src] opens to reveal \a [hacking_cable], which promptly falls to the floor.</span>", "<span class='hear'>You hear the soft click of something light and hard falling to the ground.</span>")
 
-
-=======
-					var/turf/T = get_turf(loc)
-					cable = new /obj/item/pai_cable(T)
-					T.visible_message("<span class='warning'>A port on [src] opens to reveal [cable], which promptly falls to the floor.</span>", "<span class='hear'>You hear the soft click of something light and hard falling to the ground.</span>")
->>>>>>> fulpmaster
-
 			if("loudness")
 				if(subscreen == 1) // Open Instrument
 					internal_instrument.interact(src)
-<<<<<<< HEAD
-=======
-				if(subscreen == 2) // Change Instrument type
-					internal_instrument.selectInstrument()
->>>>>>> fulpmaster
 
 		paiInterface()
 
@@ -377,11 +309,6 @@
 			dat += "<a href='byond://?src=[REF(src)];software=medicalrecord;sub=0'>Medical Records</a> <br>"
 		if(s == "security records")
 			dat += "<a href='byond://?src=[REF(src)];software=securityrecord;sub=0'>Security Records</a> <br>"
-<<<<<<< HEAD
-=======
-		if(s == "camera")
-			dat += "<a href='byond://?src=[REF(src)];software=[s]'>Camera Jack</a> <br>"
->>>>>>> fulpmaster
 		if(s == "remote signaller")
 			dat += "<a href='byond://?src=[REF(src)];software=signaller;sub=0'>Remote Signaller</a> <br>"
 		if(s == "loudness booster")
@@ -395,11 +322,6 @@
 			dat += "<a href='byond://?src=[REF(src)];software=camzoom;sub=0'>Adjust Camera Zoom</a> <br>"
 		if(s == "atmosphere sensor")
 			dat += "<a href='byond://?src=[REF(src)];software=atmosensor;sub=0'>Atmospheric Sensor</a> <br>"
-<<<<<<< HEAD
-=======
-		if(s == "heartbeat sensor")
-			dat += "<a href='byond://?src=[REF(src)];software=[s]'>Heartbeat Sensor</a> <br>"
->>>>>>> fulpmaster
 		if(s == "security HUD")
 			dat += "<a href='byond://?src=[REF(src)];software=securityhud;sub=0'>Facial Recognition Suite</a>[(secHUD) ? "<font color=#55FF55> On</font>" : "<font color=#FF5555> Off</font>"] <br>"
 		if(s == "medical HUD")
@@ -409,13 +331,6 @@
 		if(s == "universal translator")
 			var/datum/language_holder/H = get_language_holder()
 			dat += "<a href='byond://?src=[REF(src)];software=translator;sub=0'>Universal Translator</a>[H.omnitongue ? "<font color=#55FF55> On</font>" : "<font color=#FF5555> Off</font>"] <br>"
-<<<<<<< HEAD
-=======
-		if(s == "projection array")
-			dat += "<a href='byond://?src=[REF(src)];software=projectionarray;sub=0'>Projection Array</a> <br>"
-		if(s == "camera jack")
-			dat += "<a href='byond://?src=[REF(src)];software=camerajack;sub=0'>Camera Jack</a> <br>"
->>>>>>> fulpmaster
 		if(s == "door jack")
 			dat += "<a href='byond://?src=[REF(src)];software=doorjack;sub=0'>Door Jack</a> <br>"
 	dat += "<br>"
@@ -633,34 +548,10 @@
 	dat += "<a href='byond://?src=[REF(src)];software=atmosensor;sub=0'>Refresh Reading</a> <br>"
 	dat += "<br>"
 	return dat
-<<<<<<< HEAD
-=======
-
-// Camera Jack - Clearly not finished
-/mob/living/silicon/pai/proc/softwareCamera()
-	var/dat = "<h3>Camera Jack</h3>"
-	dat += "Cable status : "
-
-	if(!cable)
-		dat += "<font color=#FF5555>Retracted</font> <br>"
-		return dat
-	if(!cable.machine)
-		dat += "<font color=#FFFF55>Extended</font> <br>"
-		return dat
-
-	var/obj/machinery/machine = cable.machine
-	dat += "<font color=#55FF55>Connected</font> <br>"
-
-	if(!istype(machine, /obj/machinery/camera))
-		to_chat(src, "DERP")
-	return dat
-
->>>>>>> fulpmaster
 // Door Jack
 /mob/living/silicon/pai/proc/softwareDoor()
 	var/dat = "<h3>Airlock Jack</h3>"
 	dat += "Cable status : "
-<<<<<<< HEAD
 	if(!hacking_cable)
 		dat += "<font color=#FF5555>Retracted</font> <br>"
 		dat += "<a href='byond://?src=[REF(src)];software=doorjack;cable=1;sub=0'>Extend Cable</a> <br>"
@@ -671,19 +562,6 @@
 
 	dat += "<font color=#55FF55>Connected</font> <br>"
 	if(!istype(hacking_cable.machine, /obj/machinery/door))
-=======
-	if(!cable)
-		dat += "<font color=#FF5555>Retracted</font> <br>"
-		dat += "<a href='byond://?src=[REF(src)];software=doorjack;cable=1;sub=0'>Extend Cable</a> <br>"
-		return dat
-	if(!cable.machine)
-		dat += "<font color=#FFFF55>Extended</font> <br>"
-		return dat
-
-	var/obj/machinery/machine = cable.machine
-	dat += "<font color=#55FF55>Connected</font> <br>"
-	if(!istype(machine, /obj/machinery/door))
->>>>>>> fulpmaster
 		dat += "Connected device's firmware does not appear to be compatible with Airlock Jack protocols.<br>"
 		return dat
 

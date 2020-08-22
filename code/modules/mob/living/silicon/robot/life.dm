@@ -93,11 +93,7 @@
 		cut_overlay(fire_overlay)
 
 /mob/living/silicon/robot/update_mobility()
-<<<<<<< HEAD
 	if(HAS_TRAIT(src, TRAIT_IMMOBILIZED))
-=======
-	if(stat || buckled || lockcharge)
->>>>>>> fulpmaster
 		mobility_flags &= ~MOBILITY_MOVE
 	else
 		mobility_flags = MOBILITY_FLAGS_DEFAULT

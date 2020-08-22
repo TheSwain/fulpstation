@@ -55,7 +55,6 @@
 		return
 	return ..()
 
-<<<<<<< HEAD
 /**
   * Override attack_tk_grab instead of attack_tk because we actually want attack_tk's
   * functionality. What we DON'T want is attack_tk_grab attempting to pick up the
@@ -64,8 +63,6 @@
 /obj/item/radio/intercom/attack_tk_grab(mob/user)
 	interact(user)
 
-=======
->>>>>>> fulpmaster
 /obj/item/radio/intercom/attack_ai(mob/user)
 	interact(user)
 

@@ -1,4 +1,4 @@
-/datum/spellbook_entry/summon/ghosts/IsAvailible()
+/datum/spellbook_entry/summon/ghosts/IsAvailable()
 	if(!SSticker.mode) // In case spellbook is placed on map
 		return FALSE
 	if(istype(SSticker.mode, /datum/game_mode/dynamic)) // Disable events on dynamic

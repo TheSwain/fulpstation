@@ -64,11 +64,7 @@
 	else
 		if(density)
 			icon_state = initial(icon_state)
-<<<<<<< HEAD
 			smoothing_flags = SMOOTH_CORNERS
-=======
-			smooth = SMOOTH_TRUE
->>>>>>> fulpmaster
 			QUEUE_SMOOTH(src)
 		else
 			icon_state = "fwall_open"

@@ -75,17 +75,8 @@
 		. = pda.owner
 	else if(istype(tablet))
 		var/obj/item/computer_hardware/card_slot/card_slot = tablet.all_components[MC_CARD]
-<<<<<<< HEAD
 		if(card_slot?.stored_card)
 			. = card_slot.stored_card.registered_name
-=======
-		if(card_slot && (card_slot.stored_card2 || card_slot.stored_card))
-			if(card_slot.stored_card2) //The second card is the one used for authorization in the ID changing program, so we prioritize it here for consistency
-				. = card_slot.stored_card2.registered_name
-			else
-				if(card_slot.stored_card)
-					. = card_slot.stored_card.registered_name
->>>>>>> fulpmaster
 	if(!.)
 		. = if_no_id	//to prevent null-names making the mob unclickable
 	return
@@ -181,7 +172,6 @@
 	if(isclothing(wear_mask) && (wear_mask.clothing_flags & SCAN_REAGENTS))
 		return TRUE
 
-<<<<<<< HEAD
 /// When we're joining the game in [/mob/dead/new_player/proc/create_character], we increment our scar slot then store the slot in our mind datum.
 /mob/living/carbon/human/proc/increment_scar_slot()
 	var/check_ckey = ckey || client?.ckey
@@ -200,9 +190,6 @@
 	mind.current_scar_slot = (index % PERSISTENT_SCAR_SLOTS) + 1 || 1
 
 /// For use formatting all of the scars this human has for saving for persistent scarring, returns a string with all current scars/missing limb amputation scars for saving or loading purposes
-=======
-/// For use formatting all of the scars this human has for saving for persistent scarring
->>>>>>> fulpmaster
 /mob/living/carbon/human/proc/format_scars()
 	var/list/missing_bodyparts = get_missing_limbs()
 	if(!all_scars && !length(missing_bodyparts))
@@ -226,7 +213,6 @@
 		return
 	var/obj/item/bodypart/the_part = get_bodypart("[scar_data[SCAR_SAVE_ZONE]]")
 	var/datum/scar/scaries = new
-<<<<<<< HEAD
 	return scaries.load(the_part, scar_data[SCAR_SAVE_VERS], scar_data[SCAR_SAVE_DESC], scar_data[SCAR_SAVE_PRECISE_LOCATION], text2num(scar_data[SCAR_SAVE_SEVERITY]), text2num(scar_data[SCAR_SAVE_BIOLOGY]))
 
 /// Read all the scars we have at the designated slot, verify they're good (or dump them if they're old/wrong format), create them on the user, and write the scars that passed muster back to the file
@@ -271,9 +257,6 @@
 	var/valid_scars = format_scars()
 	WRITE_FILE(F["scar[index]"], sanitize_text(valid_scars))
 	WRITE_FILE(F["current_index"], sanitize_integer(index))
-=======
-	return scaries.load(the_part, scar_data[SCAR_SAVE_VERS], scar_data[SCAR_SAVE_DESC], scar_data[SCAR_SAVE_PRECISE_LOCATION], text2num(scar_data[SCAR_SAVE_SEVERITY]))
->>>>>>> fulpmaster
 
 /mob/living/carbon/human/get_biological_state()
 	return dna.species.get_biological_state()

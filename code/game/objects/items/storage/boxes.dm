@@ -1360,7 +1360,6 @@
 		/obj/item/stack/wrapping_paper/small=1
 		)
 	generate_items_inside(items_inside,src)
-<<<<<<< HEAD
 
 /obj/item/storage/box/skillchips
 	name = "box of skillchips"
@@ -1387,5 +1386,3 @@
 /obj/item/storage/box/skillchips/engineering/PopulateContents()
 	new/obj/item/skillchip/job/engineer(src)
 	new/obj/item/skillchip/job/engineer(src)
-=======
->>>>>>> fulpmaster

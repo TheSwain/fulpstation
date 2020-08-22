@@ -253,13 +253,8 @@
 		prepared_options = shuffle(poll.options)
 	var/list/output = list({"<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-<<<<<<< HEAD
 	<script src="[SSassets.transport.get_asset_url("jquery.min.js")]"></script>
 	<script src="[SSassets.transport.get_asset_url("jquery-ui.custom-core-widgit-mouse-sortable-min.js")]"></script>
-=======
-	<script src="jquery.min.js"></script>
-	<script src="jquery-ui.custom-core-widgit-mouse-sortable-min.js"></script>
->>>>>>> fulpmaster
 	<style>
 		#sortable { list-style-type: none; margin: 0; padding: 2em; }
 		#sortable li { min-height: 1em; margin: 0px 1px 1px 1px; padding: 1px; border: 1px solid black; border-radius: 5px; background-color: white; cursor:move;}

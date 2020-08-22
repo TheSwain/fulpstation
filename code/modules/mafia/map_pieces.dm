@@ -33,11 +33,7 @@
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
 	flags_1 = NONE
-<<<<<<< HEAD
 	area_flags = BLOCK_SUICIDE | UNIQUE_AREA
-=======
-	block_suicide = TRUE
->>>>>>> fulpmaster
 
 /datum/map_template/mafia
 	var/description = ""

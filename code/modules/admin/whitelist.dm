@@ -15,11 +15,7 @@ GLOBAL_PROTECT(whitelist)
 	if(!GLOB.whitelist.len)
 		GLOB.whitelist = null
 
-<<<<<<< HEAD
 /proc/check_whitelist(ckey)
-=======
-/proc/check_whitelist(var/ckey)
->>>>>>> fulpmaster
 	if(!GLOB.whitelist)
 		return FALSE
 	. = (ckey in GLOB.whitelist)

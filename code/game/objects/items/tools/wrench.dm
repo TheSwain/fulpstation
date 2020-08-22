@@ -15,12 +15,8 @@
 	drop_sound = 'sound/items/handling/wrench_drop.ogg'
 	pickup_sound =  'sound/items/handling/wrench_pickup.ogg'
 
-<<<<<<< HEAD
 	attack_verb_continuous = list("bashes", "batters", "bludgeons", "whacks")
 	attack_verb_simple = list("bash", "batter", "bludgeon", "whack")
-=======
-	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
->>>>>>> fulpmaster
 	tool_behaviour = TOOL_WRENCH
 	toolspeed = 1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
@@ -45,12 +41,8 @@
 	icon_state = "wrench_medical"
 	force = 2 //MEDICAL
 	throwforce = 4
-<<<<<<< HEAD
 	attack_verb_continuous = list("heals", "medicals", "taps", "pokes", "analyzes") //"cobbyed"
 	attack_verb_simple = list("heal", "medical", "tap", "poke", "analyze")
-=======
-	attack_verb = list("healed", "medicaled", "tapped", "poked", "analyzed") //"cobbyed"
->>>>>>> fulpmaster
 	///var to hold the name of the person who suicided
 	var/suicider
 
@@ -62,11 +54,7 @@
 /obj/item/wrench/medical/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] is praying to the medical wrench to take [user.p_their()] soul. It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	user.Stun(100, ignore_canstun = TRUE)// Stun stops them from wandering off
-<<<<<<< HEAD
 	user.set_light_color(COLOR_VERY_SOFT_YELLOW)
-=======
-	user.light_color = "#FAE48E"
->>>>>>> fulpmaster
 	user.set_light(2)
 	user.add_overlay(mutable_appearance('icons/effects/genetics.dmi', "servitude", -MUTATIONS_LAYER))
 	playsound(loc, 'sound/effects/pray.ogg', 50, TRUE, -1)
@@ -94,12 +82,8 @@
 	desc = "It's like a normal wrench but edgier. Can be found on the battlefield."
 	icon_state = "wrench_combat"
 	inhand_icon_state = "wrench_combat"
-<<<<<<< HEAD
 	attack_verb_continuous = list("devastates", "brutalizes", "commits a war crime against", "obliterates", "humiliates")
 	attack_verb_simple = list("devastate", "brutalize", "commit a war crime against", "obliterate", "humiliate")
-=======
-	attack_verb = list("devastated", "brutalized", "committed a war crime against", "obliterated", "humiliated")
->>>>>>> fulpmaster
 	tool_behaviour = null
 	toolspeed = null
 	var/on = FALSE

@@ -7,15 +7,10 @@
 	name = "shuttle"
 	icon = 'icons/turf/shuttle.dmi'
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-<<<<<<< HEAD
 	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS)
 	max_integrity = 500
 	armor = list("melee" = 100, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70) //default + ignores melee
 	CanAtmosPass = ATMOS_PASS_DENSITY
-=======
-	max_integrity = 500
-	armor = list("melee" = 100, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70) //default + ignores melee
->>>>>>> fulpmaster
 
 /obj/structure/shuttle/engine
 	name = "engine"
@@ -108,11 +103,7 @@
 	name = "propulsion engine"
 	icon_state = "propulsion"
 	desc = "A standard reliable bluespace engine used by many forms of shuttles."
-<<<<<<< HEAD
 	opacity = TRUE
-=======
-	opacity = 1
->>>>>>> fulpmaster
 
 /obj/structure/shuttle/engine/propulsion/left
 	name = "left propulsion engine"
@@ -145,11 +136,7 @@
 
 /obj/structure/shuttle/engine/large
 	name = "engine"
-<<<<<<< HEAD
 	opacity = TRUE
-=======
-	opacity = 1
->>>>>>> fulpmaster
 	icon = 'icons/obj/2x2.dmi'
 	icon_state = "large_engine"
 	desc = "A very large bluespace engine used to propel very large ships."
@@ -159,11 +146,7 @@
 
 /obj/structure/shuttle/engine/huge
 	name = "engine"
-<<<<<<< HEAD
 	opacity = TRUE
-=======
-	opacity = 1
->>>>>>> fulpmaster
 	icon = 'icons/obj/3x3.dmi'
 	icon_state = "huge_engine"
 	desc = "An extremely large bluespace engine used to propel extremely large ships."

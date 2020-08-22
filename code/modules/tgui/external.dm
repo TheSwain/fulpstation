@@ -120,7 +120,6 @@
  * global
  *
  * Tracks open UIs for a user.
-<<<<<<< HEAD
  */
 /mob/var/list/tgui_open_uis = list()
 
@@ -130,23 +129,13 @@
  * Tracks open windows for a user.
  */
 /client/var/list/tgui_windows = list()
-=======
- */
-/mob/var/list/tgui_open_uis = list()
->>>>>>> fulpmaster
 
 /**
  * global
  *
-<<<<<<< HEAD
  * TRUE if cache was reloaded by tgui dev server at least once.
  */
 /client/var/tgui_cache_reloaded = FALSE
-=======
- * Tracks open windows for a user.
- */
-/client/var/list/tgui_windows = list()
->>>>>>> fulpmaster
 
 /**
  * public
@@ -177,25 +166,16 @@
 /**
  * Middleware for /client/Topic.
  *
-<<<<<<< HEAD
  * return bool If TRUE, prevents propagation of the topic call.
-=======
- * return bool Whether the topic is passed (TRUE), or cancelled (FALSE).
->>>>>>> fulpmaster
  */
 /proc/tgui_Topic(href_list)
 	// Skip non-tgui topics
 	if(!href_list["tgui"])
-<<<<<<< HEAD
 		return FALSE
-=======
-		return TRUE
->>>>>>> fulpmaster
 	var/type = href_list["type"]
 	// Unconditionally collect tgui logs
 	if(type == "log")
 		log_tgui(usr, href_list["message"])
-<<<<<<< HEAD
 	// Reload all tgui windows
 	if(type == "cacheReloaded")
 		if(!check_rights(R_ADMIN) || usr.client.tgui_cache_reloaded)
@@ -209,8 +189,6 @@
 			if (window.status == TGUI_WINDOW_READY)
 				window.on_message(type, null, href_list)
 		return TRUE
-=======
->>>>>>> fulpmaster
 	// Locate window
 	var/window_id = href_list["window_id"]
 	var/datum/tgui_window/window
@@ -219,11 +197,7 @@
 		if(!window)
 			log_tgui(usr, "Error: Couldn't find the window datum, force closing.")
 			SStgui.force_close_window(usr, window_id)
-<<<<<<< HEAD
 			return TRUE
-=======
-			return FALSE
->>>>>>> fulpmaster
 	// Decode payload
 	var/payload
 	if(href_list["payload"])
@@ -231,8 +205,4 @@
 	// Pass message to window
 	if(window)
 		window.on_message(type, payload, href_list)
-<<<<<<< HEAD
 	return TRUE
-=======
-	return FALSE
->>>>>>> fulpmaster

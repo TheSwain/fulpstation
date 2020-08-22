@@ -12,12 +12,8 @@
 	throw_range = 7
 	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron = 500)
-<<<<<<< HEAD
 	attack_verb_continuous = list("robusts")
 	attack_verb_simple = list("robust")
-=======
-	attack_verb = list("robusted")
->>>>>>> fulpmaster
 	hitsound = 'sound/weapons/smash.ogg'
 	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/toolbox_pickup.ogg'

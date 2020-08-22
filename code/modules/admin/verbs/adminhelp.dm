@@ -267,7 +267,6 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		if(X.prefs.toggles & SOUND_ADMINHELP)
 			SEND_SOUND(X, sound('sound/effects/adminhelp.ogg'))
 		window_flash(X, ignorepref = TRUE)
-<<<<<<< HEAD
 		to_chat(X,
 			type = MESSAGE_TYPE_ADMINPM,
 			html = admin_msg,
@@ -278,12 +277,6 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		type = MESSAGE_TYPE_ADMINPM,
 		html = "<span class='adminnotice'>PM to-<b>Admins</b>: <span class='linkify'>[msg]</span></span>",
 		confidential = TRUE)
-=======
-		to_chat(X, admin_msg, confidential = TRUE)
-
-	//show it to the person adminhelping too
-	to_chat(initiator, "<span class='adminnotice'>PM to-<b>Admins</b>: <span class='linkify'>[msg]</span></span>", confidential = TRUE)
->>>>>>> fulpmaster
 	SSblackbox.LogAhelp(id, "Ticket Opened", msg, null, initiator.ckey)
 
 //Reopen a closed ticket
@@ -455,11 +448,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			Retitle()
 		if("reject")
 			Reject()
-<<<<<<< HEAD
-=======
-		if("mhelp")
+		if("mhelp") //FULP
 			MHelpThis()
->>>>>>> fulpmaster
 		if("reply")
 			usr.client.cmd_ahelp_reply(initiator)
 		if("icissue")
@@ -626,11 +616,6 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if (!server_url)
 		CRASH("Invalid cross comms config: [server_name]")
 	world.Export("[server_url]?[list2params(message)]")
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> fulpmaster
 
 /proc/tgsadminwho()
 	var/list/message = list("Admins: ")

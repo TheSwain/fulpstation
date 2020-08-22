@@ -9,32 +9,18 @@
 	icon_state = "x2"
 	invisibility = INVISIBILITY_ABSTRACT
 
-<<<<<<< HEAD
 /obj/effect/holodeck_effect/proc/activate(obj/machinery/computer/holodeck/HC)
 	return
 
 /obj/effect/holodeck_effect/proc/deactivate(obj/machinery/computer/holodeck/HC)
-=======
-/obj/effect/holodeck_effect/proc/activate(var/obj/machinery/computer/holodeck/HC)
-	return
-
-/obj/effect/holodeck_effect/proc/deactivate(var/obj/machinery/computer/holodeck/HC)
->>>>>>> fulpmaster
 	qdel(src)
 	return
 
 // Called by the holodeck computer as long as the program is running
-<<<<<<< HEAD
 /obj/effect/holodeck_effect/proc/tick(obj/machinery/computer/holodeck/HC)
 	return
 
 /obj/effect/holodeck_effect/proc/safety(active)
-=======
-/obj/effect/holodeck_effect/proc/tick(var/obj/machinery/computer/holodeck/HC)
-	return
-
-/obj/effect/holodeck_effect/proc/safety(var/active)
->>>>>>> fulpmaster
 	return
 
 
@@ -44,11 +30,7 @@
 	icon_state = "deck_nanotrasen_full"
 	var/obj/item/toy/cards/deck/D
 
-<<<<<<< HEAD
 /obj/effect/holodeck_effect/cards/activate(obj/machinery/computer/holodeck/HC)
-=======
-/obj/effect/holodeck_effect/cards/activate(var/obj/machinery/computer/holodeck/HC)
->>>>>>> fulpmaster
 	D = new(loc)
 	safety(!(HC.obj_flags & EMAGGED))
 	D.holo = HC
@@ -63,28 +45,17 @@
 		D.card_throwforce = 0
 		D.card_throw_speed = 3
 		D.card_throw_range = 7
-<<<<<<< HEAD
 		D.card_attack_verb_continuous = list("attacks")
-=======
-		D.card_attack_verb = list("attacked")
->>>>>>> fulpmaster
 	else
 		D.card_hitsound = 'sound/weapons/bladeslice.ogg'
 		D.card_force = 5
 		D.card_throwforce = 10
 		D.card_throw_speed = 3
 		D.card_throw_range = 7
-<<<<<<< HEAD
 		D.card_attack_verb_continuous = list("attacks", "slices", "dices", "slashes", "cuts")
 
 
 /obj/effect/holodeck_effect/sparks/activate(obj/machinery/computer/holodeck/HC)
-=======
-		D.card_attack_verb = list("attacked", "sliced", "diced", "slashed", "cut")
-
-
-/obj/effect/holodeck_effect/sparks/activate(var/obj/machinery/computer/holodeck/HC)
->>>>>>> fulpmaster
 	var/turf/T = get_turf(src)
 	if(T)
 		var/datum/effect_system/spark_spread/s = new
@@ -99,11 +70,7 @@
 	var/mobtype = /mob/living/simple_animal/hostile/carp/holocarp
 	var/mob/mob = null
 
-<<<<<<< HEAD
 /obj/effect/holodeck_effect/mobspawner/activate(obj/machinery/computer/holodeck/HC)
-=======
-/obj/effect/holodeck_effect/mobspawner/activate(var/obj/machinery/computer/holodeck/HC)
->>>>>>> fulpmaster
 	if(islist(mobtype))
 		mobtype = pick(mobtype)
 	mob = new mobtype(loc)
@@ -114,11 +81,7 @@
 		mob.vars[v] = null
 	return mob
 
-<<<<<<< HEAD
 /obj/effect/holodeck_effect/mobspawner/deactivate(obj/machinery/computer/holodeck/HC)
-=======
-/obj/effect/holodeck_effect/mobspawner/deactivate(var/obj/machinery/computer/holodeck/HC)
->>>>>>> fulpmaster
 	if(mob)
 		HC.derez(mob)
 	qdel(src)
@@ -138,11 +101,7 @@
 
 /obj/effect/holodeck_effect/mobspawner/penguin
 	mobtype = /mob/living/simple_animal/pet/penguin/emperor
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> fulpmaster
 /obj/effect/holodeck_effect/mobspawner/penguin/Initialize()
 	if(prob(1))
 		mobtype = /mob/living/simple_animal/pet/penguin/emperor/shamebrero

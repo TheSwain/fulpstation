@@ -312,33 +312,20 @@
 			if(locate(/obj/structure/grille) in src)
 				return FALSE
 			to_chat(user, "<span class='notice'>You construct the grille.</span>")
-<<<<<<< HEAD
 			var/obj/structure/grille/new_grille = new(src)
 			new_grille.set_anchored(TRUE)
-=======
-			var/obj/structure/grille/G = new(src)
-			G.set_anchored(TRUE)
->>>>>>> fulpmaster
 			return TRUE
 		if(RCD_MACHINE)
 			if(locate(/obj/structure/frame/machine) in src)
 				return FALSE
-<<<<<<< HEAD
 			var/obj/structure/frame/machine/new_machine = new(src)
 			new_machine.state = 2
 			new_machine.icon_state = "box_1"
 			new_machine.set_anchored(TRUE)
-=======
-			var/obj/structure/frame/machine/M = new(src)
-			M.state = 2
-			M.icon_state = "box_1"
-			M.set_anchored(TRUE)
->>>>>>> fulpmaster
 			return TRUE
 		if(RCD_COMPUTER)
 			if(locate(/obj/structure/frame/computer) in src)
 				return FALSE
-<<<<<<< HEAD
 			var/obj/structure/frame/computer/new_computer = new(src)
 			new_computer.set_anchored(TRUE)
 			new_computer.state = 1
@@ -349,12 +336,6 @@
 				return FALSE
 			var/atom/new_furnish = new the_rcd.furnish_type(src)
 			new_furnish.setDir(user.dir)
-=======
-			var/obj/structure/frame/computer/C = new(src)
-			C.set_anchored(TRUE)
-			C.state = 1
-			C.setDir(the_rcd.computer_dir)
->>>>>>> fulpmaster
 			return TRUE
 	return FALSE
 

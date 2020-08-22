@@ -8,12 +8,8 @@
 	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
-<<<<<<< HEAD
 	attack_verb_continuous = list("whips", "lashes", "disciplines")
 	attack_verb_simple = list("whip", "lash", "discipline")
-=======
-	attack_verb = list("whipped", "lashed", "disciplined")
->>>>>>> fulpmaster
 	max_integrity = 300
 	equip_sound = 'sound/items/equip/toolbelt_equip.ogg'
 	var/content_overlays = FALSE //If this is true, the belt will gain overlays based on what it's holding
@@ -71,12 +67,8 @@
 		/obj/item/construction/rcd,
 		/obj/item/pipe_dispenser,
 		/obj/item/inducer,
-<<<<<<< HEAD
 		/obj/item/plunger,
 		/obj/item/airlock_painter
-=======
-		/obj/item/plunger
->>>>>>> fulpmaster
 		))
 
 /obj/item/storage/belt/utility/chief
@@ -741,10 +733,6 @@
 		/obj/item/graft,
 		/obj/item/secateurs,
 		/obj/item/geneshears,
-<<<<<<< HEAD
 		/obj/item/shovel/spade,
 		/obj/item/gun/energy/floragun
-=======
-		/obj/item/shovel/spade
->>>>>>> fulpmaster
 		))

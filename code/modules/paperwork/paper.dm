@@ -12,45 +12,6 @@
 #define MODE_STAMPING 2
 
 /**
-<<<<<<< HEAD
-=======
- * This is a custom ui state.  All it really does is keep track of pen
- * being used and if they are editing it or not.  This way we can keep
- * the data with the ui rather than on the paper
- */
-/datum/ui_state/default/paper_state
-	/// What edit mode we are in and who is
-	/// writing on it right now
-	var/edit_mode = MODE_READING
-	/// Setup for writing to a sheet
-	var/pen_color = "black"
-	var/pen_font = ""
-	var/is_crayon = FALSE
-	/// Setup for stamping a sheet
-	// Why not the stamp obj?  I have no idea
-	// what happens to states out of scope so
-	// don't want to put instances in this
-	var/stamp_icon_state = ""
-	var/stamp_name = ""
-	var/stamp_class = ""
-
-/datum/ui_state/default/paper_state/proc/copy_from(datum/ui_state/default/paper_state/from)
-	switch(from.edit_mode)
-		if(MODE_READING)
-			edit_mode = MODE_READING
-		if(MODE_WRITING)
-			edit_mode = MODE_WRITING
-			pen_color = from.pen_color
-			pen_font = from.pen_font
-			is_crayon = from.is_crayon
-		if(MODE_STAMPING)
-			edit_mode = MODE_STAMPING
-			stamp_icon_state = from.stamp_icon_state
-			stamp_class = from.stamp_class
-			stamp_name = from.stamp_name
-
-/**
->>>>>>> fulpmaster
  * Paper is now using markdown (like in github pull notes) for ALL rendering
  * so we do loose a bit of functionality but we gain in easy of use of
  * paper and getting rid of that crashing bug
@@ -88,20 +49,6 @@
 	var/contact_poison // Reagent ID to transfer on contact
 	var/contact_poison_volume = 0
 
-<<<<<<< HEAD
-=======
-	// Ok, so WHY are we caching the ui's?
-	// Since we are not using autoupdate we
-	// need some way to update the ui's of
-	// other people looking at it and if
-	// its been updated.  Yes yes, lame
-	// but canot be helped.  However by
-	// doing it this way, we can see
-	// live updates and have multipule
-	// people look at it
-	var/list/viewing_ui = list()
-
->>>>>>> fulpmaster
 	/// When the sheet can be "filled out"
 	/// This is an associated list
 	var/list/form_fields = list()
@@ -184,21 +131,6 @@
 	user.visible_message("<span class='suicide'>[user] scratches a grid on [user.p_their()] wrist with the paper! It looks like [user.p_theyre()] trying to commit sudoku...</span>")
 	return (BRUTELOSS)
 
-<<<<<<< HEAD
-=======
-/// ONLY USED FOR APRIL FOOLS
-/obj/item/paper/proc/reset_spamflag()
-	spam_flag = FALSE
-
-/obj/item/paper/attack_self(mob/user)
-	if(rigged && (SSevents.holidays && SSevents.holidays[APRIL_FOOLS]))
-		if(!spam_flag)
-			spam_flag = TRUE
-			playsound(loc, 'sound/items/bikehorn.ogg', 50, TRUE)
-			addtimer(CALLBACK(src, .proc/reset_spamflag), 20)
-	. = ..()
-
->>>>>>> fulpmaster
 /obj/item/paper/proc/clearpaper()
 	info = ""
 	stamps = null
@@ -206,7 +138,6 @@
 	cut_overlays()
 	update_icon_state()
 
-<<<<<<< HEAD
 /obj/item/paper/examine(mob/user)
 	. = ..()
 	if(!in_range(user, src) && !isobserver(user))
@@ -255,45 +186,6 @@
 		user.IgniteMob()
 		return
 
-=======
-/obj/item/paper/examine_more(mob/user)
-	ui_interact(user)
-	return list("<span class='notice'><i>You try to read [src]...</i></span>")
-
-/obj/item/paper/can_interact(mob/user)
-	if(!..())
-		return FALSE
-	// Are we on fire?  Hard ot read if so
-	if(resistance_flags & ON_FIRE)
-		return FALSE
-	// Even harder to read if your blind...braile? humm
-	if(user.is_blind())
-		return FALSE
-	// checks if the user can read.
-	return user.can_read(src)
-
-/**
- * This creates the ui, since we are using a custom state but not much else
- * just makes it easyer to make it.
- */
-/obj/item/paper/proc/create_ui(mob/user, datum/ui_state/default/paper_state/state)
-	ui_interact(user, state = state)
-
-/obj/item/proc/burn_paper_product_attackby_check(obj/item/I, mob/living/user, bypass_clumsy)
-	var/ignition_message = I.ignition_effect(src, user)
-	if(!ignition_message)
-		return
-	. = TRUE
-	if(!bypass_clumsy && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(10) && Adjacent(user))
-		user.visible_message("<span class='warning'>[user] accidentally ignites [user.p_them()]self!</span>", \
-							"<span class='userdanger'>You miss [src] and accidentally light yourself on fire!</span>")
-		if(user.is_holding(I)) //checking if they're holding it in case TK is involved
-			user.dropItemToGround(I)
-		user.adjust_fire_stacks(1)
-		user.IgniteMob()
-		return
-
->>>>>>> fulpmaster
 	if(user.is_holding(src)) //no TK shit here.
 		user.dropItemToGround(src)
 	user.visible_message(ignition_message)
@@ -302,11 +194,7 @@
 
 /obj/item/paper/attackby(obj/item/P, mob/living/user, params)
 	if(burn_paper_product_attackby_check(P, user))
-<<<<<<< HEAD
 		SStgui.close_uis(src)
-=======
-		close_all_ui()
->>>>>>> fulpmaster
 		return
 
 	if(istype(P, /obj/item/pen) || istype(P, /obj/item/toy/crayon))
@@ -336,31 +224,12 @@
 		get_asset_datum(/datum/asset/spritesheet/simple/paper),
 	)
 
-<<<<<<< HEAD
 /obj/item/paper/ui_interact(mob/user, datum/tgui/ui)
-=======
-/obj/item/paper/ui_interact(mob/user, datum/tgui/ui,
-		datum/ui_state/default/paper_state/state)
-	// Update the state
-	ui = ui || SStgui.get_open_ui(user, src)
-	if(ui && state)
-		var/datum/ui_state/default/paper_state/current_state = ui.state
-		current_state.copy_from(state)
->>>>>>> fulpmaster
 	// Update the UI
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "PaperSheet", name)
-<<<<<<< HEAD
 		ui.open()
-
-=======
-		state = new
-		ui.set_state(state)
-		ui.set_autoupdate(FALSE)
-		viewing_ui[user] = ui
-		ui.open()
->>>>>>> fulpmaster
 
 /obj/item/paper/ui_static_data(mob/user)
 	. = list()
@@ -369,15 +238,6 @@
 	.["paper_color"] = !color || color == "white" ? "#FFFFFF" : color	// color might not be set
 	.["paper_state"] = icon_state	/// TODO: show the sheet will bloodied or crinkling?
 	.["stamps"] = stamps
-
-<<<<<<< HEAD
-=======
-// Again, we have to do this as autoupdate is off
-/obj/item/paper/proc/update_all_ui()
-	for(var/datum/tgui/ui in viewing_ui)
-		ui.process(force = TRUE)
->>>>>>> fulpmaster
-
 
 /obj/item/paper/ui_data(mob/user)
 	var/list/data = list()
@@ -418,11 +278,7 @@
 
 	return data
 
-<<<<<<< HEAD
 /obj/item/paper/ui_act(action, params,datum/tgui/ui)
-=======
-/obj/item/paper/ui_act(action, params, datum/tgui/ui, datum/ui_state/default/paper_state/state)
->>>>>>> fulpmaster
 	if(..())
 		return
 	switch(action)

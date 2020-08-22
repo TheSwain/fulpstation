@@ -1,8 +1,5 @@
 /obj/item/pinpointer/nuke
-<<<<<<< HEAD
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-=======
->>>>>>> fulpmaster
 	var/mode = TRACK_NUKE_DISK
 
 /obj/item/pinpointer/nuke/examine(mob/user)
@@ -70,10 +67,7 @@
 	name = "cyborg syndicate pinpointer"
 	desc = "An integrated tracking device, jury-rigged to search for living Syndicate operatives."
 	flags_1 = NONE
-<<<<<<< HEAD
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-=======
->>>>>>> fulpmaster
 
 /obj/item/pinpointer/syndicate_cyborg/Initialize()
 	. = ..()

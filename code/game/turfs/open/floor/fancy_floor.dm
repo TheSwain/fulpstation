@@ -199,19 +199,11 @@
 	if(!..())
 		return 0
 	if(!broken && !burnt)
-<<<<<<< HEAD
 		if(smoothing_flags)
 			QUEUE_SMOOTH(src)
 	else
 		make_plating()
 		if(smoothing_flags)
-=======
-		if(smooth)
-			QUEUE_SMOOTH(src)
-	else
-		make_plating()
-		if(smooth)
->>>>>>> fulpmaster
 			QUEUE_SMOOTH_NEIGHBORS(src)
 
 /turf/open/floor/carpet/black

@@ -47,10 +47,6 @@
 			to_chat(user, "<span class='warning'>You lack the grace to wield this!</span>")
 			return COMPONENT_TWOHANDED_BLOCK_WIELD
 	wielded = TRUE
-<<<<<<< HEAD
-=======
-	sharpness = SHARP_EDGED
->>>>>>> fulpmaster
 	w_class = w_class_on
 	hitsound = 'sound/weapons/blade1.ogg'
 	START_PROCESSING(SSobj, src)

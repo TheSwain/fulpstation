@@ -379,11 +379,7 @@ GLOBAL_LIST_INIT(wire_node_generating_types, typecacheof(list(/obj/structure/gri
 // Definitions
 ////////////////////////////////
 
-<<<<<<< HEAD
 #define CABLE_RESTRAINTS_COST 15
-=======
-GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restraints", /obj/item/restraints/handcuffs/cable, 15), new/datum/stack_recipe("multilayer cable", /obj/structure/cable/multilayer, 1), new/datum/stack_recipe("multiZ cable", /obj/structure/cable/multilayer/multiz, 1)))
->>>>>>> fulpmaster
 
 /obj/item/stack/cable_coil
 	name = "cable coil"
@@ -407,12 +403,8 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=5)
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
-<<<<<<< HEAD
 	attack_verb_continuous = list("whips", "lashes", "disciplines", "flogs")
 	attack_verb_simple = list("whip", "lash", "discipline", "flog")
-=======
-	attack_verb = list("whipped", "lashed", "disciplined", "flogged")
->>>>>>> fulpmaster
 	singular_name = "cable piece"
 	full_w_class = WEIGHT_CLASS_SMALL
 	grind_results = list(/datum/reagent/copper = 2) //2 copper per cable in the coil
@@ -426,10 +418,6 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 	pixel_x = rand(-2,2)
 	pixel_y = rand(-2,2)
 	update_icon()
-<<<<<<< HEAD
-=======
-	recipes = GLOB.cable_coil_recipes
->>>>>>> fulpmaster
 
 /obj/item/stack/cable_coil/examine(mob/user)
 	. = ..()
@@ -460,7 +448,6 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 		return FALSE
 	return TRUE
 
-<<<<<<< HEAD
 /obj/item/stack/cable_coil/attack_self(mob/living/user)
 	if(!user)
 		return
@@ -478,24 +465,6 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 	)
 
 	var/layer_result = show_radial_menu(user, src, radial_menu, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
-=======
-GLOBAL_LIST(cable_radial_layer_list)
-
-/obj/item/stack/cable_coil/CtrlClick(mob/living/user)
-	if(loc!=user)
-		return ..()
-	if(!user)
-		return
-	if(!GLOB.cable_radial_layer_list)
-		GLOB.cable_radial_layer_list = list(
-		"Layer 1" = image(icon = 'icons/mob/radial.dmi', icon_state = "coil-red"),
-		"Layer 2" = image(icon = 'icons/mob/radial.dmi', icon_state = "coil-yellow"),
-		"Layer 3" = image(icon = 'icons/mob/radial.dmi', icon_state = "coil-blue"),
-		"Multilayer cable hub" = image(icon = 'icons/obj/power.dmi', icon_state = "cable_bridge"),
-		"Multi Z layer cable hub" = image(icon = 'icons/obj/power.dmi', icon_state = "cablerelay-broken-cable")
-		)
-	var/layer_result = show_radial_menu(user, src, GLOB.cable_radial_layer_list, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
->>>>>>> fulpmaster
 	if(!check_menu(user))
 		return
 	switch(layer_result)
@@ -530,15 +499,12 @@ GLOBAL_LIST(cable_radial_layer_list)
 			target_type = /obj/structure/cable/multilayer/multiz
 			target_layer = CABLE_LAYER_2
 			novariants = TRUE
-<<<<<<< HEAD
 		if("Cable restraints")
 			if (amount >= CABLE_RESTRAINTS_COST)
 				use(CABLE_RESTRAINTS_COST)
 				var/obj/item/restraints/handcuffs/cable/restraints = new
 				restraints.color = color
 				user.put_in_hands(restraints)
-=======
->>>>>>> fulpmaster
 	update_icon()
 
 
@@ -636,10 +602,7 @@ GLOBAL_LIST(cable_radial_layer_list)
 	custom_materials = list()
 	cost = 1
 
-<<<<<<< HEAD
 #undef CABLE_RESTRAINTS_COST
-=======
->>>>>>> fulpmaster
 #undef UNDER_SMES
 #undef UNDER_TERMINAL
 

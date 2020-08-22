@@ -4,12 +4,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_STOMACH
-<<<<<<< HEAD
 	attack_verb_continuous = list("gores", "squishes", "slaps", "digests")
 	attack_verb_simple = list("gore", "squish", "slap", "digest")
-=======
-	attack_verb = list("gored", "squished", "slapped", "digested")
->>>>>>> fulpmaster
 	desc = "Onaka ga suite imasu."
 
 	healing_factor = STANDARD_ORGAN_HEALING
@@ -48,11 +44,7 @@
 			to_chat(H, "<span class='warning'>Your stomach reels in pain as you're incapable of holding down all that food!</span>")
 
 /obj/item/organ/stomach/get_availability(datum/species/S)
-<<<<<<< HEAD
 	return !(NOSTOMACH in S.inherent_traits)
-=======
-	return !(NOSTOMACH in S.species_traits)
->>>>>>> fulpmaster
 
 /obj/item/organ/stomach/proc/handle_disgust(mob/living/carbon/human/H)
 	if(H.disgust)
@@ -60,21 +52,13 @@
 		if(H.disgust >= DISGUST_LEVEL_GROSS)
 			if(prob(10))
 				H.stuttering += 1
-<<<<<<< HEAD
 				H.add_confusion(2)
-=======
-				H.confused += 2
->>>>>>> fulpmaster
 			if(prob(10) && !H.stat)
 				to_chat(H, "<span class='warning'>You feel kind of iffy...</span>")
 			H.jitteriness = max(H.jitteriness - 3, 0)
 		if(H.disgust >= DISGUST_LEVEL_VERYGROSS)
 			if(prob(pukeprob)) //iT hAndLeS mOrE ThaN PukInG
-<<<<<<< HEAD
 				H.add_confusion(2.5)
-=======
-				H.confused += 2.5
->>>>>>> fulpmaster
 				H.stuttering += 1
 				H.vomit(10, 0, 1, 0, 1, 0)
 			H.Dizzy(5)
@@ -104,14 +88,6 @@
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "disgust")
 	..()
 
-<<<<<<< HEAD
-=======
-/obj/item/organ/stomach/fly
-	name = "insectoid stomach"
-	icon_state = "stomach-x" //xenomorph liver? It's just a black liver so it fits.
-	desc = "A mutant stomach designed to handle the unique diet of a flyperson."
-
->>>>>>> fulpmaster
 /obj/item/organ/stomach/plasmaman
 	name = "digestive crystal"
 	icon_state = "stomach-p"

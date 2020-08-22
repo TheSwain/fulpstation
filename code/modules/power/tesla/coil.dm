@@ -75,22 +75,12 @@
 	if(anchored && !panel_open)
 		//don't lose arc power when it's not connected to anything
 		//please place tesla coils all around the station to maximize effectiveness
-<<<<<<< HEAD
 		var/power_produced = powernet ? power * input_power_multiplier : power
 		add_avail(power_produced)
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_ENG)
 		if(D)
 			D.adjust_money(min(power_produced, 1))
 		flick("coilhit", src)
-=======
-		var/power_produced = powernet ? power / 2 : power
-		add_avail(power_produced*input_power_multiplier)
-		flick("coilhit", src)
-		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_ENG)
-		if(D)
-			D.adjust_money(min(power_produced, 1))
-		addtimer(CALLBACK(src, .proc/reset_shocked), 10)
->>>>>>> fulpmaster
 		zap_buckle_check(power)
 		playsound(src.loc, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
 		obj_flags |= BEING_SHOCKED
@@ -107,13 +97,8 @@
 	power = min(surplus(), power) //Take the smaller of the two
 	add_load(power)
 	playsound(src.loc, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
-<<<<<<< HEAD
 	tesla_zap(src, 10, power, zap_flags)
 	zap_buckle_check(power)
-=======
-	tesla_zap(src, 10, power/(coeff/2), zap_flags)
-	zap_buckle_check(power/(coeff/2))
->>>>>>> fulpmaster
 
 /obj/machinery/power/grounding_rod
 	name = "grounding rod"

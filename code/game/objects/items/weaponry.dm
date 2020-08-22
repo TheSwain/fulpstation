@@ -9,12 +9,8 @@
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 3
 	throw_range = 7
-<<<<<<< HEAD
 	attack_verb_continuous = list("bans")
 	attack_verb_simple = list("ban")
-=======
-	attack_verb = list("banned")
->>>>>>> fulpmaster
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
@@ -48,12 +44,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 1
 	w_class = WEIGHT_CLASS_NORMAL
 	hitsound = 'sound/weapons/bladeslice.ogg'
-<<<<<<< HEAD
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
-=======
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
->>>>>>> fulpmaster
 
 /obj/item/sord/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is trying to impale [user.p_them()]self with [src]! It might be a suicide attempt if it weren't so shitty.</span>", \
@@ -73,12 +65,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 40
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
-<<<<<<< HEAD
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
-=======
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
->>>>>>> fulpmaster
 	block_chance = 50
 	sharpness = SHARP_EDGED
 	max_integrity = 200
@@ -100,12 +88,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	slot_flags = null
 	block_chance = 0 //RNG WON'T HELP YOU NOW, PANSY
 	light_range = 3
-<<<<<<< HEAD
 	attack_verb_continuous = list("brutalizes", "eviscerates", "disembowels", "hacks", "carves", "cleaves") //ONLY THE MOST VISCERAL ATTACK VERBS
 	attack_verb_simple = list("brutalize", "eviscerate", "disembowel", "hack", "carve", "cleave")
-=======
-	attack_verb = list("brutalized", "eviscerated", "disemboweled", "hacked", "carved", "cleaved") //ONLY THE MOST VISCERAL ATTACK VERBS
->>>>>>> fulpmaster
 	var/notches = 0 //HOW MANY PEOPLE HAVE BEEN SLAIN WITH THIS BLADE
 	var/obj/item/disk/nuclear/nuke_disk //OUR STORED NUKE DISK
 
@@ -237,12 +221,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 10
 	w_class = WEIGHT_CLASS_HUGE
 	hitsound = 'sound/weapons/bladeslice.ogg'
-<<<<<<< HEAD
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
-=======
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
->>>>>>> fulpmaster
 	block_chance = 50
 	sharpness = SHARP_EDGED
 	max_integrity = 200
@@ -277,12 +257,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=1150, /datum/material/glass=75)
-<<<<<<< HEAD
 	attack_verb_continuous = list("hits", "bludgeons", "whacks", "bonks")
 	attack_verb_simple = list("hit", "bludgeon", "whack", "bonk")
-=======
-	attack_verb = list("hit", "bludgeoned", "whacked", "bonked")
->>>>>>> fulpmaster
 
 /obj/item/wirerod/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/shard))
@@ -352,12 +328,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 25 //kills regular carps in one hit
 	force = 10
 	throw_range = 0 //throwing these invalidates the speargun
-<<<<<<< HEAD
 	attack_verb_continuous = list("stabs", "rips", "gores", "impales")
 	attack_verb_simple = list("stab", "rip", "gore", "impale")
-=======
-	attack_verb = list("stabbed", "ripped", "gored", "impaled")
->>>>>>> fulpmaster
 	embedding = list("pain_mult" = 8, "embed_chance" = 100, "fall_chance" = 0, "impact_pain_mult" = 15) //55 damage+embed on hit
 
 /obj/item/switchblade
@@ -374,12 +346,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throw_range = 6
 	custom_materials = list(/datum/material/iron=12000)
 	hitsound = 'sound/weapons/genhit.ogg'
-<<<<<<< HEAD
 	attack_verb_continuous = list("stubs", "pokes")
 	attack_verb_simple = list("stub", "poke")
-=======
-	attack_verb = list("stubbed", "poked")
->>>>>>> fulpmaster
 	resistance_flags = FIRE_PROOF
 	var/extended = 0
 
@@ -391,12 +359,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		w_class = WEIGHT_CLASS_NORMAL
 		throwforce = 23
 		icon_state = "switchblade_ext"
-<<<<<<< HEAD
 		attack_verb_continuous = list("slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 		attack_verb_simple = list("slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
-=======
-		attack_verb = list("slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
->>>>>>> fulpmaster
 		hitsound = 'sound/weapons/bladeslice.ogg'
 		sharpness = SHARP_EDGED
 	else
@@ -404,12 +368,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		w_class = WEIGHT_CLASS_SMALL
 		throwforce = 5
 		icon_state = "switchblade"
-<<<<<<< HEAD
 		attack_verb_continuous = list("stubs", "pokes")
 		attack_verb_simple = list("stub", "poke")
-=======
-		attack_verb = list("stubbed", "poked")
->>>>>>> fulpmaster
 		hitsound = 'sound/weapons/genhit.ogg'
 		sharpness = SHARP_NONE
 
@@ -427,12 +387,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throw_speed = 3
 	throw_range = 4
 	w_class = WEIGHT_CLASS_SMALL
-<<<<<<< HEAD
 	attack_verb_continuous = list("calls", "rings")
 	attack_verb_simple = list("call", "ring")
-=======
-	attack_verb = list("called", "rang")
->>>>>>> fulpmaster
 	hitsound = 'sound/weapons/ring.ogg'
 
 /obj/item/phone/suicide_act(mob/user)
@@ -454,12 +410,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 5
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=50)
-<<<<<<< HEAD
 	attack_verb_continuous = list("bludgeons", "whacks", "disciplines", "thrashes")
 	attack_verb_simple = list("bludgeon", "whack", "discipline", "thrash")
-=======
-	attack_verb = list("bludgeoned", "whacked", "disciplined", "thrashed")
->>>>>>> fulpmaster
 
 /obj/item/staff
 	name = "wizard staff"
@@ -474,12 +426,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
 	armour_penetration = 100
-<<<<<<< HEAD
 	attack_verb_continuous = list("bludgeons", "whacks", "disciplines")
 	attack_verb_simple = list("bludgeon", "whack", "discipline")
-=======
-	attack_verb = list("bludgeoned", "whacked", "disciplined")
->>>>>>> fulpmaster
 	resistance_flags = FLAMMABLE
 
 /obj/item/staff/broom
@@ -532,12 +480,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throw_range = 0
 	throw_speed = 0
 	sharpness = SHARP_EDGED
-<<<<<<< HEAD
 	attack_verb_continuous = list("saws", "tears", "lacerates", "cuts", "chops", "dices")
 	attack_verb_simple = list("saw", "tear", "lacerate", "cut", "chop", "dice")
-=======
-	attack_verb = list("sawed", "tore", "lacerated", "cut", "chopped", "diced")
->>>>>>> fulpmaster
 	hitsound = 'sound/weapons/chainsawhit.ogg'
 	tool_behaviour = TOOL_SAW
 	toolspeed = 1
@@ -567,12 +511,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 10
 	throw_speed = 5
 	throw_range = 2
-<<<<<<< HEAD
 	attack_verb_continuous = list("busts")
 	attack_verb_simple = list("bust")
-=======
-	attack_verb = list("busted")
->>>>>>> fulpmaster
 	var/impressiveness = 45
 
 /obj/item/statuebust/Initialize()
@@ -594,12 +534,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 1 // why are you throwing a club do you even weapon
 	throw_speed = 1
 	throw_range = 1
-<<<<<<< HEAD
 	attack_verb_continuous = list("clubs", "bludgeons")
 	attack_verb_simple = list("club", "bludgeon")
-=======
-	attack_verb = list("clubbed", "bludgeoned")
->>>>>>> fulpmaster
 
 /obj/item/melee/chainofcommand/tailwhip
 	name = "liz o' nine tails"
@@ -622,12 +558,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 12
 	throwforce = 4
 	w_class = WEIGHT_CLASS_NORMAL
-<<<<<<< HEAD
 	attack_verb_continuous = list("smacks", "whacks", "slams", "smashes")
 	attack_verb_simple = list("smack", "whack", "slam", "smash")
-=======
-	attack_verb = list("smacked", "whacked", "slammed", "smashed")
->>>>>>> fulpmaster
 	///The vehicle counterpart for the board
 	var/board_item_type = /obj/vehicle/ridden/scooter/skateboard
 
@@ -670,18 +602,13 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 10
 	wound_bonus = -10
 	throwforce = 12
-<<<<<<< HEAD
 	attack_verb_continuous = list("beats", "smacks")
 	attack_verb_simple = list("beat", "smack")
-=======
-	attack_verb = list("beat", "smacked")
->>>>>>> fulpmaster
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 3.5)
 	w_class = WEIGHT_CLASS_HUGE
 	var/homerun_ready = 0
 	var/homerun_able = 0
 
-<<<<<<< HEAD
 /obj/item/melee/baseball_bat/Initialize()
 	. = ..()
 	if(prob(1))
@@ -690,8 +617,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		icon_state = "baseball_bat_brit"
 		inhand_icon_state = "baseball_bat_brit"
 
-=======
->>>>>>> fulpmaster
 /obj/item/melee/baseball_bat/homerun
 	name = "home run bat"
 	desc = "This thing looks dangerous... Dangerously good at baseball, that is."
@@ -714,11 +639,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/melee/baseball_bat/attack(mob/living/target, mob/living/user)
 	. = ..()
-<<<<<<< HEAD
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
 		return
-=======
->>>>>>> fulpmaster
 	var/atom/throw_target = get_edge_target_turf(target, user.dir)
 	if(homerun_ready)
 		user.visible_message("<span class='userdanger'>It's a home run!</span>")
@@ -750,11 +672,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/melee/flyswatter
 	name = "flyswatter"
-<<<<<<< HEAD
 	desc = "Useful for killing pests of all sizes."
-=======
-	desc = "Useful for killing insects of all sizes."
->>>>>>> fulpmaster
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "flyswatter"
 	inhand_icon_state = "flyswatter"
@@ -762,12 +680,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 1
 	throwforce = 1
-<<<<<<< HEAD
 	attack_verb_continuous = list("swats", "smacks")
 	attack_verb_simple = list("swat", "smack")
-=======
-	attack_verb = list("swatted", "smacked")
->>>>>>> fulpmaster
 	hitsound = 'sound/effects/snap.ogg'
 	w_class = WEIGHT_CLASS_SMALL
 	//Things in this list will be instantly splatted.  Flyman weakness is handled in the flyman species weakness proc.
@@ -779,12 +693,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 					/mob/living/simple_animal/hostile/poison/bees/,
 					/mob/living/simple_animal/butterfly,
 					/mob/living/simple_animal/hostile/cockroach,
-<<<<<<< HEAD
 					/obj/item/queen_bee,
 					/obj/structure/spider/spiderling
-=======
-					/obj/item/queen_bee
->>>>>>> fulpmaster
 	))
 
 
@@ -807,12 +717,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 0
 	throwforce = 0
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
-<<<<<<< HEAD
 	attack_verb_continuous = list("bops")
 	attack_verb_simple = list("bop")
-=======
-	attack_verb = list("bopped")
->>>>>>> fulpmaster
 
 /obj/item/circlegame/Initialize()
 	. = ..()
@@ -834,11 +740,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /// Stage 1: The mistake is made
 /obj/item/circlegame/proc/ownerExamined(mob/living/owner, mob/living/sucker)
-<<<<<<< HEAD
 	SIGNAL_HANDLER
-
-=======
->>>>>>> fulpmaster
 	if(!istype(sucker) || !in_range(owner, sucker))
 		return
 	addtimer(CALLBACK(src, .proc/waitASecond, owner, sucker), 4)
@@ -917,12 +819,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 0
 	throwforce = 0
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
-<<<<<<< HEAD
 	attack_verb_continuous = list("slaps")
 	attack_verb_simple = list("slap")
-=======
-	attack_verb = list("slapped")
->>>>>>> fulpmaster
 	hitsound = 'sound/effects/snap.ogg'
 
 /obj/item/slapper/attack(mob/M, mob/living/carbon/human/user)
@@ -971,12 +869,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 5
 	throwforce = 5
 	hitsound = "swing_hit"
-<<<<<<< HEAD
 	attack_verb_continuous = list("whacks", "thwacks", "wallops", "socks")
 	attack_verb_simple = list("whack", "thwack", "wallop", "sock")
-=======
-	attack_verb = list("whacked", "thwacked", "walloped", "socked")
->>>>>>> fulpmaster
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "gohei"
 	inhand_icon_state = "gohei"
@@ -996,12 +890,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 20
 	throw_speed = 4
 	sharpness = SHARP_EDGED
-<<<<<<< HEAD
 	attack_verb_continuous = list("cuts", "slices", "dices")
 	attack_verb_simple = list("cut", "slice", "dice")
-=======
-	attack_verb = list("cut", "sliced", "diced")
->>>>>>> fulpmaster
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -1019,20 +909,12 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /// triggered on wield of two handed item
 /obj/item/vibro_weapon/proc/on_wield(obj/item/source, mob/user)
-<<<<<<< HEAD
 	SIGNAL_HANDLER
-
-=======
->>>>>>> fulpmaster
 	wielded = TRUE
 
 /// triggered on unwield of two handed item
 /obj/item/vibro_weapon/proc/on_unwield(obj/item/source, mob/user)
-<<<<<<< HEAD
 	SIGNAL_HANDLER
-
-=======
->>>>>>> fulpmaster
 	wielded = FALSE
 
 /obj/item/vibro_weapon/update_icon_state()

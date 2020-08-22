@@ -13,12 +13,8 @@
 	px_y = -8
 	stam_damage_coeff = 1
 	max_stamina_damage = 100
-<<<<<<< HEAD
 	wound_resistance = 5
 	disabled_wound_penalty = 25
-=======
-	wound_resistance = 10
->>>>>>> fulpmaster
 	scars_covered_by_clothes = FALSE
 
 	var/mob/living/brain/brainmob = null //The current occupant.

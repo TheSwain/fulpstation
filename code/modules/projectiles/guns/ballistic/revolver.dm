@@ -16,11 +16,7 @@
 	var/spin_delay = 10
 	var/recent_spin = 0
 
-<<<<<<< HEAD
 /obj/item/gun/ballistic/revolver/chamber_round(keep_bullet, spin_cylinder = TRUE, replace_new_round)
-=======
-/obj/item/gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE)
->>>>>>> fulpmaster
 	if(!magazine) //if it mag was qdel'd somehow.
 		CRASH("revolver tried to chamber a round without a magazine!")
 	if(spin_cylinder)

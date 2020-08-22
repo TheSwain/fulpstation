@@ -17,11 +17,7 @@
 				var/obj/item/organ/ears/ears = C.getorganslot(ORGAN_SLOT_EARS)
 				if(ears)
 					ears.adjustEarDamage(0, 30)
-<<<<<<< HEAD
 				C.add_confusion(25)
-=======
-				C.confused += 25
->>>>>>> fulpmaster
 				C.Jitter(50)
 			else
 				SEND_SOUND(C, sound('sound/effects/screech.ogg'))

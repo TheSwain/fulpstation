@@ -610,11 +610,7 @@
 	category = list ("Misc. Machinery")
 
 /datum/design/board/vendatray
-<<<<<<< HEAD
 	name = "Machine Design (Vend-a-Tray)"
-=======
-	name = "Vend-a-Tray"
->>>>>>> fulpmaster
 	desc = "The circuit board for a Vend-a-Tray."
 	id = "vendatray"
 	build_path = /obj/item/circuitboard/machine/vendatray
@@ -626,7 +622,6 @@
 	id = "bounty_pad"
 	build_path = /obj/item/circuitboard/machine/bountypad
 	category = list ("Misc. Machinery")
-<<<<<<< HEAD
 
 /datum/design/board/skill_station
 	name = "Machine Design (Skill station)"
@@ -643,5 +638,3 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 	build_path = /obj/item/circuitboard/machine/accounting
 	category = list ("Misc. Machinery")
-=======
->>>>>>> fulpmaster

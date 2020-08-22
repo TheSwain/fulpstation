@@ -81,20 +81,12 @@ GLOBAL_LIST_EMPTY(bounties_list)
   *
   * *Guided determines what specific catagory of bounty should be chosen.
   */
-<<<<<<< HEAD
 /proc/random_bounty(guided = 0)
-=======
-/proc/random_bounty(var/guided = 0)
->>>>>>> fulpmaster
 	var/bounty_num
 	if(guided)
 		bounty_num = guided
 	else
-<<<<<<< HEAD
 		bounty_num = rand(1,12)
-=======
-		bounty_num = rand(1,13)
->>>>>>> fulpmaster
 	switch(bounty_num)
 		if(1)
 			var/subtype = pick(subtypesof(/datum/bounty/item/assistant))

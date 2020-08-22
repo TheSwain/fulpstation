@@ -101,10 +101,6 @@
 			dat += "<A href='?src=[REF(src)];back=1'>\[Go Back\]</A><BR>"
 	var/datum/browser/popup = new(user, "publiclibrary", name, 600, 400)
 	popup.set_content(jointext(dat, ""))
-<<<<<<< HEAD
-=======
-	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
->>>>>>> fulpmaster
 	popup.open()
 
 /obj/machinery/computer/libraryconsole/Topic(href, href_list)
@@ -328,10 +324,6 @@
 
 	var/datum/browser/popup = new(user, "library", name, 600, 400)
 	popup.set_content(dat)
-<<<<<<< HEAD
-=======
-	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
->>>>>>> fulpmaster
 	popup.open()
 
 /obj/machinery/computer/bookmanagement/proc/findscanner(viewrange)
@@ -551,10 +543,6 @@
 		dat += "<BR>"
 	var/datum/browser/popup = new(user, "scanner", name, 600, 400)
 	popup.set_content(dat)
-<<<<<<< HEAD
-=======
-	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
->>>>>>> fulpmaster
 	popup.open()
 
 /obj/machinery/libraryscanner/Topic(href, href_list)

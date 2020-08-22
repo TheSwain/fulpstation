@@ -2103,7 +2103,6 @@
 				dat += "<center><b>0 bans detected for [ckey]</b></center>"
 			else
 				bans = json_decode(response["body"])
-<<<<<<< HEAD
 
 				//Ignore bans from non-whitelisted sources, if a whitelist exists
 				var/list/valid_sources
@@ -2117,10 +2116,6 @@
 				for(var/list/ban in bans)
 					if(valid_sources && !(ban["sourceName"] in valid_sources))
 						continue
-=======
-				dat += "<center><b>[bans.len] ban\s detected for [ckey]</b></center>"
-				for(var/list/ban in bans)
->>>>>>> fulpmaster
 					dat += "<b>Server: </b> [sanitize(ban["sourceName"])]<br>"
 					dat += "<b>RP Level: </b> [sanitize(ban["sourceRoleplayLevel"])]<br>"
 					dat += "<b>Type: </b> [sanitize(ban["type"])]<br>"
@@ -2339,15 +2334,12 @@
 			return
 		usr.nominate_heart(heart_recepient)
 
-<<<<<<< HEAD
 	else if(href_list["force_war"])
 		if(!check_rights(R_ADMIN))
 			return
 		var/obj/item/nuclear_challenge/button = locate(href_list["force_war"])
 		button.force_war()
 
-=======
->>>>>>> fulpmaster
 /datum/admins/proc/HandleCMode()
 	if(!check_rights(R_ADMIN))
 		return

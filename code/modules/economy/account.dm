@@ -114,17 +114,8 @@
 /datum/bank_account/proc/bounty_text()
 	if(!civilian_bounty)
 		return FALSE
-<<<<<<< HEAD
 	return civilian_bounty.description
 
-=======
-	if(istype(civilian_bounty, /datum/bounty/item))
-		var/datum/bounty/item/item = civilian_bounty
-		return item.description
-	if(istype(civilian_bounty, /datum/bounty/reagent))
-		var/datum/bounty/reagent/chemical = civilian_bounty
-		return chemical.description
->>>>>>> fulpmaster
 
 /**
   * Returns the required item count, or required chemical units required to submit a bounty.
@@ -138,11 +129,8 @@
 	if(istype(civilian_bounty, /datum/bounty/reagent))
 		var/datum/bounty/reagent/chemical = civilian_bounty
 		return "[chemical.shipped_volume]/[chemical.required_volume] u"
-<<<<<<< HEAD
 	if(istype(civilian_bounty, /datum/bounty/virus))
 		return "At least 1u"
-=======
->>>>>>> fulpmaster
 
 /**
   * Produces the value of the account's civilian bounty reward, if able.

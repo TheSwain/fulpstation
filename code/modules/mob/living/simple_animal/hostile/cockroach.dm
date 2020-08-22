@@ -103,11 +103,7 @@
 	. = ..()
 	AddComponent(/datum/component/caltrop, 10, 15, 100, (CALTROP_BYPASS_SHOES | CALTROP_SILENT))
 
-<<<<<<< HEAD
 /mob/living/simple_animal/hostile/cockroach/hauberoach/Crossed(atom/movable/AM)
-=======
-/mob/living/simple_animal/hostile/cockroach/hauberoach/Crossed(var/atom/movable/AM)
->>>>>>> fulpmaster
 	var/mob/living/A = AM
 	if(istype(A) && A.mob_size > MOB_SIZE_SMALL && !(A.movement_type & FLYING))
 		if(!HAS_TRAIT(A, TRAIT_PIERCEIMMUNE))

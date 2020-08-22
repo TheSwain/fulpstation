@@ -170,12 +170,6 @@
 		return
 	ui_interact(user)
 
-<<<<<<< HEAD
-=======
-/obj/proc/container_resist(mob/living/user)
-	return
-
->>>>>>> fulpmaster
 /mob/proc/unset_machine()
 	if(machine)
 		machine.on_unset_machine(src)
@@ -300,7 +294,6 @@
 	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		reskin_obj(user)
 
-<<<<<<< HEAD
 /**
   * Reskins object based on a user's choice
   *
@@ -342,23 +335,6 @@
 	if(user.incapacitated())
 		return FALSE
 	return TRUE
-=======
-/obj/proc/reskin_obj(mob/M)
-	if(!LAZYLEN(unique_reskin))
-		return
-	to_chat(M, "<b>Reskin options for [name]:</b>")
-	for(var/V in unique_reskin)
-		var/output = icon2html(src, M, unique_reskin[V])
-		to_chat(M, "[V]: <span class='reallybig'>[output]</span>")
-
-	var/choice = input(M,"Warning, you can only reskin [src] once!","Reskin Object") as null|anything in sortList(unique_reskin)
-	if(!QDELETED(src) && choice && !current_skin && !M.incapacitated() && in_range(M,src))
-		if(!unique_reskin[choice])
-			return
-		current_skin = choice
-		icon_state = unique_reskin[choice]
-		to_chat(M, "[src] is now skinned as '[choice].'")
->>>>>>> fulpmaster
 
 /obj/analyzer_act(mob/living/user, obj/item/I)
 	if(atmosanalyzer_scan(user, src))

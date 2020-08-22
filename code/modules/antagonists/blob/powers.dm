@@ -93,11 +93,7 @@
 		return
 	if(needsNode)
 		var/area/A = get_area(src)
-<<<<<<< HEAD
 		if(!(A.area_flags & BLOBS_ALLOWED)) //factory and resource blobs must be legit
-=======
-		if(!A.blob_allowed) //factory and resource blobs must be legit
->>>>>>> fulpmaster
 			to_chat(src, "<span class='warning'>This type of blob must be placed on the station!</span>")
 			return
 		if(nodes_required && !(locate(/obj/structure/blob/node) in orange(3, T)) && !(locate(/obj/structure/blob/core) in orange(4, T)))

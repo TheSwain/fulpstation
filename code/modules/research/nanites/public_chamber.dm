@@ -124,11 +124,7 @@
 
 	open_machine()
 
-<<<<<<< HEAD
 /obj/machinery/public_nanite_chamber/container_resist_act(mob/living/user)
-=======
-/obj/machinery/public_nanite_chamber/container_resist(mob/living/user)
->>>>>>> fulpmaster
 	if(!locked)
 		open_machine()
 		return
@@ -176,11 +172,7 @@
 
 	return TRUE
 
-<<<<<<< HEAD
 /obj/machinery/public_nanite_chamber/relaymove(mob/user)
-=======
-/obj/machinery/public_nanite_chamber/relaymove(mob/user as mob)
->>>>>>> fulpmaster
 	if(user.stat || locked)
 		if(message_cooldown <= world.time)
 			message_cooldown = world.time + 50

@@ -37,7 +37,6 @@
 		brain = null
 	return ..()
 
-<<<<<<< HEAD
 /obj/structure/ai_core/deactivated
 	name = "inactive AI"
 	icon_state = "ai-empty"
@@ -48,8 +47,6 @@
 	. = ..()
 	circuit = new(src)
 
-=======
->>>>>>> fulpmaster
 /obj/structure/ai_core/latejoin_inactive
 	name = "networked AI core"
 	desc = "This AI core is connected by bluespace transmitters to NTNet, allowing for an AI personality to be downloaded to it on the fly mid-shift."
@@ -61,7 +58,6 @@
 	var/safety_checks = TRUE
 	var/active = TRUE
 
-<<<<<<< HEAD
 /obj/structure/ai_core/latejoin_inactive/Initialize()
 	. = ..()
 	circuit = new(src)
@@ -71,8 +67,6 @@
 	GLOB.latejoin_ai_cores -= src
 	return ..()
 
-=======
->>>>>>> fulpmaster
 /obj/structure/ai_core/latejoin_inactive/examine(mob/user)
 	. = ..()
 	. += "Its transmitter seems to be <b>[active? "on" : "off"]</b>."
@@ -87,11 +81,7 @@
 		return FALSE
 	var/turf/T = get_turf(src)
 	var/area/A = get_area(src)
-<<<<<<< HEAD
 	if(!(A.area_flags & BLOBS_ALLOWED))
-=======
-	if(!A.blob_allowed)
->>>>>>> fulpmaster
 		return FALSE
 	if(!A.power_equip)
 		return FALSE
@@ -108,17 +98,6 @@
 		return
 	return ..()
 
-<<<<<<< HEAD
-=======
-/obj/structure/ai_core/latejoin_inactive/Initialize()
-	. = ..()
-	GLOB.latejoin_ai_cores += src
-
-/obj/structure/ai_core/latejoin_inactive/Destroy()
-	GLOB.latejoin_ai_cores -= src
-	return ..()
-
->>>>>>> fulpmaster
 /obj/structure/ai_core/attackby(obj/item/P, mob/user, params)
 	if(P.tool_behaviour == TOOL_WRENCH)
 		return default_unfasten_wrench(user, P, 20)
@@ -276,12 +255,7 @@
 
 			if(AI_READY_CORE)
 				if(istype(P, /obj/item/aicard))
-<<<<<<< HEAD
 					return //handled by /obj/structure/ai_core/transfer_ai()
-=======
-					P.transfer_ai("INACTIVE", "AICARD", src, user)
-					return
->>>>>>> fulpmaster
 
 				if(P.tool_behaviour == TOOL_SCREWDRIVER)
 					P.play_tool_sound(src)
@@ -320,20 +294,6 @@
 	new /obj/item/stack/sheet/plasteel(loc, 4)
 	qdel(src)
 
-<<<<<<< HEAD
-=======
-/obj/structure/ai_core/deactivated
-	name = "inactive AI"
-	icon_state = "ai-empty"
-	anchored = TRUE
-	state = AI_READY_CORE
-
-/obj/structure/ai_core/deactivated/Initialize()
-	. = ..()
-	circuit = new(src)
-
-
->>>>>>> fulpmaster
 /*
 This is a good place for AI-related object verbs so I'm sticking it here.
 If adding stuff to this, don't forget that an AI need to cancel_camera() whenever it physically moves to a different location.

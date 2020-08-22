@@ -73,7 +73,6 @@
 	description = "Commander Jackson is looking for a fine addition to her exotic weapons collection. She will reward you handsomely for either a Cat or Liz o' Nine Tails."
 	reward = 4000
 	wanted_types = list(/obj/item/melee/chainofcommand/tailwhip)
-<<<<<<< HEAD
 
 /datum/bounty/item/medical/surgerycomp
 	name = "Surgery Computer"
@@ -86,5 +85,3 @@
 	description = "After a recent influx of infected crew members recently, we've seen that masks just aren't cutting it alone. Silver Operating tables might just do the trick though, send us one to use."
 	reward = 3000
 	wanted_types = list(/obj/structure/table/optable)
-=======
->>>>>>> fulpmaster

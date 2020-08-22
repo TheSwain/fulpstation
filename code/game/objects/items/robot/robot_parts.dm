@@ -56,19 +56,10 @@
 		. += "[head.icon_state]+o"
 
 /obj/item/robot_suit/proc/check_completion()
-<<<<<<< HEAD
 	if(l_arm && r_arm && l_leg && r_leg && head && head.flash1 && head.flash2 && chest && chest.wired && chest.cell)
 		SSblackbox.record_feedback("amount", "cyborg_frames_built", 1)
 		return TRUE
 	return FALSE
-=======
-	if(src.l_arm && src.r_arm)
-		if(src.l_leg && src.r_leg)
-			if(src.chest && src.head)
-				SSblackbox.record_feedback("amount", "cyborg_frames_built", 1)
-				return 1
-	return 0
->>>>>>> fulpmaster
 
 /obj/item/robot_suit/wrench_act(mob/living/user, obj/item/I) //Deconstucts empty borg shell. Flashes remain unbroken because they haven't been used yet
 	. = ..()
@@ -313,12 +304,7 @@
 			log_game("[key_name(user)] has put the MMI/posibrain of [key_name(M.brainmob)] into a cyborg shell at [AREACOORD(src)]")
 
 			if(!locomotion)
-<<<<<<< HEAD
 				O.set_lockcharge(TRUE)
-=======
-				O.lockcharge = TRUE
-				O.update_mobility()
->>>>>>> fulpmaster
 				to_chat(O, "<span class='warning'>Error: Servo motors unresponsive.</span>")
 
 		else
@@ -355,12 +341,7 @@
 			forceMove(O)
 			O.robot_suit = src
 			if(!locomotion)
-<<<<<<< HEAD
 				O.set_lockcharge(TRUE)
-=======
-				O.lockcharge = TRUE
-				O.update_mobility()
->>>>>>> fulpmaster
 
 	else if(istype(W, /obj/item/pen))
 		to_chat(user, "<span class='warning'>You need to use a multitool to name [src]!</span>")

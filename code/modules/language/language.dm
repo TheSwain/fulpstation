@@ -30,11 +30,7 @@
 	return TRUE
 
 /datum/language/proc/get_icon()
-<<<<<<< HEAD
 	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/chat)
-=======
-	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/goonchat)
->>>>>>> fulpmaster
 	return sheet.icon_tag("language-[icon_state]")
 
 /datum/language/proc/get_random_name(gender, name_count=2, syllable_count=4, syllable_divisor=2)

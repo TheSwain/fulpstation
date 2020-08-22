@@ -4,10 +4,7 @@
 	var/obj/item/dnainjector/injector
 	damage = 5
 	hitsound_wall = "shatter"
-<<<<<<< HEAD
 	embedding = null
-=======
->>>>>>> fulpmaster
 
 /obj/projectile/bullet/dnainjector/on_hit(atom/target, blocked = FALSE)
 	if(iscarbon(target))

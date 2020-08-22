@@ -25,35 +25,19 @@
 	var/reason = pick(poss_reasons)
 	priority_announce("Due to [reason], prices for on-station vendors will be increased for a short period.", "Nanotrasen Accounting Division")
 
-<<<<<<< HEAD
-=======
-///This does not work and I could use some help morking this one out further.
->>>>>>> fulpmaster
 /datum/round_event/market_crash/start()
 	. = ..()
 	var/num_accounts = 0
 	for(var/A in SSeconomy.bank_accounts)
 		num_accounts += 1
 	market_dip = rand(1000,10000) * num_accounts
-<<<<<<< HEAD
 	SSeconomy.station_target = max(SSeconomy.station_target - market_dip, 1)
 	SSeconomy.price_update()
 	SSeconomy.market_crashing = TRUE
-=======
-	SSeconomy.station_target -= market_dip
-	SSeconomy.station_target = max(SSeconomy.station_target, 1)
-	SSeconomy.price_update()
->>>>>>> fulpmaster
 
 /datum/round_event/market_crash/end()
 	. = ..()
 	SSeconomy.station_target += market_dip
-<<<<<<< HEAD
 	SSeconomy.market_crashing = FALSE
 	SSeconomy.price_update()
 	priority_announce("Prices for on-station vendors have now stabilized.", "Nanotrasen Accounting Division")
-
-=======
-	SSeconomy.price_update()
-	priority_announce("Prices for on-station vendors have now stabilized.", "Nanotrasen Accounting Division")
->>>>>>> fulpmaster

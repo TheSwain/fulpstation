@@ -8,7 +8,6 @@
 	var/client/client
 	var/pooled
 	var/pool_index
-<<<<<<< HEAD
 	var/is_browser = FALSE
 	var/status = TGUI_WINDOW_CLOSED
 	var/locked = FALSE
@@ -21,14 +20,6 @@
 	// Vars passed to initialize proc (and saved for later)
 	var/inline_assets
 	var/fancy
-=======
-	var/status = TGUI_WINDOW_CLOSED
-	var/locked = FALSE
-	var/datum/tgui/locked_by
-	var/fatally_errored = FALSE
-	var/message_queue
-	var/sent_assets = list()
->>>>>>> fulpmaster
 
 /**
  * public
@@ -41,15 +32,9 @@
 /datum/tgui_window/New(client/client, id, pooled = FALSE)
 	src.id = id
 	src.client = client
-<<<<<<< HEAD
 	src.client.tgui_windows[id] = src
 	src.pooled = pooled
 	if(pooled)
-=======
-	src.pooled = pooled
-	if(pooled)
-		client.tgui_windows[id] = src
->>>>>>> fulpmaster
 		src.pool_index = TGUI_WINDOW_INDEX(id)
 
 /**
@@ -60,7 +45,6 @@
  * will be put into the queue until the window finishes loading.
  *
  * optional inline_assets list List of assets to inline into the html.
-<<<<<<< HEAD
  * optional inline_html string Custom HTML to inject.
  * optional fancy bool If TRUE, will hide the window titlebar.
  */
@@ -79,20 +63,6 @@
 	var/options = "file=[id].html;can_minimize=0;auto_format=0;"
 	// Remove titlebar and resize handles for a fancy window
 	if(fancy)
-=======
- */
-/datum/tgui_window/proc/initialize(inline_assets = list())
-	log_tgui(client, "[id]/initialize")
-	if(!client)
-		return
-	status = TGUI_WINDOW_LOADING
-	fatally_errored = FALSE
-	message_queue = null
-	// Build window options
-	var/options = "file=[id].html;can_minimize=0;auto_format=0;"
-	// Remove titlebar and resize handles for a fancy window
-	if(client.prefs.tgui_fancy)
->>>>>>> fulpmaster
 		options += "titlebar=0;can_resize=0;"
 	else
 		options += "titlebar=1;can_resize=1;"
@@ -111,26 +81,17 @@
 				inline_styles += "<link rel=\"stylesheet\" type=\"text/css\" href=\"[url]\">\n"
 			else if(copytext(name, -3) == ".js")
 				inline_scripts += "<script type=\"text/javascript\" defer src=\"[url]\"></script>\n"
-<<<<<<< HEAD
 		asset.send(client)
 	html = replacetextEx(html, "<!-- tgui:styles -->\n", inline_styles)
 	html = replacetextEx(html, "<!-- tgui:scripts -->\n", inline_scripts)
 	// Inject custom HTML
 	html = replacetextEx(html, "<!-- tgui:html -->\n", inline_html)
-=======
-		asset.send()
-	html = replacetextEx(html, "<!-- tgui:styles -->\n", inline_styles)
-	html = replacetextEx(html, "<!-- tgui:scripts -->\n", inline_scripts)
->>>>>>> fulpmaster
 	// Open the window
 	client << browse(html, "window=[id];[options]")
 	// Instruct the client to signal UI when the window is closed.
 	winset(client, id, "on-close=\"uiclose [id]\"")
-<<<<<<< HEAD
 	// Detect whether the control is a browser
 	is_browser = winexists(client, id) == "BROWSER"
-=======
->>>>>>> fulpmaster
 
 /**
  * public
@@ -162,13 +123,8 @@
  * Acquire the window lock. Pool will not be able to provide this window
  * to other UIs for the duration of the lock.
  *
-<<<<<<< HEAD
  * Can be given an optional tgui datum, which will be automatically
  * subscribed to incoming messages via the on_message proc.
-=======
- * Can be given an optional tgui datum, which will hook its on_message
- * callback into the message stream.
->>>>>>> fulpmaster
  *
  * optional ui /datum/tgui
  */
@@ -177,11 +133,8 @@
 	locked_by = ui
 
 /**
-<<<<<<< HEAD
  * public
  *
-=======
->>>>>>> fulpmaster
  * Release the window lock.
  */
 /datum/tgui_window/proc/release_lock()
@@ -194,7 +147,6 @@
 /**
  * public
  *
-<<<<<<< HEAD
  * Subscribes the datum to consume window messages on a specified proc.
  *
  * Note, that this supports only one subscriber, because code for that
@@ -217,8 +169,6 @@
 /**
  * public
  *
-=======
->>>>>>> fulpmaster
  * Close the UI.
  *
  * optional can_be_suspended bool
@@ -249,32 +199,16 @@
  * required payload list Message payload
  * optional force bool Send regardless of the ready status.
  */
-<<<<<<< HEAD
 /datum/tgui_window/proc/send_message(type, payload, force)
 	if(!client)
 		return
 	var/message = TGUI_CREATE_MESSAGE(type, payload)
-=======
-/datum/tgui_window/proc/send_message(type, list/payload, force)
-	if(!client)
-		return
-	var/message = json_encode(list(
-		"type" = type,
-		"payload" = payload,
-	))
-	// Strip #255/improper.
-	message = replacetext(message, "\proper", "")
-	message = replacetext(message, "\improper", "")
-	// Pack for sending via output()
-	message = url_encode(message)
->>>>>>> fulpmaster
 	// Place into queue if window is still loading
 	if(!force && status != TGUI_WINDOW_READY)
 		if(!message_queue)
 			message_queue = list()
 		message_queue += list(message)
 		return
-<<<<<<< HEAD
 	client << output(message, is_browser \
 		? "[id]:update" \
 		: "[id].browser:update")
@@ -299,9 +233,6 @@
 	client << output(message, is_browser \
 		? "[id]:update" \
 		: "[id].browser:update")
-=======
-	client << output(message, "[id].browser:update")
->>>>>>> fulpmaster
 
 /**
  * public
@@ -309,29 +240,18 @@
  * Makes an asset available to use in tgui.
  *
  * required asset datum/asset
-<<<<<<< HEAD
  *
  * return bool - TRUE if any assets had to be sent to the client
-=======
->>>>>>> fulpmaster
  */
 /datum/tgui_window/proc/send_asset(datum/asset/asset)
 	if(!client || !asset)
 		return
-<<<<<<< HEAD
 	sent_assets |= list(asset)
 	. = asset.send(client)
-=======
->>>>>>> fulpmaster
 	if(istype(asset, /datum/asset/spritesheet))
 		var/datum/asset/spritesheet/spritesheet = asset
 		send_message("asset/stylesheet", spritesheet.css_filename())
 	send_message("asset/mappings", asset.get_url_mappings())
-<<<<<<< HEAD
-=======
-	sent_assets += list(asset)
-	asset.send(client)
->>>>>>> fulpmaster
 
 /**
  * private
@@ -342,13 +262,9 @@
 	if(!client || !message_queue)
 		return
 	for(var/message in message_queue)
-<<<<<<< HEAD
 		client << output(message, is_browser \
 			? "[id]:update" \
 			: "[id].browser:update")
-=======
-		client << output(message, "[id].browser:update")
->>>>>>> fulpmaster
 	message_queue = null
 
 /**
@@ -356,7 +272,6 @@
  *
  * Callback for handling incoming tgui messages.
  */
-<<<<<<< HEAD
 /datum/tgui_window/proc/on_message(type, payload, href_list)
 	// Status can be READY if user has refreshed the window.
 	if(type == "ready" && status == TGUI_WINDOW_READY)
@@ -387,32 +302,10 @@
 	switch(type)
 		if("ping")
 			send_message("pingReply", payload)
-=======
-/datum/tgui_window/proc/on_message(type, list/payload, list/href_list)
-	switch(type)
-		if("ready")
-			// Status can be READY if user has refreshed the window.
-			if(status == TGUI_WINDOW_READY)
-				// Resend the assets
-				for(var/asset in sent_assets)
-					send_asset(asset)
-			status = TGUI_WINDOW_READY
-		if("log")
-			if(href_list["fatal"])
-				fatally_errored = TRUE
-	// Pass message to UI that requested the lock
-	if(locked && locked_by)
-		locked_by.on_message(type, payload, href_list)
-		flush_message_queue()
-		return
-	// If not locked, handle these message types
-	switch(type)
->>>>>>> fulpmaster
 		if("suspend")
 			close(can_be_suspended = TRUE)
 		if("close")
 			close(can_be_suspended = FALSE)
-<<<<<<< HEAD
 		if("openLink")
 			client << link(href_list["url"])
 		if("cacheReloaded")
@@ -421,5 +314,3 @@
 			// Resend the assets
 			for(var/asset in sent_assets)
 				send_asset(asset)
-=======
->>>>>>> fulpmaster

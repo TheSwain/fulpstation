@@ -157,12 +157,8 @@
 	force = 10
 	throwforce = 10
 	throw_speed = 4
-<<<<<<< HEAD
 	attack_verb_continuous = list("slices")
 	attack_verb_simple = list("slice")
-=======
-	attack_verb = list("sliced")
->>>>>>> fulpmaster
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_EDGED
 

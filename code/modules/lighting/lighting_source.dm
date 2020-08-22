@@ -224,11 +224,7 @@
 		for(T in view(CEILING(light_range, 1), source_turf))
 			if((!IS_DYNAMIC_LIGHTING(T) && !T.light_sources))
 				continue
-<<<<<<< HEAD
 			if(!IS_OPAQUE_TURF(T))
-=======
-			if(!T.has_opaque_atom)
->>>>>>> fulpmaster
 				if (!T.lighting_corners_initialised)
 					T.generate_missing_corners()
 				for (thing in T.corners)

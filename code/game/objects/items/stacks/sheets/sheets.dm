@@ -8,12 +8,8 @@
 	max_amount = 50
 	throw_speed = 1
 	throw_range = 3
-<<<<<<< HEAD
 	attack_verb_continuous = list("bashes", "batters", "bludgeons", "thrashes", "smashes")
 	attack_verb_simple = list("bash", "batter", "bludgeon", "thrash", "smash")
-=======
-	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "smashed")
->>>>>>> fulpmaster
 	novariants = FALSE
 	var/sheettype = null //this is used for girders in the creation of walls/false walls
 	var/point_value = 0 //turn-in value for the gulag stacker - loosely relative to its rarity.
@@ -24,7 +20,6 @@
 	. = ..()
 	pixel_x = rand(-4, 4)
 	pixel_y = rand(-4, 4)
-<<<<<<< HEAD
 
 /**
  * Facilitates sheets being smacked on the floor
@@ -50,5 +45,3 @@
 	user.visible_message("<span class='notice'>[user] shatters the sheet of [name] on the floor, leaving [english_list(shards)].</span>", \
 		"<span class='notice'>You shatter the sheet of [name] on the floor, leaving [english_list(shards)].</span>")
 	return TRUE
-=======
->>>>>>> fulpmaster

@@ -80,7 +80,6 @@
 	opened_at = world.time
 	window.acquire_lock(src)
 	if(!window.is_ready())
-<<<<<<< HEAD
 		window.initialize(
 			fancy = user.client.prefs.tgui_fancy,
 			inline_assets = list(
@@ -95,16 +94,6 @@
 		flush_queue |= window.send_asset(asset)
 	if (flush_queue)
 		user.client.browse_queue_flush()
-=======
-		window.initialize(inline_assets = list(
-			get_asset_datum(/datum/asset/simple/tgui),
-		))
-	else
-		window.send_message("ping")
-	window.send_asset(get_asset_datum(/datum/asset/simple/fontawesome))
-	for(var/datum/asset/asset in src_object.ui_assets(user))
-		window.send_asset(asset)
->>>>>>> fulpmaster
 	window.send_message("update", get_payload(
 		with_data = TRUE,
 		with_static_data = TRUE))
@@ -160,20 +149,13 @@
  * Makes an asset available to use in tgui.
  *
  * required asset datum/asset
-<<<<<<< HEAD
  *
  * return bool - true if an asset was actually sent
-=======
->>>>>>> fulpmaster
  */
 /datum/tgui/proc/send_asset(datum/asset/asset)
 	if(!window)
 		CRASH("send_asset() can only be called after open().")
-<<<<<<< HEAD
 	return window.send_asset(asset)
-=======
-	window.send_asset(asset)
->>>>>>> fulpmaster
 
 /**
  * public
@@ -227,7 +209,6 @@
 			"fancy" = user.client.prefs.tgui_fancy,
 			"locked" = user.client.prefs.tgui_lock,
 		),
-<<<<<<< HEAD
 		"client" = list(
 			"ckey" = user.client.ckey,
 			"address" = user.client.address,
@@ -235,11 +216,6 @@
 		),
 		"user" = list(
 			"name" = "[user]",
-=======
-		"user" = list(
-			"name" = "[user]",
-			"ckey" = "[user.ckey]",
->>>>>>> fulpmaster
 			"observer" = isobserver(user),
 		),
 	)

@@ -32,10 +32,7 @@
 
 /obj/item/clothing/mask/facehugger/lamarr
 	name = "Lamarr"
-<<<<<<< HEAD
 	desc = "The Research Director's pet, a domesticated and debeaked xenomorph facehugger. Friendly, but may still try to couple with your head."
-=======
->>>>>>> fulpmaster
 	sterile = 1
 
 /obj/item/clothing/mask/facehugger/dead

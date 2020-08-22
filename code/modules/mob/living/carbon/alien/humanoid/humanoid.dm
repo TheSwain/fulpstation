@@ -100,11 +100,7 @@
 	..()
 
 //For alien evolution/promotion/queen finder procs. Checks for an active alien of that type
-<<<<<<< HEAD
 /proc/get_alien_type(alienpath)
-=======
-/proc/get_alien_type(var/alienpath)
->>>>>>> fulpmaster
 	for(var/mob/living/carbon/alien/humanoid/A in GLOB.alive_mob_list)
 		if(!istype(A, alienpath))
 			continue

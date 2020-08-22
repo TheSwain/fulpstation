@@ -39,10 +39,7 @@
 	range = 7
 	icon_state = "spark"
 	color = "#FFFF00"
-<<<<<<< HEAD
 	embedding = null
-=======
->>>>>>> fulpmaster
 
 /obj/projectile/bullet/shotgun_meteorslug
 	name = "meteorslug"
@@ -96,10 +93,7 @@
 	name = "incapacitating pellet"
 	damage = 1
 	stamina = 6
-<<<<<<< HEAD
 	embedding = null
-=======
->>>>>>> fulpmaster
 
 /obj/projectile/bullet/pellet/Range()
 	..()

@@ -1,5 +1,4 @@
 /**
-<<<<<<< HEAD
  * # asset_cache_item
  *
  * An internal datum containing info on items in the asset cache. Mainly used to cache md5 info for speed.
@@ -21,22 +20,10 @@
 	var/namespace_parent = FALSE
 	/// TRUE for keeping local asset names when browse_rsc backend is used
 	var/keep_local_name = FALSE
-=======
-	* # asset_cache_item
-	* 
-	* An internal datum containing info on items in the asset cache. Mainly used to cache md5 info for speed.
-**/
-/datum/asset_cache_item
-	var/name
-	var/url
-	var/md5
-	var/resource
->>>>>>> fulpmaster
 
 /datum/asset_cache_item/New(name, file)
 	if (!isfile(file))
 		file = fcopy_rsc(file)
-<<<<<<< HEAD
 	hash = md5(file)
 	if (!hash)
 		hash = md5(fcopy_rsc(file))
@@ -54,14 +41,3 @@
 
 /datum/asset_cache_item/CanProcCall(procname)
 	return FALSE
-=======
-	md5 = md5(file)
-	if (!md5)
-		md5 = md5(fcopy_rsc(file))
-		if (!md5)
-			CRASH("invalid asset sent to asset cache")
-		debug_world_log("asset cache unexpected success of second fcopy_rsc")
-	src.name = name
-	url = name
-	resource = file
->>>>>>> fulpmaster

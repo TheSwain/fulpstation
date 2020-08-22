@@ -1,11 +1,7 @@
 /obj/item/stack/medical
 	name = "medical pack"
 	singular_name = "medical pack"
-<<<<<<< HEAD
 	icon = 'icons/obj/stack_medical.dmi'
-=======
-	icon = 'icons/obj/stack_objects.dmi'
->>>>>>> fulpmaster
 	amount = 6
 	max_amount = 6
 	w_class = WEIGHT_CLASS_TINY
@@ -62,7 +58,6 @@
 	var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(user.zone_selected))
 	if(!affecting) //Missing limb?
 		to_chat(user, "<span class='warning'>[C] doesn't have \a [parse_zone(user.zone_selected)]!</span>")
-<<<<<<< HEAD
 		return FALSE
 	if(affecting.status != BODYPART_ORGANIC) //Limb must be organic to be healed - RR
 		to_chat(user, "<span class='warning'>\The [src] won't work on a robotic limb!</span>")
@@ -81,19 +76,6 @@
 ///Override this proc for special post heal effects.
 /obj/item/stack/medical/proc/post_heal_effects(amount_healed, mob/living/carbon/healed_mob, mob/user)
 	return
-=======
-		return
-	if(affecting.status != BODYPART_ORGANIC) //Limb must be organic to be healed - RR
-		to_chat(user, "<span class='warning'>\The [src] won't work on a robotic limb!</span>")
-		return
-	if(affecting.brute_dam && brute || affecting.burn_dam && burn)
-		user.visible_message("<span class='green'>[user] applies \the [src] on [C]'s [affecting.name].</span>", "<span class='green'>You apply \the [src] on [C]'s [affecting.name].</span>")
-		if(affecting.heal_damage(brute, burn))
-			C.update_damage_overlays()
-		return TRUE
-	to_chat(user, "<span class='warning'>[C]'s [affecting.name] can not be healed with \the [src]!</span>")
-
->>>>>>> fulpmaster
 
 /obj/item/stack/medical/bruise_pack
 	name = "bruise pack"
@@ -240,11 +222,7 @@
 	desc = "A suture infused with drugs that speed up wound healing of the treated laceration."
 	heal_brute = 15
 	stop_bleeding = 0.75
-<<<<<<< HEAD
 	grind_results = list(/datum/reagent/medicine/polypyr = 1)
-=======
-	grind_results = list(/datum/reagent/medicine/polypyr = 2)
->>>>>>> fulpmaster
 
 /obj/item/stack/medical/suture/heal(mob/living/M, mob/user)
 	. = ..()
@@ -386,21 +364,15 @@
 	name = "aloe cream"
 	desc = "A healing paste you can apply on wounds."
 
-<<<<<<< HEAD
 	gender = PLURAL
 	singular_name = "aloe cream"
-=======
->>>>>>> fulpmaster
 	icon_state = "aloe_paste"
 	self_delay = 20
 	other_delay = 10
 	novariants = TRUE
 	amount = 20
 	max_amount = 20
-<<<<<<< HEAD
 	repeating = TRUE
-=======
->>>>>>> fulpmaster
 	var/heal = 3
 	grind_results = list(/datum/reagent/consumable/aloejuice = 1)
 
@@ -478,7 +450,6 @@
 	custom_materials = null
 	is_cyborg = 1
 	cost = 250
-<<<<<<< HEAD
 
 /obj/item/stack/medical/poultice
 	name = "mourning poultices"
@@ -505,5 +476,3 @@
 /obj/item/stack/medical/poultice/post_heal_effects(amount_healed, mob/living/carbon/healed_mob, mob/user)
 	. = ..()
 	healed_mob.adjustOxyLoss(amount_healed)
-=======
->>>>>>> fulpmaster

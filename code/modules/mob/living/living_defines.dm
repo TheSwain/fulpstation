@@ -33,11 +33,6 @@
 	VAR_PROTECTED/lying_angle = 0			///number of degrees. DO NOT USE THIS IN CHECKS. CHECK FOR MOBILITY FLAGS INSTEAD!!
 	var/lying_prev = 0		///last value of lying on update_mobility
 
-<<<<<<< HEAD
-=======
-	var/confused = 0	///Makes the mob move in random directions.
-
->>>>>>> fulpmaster
 	var/hallucination = 0 ///Directly affects how long a mob will hallucinate for
 
 	var/last_special = 0 ///Used by the resist verb, likely used to prevent players from bypassing next_move by logging in/out.
@@ -91,11 +86,7 @@
 
 	var/hellbound = 0 ///People who've signed infernal contracts are unrevivable.
 
-<<<<<<< HEAD
 	var/list/weather_immunities
-=======
-	var/list/weather_immunities = list()
->>>>>>> fulpmaster
 
 	var/stun_absorption = null ///converted to a list of stun absorption sources this mob has when one is added
 
@@ -129,13 +120,8 @@
 	var/losebreath = 0
 
 	//List of active diseases
-<<<<<<< HEAD
 	var/list/diseases /// list of all diseases in a mob
 	var/list/disease_resistances
-=======
-	var/list/diseases = list() /// list of all diseases in a mob
-	var/list/disease_resistances = list()
->>>>>>> fulpmaster
 
 	var/slowed_by_drag = TRUE ///Whether the mob is slowed down when dragging another prone mob
 

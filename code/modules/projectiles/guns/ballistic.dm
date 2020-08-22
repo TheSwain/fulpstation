@@ -135,11 +135,8 @@
 				. += "[icon_state]_mag_empty"
 		else
 			. += "[icon_state]_mag"
-<<<<<<< HEAD
 			if(!mag_display_ammo)
 				return
-=======
->>>>>>> fulpmaster
 			var/capacity_number
 			switch(get_ammo() / magazine.max_ammo)
 				if(1 to INFINITY) //cause we can have one in the chamber.

@@ -13,12 +13,8 @@
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=80)
-<<<<<<< HEAD
 	attack_verb_continuous = list("pinches", "nips")
 	attack_verb_simple = list("pinch", "nip")
-=======
-	attack_verb = list("pinched", "nipped")
->>>>>>> fulpmaster
 	hitsound = 'sound/items/wirecutter.ogg'
 	usesound = 'sound/items/wirecutter.ogg'
 	drop_sound = 'sound/items/handling/wirecutter_drop.ogg'

@@ -26,7 +26,6 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	return
 
 
-<<<<<<< HEAD
 /// If you don't need anything complicated.
 /datum/asset/simple
 	_abstract = /datum/asset/simple
@@ -54,31 +53,11 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 /datum/asset/simple/send(client)
 	. = SSassets.transport.send_assets(client, assets)
-=======
-//If you don't need anything complicated.
-/datum/asset/simple
-	_abstract = /datum/asset/simple
-	var/assets = list()
-
-/datum/asset/simple/register()
-	for(var/asset_name in assets)
-		assets[asset_name] = register_asset(asset_name, assets[asset_name])
-
-/datum/asset/simple/send(client)
-	. = send_asset_list(client, assets)
->>>>>>> fulpmaster
 
 /datum/asset/simple/get_url_mappings()
 	. = list()
 	for (var/asset_name in assets)
-<<<<<<< HEAD
 		.[asset_name] = SSassets.transport.get_asset_url(asset_name, assets[asset_name])
-=======
-		var/datum/asset_cache_item/ACI = assets[asset_name]
-		if (!ACI)
-			continue
-		.[asset_name] = ACI.url
->>>>>>> fulpmaster
 
 
 // For registering or sending multiple others at once
@@ -122,20 +101,12 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	ensure_stripped()
 	for(var/size_id in sizes)
 		var/size = sizes[size_id]
-<<<<<<< HEAD
 		SSassets.transport.register_asset("[name]_[size_id].png", size[SPRSZ_STRIPPED])
-=======
-		register_asset("[name]_[size_id].png", size[SPRSZ_STRIPPED])
->>>>>>> fulpmaster
 	var/res_name = "spritesheet_[name].css"
 	var/fname = "data/spritesheets/[res_name]"
 	fdel(fname)
 	text2file(generate_css(), fname)
-<<<<<<< HEAD
 	SSassets.transport.register_asset(res_name, fcopy_rsc(fname))
-=======
-	register_asset(res_name, fcopy_rsc(fname))
->>>>>>> fulpmaster
 	fdel(fname)
 
 /datum/asset/spritesheet/send(client/C)
@@ -144,24 +115,14 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	var/all = list("spritesheet_[name].css")
 	for(var/size_id in sizes)
 		all += "[name]_[size_id].png"
-<<<<<<< HEAD
 	. = SSassets.transport.send_assets(C, all)
-=======
-	. = send_asset_list(C, all)
->>>>>>> fulpmaster
 
 /datum/asset/spritesheet/get_url_mappings()
 	if (!name)
 		return
-<<<<<<< HEAD
 	. = list("spritesheet_[name].css" = SSassets.transport.get_asset_url("spritesheet_[name].css"))
 	for(var/size_id in sizes)
 		.["[name]_[size_id].png"] = SSassets.transport.get_asset_url("[name]_[size_id].png")
-=======
-	. = list("spritesheet_[name].css" = get_asset_url("spritesheet_[name].css"))
-	for(var/size_id in sizes)
-		.["[name]_[size_id].png"] = get_asset_url("[name]_[size_id].png")
->>>>>>> fulpmaster
 
 
 
@@ -186,11 +147,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	for (var/size_id in sizes)
 		var/size = sizes[size_id]
 		var/icon/tiny = size[SPRSZ_ICON]
-<<<<<<< HEAD
 		out += ".[name][size_id]{display:inline-block;width:[tiny.Width()]px;height:[tiny.Height()]px;background:url('[SSassets.transport.get_asset_url("[name]_[size_id].png")]') no-repeat;}"
-=======
-		out += ".[name][size_id]{display:inline-block;width:[tiny.Width()]px;height:[tiny.Height()]px;background:url('[get_asset_url("[name]_[size_id].png")]') no-repeat;}"
->>>>>>> fulpmaster
 
 	for (var/sprite_id in sprites)
 		var/sprite = sprites[sprite_id]
@@ -244,11 +201,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	return {"<link rel="stylesheet" href="[css_filename()]" />"}
 
 /datum/asset/spritesheet/proc/css_filename()
-<<<<<<< HEAD
 	return SSassets.transport.get_asset_url("spritesheet_[name].css")
-=======
-	return get_asset_url("spritesheet_[name].css")
->>>>>>> fulpmaster
 
 /datum/asset/spritesheet/proc/icon_tag(sprite_name)
 	var/sprite = sprites[sprite_name]
@@ -303,11 +256,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 			if (generic_icon_names)
 				asset_name = "[generate_asset_name(asset)].png"
 
-<<<<<<< HEAD
 			SSassets.transport.register_asset(asset_name, asset)
-=======
-			register_asset(asset_name, asset)
->>>>>>> fulpmaster
 
 /datum/asset/simple/icon_states/multiple_icons
 	_abstract = /datum/asset/simple/icon_states/multiple_icons
@@ -317,7 +266,6 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	for(var/i in icons)
 		..(i)
 
-<<<<<<< HEAD
 /// Namespace'ed assets (for static css and html files)
 /// When sent over a cdn transport, all assets in the same asset datum will exist in the same folder, as their plain names.
 /// Used to ensure css files can reference files by url() without having to generate the css at runtime, both the css file and the files it depends on must exist in the same namespace asset datum. (Also works for html)
@@ -366,6 +314,4 @@ GLOBAL_LIST_EMPTY(asset_datums)
 /// Needed because byond doesn't allow you to browse() to a url.
 /datum/asset/simple/namespaced/proc/get_htmlloader(filename)
 	return url2htmlloader(SSassets.transport.get_asset_url(filename, assets[filename]))
-=======
->>>>>>> fulpmaster
 

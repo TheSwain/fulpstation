@@ -177,15 +177,10 @@
 			to_chat(owner, "<span class='notice'>Please wait for the vehicle to finish its current action first.</span>")
 		C.ToggleCannon()
 
-<<<<<<< HEAD
-
-=======
->>>>>>> fulpmaster
 /datum/action/vehicle/sealed/thank
 	name = "Thank the Clown Car Driver"
 	desc = "They're just doing their job."
 	button_icon_state = "car_thanktheclown"
-<<<<<<< HEAD
 	COOLDOWN_DECLARE(thank_time_cooldown)
 
 
@@ -203,18 +198,6 @@
 	owner.say("Thank you for the fun ride, [clown.name]!")
 	clown_car.ThanksCounter()
 
-=======
-	var/last_thank_time
-
-/datum/action/vehicle/sealed/thank/Trigger()
-	if(istype(vehicle_entered_target, /obj/vehicle/sealed/car/clowncar))
-		var/obj/vehicle/sealed/car/clowncar/C = vehicle_entered_target
-		if(world.time >= last_thank_time + 60)
-			var/mob/living/carbon/human/clown = pick(C.return_drivers())
-			owner.say("Thank you for the fun ride, [clown.name]!")
-			last_thank_time = world.time
-			C.ThanksCounter()
->>>>>>> fulpmaster
 
 /datum/action/vehicle/ridden/scooter/skateboard/ollie
 	name = "Ollie"

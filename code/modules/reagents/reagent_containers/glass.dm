@@ -48,7 +48,6 @@
 				log_combat(user, M, "fed", reagents.log_list())
 			else
 				to_chat(user, "<span class='notice'>You swallow a gulp of [src].</span>")
-<<<<<<< HEAD
 			SEND_SIGNAL(src, COMSIG_GLASS_DRANK, M, user)
 			addtimer(CALLBACK(reagents, /datum/reagents.proc/trans_to, M, 5, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 			playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
@@ -63,10 +62,6 @@
 							diseases_to_add += malady
 					if(LAZYLEN(diseases_to_add))
 						AddComponent(/datum/component/infective, diseases_to_add)
-=======
-			addtimer(CALLBACK(reagents, /datum/reagents.proc/trans_to, M, 5, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
-			playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
->>>>>>> fulpmaster
 
 /obj/item/reagent_containers/glass/afterattack(obj/target, mob/user, proximity)
 	. = ..()
@@ -130,11 +125,7 @@
  */
 /obj/item/reagent_containers/glass/on_accidental_consumption(mob/living/carbon/M, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
 	if(!custom_materials)
-<<<<<<< HEAD
 		set_custom_materials(list(SSmaterials.GetMaterialRef(/datum/material/glass) = 5))//sets it to glass so, later on, it gets picked up by the glass catch (hope it doesn't 'break' things lol)
-=======
-		custom_materials = list(SSmaterials.GetMaterialRef(/datum/material/glass) = 5) //sets it to glass so, later on, it gets picked up by the glass catch (hope it doesn't 'break' things lol)
->>>>>>> fulpmaster
 	return ..()
 
 /obj/item/reagent_containers/glass/beaker
@@ -302,11 +293,7 @@
 	. = ..()
 	reagents.flags = initial(reagent_flags)
 
-<<<<<<< HEAD
 /obj/item/reagent_containers/glass/bucket/equip_to_best_slot(mob/M)
-=======
-/obj/item/reagent_containers/glass/bucket/equip_to_best_slot(var/mob/M)
->>>>>>> fulpmaster
 	if(reagents.total_volume) //If there is water in a bucket, don't quick equip it to the head
 		var/index = slot_equipment_priority.Find(ITEM_SLOT_HEAD)
 		slot_equipment_priority.Remove(ITEM_SLOT_HEAD)

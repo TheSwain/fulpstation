@@ -30,12 +30,8 @@
 	force = 6
 	hitsound = 'sound/items/welder.ogg'
 	name = "lit [initial(name)]"
-<<<<<<< HEAD
 	attack_verb_continuous = list("burns")
 	attack_verb_simple = list("burn")
-=======
-	attack_verb = list("burnt")
->>>>>>> fulpmaster
 	set_light(l_range = 2, l_power = 2)
 	damtype = "fire"
 	START_PROCESSING(SSobj, src)

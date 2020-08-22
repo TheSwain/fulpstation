@@ -3,10 +3,7 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	icon = 'icons/turf/floors.dmi'
 	flags_1 = CAN_BE_DIRTY_1
 	vis_flags = VIS_INHERIT_ID|VIS_INHERIT_PLANE // Important for interaction with and visualization of openspace.
-<<<<<<< HEAD
 	luminosity = 1
-=======
->>>>>>> fulpmaster
 
 	var/intact = 1
 
@@ -41,7 +38,6 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	///Icon-smoothing variable to map a diagonal wall corner with a fixed underlay.
 	var/list/fixed_underlay = null
 
-<<<<<<< HEAD
 	var/dynamic_lighting = TRUE
 
 	var/tmp/lighting_corners_initialised = FALSE
@@ -57,8 +53,6 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	///Lazylist of movable atoms providing opacity sources.
 	var/list/atom/movable/opacity_sources
 
-=======
->>>>>>> fulpmaster
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")
@@ -83,7 +77,6 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	assemble_baseturfs()
 
 	levelupdate()
-<<<<<<< HEAD
 
 	if (length(smoothing_groups))
 		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
@@ -96,10 +89,6 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	if (smoothing_flags)
 		QUEUE_SMOOTH(src)
 
-=======
-	if(smooth)
-		QUEUE_SMOOTH(src)
->>>>>>> fulpmaster
 	visibilityChanged()
 
 	for(var/atom/movable/AM in src)

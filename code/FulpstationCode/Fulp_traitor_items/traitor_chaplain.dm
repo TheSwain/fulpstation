@@ -73,7 +73,7 @@
 
 /obj/item/melee/transforming/energy/sword/saber/sith
 	name = "Sith Lightsaber"
-	possible_colors = list("red" = LIGHT_COLOR_RED)
+	possible_colors = list("red" = COLOR_SOFT_RED)
 	desc = "A deadly and ancient energy sword hailing from an equally deadly and ancient religion."
 	armour_penetration = 100 //Cuts through anything.
 	force_on = 35 //Slightly better than standard.

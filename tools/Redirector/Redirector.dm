@@ -60,11 +60,7 @@ var/admin_substr  = "admins=" // search for this to locate # of admins
 
 	src << link(serverlink)
 
-<<<<<<< HEAD
 /proc/extract(data, type = PLAYERS)
-=======
-/proc/extract(var/data, var/type = PLAYERS)
->>>>>>> fulpmaster
 
 	var/nextpos = 0
 

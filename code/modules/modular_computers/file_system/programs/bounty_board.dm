@@ -4,10 +4,6 @@
 	program_icon_state = "bountyboard"
 	extended_desc = "A multi-platform network for placing requests across the station, with payment across the network being possible.."
 	requires_ntnet = TRUE
-<<<<<<< HEAD
-=======
-	network_destination = "bounty board interface"
->>>>>>> fulpmaster
 	size = 10
 	tgui_id = "NtosRequestKiosk"
 	///Reference to the currently logged in user.

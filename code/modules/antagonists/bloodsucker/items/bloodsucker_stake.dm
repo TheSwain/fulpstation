@@ -31,7 +31,8 @@
 	lefthand_file = 'icons/Fulpicons/fulpitems_hold_left.dmi' // File for in-hand icon
 	righthand_file = 'icons/Fulpicons/fulpitems_hold_right.dmi'
 	//origin_tech = "biotech=1;combat=1"
-	attack_verb = list("staked")
+	attack_verb_continuous = list("stakes")
+	attack_verb_simple = list("stake")
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 

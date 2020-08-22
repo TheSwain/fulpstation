@@ -4,11 +4,7 @@
 	icon = 'icons/obj/machines/implantchair.dmi'
 	icon_state = "implantchair"
 	density = TRUE
-<<<<<<< HEAD
 	opacity = FALSE
-=======
-	opacity = 0
->>>>>>> fulpmaster
 
 	var/ready = TRUE
 	var/replenishing = FALSE
@@ -125,11 +121,7 @@
 	ready = TRUE
 	update_icon()
 
-<<<<<<< HEAD
 /obj/machinery/implantchair/container_resist_act(mob/living/user)
-=======
-/obj/machinery/implantchair/container_resist(mob/living/user)
->>>>>>> fulpmaster
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
 	user.visible_message("<span class='notice'>You see [user] kicking against the door of [src]!</span>", \

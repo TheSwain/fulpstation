@@ -178,11 +178,7 @@ GLOBAL_LIST_EMPTY(request_list)
 	///the account of the request fulfiller.
 	var/list/applicants = list()
 
-<<<<<<< HEAD
 /datum/station_request/New(owned, newvalue, newdescription, reqnum, own_account)
-=======
-/datum/station_request/New(var/owned, var/newvalue, var/newdescription, var/reqnum, var/own_account)
->>>>>>> fulpmaster
 	. = ..()
 	owner = owned
 	value = newvalue

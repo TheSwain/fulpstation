@@ -41,7 +41,6 @@
 			light = new/datum/light_source(src, .)
 
 
-<<<<<<< HEAD
 /**
   * Updates the atom's opacity value.
   *
@@ -49,11 +48,6 @@
   * It notifies (potentially) affected light sources so they can update (if needed).
   */
 /atom/proc/set_opacity(new_opacity)
-=======
-// Should always be used to change the opacity of an atom.
-// It notifies (potentially) affected light sources so they can update (if needed).
-/atom/proc/set_opacity(var/new_opacity)
->>>>>>> fulpmaster
 	if (new_opacity == opacity)
 		return
 	SEND_SIGNAL(src, COMSIG_ATOM_SET_OPACITY, new_opacity)

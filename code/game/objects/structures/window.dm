@@ -304,11 +304,7 @@
 //This proc is used to update the icons of nearby windows.
 /obj/structure/window/proc/update_nearby_icons()
 	update_icon()
-<<<<<<< HEAD
 	if(smoothing_flags)
-=======
-	if(smooth)
->>>>>>> fulpmaster
 		QUEUE_SMOOTH_NEIGHBORS(src)
 
 //merges adjacent full-tile windows into one
@@ -321,11 +317,7 @@
 		var/ratio = obj_integrity / max_integrity
 		ratio = CEILING(ratio*4, 1) * 25
 
-<<<<<<< HEAD
 		if(smoothing_flags)
-=======
-		if(smooth)
->>>>>>> fulpmaster
 			QUEUE_SMOOTH(src)
 
 		cut_overlay(crack_overlay)

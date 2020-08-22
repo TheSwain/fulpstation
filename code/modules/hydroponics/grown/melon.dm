@@ -77,7 +77,6 @@
 	qdel(src)
 	new /obj/effect/decal/cleanable/ash(drop_location())
 
-<<<<<<< HEAD
 /obj/item/reagent_containers/food/snacks/grown/holymelon/checkLiked(fraction, mob/M)    //chaplains sure love holymelons
 	if(!ishuman(M))
 		return
@@ -91,8 +90,6 @@
 	SEND_SIGNAL(holy_person, COMSIG_ADD_MOOD_EVENT, "Divine_chew", /datum/mood_event/holy_consumption)
 	last_check_time = world.time
 
-=======
->>>>>>> fulpmaster
 /// Barrel melon Seeds
 /obj/item/seeds/watermelon/barrel
 	name = "pack of barrelmelon seeds"

@@ -66,11 +66,7 @@
 		return
 
 	var/splatter_icon_state
-<<<<<<< HEAD
 	if(ISDIAGONALDIR(set_dir))
-=======
-	if(set_dir in GLOB.diagonals)
->>>>>>> fulpmaster
 		splatter_icon_state = "splatter[pick(1, 2, 6)]"
 	else
 		splatter_icon_state = "splatter[pick(3, 4, 5)]"

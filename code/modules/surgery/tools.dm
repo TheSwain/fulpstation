@@ -30,12 +30,8 @@
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
 	w_class = WEIGHT_CLASS_TINY
-<<<<<<< HEAD
 	attack_verb_continuous = list("attacks", "pinches")
 	attack_verb_simple = list("attack", "pinch")
-=======
-	attack_verb = list("attacked", "pinched")
->>>>>>> fulpmaster
 	tool_behaviour = TOOL_HEMOSTAT
 	toolspeed = 1
 
@@ -56,12 +52,8 @@
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
 	w_class = WEIGHT_CLASS_TINY
-<<<<<<< HEAD
 	attack_verb_continuous = list("burns")
 	attack_verb_simple = list("burn")
-=======
-	attack_verb = list("burnt")
->>>>>>> fulpmaster
 	tool_behaviour = TOOL_CAUTERY
 	toolspeed = 1
 
@@ -83,12 +75,8 @@
 	item_flags = SURGICAL_TOOL | EYE_STAB
 	force = 15
 	w_class = WEIGHT_CLASS_NORMAL
-<<<<<<< HEAD
 	attack_verb_continuous = list("drills")
 	attack_verb_simple = list("drill")
-=======
-	attack_verb = list("drilled")
->>>>>>> fulpmaster
 	tool_behaviour = TOOL_DRILL
 	toolspeed = 1
 
@@ -123,12 +111,8 @@
 	throw_speed = 3
 	throw_range = 5
 	custom_materials = list(/datum/material/iron=4000, /datum/material/glass=1000)
-<<<<<<< HEAD
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
-=======
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
->>>>>>> fulpmaster
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_EDGED
 	tool_behaviour = TOOL_SCALPEL
@@ -165,12 +149,8 @@
 	throw_speed = 2
 	throw_range = 5
 	custom_materials = list(/datum/material/iron=1000)
-<<<<<<< HEAD
 	attack_verb_continuous = list("attacks", "slashes", "saws", "cuts")
 	attack_verb_simple = list("attack", "slash", "saw", "cut")
-=======
-	attack_verb = list("attacked", "slashed", "sawed", "cut")
->>>>>>> fulpmaster
 	sharpness = SHARP_EDGED
 	tool_behaviour = TOOL_SAW
 	toolspeed = 1
@@ -197,21 +177,12 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	inhand_icon_state = "drapes"
 	w_class = WEIGHT_CLASS_TINY
-<<<<<<< HEAD
 	attack_verb_continuous = list("slaps")
 	attack_verb_simple = list("slap")
 
 /obj/item/surgical_drapes/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/surgery_initiator, null)
-
-=======
-	attack_verb = list("slapped")
-
-/obj/item/surgical_drapes/attack(mob/living/M, mob/user)
-	if(!attempt_initiate_surgery(src, M, user))
-		..()
->>>>>>> fulpmaster
 
 /obj/item/organ_storage //allows medical cyborgs to manipulate organs without hands
 	name = "organ storage bag"
@@ -348,11 +319,7 @@
 	icon_state = "surgicaldrill_a"
 	hitsound = 'sound/items/welder.ogg'
 	toolspeed = 0.7
-<<<<<<< HEAD
 	light_color = COLOR_SOFT_RED
-=======
-	light_color = LIGHT_COLOR_RED
->>>>>>> fulpmaster
 
 /obj/item/surgicaldrill/advanced/Initialize()
 	. = ..()
@@ -387,12 +354,8 @@
 	throw_speed = 2
 	throw_range = 5
 	custom_materials = list(/datum/material/iron=8000, /datum/material/titanium=6000)
-<<<<<<< HEAD
 	attack_verb_continuous = list("shears", "snips")
 	attack_verb_simple = list("shear", "snip")
-=======
-	attack_verb = list("sheared", "snipped")
->>>>>>> fulpmaster
 	sharpness = SHARP_EDGED
 	custom_premium_price = 1800
 
@@ -458,11 +421,7 @@
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
 	w_class = WEIGHT_CLASS_SMALL
-<<<<<<< HEAD
 	attack_verb_continuous = list("corrects", "properly sets")
 	attack_verb_simple = list("correct", "properly set")
-=======
-	attack_verb = list("corrected", "properly set")
->>>>>>> fulpmaster
 	tool_behaviour = TOOL_BONESET
 	toolspeed = 1

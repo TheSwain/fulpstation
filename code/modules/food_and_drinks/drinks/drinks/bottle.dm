@@ -145,12 +145,8 @@
 	w_class = WEIGHT_CLASS_TINY
 	inhand_icon_state = "beer"
 	hitsound = 'sound/weapons/bladeslice.ogg'
-<<<<<<< HEAD
 	attack_verb_continuous = list("stabs", "slashes", "attacks")
 	attack_verb_simple = list("stab", "slash", "attack")
-=======
-	attack_verb = list("stabbed", "slashed", "attacked")
->>>>>>> fulpmaster
 	sharpness = SHARP_EDGED
 	var/static/icon/broken_outline = icon('icons/obj/drinks.dmi', "broken")
 

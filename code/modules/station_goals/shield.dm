@@ -123,10 +123,7 @@
 	if(user)
 		to_chat(user, "<span class='notice'>You [active ? "deactivate": "activate"] [src].</span>")
 	set_anchored(!anchored)
-<<<<<<< HEAD
 	return TRUE
-=======
->>>>>>> fulpmaster
 
 /obj/machinery/satellite/update_icon_state()
 	icon_state = active ? "sat_active" : "sat_inactive"

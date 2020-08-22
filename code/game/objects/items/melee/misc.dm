@@ -44,12 +44,8 @@
 	force = 20
 	throwforce = 10
 	hitsound = 'sound/weapons/bladeslice.ogg'
-<<<<<<< HEAD
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
-=======
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
->>>>>>> fulpmaster
 	sharpness = SHARP_EDGED
 
 /obj/item/melee/synthetic_arm_blade/Initialize()
@@ -71,12 +67,8 @@
 	block_chance = 50
 	armour_penetration = 75
 	sharpness = SHARP_EDGED
-<<<<<<< HEAD
 	attack_verb_continuous = list("slashes", "cuts")
 	attack_verb_simple = list("slash", "cut")
-=======
-	attack_verb = list("slashed", "cut")
->>>>>>> fulpmaster
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
 	wound_bonus = 10

@@ -9,12 +9,8 @@
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 
 	force = 10
-<<<<<<< HEAD
 	attack_verb_continuous = list("beats")
 	attack_verb_simple = list("beat")
-=======
-	attack_verb = list("beaten")
->>>>>>> fulpmaster
 
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
@@ -72,11 +68,7 @@
 	return ..()
 
 /obj/item/melee/baton/proc/convert(datum/source, obj/item/I, mob/user)
-<<<<<<< HEAD
 	SIGNAL_HANDLER
-
-=======
->>>>>>> fulpmaster
 	if(istype(I,/obj/item/conversion_kit) && convertible)
 		var/turf/T = get_turf(src)
 		var/obj/item/melee/classic_baton/B = new /obj/item/melee/classic_baton (T)
@@ -234,11 +226,7 @@
 	/// After a target is hit, we do a chunk of stamina damage, along with other effects.
 	/// After a period of time, we then check to see what stun duration we give.
 	L.Jitter(20)
-<<<<<<< HEAD
 	L.set_confusion(max(confusion_amt, L.get_confusion()))
-=======
-	L.confused = max(confusion_amt, L.confused)
->>>>>>> fulpmaster
 	L.stuttering = max(8, L.stuttering)
 	L.apply_damage(stamina_loss_amt, STAMINA, BODY_ZONE_CHEST)
 

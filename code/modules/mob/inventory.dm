@@ -318,7 +318,6 @@
 		I.dropped(src, silent)
 	return TRUE
 
-<<<<<<< HEAD
 /**
  * Used to return a list of equipped items on a mob; does not include held items (use get_all_gear)
  *
@@ -345,50 +344,6 @@
 	var/list/items = ..()
 	if(!include_pockets)
 		items -= list(l_store, r_store, s_store)
-=======
-//Outdated but still in use apparently. This should at least be a human proc.
-//Daily reminder to murder this - Remie.
-/mob/living/proc/get_equipped_items(include_pockets = FALSE)
-	return
-
-/mob/living/carbon/get_equipped_items(include_pockets = FALSE)
-	var/list/items = list()
-	if(back)
-		items += back
-	if(head)
-		items += head
-	if(wear_mask)
-		items += wear_mask
-	if(wear_neck)
-		items += wear_neck
-	return items
-
-/mob/living/carbon/human/get_equipped_items(include_pockets = FALSE)
-	var/list/items = ..()
-	if(belt)
-		items += belt
-	if(ears)
-		items += ears
-	if(glasses)
-		items += glasses
-	if(gloves)
-		items += gloves
-	if(shoes)
-		items += shoes
-	if(wear_id)
-		items += wear_id
-	if(wear_suit)
-		items += wear_suit
-	if(w_uniform)
-		items += w_uniform
-	if(include_pockets)
-		if(l_store)
-			items += l_store
-		if(r_store)
-			items += r_store
-		if(s_store)
-			items += s_store
->>>>>>> fulpmaster
 	return items
 
 /mob/living/proc/unequip_everything()
