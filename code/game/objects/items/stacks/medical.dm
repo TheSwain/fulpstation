@@ -47,8 +47,8 @@
 			return
 
 	if(heal(M, user))
+		user?.mind.adjust_experience(/datum/skill/healing, experience_given)
 		log_combat(user, M, "healed", src.name)
-			user?.mind.adjust_experience(/datum/skill/healing, experience_given)
 		use(1)
 		if(repeating && amount > 0)
 			try_heal(M, user, TRUE)

@@ -8,6 +8,7 @@
 	name = "remove embedded objects"
 	time = 32
 	accept_hand = 1
+	experience_given = MEDICAL_SKILL_MEDIUM
 	var/obj/item/bodypart/L = null
 
 

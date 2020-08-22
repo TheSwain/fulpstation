@@ -17,6 +17,7 @@
 	time = 200
 	chems_needed = list(/datum/reagent/medicine/c2/synthflesh)
 	require_all_chems = FALSE
+	experience_given = MEDICAL_SKILL_MEDIUM
 
 /datum/surgery_step/wing_reconstruction/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You begin to fix [target]'s charred wing membranes...</span>",

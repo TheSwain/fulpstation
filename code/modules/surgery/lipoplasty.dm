@@ -46,6 +46,7 @@
 	var/removednutriment = target.nutrition
 	target.set_nutrition(NUTRITION_LEVEL_WELL_FED)
 	removednutriment -= NUTRITION_LEVEL_WELL_FED //whatever was removed goes into the meat
+	experience_given = (round(removednutriment/(MEDICAL_SKILL_EASY*5)))
 	var/mob/living/carbon/human/H = target
 	var/typeofmeat = /obj/item/reagent_containers/food/snacks/meat/slab/human
 
