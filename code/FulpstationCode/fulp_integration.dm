@@ -38,15 +38,17 @@
 		//	ID CARDS	//
 
 /obj/item/card
-	var/datum/job/linkedJobType         // This is a TYPE, not a ref to a particular instance. We'll use this for finding the job and hud icon of each job.
+	var/datum/job/fulp/linkedJobType         // This is a TYPE, not a ref to a particular instance. We'll use this for finding the job and hud icon of each job.
 	//var/job_icon = 'icons/obj/card.dmi' // This is now stored on the job.
 
 /obj/item/card/id/proc/return_icon_job()
 	if (!linkedJobType || assignment == "Unassigned")
 		return 'icons/obj/card.dmi'
+	if (!linkedJobType || assignment == "Brig Physician")
+		return 'icons/Fulpicons/cards.dmi'
 	return initial(linkedJobType.id_icon)
 /obj/item/card/id/proc/return_icon_hud()
-	if (assignment in list("Syndicate Captain", "Syndicate Medical Doctor", "Syndicate Assault Operative", "Syndicate Engineer", "Syndicate Operative", "Syndicate Overlord", "Syndicate Mastermind", "Syndicate Admiral", "Syndicate Official", "Syndicate", "Syndicate Commander", "Syndicate Ship Captain"))
+	if (assignment in list("Syndicate Captain", "Syndicate Medical Doctor", "Syndicate Assault Operative", "Syndicate Engineer", "Syndicate Operative", "Syndicate Overlord", "Syndicate Mastermind", "Syndicate Admiral", "Syndicate Official", "Syndicate", "Syndicate Commander", "Syndicate Ship Captain", "Brig Physician"))
 		return 'icons/Fulpicons/fulphud.dmi' //Couldn't think of better solution
 	if (!linkedJobType || assignment == "Unassigned")
 		return 'icons/mob/hud.dmi'
@@ -55,9 +57,14 @@
 
 		//	JOBS	//
 
-/datum/job
+/datum/job/fulp
 	var/id_icon = 'icons/obj/card.dmi'	// Overlay on your ID
 	var/hud_icon = 'icons/mob/hud.dmi'	// Sec Huds see this
+	var/fulp_spawn = null //give it a room's type path to spawn there
 
+/datum/job/fulp/after_spawn(mob/living/H, mob/M, latejoin)
+	if(!latejoin && fulp_spawn)
+		var/turf/T = get_fulp_spawn(fulp_spawn)
+		H.Move(T)
 
 

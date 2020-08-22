@@ -664,6 +664,7 @@
 #include "code\FulpstationCode\balloons.dm"
 #include "code\FulpstationCode\bowler_hat.dm"
 #include "code\FulpstationCode\breath.dm"
+#include "code\FulpstationCode\brigdoc.dm"
 #include "code\FulpstationCode\dbz.dm"
 #include "code\FulpstationCode\deputy.dm"
 #include "code\FulpstationCode\dice_fulp.dm"

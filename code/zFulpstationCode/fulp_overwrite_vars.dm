@@ -18,16 +18,38 @@
  	//antag disallowing//
 
 /datum/game_mode/revolution
-	restricted_jobs = list("Security Officer", "Warden", "Detective", "AI", "Cyborg","Captain", "Head of Personnel", "Head of Security", "Chief Engineer", "Research Director", "Chief Medical Officer", "Deputy")
+	restricted_jobs = list("Security Officer", "Warden", "Detective", "AI", "Cyborg","Captain", "Head of Personnel", "Head of Security", "Chief Engineer", "Research Director", "Chief Medical Officer", "Deputy", "Brig Physician")
 
 /datum/game_mode/clockwork_cult
 	restricted_jobs = list("Chaplain", "Captain", "Deputy")
 
 /datum/game_mode/cult
-	restricted_jobs = list("Chaplain","AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Deputy")
+	restricted_jobs = list("Chaplain","AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Deputy", "Brig Physician")
 
 /datum/game_mode/traitor
-	restricted_jobs = list("Cyborg", "Deputy")
+	restricted_jobs = list("Cyborg", "Deputy", "Brig Physician")
+
+/datum/game_mode/changeling // hopefully no more deputy ling shenanigans -SgtHunk
+	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Deputy", "Brig Physician")
+
+/datum/game_mode/bloodsucker
+	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Deputy", "Brig Physician")
+
+/datum/dynamic_ruleset/midround/autotraitor
+	protected_roles = list("Security Officer", "Warden", "Detective", "Head of Security", "Deputy", "Brig Physician")
+
+/datum/dynamic_ruleset/latejoin/infiltrator
+	protected_roles = list("Security Officer", "Warden", "Detective", "Head of Security", "Deputy", "Brig Physician")
+
+/datum/dynamic_ruleset/roundstart/traitorbro
+	protected_roles = list("Security Officer", "Warden", "Detective", "Head of Security", "Deputy", "Brig Physician")
+
+// I used the overwrite, you know why? Because the overwrite doesn't miss.
+// And unlike the other shitty .dms it stops Sec antags two hits in their tracks.
+// I also edit the modules/antagonists just to make damn sure. Because I
+// 1) Am not there to deal with sec antags, and 2) Will make sure there aren't any of them.
+// If this file change goes through (which it won't) i'll still keep using overwrites.
+// Because it's simple, clean, and effective as fuck. -SgtHunk.
 
 	//The time for Cobby is Over//	-Love, Sal
 
