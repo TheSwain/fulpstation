@@ -76,18 +76,11 @@
 
 //This is a new item, the Influencer's blindfold. It's the Zealot's blindfold but with Security huds rather than Medical.
 
-/obj/item/clothing/glasses/hud/security/night/cultblind
-    desc = "May Nar'Sie guide you through the darkness and show you those strong of mind."
-    name = "influencer's blindfold"
-    icon_state = "blindfold"
-    inhand_icon_state = "blindfold"
-    flash_protect = FLASH_PROTECTION_FLASH
-
-/obj/item/clothing/glasses/hud/security/night/cultblind/equipped(mob/living/user, slot)
-    ..()
-    if(!iscultist(user))
-        to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
-        user.dropItemToGround(src, TRUE)
-        user.Dizzy(25)
-        user.Paralyze(80)
-        user.blind_eyes(20)
+/obj/item/clothing/glasses/hud/health/night/fulpcultblind
+	desc = "may Nar'Sie guide you through the darkness and shield you from the light."
+	name = "zealot's blindfold"
+	icon_state = "blindfold"
+	inhand_icon_state = "blindfold"
+	hud_type = DATA_HUD_SECURITY_ADVANCED
+	hud_trait = TRAIT_SECURITY_HUD
+	flash_protect = FLASH_PROTECTION_FLASH

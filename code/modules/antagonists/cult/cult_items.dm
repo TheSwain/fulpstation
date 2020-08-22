@@ -432,8 +432,6 @@
 	name = "zealot's blindfold"
 	icon_state = "blindfold"
 	inhand_icon_state = "blindfold"
-	var/datum/atom_hud/secsensor = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
-	var/datum/atom_hud/medsensor = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
 	flash_protect = FLASH_PROTECTION_FLASH
 
 /obj/item/clothing/glasses/hud/health/night/cultblind/equipped(mob/living/user, slot)
