@@ -33,7 +33,7 @@
 
 	belt = /obj/item/storage/belt/medical/surgeryfilled
 	ears = /obj/item/radio/headset/headset_sec/alt/department/med
-	uniform = /obj/item/clothing/under/rank/security/officer
+	uniform = /obj/item/clothing/under/rank/medical/brigdoc
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit =  /obj/item/clothing/suit/toggle/labcoat/armored
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
@@ -51,6 +51,8 @@
 	box = /obj/item/storage/box/survival/medical
 
 	implants = list(/obj/item/implant/mindshield)
+
+// Brig Doctor clothing and stuff
 
 /obj/item/clothing/suit/toggle/labcoat/armored
 	name = "armored labcoat"
@@ -72,3 +74,24 @@
 	new /obj/item/circular_saw(src)
 	new /obj/item/cautery(src)
 	new /obj/item/surgical_drapes(src)
+
+/obj/item/clothing/under/rank/medical/brigdoc // God bless Mith -SgtHunk
+	name = "brig physician's jumpsuit"
+	desc = "It's made of a special fiber that provides minor protection against biohazards and Close Quarters weaponry. It has a brig physician stripe on it."
+	worn_icon = 'icons/fulpicons/brigdocjumpsuit.dmi'
+	icon = 'icons/fulpicons/brigdocsuiticon.dmi'
+	icon_state = "jumpsuit_brigdoc"
+	permeability_coefficient = 0.5
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 30, "acid" = 30)
+	can_adjust = FALSE
+	sensor_mode = SENSOR_COORDS
+	random_sensor = FALSE
+	fulp_item = TRUE
+	mutantrace_variation = MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/rank/medical/brigdoc/skirt
+	name = "brig physician's jumpskirt"
+	worn_icon = 'icons/fulpicons/brigdocjumpsuit.dmi'
+	icon_state = "jumpskirt_brigdoc"
+	fitted = FEMALE_UNIFORM_TOP
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
