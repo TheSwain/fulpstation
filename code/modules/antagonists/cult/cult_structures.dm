@@ -263,20 +263,17 @@
 		"Zealot's Blindfold" = image(icon = 'icons/obj/clothing/glasses.dmi', icon_state = "blindfold"),
 		"Shuttle Curse" = image(icon = 'icons/obj/cult.dmi', icon_state = "shuttlecurse"),
 		"Veil Walker Set" = image(icon = 'icons/obj/cult.dmi', icon_state = "shifter"),
-		"Influencer's Blindfold" = image(icon = 'icons/obj/clothing/glasses.dmi', icon_state = "blindfold")
 		)
 	var/choice = show_radial_menu(user, src, items, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
 	var/list/pickedtype = list()
 	switch(choice)
 		if("Zealot's Blindfold")
-			pickedtype += /obj/item/clothing/glasses/hud/health/night/cultblind
+			pickedtype += /obj/item/clothing/glasses/hud/security/night/cultblind
 		if("Shuttle Curse")
 			pickedtype += /obj/item/shuttle_curse
 		if("Veil Walker Set")
 			pickedtype += /obj/item/cult_shift
 			pickedtype += /obj/item/flashlight/flare/culttorch
-		if("Influencer's Blindfold")
-			pickedtype += /obj/item/clothing/glasses/hud/security/night/cultblind
 		else
 			return
 	if(src && !QDELETED(src) && anchored && pickedtype.len && Adjacent(user) && !user.incapacitated() && iscultist(user) && cooldowntime <= world.time)
