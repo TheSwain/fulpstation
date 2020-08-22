@@ -15,6 +15,7 @@
 	var/self_delay = 50
 	var/other_delay = 0
 	var/repeating = FALSE
+	var/experience_given = 1
 	/// How much brute we heal per application
 	var/heal_brute
 	/// How much burn we heal per application
@@ -47,6 +48,7 @@
 
 	if(heal(M, user))
 		log_combat(user, M, "healed", src.name)
+			user?.mind.adjust_experience(/datum/skill/healing, experience_given)
 		use(1)
 		if(repeating && amount > 0)
 			try_heal(M, user, TRUE)
@@ -65,6 +67,19 @@
 	if(affecting.brute_dam && brute || affecting.burn_dam && burn)
 		user.visible_message("<span class='green'>[user] applies \the [src] on [C]'s [affecting.name].</span>", "<span class='green'>You apply \the [src] on [C]'s [affecting.name].</span>")
 		if(affecting.heal_damage(brute, burn))
+			C.update_damage_overlays()
+		return TRUE
+	to_chat(user, "<span class='warning'>[C]'s [affecting.name] can not be healed with \the [src]!</span>")
+
+	if(affecting.brute_dam && brute || affecting.burn_dam && burn)
+		user.visible_message("<span class='green'>[user] applies \the [src] on [C]'s [affecting.name].</span>", "<span class='green'>You apply \the [src] on [C]'s [affecting.name].</span>")
+		var/brute2heal = brute
+		var/burn2heal = burn
+		if(user?.mind.get_skill_speed_modifier(/datum/skill/medical))
+			var/skillmods = user.mind.get_skill_speed_modifier(/datum/skill/medical)
+			brute2heal *= (2-skillmods)
+			burn2heal *= (2-skillmods)
+		if(affecting.heal_damage(brute2heal, burn2heal))
 			C.update_damage_overlays()
 		return TRUE
 	to_chat(user, "<span class='warning'>[C]'s [affecting.name] can not be healed with \the [src]!</span>")
