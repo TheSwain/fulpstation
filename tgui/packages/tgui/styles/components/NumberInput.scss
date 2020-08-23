@@ -20,12 +20,7 @@ $border-radius: Input.$border-radius !default;
   border: base.em(1px) solid rgba($border-color, 0.75);
   border-radius: $border-radius;
   color: $border-color;
-<<<<<<< HEAD
   background-color: $background-color;
-=======
-  background-color: #000;
-  background-color: rgba(0, 0, 0, 0.75);
->>>>>>> fulpmaster
   padding: 0 base.em(4px);
   margin-right: base.em(2px);
   line-height: base.em(17px);

@@ -1,23 +1,14 @@
-<<<<<<< HEAD
 import { classes } from 'common/react';
 import { Fragment } from 'inferno';
 import { multiline } from 'common/string';
 import { useBackend } from '../backend';
 import { Box, Button, Collapsible, Flex, NoticeBox, Section, TimeDisplay, Tooltip } from '../components';
-=======
-import { Fragment } from 'inferno';
-import { useBackend } from '../backend';
-import { Box, Button, Flex, LabeledList, Section, TimeDisplay } from '../components';
->>>>>>> fulpmaster
 import { Window } from '../layouts';
 
 export const MafiaPanel = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-<<<<<<< HEAD
     lobbydata,
-=======
->>>>>>> fulpmaster
     players,
     actions,
     phase,
@@ -28,17 +19,13 @@ export const MafiaPanel = (props, context) => {
     timeleft,
     all_roles,
   } = data;
-<<<<<<< HEAD
   const playerAddedHeight = roleinfo ? players.length * 30 : 7;
   const readyGhosts = lobbydata ? lobbydata.filter(
     player => player.status === "Ready") : null;
-=======
->>>>>>> fulpmaster
   return (
     <Window
       title="Mafia"
       theme={role_theme}
-<<<<<<< HEAD
       width={650} // 414 or 415 / 444 or 445
       height={293 + playerAddedHeight}>
       <Window.Content scrollable={admin_controls}>
@@ -150,72 +137,6 @@ export const MafiaPanel = (props, context) => {
             </Flex>
           </Section>
         )}
-=======
-      width={650}
-      height={550}
-      resizable>
-      <Window.Content>
-        {!!admin_controls && (
-          <Section
-            title="ADMIN CONTROLS"
-            backgroundColor="red">
-            THESE ARE DEBUG, THEY WILL BREAK THE GAME, DO NOT TOUCH <br />
-            Also because an admin did it: do not gib/delete/etc
-            anyone! It will runtime the game to death! <br />
-            <Button
-              icon="arrow-right"
-              onClick={() => act("next_phase")}>
-              Next Phase
-            </Button>
-            <Button
-              icon="home"
-              onClick={() => act("players_home")}>
-              Send All Players Home
-            </Button>
-            <Button
-              icon="radiation"
-              onClick={() => act("new_game")}>
-              New Game
-            </Button>
-            <br />
-            This makes the next game what you input.
-            Resets after one round automatically.
-            <br />
-            <Button
-              icon="exclamation-circle"
-              onClick={() => act("debug_setup")}>
-              Create Custom Setup
-            </Button>
-            <Button
-              icon="arrow-left"
-              onClick={() => act("cancel_setup")}>
-              Reset Custom Setup
-            </Button>
-            <br />
-            <Button
-              icon="skull"
-              onClick={() => act("nuke")}
-              color="black">
-              Nuke (delete datum + landmarks, hope it fixes everything!)
-            </Button>
-          </Section>
-        )}
-        <Section title={phase}>
-          {!!roleinfo && (
-            <Fragment>
-              <Box>
-                <TimeDisplay auto="down" value={timeleft} />
-              </Box>
-              <Box>
-                <b>You are a {roleinfo.role}</b>
-              </Box>
-              <Box>
-                <b>{roleinfo.desc}</b>
-              </Box>
-            </Fragment>
-          )}
-        </Section>
->>>>>>> fulpmaster
         <Flex>
           {!!actions && actions.map(action => (
             <Flex.Item key={action}>
@@ -226,7 +147,6 @@ export const MafiaPanel = (props, context) => {
             </Flex.Item>
           ))}
         </Flex>
-<<<<<<< HEAD
         {!!roleinfo && (
           <Section
             title="Judgement"
@@ -496,91 +416,12 @@ export const MafiaPanel = (props, context) => {
                 </Collapsible>
               </Section>
             )}
-=======
-        <Section title="Players">
-          <LabeledList>
-            {!!players && players.map(player => (
-              <LabeledList.Item
-                className="candystripe"
-                key={player.ref}
-                label={player.name}>
-                {!player.alive && (<Box color="red">DEAD</Box>)}
-                {player.votes !== undefined && !!player.alive
-                && (<Fragment>Votes : {player.votes} </Fragment>)}
-                {
-                  !!player.actions && player.actions.map(action => {
-                    return (
-                      <Button
-                        key={action}
-                        onClick={() => act('mf_targ_action', {
-                          atype: action,
-                          target: player.ref,
-                        })}>
-                        {action}
-                      </Button>); })
-                }
-              </LabeledList.Item>)
-            )}
-          </LabeledList>
-        </Section>
-        {!!judgement_phase && (
-          <Section title="JUDGEMENT">
-            <Flex justify="space-around">
-              <Button
-                icon="smile-beam"
-                color="good"
-                onClick={() => act("vote_innocent")}>
-                INNOCENT!
-              </Button>
-              Use these buttons to vote the accused innocent or guilty!
-              <Button
-                icon="angry"
-                color="bad"
-                onClick={() => act("vote_guilty")}>
-                GUILTY!
-              </Button>
-            </Flex>
-          </Section>
-        )}
-        <Flex mt={1} spacing={1}>
-          <Flex.Item grow={1} basis={0}>
-            <Section
-              title="Roles"
-              minHeight={10}>
-              {!!all_roles && all_roles.map(r => (
-                <Box key={r}>
-                  <Flex justify="space-between">
-                    {r}
-                    <Button
-                      content="?"
-                      onClick={() => act("mf_lookup", {
-                        atype: r.slice(0, -3),
-                      })}
-                    />
-                  </Flex>
-                </Box>
-              ))}
-            </Section>
-          </Flex.Item>
-          <Flex.Item grow={2} basis={0}>
-            <Section
-              title="Notes"
-              minHeight={10}>
-              {roleinfo !== undefined && !!roleinfo.action_log
-              && roleinfo.action_log.map(log_line => (
-                <Box key={log_line}>
-                  {log_line}
-                </Box>
-              ))}
-            </Section>
->>>>>>> fulpmaster
           </Flex.Item>
         </Flex>
       </Window.Content>
     </Window>
   );
 };
-<<<<<<< HEAD
 
 const LobbyDisplay = (props, context) => {
   const { act, data } = useBackend(context);
@@ -626,5 +467,3 @@ const LobbyDisplay = (props, context) => {
     </Box>
   );
 };
-=======
->>>>>>> fulpmaster

@@ -7,11 +7,7 @@ export const NtosRadarSyndicate = (props, context) => {
       width={800}
       height={600}
       theme="syndicate">
-<<<<<<< HEAD
       <NtosRadarContent sig_err={"Out of Range"} />
-=======
-      <NtosRadarContent />
->>>>>>> fulpmaster
     </NtosWindow>
   );
 };

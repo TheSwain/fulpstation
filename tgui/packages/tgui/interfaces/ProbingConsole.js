@@ -47,13 +47,8 @@ export const ProbingConsole = (props, context) => {
                 {occupant_status === 3
                   ? 'Deceased'
                   : occupant_status === 2
-<<<<<<< HEAD
                     ? 'Unconscious'
                     : 'Conscious'}
-=======
-                    ? 'Unconcious'
-                    : 'Concious'}
->>>>>>> fulpmaster
               </LabeledList.Item>
               <LabeledList.Item label="Experiments">
                 <Button

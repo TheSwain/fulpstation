@@ -13,17 +13,10 @@ $shadow-color-core: #161616 !default;
 $shadow-color: rgba(0, 0, 0, 0.1) !default;
 
 .TitleBar {
-<<<<<<< HEAD
   background-color: $background-color;
   border-bottom: 1px solid $shadow-color-core;
   box-shadow: 0 2px 2px $shadow-color;
   box-shadow: 0 base.rem(2px) base.rem(2px) $shadow-color;
-=======
-  background-color: $color-background;
-  border-bottom: 1px solid $color-shadow-core;
-  box-shadow: 0 2px 2px $color-shadow;
-  box-shadow: 0 base.rem(2px) base.rem(2px) $color-shadow;
->>>>>>> fulpmaster
   user-select: none;
   -ms-user-select: none;
 }
@@ -45,11 +38,7 @@ $shadow-color: rgba(0, 0, 0, 0.1) !default;
   top: 0;
   left: 46px;
   left: base.rem(46px);
-<<<<<<< HEAD
   color: $text-color;
-=======
-  color: $color-text;
->>>>>>> fulpmaster
   font-size: 14px;
   font-size: base.rem(14px);
   line-height: 31px;

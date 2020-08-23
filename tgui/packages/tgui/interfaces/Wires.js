@@ -11,13 +11,9 @@ export const Wires = (props, context) => {
   return (
     <Window
       width={350}
-<<<<<<< HEAD
       height={150
         + (wires.length * 30)
         + (!!proper_name && 30)}>
-=======
-      height={150 + wires.length * 30}>
->>>>>>> fulpmaster
       <Window.Content>
         {(!!proper_name && (
           <NoticeBox textAlign="center">

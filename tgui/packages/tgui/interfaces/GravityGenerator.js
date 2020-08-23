@@ -11,11 +11,7 @@ export const GravityGenerator = (props, context) => {
   return (
     <Window
       width={400}
-<<<<<<< HEAD
       height={155}>
-=======
-      height={165}>
->>>>>>> fulpmaster
       <Window.Content>
         {!operational && (
           <NoticeBox>

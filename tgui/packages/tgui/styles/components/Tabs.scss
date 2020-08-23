@@ -24,7 +24,6 @@ $fg-map: colors.$fg-map !default;
 }
 
 .Tabs--horizontal {
-<<<<<<< HEAD
   margin-bottom: 0.5em;
 
   &:last-child {
@@ -78,26 +77,10 @@ $fg-map: colors.$fg-map !default;
 
   .Tab--selected {
     border-bottom: (1em / 6) solid $color-default;
-=======
-  border-bottom: base.em(2px) solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 0.5em;
-
-  .Tabs__tab--altSelection::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: base.em(2px);
-    width: 100%;
-    background-color: #fff;
-    border-radius: $border-radius;
->>>>>>> fulpmaster
   }
 }
 
 .Tabs--vertical {
-<<<<<<< HEAD
   .Tab {
     min-height: 2em;
     border-left: (1em / 6) solid transparent;
@@ -106,18 +89,9 @@ $fg-map: colors.$fg-map !default;
 
   .Tab--selected {
     border-right: (1em / 6) solid $color-default;
-=======
-  margin-right: 0.75em;
-
-  .Tabs__tabBox {
-    border-right: base.em(2px) solid rgba(255, 255, 255, 0.1);
-    // Disable baseline alignment when doing vertical tabs
-    vertical-align: top;
->>>>>>> fulpmaster
   }
 }
 
-<<<<<<< HEAD
 @each $color-name, $color-value in $fg-map {
   .Tab--selected.Tab--color--#{$color-name} {
     color: color.scale($color-value, $lightness: 25%);
@@ -129,31 +103,5 @@ $fg-map: colors.$fg-map !default;
 
   .Tabs--vertical .Tab--selected.Tab--color--#{$color-name} {
     border-right-color: $color-value;
-=======
-  .Tabs__tab {
-    // Force display block because Button theme overrides it via cascading.
-    display: block !important;
-    // Override to stop themed buttons from taking priority over it.
-    margin-right: 0 !important;
-    margin-bottom: 0;
-    padding: base.em(1px) base.em(9px) 0px 0.5em;
-    border-bottom: base.em(2px) solid rgba(255, 255, 255, 0.1);
-
-    &:last-child {
-      border-bottom: 0;
-    }
-  }
-
-  .Tabs__tab--altSelection::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 0.25em;
-    background-color: #fff;
-    border-radius: $border-radius;
->>>>>>> fulpmaster
   }
 }

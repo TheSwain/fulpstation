@@ -5,28 +5,8 @@
  */
 
 import { classes } from 'common/react';
-<<<<<<< HEAD
 import { computeBoxClassName, computeBoxProps } from '../components/Box';
 import { addScrollableNode, removeScrollableNode } from '../events';
-=======
-import { computeBoxProps, computeBoxClassName } from '../components/Box';
-
-/**
- * Brings Layout__content DOM element back to focus.
- *
- * Commonly used to keep the content scrollable in IE.
- */
-export const refocusLayout = () => {
-  // IE8: Focus method is seemingly fucked.
-  if (Byond.IS_LTE_IE8) {
-    return;
-  }
-  const element = document.getElementById('Layout__content');
-  if (element) {
-    element.focus();
-  }
-};
->>>>>>> fulpmaster
 
 export const Layout = props => {
   const {

@@ -64,10 +64,7 @@ export const computeFlexItemProps = props => {
     className: classes([
       'Flex__item',
       Byond.IS_LTE_IE10 && 'Flex__item--iefix',
-<<<<<<< HEAD
       Byond.IS_LTE_IE10 && grow > 0 && 'Flex__item--iefix--grow',
-=======
->>>>>>> fulpmaster
       className,
     ]),
     style: {

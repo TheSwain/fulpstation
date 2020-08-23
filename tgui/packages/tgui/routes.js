@@ -5,11 +5,7 @@
  */
 
 import { selectBackend } from './backend';
-<<<<<<< HEAD
 import { selectDebug } from './debug/selectors';
-=======
-import { selectDebug } from './debug';
->>>>>>> fulpmaster
 import { Window } from './layouts';
 
 const requireInterface = require.context('./interfaces', false, /\.js$/);
@@ -37,12 +33,8 @@ const SuspendedWindow = () => {
   );
 };
 
-<<<<<<< HEAD
 export const getRoutedComponent = store => {
   const state = store.getState();
-=======
-export const getRoutedComponent = state => {
->>>>>>> fulpmaster
   const { suspended, config } = selectBackend(state);
   if (suspended) {
     return SuspendedWindow;
@@ -51,11 +43,7 @@ export const getRoutedComponent = state => {
     const debug = selectDebug(state);
     // Show a kitchen sink
     if (debug.kitchenSink) {
-<<<<<<< HEAD
       return require('./debug').KitchenSink;
-=======
-      return require('./debug/KitchenSink').KitchenSink;
->>>>>>> fulpmaster
     }
   }
   const name = config?.interface;

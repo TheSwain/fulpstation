@@ -45,11 +45,7 @@ $bg-map: colors.$bg-map !default;
 .Button {
   position: relative;
   display: inline-block;
-<<<<<<< HEAD
   line-height: 1.667em;
-=======
-  line-height: base.em(20px);
->>>>>>> fulpmaster
   padding: 0 0.5em;
   margin-right: base.em(2px);
   white-space: nowrap;
@@ -68,11 +64,7 @@ $bg-map: colors.$bg-map !default;
   .fa, .fas, .far {
     margin-left: -0.25em;
     margin-right: -0.25em;
-<<<<<<< HEAD
     min-width: 1.333em;
-=======
-    min-width: base.em(16px);
->>>>>>> fulpmaster
     text-align: center;
   }
 }

@@ -26,7 +26,6 @@
 }
 
 .Flex--iefix--column {
-<<<<<<< HEAD
   display: table !important;
   width: 100% !important;
   height: 100% !important;
@@ -39,14 +38,6 @@
 
   & > .Flex__item--iefix--grow {
     height: 100% !important;
-=======
-  display: block !important;
-
-  & > .Flex__item {
-    display: block !important;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
->>>>>>> fulpmaster
   }
 }
 

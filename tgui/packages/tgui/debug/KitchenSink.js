@@ -8,11 +8,7 @@ import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../backend';
 import { BlockQuote, Box, Button, ByondUi, Collapsible, DraggableControl, Flex, Icon, Input, Knob, LabeledList, NoticeBox, NumberInput, ProgressBar, Section, Slider, Tabs, Tooltip } from '../components';
 import { formatSiUnit } from '../format';
-<<<<<<< HEAD:tgui/packages/tgui/debug/KitchenSink.js
 import { Pane, Window } from '../layouts';
-=======
-import { Window } from '../layouts';
->>>>>>> fulpmaster:tgui/packages/tgui/interfaces/manually-routed/KitchenSink.js
 import { createLogger } from '../logging';
 
 const logger = createLogger('KitchenSink');
@@ -98,11 +94,7 @@ export const KitchenSink = (props, context) => {
   const PageComponent = PAGES[pageIndex].component();
   const Layout = panel ? Pane : Window;
   return (
-<<<<<<< HEAD:tgui/packages/tgui/debug/KitchenSink.js
     <Layout
-=======
-    <Window
->>>>>>> fulpmaster:tgui/packages/tgui/interfaces/manually-routed/KitchenSink.js
       title="Kitchen Sink"
       width={600}
       height={500}
@@ -110,7 +102,6 @@ export const KitchenSink = (props, context) => {
       resizable>
       <Flex height="100%">
         <Flex.Item m={1} mr={0}>
-<<<<<<< HEAD:tgui/packages/tgui/debug/KitchenSink.js
           <Section fill fitted>
             <Tabs vertical>
               {PAGES.map((page, i) => (
@@ -123,39 +114,17 @@ export const KitchenSink = (props, context) => {
                 </Tabs.Tab>
               ))}
             </Tabs>
-=======
-          <Section fill>
-            {PAGES.map((page, i) => (
-              <Button
-                key={i}
-                fluid
-                color="transparent"
-                selected={i === pageIndex}
-                onClick={() => setPageIndex(i)}>
-                {page.title}
-              </Button>
-            ))}
->>>>>>> fulpmaster:tgui/packages/tgui/interfaces/manually-routed/KitchenSink.js
           </Section>
         </Flex.Item>
         <Flex.Item
           position="relative"
           grow={1}>
-<<<<<<< HEAD:tgui/packages/tgui/debug/KitchenSink.js
           <Layout.Content scrollable>
             <PageComponent />
           </Layout.Content>
         </Flex.Item>
       </Flex>
     </Layout>
-=======
-          <Window.Content scrollable>
-            <PageComponent />
-          </Window.Content>
-        </Flex.Item>
-      </Flex>
-    </Window>
->>>>>>> fulpmaster:tgui/packages/tgui/interfaces/manually-routed/KitchenSink.js
   );
 };
 
@@ -344,13 +313,8 @@ const KitchenSinkTabs = (props, context) => {
     'Tab #4',
   ];
   return (
-<<<<<<< HEAD:tgui/packages/tgui/debug/KitchenSink.js
     <Fragment>
       <Section>
-=======
-    <Section>
-      <Box mb={2}>
->>>>>>> fulpmaster:tgui/packages/tgui/interfaces/manually-routed/KitchenSink.js
         <Button.Checkbox
           inline
           content="vertical"
@@ -361,7 +325,6 @@ const KitchenSinkTabs = (props, context) => {
           })} />
         <Button.Checkbox
           inline
-<<<<<<< HEAD:tgui/packages/tgui/debug/KitchenSink.js
           content="leftSlot"
           checked={tabProps.leftSlot}
           onClick={() => setTabProps({
@@ -432,24 +395,6 @@ const KitchenSinkTabs = (props, context) => {
         </Tabs>
       </Section>
     </Fragment>
-=======
-          content="altSelection"
-          checked={altSelection}
-          onClick={() => setAltSelection(!altSelection)} />
-      </Box>
-      <Tabs vertical={vertical}>
-        {TAB_RANGE.map((number, i) => (
-          <Tabs.Tab
-            key={i}
-            altSelection={altSelection}
-            selected={i === tabIndex}
-            onClick={() => setTabIndex(i)}>
-            Tab #{number}
-          </Tabs.Tab>
-        ))}
-      </Tabs>
-    </Section>
->>>>>>> fulpmaster:tgui/packages/tgui/interfaces/manually-routed/KitchenSink.js
   );
 };
 

@@ -6,11 +6,7 @@
  * @license MIT
  */
 
-<<<<<<< HEAD
 import { classes } from 'common/react';
-=======
-import { classes, isFalsy } from "common/react";
->>>>>>> fulpmaster
 import { vecScale, vecSubtract } from 'common/vector';
 import DOMPurify from 'dompurify';
 import { Component } from 'inferno';
@@ -249,11 +245,7 @@ const PaperSheetView = (props, context) => {
   const stamp_list = stamps || [];
   const text_html = {
     __html: '<span class="paper-text">'
-<<<<<<< HEAD
       + setInputReadonly(value, readOnly)
-=======
-      + setInputReadonly(value, readonly)
->>>>>>> fulpmaster
       + '</span>',
   };
   return (
@@ -604,11 +596,7 @@ export const PaperSheet = (props, context) => {
           <PaperSheetView
             value={text}
             stamps={stamp_list}
-<<<<<<< HEAD
             readOnly />
-=======
-            readOnly={1} />
->>>>>>> fulpmaster
         );
       case 1:
         return (

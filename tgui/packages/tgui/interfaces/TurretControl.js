@@ -14,11 +14,7 @@ export const TurretControl = (props, context) => {
   return (
     <Window
       width={305}
-<<<<<<< HEAD
       height={172}>
-=======
-      height={168}>
->>>>>>> fulpmaster
       <Window.Content>
         <InterfaceLockNoticeBox />
         <Section>

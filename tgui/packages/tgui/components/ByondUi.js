@@ -132,10 +132,6 @@ export class ByondUi extends Component {
 
   render() {
     const { params, ...rest } = this.props;
-<<<<<<< HEAD
-=======
-    const type = params?.type;
->>>>>>> fulpmaster
     const boxProps = computeBoxProps(rest);
     return (
       <div

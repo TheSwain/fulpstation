@@ -56,11 +56,7 @@ task-dev-server() {
 ## Run a linter through all packages
 task-eslint() {
   cd "${base_dir}"
-<<<<<<< HEAD
   yarn run eslint packages "${@}"
-=======
-  eslint ./packages "${@}"
->>>>>>> fulpmaster
   echo "tgui: eslint check passed"
 }
 

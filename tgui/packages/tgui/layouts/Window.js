@@ -11,19 +11,11 @@ import { Component, Fragment } from 'inferno';
 import { backendSuspendStart, useBackend } from '../backend';
 import { Icon } from '../components';
 import { UI_DISABLED, UI_INTERACTIVE, UI_UPDATE } from '../constants';
-<<<<<<< HEAD
 import { useDebug } from '../debug';
 import { toggleKitchenSink } from '../debug/actions';
 import { dragStartHandler, recallWindowGeometry, resizeStartHandler, setWindowKey } from '../drag';
 import { createLogger } from '../logging';
 import { Layout } from './Layout';
-=======
-import { toggleKitchenSink, useDebug } from '../debug';
-import { dragStartHandler, recallWindowGeometry, resizeStartHandler, setWindowKey } from '../drag';
-import { createLogger } from '../logging';
-import { useDispatch } from '../store';
-import { Layout, refocusLayout } from './Layout';
->>>>>>> fulpmaster
 
 const logger = createLogger('Window');
 
@@ -43,16 +35,10 @@ export class Window extends Component {
     if (this.props.width && this.props.height) {
       options.size = [this.props.width, this.props.height];
     }
-<<<<<<< HEAD
     if (config.window?.key) {
       setWindowKey(config.window.key);
     }
     recallWindowGeometry(options);
-=======
-    setWindowKey(config.window.key);
-    recallWindowGeometry(config.window.key, options);
-    refocusLayout();
->>>>>>> fulpmaster
   }
 
   render() {
@@ -70,17 +56,11 @@ export class Window extends Component {
     const dispatch = useDispatch(this.context);
     const fancy = config.window?.fancy;
     // Determine when to show dimmer
-<<<<<<< HEAD
     const showDimmer = config.user && (
       config.user.observer
         ? config.status < UI_DISABLED
         : config.status < UI_INTERACTIVE
     );
-=======
-    const showDimmer = config.user.observer
-      ? config.status < UI_DISABLED
-      : config.status < UI_INTERACTIVE;
->>>>>>> fulpmaster
     return (
       <Layout
         className="Window"
@@ -127,11 +107,6 @@ const WindowContent = props => {
     children,
     ...rest
   } = props;
-<<<<<<< HEAD
-=======
-  // A bit lazy to actually write styles for it,
-  // so we simply include a Box with margins.
->>>>>>> fulpmaster
   return (
     <Layout.Content
       className={classes([

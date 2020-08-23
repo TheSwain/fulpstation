@@ -64,12 +64,7 @@ export const Button = props => {
       ])}
       tabIndex={!disabled && '0'}
       unselectable={Byond.IS_LTE_IE8}
-<<<<<<< HEAD
       onClick={e => {
-=======
-      onclick={e => {
-        refocusLayout();
->>>>>>> fulpmaster
         if (!disabled && onClick) {
           onClick(e);
         }

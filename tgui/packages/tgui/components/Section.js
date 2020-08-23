@@ -4,7 +4,6 @@
  * @license MIT
  */
 
-<<<<<<< HEAD
 import { canRender, classes } from 'common/react';
 import { Component, createRef } from 'inferno';
 import { addScrollableNode, removeScrollableNode } from '../events';
@@ -22,51 +21,6 @@ export class Section extends Component {
       addScrollableNode(this.ref.current);
     }
   }
-=======
-import { classes, isFalsy, pureComponentHooks } from 'common/react';
-import { computeBoxClassName, computeBoxProps } from './Box';
-
-export const Section = props => {
-  const {
-    className,
-    title,
-    level = 1,
-    buttons,
-    fill,
-    children,
-    ...rest
-  } = props;
-  const hasTitle = !isFalsy(title) || !isFalsy(buttons);
-  const hasContent = !isFalsy(children);
-  return (
-    <div
-      className={classes([
-        'Section',
-        'Section--level--' + level,
-        fill && 'Section--fill',
-        className,
-        ...computeBoxClassName(rest),
-      ])}
-      {...computeBoxProps(rest)}>
-      {hasTitle && (
-        <div className="Section__title">
-          <span className="Section__titleText">
-            {title}
-          </span>
-          <div className="Section__buttons">
-            {buttons}
-          </div>
-        </div>
-      )}
-      {hasContent && (
-        <div className="Section__content">
-          {children}
-        </div>
-      )}
-    </div>
-  );
-};
->>>>>>> fulpmaster
 
   componentWillUnmount() {
     if (this.scrollable) {

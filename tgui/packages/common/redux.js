@@ -83,11 +83,7 @@ export const applyMiddleware = (...middlewares) => {
 export const combineReducers = reducersObj => {
   const keys = Object.keys(reducersObj);
   let hasChanged = false;
-<<<<<<< HEAD
   return (prevState = {}, action) => {
-=======
-  return (prevState, action) => {
->>>>>>> fulpmaster
     const nextState = { ...prevState };
     for (let key of keys) {
       const reducer = reducersObj[key];
@@ -103,7 +99,6 @@ export const combineReducers = reducersObj => {
       : prevState;
   };
 };
-<<<<<<< HEAD
 
 /**
  * A utility function to create an action creator for the given action
@@ -156,5 +151,3 @@ export const useDispatch = context => {
 export const useSelector = (context, selector) => {
   return selector(context.store.getState());
 };
-=======
->>>>>>> fulpmaster

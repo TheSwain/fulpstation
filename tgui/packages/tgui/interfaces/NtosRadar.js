@@ -10,11 +10,7 @@ export const NtosRadar = (props, context) => {
       width={800}
       height={600}
       theme="ntos">
-<<<<<<< HEAD
       <NtosRadarContent sig_err={"Signal Lost"} />
-=======
-      <NtosRadarContent />
->>>>>>> fulpmaster
     </NtosWindow>
   );
 };
@@ -27,10 +23,7 @@ export const NtosRadarContent = (props, context) => {
     target = [],
     scanning,
   } = data;
-<<<<<<< HEAD
   const { sig_err } = props;
-=======
->>>>>>> fulpmaster
   return (
     <Flex
       direction={"row"}

@@ -81,15 +81,9 @@ Run `.\bin\tgui.bat` with any of the options listed below.
   in the lobby. Start tgui dev server, and once it has finished building,
   press F5 on any tgui window. You'll know that it's hooked correctly if
   you see a green bug icon in titlebar and data gets dumped to the console.
-<<<<<<< HEAD
 - `bin/tgui --dev --reload` - Reload byond cache once.
 - `bin/tgui --dev --debug` - Run server with debug logging enabled.
 - `bin/tgui --dev --no-hot` - Disable hot module replacement (helps when
-=======
-- `bin/tgui --dev --reload` - reload byond cache once.
-- `bin/tgui --dev --debug` - run server with debug logging enabled.
-- `bin/tgui --dev --no-hot` - disable hot module replacement (helps when
->>>>>>> fulpmaster
 doing development on IE8).
 - `bin/tgui --lint` - Show problems with the code.
 - `bin/tgui --fix` - Auto-fix problems with the code.

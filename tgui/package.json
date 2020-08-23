@@ -1,12 +1,7 @@
 {
   "private": true,
-<<<<<<< HEAD
   "name": "tgui-workspace",
   "version": "4.2.0",
-=======
-  "name": "tgui",
-  "version": "4.1.0",
->>>>>>> fulpmaster
   "workspaces": [
     "packages/*"
   ],
@@ -15,7 +10,6 @@
     "@babel/plugin-transform-jscript": "^7.2.0",
     "@babel/preset-env": "^7.6.2",
     "babel-eslint": "^10.0.3",
-<<<<<<< HEAD
     "babel-loader": "^8.0.6",
     "babel-plugin-inferno": "^6.1.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
@@ -38,9 +32,5 @@
     "webpack-build-notifier": "^2.0.0",
     "webpack-bundle-analyzer": "^3.5.1",
     "webpack-cli": "^3.3.12"
-=======
-    "eslint": "^7.4.0",
-    "eslint-plugin-react": "^7.17.0"
->>>>>>> fulpmaster
   }
 }

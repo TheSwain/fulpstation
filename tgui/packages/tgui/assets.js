@@ -4,16 +4,11 @@
  * @license MIT
  */
 
-<<<<<<< HEAD
 import { loadCSS as fgLoadCss } from 'fg-loadcss';
-=======
-import { loadCSS as fgLoadCSS } from 'fg-loadcss';
->>>>>>> fulpmaster
 import { createLogger } from './logging';
 
 const logger = createLogger('assets');
 
-<<<<<<< HEAD
 const EXCLUDED_PATTERNS = [/v4shim/i];
 const RETRY_ATTEMPTS = 5;
 const RETRY_INTERVAL = 3000;
@@ -69,22 +64,6 @@ const isStyleSheetReallyLoaded = (node, url) => {
   // All methods failed
   logger.warn(`Warning: stylesheet '${url}' was not found in the DOM`);
   return false;
-=======
-const EXCLUDED_PATTERNS = [
-  /v4shim/i,
-];
-
-const loadedStyles = [];
-const loadedMappings = {};
-
-export const loadCSS = url => {
-  if (loadedStyles.includes(url)) {
-    return;
-  }
-  loadedStyles.push(url);
-  logger.log(`loading stylesheet '${url}'`);
-  fgLoadCSS(url);
->>>>>>> fulpmaster
 };
 
 export const resolveAsset = name => (
@@ -94,11 +73,7 @@ export const resolveAsset = name => (
 export const assetMiddleware = store => next => action => {
   const { type, payload } = action;
   if (type === 'asset/stylesheet') {
-<<<<<<< HEAD
     loadStyleSheet(payload);
-=======
-    loadCSS(payload);
->>>>>>> fulpmaster
     return;
   }
   if (type === 'asset/mappings') {
@@ -111,11 +86,7 @@ export const assetMiddleware = store => next => action => {
       const ext = name.split('.').pop();
       loadedMappings[name] = url;
       if (ext === 'css') {
-<<<<<<< HEAD
         loadStyleSheet(url);
-=======
-        loadCSS(url);
->>>>>>> fulpmaster
       }
     }
     return;

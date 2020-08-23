@@ -5,39 +5,21 @@
  */
 
 import { flow } from 'common/fp';
-<<<<<<< HEAD
 import { applyMiddleware, combineReducers, createStore } from 'common/redux';
 import { Component } from 'inferno';
 import { assetMiddleware } from './assets';
 import { backendMiddleware, backendReducer } from './backend';
 import { debugMiddleware, debugReducer, relayMiddleware } from './debug';
 import { createLogger } from './logging';
-=======
-import { applyMiddleware, combineReducers, createStore as createReduxStore } from 'common/redux';
-import { Component } from 'inferno';
-import { backendMiddleware, backendReducer } from './backend';
-import { debugReducer } from './debug';
-import { hotKeyMiddleware } from './hotkeys';
-import { createLogger } from './logging';
-import { assetMiddleware } from './assets';
-
-const logger = createLogger('store');
->>>>>>> fulpmaster
 
 const logger = createLogger('store');
 
 export const configureStore = (options = {}) => {
   const reducer = flow([
-<<<<<<< HEAD
-=======
-    // State initializer
-    (state = {}, action) => state,
->>>>>>> fulpmaster
     combineReducers({
       debug: debugReducer,
       backend: backendReducer,
     }),
-<<<<<<< HEAD
     options.reducer,
   ]);
   const middleware = [
@@ -58,33 +40,17 @@ export const configureStore = (options = {}) => {
   window.__store__ = store;
   window.__augmentStack__ = createStackAugmentor(store);
   return store;
-=======
-  ]);
-  const middleware = [
-    process.env.NODE_ENV !== 'production' && loggingMiddleware,
-    assetMiddleware,
-    hotKeyMiddleware,
-    backendMiddleware,
-  ];
-  return createReduxStore(reducer,
-    applyMiddleware(...middleware.filter(Boolean)));
->>>>>>> fulpmaster
 };
 
 const loggingMiddleware = store => next => action => {
   const { type, payload } = action;
-<<<<<<< HEAD
   if (type === 'update' || type === 'backend/update') {
-=======
-  if (type === 'backend/update') {
->>>>>>> fulpmaster
     logger.debug('action', { type });
   }
   else {
     logger.debug('action', action);
   }
   return next(action);
-<<<<<<< HEAD
 };
 
 /**
@@ -110,8 +76,6 @@ const createStackAugmentor = store => (stack, error) => {
     window: config?.window,
   });
   return augmentedStack;
-=======
->>>>>>> fulpmaster
 };
 
 /**

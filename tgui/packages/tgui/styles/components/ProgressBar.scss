@@ -41,11 +41,7 @@ $bg-map: colors.$bg-map !default;
 }
 
 .ProgressBar--color--default {
-<<<<<<< HEAD
   border: base.em(1px) solid $color-default-fill;
-=======
-  border: base.em(1px) solid $color-default;
->>>>>>> fulpmaster
 
   .ProgressBar__fill {
     background-color: $color-default-fill;

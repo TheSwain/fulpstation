@@ -12,13 +12,8 @@ export const BankMachine = (props, context) => {
   } = data;
   return (
     <Window
-<<<<<<< HEAD
       width={350}
       height={155}>
-=======
-      width={335}
-      height={160}>
->>>>>>> fulpmaster
       <Window.Content>
         <NoticeBox danger>
           Authorized personnel only

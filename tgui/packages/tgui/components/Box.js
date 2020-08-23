@@ -96,18 +96,11 @@ const styleMapperByPropName = {
   fontSize: mapUnitPropTo('font-size', unit),
   fontFamily: mapRawPropTo('font-family'),
   lineHeight: (style, value) => {
-<<<<<<< HEAD
     if (typeof value === 'number') {
       style['line-height'] = value;
     }
     else if (typeof value === 'string') {
       style['line-height'] = unit(value);
-=======
-    if (!isFalsy(value)) {
-      style['line-height'] = typeof value === 'number'
-        ? value
-        : unit(value);
->>>>>>> fulpmaster
     }
   },
   opacity: mapRawPropTo('opacity'),

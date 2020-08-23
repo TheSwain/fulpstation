@@ -15,11 +15,7 @@ export const LaborClaimConsole = (props, context) => {
   return (
     <Window
       width={315}
-<<<<<<< HEAD
       height={440}>
-=======
-      height={430}>
->>>>>>> fulpmaster
       <Window.Content>
         <Section>
           <LabeledList>

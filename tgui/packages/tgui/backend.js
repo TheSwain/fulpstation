@@ -12,16 +12,10 @@
  */
 
 import { perf } from 'common/perf';
-<<<<<<< HEAD
 import { setupDrag } from './drag';
 import { focusMap } from './focus';
 import { createLogger } from './logging';
 import { resumeRenderer, suspendRenderer } from './renderer';
-=======
-import { UI_DISABLED, UI_INTERACTIVE } from './constants';
-import { releaseHeldKeys } from './hotkeys';
-import { createLogger } from './logging';
->>>>>>> fulpmaster
 
 const logger = createLogger('backend');
 
@@ -49,13 +43,10 @@ export const backendSuspendSuccess = () => ({
 const initialState = {
   config: {},
   data: {},
-<<<<<<< HEAD
   shared: {},
   // Start as suspended
   suspended: Date.now(),
   suspending: false,
-=======
->>>>>>> fulpmaster
 };
 
 export const backendReducer = (state = initialState, action) => {
@@ -92,11 +83,6 @@ export const backendReducer = (state = initialState, action) => {
       config,
       data,
       shared,
-<<<<<<< HEAD
-=======
-      visible,
-      interactive,
->>>>>>> fulpmaster
       suspended: false,
     };
   }
@@ -143,7 +129,6 @@ export const backendMiddleware = store => {
   let suspendInterval;
 
   return next => action => {
-<<<<<<< HEAD
     const { suspended } = selectBackend(store.getState());
     const { type, payload } = action;
 
@@ -164,11 +149,6 @@ export const backendMiddleware = store => {
       return;
     }
 
-=======
-    const { config, suspended } = selectBackend(store.getState());
-    const { type, payload } = action;
-
->>>>>>> fulpmaster
     if (type === 'backend/suspendStart' && !suspendInterval) {
       logger.log(`suspending (${window.__windowId__})`);
       // Keep sending suspend messages until it succeeds.
@@ -181,7 +161,6 @@ export const backendMiddleware = store => {
     }
 
     if (type === 'backend/suspendSuccess') {
-<<<<<<< HEAD
       suspendRenderer();
       clearInterval(suspendInterval);
       suspendInterval = undefined;
@@ -189,14 +168,6 @@ export const backendMiddleware = store => {
         'is-visible': false,
       });
       setImmediate(() => focusMap());
-=======
-      clearInterval(suspendInterval);
-      suspendInterval = undefined;
-      releaseHeldKeys();
-      Byond.winset(window.__windowId__, {
-        'is-visible': false,
-      });
->>>>>>> fulpmaster
     }
 
     if (type === 'backend/update') {
@@ -216,15 +187,11 @@ export const backendMiddleware = store => {
       }
     }
 
-<<<<<<< HEAD
     // Resume on incoming update
     if (type === 'backend/update' && suspended) {
       resumeRenderer();
       // Setup drag
       setupDrag();
-=======
-    if (type === 'backend/update' && suspended) {
->>>>>>> fulpmaster
       // We schedule this for the next tick here because resizing and unhiding
       // during the same tick will flash with a white background.
       setImmediate(() => {
@@ -294,21 +261,12 @@ export const sendAct = (action, payload = {}) => {
  *     title: string,
  *     status: number,
  *     interface: string,
-<<<<<<< HEAD
-=======
- *     user: {
- *       name: string,
- *       ckey: string,
- *       observer: number,
- *     },
->>>>>>> fulpmaster
  *     window: {
  *       key: string,
  *       size: [number, number],
  *       fancy: boolean,
  *       locked: boolean,
  *     },
-<<<<<<< HEAD
  *     client: {
  *       ckey: string,
  *       address: string,
@@ -321,13 +279,6 @@ export const sendAct = (action, payload = {}) => {
  *   },
  *   data: any,
  *   shared: any,
-=======
- *   },
- *   data: any,
- *   shared: any,
- *   visible: boolean,
- *   interactive: boolean,
->>>>>>> fulpmaster
  *   suspending: boolean,
  *   suspended: boolean,
  * }}
