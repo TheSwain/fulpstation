@@ -3,7 +3,7 @@
 	roundend_category = "syndicate infiltrators"
 	show_to_ghosts = TRUE
 	special_role = "Syndicate Infiltrator"
-	job_rank = "Syndicate Infiltrator"
+	job_rank = ROLE_INFILTRATOR
 	should_give_codewords = FALSE //They already get syndicate comms for this.
 	var/hijack_chance = 15 //Some corps are more stealthier, but standard chance is high.
 	var/dagd_chance = 5 //Why would you infiltrate the station and die here?
@@ -19,7 +19,7 @@
 	dagd_chance = 0
 
 /datum/antagonist/traitor/infiltrator/event/move_to_spawnpoint() //Mid-round infiltrators are moved on spawn by event.
-	owner.current.reagents.add_reagent(/datum/reagent/medicine/leporazine, 10)
+	owner.current.reagents.add_reagent(/datum/reagent/medicine/leporazine, 20)
 
 /datum/antagonist/traitor/infiltrator/on_gain()
 	equip_agent()
@@ -54,7 +54,7 @@
 		spawn_locs += L.loc
 	owner.current.forceMove(pick(spawn_locs))
 	owner.current.reagents.add_reagent(/datum/reagent/medicine/oxandrolone, 10) //For le funny lizardmen.
-	owner.current.reagents.add_reagent(/datum/reagent/medicine/leporazine, 40) //Fool-Proof: They won't just die in space due to thermal regulator being turned off.
+	owner.current.reagents.add_reagent(/datum/reagent/medicine/leporazine, 50) //Fool-Proof: They won't just die in space due to thermal regulator being turned off.
 
 /datum/antagonist/traitor/infiltrator/proc/equip_agent()
 	var/mob/living/carbon/human/H = owner.current
@@ -159,7 +159,7 @@
 		if(!(locate(/datum/objective/escape/escape_with_identity/infiltrator) in objectives))
 			var/datum/objective/escape/escape_with_identity/infiltrator/id_theft = new
 			id_theft.owner = owner
-			id_theft.find_target_by_role(role = "Syndicate Infiltrator", role_type = TRUE, invert = TRUE)
+			id_theft.find_target_by_role("Syndicate Infiltrator", TRUE, TRUE)
 			add_objective(id_theft)
 			return
 

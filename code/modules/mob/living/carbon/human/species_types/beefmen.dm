@@ -173,17 +173,17 @@
 
 /datum/species/beefman/spec_life(mob/living/carbon/human/H)	// This is your life ticker.
 	..()
-	// 		** BLEED YOUR JUICES **         // BODYTEMP_NORMAL = 310.15    // AC set to 293
+	// 		** BLEED YOUR JUICES **         // BODYTEMP_NORMAL = 310.15    // AC set to 298
 
 	// Step 1) Being burned keeps the juices in.
-	var/searJuices = H.getFireLoss_nonProsthetic() / 10
+	var/searJuices = H.getFireLoss_nonProsthetic() / 20
 
 	// Step 2) Bleed out those juices by warmth, minus burn damage. If we are salted - bleed more
 	if (dehydrate > 0)
-		H.adjust_bl_all("=", clamp((H.bodytemperature - 293) / 20 - searJuices, 2, 10))
+		H.adjust_bl_all("=", clamp((H.bodytemperature - 298) / 20 - searJuices, 4, 15))
 		dehydrate -= 0.5
 	else
-		H.adjust_bl_all("=", clamp((H.bodytemperature - 293) / 20 - searJuices, 0, 5))
+		H.adjust_bl_all("=", clamp((H.bodytemperature - 298) / 20 - searJuices, 0, 4))
 
 	// Replenish Blood Faster! (But only if you actually make blood)
 	var/bleed_rate = 0

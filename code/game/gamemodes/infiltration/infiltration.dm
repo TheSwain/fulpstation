@@ -2,7 +2,7 @@
 	name = "infiltration"
 	config_tag = "infiltration"
 	report_type = "infiltration"
-	antag_flag = ROLE_TRAITOR
+	antag_flag = ROLE_INFILTRATOR
 	false_report_weight = 10
 	enemy_minimum_age = 14 //It's a bit harder to start from space, you know? Don't want newbies dying in spess because of this.
 	antag_datum = /datum/antagonist/traitor/infiltrator
@@ -109,7 +109,6 @@
 
 /datum/objective/escape/escape_with_identity/infiltrator/New()
 	give_special_equipment(/obj/item/adv_mulligan)
-	..()
 
 //Latejoin
 

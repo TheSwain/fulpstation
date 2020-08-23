@@ -139,7 +139,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	icon_state = "cybersun"
 	inhand_icon_state = "cybersun"
 	hardsuit_type = "cybersun"
-	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 65, "energy" = 65, "bomb" = 30, "bio" = 100, "rad" = 80, "fire" = 80, "acid" = 80, "wound" = 15)
 	actions_types = list()
 
 
@@ -149,11 +149,14 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	hardsuit_type = "cybersun"
 	name = "Cybersun hardsuit"
 	desc = "Prototype hardsuit with experimental armor plates, protecting from laser-based weapons very well, while giving limited protection against anything else."
-	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 65, "energy" = 65, "bomb" = 30, "bio" = 100, "rad" = 80, "fire" = 80, "acid" = 80, "wound" = 15)
 	slowdown = 0
+	w_class = WEIGHT_CLASS_NORMAL
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cybersun
 	actions_types = list(/datum/action/item_action/toggle_helmet, /datum/action/item_action/toggle_spacesuit)
 	jetpack = /obj/item/tank/jetpack/suit
+	cell = /obj/item/stock_parts/cell/hyper
 
 // Cybersun ship loot spawners
 
@@ -224,7 +227,6 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 				/obj/item/gun/ballistic/revolver = 15,
 				/obj/item/gun/medbeam = 7,
 				/obj/item/seeds/gatfruit = 2
-
 				)
 
 //Hugbox syndicate mediborg
@@ -278,7 +280,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 
 /obj/item/borg/upgrade/syndifaction/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	R.faction = ROLE_SYNDICATE //Experimental. It removes ALL faction, except for Syndicate.
+	R.faction = list(ROLE_SYNDICATE) //Experimental. It removes ALL faction, except for Syndicate.
 
 //Disk for autolathe
 
