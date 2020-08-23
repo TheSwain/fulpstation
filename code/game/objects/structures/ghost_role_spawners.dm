@@ -305,9 +305,25 @@
 	new/obj/structure/fluff/empty_cryostasis_sleeper(get_turf(src))
 	return ..()
 
+//Icebox version of hermit
+/obj/effect/mob_spawn/human/hermit/icemoon
+	name = "Cryostasis bed"
+	desc = "A humming sleeper with a silhouetted occupant inside. Its stasis function is broken and it's likely being used as a bed."
+	mob_name = "a grumpy old man"
+	icon = 'icons/obj/lavaland/spawners.dmi'
+	icon_state = "cryostasis_sleeper"
+	outfit = /datum/outfit/hermit
+	roundstart = FALSE
+	death = FALSE
+	random = TRUE
+	mob_species = /datum/species/human
+	short_desc = "You've been hunting polar bears for 40 years now! What do these 'NaniteTrans' newcomers want?"
+	flavour_text = "You were fine hunting polar bears and taming wolves out here on your own, but now that there are corporate stooges around, you need to watch your step."
+	assignedrole = "Hermit"
+
 /datum/outfit/hermit
 	name = "Lavaland hermit"
-	uniform = /obj/item/clothing/under/color/grey/glorf
+	uniform = /obj/item/clothing/under/color/grey/ancient
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	back = /obj/item/storage/backpack
 	mask = /obj/item/clothing/mask/breath
@@ -645,14 +661,16 @@
 
 /obj/effect/mob_spawn/human/syndicatespace
 	name = "Syndicate Ship Crew Member"
+	mob_name = "a Cybersun operative"
 	roundstart = FALSE
 	death = FALSE
 	show_flavour = FALSE
+	random = TRUE
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
-	short_desc = "You are a syndicate operative on old ship, stuck in hostile space."
+	short_desc = "You are a syndicate operative on an old ship, stuck in hostile space."
 	flavour_text = "Your ship docks after a long time somewhere in hostile space, reporting a malfunction. You are stuck here, with Nanotrasen station nearby. Fix the ship, find a way to power it and follow your captain's orders."
-	important_info = "Obey orders given by your captain. DO NOT let the ship fall into enemy hands."
+	important_info = "Obey orders given by your captain. Protect the ship and DO NOT enter the Space Station 13."
 	outfit = /datum/outfit/syndicatespace/syndicrew
 	assignedrole = ROLE_SYNDICATE_CYBERSUN
 
@@ -661,20 +679,25 @@
 
 /obj/effect/mob_spawn/human/syndicatespace/special(mob/living/new_spawn)
 	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	new_spawn.mind.add_antag_datum(/datum/antagonist/cybersun)
 	var/policy = get_policy(assignedrole)
 	if(policy)
 		to_chat(new_spawn, "<span class='bold'>[policy]</span>")
 
 /obj/effect/mob_spawn/human/syndicatespace/captain
 	name = "Syndicate Ship Captain"
+	mob_name = "the Cybersun captain"
 	short_desc = "You are the captain of an old ship, stuck in hostile space."
 	flavour_text = "Your ship docks after a long time somewhere in hostile space, reporting a malfunction. You are stuck here, with Nanotrasen station nearby. Command your crew and turn your ship into the most protected fortress."
-	important_info = "Protect the ship and secret documents in your backpack with your own life."
-	outfit = /datum/outfit/syndicatespace/syndicaptain
+	important_info = "Protect the ship and secret documents in your backpack with your own life. DO NOT enter the Space Station 13."
+	outfit = /datum/outfit/syndicatespace/syndicrew/syndicaptain
 	assignedrole = ROLE_SYNDICATE_CYBERSUN_CAPTAIN
 
 /datum/outfit/syndicatespace/syndicaptain/post_equip(mob/living/carbon/human/H)
 	H.faction |= ROLE_SYNDICATE
+
+/obj/effect/mob_spawn/human/syndicatespace/captain/special(mob/living/new_spawn)
+	new_spawn.mind.add_antag_datum(/datum/antagonist/cybersun/captain)
 
 /obj/effect/mob_spawn/human/syndicatespace/captain/Destroy()
 	new/obj/structure/fluff/empty_sleeper/syndicate/captain(get_turf(src))
@@ -695,15 +718,13 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	implants = list(/obj/item/implant/weapons_auth)
 
-/datum/outfit/syndicatespace/syndicaptain
+/datum/outfit/syndicatespace/syndicrew/syndicaptain
 	name = "Syndicate Ship Captain"
+	uniform = /obj/item/clothing/under/syndicate/combat
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	head = /obj/item/clothing/head/hos/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt/leader
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
-	back = /obj/item/storage/backpack
+	l_pocket = /obj/item/ammo_box/magazine/m9mm_aps
 	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/storage/belt/military/assault
 	id = /obj/item/card/id/syndicate_command/captain_id
-	backpack_contents = list(/obj/item/documents/syndicate/red, /obj/item/paper/fluff/ruins/forgottenship/password, /obj/item/gun/ballistic/automatic/pistol/aps)
+	backpack_contents = list(/obj/item/documents/syndicate, /obj/item/paper/fluff/ruins/forgottenship/password, /obj/item/gun/ballistic/automatic/pistol/aps)
