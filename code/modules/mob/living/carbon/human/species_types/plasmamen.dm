@@ -133,7 +133,7 @@
 
 		if("Mime")
 			O = new /datum/outfit/plasmaman/mime
-		
+
 		if("Deputy")									//FULP
 			O = new /datum/outfit/plasmaman/security	//FULP - put your other jobs between Mime and Clown
 
@@ -199,4 +199,3 @@
 					H.emote("sigh")
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate)
 		return TRUE
-
