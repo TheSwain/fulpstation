@@ -38,7 +38,7 @@
 		//	ID CARDS	//
 
 /obj/item/card
-	var/datum/job/fulp/linkedJobType         // This is a TYPE, not a ref to a particular instance. We'll use this for finding the job and hud icon of each job.
+	var/datum/job/linkedJobType         // This is a TYPE, not a ref to a particular instance. We'll use this for finding the job and hud icon of each job.
 	//var/job_icon = 'icons/obj/card.dmi' // This is now stored on the job.
 
 /obj/item/card/id/proc/return_icon_job()
@@ -57,9 +57,11 @@
 
 		//	JOBS	//
 
-/datum/job/fulp
+/datum/job
 	var/id_icon = 'icons/obj/card.dmi'	// Overlay on your ID
 	var/hud_icon = 'icons/mob/hud.dmi'	// Sec Huds see this
+
+/datum/job/fulp
 	var/fulp_spawn = null //give it a room's type path to spawn there
 
 /datum/job/fulp/after_spawn(mob/living/H, mob/M, latejoin)

@@ -43,7 +43,7 @@
 	l_pocket = /obj/item/pda/medical
 	r_pocket = /obj/item/melee/classic_baton/telescopic
 	suit_store = /obj/item/flashlight/pen
-	backpack_contents = list(/obj/item/storage/pill_bottle/paxpsych=1)
+	backpack_contents = list(/obj/item/storage/pill_bottle/paxpsych=1, /obj/item/reagent_containers/glass/bottle/formaldehyde=1)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -51,6 +51,11 @@
 	box = /obj/item/storage/box/survival/medical
 
 	implants = list(/obj/item/implant/mindshield)
+
+/datum/job/fulp/brigdoc/after_spawn(mob/living/H, mob/M, latejoin)
+	if(!latejoin && fulp_spawn)
+		var/turf/T = get_fulp_spawn(fulp_spawn)
+		H.Move(T)
 
 // Brig Doctor clothing and stuff
 

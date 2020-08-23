@@ -1,4 +1,4 @@
-/datum/job/fulp/deputy
+/datum/job/deputy
 	title = "Deputy"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
 	department_head = list("Head of Security")
@@ -81,7 +81,7 @@
 
 /datum/outfit/job/deputy
 	name = "Deputy"
-	jobtype = /datum/job/fulp/deputy
+	jobtype = /datum/job/deputy
 
 	head = /obj/item/clothing/head/beret/sec
 	belt = /obj/item/storage/belt/security/fulp_starter_full
@@ -102,14 +102,14 @@
 	implants = list(/obj/item/implant/mindshield)
 
 
-/datum/job/fulp/deputy/get_access()
+/datum/job/deputy/get_access()
 	var/list/L = list()
 	L |= ..()
 	return L
 
 GLOBAL_LIST_INIT(available_deputy_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, SEC_DEPT_SCIENCE, SEC_DEPT_SUPPLY))
 
-/datum/job/fulp/deputy/after_spawn(mob/living/carbon/human/H, mob/M)
+/datum/job/deputy/after_spawn(mob/living/carbon/human/H, mob/M)
 	. = ..()
 	// Assign dept
 	var/department
