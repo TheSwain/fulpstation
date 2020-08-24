@@ -190,7 +190,7 @@
 
 /datum/uplink_item/stealthy_tools/bluespace_bodybag
 	name = "Bluespace Bodybag"
-	desc = "A bodybag that can have just about any item put into it and be folded back up and put into your pocket."
+	desc = "A piece of bluespace technology stolen from another Nanotransen owned station, it allows pretty much anything to be put into it and folded back up to be put into your back pocket."
 	item = /obj/item/bodybag/bluespace
-	cost = 65
+	cost = 180
 	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
