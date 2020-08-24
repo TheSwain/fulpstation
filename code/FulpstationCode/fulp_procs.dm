@@ -60,3 +60,8 @@
 	for(var/obj/effect/landmark/S in GLOB.xeno_spawn)
 		if(get_area(S) == dept)
 			return S
+
+// The absolute most BASED Theme that ERT could get
+
+/datum/antagonist/ert/proc/finalize_ert()
+	owner.current.playsound_local(get_turf(owner.current), 'sound/Fulpsounds/ERT_Alert.ogg', 100, FALSE, pressure_affected = FALSE)

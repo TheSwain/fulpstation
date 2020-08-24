@@ -20,6 +20,7 @@
 	can_hijack = HIJACK_PREVENT
 
 /datum/antagonist/ert/on_gain()
+	finalize_ert()
 	if(random_names)
 		update_name()
 	if(forge_objectives_for_ert)
