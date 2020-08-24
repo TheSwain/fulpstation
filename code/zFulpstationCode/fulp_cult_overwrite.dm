@@ -74,7 +74,7 @@
 		uses--
 	..()
 
-//This is a new item, the Influencer's blindfold. It's the Zealot's blindfold but with Security huds rather than Medical.
+//This is a Fulp-only version of Zealot's blindfold, which comes with SecurityHUDs so Cultists can tell who is Mindshielded.
 
 /obj/item/clothing/glasses/hud/health/night/fulpcultblind
 	desc = "may Nar'Sie tell you those strong of mind and shield you from the light."
