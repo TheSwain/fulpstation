@@ -187,3 +187,10 @@
 	item = /obj/item/adv_mulligan
 	cost = 7
 	restricted_roles = INFILTRATION_FACTIONS
+
+/datum/uplink_item/stealthy_tools/bluespace_bodybag
+	name = "Bluespace Bodybag"
+	desc = "A bodybag that can have just about any item put into it and be folded back up and put into pocket."
+	item = /obj/item/bodybag/bluespace
+	cost = 65
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
