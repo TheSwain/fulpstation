@@ -73,6 +73,7 @@
 	color = "#8228A0"
 	toxpwr = 3
 	material = /datum/material/plasma
+	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
 	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
@@ -456,6 +457,7 @@
 	color = "#787878"
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 	toxpwr = 0
+	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/toxin/polonium/on_mob_life(mob/living/carbon/M)
 	M.radiation += 4
@@ -787,6 +789,7 @@
 	metabolization_rate = 0.6 * REAGENTS_METABOLISM
 	toxpwr = 0.5
 	taste_description = "spinning"
+	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/toxin/rotatium/on_mob_life(mob/living/carbon/M)
 	if(M.hud_used)
@@ -832,6 +835,7 @@
 	var/acidpwr = 10 //the amount of protection removed from the armour
 	taste_description = "acid"
 	self_consuming = TRUE
+	process_flags = ORGANIC | SYNTHETIC
 
 // ...Why? I mean, clearly someone had to have done this and thought, well, acid doesn't hurt plants, but what brought us here, to this point?
 /datum/reagent/toxin/acid/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
