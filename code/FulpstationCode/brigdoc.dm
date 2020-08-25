@@ -41,7 +41,7 @@
 	head = /obj/item/clothing/head/beret/sec/medical
 	l_hand = /obj/item/storage/firstaid/regular
 	l_pocket = /obj/item/pda/medical
-	r_pocket = /obj/item/melee/classic_baton/telescopic
+	r_pocket = /obj/item/melee/classic_baton/telescopic/medical_baton
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/storage/pill_bottle/paxpsych=1, /obj/item/reagent_containers/glass/bottle/formaldehyde=1)
 
@@ -62,8 +62,8 @@
 /obj/item/clothing/suit/toggle/labcoat/armored
 	name = "armored labcoat"
 	desc = "A specialized labcoat with kevlar treading as to provide protection to field doctors."
-	worn_icon = 'icons/Fulpicons/brigdoccoat.dmi'
-	icon = 'icons/Fulpicons/brigdoccoat.dmi'
+	worn_icon = 'icons/Fulpicons/enricode_icons/brigdoccoat.dmi'
+	icon = 'icons/Fulpicons/enricode_icons/brigdoccoat.dmi'
 	icon_state = "labcoat_brigdoc"
 	inhand_icon_state = "labcoat"
 	blood_overlay_type = "coat"
@@ -83,8 +83,8 @@
 /obj/item/clothing/under/rank/medical/brigdoc // God bless Mith -SgtHunk
 	name = "brig physician's jumpsuit"
 	desc = "It's made of a special fiber that provides minor protection against biohazards and Close Quarters weaponry. It has a brig physician stripe on it."
-	worn_icon = 'icons/fulpicons/brigdocjumpsuit.dmi'
-	icon = 'icons/fulpicons/brigdocsuiticon.dmi'
+	worn_icon = 'icons/fulpicons/enricode_icons/brigdocjumpsuit.dmi'
+	icon = 'icons/fulpicons/enricode_icons/brigdocsuiticon.dmi'
 	icon_state = "jumpsuit_brigdoc"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 30, "acid" = 30)
@@ -96,7 +96,35 @@
 
 /obj/item/clothing/under/rank/medical/brigdoc/skirt
 	name = "brig physician's jumpskirt"
-	worn_icon = 'icons/fulpicons/brigdocjumpsuit.dmi'
+	worn_icon = 'icons/fulpicons/enricode_icons/brigdocjumpsuit.dmi'
 	icon_state = "jumpskirt_brigdoc"
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/melee/classic_baton/telescopic/medical_baton
+	name = "medical baton"
+	desc = "A compact, specialised baton assigned to Brig Physicians. Applies light, harmless disciplining shocks to patients. It could potentially be used to jumpstart a brain with surgery."
+	icon = 'icons/Fulpicons/enricode_icons/medbaton.dmi'
+	icon_state = "medical_baton_0"
+	lefthand_file = 'icons/Fulpicons/enricode_icons/melee_lefthand.dmi'
+	righthand_file = 'icons/Fulpicons/enricode_icons/melee_righthand.dmi'
+	inhand_icon_state = null
+	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL
+	item_flags = NONE
+	force = 0
+
+	cooldown = 30
+	stamina_damage = 40
+	knockdown_time_carbon = 5
+	on = FALSE
+	on_sound = 'sound/weapons/batonextend.ogg'
+	on_stun_sound = 'sound/effects/contractorbatonhit.ogg'
+
+	on_icon_state = "medical_baton_1"
+	off_icon_state = "medical_baton_0"
+	on_inhand_icon_state = "medical_baton"
+	force_on = 10
+	force_off = 0
+	weight_class_on = WEIGHT_CLASS_BULKY
+	bare_wound_bonus = 5

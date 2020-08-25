@@ -27,7 +27,7 @@
 
 /datum/surgery_step/revive
 	name = "shock body"
-	implements = list(/obj/item/shockpaddles = 100, /obj/item/melee/baton = 75, /obj/item/gun/energy = 60)
+	implements = list(/obj/item/shockpaddles = 100, /obj/item/melee/baton = 40, /obj/item/gun/energy = 60, /obj/item/melee/classic_baton/telescopic/medical_baton = 70)
 	repeatable = TRUE
 	time = 120
 
@@ -49,6 +49,13 @@
 			return TRUE
 		else
 			to_chat(user, "<span class='warning'>You need an electrode for this!</span>")
+			return FALSE
+	if(istype(tool, /obj/item/melee/classic_baton/telescopic/medical_baton))
+		var/obj/item/melee/classic_baton/telescopic/medical_baton/M = tool
+		if(M.on)
+			return TRUE
+		else
+			to_chat(user, "<span class='warning'>You need to extend [M] for this!</span>")
 			return FALSE
 
 /datum/surgery_step/revive/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
