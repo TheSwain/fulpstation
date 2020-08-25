@@ -14,13 +14,15 @@
 	var/rip_and_tear = FALSE
 	var/equip_ert = TRUE
 	var/forge_objectives_for_ert = TRUE
+	var/ert_alert = FALSE
 	show_in_antagpanel = FALSE
 	show_to_ghosts = TRUE
 	antag_moodlet = /datum/mood_event/focused
 	can_hijack = HIJACK_PREVENT
 
 /datum/antagonist/ert/on_gain()
-	finalize_ert()
+	if(ert_alert)
+		finalize_ert()
 	if(random_names)
 		update_name()
 	if(forge_objectives_for_ert)
@@ -147,22 +149,27 @@
 
 /datum/antagonist/ert/janitor/party
 	role = "Party Cleaning Service"
+	ert_alert = TRUE
 	outfit = /datum/outfit/centcom/ert/janitor/party
 
 /datum/antagonist/ert/security/party
 	role = "Party Bouncer"
+	ert_alert = TRUE
 	outfit = /datum/outfit/centcom/ert/security/party
 
 /datum/antagonist/ert/engineer/party
 	role = "Party Constructor"
+	ert_alert = TRUE
 	outfit = /datum/outfit/centcom/ert/engineer/party
 
 /datum/antagonist/ert/clown/party
 	role = "Party Comedian"
+	ert_alert = TRUE
 	outfit = /datum/outfit/centcom/ert/clown/party
 
 /datum/antagonist/ert/commander/party
 	role = "Party Coordinator"
+	ert_alert = TRUE
 	outfit = /datum/outfit/centcom/ert/commander/party
 
 /datum/antagonist/ert/create_team(datum/team/ert/new_team)
