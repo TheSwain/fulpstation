@@ -48,6 +48,8 @@ GLOBAL_LIST_INIT(color_list_beefman, list("Very Rare" = "d93356", "Rare" = "da2e
 GLOBAL_LIST_EMPTY(eyes_beefman)//, list( "Peppercorns", "Capers", "Olives" ))
 GLOBAL_LIST_EMPTY(mouths_beefman)//, list( "Smile1", "Smile2", "Frown1", "Frown2", "Grit1", "Grit2" ))
 
+// IPC stuff
+#define isIPC(A) (is_species(A, /datum/species/ipc))
 
 //sec stuff for surreal
 #define SEC_RECORD_BAD_CLEARANCE "ACCESS DENIED: User ID has inadequate clearance."
@@ -63,4 +65,4 @@ GLOBAL_LIST_EMPTY(mouths_beefman)//, list( "Smile1", "Smile2", "Frown1", "Frown2
 //MEDBORG UPDATE -Surrealistik Feb 2020
 
 #define SYNTHFLESH_HUSKFIX_THRESHOLD 40 //For instabitaluri/synthflesh; allows maxed patches to heal burn husking.
-#define FULP_SURGERY_SPEEDMOD_MULTIPLIER 2 //Used to adjust the speed bonus provided by surgery step speed bonuses; higher is faster.
+#define FULP_SURGERY_SPEEDMOD_MULTIPLIER 2 //Used to adjust the speed bonus provided by surgery step speed bonuses; higher is faster.b

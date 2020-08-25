@@ -279,6 +279,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!S["feature_beefmouth"] || S["feature_beefmouth"] == "") // FULP
 		WRITE_FILE(S["feature_beefmouth"]	, "Smile1")
 
+		//IPCs
+	S["feature_ipc_screen"] >> features["ipc_screen"]
+	S["feature_ipc_antenna"] >> features["ipc_antenna"]
+
+	features["ipc_screen"] 	= sanitize_inlist(features["ipc_screen"], GLOB.ipc_screens_list)
+	features["ipc_antenna"] = sanitize_inlist(features["ipc_antenna"], GLOB.ipc_antennas_list)
+
 	//Character
 	READ_FILE(S["real_name"], real_name)
 	READ_FILE(S["gender"], gender)

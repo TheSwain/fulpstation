@@ -710,6 +710,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["spines"] || H.dna.features["spines"] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
 			bodyparts_to_add -= "spines"
 
+	if("ipc_screen")
+		S = GLOB.ipc_screens_list[H.dna.features["ipc_screen"]]
+	if("ipc_antenna")
+		S = GLOB.ipc_antennas_list[H.dna.features["ipc_antenna"]]
+
 	if("waggingspines" in mutant_bodyparts)
 		if(!H.dna.features["spines"] || H.dna.features["spines"] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
 			bodyparts_to_add -= "waggingspines"

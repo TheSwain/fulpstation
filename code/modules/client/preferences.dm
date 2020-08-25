@@ -388,6 +388,33 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br></td>"
 
+			if("ipc_screen" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Screen</h3>"
+
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=ipc_screen;task=input'>[features["ipc_screen"]]</a>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+			if("ipc_antenna" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Antenna</h3>"
+
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=ipc_antenna;task=input'>[features["ipc_antenna"]]</a>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+
+
 			//Mutant stuff
 			var/mutant_category = 0
 
@@ -1226,6 +1253,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					jumpsuit_style = pick(GLOB.jumpsuitlist)
 				if("all")
 					random_character(gender)
+				if("ipc_screen")
+					var/new_ipc_screen
+					new_ipc_screen = input(user, "Choose your character's screen:", "Character Preference") as null|anything in GLOB.ipc_screens_list
+					if(new_ipc_screen)
+						features["ipc_screen"] = new_ipc_screen
+				if("ipc_antenna")
+					var/new_ipc_antenna
+					new_ipc_antenna = input(user, "Choose your character's antenna:", "Character Preference") as null|anything in GLOB.ipc_antennas_list
+					if(new_ipc_antenna)
+						features["ipc_antenna"] = new_ipc_antenna
 
 		if("input")
 
