@@ -63,5 +63,5 @@
 
 // The absolute most BASED Theme that ERT could get
 
-/datum/antagonist/ert/proc/finalize_ert()
-	owner.current.playsound_local(get_turf(owner.current), 'sound/Fulpsounds/ERT_Alert.ogg', 100, FALSE, pressure_affected = FALSE)
+/datum/antagonist/ert/proc/finalize_erp()
+	owner.current.playsound_local(get_turf(owner.current), 'sound/Fulpsounds/ERP_Alert.ogg', 100, FALSE, pressure_affected = FALSE)
