@@ -49,7 +49,28 @@ GLOBAL_LIST_EMPTY(eyes_beefman)//, list( "Peppercorns", "Capers", "Olives" ))
 GLOBAL_LIST_EMPTY(mouths_beefman)//, list( "Smile1", "Smile2", "Frown1", "Frown2", "Grit1", "Grit2" ))
 
 // IPC stuff
+
+//Reagent Metabolization flags, defines the type of reagents that affect this mob
+#define PROCESS_ORGANIC 1		//Only processes reagents with "ORGANIC" or "ORGANIC | SYNTHETIC"
+#define PROCESS_SYNTHETIC 2		//Only processes reagents with "SYNTHETIC" or "ORGANIC | SYNTHETIC"
+
+// Reagent type flags, defines the types of mobs this reagent will affect
+#define ORGANIC 1
+#define SYNTHETIC 2
+
+// More IPC stuff
+
 #define isIPC(A) (is_species(A, /datum/species/ipc))
+
+#define NOREAGENTS     20 //! DO NOT PROCESS REAGENTS
+#define REVIVESBYHEALING 21 // Will revive on heal when healing and total HP > 0.
+#define NOHUSK			22 // Can't be husked.
+#define ROBOTIC_LIMBS	23 //limbs start out as robotic; but also use organic icons. If you want to use the default ones, you'll have to use on_species_gain
+#define NOMOUTH			24
+
+//Taste defines
+#define NO_TASTE_SENSITIVITY -1
+#define DEFAULT_TASTE_SENSITIVITY 15 
 
 //sec stuff for surreal
 #define SEC_RECORD_BAD_CLEARANCE "ACCESS DENIED: User ID has inadequate clearance."

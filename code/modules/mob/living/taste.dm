@@ -13,6 +13,7 @@
 		. = tongue.taste_sensitivity
 	else
 		. = 101 // can't taste anything without a tongue
+		. = NO_TASTE_SENSITIVITY // can't taste anything without a tongue
 
 // non destructively tastes a reagent container
 /mob/living/proc/taste(datum/reagents/from)
