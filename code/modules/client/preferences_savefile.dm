@@ -279,13 +279,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!S["feature_beefmouth"] || S["feature_beefmouth"] == "") // FULP
 		WRITE_FILE(S["feature_beefmouth"]	, "Smile1")
 
-		//IPCs
-	S["feature_ipc_screen"] >> features["ipc_screen"]
-	S["feature_ipc_antenna"] >> features["ipc_antenna"]
-
-	features["ipc_screen"] 	= sanitize_inlist(features["ipc_screen"], GLOB.ipc_screens_list)
-	features["ipc_antenna"] = sanitize_inlist(features["ipc_antenna"], GLOB.ipc_antennas_list)
-
 	//Character
 	READ_FILE(S["real_name"], real_name)
 	READ_FILE(S["gender"], gender)
@@ -318,6 +311,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_lizard_legs"], features["legs"])
 	READ_FILE(S["feature_moth_wings"], features["moth_wings"])
 	READ_FILE(S["feature_moth_markings"], features["moth_markings"])
+	READ_FILE (S["feature_ipc_screen"], features["ipc_screen"]) // FULP
+	READ_FILE (S["feature_ipc_antenna"], features["ipc_antenna"]) // FULP
+	READ_FILE (S["feature_ipc_chassis"], features["ipc_chassis"]) // FULP
 	READ_FILE(S["persistent_scars"] , persistent_scars)
 	READ_FILE(S["scars1"], scars_list["1"])
 	READ_FILE(S["scars2"], scars_list["2"])
@@ -423,6 +419,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["feature_lizard_legs"]	= sanitize_inlist(features["legs"], GLOB.legs_list, "Normal Legs")
 	features["moth_wings"] 	= sanitize_inlist(features["moth_wings"], GLOB.moth_wings_list, "Plain")
 	features["moth_markings"] 	= sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
+	features["ipc_screen"] 	= sanitize_inlist(features["ipc_screen"], GLOB.ipc_screens_list) // FULP
+	features["ipc_antenna"] 	= sanitize_inlist(features["ipc_antenna"], GLOB.ipc_antennas_list) // FULP
+	features["ipc_chassis"] 	= sanitize_inlist(features["ipc_chassis"], GLOB.ipc_chassis_list) // FULP
 
 	persistent_scars = sanitize_integer(persistent_scars)
 	scars_list["1"] = sanitize_text(scars_list["1"])
