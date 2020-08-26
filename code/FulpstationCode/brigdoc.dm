@@ -14,7 +14,7 @@
 	exp_type_department = EXP_TYPE_SECURITY
 	id_icon = 'icons/Fulpicons/cards.dmi'
 	hud_icon = 'icons/Fulpicons/fulphud.dmi'
-	fulp_spawn = /area/security/brig
+	fulp_spawn = /obj/effect/landmark/start/brigdoc
 
 	outfit = /datum/outfit/job/brigdoc
 
@@ -52,10 +52,25 @@
 
 	implants = list(/obj/item/implant/mindshield)
 
+/datum/outfit/plasmaman/brigdoc // Ports Skyrat's Brigdoc's plasmeme outfit
+	name = "Plasmaman Brig Physician"
+
+	head = /obj/item/clothing/head/helmet/space/plasmaman/brigdoc
+	uniform = /obj/item/clothing/under/plasmaman/brigdoc
+	gloves = /obj/item/clothing/gloves/color/plasmaman/white
+
 /datum/job/fulp/brigdoc/after_spawn(mob/living/H, mob/M, latejoin)
 	if(!latejoin && fulp_spawn)
 		var/turf/T = get_fulp_spawn(fulp_spawn)
 		H.Move(T)
+
+//Here we try to get that brig doc landmark
+/obj/effect/landmark/start/security_officer/Initialize()
+	..()
+	var/turf/T = get_turf(src)
+	new /obj/effect/landmark/start/brigdoc(T)
+	qdel(src)
+
 
 // Brig Doctor clothing and stuff
 
@@ -100,6 +115,32 @@
 	icon_state = "jumpskirt_brigdoc"
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+// BRIG PHYSICIAN PLASMAMAN CLOTHING BEGINS
+
+/obj/item/clothing/under/plasmaman/brigdoc
+	name = "brig physician's envirosuit"
+	desc = "A lightly armoured envirosuit for our plasmamen Brig Physicians."
+	worn_icon = 'icons/fulpicons/enricode_icons/brigdocjumpsuit.dmi'
+	icon = 'icons/fulpicons/enricode_icons/brigdocsuiticon.dmi'
+	icon_state = "envirosuit_brigdoc"
+	permeability_coefficient = 0.5
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 0, "fire" = 95, "acid" = 95)
+	sensor_mode = SENSOR_COORDS
+	random_sensor = FALSE
+	fulp_item = TRUE
+
+/obj/item/clothing/head/helmet/space/plasmaman/brigdoc
+	name = "brig physician's plasma envirosuit helmet"
+	desc = "A plasmaman containment helmet for brig physicians."
+	icon = 'icons/fulpicons/enricode_icons/plasmabrigdoc.dmi'
+	worn_icon = 'icons/fulpicons/enricode_icons/pbrigdoc.dmi'
+	icon_state = "brigdoc_envirohelm"
+	inhand_icon_state = "security_envirohelm"
+
+// BRIG PHYSICIAN PLASMAMAN CLOTHING ENDS
+
+// Medical Baton
 
 /obj/item/melee/classic_baton/telescopic/medical_baton
 	name = "medical baton"

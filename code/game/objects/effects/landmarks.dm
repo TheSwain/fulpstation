@@ -109,6 +109,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Security Officer"
 	icon_state = "Security Officer"
 
+/obj/effect/landmark/start/brigdoc
+	name = "Brig Physician"
+
 /obj/effect/landmark/start/botanist
 	name = "Botanist"
 	icon_state = "Botanist"

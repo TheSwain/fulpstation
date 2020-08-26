@@ -128,9 +128,12 @@
 
 		if("Mime")
 			O = new /datum/outfit/plasmaman/mime
-		
+
 		if("Deputy")									//FULP
 			O = new /datum/outfit/plasmaman/security	//FULP - put your other jobs between Mime and Clown
+
+		if("Brig Physician")
+			O = new /datum/outfit/plasmaman/brigdoc
 
 		if("Clown")
 			O = new /datum/outfit/plasmaman/clown
