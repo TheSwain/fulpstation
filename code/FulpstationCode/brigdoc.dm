@@ -14,7 +14,7 @@
 	exp_type_department = EXP_TYPE_SECURITY
 	id_icon = 'icons/Fulpicons/cards.dmi'
 	hud_icon = 'icons/Fulpicons/fulphud.dmi'
-	fulp_spawn = /obj/effect/landmark/start/brigdoc
+	fulp_spawn = /obj/effect/landmark/start/brigdoc // idek if this works, just a shot in the dark. but don't wanna break it
 
 	outfit = /datum/outfit/job/brigdoc
 
@@ -69,8 +69,6 @@
 	..()
 	var/turf/T = get_turf(src)
 	new /obj/effect/landmark/start/brigdoc(T)
-	qdel(src)
-
 
 // Brig Doctor clothing and stuff
 
