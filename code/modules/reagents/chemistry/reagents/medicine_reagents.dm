@@ -364,17 +364,6 @@
 			M.reagents.remove_reagent(R.type,1)
 	..()
 
-/datum/reagent/medicine/liquid_solder
-	name = "Liquid Solder"
-	description = "Repairs brain damage in synthetics."
-	color = "#727272"
-	taste_description = "metallic"
-	process_flags = SYNTHETIC
-
-/datum/reagent/medicine/liquid_solder/on_mob_life(mob/living/M)
-	M.adjustBrainLoss(-3*REM)
-	..()
-
 /datum/reagent/medicine/omnizine
 	name = "Omnizine"
 	description = "Slowly heals all damage types. Overdose will cause damage in all types instead."
@@ -826,6 +815,7 @@
 	name = "Mannitol"
 	description = "Efficiently restores brain damage."
 	color = "#A0A0A0" //mannitol is light grey, neurine is lighter grey
+	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/medicine/mannitol/on_mob_life(mob/living/carbon/C)
 	C.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2*REM)
