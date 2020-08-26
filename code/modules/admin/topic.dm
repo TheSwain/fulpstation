@@ -2021,6 +2021,14 @@
 			SD.r_code = code
 		message_admins("[key_name_admin(usr)] has set the self-destruct \
 			code to \"[code]\".")
+	else if(href_list["spawn_ert"])
+		if(!check_rights(R_ADMIN))
+			return
+		makeEmergencyresponseteam()
+		message_admins("[key_name_admin(usr)] is creating an emergency \
+		response team.")
+
+
 
 	else if(href_list["add_station_goal"])
 		if(!check_rights(R_ADMIN))

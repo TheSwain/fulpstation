@@ -331,6 +331,20 @@
 				priority_announce("The codes for the on-station nuclear self-destruct have been requested by [usr]. Confirmation or denial of this request will be sent shortly.", "Nuclear Self-Destruct Codes Requested",'sound/ai/commandreport.ogg')
 				CM.lastTimeUsed = world.time
 
+		if("ertrequest") //Finally, send in the SWAT
+			if(authenticated==2)
+				if(!checkCCcooldown())
+					to_chat(usr, "<span class='warning'>Arrays recycling. Please stand by.</span>")
+					return
+				var/input = stripped_input(usr, "Please enter the reason for requesting personnel from CentCom.  Please be aware that this process is very expensive, and abuse will lead to... termination.  Transmission does not guarantee a response.", "Send a message to CentCom.", "")
+				if(!input || !(usr in view(1,src)) || !checkCCcooldown())
+					return
+				ERT_request(input, usr)
+				to_chat(usr, "<span class='notice'>Request sent.</span>")
+				usr.log_message("has requested CentCom personnel from CentCom with reason \"[input]\"", LOG_SAY)
+				CM.lastTimeUsed = world.time
+
+
 
 		// AI interface
 		if("ai-main")
@@ -494,6 +508,7 @@
 					dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=nukerequest'>Request Nuclear Authentication Codes</A> \]"
 					if(!(obj_flags & EMAGGED))
 						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=MessageCentCom'>Send Message to CentCom</A> \]"
+						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=ertrequest'>Request CentCom personnel</A> \]"
 					else
 						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=MessageSyndicate'>Send Message to \[UNKNOWN\]</A> \]"
 						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=RestoreBackup'>Restore Backup Routing Data</A> \]"

@@ -64,3 +64,7 @@ GLOBAL_LIST_EMPTY(mouths_beefman)//, list( "Smile1", "Smile2", "Frown1", "Frown2
 
 #define SYNTHFLESH_HUSKFIX_THRESHOLD 40 //For instabitaluri/synthflesh; allows maxed patches to heal burn husking.
 #define FULP_SURGERY_SPEEDMOD_MULTIPLIER 2 //Used to adjust the speed bonus provided by surgery step speed bonuses; higher is faster.
+
+//For our Mods to be able to call ERT :) -SgtHunk
+
+#define ADMIN_ERT "(<a href='?_src_=holder;[HrefToken(TRUE)];spawn_ert=1'>ERT</a>)"

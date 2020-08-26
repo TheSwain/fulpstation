@@ -60,3 +60,12 @@
 	for(var/obj/effect/landmark/S in GLOB.xeno_spawn)
 		if(get_area(S) == dept)
 			return S
+
+// ERT time?
+
+/proc/ERT_request(text , mob/Sender)
+	var/msg = copytext_char(sanitize(text), 1, MAX_MESSAGE_LEN)
+	msg = "<span class='adminnotice'><b><font color=orange>CENTCOM:</font>[ADMIN_FULLMONTY(Sender)] [ADMIN_CENTCOM_REPLY(Sender)] [ADMIN_ERT]:</b> [msg]</span>"
+	to_chat(GLOB.admins, msg, confidential = TRUE)
+	for(var/obj/machinery/computer/communications/C in GLOB.machines)
+		C.overrideCooldown()
