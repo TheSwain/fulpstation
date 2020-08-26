@@ -116,7 +116,7 @@
 			worn_icon = 'icons/mob/feet_fulp.dmi'
 			inhand_icon_state = "cedigi_magboots"
 			desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer. They are set to fit digitigrade legs."
-			to_chat(user, "<span class='notice'>You set the advance magboots to Digitigrade mode [src].</span>")
+			to_chat(user, "<span class='notice'>You set the advanced magboots to Digitigrade mode [src].</span>")
 		else
 			flags_inv = NOT_DIGITIGRADE
 			icon = 'icons/obj/clothing/shoes.dmi'
@@ -125,6 +125,6 @@
 			worn_icon = 'icons/mob/clothing/feet.dmi'
 			inhand_icon_state = "advmag"
 			desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer. They are set to fit normal legs."
-			to_chat(user, "<span class='notice'>You set the advance magboots to Normal mode [src].</span>")
+			to_chat(user, "<span class='notice'>You set the advanced magboots to Normal mode [src].</span>")
 	I.play_tool_sound(src)
 	. = ..()
