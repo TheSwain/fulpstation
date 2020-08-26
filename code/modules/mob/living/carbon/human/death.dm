@@ -1,4 +1,5 @@
 GLOBAL_LIST_EMPTY(dead_players_during_shift)
+/mob/living/carbon/human/gib_animation()
 	switch(dna.species.species_gibs)
 		if("human")
 			new /obj/effect/temp_visual/gib_animation(loc, "gibbed-h")

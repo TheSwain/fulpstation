@@ -94,11 +94,6 @@
 		if(target_zone != I.zone || target.getorganslot(I.slot))
 			to_chat(user, "<span class='warning'>There is no room for [I] in [target]'s [parse_zone(target_zone)]!</span>")
 			return -1
-		var/obj/item/organ/meatslab = tool
-		if(!meatslab.useable)
-			to_chat(user, "<span class='warning'>[I] seems to have been chewed on, you can't use this!</span>")
-			return -1
-		display_results(user, target, "<span class='notice'>You begin to insert [tool] into [target]'s [parse_zone(target_zone)]...</span>",
 	if(istype(tool, /obj/item/organ/brain/positron))
 		var/obj/item/bodypart/affected = target.get_bodypart(check_zone(target_zone))
 		if(!affected)
@@ -116,7 +111,11 @@
 			return -1
 		user.visible_message("<span class='notice'>[user] begins to insert [tool] into [target]'s [parse_zone(target_zone)].</span>",
 			"<span class='notice'>You begin to insert [tool] into [target]'s [parse_zone(target_zone)]...</span>")
-			
+		var/obj/item/organ/meatslab = tool
+		if(!meatslab.useable)
+			to_chat(user, "<span class='warning'>[I] seems to have been chewed on, you can't use this!</span>")
+			return -1
+		display_results(user, target, "<span class='notice'>You begin to insert [tool] into [target]'s [parse_zone(target_zone)]...</span>",
 			"<span class='notice'>[user] begins to insert [tool] into [target]'s [parse_zone(target_zone)].</span>",
 			"<span class='notice'>[user] begins to insert something into [target]'s [parse_zone(target_zone)].</span>")
 
