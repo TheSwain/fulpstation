@@ -121,6 +121,9 @@
 /obj/item/clothing/under/rank/cargo/miner/lavaland
 	mutantrace_variation = MUTANTRACE_VARIATION
 	fulp_digisuit = TRUE
+/obj/item/clothing/under/medical/brigdoc
+	mutantrace_variation = MUTANTRACE_VARIATION
+	fulp_digisuit = TRUE
 
 /obj/item/clothing/under/rank/civilian/bartender/skirt
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
@@ -216,6 +219,9 @@
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 	fulp_digisuit = FALSE
 /obj/item/clothing/under/rank/cargo/qm/skirt
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	fulp_digisuit = FALSE
+/obj/item/clothing/under/medical/brigdoc/skirt
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 	fulp_digisuit = FALSE
 /*

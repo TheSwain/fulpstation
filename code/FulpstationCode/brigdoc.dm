@@ -105,14 +105,12 @@
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
 	fulp_item = TRUE
-	mutantrace_variation = MUTANTRACE_VARIATION
 
 /obj/item/clothing/under/rank/medical/brigdoc/skirt
 	name = "brig physician's jumpskirt"
 	worn_icon = 'icons/fulpicons/enricode_icons/brigdocjumpsuit.dmi'
 	icon_state = "jumpskirt_brigdoc"
 	fitted = FEMALE_UNIFORM_TOP
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
 
 // BRIG PHYSICIAN PLASMAMAN CLOTHING BEGINS
 

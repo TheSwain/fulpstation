@@ -203,7 +203,7 @@
 		if("Assistant")
 			newSash = new /obj/item/clothing/under/bodysash()
 		// Security
-		if("Security Officer", "Warden", "Detective", "Head of Security", "Deputy")
+		if("Security Officer", "Warden", "Detective", "Head of Security", "Deputy", "Brig Physician")
 			newSash = new /obj/item/clothing/under/bodysash/security()
 		// Medical
 		if("Medical Doctor", "Chemist", "Geneticist", "Virologist", "Chief Medical Officer", "Paramedic")
