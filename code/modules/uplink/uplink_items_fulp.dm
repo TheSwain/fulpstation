@@ -101,6 +101,12 @@
 	item = /obj/item/clothing/shoes/digicombat/noslip
 	restricted_species = list("lizard")
 
+/datum/uplink_item/implants/welding
+	name = "Welding Shield Eyes"
+	desc = "These cybernetic eyes will give you protection to flashing lights. Comes with a free autosurgeon."
+	item = /obj/item/autosurgeon/syndicate/welding_eyes
+	cost = 6
+
 /obj/item/clothing/shoes/digicombat/noslip
 	desc = "Robust combat boots especially for lizardmen. Perfect for walking over piled human corpses. This pair of shoes is specifically designed to prevent slipping on wet surfaces."
 	clothing_flags = NOSLIP

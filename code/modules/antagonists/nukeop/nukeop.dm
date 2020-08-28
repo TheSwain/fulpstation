@@ -24,7 +24,7 @@
 	remove_antag_hud(antag_hud_type, M)
 	REMOVE_TRAIT(owner, TRAIT_DISK_VERIFIER, NUKEOP_TRAIT)
 
-/datum/antagonist/nukeop/proc/equip_op()
+/*/ /datum/antagonist/nukeop/proc/equip_op() // Commented out for Alien Nuke Ops in Fulpstationcode
 	if(!ishuman(owner.current))
 		return
 	var/mob/living/carbon/human/H = owner.current
@@ -32,7 +32,7 @@
 	H.set_species(/datum/species/human) //Plasamen burn up otherwise, and lizards are vulnerable to asimov AIs
 
 	H.equipOutfit(nukeop_outfit)
-	return TRUE
+	return TRUE */
 
 /datum/antagonist/nukeop/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/ops.ogg',100,0)
@@ -98,14 +98,14 @@
 	if(nuke_team)
 		objectives |= nuke_team.objectives
 
-/datum/antagonist/nukeop/proc/move_to_spawnpoint()
+/*/ /datum/antagonist/nukeop/proc/move_to_spawnpoint() // Commented out for Alien Ops
 	var/team_number = 1
 	if(nuke_team)
 		team_number = nuke_team.members.Find(owner)
 	owner.current.forceMove(GLOB.nukeop_start[((team_number - 1) % GLOB.nukeop_start.len) + 1])
 
 /datum/antagonist/nukeop/leader/move_to_spawnpoint()
-	owner.current.forceMove(pick(GLOB.nukeop_leader_start))
+	owner.current.forceMove(pick(GLOB.nukeop_leader_start)) */
 
 /datum/antagonist/nukeop/create_team(datum/team/nuclear/new_team)
 	if(!new_team)
