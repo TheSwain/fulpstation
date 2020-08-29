@@ -91,11 +91,12 @@
 	var/mob/living/user = owner
 
 	if (istype(target))
-		ADD_TRAIT(target, TRAIT_MUTE, "bloodsucker_mesmerize")
+		return
 
 	if (do_mob(user, target, 40, 0, TRUE, extra_checks=CALLBACK(src, .proc/ContinueActive, user, target)))
 		PowerActivatedSuccessfully() // PAY COST! BEGIN COOLDOWN!
 		var/power_time = 90 + level_current * 15
+		ADD_TRAIT(target, TRAIT_MUTE, "bloodsucker_mesmerize")
 		to_chat(user, "<span class='notice'>[target] is fixed in place by your hypnotic gaze.</span>")
 		target.Immobilize(power_time)
 		//target.silent += power_time / 10 // Silent isn't based on ticks.
