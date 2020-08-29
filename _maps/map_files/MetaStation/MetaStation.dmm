@@ -347,7 +347,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/maintenance/port/fore)
 "aaK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -356,7 +356,7 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/cable,
 /turf/open/floor/plating,
-/area/space)
+/area/maintenance/port/fore)
 "aaL" = (
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
@@ -487,7 +487,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
-/area/space)
+/area/maintenance/port/fore)
 "aaS" = (
 /obj/structure/sink/kitchen{
 	desc = "A sink used for washing one's hands and face. It looks rusty and home-made";
@@ -623,31 +623,24 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
-/area/space)
+/area/maintenance/port/fore)
 "abh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/space)
+/area/maintenance/port/fore)
 "abi" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/space)
-"abj" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/space)
+/obj/structure/lattice,
+/turf/closed/wall,
+/area/maintenance/port/fore)
 "abk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/cable,
 /turf/open/floor/plating,
-/area/space)
+/area/maintenance/port/fore)
 "abl" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access_txt = "12"
@@ -655,7 +648,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
-/area/space)
+/area/maintenance/port/fore)
 "abm" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
@@ -7004,17 +6997,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
-"anr" = (
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/space)
 "ans" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood,
 /area/maintenance/port/aft)
-"ant" = (
-/turf/open/floor/plating,
-/area/space)
 "anu" = (
 /obj/machinery/vending/security,
 /obj/machinery/firealarm{
@@ -7479,12 +7465,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
-"aow" = (
-/obj/structure/chair{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/space)
 "aox" = (
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
@@ -7893,7 +7873,7 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
-/area/space)
+/area/maintenance/port/fore)
 "app" = (
 /obj/structure/sign/warning/vacuum/external{
 	pixel_x = 32
@@ -8494,7 +8474,7 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/closet/emcloset,
 /turf/open/floor/plating,
-/area/space)
+/area/maintenance/port/fore)
 "aqD" = (
 /obj/machinery/space_heater,
 /turf/open/floor/plating{
@@ -8736,7 +8716,7 @@
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plating,
-/area/space)
+/area/maintenance/port/fore)
 "arf" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/security{
@@ -8826,7 +8806,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/maintenance/port/fore)
 "aro" = (
 /obj/structure/chair{
 	dir = 1
@@ -10058,10 +10038,6 @@
 	},
 /turf/open/floor/engine,
 /area/science/xenobiology)
-"atX" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/space)
 "atY" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -10353,19 +10329,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
-"auM" = (
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
-	},
-/area/space)
 "auN" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/maintenance/port)
-"auO" = (
-/obj/structure/closet/firecloset,
-/turf/open/floor/plating,
-/area/space)
 "auQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/door/airlock/maintenance{
@@ -10380,7 +10347,7 @@
 /obj/item/poster/random_contraband,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
-/area/space)
+/area/maintenance/port/fore)
 "auS" = (
 /obj/structure/lattice,
 /obj/structure/grille,
@@ -11559,9 +11526,6 @@
 	},
 /turf/open/floor/wood,
 /area/crew_quarters/dorms)
-"axG" = (
-/turf/open/floor/plating,
-/area/space/nearstation)
 "axH" = (
 /obj/structure/grille,
 /turf/open/space/basic,
@@ -69779,10 +69743,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plating,
 /area/maintenance/aft/secondary)
-"fUe" = (
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/space)
 "fUj" = (
 /obj/structure/lattice,
 /turf/closed/wall,
@@ -93671,29 +93631,29 @@ aaa
 aaa
 aaa
 axH
-aaD
+dne
 aaJ
 aaK
 aaR
 abg
 abh
-abi
-abi
-abi
-abi
-abj
-abi
-abi
+asj
+asj
+asj
+asj
+aJi
+asj
+asj
 abh
-abi
-abi
-abi
-abi
-abi
-abi
-abi
-abi
-abi
+asj
+asj
+asj
+asj
+asj
+asj
+asj
+asj
+asj
 abk
 abl
 abm
@@ -93928,28 +93888,28 @@ aaf
 aaf
 aaf
 axH
-axk
-axG
-fUe
-aaD
-axG
-axG
-aow
+abi
+aRG
+doJ
+dne
+aRG
+aRG
+aoc
 apo
-aaD
-jJv
-aaD
+dne
+aip
+dne
 aqC
 ard
 arn
-ant
-ant
-atX
-auM
-auO
+aRG
+aRG
+cWA
+auG
+dnd
 auR
-anr
-ant
+dnk
+aRG
 aip
 aqD
 dne
