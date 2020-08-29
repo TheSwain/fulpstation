@@ -702,8 +702,8 @@
 /area/maintenance/central)
 "abq" = (
 /obj/machinery/light_switch{
-	pixel_y = -25;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -1552,6 +1552,7 @@
 	desc = "Make sure you give him plenty of bellyrubs, or he'll melt your skin off.";
 	name = "\improper Keeper of the Ark"
 	},
+/obj/item/blackmarket_uplink,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
 "acT" = (
@@ -2664,6 +2665,7 @@
 	pixel_x = -29;
 	pixel_y = 23
 	},
+/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/heads/hos)
 "afj" = (
@@ -8053,7 +8055,9 @@
 	},
 /obj/item/organ/heart,
 /obj/item/soulstone/anybody/chaplain,
-/obj/item/rupee,
+/obj/item/rupee{
+	desc = "This Strange Crystel glows faintly with some sort of Divine Power"
+	},
 /turf/open/floor/plasteel/cult,
 /area/chapel/office)
 "apJ" = (
@@ -10792,6 +10796,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "avK" = (
@@ -10801,12 +10806,15 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "avL" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "avM" = (
@@ -11306,6 +11314,7 @@
 "axh" = (
 /obj/structure/closet/secure_closet/warden,
 /obj/item/gun/energy/laser,
+/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
 "axi" = (
@@ -13759,6 +13768,11 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/safe/floor,
 /obj/item/reagent_containers/food/snacks/fortunecookie,
+/obj/item/a_gift/anything,
+/obj/item/a_gift/anything,
+/obj/item/a_gift/anything,
+/obj/item/a_gift/anything,
+/obj/item/a_gift/anything,
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "aDn" = (
@@ -16634,8 +16648,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/machinery/microwave{
-	pixel_y = 6;
-	pixel_x = 0
+	pixel_x = 0;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/warehouse)
@@ -16683,6 +16697,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/item/a_gift/anything,
 /turf/open/floor/plasteel,
 /area/quartermaster/warehouse)
 "aLd" = (
@@ -17751,8 +17766,8 @@
 /obj/structure/cable,
 /obj/machinery/computer/security/telescreen/interrogation{
 	name = "isolation room monitor";
-	pixel_y = 31;
-	network = list("isolation")
+	network = list("isolation");
+	pixel_y = 31
 	},
 /turf/open/floor/plasteel,
 /area/security/prison)
@@ -17781,6 +17796,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/bot,
+/obj/item/a_gift/anything,
 /turf/open/floor/plasteel,
 /area/quartermaster/warehouse)
 "aNR" = (
@@ -18823,8 +18839,8 @@
 	pixel_y = 15
 	},
 /obj/item/stack/cable_coil{
-	pixel_y = 18;
-	pixel_x = 0
+	pixel_x = 0;
+	pixel_y = 18
 	},
 /obj/machinery/requests_console{
 	department = "Tool Storage";
@@ -18896,6 +18912,7 @@
 	id = "AI";
 	pixel_y = -24
 	},
+/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "aQE" = (
@@ -19426,6 +19443,7 @@
 /obj/structure/closet/crate{
 	icon_state = "crateopen"
 	},
+/obj/item/a_gift/anything,
 /turf/open/floor/plasteel,
 /area/quartermaster/warehouse)
 "aRT" = (
@@ -20415,8 +20433,8 @@
 	pixel_x = -8
 	},
 /obj/item/assembly/prox_sensor{
-	pixel_y = 12;
-	pixel_x = 0
+	pixel_x = 0;
+	pixel_y = 12
 	},
 /obj/machinery/light{
 	dir = 4
@@ -25894,8 +25912,8 @@
 	pixel_y = 9
 	},
 /obj/item/cartridge/quartermaster{
-	pixel_y = 0;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 0
 	},
 /obj/item/cartridge/quartermaster{
 	pixel_x = 5;
@@ -26848,8 +26866,8 @@
 /area/quartermaster/sorting)
 "biI" = (
 /obj/machinery/firealarm{
-	pixel_y = 0;
-	pixel_x = 30
+	pixel_x = 30;
+	pixel_y = 0
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
@@ -27125,6 +27143,7 @@
 	dir = 1;
 	pixel_y = 2
 	},
+/obj/item/a_gift/anything,
 /turf/open/floor/wood,
 /area/crew_quarters/heads/captain/private)
 "bjk" = (
@@ -27557,8 +27576,8 @@
 "bku" = (
 /obj/machinery/disposal/bin,
 /obj/machinery/firealarm{
-	pixel_y = 0;
-	pixel_x = -31
+	pixel_x = -31;
+	pixel_y = 0
 	},
 /obj/machinery/light{
 	dir = 8
@@ -32614,6 +32633,7 @@
 /area/crew_quarters/heads/hop)
 "bwk" = (
 /obj/structure/closet/secure_closet/hop,
+/obj/item/a_gift/anything,
 /turf/open/floor/wood,
 /area/crew_quarters/heads/hop)
 "bwl" = (
@@ -48608,6 +48628,7 @@
 	pixel_y = 31
 	},
 /obj/item/radio/headset/headset_sci,
+/obj/item/a_gift/anything,
 /turf/open/floor/plasteel,
 /area/science/lab)
 "chj" = (
@@ -51340,6 +51361,8 @@
 	dir = 8
 	},
 /obj/item/screwdriver,
+/obj/item/a_gift/anything,
+/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/heads/cmo)
 "cnH" = (
@@ -53442,6 +53465,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
+/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/dark,
 /area/medical/storage)
 "csl" = (
@@ -55047,6 +55071,7 @@
 /obj/machinery/keycard_auth{
 	pixel_y = -24
 	},
+/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/cafeteria{
 	dir = 5
 	},
@@ -69754,6 +69779,10 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plating,
 /area/maintenance/aft/secondary)
+"fUe" = (
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/space)
 "fUj" = (
 /obj/structure/lattice,
 /turf/closed/wall,
@@ -71073,9 +71102,9 @@
 	dir = 8
 	},
 /obj/structure/sink{
-	pixel_y = 29;
 	dir = 2;
-	pixel_x = 0
+	pixel_x = 0;
+	pixel_y = 29
 	},
 /mob/living/simple_animal/mouse/brown/tom,
 /turf/open/floor/plating,
@@ -72227,9 +72256,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/button/flasher{
-	pixel_y = 8;
 	id = "IsolationFlash";
-	pixel_x = -23
+	pixel_x = -23;
+	pixel_y = 8
 	},
 /obj/structure/cable,
 /turf/open/floor/plasteel,
@@ -72567,6 +72596,7 @@
 	},
 /obj/item/storage/box/evidence,
 /obj/item/flashlight/seclite,
+/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/grimy,
 /area/security/detectives_office)
 "kLl" = (
@@ -75161,6 +75191,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "pzC" = (
@@ -75245,10 +75276,10 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	name = "Panic Button";
-	pixel_y = -24;
 	id = "PermaLockdown";
+	name = "Panic Button";
 	pixel_x = -1;
+	pixel_y = -24;
 	req_access_txt = "2"
 	},
 /obj/structure/cable,
@@ -76472,6 +76503,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
+"rIv" = (
+/obj/structure/cable,
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "rJk" = (
 /obj/machinery/door/window/southleft{
 	name = "Maximum Security Test Chamber";
@@ -91071,7 +91106,7 @@ aaf
 aaf
 aaf
 anS
-anS
+rIv
 anS
 anS
 azg
@@ -91328,7 +91363,7 @@ anS
 aaf
 aqB
 anS
-anS
+rIv
 aaf
 anS
 anS
@@ -91585,7 +91620,7 @@ anS
 aaf
 anS
 auC
-anS
+rIv
 anS
 ayf
 anS
@@ -91842,7 +91877,7 @@ anS
 anS
 anS
 anS
-anS
+rIv
 anS
 anS
 anS
@@ -92099,7 +92134,7 @@ anS
 anS
 aaf
 aaf
-anS
+rIv
 anS
 aaf
 anS
@@ -92356,7 +92391,7 @@ anS
 aaf
 aaf
 aqB
-anS
+rIv
 aaf
 aaf
 aaf
@@ -93895,7 +93930,7 @@ aaf
 axH
 axk
 axG
-ant
+fUe
 aaD
 axG
 axG
