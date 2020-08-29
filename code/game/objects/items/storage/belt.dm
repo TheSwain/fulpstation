@@ -353,7 +353,7 @@
 
 /obj/item/storage/belt/champion
 	name = "championship belt"
-	desc = "Proves to the world that you are the strongest!"
+	desc = "It shines bright, with a 'QM' engraved on the side, perhaps this is a relic of their past?"
 	icon_state = "championbelt"
 	inhand_icon_state = "championbelt"
 	worn_icon_state = "championbelt"

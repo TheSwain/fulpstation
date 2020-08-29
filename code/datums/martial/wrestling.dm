@@ -467,8 +467,12 @@
 	if(!ishuman(user))
 		return
 	if(slot == ITEM_SLOT_BELT)
-		var/mob/living/carbon/human/H = user
-		style.teach(H,1)
+		var/mob/living/carbon/human/U = user
+		if(U.job in list("Quartermaster"))
+			var/mob/living/carbon/human/H = user
+			style.teach(H,1)
+		else
+			return
 	return
 
 /obj/item/storage/belt/champion/dropped(mob/user)
