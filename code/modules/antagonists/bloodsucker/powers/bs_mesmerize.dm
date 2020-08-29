@@ -91,7 +91,7 @@
 	var/mob/living/user = owner
 
 	if (istype(target))
-		return
+		to_chat(user, "<span class='notice'>You attempt to hypnotically gaze [target].</span>")
 
 	if (do_mob(user, target, 40, 0, TRUE, extra_checks=CALLBACK(src, .proc/ContinueActive, user, target)))
 		PowerActivatedSuccessfully() // PAY COST! BEGIN COOLDOWN!
