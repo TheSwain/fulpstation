@@ -105,6 +105,15 @@
 	desc = "Robust combat boots especially for lizardmen. Perfect for walking over piled human corpses. This pair of shoes is specifically designed to prevent slipping on wet surfaces."
 	clothing_flags = NOSLIP
 
+/datum/uplink_item/role_restricted/clockwork
+	name = "Justiciar's Follower Kit"
+	desc = "Before a select Cult vanished from the system, \
+		they left the Syndicate a small gift in case we \
+		needed their help. This might be useful to you."
+	cost = 20
+	item = /obj/item/storage/box/syndicate/bundle_clock
+	restricted_roles = list("Chaplain")
+
 ////////////// INFILTRATION GAMEMODE ITEMS //////////////
 #define INFILTRATION_FACTIONS list("Syndicate Infiltrator", "Cybersun Infiltrator", "Gorlex Infiltrator", "Tiger Co. Infiltrator", "MI13 Infiltrator")
 //This define exists for midround spawned infiltrators and dynamic mode.
