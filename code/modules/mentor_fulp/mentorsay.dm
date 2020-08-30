@@ -5,6 +5,11 @@
 		to_chat(src, "<span class='danger'>Error: Only mentors and administrators may use this command.</span>", confidential = TRUE)
 		return
 
+	//disables msay if ahelp muted
+	if(prefs.muted & MUTE_ADMINHELP)
+		to_chat(src, "<span class='danger'>Error: Mentor-Say: You cannot send msays (Muted).</span>", confidential = TRUE)
+	return
+
 	msg = emoji_parse(copytext(sanitize(msg), 1, MAX_MESSAGE_LEN))
 	if(!msg)
 		return

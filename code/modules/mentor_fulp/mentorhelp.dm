@@ -14,6 +14,11 @@
 	if(!msg)	return
 	if(!mob)	return						//this doesn't happen
 
+	//disables mhelping if ahelp muted
+	if(prefs.muted & MUTE_ADMINHELP)
+		to_chat(src, "<span class='danger'>Error: Admin-PM: You cannot send adminhelps (Muted).</span>", confidential = TRUE)
+	return
+
 	var/show_char = CONFIG_GET(flag/mentors_mobname_only)
 	var/mentor_msg = "<span class='mentornotice'><b><font color='purple'>MENTORHELP:</b> <b>[key_name_mentor(src, 1, 0, 1, show_char)]</b>: [msg]</font></span>"
 	log_mentor("MENTORHELP: [key_name_mentor(src, 0, 0, 0, 0)]: [msg]")
