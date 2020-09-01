@@ -300,11 +300,11 @@
 
 			switch(rand(1,3))
 				if (2)
-					D.adjustBruteLoss(rand(20,30))
+					D.adjustBruteLoss(rand(15,25))
 				if (3)
 					D.ex_act(EXPLODE_LIGHT)
 				else
-					D.adjustBruteLoss(rand(10,20))
+					D.adjustBruteLoss(rand(10,15))
 		else
 			D.ex_act(EXPLODE_LIGHT)
 
@@ -340,7 +340,7 @@
 		to_chat(A, "<span class='danger'>You headbutt [D]!</span>")
 		D.adjustBruteLoss(rand(10,20))
 		playsound(A.loc, "swing_hit", 50, TRUE)
-		D.Unconscious(20)
+		D.Unconscious(10)
 	log_combat(A, D, "headbutted")
 
 /datum/martial_art/wrestling/proc/kick(mob/living/carbon/human/A, mob/living/carbon/human/D)
@@ -354,11 +354,11 @@
 					"<span class='userdanger'>You're roundhouse-kicked by [A]!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
 	to_chat(A, "<span class='danger'>You roundhouse-kick [D]!</span>")
 	playsound(A.loc, "swing_hit", 50, TRUE)
-	D.adjustBruteLoss(rand(10,20))
+	D.adjustBruteLoss(rand(10,15))
 
 	var/turf/T = get_edge_target_turf(A, get_dir(A, get_step_away(D, A)))
 	if (T && isturf(T))
-		D.Paralyze(20)
+		D.Paralyze(15)
 		D.throw_at(T, 3, 2)
 	log_combat(A, D, "roundhouse-kicked")
 
@@ -430,7 +430,7 @@
 		else
 			D.adjustBruteLoss(rand(20,30))
 
-		D.Paralyze(40)
+		D.Paralyze(20)
 
 		A.pixel_y = 0
 
@@ -455,7 +455,7 @@
 	D.visible_message("<span class='danger'>[A] gets [D] in a cinch!</span>", \
 					"<span class='userdanger'>You're put into a cinch by [A]!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", COMBAT_MESSAGE_RANGE, A)
 	to_chat(A, "<span class='danger'>You get [D] in a cinch!</span>")
-	D.Stun(rand(60,100))
+	D.Stun(rand(40,80))
 	log_combat(A, D, "cinched")
 	return 1
 
