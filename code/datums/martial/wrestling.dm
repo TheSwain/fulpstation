@@ -44,6 +44,7 @@
 /datum/action/slam
 	name = "Slam (Cinch) - Slam a grappled opponent into the floor."
 	button_icon_state = "wrassle_slam"
+	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
 /datum/action/slam/Trigger()
 	if(owner.incapacitated())
@@ -56,6 +57,7 @@
 /datum/action/throw_wrassle
 	name = "Throw (Cinch) - Spin a cinched opponent around and throw them."
 	button_icon_state = "wrassle_throw"
+	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
 /datum/action/throw_wrassle/Trigger()
 	if(owner.incapacitated())
@@ -68,6 +70,7 @@
 /datum/action/kick
 	name = "Kick - A powerful kick, sends people flying away from you. Also useful for escaping from bad situations."
 	button_icon_state = "wrassle_kick"
+	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
 /datum/action/kick/Trigger()
 	if(owner.incapacitated())
@@ -80,6 +83,7 @@
 /datum/action/strike
 	name = "Strike - Hit a neaby opponent with a quick attack."
 	button_icon_state = "wrassle_strike"
+	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
 /datum/action/strike/Trigger()
 	if(owner.incapacitated())
@@ -92,6 +96,7 @@
 /datum/action/drop
 	name = "Drop - Smash down onto an opponent."
 	button_icon_state = "wrassle_drop"
+	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
 /datum/action/drop/Trigger()
 	if(owner.incapacitated())
@@ -196,7 +201,7 @@
 		if (T && isturf(T))
 			if (!D.stat)
 				D.emote("scream")
-			D.throw_at(T, 10, 4, A, TRUE, TRUE, callback = CALLBACK(D, /mob/living/carbon/human.proc/Paralyze, 20))
+			D.throw_at(T, 10, 4, A, TRUE, TRUE, callback = CALLBACK(D, /mob/living/carbon/human.proc/Paralyze, 15))
 	log_combat(A, D, "has thrown with wrestling")
 	return 0
 
@@ -296,7 +301,7 @@
 		playsound(A.loc, "swing_hit", 50, TRUE)
 		if (!D.stat)
 			D.emote("scream")
-			D.Paralyze(40)
+			D.Paralyze(30)
 
 			switch(rand(1,3))
 				if (2)
@@ -354,11 +359,11 @@
 					"<span class='userdanger'>You're roundhouse-kicked by [A]!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
 	to_chat(A, "<span class='danger'>You roundhouse-kick [D]!</span>")
 	playsound(A.loc, "swing_hit", 50, TRUE)
-	D.adjustBruteLoss(rand(10,15))
+	D.adjustBruteLoss(rand(2,5))
 
 	var/turf/T = get_edge_target_turf(A, get_dir(A, get_step_away(D, A)))
 	if (T && isturf(T))
-		D.Paralyze(15)
+		D.Paralyze(20)
 		D.throw_at(T, 3, 2)
 	log_combat(A, D, "roundhouse-kicked")
 
@@ -398,8 +403,8 @@
 			if (falling == 1)
 				A.visible_message("<span class='danger'>...and dives head-first into the ground, ouch!</span>", \
 								"<span class='userdanger'>...and dive head-first into the ground, ouch!</span>")
-				A.adjustBruteLoss(rand(10,20))
-				A.Paralyze(60)
+				A.adjustBruteLoss(rand(10,15))
+				A.Paralyze(40)
 			to_chat(A, "<span class='warning'>[D] is too far away!</span>")
 			return 0
 
