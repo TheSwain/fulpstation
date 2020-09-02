@@ -19,23 +19,23 @@
 
 /datum/martial_art/wrestling/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	switch(streak)
-		if("drop") // Crashes into someone, dealing damage but with a cooldown
+		if("drop")
 			streak = ""
 			drop(A,D)
 			return 1
-		if("strike") // Slightly stronger than just punching
+		if("strike")
 			streak = ""
 			strike(A,D)
 			return 1
-		if("kick") // Kicks someone away, doesn't deal damage but used to get away
+		if("kick")
 			streak = ""
 			kick(A,D)
 			return 1
-		if("throw") // Spins and throws someone, just for the fancy
+		if("throw")
 			streak = ""
 			throw_wrassle(A,D)
 			return 1
-		if("slam") // Slams someone onto the floor as long as you have them grabbed
+		if("slam")
 			streak = ""
 			slam(A,D)
 			return 1
@@ -68,7 +68,7 @@
 	H.mind.martial_art.streak = "throw"
 
 /datum/action/kick
-	name = "Kick - A powerful kick, sends people flying away from you."
+	name = "Kick - A powerful kick, sends people flying away from you. Also useful for escaping from bad situations."
 	button_icon_state = "wrassle_kick"
 	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
@@ -81,7 +81,7 @@
 	H.mind.martial_art.streak = "kick"
 
 /datum/action/strike
-	name = "Strike - Hit your opponent with a quick attack."
+	name = "Strike - Hit a neaby opponent with a quick attack."
 	button_icon_state = "wrassle_strike"
 	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
@@ -94,7 +94,7 @@
 	H.mind.martial_art.streak = "strike"
 
 /datum/action/drop
-	name = "Drop - Smash down onto an opponent with force."
+	name = "Drop - Smash down onto an opponent."
 	button_icon_state = "wrassle_drop"
 	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
@@ -209,7 +209,7 @@
 	set waitfor = FALSE
 	if (D)
 		animate(D, transform = matrix(180, MATRIX_ROTATE), time = 1, loop = 0)
-	D.Stun(rand(10,15))
+	sleep(15)
 	if (D)
 		animate(D, transform = null, time = 1, loop = 0)
 
@@ -301,7 +301,7 @@
 		playsound(A.loc, "swing_hit", 50, TRUE)
 		if (!D.stat)
 			D.emote("scream")
-			D.Paralyze(40)
+			D.Paralyze(30)
 
 			switch(rand(1,3))
 				if (2)
@@ -309,7 +309,7 @@
 				if (3)
 					D.ex_act(EXPLODE_LIGHT)
 				else
-					D.adjustBruteLoss(rand(15,25))
+					D.adjustBruteLoss(rand(10,15))
 		else
 			D.ex_act(EXPLODE_LIGHT)
 
@@ -343,7 +343,7 @@
 		D.visible_message("<span class='danger'>[A] headbutts [D]!</span>", \
 						"<span class='userdanger'>You're headbutted by [A]!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
 		to_chat(A, "<span class='danger'>You headbutt [D]!</span>")
-		D.adjustBruteLoss(rand(10,15))
+		D.adjustBruteLoss(rand(10,20))
 		playsound(A.loc, "swing_hit", 50, TRUE)
 		D.Unconscious(10)
 	log_combat(A, D, "headbutted")
@@ -359,6 +359,7 @@
 					"<span class='userdanger'>You're roundhouse-kicked by [A]!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
 	to_chat(A, "<span class='danger'>You roundhouse-kick [D]!</span>")
 	playsound(A.loc, "swing_hit", 50, TRUE)
+	D.adjustBruteLoss(rand(2,5))
 
 	var/turf/T = get_edge_target_turf(A, get_dir(A, get_step_away(D, A)))
 	if (T && isturf(T))
@@ -403,7 +404,7 @@
 				A.visible_message("<span class='danger'>...and dives head-first into the ground, ouch!</span>", \
 								"<span class='userdanger'>...and dive head-first into the ground, ouch!</span>")
 				A.adjustBruteLoss(rand(10,15))
-				A.Paralyze(80)
+				A.Paralyze(40)
 			to_chat(A, "<span class='warning'>[D] is too far away!</span>")
 			return 0
 
@@ -434,7 +435,7 @@
 		else
 			D.adjustBruteLoss(rand(20,30))
 
-		D.Paralyze(15)
+		D.Paralyze(20)
 
 		A.pixel_y = 0
 
