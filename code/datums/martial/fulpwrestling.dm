@@ -1,100 +1,100 @@
 /datum/martial_art/fulpwrestling
 	name = "Wrestling"
-	id = MARTIALART_WRESTLING
-	var/datum/action/slam/slam = new/datum/action/slam()
-	var/datum/action/throw_wrassle/throw_wrassle = new/datum/action/throw_wrassle()
-	var/datum/action/kick/kick = new/datum/action/kick()
-	var/datum/action/strike/strike = new/datum/action/strike()
-	var/datum/action/drop/drop = new/datum/action/drop()
+	id = MARTIALART_FULPWRESTLING
+	var/datum/action/fulpslam/slam = new/datum/action/fulpslam()
+	var/datum/action/fulpthrow_wrassle/throw_wrassle = new/datum/action/fulpthrow_wrassle()
+	var/datum/action/fulpkick/kick = new/datum/action/fulpkick()
+	var/datum/action/fulpstrike/strike = new/datum/action/fulpstrike()
+	var/datum/action/fulpdrop/drop = new/datum/action/fulpdrop()
 
 /datum/martial_art/fulpwrestling/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	switch(streak)
-		if("drop") // Crashes into someone, dealing damage but with a cooldown
+		if("fulpdrop") // Crashes into someone, dealing damage but with a cooldown
 			streak = ""
-			drop(A,D)
+			fulpdrop(A,D)
 			return 1
-		if("strike") // Slightly stronger than just punching
+		if("fulpstrike") // Slightly stronger than just punching
 			streak = ""
-			strike(A,D)
+			fulpstrike(A,D)
 			return 1
-		if("kick") // Kicks someone away, doesn't deal damage but used to get away
+		if("fulpkick") // Kicks someone away, doesn't deal damage but used to get away
 			streak = ""
-			kick(A,D)
+			fulpkick(A,D)
 			return 1
-		if("throw") // Spins and throws someone, just for the fancy
+		if("fulpthrow") // Spins and throws someone, just for the fancy
 			streak = ""
-			throw_wrassle(A,D)
+			fulpthrow_wrassle(A,D)
 			return 1
-		if("slam") // Slams someone onto the floor as long as you have them grabbed
+		if("fulpslam") // Slams someone onto the floor as long as you have them grabbed
 			streak = ""
-			slam(A,D)
+			fulpslam(A,D)
 			return 1
 	return 0
 
-/datum/action/slam
+/datum/action/fulpslam
 	name = "Slam (Cinch) - Slam a grappled opponent into the floor."
 	button_icon_state = "wrassle_slam"
 	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
-/datum/action/slam/Trigger()
+/datum/action/fulpslam/Trigger()
 	if(owner.incapacitated())
 		to_chat(owner, "<span class='warning'>You can't WRESTLE while you're OUT FOR THE COUNT.</span>")
 		return
 	owner.visible_message("<span class='danger'>[owner] prepares to BODY SLAM!</span>", "<b><i>Your next attack will be a BODY SLAM.</i></b>")
 	var/mob/living/carbon/human/H = owner
-	H.mind.martial_art.streak = "slam"
+	H.mind.martial_art.streak = "fulpslam"
 
-/datum/action/throw_wrassle
+/datum/action/fulpthrow_wrassle
 	name = "Throw (Cinch) - Spin a cinched opponent around and throw them."
 	button_icon_state = "wrassle_throw"
 	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
-/datum/action/throw_wrassle/Trigger()
+/datum/action/fulpthrow_wrassle/Trigger()
 	if(owner.incapacitated())
 		to_chat(owner, "<span class='warning'>You can't WRESTLE while you're OUT FOR THE COUNT.</span>")
 		return
 	owner.visible_message("<span class='danger'>[owner] prepares to THROW!</span>", "<b><i>Your next attack will be a THROW.</i></b>")
 	var/mob/living/carbon/human/H = owner
-	H.mind.martial_art.streak = "throw"
+	H.mind.martial_art.streak = "fulpthrow"
 
-/datum/action/kick
+/datum/action/fulpkick
 	name = "Kick - A powerful kick, sends people flying away from you."
 	button_icon_state = "wrassle_kick"
 	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
-/datum/action/kick/Trigger()
+/datum/action/fulpkick/Trigger()
 	if(owner.incapacitated())
 		to_chat(owner, "<span class='warning'>You can't WRESTLE while you're OUT FOR THE COUNT.</span>")
 		return
 	owner.visible_message("<span class='danger'>[owner] prepares to KICK!</span>", "<b><i>Your next attack will be a KICK.</i></b>")
 	var/mob/living/carbon/human/H = owner
-	H.mind.martial_art.streak = "kick"
+	H.mind.martial_art.streak = "fulpkick"
 
-/datum/action/strike
+/datum/action/fulpstrike
 	name = "Strike - Hit your opponent with a quick attack."
 	button_icon_state = "wrassle_strike"
 	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
-/datum/action/strike/Trigger()
+/datum/action/fulpstrike/Trigger()
 	if(owner.incapacitated())
 		to_chat(owner, "<span class='warning'>You can't WRESTLE while you're OUT FOR THE COUNT.</span>")
 		return
 	owner.visible_message("<span class='danger'>[owner] prepares to STRIKE!</span>", "<b><i>Your next attack will be a STRIKE.</i></b>")
 	var/mob/living/carbon/human/H = owner
-	H.mind.martial_art.streak = "strike"
+	H.mind.martial_art.streak = "fulpstrike"
 
-/datum/action/drop
+/datum/action/fulpdrop
 	name = "Drop - Smash down onto an opponent with force."
 	button_icon_state = "wrassle_drop"
 	icon_icon = 'icons/mob/actions/actions_wrestling.dmi'
 
-/datum/action/drop/Trigger()
+/datum/action/fulpdrop/Trigger()
 	if(owner.incapacitated())
 		to_chat(owner, "<span class='warning'>You can't WRESTLE while you're OUT FOR THE COUNT.</span>")
 		return
 	owner.visible_message("<span class='danger'>[owner] prepares to LEG DROP!</span>", "<b><i>Your next attack will be a LEG DROP.</i></b>")
 	var/mob/living/carbon/human/H = owner
-	H.mind.martial_art.streak = "drop"
+	H.mind.martial_art.streak = "fulpdrop"
 
 /datum/martial_art/fulpwrestling/teach(mob/living/carbon/human/H,make_temporary=0)
 	if(..())
@@ -120,7 +120,7 @@
 	log_combat(A, D, "punched with wrestling")
 	..()
 
-/datum/martial_art/fulpwrestling/proc/throw_wrassle(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/fulpwrestling/proc/fulpthrow_wrassle(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!D)
 		return
 	if(!A.pulling || A.pulling != D)
@@ -203,7 +203,7 @@
 	if (D)
 		animate(D, transform = null, time = 1, loop = 0)
 
-/datum/martial_art/fulpwrestling/proc/slam(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/fulpwrestling/proc/fulpslam(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!D)
 		return
 	if(!A.pulling || A.pulling != D)
@@ -319,7 +319,7 @@
 	if (A && (T && isturf(T) && get_dist(A, T) <= 1))
 		A.forceMove(T)
 
-/datum/martial_art/fulpwrestling/proc/strike(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/fulpwrestling/proc/fulpstrike(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!D)
 		return
 	var/turf/T = get_turf(A)
@@ -335,10 +335,10 @@
 		to_chat(A, "<span class='danger'>You headbutt [D]!</span>")
 		D.adjustBruteLoss(rand(10,15))
 		playsound(A.loc, "swing_hit", 50, TRUE)
-		D.Unconscious(10)
+		D.Paralyze(10)
 	log_combat(A, D, "headbutted")
 
-/datum/martial_art/fulpwrestling/proc/kick(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/fulpwrestling/proc/fulpkick(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!D)
 		return
 	A.emote("scream")
@@ -356,7 +356,7 @@
 		D.throw_at(T, 3, 2)
 	log_combat(A, D, "roundhouse-kicked")
 
-/datum/martial_art/fulpwrestling/proc/drop(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/fulpwrestling/proc/fulpdrop(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!D)
 		return
 	var/obj/surface = null

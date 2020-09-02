@@ -28,6 +28,7 @@
 
 // MARTIAL ARTS
 #define MARTIALART_HUNTER "hunter-fu"
+#define MARTIALART_FULPWRESTLING "Quartermaster Wrestling"
 
 
 // MISSING REF
