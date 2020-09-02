@@ -458,25 +458,3 @@
 	D.Stun(rand(60,100))
 	log_combat(A, D, "cinched")
 	return 1
-
-/obj/item/storage/belt/champion/wrestling
-	name = "Wrestling Belt"
-	var/datum/martial_art/wrestling/style = new
-
-/obj/item/storage/belt/champion/wrestling/equipped(mob/user, slot)
-	. = ..()
-	if(!ishuman(user))
-		return
-	if(slot == ITEM_SLOT_BELT)
-		var/mob/living/carbon/human/H = user
-		style.teach(H,1)
-	return
-
-/obj/item/storage/belt/champion/wrestling/dropped(mob/user)
-	. = ..()
-	if(!ishuman(user))
-		return
-	var/mob/living/carbon/human/H = user
-	if(H.get_item_by_slot(ITEM_SLOT_BELT) == src)
-		style.remove(H)
-	return

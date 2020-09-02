@@ -10,7 +10,7 @@
 
 /datum/martial_art/fulpwrestling
 	name = "Wrestling"
-	id = MARTIALART_FULPWRESTLING
+	id = MARTIALART_WRESTLING
 	var/datum/action/slam/slam = new/datum/action/slam()
 	var/datum/action/throw_wrassle/throw_wrassle = new/datum/action/throw_wrassle()
 	var/datum/action/kick/kick = new/datum/action/kick()
@@ -464,7 +464,7 @@
 	return 1
 
 /obj/item/storage/belt/champion
-	var/datum/martial_art/wrestling/style = new
+	var/datum/martial_art/fulpwrestling/style = new
 
 /obj/item/storage/belt/champion/equipped(mob/user, slot)
 	. = ..()
