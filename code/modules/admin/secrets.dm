@@ -68,8 +68,6 @@
 			<A href='?src=[REF(src)];[HrefToken()];secrets=customportal'>Spawn a custom portal storm</A><BR>
 			<BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=changebombcap'>Change bomb cap</A><BR>
-			<A href='?src=[REF(src)];[HrefToken()];secrets=masspurrbation'>Mass Purrbation</A><BR>
-			<A href='?src=[REF(src)];[HrefToken()];secrets=massremovepurrbation'>Mass Remove Purrbation</A><BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=massimmerse'>Fully Immerse Everyone</A><BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=unmassimmerse'>Un-Fully Immerse Everyone</A><BR>
 			"}
@@ -589,20 +587,6 @@
 			if(!check_rights(R_ADMIN))
 				return
 			toggle_all_ctf(usr)
-		if("masspurrbation")
-			if(!check_rights(R_FUN))
-				return
-			mass_purrbation()
-			message_admins("[key_name_admin(usr)] has put everyone on \
-				purrbation!")
-			log_admin("[key_name(usr)] has put everyone on purrbation.")
-		if("massremovepurrbation")
-			if(!check_rights(R_FUN))
-				return
-			mass_remove_purrbation()
-			message_admins("[key_name_admin(usr)] has removed everyone from \
-				purrbation.")
-			log_admin("[key_name(usr)] has removed everyone from purrbation.")
 
 		if("massimmerse")
 			if(!check_rights(R_FUN))
