@@ -449,7 +449,6 @@
 	D.visible_message("<span class='danger'>[A] gets [D] in a cinch!</span>", \
 					"<span class='userdanger'>You're put into a cinch by [A]!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", COMBAT_MESSAGE_RANGE, A)
 	to_chat(A, "<span class='danger'>You get [D] in a cinch!</span>")
-	D.Stun(rand(10,20))
 	log_combat(A, D, "cinched")
 	return 1
 
