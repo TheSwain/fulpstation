@@ -78,6 +78,49 @@
 	name = "zealot's blindfold"
 	icon_state = "blindfold"
 	inhand_icon_state = "blindfold"
-	hud_type = DATA_HUD_SECURITY_ADVANCED
-	hud_trait = TRAIT_SECURITY_HUD
 	flash_protect = FLASH_PROTECTION_FLASH
+
+/obj/item/clothing/glasses/hud/health/night/fulpcultblind/equipped(mob/living/user, slot)
+	..()
+	if(!iscultist(user))
+		to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
+		user.dropItemToGround(src, TRUE)
+		user.Dizzy(30)
+		user.Paralyze(100)
+		user.blind_eyes(30)
+
+/obj/item/clothing/glasses/hud/health/night/fulpcultblind/Initialize()
+	. = ..()
+	update_icon()
+
+/obj/item/clothing/glasses/hud/health/night/fulpcultblind/equipped(mob/user, slot)
+	..()
+	add_sensors(user, slot)
+
+/obj/item/clothing/glasses/hud/health/night/fulpcultblind/dropped(mob/user)
+	..()
+	remove_sensors(user)
+
+/obj/item/clothing/glasses/hud/health/night/fulpcultblind/proc/add_sensors(mob/user, slot)
+	if(slot != ITEM_SLOT_EYES)
+		return
+	if(!user)
+		if(ismob(loc))
+			user = loc
+		else
+			return
+	var/datum/atom_hud/secsensor = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
+	var/datum/atom_hud/medsensor = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
+	secsensor.add_hud_to(user)
+	medsensor.add_hud_to(user)
+
+/obj/item/clothing/glasses/hud/health/night/fulpcultblind/proc/remove_sensors(mob/user)
+	if(!user)
+		if(ismob(loc))
+			user = loc
+		else
+			return
+	var/datum/atom_hud/secsensor = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
+	var/datum/atom_hud/medsensor = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
+	secsensor.remove_hud_from(user)
+	medsensor.remove_hud_from(user)
