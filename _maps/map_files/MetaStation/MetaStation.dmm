@@ -2658,7 +2658,6 @@
 	pixel_x = -29;
 	pixel_y = 23
 	},
-/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/heads/hos)
 "afj" = (
@@ -7855,7 +7854,6 @@
 "apl" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/crate,
-/obj/item/a_gift/anything,
 /turf/open/floor/plasteel,
 /area/maintenance/port/aft)
 "apm" = (
@@ -11281,7 +11279,6 @@
 "axh" = (
 /obj/structure/closet/secure_closet/warden,
 /obj/item/gun/energy/laser,
-/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
 "axi" = (
@@ -13732,11 +13729,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/safe/floor,
 /obj/item/reagent_containers/food/snacks/fortunecookie,
-/obj/item/a_gift/anything,
-/obj/item/a_gift/anything,
-/obj/item/a_gift/anything,
-/obj/item/a_gift/anything,
-/obj/item/a_gift/anything,
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "aDn" = (
@@ -16661,7 +16653,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/item/a_gift/anything,
 /turf/open/floor/plasteel,
 /area/quartermaster/warehouse)
 "aLd" = (
@@ -17760,7 +17751,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/bot,
-/obj/item/a_gift/anything,
 /turf/open/floor/plasteel,
 /area/quartermaster/warehouse)
 "aNR" = (
@@ -18876,7 +18866,6 @@
 	id = "AI";
 	pixel_y = -24
 	},
-/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "aQE" = (
@@ -19407,7 +19396,6 @@
 /obj/structure/closet/crate{
 	icon_state = "crateopen"
 	},
-/obj/item/a_gift/anything,
 /turf/open/floor/plasteel,
 /area/quartermaster/warehouse)
 "aRT" = (
@@ -27107,7 +27095,6 @@
 	dir = 1;
 	pixel_y = 2
 	},
-/obj/item/a_gift/anything,
 /turf/open/floor/wood,
 /area/crew_quarters/heads/captain/private)
 "bjk" = (
@@ -32597,7 +32584,6 @@
 /area/crew_quarters/heads/hop)
 "bwk" = (
 /obj/structure/closet/secure_closet/hop,
-/obj/item/a_gift/anything,
 /turf/open/floor/wood,
 /area/crew_quarters/heads/hop)
 "bwl" = (
@@ -48592,7 +48578,6 @@
 	pixel_y = 31
 	},
 /obj/item/radio/headset/headset_sci,
-/obj/item/a_gift/anything,
 /turf/open/floor/plasteel,
 /area/science/lab)
 "chj" = (
@@ -51325,8 +51310,6 @@
 	dir = 8
 	},
 /obj/item/screwdriver,
-/obj/item/a_gift/anything,
-/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/heads/cmo)
 "cnH" = (
@@ -53429,7 +53412,6 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
-/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/dark,
 /area/medical/storage)
 "csl" = (
@@ -55035,7 +55017,6 @@
 /obj/machinery/keycard_auth{
 	pixel_y = -24
 	},
-/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/cafeteria{
 	dir = 5
 	},
@@ -72556,7 +72537,6 @@
 	},
 /obj/item/storage/box/evidence,
 /obj/item/flashlight/seclite,
-/obj/item/a_gift/anything,
 /turf/open/floor/plasteel/grimy,
 /area/security/detectives_office)
 "kLl" = (
