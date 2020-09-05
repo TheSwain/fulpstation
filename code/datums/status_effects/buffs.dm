@@ -1,6 +1,6 @@
 //Largely beneficial effects go here, even if they have drawbacks.
 
-/datum/status_effect/his_grace
+/* /datum/status_effect/his_grace
 	id = "his_grace"
 	duration = -1
 	tick_interval = 4
@@ -48,7 +48,7 @@
 /datum/status_effect/his_grace/on_remove()
 	owner.log_message("lost His Grace's stun immunity", LOG_ATTACK)
 	if(islist(owner.stun_absorption) && owner.stun_absorption["hisgrace"])
-		owner.stun_absorption -= "hisgrace"
+		owner.stun_absorption -= "hisgrace" */
 
 
 /datum/status_effect/wish_granters_gift //Fully revives after ten seconds.
