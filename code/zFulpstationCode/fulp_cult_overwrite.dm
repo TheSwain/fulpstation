@@ -4,20 +4,13 @@
 	Enjoy!
 */
 
-/datum/action/innate/cult/blood_spell/stun
-	name = "Stun"
-	desc = "Empowers your hand to stun and mute a victim on contact."
-	button_icon_state = "hand"
-	magic_path = "/obj/item/melee/blood_magic/stunfulp"
-	health_cost = 10
-
-/obj/item/melee/blood_magic/stunfulp
+/obj/item/melee/blood_magic/fulpstun
 	name = "Stunning Aura"
 	desc = "Will stun and mute a weak-minded victim on contact."
 	color = RUNE_COLOR_RED
 	invocation = "Fuu ma'jin!"
 
-/obj/item/melee/blood_magic/stunfulp/afterattack(atom/target, mob/living/carbon/user, proximity)
+/obj/item/melee/blood_magic/fulpstun/afterattack(atom/target, mob/living/carbon/user, proximity)
 	if(!isliving(target) || !proximity)
 		return
 	var/mob/living/L = target
