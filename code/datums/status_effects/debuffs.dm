@@ -231,7 +231,7 @@
 /datum/status_effect/pacify/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "status_effect")
 
-/datum/status_effect/his_wrath //does minor damage over time unless holding His Grace
+/* /datum/status_effect/his_wrath //does minor damage over time unless holding His Grace
 	id = "his_wrath"
 	duration = -1
 	tick_interval = 4
@@ -241,7 +241,7 @@
 	name = "His Wrath"
 	desc = "You fled from His Grace instead of feeding Him, and now you suffer."
 	icon_state = "his_grace"
-	alerttooltipstyle = "hisgrace"
+	alerttooltipstyle = "hisgrace" */
 
 /datum/status_effect/his_wrath/tick()
 	for(var/obj/item/his_grace/HG in owner.held_items)
