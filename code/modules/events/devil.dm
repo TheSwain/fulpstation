@@ -1,7 +1,9 @@
 /datum/round_event_control/devil
 	name = "Create Devil"
 	typepath = /datum/round_event/ghost_role/devil
-	max_occurrences = 0
+	max_occurrences = 1
+	weight = 8 // Rarer than Ninjas and blobs, more common than space dragons, seems pretty appropriate.
+	min_players = 40
 
 /datum/round_event/ghost_role/devil
 	var/success_spawn = 0
