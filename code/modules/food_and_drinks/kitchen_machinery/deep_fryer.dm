@@ -46,8 +46,7 @@ God bless America.
 		/obj/item/reagent_containers/syringe,
 		/obj/item/reagent_containers/food/condiment,
 		/obj/item/storage,
-		/obj/item/small_delivery,
-		/obj/item/his_grace))
+		/obj/item/small_delivery))
 	var/datum/looping_sound/deep_fryer/fry_loop
 
 /obj/machinery/deepfryer/Initialize()
