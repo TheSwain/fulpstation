@@ -111,6 +111,28 @@
 	desc = "Robust combat boots especially for lizardmen. Perfect for walking over piled human corpses. This pair of shoes is specifically designed to prevent slipping on wet surfaces."
 	clothing_flags = NOSLIP
 
+/datum/uplink_item/race_restricted/plasmemehardsuit
+	name = "Plasmaman Syndicate Hardsuit"
+	desc = "This special optimized hardsuit gives the best of both hardsuit modes, while preventing our plasmamen \
+			operatives from setting themselves on fire, due to the nature of our other hardsuits."
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list()
+	cost = 6 // The normal Space Suit costs 4TC, with the Elite hardsuit priced at the double of the Space suit.
+	item = /obj/item/clothing/suit/space/hardsuit/syndiplasmeme
+	restricted_species = list("plasmaman")
+	limited_stock = 1 // No, we're not letting you give your entire nuke team no-slowdown EVA hardsuits. They can buy Elite for 2 more TC, anyways.
+
+/datum/uplink_item/race_restricted/plasmemelite
+	name = "Plasmaman Elite Syndicate Hardsuit"
+	desc = "This special hardsuit designed for plasmamen operatives offers robust protection against most damage types, \
+			while preventing them from setting themselves on fire, due to the nature of our other hardsuits."
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list()
+	cost = 12 // Double from normal hardsuit. Note that it has no slowdown and is spaceproof.
+	item = /obj/item/clothing/suit/space/hardsuit/syndiplasmeme/elite
+	restricted_species = list("plasmaman")
+	limited_stock = 1 // Read above
+
 ////////////// INFILTRATION GAMEMODE ITEMS //////////////
 #define INFILTRATION_FACTIONS list("Syndicate Infiltrator", "Cybersun Infiltrator", "Gorlex Infiltrator", "Tiger Co. Infiltrator", "MI13 Infiltrator")
 //This define exists for midround spawned infiltrators and dynamic mode.
