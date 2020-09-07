@@ -680,6 +680,7 @@
 #include "code\FulpstationCode\fulpspaceruins.dm"
 #include "code\FulpstationCode\medals_fulp.dm"
 #include "code\FulpstationCode\moth_wings.dm"
+#include "code\FulpstationCode\Snowballevent.dm"
 #include "code\FulpstationCode\t5_parts.dm"
 #include "code\FulpstationCode\wintercoats.dm"
 #include "code\FulpstationCode\body_camera_files\body_camera_procs.dm"

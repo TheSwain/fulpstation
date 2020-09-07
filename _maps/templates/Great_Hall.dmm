@@ -1,0 +1,74 @@
+"c" = (/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"d" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/sugarcookie{pixel_x = -6},/obj/item/reagent_containers/food/snacks/sugarcookie,/obj/item/reagent_containers/food/snacks/sugarcookie{pixel_x = 6},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"f" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/christmas/fruitcake_slice_banana,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"g" = (/turf/closed/wall/mineral/wood,/area/centcom/events/christmas_ball)
+"h" = (/obj/structure/table/wood/fancy,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"i" = (/obj/structure/chair/comfy/brown,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"j" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/christmas/Candycane{pixel_y = -6},/obj/item/reagent_containers/food/snacks/christmas/Candycane,/obj/item/reagent_containers/food/snacks/christmas/Candycane{pixel_y = 6},/obj/item/reagent_containers/food/snacks/christmas/Candycane{pixel_x = -6; pixel_y = -6},/obj/item/reagent_containers/food/snacks/christmas/Candycane{pixel_x = -6; pixel_y = 6},/obj/item/reagent_containers/food/snacks/christmas/Candycane{pixel_x = -6},/obj/item/reagent_containers/food/snacks/christmas/Candycane{pixel_x = 6},/obj/item/reagent_containers/food/snacks/christmas/Candycane{pixel_x = 6; pixel_y = -6},/obj/item/reagent_containers/food/snacks/christmas/Candycane{pixel_x = 6; pixel_y = 6},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"k" = (/obj/item/reagent_containers/food/snacks/store/christmas,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"l" = (/obj/machinery/door/window/brigdoor/eastright{dir = 8; name = "Head Access"; req_access_txt = "19"},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"m" = (/obj/structure/table/wood/fancy/royalblack,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"n" = (/obj/structure/chair/comfy/brown{color = "#87CEFA"},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"p" = (/obj/machinery/door/window/brigdoor/eastleft{name = "Head Access"; req_access_txt = "19"},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"q" = (/obj/structure/flora/tree/pine/xmas/presents,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"r" = (/obj/structure/chair/comfy/brown{color = "#EFB341"},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"t" = (/obj/structure/chair/comfy/black{dir = 1},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"u" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/christmas/christmas_pudding,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"v" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/meat/steak/penguin,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"w" = (/turf/open/floor/carpet/purple,/area/centcom/events/christmas_ball)
+"x" = (/obj/structure/table/wood/fancy/orange,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"y" = (/obj/structure/chair/comfy/black,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"z" = (/obj/structure/chair/comfy/brown{buildstackamount = 0; color = "#DE3A3A"},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"A" = (/obj/item/reagent_containers/food/snacks/store/cake/pumpkinspice,/obj/structure/table/wood/fancy/royalblue,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"B" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/strawberryicecreamsandwich{pixel_x = -6},/obj/item/reagent_containers/food/snacks/strawberryicecreamsandwich,/obj/item/reagent_containers/food/snacks/strawberryicecreamsandwich{pixel_x = 6},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"D" = (/obj/structure/chair/comfy/brown{color = "#9932CC"},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"E" = (/obj/structure/chair/comfy/black{dir = 4},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"F" = (/obj/machinery/door/airlock/public,/turf/open/floor/carpet/cyan,/area/centcom/events/christmas_ball)
+"G" = (/obj/structure/chair/comfy/brown{buildstackamount = 0; color = "#4169e1"},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"H" = (/turf/open/floor/carpet/cyan,/area/centcom/events/christmas_ball)
+"I" = (/obj/structure/chair/comfy/black{dir = 8},/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"J" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/christmas/fruitcake_slice,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"K" = (/turf/closed/indestructible/riveted,/area/centcom/events/christmas_ball)
+"L" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/pie/appletart,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"O" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/store/christmas/fruitcake/banana,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"P" = (/turf/open/floor/carpet/red,/area/centcom/events/christmas_ball)
+"Q" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/store/christmas/Kings_cake,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"S" = (/obj/structure/table/wood/fancy/purple,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"T" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/store/christmas/fruitcake,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"U" = (/obj/structure/table/wood/fancy/blue,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"V" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/pie/applepie,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"W" = (/obj/structure/table/wood/fancy/royalblue,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"X" = (/obj/structure/flora/tree/pine/xmas/presents,/turf/open/floor/carpet/purple,/area/centcom/events/christmas_ball)
+"Y" = (/obj/structure/table/wood/fancy/red,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+"Z" = (/obj/structure/table/wood/fancy/royalblue,/obj/item/reagent_containers/food/snacks/store/cake/pumpkinspice,/turf/open/floor/carpet/indestructible/white,/area/centcom/events/christmas_ball)
+
+(1,1,1) = {"
+KKKKKKKKKKKKKKKKKKKKKKKKK
+KgggggggggggggggggggggggK
+KgkccccclccckcccpccccckgK
+KgqccyyyhircqcznUyyyccqgK
+KgccymmmhxxDciYYUmmmyccgK
+KgcEmmmmmmSSGUUmmmmmmIcgK
+KgcEmmttttmWWWmttttmmIcgK
+KgcEmtcccctmmmtcccctmIcgK
+KgcctccwwcctttccwwcctccgK
+KgwcccwwwwcccccwwwwcccwgK
+KgwwwwwwwwwwwwwwwwwwwwwgK
+KgwQQwwwwHHHHHHHwwwwQQwgK
+KgwATwwwHHHHHHHHHwwwTZwgK
+KgwBOwwXHHHHHHHHHXwwBOwgK
+KgwVLwwHHHHHHHHHHHwwVLwgK
+KgwuvwwHHHHHHHHHHHwwuvwgK
+KgwJjwwHHHHHHHHHHHwwjfwgK
+KgwVLwwHHHHHHHHHHHwwVLwgK
+KgwdOwwHHHHHHHHHHHwwdOwgK
+KgwZTwwwHHHHHHHHHwwwTZwgK
+KgwQQwwwHHHHHHHHHwwwQQwgK
+KgwwwwwqHHHHHHHHHqwwwwwgK
+KgwyyycccHHHHHHHcccyyywgK
+KgEmmmIccHHHHHHHccEmmmIgK
+KgEmmmIcccHHHHHcccEmmmIgK
+KgctttccccHHHHHcccctttcgK
+KggggggggggFFFggggggggggK
+KKKKKKKKKgPPPPPgKKKKKKKKK
+"}
