@@ -693,6 +693,7 @@
 #include "code\FulpstationCode\fulp_medborg\fulp_medborg_updates.dm"
 #include "code\FulpstationCode\fulp_medborg\medborg_holobed.dm"
 #include "code\FulpstationCode\fulp_starter_gear\fulp_starter_gear.dm"
+#include "code\FulpstationCode\fulp_surgery\fulp_dental_implant.dm"
 #include "code\FulpstationCode\fulp_syndiborg_files\fulp_syndicate_medborg.dm"
 #include "code\FulpstationCode\Fulp_traitor_items\deadly_laser_tag.dm"
 #include "code\FulpstationCode\Fulp_traitor_items\traitor_chaplain.dm"
