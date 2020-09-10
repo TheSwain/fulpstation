@@ -99,6 +99,8 @@
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/hos(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/security/head(src) // [FULP] [PNX] [PAPRITO]
+	new /obj/item/clothing/under/rank/security/head_of_security/jensen(src) // FULP - SgtHunk
+	new /obj/item/clothing/head/hos/dermal(src) // FULP - SgtHunk
 
 /obj/structure/closet/secure_closet/warden
 	name = "\proper warden's locker"
