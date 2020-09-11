@@ -671,6 +671,7 @@
 #include "code\FulpstationCode\fulp_chem_CF_medicines.dm"
 #include "code\FulpstationCode\fulp_chem_CF_reagent_containers.dm"
 #include "code\FulpstationCode\fulp_chem_CF_reagents.dm"
+#include "code\FulpstationCode\fulp_ert.dm"
 #include "code\FulpstationCode\fulp_global_vars.dm"
 #include "code\FulpstationCode\fulp_integration.dm"
 #include "code\FulpstationCode\fulp_jobs.dm"
