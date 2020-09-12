@@ -11,7 +11,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/quantum_scan
-	name = "Quantum field scanning module"
+	name = "Quantum Field Scanning Module"
 	desc = "A special scanning module using a mix of bluespace and quantum tech to scan even sub-atomic materials."
 	id = "quantumscan"
 	build_type = PROTOLATHE
@@ -22,7 +22,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/quantum_manip
-	name = "Quantum field manipulator"
+	name = "Quantum Field Manipulator"
 	desc = "A strange, almost intangible manipulator that uses bluespace tech to manipulate and fold quantum states."
 	id = "quantummanip"
 	build_type = PROTOLATHE
@@ -33,7 +33,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/quantum_laser
-	name = "Quantum micro-laser"
+	name = "Quantum Micro-Laser"
 	desc = "A modified quadultra micro-laser designed to make use of newly discovered quantum tech."
 	id = "quantumlaser"
 	build_type = PROTOLATHE
@@ -44,7 +44,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/quantum_bin
-	name = "Entangled matter bin"
+	name = "Entangled Matter Bin"
 	desc = "A bluespace matter bin that makes use of entangled particles to store states of materials as energy."
 	id = "quantumbin"
 	build_type = PROTOLATHE
@@ -90,7 +90,7 @@
 //T5 OBJECT [XEON/FULP]
 
 /obj/item/stock_parts/capacitor/quantumcap
-	name = "Quantum Capacitor"
+	name = "quantum capacitor"
 	desc = "A capacitor engineered with a mix of bluespace and quantum technologies."
 	icon_state = "quantumcap"
 	icon = 'icons/Fulpicons/quantumcell_fulp.dmi'
