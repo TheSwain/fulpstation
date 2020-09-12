@@ -93,7 +93,7 @@
 	belt = /obj/item/storage/belt/security/webbing/full
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/commandersec
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
+	glasses = /obj/item/clothing/glasses/thermal/eyepatch
 	back = /obj/item/storage/backpack/ert/security
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/box/handcuffs=1,\
@@ -165,7 +165,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/commandermed
 	name = "medical emergency response team commander helmet"
-	desc = "The integrated helmet of an ERT hardsuit, belonging to a Specialized Chief Medical Officer."
+	desc = "The integrated helmet of an ERT hardsuit, belonging to a Specialized Chief Medical Officer. It has a built-in Security hud."
 	worn_icon = 'icons/Fulpicons/fulpclothing_worn.dmi'
 	icon = 'icons/Fulpicons/fulpclothing.dmi'
 	icon_state = "hardsuit0-medert_commander"
@@ -198,26 +198,42 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/commandersec
 	name = "security emergency response team commander helmet"
-	desc = "The integrated helmet of an ERT hardsuit, belonging to a Specialized Head of Security."
+	desc = "The integrated helmet of an ERT hardsuit, belonging to a Specialized Head of Security. It has a built-in Security hud."
 	worn_icon = 'icons/Fulpicons/fulpclothing_worn.dmi'
 	icon = 'icons/Fulpicons/fulpclothing.dmi'
-	icon_state = "hardsuit0-secert_commander"
+	icon_state = "hardsuit-secert_commander"
 	hardsuit_type = "secert_commander"
+	actions_types = list()
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/commandersec/equipped(mob/living/carbon/human/user, slot)
+	..()
+	to_chat(user, "Your helmet's visor activates its integrated HUD, revealing information around you.")
+	ADD_TRAIT(user, TRAIT_SECURITY_HUD, HELMET_TRAIT)
+	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
+	H.add_hud_to(user)
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/commandersec/dropped(mob/living/carbon/human/user)
+	..()
+	to_chat(user, "You remove your helmet, disabling its integrated hud.")
+	REMOVE_TRAIT(user, TRAIT_SECURITY_HUD, HELMET_TRAIT)
+	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
+	H.remove_hud_from(user)
 
 /obj/item/clothing/suit/space/hardsuit/ert/commandersec
 	name = "security emergency response team commander hardsuit"
-	desc = "The standard issue hardsuit of the ERT, belonging to a Specialized Head of Security. Offers superb protection against environmental hazards."
+	desc = "The standard issue hardsuit of the ERT, belonging to a Specialized Head of Security. Offers protection against enviromental hazards, along with protection to shoves."
 	worn_icon = 'icons/Fulpicons/fulpclothing_worn.dmi'
 	icon = 'icons/Fulpicons/fulpclothing.dmi'
 	inhand_icon_state = "ert_security"
 	icon_state = "secert_commander"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/commandersec
+	clothing_flags = BLOCKS_SHOVE_KNOCKDOWN
 
 // Engineering
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/commandereng
 	name = "engineering emergency response team commander helmet"
-	desc = "The integrated helmet of an ERT hardsuit, belonging to a Specialized Chief Engineer."
+	desc = "The integrated helmet of an ERT hardsuit, belonging to a Specialized Chief Engineer. It has a built-in Security hud."
 	worn_icon = 'icons/Fulpicons/fulpclothing_worn.dmi'
 	icon = 'icons/Fulpicons/fulpclothing.dmi'
 	icon_state = "hardsuit0-engert_commander"
