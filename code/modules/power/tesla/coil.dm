@@ -30,7 +30,7 @@
 	zap_cooldown = 100
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		power_multiplier += C.rating
-		zap_cooldown -= (C.rating * 20)
+		zap_cooldown -= min((C.rating * 20), 80)   ///// FULP-ONLY - The Great T5 Maintaining - Having this have no cooldown probably isn't a good idea. This will have to be changed in the future anyway, however. - GoldenAlpharex 09/12/2020
 	input_power_multiplier = power_multiplier
 
 /obj/machinery/power/tesla_coil/examine(mob/user)

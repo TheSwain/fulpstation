@@ -80,7 +80,7 @@ GLOBAL_LIST_EMPTY(monkey_recyclers)
 	var/offset = prob(50) ? -2 : 2
 	animate(src, pixel_x = pixel_x + offset, time = 0.2, loop = 200) //start shaking
 	use_power(500)
-	stored_matter += cube_production
+	stored_matter += min(cube_production, 0.9) ///// FULP-ONLY - The Great T5 Maintaining -  to prevent it from going to 1 monkey per recycled monkey, caps it at 0.9 now. No more infinite monkeys. - GoldenAlpharex 09/12/2020
 	addtimer(VARSET_CALLBACK(src, pixel_x, initial(pixel_x)))
 	addtimer(CALLBACK(GLOBAL_PROC, /proc/to_chat, user, "<span class='notice'>The machine now has [stored_matter] monkey\s worth of material stored.</span>"))
 
