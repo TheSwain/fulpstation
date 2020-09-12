@@ -65,6 +65,7 @@
 	name = "ERT Medic - Specialized"
 
 	belt = /obj/item/storage/belt/medical/advanced
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/infiltrator/medical
 
 /datum/outfit/centcom/ert/commander/medical
 	name = "ERT Commander - Medical"
@@ -73,6 +74,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/commandermed
 	back = /obj/item/storage/backpack/ert/medical
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/infiltrator/medical
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/gun/energy/e_gun=1,\
@@ -94,6 +96,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/commandersec
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	back = /obj/item/storage/backpack/ert/security
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/box/handcuffs=1,\
@@ -276,3 +279,11 @@
 /datum/antagonist/ert/proc/engi_ert_alert()
 	if(prob(5))
 		owner.current.playsound_local(get_turf(owner.current), 'sound/Fulpsounds/home_depot.ogg', 100, FALSE, pressure_affected = FALSE)
+
+// Insulated Latex Gloves for Med ERT
+
+/obj/item/clothing/gloves/color/latex/nitrile/infiltrator/medical
+	name = "insulated nitrile gloves"
+	desc = "Very pricy Specialized gloves, thicker than latex. Transfers intimate paramedic knowledge into the user via nanochips, along with providing insulation."
+	icon_state = "nitrile"
+	inhand_icon_state = "nitrilegloves"
