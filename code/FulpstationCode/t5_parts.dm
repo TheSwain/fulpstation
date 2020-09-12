@@ -197,7 +197,10 @@
 	H.visible_message("<span class='danger'>[src] runs [H] over!</span>", "<span class='userdanger'>[src] runs you over!</span>")
 	playsound(loc, 'sound/effects/splat.ogg', 50, TRUE)
 
-	var/damage = rand(7,9) //Choose a number between 7 and 9, then use that number for the damage calculations applied to the head, chest, legs and arms.
+	///// The Great T5 Maintenance - Nerfed the damage from rand(7,9) to rand(4,7), changing the average damage from 48 to 33. It's still enough to crit after three hits,
+	///// or leave them with 1 hp. This should be a lot more balanced, especially since it doesn't prevent you from getting knocked down when you knock them.
+	///// GoldenAlpharex - 09/12/2020
+	var/damage = rand(4,7) //Choose a number between 4 and 7, then use that number for the damage calculations applied to the head, chest, legs and arms.
 	H.apply_damage(2*damage, BRUTE, BODY_ZONE_HEAD, H.run_armor_check(BODY_ZONE_HEAD, "melee"))
 	H.apply_damage(2*damage, BRUTE, BODY_ZONE_CHEST, H.run_armor_check(BODY_ZONE_CHEST, "melee"))
 	H.apply_damage(0.5*damage, BRUTE, BODY_ZONE_L_LEG, H.run_armor_check(BODY_ZONE_L_LEG, "melee"))

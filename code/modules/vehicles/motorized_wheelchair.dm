@@ -1,3 +1,7 @@
+///// 	 FULP-ONLY - The Great T5 Maintenance - I switched from deciseconds to SECONDS,    /////
+///// as it's what /tg/ is slowly doing with everything containing time to make it clearer /////
+///// 							GoldenAlpharex - 09/12/2020                                /////
+
 /obj/vehicle/ridden/wheelchair/motorized
 	name = "motorized wheelchair"
 	desc = "A chair with big wheels. It seems to have a motor in it."
@@ -48,17 +52,17 @@
 		if(!power_cell)
 			to_chat(user, "<span class='warning'>There seems to be no cell installed in [src].</span>")
 			canmove = FALSE
-			addtimer(VARSET_CALLBACK(src, canmove, TRUE), 20)
+			addtimer(VARSET_CALLBACK(src, canmove, TRUE), 2 SECONDS)
 			return FALSE
 		if(power_cell.charge < power_usage / max(power_efficiency, 1))
 			to_chat(user, "<span class='warning'>The display on [src] blinks 'Out of Power'.</span>")
 			canmove = FALSE
-			addtimer(VARSET_CALLBACK(src, canmove, TRUE), 20)
+			addtimer(VARSET_CALLBACK(src, canmove, TRUE), 2 SECONDS)
 			return FALSE
 		if(user.get_num_arms() < arms_required)
 			to_chat(user, "<span class='warning'>You don't have enough arms to operate the motor controller!</span>")
 			canmove = FALSE
-			addtimer(VARSET_CALLBACK(src, canmove, TRUE), 20)
+			addtimer(VARSET_CALLBACK(src, canmove, TRUE), 2 SECONDS)
 			return FALSE
 		power_cell.use(power_usage / max(power_efficiency, 1))
 	return ..()
@@ -150,28 +154,20 @@
 		explosion(src, -1, 1, 3, 2, 0)
 		visible_message("<span class='boldwarning'>[src] explodes!!</span>")
 		return
-	if(t5 >= 15 && A.density && isliving(A)) //FULP: If T5 is greater than or equal to 15, run that fucker over and just keep on driving!
-		var/mob/living/D = A
-		var/atom/throw_target = get_edge_target_turf(D, pick(GLOB.cardinals))
-		D.throw_at(throw_target, 2, 3) //FULP: YEET
-		D.Knockdown(85)
-		D.adjustStaminaLoss(40) //FULP: Just like a mulebot, this does no damage on the initial hit- but it does LOADS of damage if you run a prone person over (see Crossed() in carbon.dm for the code for that))
-		D.visible_message("<span class='danger'>[src] rams into [D], sending [D] flying!</span>", "<span class='userdanger'>[src] rams you!</span>")
-		return
-	// FULP: If T5 (T5 identifier) is less than 15, execute as normal
+	///// FULP-ONLY - The Great T5 Maintenance - Removed the snowflake code that basically prevented the person riding a quantum wheelchair from being knocked off. This will nerf its offensive abilities by a lot. - GoldenAlpharex - 09/12/2020
 	// If the speed is higher than delay_multiplier throw the person on the wheelchair away
 	if(A.density && speed > delay_multiplier && has_buckled_mobs())
 		var/mob/living/H = buckled_mobs[1]
 		var/atom/throw_target = get_edge_target_turf(H, pick(GLOB.cardinals))
 		unbuckle_mob(H)
 		H.throw_at(throw_target, 2, 3)
-		H.Knockdown(100)
+		H.Knockdown(10 SECONDS)
 		H.adjustStaminaLoss(40)
 		if(isliving(A))
 			var/mob/living/D = A
 			throw_target = get_edge_target_turf(D, pick(GLOB.cardinals))
 			D.throw_at(throw_target, 2, 3)
-			D.Knockdown(80)
+			D.Knockdown(8 SECONDS)
 			D.adjustStaminaLoss(35)
 			visible_message("<span class='danger'>[src] crashes into [A], sending [H] and [D] flying!</span>")
 		else
