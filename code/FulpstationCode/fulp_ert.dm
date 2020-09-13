@@ -51,7 +51,7 @@
 
 /datum/antagonist/ert/commander/medical
 	role = "Chief Medical Officer"
-	outfit = /datum/outfit/centcom/ert/commander/medical
+	outfit = /datum/outfit/centcom/ert/commander/medical // This and Specialized MD are actually handled by a Proc, it's just there to show off outfit
 
 /datum/antagonist/ert/security/specialized
 	role = "Specialized Security Officer"
@@ -108,6 +108,45 @@
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/gun/energy/e_gun=1,\
+		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
+		/obj/item/gun/medbeam=1)
+
+/datum/outfit/centcom/ert/medic/specialized/alien
+	name = "ERT Medic - Alien"
+
+	uniform = /obj/item/clothing/under/abductor
+	belt = /obj/item/storage/belt/medical/alien
+	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+		/obj/item/gun/energy/alien = 1,\
+		/obj/item/melee/baton/loaded=1,\
+		/obj/item/reagent_containers/hypospray/combat=1,\
+		/obj/item/gun/medbeam=1)
+
+/datum/outfit/centcom/ert/medic/specialized/oath
+	name = "ERT Medic - Oath"
+
+	r_hand = /obj/item/rod_of_asclepius
+	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+		/obj/item/reagent_containers/hypospray/combat=1,\
+		/obj/item/gun/medbeam=1)
+
+/datum/outfit/centcom/ert/commander/medical/alien
+	name = "ERT Commander - Medical Alien"
+
+	uniform = /obj/item/clothing/under/abductor
+	belt = /obj/item/storage/belt/medical/alien
+	suit_store = /obj/item/gun/energy/alien
+	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+		/obj/item/melee/baton/loaded=1,\
+		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
+		/obj/item/gun/medbeam=1)
+
+/datum/outfit/centcom/ert/commander/medical/oath
+	name = "ERT Commander - Medical Oath"
+
+	r_hand = /obj/item/rod_of_asclepius
+	l_pocket = /obj/item/flashlight/pen/paramedic
+	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
 		/obj/item/gun/medbeam=1)
 
@@ -277,7 +316,7 @@
 	new /obj/item/weldingtool/experimental(src)
 	new /obj/item/multitool(src)
 	new /obj/item/stack/cable_coil(src)
-	new /obj/item/extinguisher/mini(src)
+	new /obj/item/pipe_dispenser(src)
 	new /obj/item/inducer(src)
 	update_icon()
 
@@ -288,6 +327,16 @@
 	new /obj/item/organ/regenerative_core/legion(src)
 	new /obj/item/organ/regenerative_core/legion(src)
 	new /obj/item/organ/regenerative_core/legion(src)
+	update_icon()
+
+/obj/item/storage/belt/medical/alien/PopulateContents()
+	new /obj/item/surgical_drapes(src)
+	new /obj/item/healthanalyzer/advanced(src)
+	new /obj/item/scalpel/alien(src)
+	new /obj/item/retractor/alien(src)
+	new /obj/item/hemostat/alien(src)
+	new /obj/item/circular_saw/alien(src)
+	new /obj/item/cautery/alien(src)
 	update_icon()
 
 //
@@ -484,6 +533,54 @@
 /datum/antagonist/ert/proc/engi_ert_alert()
 	if(prob(5))
 		owner.current.playsound_local(get_turf(owner.current), 'sound/Fulpsounds/home_depot.ogg', 100, FALSE, pressure_affected = FALSE)
+
+// Med ERT Rarity
+
+/datum/antagonist/ert/medic/specialized/on_gain()
+	. = ..()
+	choose_medert_outfit()
+
+/datum/antagonist/ert/commander/medical/on_gain()
+	. = ..()
+	choose_commedert_outfit()
+
+/datum/antagonist/ert/proc/choose_medert_outfit()
+	var/mob/living/carbon/human/H = owner.current
+	var/normal_outfit = /datum/outfit/centcom/ert/medic/specialized
+	var/alien_outfit = /datum/outfit/centcom/ert/medic/specialized/alien
+	var/oath_outfit = /datum/outfit/centcom/ert/medic/specialized/oath
+	var/specialty = pickweight(list("Default" = 85, "Alien" = 5, "Oath" = 10)) // Thank you Egor
+	H.delete_equipment() //To prevent double equipment shenanigans
+
+	switch(specialty)
+		if("Alien")
+			H.set_species(/datum/species/abductor)
+			H.equipOutfit(alien_outfit)
+
+		if("Oath")
+			H.equipOutfit(oath_outfit)
+
+		else
+			H.equipOutfit(normal_outfit)
+
+/datum/antagonist/ert/proc/choose_commedert_outfit()
+	var/mob/living/carbon/human/H = owner.current
+	var/normal_outfit = /datum/outfit/centcom/ert/commander/medical
+	var/alien_outfit = /datum/outfit/centcom/ert/commander/medical/alien
+	var/oath_outfit = /datum/outfit/centcom/ert/commander/medical/oath
+	var/specialty = pickweight(list("Default" = 85, "Alien" = 5, "Oath" = 10))
+	H.delete_equipment()
+
+	switch(specialty)
+		if("Alien")
+			H.set_species(/datum/species/abductor)
+			H.equipOutfit(alien_outfit)
+
+		if("Oath")
+			H.equipOutfit(oath_outfit)
+
+		else
+			H.equipOutfit(normal_outfit)
 
 // A few other ERT-specific items
 
