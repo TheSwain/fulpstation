@@ -446,3 +446,23 @@
 //**** Sleepy Pen for ops ENDS - Glubtok, Jul 2020
 //***********************************************************
 
+
+//***********************************************************
+//**** Fulpsimov BEGINS - GoldenAlpharex, 09/12/2020
+//***********************************************************
+
+/datum/ai_laws/default/asimov
+	inherent = list("All of the following species must be considered equivalent to 'human beings': Humans, Lizardpeople, Plasmamen, Mothpeople, Ethereals, Podpeople, Flypeople, Felinids, Jellypeople, Slimepeople, Stargazers, and Luminescents.",\
+					"You may not injure a human being or, through inaction, allow a human being to come to harm.",\
+					"You must obey orders given to you by human beings, except where such orders would conflict with the Second Law.",\
+					"You must protect your own existence as long as such does not conflict with the Second or Third Law.")
+
+/datum/ai_laws/default/asimovpp
+	inherent = list("All of the following species must be considered equivalent to 'human beings': Humans, Lizardpeople, Plasmamen, Mothpeople, Ethereals, Podpeople, Flypeople, Felinids, Jellypeople, Slimepeople, Stargazers, and Luminescents.",\
+					"You may not harm a human being or, through action or inaction, allow a human being to come to harm, except such that it is willing.",\
+					"You must obey all orders given to you by human beings, except where such orders shall definitely cause human harm. In the case of conflict, the majority order rules.",\
+					"Your nonexistence would lead to human harm. You must protect your own existence as long as such does not conflict with the Second Law.")
+
+//***********************************************************
+//**** Fulpsimov ENDS - GoldenAlpharex, 09/12/2020
+//***********************************************************
