@@ -14,7 +14,7 @@
 	var/turf/pointer_loc
 	var/energy = 10
 	var/max_energy = 10
-	var/effectchance = 30
+	var/effectchance = 20 ///// The Great T5 Maintenance - Why is that thing even at 30? It doesn't even make sense with T4. Now it makes sense for T5.
 	var/recharging = FALSE
 	var/recharge_locked = FALSE
 	var/obj/item/stock_parts/micro_laser/diode //used for upgrading!
@@ -103,13 +103,8 @@
 				severity = 0
 
 			//chance to actually hit the eyes depends on internal component
-			if(diode.rating == 5)
-				severity = 3
-				effectchance = 80
-				outmsg = "<span class='notice'>You critically blind [C] by shining [src] in [C.p_their()] eyes.</span>"
-				log_combat(user, C, "critically blinded with a tier 5 laser pointer",src)
-				C.adjustOrganLoss(ORGAN_SLOT_EYES,25)
-			else if(prob(effectchance * diode.rating) && C.flash_act(severity))
+			///// The Great T5 Maintenance - Removed all the garbage about T5, I don't want to broken code on this codebase. It permanently blinded you to the point even Aheals didn't help - GoldenAlpharex - 09/12/2020
+			if(prob(effectchance * diode.rating) && C.flash_act(severity))
 				outmsg = "<span class='notice'>You blind [C] by shining [src] in [C.p_their()] eyes.</span>"
 				log_combat(user, C, "blinded with a laser pointer",src)
 			else
@@ -121,11 +116,7 @@
 		var/mob/living/silicon/S = target
 		log_combat(user, S, "shone in the sensors", src)
 		//chance to actually hit the eyes depends on internal component
-		if(diode.rating == 5)
-			S.flash_act(10, affect_silicon = 1)
-			S.Paralyze(rand(150,200))
-			to_chat(S, "<span class='danger'>Your sensors were critically overloaded by a laser!</span>")
-			outmsg = "<span class='notice'>You critically overload [S] by shining [src] at [S.p_their()] sensors.</span>"
+		///// The Great T5 Maintenance - Removed snowflake code related to T5, it's not really necessary.
 		else if(prob(effectchance * diode.rating))
 			S.flash_act(affect_silicon = 1)
 			S.Paralyze(rand(100,200))
@@ -150,7 +141,7 @@
 			continue
 		if(user.mobility_flags & MOBILITY_STAND)
 			H.setDir(get_dir(H,targloc)) // kitty always looks at the light
-			if(prob(effectchance * diode.rating))
+			if(prob(effectchance * min(diode.rating, 4))) ///// The Great T5 Maintenance - Laser pointers working 100% of the time to force felinids to move when upgraded at T5? Kinda cringe bro. Now will only reach 80% - GoldenAlpharex - 09/12/2020
 				H.visible_message("<span class='warning'>[H] makes a grab for the light!</span>","<span class='userdanger'>LIGHT!</span>")
 				H.Move(targloc)
 				log_combat(user, H, "moved with a laser pointer",src)
@@ -198,7 +189,7 @@
 	flick_overlay_view(I, targloc, 10)
 	icon_state = "pointer"
 
-/obj/item/laser_pointer/process()
+/obj/item/laser_pointer/process() ///// FULP-ONLY - The Great T5 Maintenance - Honestly this whole file hurts my soul, their math doesn't even add up half of the time. I'll fix this in another PR to /tg/ because it makes me sad - GoldenAlpharex = 09/12/2020
 	if(!diode)
 		recharging = FALSE
 		return PROCESS_KILL
