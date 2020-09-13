@@ -46,7 +46,7 @@
 		return 'icons/obj/card.dmi'
 	return initial(linkedJobType.id_icon)
 /obj/item/card/id/proc/return_icon_hud()
-	if (assignment in list("Syndicate Captain", "Syndicate Medical Doctor", "Syndicate Assault Operative", "Syndicate Engineer", "Syndicate Operative", "Syndicate Overlord", "Syndicate Mastermind", "Syndicate Admiral", "Syndicate Official", "Syndicate", "Syndicate Commander", "Syndicate Ship Captain"))
+	if (assignment in list("Syndicate Captain", "Syndicate Medical Doctor", "Syndicate Assault Operative", "Syndicate Engineer", "Syndicate Operative", "Syndicate Overlord", "Syndicate Mastermind", "Syndicate Admiral", "Syndicate Official", "Syndicate", "Syndicate Commander", "Syndicate Ship Captain", "Mining Response Officer"))
 		return 'icons/Fulpicons/fulphud.dmi' //Couldn't think of better solution
 	if (!linkedJobType || assignment == "Unassigned")
 		return 'icons/mob/hud.dmi'
