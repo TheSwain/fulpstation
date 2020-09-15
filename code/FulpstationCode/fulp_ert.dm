@@ -582,6 +582,33 @@
 		else
 			H.equipOutfit(normal_outfit)
 
+// Sec ERT random Race
+
+/datum/antagonist/ert/security/specialized/on_gain()
+	. = ..()
+	choose_secert_race()
+
+/datum/antagonist/ert/commander/security/on_gain()
+	. = ..()
+	choose_secert_race()
+
+/datum/antagonist/ert/proc/choose_secert_race()
+	var/mob/living/carbon/human/H = owner.current
+	var/synth = /datum/species/synth
+	var/mil_synth = /datum/species/synth/military
+	var/race = pickweight(list("Default" = 90, "Military" = 1, "Synth" = 9)) // VERY low chance to become a Military Synth, 1/10 chance to become a synth
+
+	switch(race)
+		if("Military")
+			H.set_species(mil_synth)
+
+		if("Synth")
+			H.set_species(synth)
+
+		else
+			return FALSE
+
+
 // A few other ERT-specific items
 
 // Medical
