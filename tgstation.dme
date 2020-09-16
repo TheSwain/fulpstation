@@ -708,6 +708,7 @@
 #include "code\FulpstationCode\halloween_costumes\devil.dm"
 #include "code\FulpstationCode\halloween_costumes\garfield.dm"
 #include "code\FulpstationCode\halloween_costumes\hades.dm"
+#include "code\FulpstationCode\halloween_costumes\holodragon.dm"
 #include "code\FulpstationCode\halloween_costumes\hotdog.dm"
 #include "code\FulpstationCode\halloween_costumes\joseph_joestar.dm"
 #include "code\FulpstationCode\halloween_costumes\ketchup.dm"

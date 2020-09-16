@@ -446,3 +446,34 @@
 //**** Sleepy Pen for ops ENDS - Glubtok, Jul 2020
 //***********************************************************
 
+
+
+//***********************************************************
+//****UNSTAGRAV HOLODRAGON  PR *****************************
+//***********************************************************
+
+/obj/item/clothing/under/rank/engineering/atmospheric_technician
+	desc = "It's a jumpsuit worn by atmospheric technicians. It is protected from fire, not sure about you tho."
+	name = "atmospheric technician's jumpsuit"
+	icon_state = "atmos"
+	inhand_icon_state = "atmos_suit"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 0, "acid" = 20)
+	resistance_flags = null // the tech suit will never burn now which is essential to make this work.
+	max_integrity = 200
+	integrity_failure = 0.4 // skirt wont go SKIRT
+	resistance_flags = NONE
+
+/obj/item/clothing/under/rank/engineering/atmospheric_technician/skirt
+	name = "atmospheric technician's jumpskirt"
+	desc = "It's a jumpskirt worn by atmospheric technicians. It is protected from fire, not sure about you tho."
+	icon_state = "atmos_skirt"
+	inhand_icon_state = "atmos_suit"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 0, "acid" = 20) // why didnt the skirt have the same resistance as suit anyways?? fixed.
+	resistance_flags = null // the tech skirt will never burn now which is essential to make this work.
+	max_integrity = 200
+	integrity_failure = 0.4
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+	fitted = FEMALE_UNIFORM_TOP
+
+//*******END HOLODRAGON PR, SEE 'HOLODRAGON.DM , COSTUMES_WORN.DMI, COSTUMES_ICON.DMI' FOR REST OF RELEVANT CODE*******************************
