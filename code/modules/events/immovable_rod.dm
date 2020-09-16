@@ -137,15 +137,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 		qdel(src)
 		qdel(other)
 
-/obj/effect/immovablerod/proc/penetrate(mob/living/L)
-	L.visible_message("<span class='danger'>[L] is penetrated by an immovable rod!</span>" , "<span class='userdanger'>The rod penetrates you!</span>" , "<span class='danger'>You hear a CLANG!</span>")
-	if(ishuman(L))
-		var/mob/living/carbon/human/H = L
-		H.adjustBruteLoss(160)
-	if(L && (L.density || prob(10)))
-		L.ex_act(EXPLODE_HEAVY)
-
-/obj/effect/immovablerod/attack_hand(mob/living/user)
+/obj/effect/immovablerod/penetrate(mob/living/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/U = user
 		if(U.job in list("Research Director"))
@@ -165,3 +157,9 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 				new /obj/structure/festivus/anchored(drop_location())
 				new /obj/effect/anomaly/flux(drop_location())
 				qdel(src)
+		else
+			user.visible_message("<span class='danger'>[user] is penetrated by an immovable rod!</span>" , "<span class='userdanger'>The rod penetrates you!</span>" , "<span class='danger'>You hear a CLANG!</span>")
+			if(ishuman(user))
+				H.adjustBruteLoss(160)
+			if(user && (user.density || prob(10)))
+				user.ex_act(EXPLODE_HEAVY)
