@@ -140,31 +140,16 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 /obj/effect/immovablerod/proc/penetrate(mob/living/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/U = user
-		if(U.job in list("Research Director"))
-			if(U.in_throw_mode)
-				playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-				for(var/mob/M in urange(8, src))
-					if(!M.stat)
-						shake_camera(M, 2, 3)
-				if(wizard)
-					U.visible_message("<span class='boldwarning'>[src] transforms into [wizard] as [U] suplexes them!</span>", "<span class='warning'>As you grab [src], it suddenly turns into [wizard] as you suplex them!</span>")
-					to_chat(wizard, "<span class='boldwarning'>You're suddenly jolted out of rod-form as [U] somehow manages to grab you, slamming you into the ground!</span>")
-					wizard.Stun(60)
-					wizard.apply_damage(25, BRUTE)
-					qdel(src)
-				else
-					U.client.give_award(/datum/award/achievement/misc/feat_of_strength, U) //rod-form wizards would probably make this a lot easier to get so keep it to regular rods only
-					U.visible_message("<span class='boldwarning'>[U] suplexes [src] into the ground!</span>", "<span class='warning'>You suplex [src] into the ground!</span>")
-					new /obj/structure/festivus/anchored(drop_location())
-					new /obj/effect/anomaly/flux(drop_location())
-					qdel(src)
-			else
-				U.visible_message("<span class='danger'>[U] is penetrated by an immovable rod!</span>" , "<span class='userdanger'>The rod penetrates you!</span>" , "<span class='danger'>You hear a CLANG!</span>")
-				if(ishuman(user))
-					U.adjustBruteLoss(160)
-				if(user && (user.density || prob(10)))
-					user.ex_act(EXPLODE_HEAVY)
-
+		if(U.in_throw_mode && U.job in list("Research Director"))
+			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+			for(var/mob/M in urange(8, src))
+				if(!M.stat)
+					shake_camera(M, 2, 3)
+				U.client.give_award(/datum/award/achievement/misc/feat_of_strength, U) //rod-form wizards would probably make this a lot easier to get so keep it to regular rods only
+				U.visible_message("<span class='boldwarning'>[U] suplexes [src] into the ground!</span>", "<span class='warning'>You suplex [src] into the ground!</span>")
+				new /obj/structure/festivus/anchored(drop_location())
+				new /obj/effect/anomaly/flux(drop_location())
+				qdel(src)
 		else
 			U.visible_message("<span class='danger'>[U] is penetrated by an immovable rod!</span>" , "<span class='userdanger'>The rod penetrates you!</span>" , "<span class='danger'>You hear a CLANG!</span>")
 			if(ishuman(user))

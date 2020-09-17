@@ -52,5 +52,16 @@
 		L.visible_message("<span class='danger'>[src] hits [L], but it bounces back, then vanishes!</span>" , "<span class='userdanger'>[src] hits you... but it bounces back, then vanishes!</span>" , "<span class='danger'>You hear a weak, sad, CLANG.</span>")
 		qdel(src)
 		return
-	L.visible_message("<span class='danger'>[L] is penetrated by an immovable rod!</span>" , "<span class='userdanger'>The rod penetrates you!</span>" , "<span class='danger'>You hear a CLANG!</span>")
-	L.adjustBruteLoss(70 + damage_bonus)
+	if(L.in_throw_mode && L.job in list("Research Director"))
+		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+		for(var/mob/M in urange(8, src))
+			if(!M.stat)
+				shake_camera(M, 2, 3)
+			L.visible_message("<span class='boldwarning'>[src] transforms into [wizard] as [L] suplexes them!</span>", "<span class='warning'>As you grab [src], it suddenly turns into [wizard] as you suplex them!</span>")
+			to_chat(wizard, "<span class='boldwarning'>You're suddenly jolted out of rod-form as [L] somehow manages to grab you, slamming you into the ground!</span>")
+			wizard.Paralyze(60)
+			wizard.apply_damage(25, BRUTE)
+			qdel(src)
+	else
+		L.visible_message("<span class='danger'>[L] is penetrated by an immovable rod!</span>" , "<span class='userdanger'>The rod penetrates you!</span>" , "<span class='danger'>You hear a CLANG!</span>")
+		L.adjustBruteLoss(70 + damage_bonus)
