@@ -12,7 +12,7 @@
 
 /obj/item/clothing/suit/holodragon
 	name = "experimental T5 holographic emitter suit"
-	desc = "Is that a roomba on a cardboard suit? It's got a port for an HDMI cable near the top, aren't those out dated?"
+	desc = "Is that a roomba on a cardboard suit? It's got a port for an HDMI cable near the top, aren't those outdated?"
 	icon = 'icons/fulpicons/halloween_costumes/costumes_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/costumes_worn.dmi'
 	icon_state = "holodragon_s"
