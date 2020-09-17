@@ -45,7 +45,7 @@
 
 /obj/item/clothing/head/holodragon
 	name = "experimental T5 projection tower"
-	desc = "Please tell me that isn't a solar panel on a helmet. Theres an HDMI cable on the bottom and you're not sure what do to with ancient tech."
+	desc = "Please tell me that isn't a solar panel on a helmet. Theres an HDMI cable on the bottom, but you're not quite sure what this piece of ancient technology is supposed to do..."
 	icon = 'icons/fulpicons/halloween_costumes/costumes_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/costumes_worn.dmi'
 	icon_state = "holodragon_h"
