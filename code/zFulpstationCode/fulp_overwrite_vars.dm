@@ -453,7 +453,7 @@
 //***********************************************************
 
 /obj/item/clothing/under/rank/engineering/atmospheric_technician
-	desc = "It's a jumpsuit worn by atmospheric technicians. It is protected from fire, not sure about you tho."
+	desc = "It's a jumpsuit worn by atmospheric technicians. While it can't catch on fire, the same might not necessarily be true for its wearer."
 	name = "atmospheric technician's jumpsuit"
 	icon_state = "atmos"
 	inhand_icon_state = "atmos_suit"
