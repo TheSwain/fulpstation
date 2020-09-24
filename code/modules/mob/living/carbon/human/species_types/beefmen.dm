@@ -44,6 +44,7 @@
 	attack_sound = 'sound/Fulpsounds/beef_hit.ogg'
 	special_step_sounds = list('sound/Fulpsounds/footstep_splat1.ogg','sound/Fulpsounds/footstep_splat2.ogg','sound/Fulpsounds/footstep_splat3.ogg','sound/Fulpsounds/footstep_splat4.ogg')//Sounds to override barefeet walkng
 	grab_sound = 'sound/Fulpsounds/beef_grab.ogg'//Special sound for grabbing
+	species_language_holder = /datum/language_holder/russian //Speak Russian
 
 	var/dehydrate = 0
 	    // list( /datum/brain_trauma/mild/phobia/strangers, /datum/brain_trauma/mild/phobia/doctors, /datum/brain_trauma/mild/phobia/authority )
@@ -97,8 +98,6 @@
 		C.ReassignForeignBodyparts()
 
 
-	// Speak Russian
-	C.grant_language(/datum/language/russian) // Don't remove on loss. You simply know it.
 
 	// Be Spooked but Educated
 	//C.gain_trauma(pick(startTraumas))
