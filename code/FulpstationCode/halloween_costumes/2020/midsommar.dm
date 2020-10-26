@@ -33,7 +33,7 @@
 //--Suits, hardsuits, jackets, bodyarmor and others
 /obj/item/clothing/suit/midsommar_queen
 	name = "May Queen"
-	desc = "A dress made with colorful flowers intended to be used by the queen.."
+	desc = "A dress made with colorful flowers intended to be used by the queen."
 	icon = 'icons/fulpicons/halloween_costumes/2020/midsommar_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/midsommar_worn.dmi'
 	icon_state = "may_queen"
