@@ -3,7 +3,7 @@
 //Alice
 /obj/item/clothing/suit/wonderland
 	name = "wonderland dress"
-	desc = "Write something here to show up when examined."
+	desc = "It's no use going back to yesterday, because I was a different person then."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "wonderland"
@@ -11,7 +11,7 @@
 
 /obj/item/clothing/shoes/wonderland
 	name = "dainty shoes"
-	desc = "Write something here to show up when examined."
+	desc = "How long is forever?"
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "dainty_shoes"
@@ -19,7 +19,7 @@
 //Belle
 /obj/item/clothing/suit/beauty
 	name = "beauty's dress"
-	desc = "Write something here to show up when examined."
+	desc = "A golden dress of extreme beauty."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "beauty"
@@ -27,7 +27,7 @@
 
 /obj/item/clothing/head/beauty
 	name = "beauty's wig"
-	desc = "Write something here to show up when examined."
+	desc = "A brown wig with a golden hair band."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "beauty_wig"
@@ -36,7 +36,7 @@
 
 /obj/item/clothing/gloves/beauty
 	name = "beauty's gloves"
-	desc = "Write something here to show up when examined."
+	desc = "A pair of golden elbow length gloves."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "beauty_gloves"
@@ -44,7 +44,7 @@
 //Brave
 /obj/item/clothing/suit/tenacious
 	name = "tenacious scottish princess dress"
-	desc = "Write something here to show up when examined."
+	desc = "A long dress that is light and confortable."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "tenacious"
@@ -52,7 +52,7 @@
 
 /obj/item/clothing/head/tenacious
 	name = "tenacious scottish princess wig"
-	desc = "Write something here to show up when examined."
+	desc = "The pretty colored wig."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "tenacious_wig"
@@ -62,7 +62,7 @@
 //Cruella
 /obj/item/clothing/under/cruel_devil
 	name = "cruel devil's dress"
-	desc = "Write something here to show up when examined."
+	desc = "A sharp black dress."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "cruel_devil_dress"
@@ -74,14 +74,14 @@
 
 /obj/item/clothing/suit/cruel_devil
 	name = "cruel devil's coat"
-	desc = "Write something here to show up when examined."
+	desc = "Yes, it's fake fur..."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "cruel_devil_coat"
 
 /obj/item/clothing/head/cruel_devil
 	name = "cruel devil's wig"
-	desc = "Write something here to show up when examined."
+	desc = "For when you want to be noticed."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "cruel_devil_wig"
@@ -90,22 +90,22 @@
 
 /obj/item/clothing/gloves/cruel_devil
 	name = "cruel devil's gloves"
-	desc = "Write something here to show up when examined."
+	desc = "A pair of classy gloves."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "cruel_devil_gloves"
 
 /obj/item/clothing/shoes/cruel_devil
 	name = "cruel devil's shoes"
-	desc = "Write something here to show up when examined."
+	desc = "A pair of classy shoes."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "cruel_devil_shoes"
 
 //Jasmine
 /obj/item/clothing/under/arabian
-	name = "arabian princess dress"
-	desc = "Write something here to show up when examined."
+	name = "arabian princess"
+	desc = "You will be the last drop of water in the desert with this."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "arabian"
@@ -117,7 +117,7 @@
 
 /obj/item/clothing/head/arabian
 	name = "arabian princess wig"
-	desc = "Write something here to show up when examined."
+	desc = "It's a dazzling tiara on top of a wig."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "arabian_wig"
@@ -127,7 +127,7 @@
 //Snow White
 /obj/item/clothing/suit/sleeper
 	name = "sleeper's dress"
-	desc = "Write something here to show up when examined."
+	desc = "It actually doesn't look comfortable to sleep on."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "sleeper"
@@ -135,7 +135,7 @@
 
 /obj/item/clothing/head/sleeper
 	name = "sleeper's wig"
-	desc = "Write something here to show up when examined."
+	desc = "A wig with a red tiara on top of it."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "sleeper_wig"
@@ -147,7 +147,7 @@
 //If you are wondering why someone would answer "Engineer from TF2" when asked what is her favorite princess ask Manray
 /obj/item/clothing/under/texasman
 	name = "texasman blue uniform"
-	desc = "Write something here to show up when examined."
+	desc = "Whoooowee, would ya look at that!"
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "texasman_blue"
@@ -159,20 +159,19 @@
 
 /obj/item/clothing/gloves/texasman
 	name = "texasman gloves"
-	desc = "Write something here to show up when examined."
+	desc = "Giddy up!"
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "texasman_glove"
 
 /obj/item/clothing/under/texasman/red
 	name = "texasman red uniform"
-	desc = "Write something here to show up when examined."
 	icon_state = "texasman_red"
 
 //--Skeletor the best princess from He-man
 /obj/item/clothing/suit/skeletor
 	name = "Skeletor"
-	desc = "Write something here to show up when examined."
+	desc = "Spooky."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "skeletor"
@@ -180,7 +179,7 @@
 
 /obj/item/clothing/head/skeletor
 	name = "Skeletor"
-	desc = "Write something here to show up when examined."
+	desc = "Scary."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "skeletor_hood"
@@ -188,16 +187,16 @@
 
 //--Octopus > Ariel
 /obj/item/clothing/suit/octopus
-	name = "octopus"
-	desc = "Write something here to show up when examined."
+	name = "octopus suit"
+	desc = "Not a princess suit."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "octopus"
 	allowed = list(/obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
 /obj/item/clothing/head/octopus
-	name = "octopus"
-	desc = "Write something here to show up when examined."
+	name = "octopus mask"
+	desc = "Not a princess mask."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "octopus_head"
@@ -205,7 +204,7 @@
 
 /obj/item/clothing/gloves/octopus
 	name = "octopus gloves"
-	desc = "Write something here to show up when examined."
+	desc = "Not a princess gloves."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "octopus_gloves"
@@ -213,7 +212,7 @@
 //BORGER
 /obj/item/clothing/suit/burger
 	name = "burger"
-	desc = "Write something here to show up when examined."
+	desc = "BORGER."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "burger"
@@ -223,7 +222,7 @@
 //PIZZA
 /obj/item/clothing/under/pizza
 	name = "pizza leotard"
-	desc = "Write something here to show up when examined."
+	desc = "Pizza."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "pizza_leotard"
@@ -235,7 +234,7 @@
 
 /obj/item/clothing/suit/pizza
 	name = "pizza"
-	desc = "Write something here to show up when examined."
+	desc = "Time."
 	icon = 'icons/fulpicons/halloween_costumes/2020/princess_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/princess_worn.dmi'
 	icon_state = "pizza"

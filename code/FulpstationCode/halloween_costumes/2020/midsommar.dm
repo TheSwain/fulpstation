@@ -2,7 +2,7 @@
 //--Under are jumpsuits and others things that go in its slot
 /obj/item/clothing/under/midsommar
 	name = "midsommar dress"
-	desc = "Write something here to show up when examined."
+	desc = "A white dress that fills you with peace."
 	icon = 'icons/fulpicons/halloween_costumes/2020/midsommar_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/midsommar_worn.dmi'
 	icon_state = "midsommar_dress"
@@ -15,14 +15,14 @@
 //--Head are hats, simple
 /obj/item/clothing/head/midsommar
 	name = "flower crown"
-	desc = "Write something here to show up when examined."
+	desc = "A crown made with colorful flowers."
 	icon = 'icons/fulpicons/halloween_costumes/2020/midsommar_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/midsommar_worn.dmi'
 	icon_state = "flower_crown"
 
 /obj/item/clothing/head/midsommar_queen
 	name = "May Queen crown"
-	desc = "Write something here to show up when examined."
+	desc = "A crown made with colorful flowers. This one is only used by the queen."
 	icon = 'icons/fulpicons/halloween_costumes/2020/midsommar_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/midsommar_64.dmi'
 	icon_state = "flower_crown_tall"
@@ -33,7 +33,7 @@
 //--Suits, hardsuits, jackets, bodyarmor and others
 /obj/item/clothing/suit/midsommar_queen
 	name = "May Queen"
-	desc = "Write something here to show up when examined."
+	desc = "A dress made with colorful flowers intended to be used by the queen.."
 	icon = 'icons/fulpicons/halloween_costumes/2020/midsommar_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/midsommar_worn.dmi'
 	icon_state = "may_queen"
