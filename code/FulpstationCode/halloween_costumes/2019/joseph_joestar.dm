@@ -46,3 +46,4 @@
 	new /obj/item/clothing/neck/scarf/tricksters_scarf(src)
 	new /obj/item/clothing/shoes/tricksters_boots(src)
 	new /obj/item/clothing/gloves/tricksters_gloves(src)
+	

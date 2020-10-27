@@ -71,3 +71,4 @@
 	new /obj/item/clothing/suit/phantommaid_apron(src)
 	new /obj/item/clothing/shoes/phantommaid_shoes(src)
 	new /obj/item/toy/phantommaid_knife(src)
+	
