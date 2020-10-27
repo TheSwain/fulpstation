@@ -329,7 +329,7 @@
 	new /obj/item/clothing/head/tenacious(src)
 
 /obj/item/storage/box/halloween/edition_20/princess/cruel_devil
-	theme_name = "2020's Princess - Cruel devil"
+	theme_name = "2020's Princess - Cruel Devil"
 
 /obj/item/storage/box/halloween/edition_20/princess/cruel_devil/PopulateContents()
 	new /obj/item/clothing/under/cruel_devil(src)

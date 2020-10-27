@@ -90,7 +90,7 @@
 			theme_name = pick("2019's Centaur", "2019's Hotdog", "2019's Ketchup", "2019's Mustard",
 			"2019's Angel", "2019's Devil", "2019's Cat", "2019's Pumpkin", "2019's Skeleton",
 			"2019's Spider", "2019's Witch", "2019's Sailor Moon", "2019's Tuxedo Mask",
-			"2019's Tricksters", "2019's Next Adventure", "2019's Phantom maid", "2019's Sans",
+			"2019's Tricksters", "2019's Next Adventure", "2019's Phantom Maid", "2019's Sans",
 			"2019's Solid Snake", "2019's Starship Trooper", "2019's Bounty Hunter", "2019's Zombie")
 		if("2020")
 			theme_name = pick("2020's Frog", "2020's Skull mask", "2020's Heisters")

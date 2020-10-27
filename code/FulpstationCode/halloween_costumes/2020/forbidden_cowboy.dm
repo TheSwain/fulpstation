@@ -18,7 +18,7 @@
 	icon_state = "forbiddencowboy_hat"
 
 /obj/item/storage/box/halloween/edition_20/forbidden_cowboy
-	theme_name = "2020's Forbidden cowboy"
+	theme_name = "2020's Forbidden Cowboy"
 
 /obj/item/storage/box/halloween/edition_20/forbidden_cowboy/PopulateContents()
 	new /obj/item/clothing/head/forbidden_cowboy(src)

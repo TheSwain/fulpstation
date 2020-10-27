@@ -23,7 +23,7 @@
 //--- Gift and box with costumes
 /obj/item/halloween_gift
 	name = "halloween package"
-	desc = "it looks like a box wrapped in some spooky paper"
+	desc = "It looks like a box wrapped in some spooky paper"
 	icon = 'icons/fulpicons/halloween_costumes/2020/box.dmi'
 	icon_state = "halloween_gift"
 	inhand_icon_state = "gift"
@@ -86,7 +86,7 @@
 
 
 /obj/item/choice_beacon/halloween/debug
-	name = "infinite halloween delivery beacon"
+	name = "debug halloween delivery beacon"
 	desc = "Summon up to 100 boxes of halloween costumes to help you get spooky."
 	uses = 100
 
@@ -101,6 +101,7 @@
 //--Box
 /obj/item/storage/box/halloween
 	name = "halloween box"
+	desc = "Costumes in a box."
 	icon = 'icons/fulpicons/halloween_costumes/2020/box.dmi'
 	icon_state = "halloween_box"
 	illustration = "pumpkin"

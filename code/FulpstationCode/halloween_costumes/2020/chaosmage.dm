@@ -32,7 +32,7 @@
 	icon_state = "boots"
 
 /obj/item/storage/box/halloween/edition_20/chaosmage
-	theme_name = "2020's Chaos mage outfit"
+	theme_name = "2020's Chaos Mage Outfit"
 	illustration = "mask"
 
 /obj/item/storage/box/halloween/edition_20/chaosmage/PopulateContents()

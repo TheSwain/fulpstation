@@ -40,7 +40,7 @@
 	icon_state = "beefman_hood"
 
 //--Ethereal
-/obj/item/clothing/suit/hooded/onesie/ethereal//-------------------------------------------------------Suit
+/obj/item/clothing/suit/hooded/onesie/ethereal
 	name = "ethereal onesie"
 	desc = "Sleeping in these can prove hard since you essentially become your own night light."
 	icon_state = "ethereal0"

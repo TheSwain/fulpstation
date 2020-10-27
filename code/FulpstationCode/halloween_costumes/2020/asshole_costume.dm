@@ -39,7 +39,7 @@
 	squeak_override = list('sound/weapons/bite.ogg'=1)
 
 /obj/item/storage/box/halloween/edition_20/space_asshole
-	theme_name = "2020's Martian revolutionary"
+	theme_name = "2020's Martian Revolutionary"
 	illustration = "moth"
 
 /obj/item/storage/box/halloween/edition_20/space_asshole/PopulateContents()

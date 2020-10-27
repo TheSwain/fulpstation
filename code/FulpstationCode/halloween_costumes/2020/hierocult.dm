@@ -13,7 +13,7 @@
 	icon_state = "robe"
 
 /obj/item/storage/box/halloween/edition_20/hierocult
-	theme_name = "2020's Hierophant's cultist"
+	theme_name = "2020's Hierophant's Cultist"
 	illustration = "mask"
 
 /obj/item/storage/box/halloween/edition_20/hierocult/PopulateContents()

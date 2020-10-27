@@ -46,38 +46,22 @@
 
 /obj/item/clothing/gloves/daft_golden
 	name = "insert name here"
-	desc = "Write something here to show up when examined."
+	desc = "A pair of sparkly golden gloves."
 	icon = 'icons/fulpicons/halloween_costumes/2020/daft_frank_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/daft_frank_worn.dmi'
 	icon_state = "golden_gloves"
 
 /obj/item/clothing/gloves/daft_silver
 	name = "insert name here"
-	desc = "Write something here to show up when examined."
+	desc = "A pair of sparkly silver gloves."
 	icon = 'icons/fulpicons/halloween_costumes/2020/daft_frank_item.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/daft_frank_worn.dmi'
 	icon_state = "silver_gloves"
 
 /obj/item/storage/box/halloween/edition_20/daft_box
-	theme_name = "2020's Daft Punk Duo"
-	illustration = "daft"
-
-/obj/item/storage/box/halloween/edition_20/daft_box/PopulateContents()
-	new /obj/item/clothing/head/hardhat/golden_punk(src)
-	new /obj/item/clothing/head/hardhat/silver_punk(src)
-	new /obj/item/clothing/gloves/daft_golden(src)
-	new /obj/item/clothing/gloves/daft_silver(src)
-	new /obj/item/instrument/eguitar(src)
-	new /obj/item/instrument/piano_synth(src)
-
-	for(var/i in 1 to 2)
-		new /obj/item/clothing/under/sparky(src)
-		new /obj/item/clothing/shoes/cyborg(src)
-
-/obj/item/storage/box/halloween/edition_20/daft_box/golden
 	theme_name = "2020's Daft Punk Golden"
 
-/obj/item/storage/box/halloween/edition_20/daft_box/golden/PopulateContents()
+/obj/item/storage/box/halloween/edition_20/daft_box/PopulateContents()
 	new /obj/item/clothing/head/hardhat/golden_punk(src)
 	new /obj/item/clothing/gloves/daft_golden(src)
 	new /obj/item/instrument/eguitar(src)
