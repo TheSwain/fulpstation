@@ -1,3 +1,4 @@
+//--Tristrian's costume
 /obj/item/clothing/suit/moffking
 	name = "moffking chainmail"
 	desc = "A cold chainmail from a frozen moon. The chains are made of plastic altough."

@@ -1,4 +1,4 @@
-//--Skull mime mask
+//--Tongue-Tied's costume
 /obj/item/clothing/mask/gas/mime/skull_mask
 	name = "Skull mask"
 	desc = "A unique mime's mask. It has an eerie facial posture."
@@ -45,7 +45,6 @@
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/skullmasks_worn.dmi'
 	icon_state = "skull_dress"
 
-//--Head are hats, simple
 /obj/item/clothing/head/wizard/fake/skull_mask
 	name = "Skull mask's hat"
 	desc = "A black hat adorned with harebells."
@@ -62,4 +61,3 @@
 	new /obj/item/clothing/head/wizard/fake/skull_mask(src)
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/food/snacks/grown/harebell(src)
-		

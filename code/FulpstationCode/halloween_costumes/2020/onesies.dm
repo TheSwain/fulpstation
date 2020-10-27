@@ -1,3 +1,4 @@
+//--Papaporo's costume
 /obj/item/clothing/suit/hooded/onesie
 	name = "winter coat"
 	desc = "A heavy jacket made from 'synthetic' animal furs."
@@ -365,4 +366,3 @@
 	new /obj/item/clothing/suit/hooded/onesie/silicon(src)
 	new	/obj/item/toy/plush/pkplush(src)
 	new	/obj/item/toy/talking/ai(src)
-	

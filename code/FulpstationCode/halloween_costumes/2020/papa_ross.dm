@@ -1,5 +1,4 @@
 //--Papaporo Bossrito?
-//--Under are jumpsuits and others things that go in its slot
 /obj/item/clothing/under/papa_ross
 	name = "Bob Ross jumpsuit"
 	desc = "We dont make mistakes. We just have happy accidents."
@@ -12,7 +11,6 @@
 	random_sensor = TRUE
 	can_adjust = FALSE
 
-//--Head are hats, simple
 /obj/item/clothing/head/papa_ross
 	name = "Bob Ross wig"
 	desc = "Thats a crooked tree. Well send him to Washington."
@@ -22,7 +20,6 @@
 	flags_inv = HIDEHAIR
 	dynamic_hair_suffix = "+generic"
 
-//--Suits, hardsuits, jackets, bodyarmor and others
 /obj/item/clothing/suit/papa_ross
 	name = "Bob Ross apron"
 	desc = "This is the fun part. We take our brush, and beat the devil out of it."
@@ -31,7 +28,6 @@
 	icon_state = "papa_ross_apron"
 	allowed = list(/obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
-//--Ties and others
 /obj/item/clothing/neck/papa_ross_squirrel
 	name = "Peapod the squirrel"
 	desc = "This here is my little friend. His name is Peapod and he lives in my garden."
@@ -77,7 +73,6 @@
 	. = ..()
 	. += "<span class='notice'>Alt-click the hat to flip it [flipped ? "left" : "right"].</span>"
 
-//--Box that contains the costumes
 /obj/item/storage/box/halloween/edition_20/papa_ross
 	theme_name = "2020's Bob Ross"
 	illustration = "moth"

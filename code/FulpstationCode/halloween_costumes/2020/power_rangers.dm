@@ -32,7 +32,6 @@
 /obj/item/clothing/head/power_ranger/yellow
 	ranger = "yellow"
 
-//--Suits, hardsuits, jackets, bodyarmor and others
 /obj/item/clothing/suit/power_ranger
 	name = "ranger suit"
 	desc = "ranger suit."
@@ -67,7 +66,6 @@
 /obj/item/clothing/suit/power_ranger/yellow
 	ranger = "yellow"
 
-//--Shoes... ye
 /obj/item/clothing/shoes/power_ranger
 	name = "Ranger boots"
 	desc = "Ranger suit."
@@ -101,8 +99,6 @@
 /obj/item/clothing/shoes/power_ranger/yellow
 	ranger = "yellow"
 
-
-//--Box that contains the costumes
 /obj/item/storage/box/halloween/edition_20/power_ranger
 	theme_name = "2020's Power Ranger -- Random"
 	illustration = "rangers"
@@ -200,4 +196,3 @@
 	new /obj/item/clothing/suit/power_ranger/yellow(src)
 	new	/obj/item/clothing/shoes/power_ranger/yellow(src)
 	new /obj/item/clothing/gloves/color/latex(src)
-	

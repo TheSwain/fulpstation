@@ -25,4 +25,3 @@
 	new /obj/item/clothing/under/forbidden_cowboy(src)
 	new /obj/item/clothing/shoes/cowboy(src)
 	new /obj/item/stack/sheet/mineral/wood(src)
-	

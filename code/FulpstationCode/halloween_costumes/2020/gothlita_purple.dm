@@ -1,3 +1,4 @@
+//--Tristrian's costume
 /obj/item/clothing/under/gothlita_purple
 	name = "purple Gothlita dress"
 	desc = "A fashioned, delicate and fragile dress made of silk."
@@ -84,4 +85,3 @@
 	new /obj/item/clothing/mask/gothlita_purple(src)
 	new /obj/item/clothing/shoes/gothlita_purple(src)
 	new /obj/item/lipstick/purple(src)
-	

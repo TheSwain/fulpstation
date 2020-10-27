@@ -1,4 +1,4 @@
-//--Papaporo Paprito Costumes
+//--Papaporo Paprito's Costume
 /obj/item/clothing/under/asshole_jumpsuit
 	name = "space asshole suit"
 	desc = "A faint smell sulphur, mars dust and free space terrorism."
@@ -49,4 +49,3 @@
 	new /obj/item/clothing/neck/asshole_scarf(src)
 	new /obj/item/clothing/gloves/color/black(src)
 	new /obj/item/toy/plush/sledgy(src)
-	

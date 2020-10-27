@@ -19,7 +19,6 @@
 /datum/round_event/halloween_costumes/announce()
 	priority_announce("To improve morale, we've utilized our Bluespace Wardrobe technology to send bulk halloween costumes over. Enjoy.", "Its Spooky Time")
 
-
 //--- Gift and box with costumes
 /obj/item/halloween_gift
 	name = "halloween package"
@@ -98,7 +97,7 @@
 	year = 2020
 	target = /obj/item/storage/box/halloween/edition_20
 
-//--Box
+//--Boxes
 /obj/item/storage/box/halloween
 	name = "halloween box"
 	desc = "Costumes in a box."

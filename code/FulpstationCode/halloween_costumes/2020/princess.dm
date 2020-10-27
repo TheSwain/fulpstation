@@ -241,7 +241,6 @@
 	body_parts_covered = CHEST|GROIN
 	allowed = list(/obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
-//--Box that contains the costumes
 /obj/item/storage/box/halloween/edition_20/princess
 	theme_name = "2020's Princess -- Random"
 	illustration = "crown"
@@ -394,4 +393,3 @@
 /obj/item/storage/box/halloween/edition_20/princess/pizza/PopulateContents()
 	new /obj/item/clothing/under/pizza(src)
 	new /obj/item/clothing/suit/pizza(src)
-	

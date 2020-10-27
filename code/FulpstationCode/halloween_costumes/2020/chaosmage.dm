@@ -1,3 +1,4 @@
+//--Tristrian's costume
 /obj/item/clothing/under/chaosmage
 	name = "chaos mage tabard"
 	desc = "An old outfit which has lost its magical power. It is said that this belonged to a powerful mage."
@@ -39,4 +40,3 @@
 	new /obj/item/clothing/under/chaosmage(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/chaosmage(src)
 	new /obj/item/clothing/shoes/chaosmage(src)
-	

@@ -1,3 +1,4 @@
+//--Tristrian's costume
 /obj/item/clothing/under/devilfan
 	name = "devil's body"
 	desc = "This is just red paint all over your body. And somehow it sticks well even after washing!"
@@ -41,4 +42,3 @@
 	new /obj/item/clothing/head/devilfan(src)
 	new /obj/item/clothing/shoes/devilfan(src)
 	new /obj/item/clothing/gloves/devilfan(src)
-	

@@ -1,3 +1,4 @@
+//--Tristrian's costume
 /obj/item/clothing/head/hierocult
 	name = "Hierophant cultist helmet"
 	desc = "A strange, flashing helmet worn by the Hierophant cultists... or just fans of it."

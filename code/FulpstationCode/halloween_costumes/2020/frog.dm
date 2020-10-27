@@ -1,6 +1,4 @@
 //-- Cecily's costume
-
-//--Under are jumpsuits and others things that go in its slot
 /obj/item/clothing/under/frog_suit
 	name = "frog onesie"
 	desc = "A comfortable and snuggly animal onesie."
@@ -12,7 +10,6 @@
 	random_sensor = TRUE
 	can_adjust = FALSE
 
-//--Head are hats, simple
 /obj/item/clothing/head/frog_head
 	name = "frog hood"
 	desc = "A comfortable and snuggly animal hoodie"
@@ -27,7 +24,6 @@
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/frog_worn.dmi'
 	icon_state = "frog_gloves"
 
-//--Head are hats, simple
 /obj/item/clothing/shoes/frog_shoe
 	name = "frog shoes"
 	desc = "A pair of comfortable shoes recolored green."
@@ -35,7 +31,6 @@
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/frog_worn.dmi'
 	icon_state = "frog_shoes"
 
-//--Box that contains the costumes
 /obj/item/storage/box/halloween/edition_20/frog
 	theme_name = "2020's Frog"
 
@@ -44,4 +39,3 @@
 	new /obj/item/clothing/head/frog_head(src)
 	new /obj/item/clothing/gloves/frog_gloves(src)
 	new /obj/item/clothing/shoes/frog_shoe(src)
-	

@@ -1,3 +1,4 @@
+//--Franklin's costumes
 //The Gold One
 /obj/item/clothing/head/hardhat/golden_punk
 	name = "Guy-Manuel Helmet"
