@@ -4,7 +4,7 @@
 	icon = 'icons/fulpicons/halloween_costumes/2019/costumes_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2019/costumes_worn.dmi'
 	icon_state = "phantommaid_uniform"
-	fitted = NO_FEMALE_UNIFORM
+	fitted = FEMALE_UNIFORM_TOP
 	body_parts_covered = CHEST|GROIN|LEGS
 
 /obj/item/clothing/head/phantommaid_headband
@@ -60,7 +60,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/box/halloween/edition_19/phantommaid
-	theme_name = "2019's Phantom maid"
+	theme_name = "2019's Phantom Maid"
 
 /obj/item/storage/box/halloween/edition_19/phantommaid/PopulateContents()
 	new /obj/item/clothing/under/costume/phantommaid_uniform(src)

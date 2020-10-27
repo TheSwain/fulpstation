@@ -45,7 +45,7 @@
 	icon_state = "starship_suit"
 
 /obj/item/storage/box/halloween/edition_19/trooper
-	theme_name = "2019's Starship trooper"
+	theme_name = "2019's Starship Trooper"
 
 /obj/item/storage/box/halloween/edition_19/trooper/PopulateContents()
 	new /obj/item/clothing/under/costume/trooper_jumpsuit(src)

@@ -4,7 +4,7 @@
 	icon = 'icons/fulpicons/halloween_costumes/2019/costumes_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2019/costumes_worn.dmi'
 	icon_state = "nextadventure_uniform"
-	fitted = NO_FEMALE_UNIFORM
+	fitted = FEMALE_UNIFORM_TOP
 	body_parts_covered = CHEST|GROIN
 
 /obj/item/clothing/head/nextadventure_ears
@@ -63,7 +63,7 @@
 	list_reagents = list(/datum/reagent/medicine/polypyr = 3)
 
 /obj/item/storage/box/halloween/edition_19/nextadventure
-	theme_name = "2019's Next adventure"
+	theme_name = "2019's Next Adventure"
 
 /obj/item/storage/box/halloween/edition_19/nextadventure/PopulateContents()
 	new /obj/item/clothing/under/costume/nextadventure_uniform(src)

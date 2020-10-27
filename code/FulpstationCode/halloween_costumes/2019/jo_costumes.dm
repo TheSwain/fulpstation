@@ -7,6 +7,8 @@
 	icon_state = "hotdog"
 
 /obj/item/clothing/head/hot_head
+	name = "Hotdog hat"
+	desc = "Hot Dawg."
 	icon = 'icons/fulpicons/halloween_costumes/2019/jo_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2019/jo_costumes.dmi'
 	icon_state = "hotdog_top"
@@ -29,6 +31,8 @@
 	icon_state = "ketchup"
 
 /obj/item/clothing/head/ketchup_head
+	name = "Ketchup hat"
+	desc = "A soft plush ketchup bottle."
 	icon = 'icons/fulpicons/halloween_costumes/2019/jo_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2019/jo_costumes.dmi'
 	icon_state = "ketchup_top"
@@ -51,6 +55,8 @@
 	icon_state = "mustard"
 
 /obj/item/clothing/head/mustard_head
+	name = "Mustard hat"
+	desc = "A soft plush mustard bottle."
 	icon = 'icons/fulpicons/halloween_costumes/2019/jo_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2019/jo_costumes.dmi'
 	icon_state = "mustard_top"
@@ -66,13 +72,15 @@
 
 //Angel
 /obj/item/clothing/suit/angel
-	name = "angel"
-	desc = "Heavenly Dress."
+	name = "Angel dress"
+	desc = "Heavenly dress."
 	icon = 'icons/fulpicons/halloween_costumes/2019/jo_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2019/jo_costumes.dmi'
 	icon_state = "angel"
 
 /obj/item/clothing/head/angel_halo
+	name = "Angel halo"
+	desc = "Heavenly halo."	
 	icon = 'icons/fulpicons/halloween_costumes/2019/jo_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2019/jo_costumes.dmi'
 	icon_state = "angel_halo"
@@ -86,13 +94,15 @@
 
 //--Devil
 /obj/item/clothing/suit/devil
-	name = "Devil"
+	name = "Devil suit"
 	desc = "The one the only Devil."
 	icon = 'icons/fulpicons/halloween_costumes/2019/jo_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2019/jo_costumes.dmi'
 	icon_state = "devil"
 
 /obj/item/clothing/head/devil_horns
+	name = "Devil horns"
+	desc = "The one the only Devil."
 	icon = 'icons/fulpicons/halloween_costumes/2019/jo_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2019/jo_costumes.dmi'
 	icon_state = "devil_horns"
@@ -114,6 +124,8 @@
 	icon_state = "cat"
 
 /obj/item/clothing/head/cat_head
+	name = "Cat hat"
+	desc = "You feel like you can slink everywhere now."
 	icon = 'icons/fulpicons/halloween_costumes/2019/jo_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2019/jo_costumes.dmi'
 	icon_state = "cat_ears"

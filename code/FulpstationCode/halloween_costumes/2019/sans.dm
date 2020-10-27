@@ -4,7 +4,7 @@
 	icon = 'icons/fulpicons/halloween_costumes/2019/sans_icon.dmi'
 	worn_icon = 'icons/fulpicons/halloween_costumes/2019/sans_worn.dmi'
 	icon_state = "sans"
-	fitted = NO_FEMALE_UNIFORM
+	fitted = FEMALE_UNIFORM_FULL
 	can_adjust = FALSE
 
 /obj/item/clothing/head/hardhat/sans
