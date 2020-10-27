@@ -365,3 +365,4 @@
 	new /obj/item/clothing/suit/hooded/onesie/silicon(src)
 	new	/obj/item/toy/plush/pkplush(src)
 	new	/obj/item/toy/talking/ai(src)
+	

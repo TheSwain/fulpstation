@@ -105,3 +105,4 @@
 	new /obj/item/clothing/head/gnome/gnomed(src)
 	new /obj/item/clothing/suit/gnome(src)
 	new /obj/item/clothing/shoes/gnome(src)
+	

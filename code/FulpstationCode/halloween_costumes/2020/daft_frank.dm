@@ -64,9 +64,9 @@
 /obj/item/storage/box/halloween/edition_20/daft_box/PopulateContents()
 	new /obj/item/clothing/head/hardhat/golden_punk(src)
 	new /obj/item/clothing/gloves/daft_golden(src)
-	new /obj/item/instrument/eguitar(src)
 	new /obj/item/clothing/under/sparky(src)
 	new /obj/item/clothing/shoes/cyborg(src)
+	new /obj/item/instrument/eguitar(src)
 
 /obj/item/storage/box/halloween/edition_20/daft_box/silver
 	theme_name = "2020's Daft Punk Silver"
@@ -74,6 +74,6 @@
 /obj/item/storage/box/halloween/edition_20/daft_box/silver/PopulateContents()
 	new /obj/item/clothing/head/hardhat/silver_punk(src)
 	new /obj/item/clothing/gloves/daft_silver(src)
-	new /obj/item/instrument/piano_synth(src)
 	new /obj/item/clothing/under/sparky(src)
 	new /obj/item/clothing/shoes/cyborg(src)
+	new /obj/item/instrument/piano_synth(src)

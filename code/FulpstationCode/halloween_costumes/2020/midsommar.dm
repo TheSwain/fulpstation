@@ -46,7 +46,7 @@
 
 /obj/item/storage/box/halloween/edition_20/midsommar/PopulateContents()
 	new /obj/item/clothing/under/midsommar(src)//--Insert all the pieces of the costume here
+	new /obj/item/clothing/suit/midsommar_queen(src)
 	new /obj/item/clothing/head/midsommar(src)
 	new /obj/item/clothing/head/midsommar_queen(src)
-	new /obj/item/clothing/suit/midsommar_queen(src)
 	new /obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap(src)

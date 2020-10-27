@@ -55,3 +55,4 @@
 	new /obj/item/clothing/suit/columbia(src)
 	new /obj/item/clothing/neck/columbia(src)
 	new /obj/item/clothing/shoes/columbia(src)
+	

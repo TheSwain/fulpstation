@@ -394,3 +394,4 @@
 /obj/item/storage/box/halloween/edition_20/princess/pizza/PopulateContents()
 	new /obj/item/clothing/under/pizza(src)
 	new /obj/item/clothing/suit/pizza(src)
+	

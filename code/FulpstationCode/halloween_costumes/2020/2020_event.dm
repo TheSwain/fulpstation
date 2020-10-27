@@ -134,4 +134,3 @@
 
 /obj/item/storage/box/halloween/special/PopulateContents()
 	new	/obj/item/choice_beacon/halloween(src)
-

@@ -44,3 +44,4 @@
 	new /obj/item/clothing/head/frog_head(src)
 	new /obj/item/clothing/gloves/frog_gloves(src)
 	new /obj/item/clothing/shoes/frog_shoe(src)
+	

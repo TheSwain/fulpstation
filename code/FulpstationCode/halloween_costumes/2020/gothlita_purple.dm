@@ -84,3 +84,4 @@
 	new /obj/item/clothing/mask/gothlita_purple(src)
 	new /obj/item/clothing/shoes/gothlita_purple(src)
 	new /obj/item/lipstick/purple(src)
+	

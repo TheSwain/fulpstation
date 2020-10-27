@@ -49,3 +49,4 @@
 	new /obj/item/clothing/neck/asshole_scarf(src)
 	new /obj/item/clothing/gloves/color/black(src)
 	new /obj/item/toy/plush/sledgy(src)
+	

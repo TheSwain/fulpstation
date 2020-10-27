@@ -200,3 +200,4 @@
 	new /obj/item/clothing/suit/power_ranger/yellow(src)
 	new	/obj/item/clothing/shoes/power_ranger/yellow(src)
 	new /obj/item/clothing/gloves/color/latex(src)
+	

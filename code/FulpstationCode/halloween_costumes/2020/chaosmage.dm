@@ -39,3 +39,4 @@
 	new /obj/item/clothing/under/chaosmage(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/chaosmage(src)
 	new /obj/item/clothing/shoes/chaosmage(src)
+	

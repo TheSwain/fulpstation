@@ -44,9 +44,9 @@
 
 /obj/item/storage/box/halloween/edition_20/heisters/PopulateContents()
 	new /obj/item/clothing/mask/gas/mime/heister_mask(src)
-	new /obj/item/toy/gun(src)
 	new /obj/item/clothing/gloves/color/latex/nitrile(src)
 	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/toy/gun(src)
 
 	var/randomsuit = pick(/obj/item/clothing/under/suit/tan,
 							/obj/item/clothing/under/suit/black,

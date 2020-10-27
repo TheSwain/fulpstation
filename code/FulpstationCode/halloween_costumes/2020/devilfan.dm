@@ -41,3 +41,4 @@
 	new /obj/item/clothing/head/devilfan(src)
 	new /obj/item/clothing/shoes/devilfan(src)
 	new /obj/item/clothing/gloves/devilfan(src)
+	

@@ -62,3 +62,4 @@
 	new /obj/item/clothing/head/wizard/fake/skull_mask(src)
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/food/snacks/grown/harebell(src)
+		
