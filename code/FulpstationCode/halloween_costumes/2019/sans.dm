@@ -29,4 +29,3 @@
 /obj/item/storage/box/halloween/edition_19/sans/PopulateContents()
 	new /obj/item/clothing/under/costume/sans(src)
 	new /obj/item/clothing/head/hardhat/sans(src)
-	

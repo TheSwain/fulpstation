@@ -70,4 +70,3 @@
 	new /obj/item/clothing/head/nextadventure_ears(src)
 	new /obj/item/clothing/shoes/nextadventure_boots(src)
 	new /obj/item/reagent_containers/spray/hairdye_purple(src)
-	

@@ -14,4 +14,3 @@
 
 /obj/item/storage/box/halloween/edition_19/zombie/PopulateContents()
 	new /obj/item/clothing/suit/zombie_rider(src)
-	
