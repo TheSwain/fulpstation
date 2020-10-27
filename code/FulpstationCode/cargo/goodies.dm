@@ -8,7 +8,7 @@
 //Costume packs
 /datum/supply_pack/goody/clown_costume
 	name = "Clown Costume"
-	desc = "Supply the station's wannabe clown with their equipment and costume!Contains a full clown outfit along with a bike horn."
+	desc = "Supply the station's wannabe clown with their equipment and costume! Contains a full clown outfit along with a bike horn."
 	cost = 350
 	contains = list(/obj/item/storage/backpack/clown,
 					/obj/item/clothing/shoes/clown_shoes,
@@ -28,4 +28,3 @@
 					/obj/item/clothing/suit/toggle/suspenders,
 					/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing,
 					/obj/item/storage/backpack/mime)
-					
