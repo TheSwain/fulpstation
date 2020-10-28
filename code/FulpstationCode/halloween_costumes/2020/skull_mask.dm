@@ -6,7 +6,7 @@
 	worn_icon = 'icons/fulpicons/halloween_costumes/2020/skullmasks_worn.dmi'
 	icon_state = "rose"
 
-/obj/item/clothing/mask/gas/mime/skull_mime/Initialize(mapload)
+/obj/item/clothing/mask/gas/mime/skull_mask/Initialize(mapload)
 	.=..()
 	mimemask_designs = list(
 		"Rose" = image(icon = src.icon, icon_state = "rose"),
@@ -15,7 +15,7 @@
 		"Rouge" = image(icon = src.icon, icon_state = "rouge")
 		)
 
-/obj/item/clothing/mask/gas/mime/skull_mime/ui_action_click(mob/user)
+/obj/item/clothing/mask/gas/mime/skull_mask/ui_action_click(mob/user)
 	if(!istype(user) || user.incapacitated())
 		return
 
