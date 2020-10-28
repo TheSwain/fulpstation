@@ -6,6 +6,7 @@
 	icon_state = "nextadventure_uniform"
 	fitted = FEMALE_UNIFORM_TOP
 	body_parts_covered = CHEST|GROIN
+	can_adjust = FALSE
 
 /obj/item/clothing/head/nextadventure_ears
 	name = "next adventure bunny ears"
