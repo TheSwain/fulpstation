@@ -26978,7 +26978,6 @@
 "bBG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3,
-/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "bBI" = (
@@ -27701,7 +27700,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer3{
 	dir = 1
 	},
-/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "bDq" = (
@@ -28748,7 +28746,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
 	dir = 4
 	},
-/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "bGN" = (
@@ -29507,7 +29504,6 @@
 	req_access_txt = "48";
 	shuttledocked = 1
 	},
-/obj/structure/cable,
 /turf/open/floor/plating,
 /area/quartermaster/miningdock)
 "bJc" = (
@@ -29530,7 +29526,6 @@
 	name = "Mining Dock";
 	req_access_txt = "48"
 	},
-/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "bJe" = (
@@ -42859,10 +42854,6 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel/white,
 /area/medical/cryo)
-"dUO" = (
-/obj/structure/cable,
-/turf/open/floor/plasteel,
-/area/quartermaster/miningdock)
 "dVs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/toy/beach_ball/holoball,
@@ -43831,7 +43822,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 9
 	},
-/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "fpR" = (
@@ -49776,16 +49766,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/genetics)
-"nXT" = (
-/obj/effect/turf_decal/tile/brown{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/brown{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/plasteel,
-/area/quartermaster/miningdock)
 "nYC" = (
 /obj/structure/closet/l3closet/virology,
 /obj/effect/turf_decal/stripes/line{
@@ -55792,7 +55772,6 @@
 /area/medical/virology)
 "xPy" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
-/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "xPL" = (
@@ -77071,7 +77050,7 @@ aaf
 aaf
 bGi
 bHz
-dUO
+byE
 bKk
 bGi
 aoV
@@ -77328,7 +77307,7 @@ aaa
 aaa
 bGi
 bHy
-dUO
+byE
 bKj
 bGi
 aoV
@@ -77842,7 +77821,7 @@ bxy
 bxy
 ahw
 bHA
-nXT
+bHA
 bKl
 bxy
 aaH
@@ -78099,7 +78078,7 @@ bDk
 agv
 byE
 byE
-dUO
+byE
 bGn
 bGi
 aaf
