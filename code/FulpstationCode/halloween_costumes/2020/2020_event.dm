@@ -19,6 +19,8 @@
 /datum/round_event/halloween_costumes/announce()
 	priority_announce("To improve morale, we've utilized our Bluespace Wardrobe technology to send bulk halloween costumes over. Enjoy.", "Its Spooky Time")
 
+GLOBAL_LIST_EMPTY(possible_h_gifts)
+
 //--- Gift and box with costumes
 /obj/item/halloween_gift
 	name = "halloween package"
@@ -46,15 +48,15 @@
 	I.add_fingerprint(M)
 
 /obj/item/halloween_gift/proc/get_gift_type()
-	if(!GLOB.possible_gifts.len)
+	if(!GLOB.possible_h_gifts.len)
 		var/list/gift_types_list = subtypesof(/obj/item/storage/box/halloween)
 		for(var/V in gift_types_list)
 			var/obj/item/I = V
 			if((!initial(I.icon_state)) || (!initial(I.inhand_icon_state)) || (initial(I.item_flags) & ABSTRACT))
 				gift_types_list -= V
-		GLOB.possible_gifts = gift_types_list
+		GLOB.possible_h_gifts = gift_types_list
 
-	var/gift_type = pick(GLOB.possible_gifts)
+	var/gift_type = pick(GLOB.possible_h_gifts)
 
 	return gift_type
 
