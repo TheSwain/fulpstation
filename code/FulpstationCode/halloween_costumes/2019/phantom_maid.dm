@@ -6,6 +6,7 @@
 	icon_state = "phantommaid_uniform"
 	fitted = FEMALE_UNIFORM_TOP
 	body_parts_covered = CHEST|GROIN|LEGS
+	can_adjust = FALSE
 
 /obj/item/clothing/head/phantommaid_headband
 	name = "phantom maid headband"
