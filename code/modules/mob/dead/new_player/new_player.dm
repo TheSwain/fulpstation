@@ -167,7 +167,6 @@
 
 	if(href_list["SelectedJob"])
 		if(href_list["SelectedJob"] == "Random")
-			//src << browse(null, "window=randjob")
 			var/list/dept_dat = list()
 			for(var/category in GLOB.position_categories)
 				for(var/job in GLOB.position_categories[category]["jobs"])
